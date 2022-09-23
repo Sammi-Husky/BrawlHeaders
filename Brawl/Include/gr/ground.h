@@ -38,11 +38,17 @@ class Ground : public gfTask {
         // 7C
         u32 gimmickData;
         // 80
-        char _spacer6[0x10];
+        u32 unk1;
+        // 84
+        u32 unk2;
+        // 88
+        u32 unk3;
+        // 8C
+        u32 unk4;
         // 90
         grCalcWorldCallBack calcWorldCallBack;
         // A0
-        char unk1;
+        char unk5;
         // A1
         char transparencyFlag;
         // A2
