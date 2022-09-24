@@ -10,8 +10,8 @@ public:
     virtual void SetFrame(double unk1);
     virtual double GetFrame();
     virtual void UpdateFrame();
-    virtual void SetUpdateFrame(double unk1);
-    virtual double GetUpdateFrame();
+    virtual void SetUpdateRate(double unk1);
+    virtual double GetUpdateRate();
     virtual int Bind(int* unk1);
     virtual void Release();
     virtual int* GetResult(int* unk1, int unk2);
