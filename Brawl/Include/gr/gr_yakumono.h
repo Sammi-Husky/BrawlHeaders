@@ -1,5 +1,8 @@
 #pragma once
 #include <gr/gr_gimmick.h>
+#include <so/so_damage.h>
+#include <so/so_damage_attacker_info.h>
+#include <so/so_collision_log.h>
 
 class grYakumono : public grGimmick
 {
@@ -15,9 +18,9 @@ class grYakumono : public grGimmick
         virtual void setTransparency(u32 unk1, u32 unk2);
         virtual ~grYakumono();
 
-        virtual void onDamage(u32 unk1, u32* unk2, u32* unk3);
+        virtual void onDamage(int index, soDamage* damage, soDamageAttackerInfo* attackerInfo);
         virtual void onInflict(int* unk1, u32 unk2); // TODO
-        virtual void onInflictEach(int* unk1, float unk2); // TODO
+        virtual void onInflictEach(soCollisionLog* collisionLog, float power);
         virtual void onGimmickEvent(int* unk1, int* taskId);
         virtual bool enableYakumono(u32 unk1);
         virtual bool disableYakumono(u32 unk1, u32 unk2);

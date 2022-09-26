@@ -4,7 +4,16 @@
 #include <so/so_module_accesser.h>
 #include <memory.h>
 #include <containers.h>
-#include <so/so_event_observer>
+#include <so/so_event_observer.h>
+
+enum soKind {
+    Invalid = 0xFFFFFFFF,
+    Fighter = 0x0,
+    Enemy = 0x1,
+    Weapon = 0x2,
+    Yakumono = 0x3,
+    Item = 0x4
+};
 
 class soNullable {
     virtual bool isNull();

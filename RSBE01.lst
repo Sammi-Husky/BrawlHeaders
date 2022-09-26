@@ -267,9 +267,9 @@
 27,1,0026501c:setValidAttachedEffect__10grYakumonoFUi
 27,1,00267ab8:preExit__10grYakumonoFv
 27,1,00267a10:setTransparency__10grYakumonoFUiUi
-27,1,00264dd4:onDamage__10grYakumonoFUiPUiPUi
+27,1,00264dd4:onDamage__10grYakumonoFiP8soDamageP20soDamageAttackerInfo
 27,1,00264DE4:onInflict__10grYakumonoFPiUi
-27,1,00264DE8:onInflictEach__10grYakumonoFPif
+27,1,00264DE8:onInflictEach__10grYakumonoFP14soCollisionLogf
 27,1,00264DEC:onGimmickEvent__10grYakumonoFPiPi
 27,1,002650DC:enableYakumono__10grYakumonoFUi
 27,1,00265160:disableYakumono__10grYakumonoFUiUi
