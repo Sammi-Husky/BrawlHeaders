@@ -72,7 +72,7 @@ class Ground : public gfTask {
         virtual void renderDebug();
         virtual ~Ground();
 
-        virtual void update();
+        virtual void update(float frameDiff);
         virtual void loadGroundData(u32 unk1, u32 unk2, u32 unk3);
         virtual void bindData(gfArchive* data);
         virtual void setupMelee();

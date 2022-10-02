@@ -10,7 +10,7 @@ class grGimmick : public Ground {
         
         virtual void processUpdate();
         virtual void renderDebug();
-        virtual void update();
+        virtual void update(float frameDiff);
         virtual void bindData(gfArchive* data);
         virtual void setVisibility(u32 unk1);
         virtual int setNode();
