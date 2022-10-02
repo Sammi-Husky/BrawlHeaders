@@ -4,6 +4,54 @@
 805A01D0: g_sndSystem
 
 // System
+803f1254:__save_fpr
+803f1278:_savefpr_23
+803f1280:_savefpr_25
+803f1284:_savefpr_26
+803f1288:_savefpr_27
+803f128c:_savefpr_28
+803f1290:_savefpr_29
+803f12a0:__restore_fpr
+803f12c4:_restfpr_23
+803f12cc:_restfpr_25
+803f12d0:_restfpr_26
+803f12d4:_restfpr_27
+803f12d8:_restfpr_28
+803f12dc:_restfpr_29
+803f12ec:__save_gpr
+803f12ec:_savegpr_14
+803f12f0:_savegpr_15
+803f12f4:_savegpr_16
+803f12f8:_savegpr_17
+803f12fc:_savegpr_18
+803f1300:_savegpr_19
+803f1304:_savegpr_20
+803f1308:_savegpr_21
+803f130c:_savegpr_22
+803f1310:_savegpr_23
+803f1314:_savegpr_24
+803f1318:_savegpr_25
+803f131c:_savegpr_26
+803f1320:_savegpr_27
+803f1324:_savegpr_28
+803f1328:_savegpr_29
+803f1338:__restore_gpr
+803f1338:_restgpr_14
+803f133c:_restgpr_15
+803f1340:_restgpr_16
+803f1344:_restgpr_17
+803f1348:_restgpr_18
+803f134c:_restgpr_19
+803f1350:_restgpr_20
+803f1354:_restgpr_21
+803f1358:_restgpr_22
+803f135c:_restgpr_23
+803f1360:_restgpr_24
+803f1364:_restgpr_25
+803f1368:_restgpr_26
+803f136c:_restgpr_27
+803f1370:_restgpr_28
+803f1374:_restgpr_29
 8000c8ac:__nw__FUl
 8000c8b8:__nw__FUl8HeapType
 8000c8c8:__dl__FPv
@@ -236,6 +284,14 @@
 27,1,0025feec:setMatAlpha__6GroundFUiUi
 27,1,0025ffe0:updateG3dProcCalcWorld__6GroundFv
 27,1,00231b70:adventureEventGetItem__6GroundFiPi
+27,1,00231BBC:getStageData__6GroundFv
+27,1,00231BB8:initStageData__6GroundFv
+27,1,00231BB0:getMdlIndex__6GroundFv
+27,1,00231BA4:isEnableCalcCollision__6GroundFv
+27,1,00231B94:enableCalcCollision__6GroundFv
+27,1,00231B84:disableCalcCollision__6GroundFv
+27,1,00261EA8:setInitializeFlag__6GroundFv
+27,1,002618c0:setEnableCollisionStatus__6GroundFb
 
 // grGimmick
 27,1,0026daf4:setVisibility__9grGimmickFUi
@@ -254,9 +310,10 @@
 27,1,0026a6b8:createEffectVisibleProductionForExcel__9grGimmickFUiUiUi
 27,1,0026a708:setSimpleEffectVisibleProduction__9grGimmickFv
 27,1,0026daf0:dbDispInvalidatedByCameraClippingSphere__9grGimmickFv
-
-
-
+27,1,002304CC:setGimmickData__9grGimmickFUi
+27,1,00231BC4:getTransparencyFlag__9grGimmickFv
+27,1,0026BB1C:makeCalcuCallback__9grGimmickFUiUi
+27,1,0026BC9C:setCalcuCallbackRoot__9grGimmickFUi
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc
@@ -289,3 +346,13 @@
 27,1,002677AC:setAttackGimmickDetails__10grYakumonoFffffUiUiUiUiUiUiUiiUiUiUiUiUiiUiUiUiUiUiUiUiUiiUiUiUiUiUiUiUiUiUiUii
 27,1,00267924:isEnableAttackPersonAttacked__10grYakumonoFUiUiUi
 27,1,002679E8:isEnableAttackAttribute__10grYakumonoFUiUi
+
+// grMadein
+27,1,0027583C:__ct__8grMadeinFPc
+27,1,00275928:__dt__8grMadeinFv
+27,1,00275A98:startup__8grMadeinFP9gfArchiveUiUi
+27,1,00279D50:onDamage__8grMadeinFiP8soDamageP20soDamageAttackerInfo
+27,1,00279E04:onInflictEach__8grMadeinFP14soCollisionLogf
+27,1,00278c54:update__8grMadeinFf
+27,1,00275778:create__8grMadeinFiPcPc8HeapType
+27,1,00279f14:receiveCollMsg_Landing__8grMadeinFP12grCollStatusP16grCollisionJointb

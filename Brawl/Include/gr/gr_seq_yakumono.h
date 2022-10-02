@@ -1,5 +1,7 @@
 #pragma once
 
+#include <gr/gr_yakumono.h>
+
 class grSeqYakumono : public grYakumono {
 protected:
     char spacer_[12];

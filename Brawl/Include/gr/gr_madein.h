@@ -47,4 +47,6 @@ public:
     virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
     virtual void update(float frameDiff);
     virtual ~grMadein();
+
+    static grMadein* create(int mdlIndex, char* tgtNodeName, char* taskName, HeapType heapType);
 };
