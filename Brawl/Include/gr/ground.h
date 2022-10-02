@@ -3,11 +3,16 @@
 #include <gf/gf_task.h>
 #include <gf/gf_archive.h>
 #include <gf/gf_model.h>
+#include <mt/mt_vector.h>
+#include <mt/mt_matrix.h>
+#include <gr/gr_collision_status.h>
 #include <gr/gr_calc_world_callback.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <containers.h>
 #include <memory.h>
+
+class Stage;
 
 class Ground : public gfTask {
     protected:
@@ -18,7 +23,9 @@ class Ground : public gfTask {
         // 8
         gfModelAnimation* modelAnim;
         // C
-        char _spacer2[0x10];
+        grCollision* collision;   
+        // 10
+        char _spacer2[0xC];
         // 1C
         u16 mdlIndex;
         // 1E
@@ -26,12 +33,12 @@ class Ground : public gfTask {
         // 20
         float* stageData;
         // 24
-        char _spacer4[8];
+        float motionRatio;
         // 2C
         char calcCollisionEnable;
         // 2D
         char _align[3];
-        // 30     
+        // 30
         HeapType heapType;
         // 34
         char _spacer5[0x48];
@@ -72,11 +79,11 @@ class Ground : public gfTask {
         virtual void setVisibility(u32 unk1);
         virtual void setVisibilityByClipping(u32 unk1);
         virtual void setVisibilityAttachedEffect(u32 unk1);
-        virtual void receiveCollMsg(u32 unk1,u32 unk2,u32 unk3);
-        virtual void receiveCollMsg_Landing(int unk1, int* unk2, int unk3);
-        virtual void receiveCollMsg_Heading(int unk1, int* unk2, int unk3);
-        virtual void receiveCollMsg_Wall(int unk1, int* unk2, int unk3);
-        virtual void receiveCollMsg_Attack(int unk1, int* unk2, int unk3); // TODO, only implemented in grGimmickBlock which is SSE but don't know how to actually trigger it
+        virtual void receiveCollMsg(int direction, grCollStatus* collStatus, grCollisionJoint* collisionJoint);
+        virtual void receiveCollMsg_Landing(grCollStatus* collStatus, grCollisionJoint* collisionJoint, bool unk3);
+        virtual void receiveCollMsg_Heading(grCollStatus* collStatus, grCollisionJoint* collisionJoint, bool unk3);
+        virtual void receiveCollMsg_Wall(grCollStatus* collStatus, grCollisionJoint* collisionJoint);
+        virtual void receiveCollMsg_Attack(grCollStatus* collStatus, grCollisionJoint* collisionJoint);
         virtual void unloadData();
         virtual int getModelCount();
         virtual void startup(gfArchive* data, u32 unk1, u32 unk2);

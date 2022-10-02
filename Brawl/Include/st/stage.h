@@ -3,10 +3,9 @@
 #include <types.h>
 #include <gf/gf_task.h>
 #include <gf/gf_archive.h>
+#include <mt/mt_vector.h>
+#include <mt/mt_matrix.h>
 #include <gr/ground.h>
-#include <gr/gr_collision.h>
-
-class grCollision; // forward declaration to resolve circular dependancy
 
 class Stage : public gfTask {
     protected:
@@ -50,7 +49,7 @@ class Stage : public gfTask {
         void testStageParamInit(gfArchive *archive, int unk);
         void testStageDataInit(gfArchive *archive, int unk, int unk2);
         void addGround(Ground* Ground);
-        grCollision* createCollision(gfArchive* archive, int unk, Ground* ground);
+        grCollision* createCollision(gfArchive* archive, int index, Ground* ground);
         void createStagePositions();
         void createStagePositions(void* stgPosMdl);
         void loadStageAttrParam(gfArchive* filedata, int unk1);
