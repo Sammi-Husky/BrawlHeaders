@@ -128,7 +128,7 @@ class Ground : public gfTask {
 
         bool getNodeIndex(u32* nodeIndex, u32 sceneModelIndex, char* nodeName);
         void addSceneRoot(ScnMdl* sceneModel, int unk2);
-        bool isCollisionStatusOwnerTask(int* unk1, int* unk2);
+        bool isCollisionStatusOwnerTask(grCollStatus* collStatus, int* unk2);
         bool searchNode(char* unk1, char *nodeName, int* unk3, u32* nodeIndex);
         void setBlendColorDisable();
         void setBlendColorEnable();

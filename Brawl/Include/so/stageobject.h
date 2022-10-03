@@ -7,12 +7,12 @@
 #include <so/so_event_observer.h>
 
 enum soKind {
-    Invalid = 0xFFFFFFFF,
-    Fighter = 0x0,
-    Enemy = 0x1,
-    Weapon = 0x2,
-    Yakumono = 0x3,
-    Item = 0x4
+    INVALID = 0xFFFFFFFF,
+    FIGHTER = 0x0,
+    ENEMY = 0x1,
+    WEAPON = 0x2,
+    YAKUMONO = 0x3,
+    ITEM = 0x4
 };
 
 class soNullable {

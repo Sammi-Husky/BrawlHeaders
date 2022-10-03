@@ -6,6 +6,7 @@
 
 class grCollStatus
 {
+public:
     // 0
     grCollStatus* next;
     // 4

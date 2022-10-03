@@ -43,4 +43,6 @@ class gfTask {
         virtual void renderDebug();
         virtual void init();
         virtual ~gfTask();
+
+        static gfTask* getTask(int taskId);
 };
