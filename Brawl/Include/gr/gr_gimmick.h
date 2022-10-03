@@ -12,7 +12,7 @@ class grGimmick : public Ground {
         virtual void renderDebug();
         virtual void update(float frameDiff);
         virtual void bindData(gfArchive* data);
-        virtual void setVisibility(u32 unk1);
+        virtual void setVisibilityAttachedEffect(u32 unk1);
         virtual int setNode();
         virtual void setMotionRatio(float ratio);
         virtual void startup(gfArchive* data, u32 unk1, u32 unk2);

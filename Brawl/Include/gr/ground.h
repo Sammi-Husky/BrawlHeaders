@@ -34,10 +34,12 @@ class Ground : public gfTask {
         float* stageData;
         // 24
         float motionRatio;
-        // 2C
+        // 28
         char calcCollisionEnable;
-        // 2D
+        // 29
         char _align[3];
+        // 2c
+        char _spacer[4];
         // 30
         HeapType heapType;
         // 34
