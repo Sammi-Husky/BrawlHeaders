@@ -49,6 +49,7 @@ class Stage : public gfTask {
         void testStageParamInit(gfArchive *archive, int unk);
         void testStageDataInit(gfArchive *archive, int unk, int unk2);
         void addGround(Ground* Ground);
+        Ground* getGround(int index);
         grCollision* createCollision(gfArchive* archive, int index, Ground* ground);
         void createStagePositions();
         void createStagePositions(void* stgPosMdl);
@@ -170,5 +171,7 @@ class Stage : public gfTask {
         virtual int createWind2ndOnly(); // TODO
         virtual int getWind2ndOnlyData(); // TODO
         virtual void updateWind2ndOnly(); // TODO
-        virtual void setVision(); // TODO      
+        virtual void setVision(); // TODO
+
+
 };
