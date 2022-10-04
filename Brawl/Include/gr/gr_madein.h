@@ -7,7 +7,23 @@
 
 
 class grOverwriteAttackData {
-    char _spacer[0x40];
+    public:
+        int field_0x0;
+        float field_0x4;
+        float field_0x8;
+        float field_0xc;
+        float field_0x10;
+        int field_0x14;
+        int field_0x18;
+        int field_0x1c;
+        int field_0x20;
+        float field_0x24;
+        float field_0x28;
+        float field_0x2c;
+        int field_0x30;
+        unsigned int field_0x34;
+        unsigned int field_0x38;
+        unsigned int field_0x3c;
 };
 
 class grMadein : public grSeqYakumono {
@@ -29,15 +45,15 @@ public:
     bool isFrameEndOffset(float unk);
     bool isFrameOffset(float unk);
     void pauseEntity(bool isPause);
-    void setAttack(float unk1, void* unk2);
+    void setAttack(float unk1, float* unk2);
     void setHitPoint(float unk1, void* unk2, void* unk3, int unk4, int unk5);
     void setMatrix(Matrix matrix, void* unk1);
     void setMotion(int unk1);
     void setMotionDetails(int unk1, int unk2, int unk3, int unk4, int unk5);
     void setupYakumonoClass();
     void startEntity();
-    void startEntityAutoLoop(int unk1);
-    void startEntityLoop();
+    void startEntityAutoLoop();
+    void startEntityLoop(int unk1);
     void switchToMatrix();
 
     grMadein(char* taskName);
