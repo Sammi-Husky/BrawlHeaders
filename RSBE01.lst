@@ -370,3 +370,8 @@
 
 // ftExternalValueAccesser
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
+
+// BaseItem
+27,1,0028C834:getParam__8BaseItemFUi
+27,1,0028C85C:getParam1__8BaseItemFUi
+27,1,0028C884:getParamFloat__8BaseItemFUi
