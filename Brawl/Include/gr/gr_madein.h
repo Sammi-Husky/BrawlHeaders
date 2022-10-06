@@ -1,5 +1,6 @@
 #pragma once
 
+#include <mt/mt_vector.h>
 #include <so/so_damage.h>
 #include <so/so_damage_attacker_info.h>
 #include <so/so_collision_log.h>
@@ -7,10 +8,8 @@
 
 class grMadeinAttackInfo {
     public:
-        float radius;
-        float height;
-        float pitch;
-        float yaw;
+        float size;
+        Vec3f offsetPos;
         char _spacer[0x18];
         int preset;
 };
@@ -35,7 +34,7 @@ public:
     bool isFrameEndOffset(float unk);
     bool isFrameOffset(float unk);
     void pauseEntity(bool isPause);
-    void setAttack(float unk1, float* unk2);
+    void setAttack(float size, Vec3f* offsetPos);
     void setHitPoint(float unk1, void* unk2, void* unk3, int unk4, int unk5);
     void setMatrix(Matrix matrix, void* unk1);
     void setMotion(int unk1);

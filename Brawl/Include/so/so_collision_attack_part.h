@@ -3,11 +3,9 @@
 #include <mt/mt_vector.h>
 
 struct soCollisionAttackData {
-    int damage;
-    float length;
-    float pitch;
-    float yaw;
-    float radius;
+    int power;
+    Vec3f offsetPos;
+    float size;
     int vector;
     int reactionEffect;
     int reactionFix;
