@@ -370,7 +370,7 @@
 27,1,00278584:setAttack__8grMadeinFfPf
 27,1,002759D8:getOverwriteAttackData__8grMadeinFv
 27,1,00278DD0:initializeEntity__8grMadeinFv
-27,1,00278618:createAttackPointNormal__8grMadeinFP21grOverwriteAttackData
+27,1,00278618:createAttackPointNormal__8grMadeinFP21soCollisionAttackData
 27,1,0027928C:startEntityAutoLoop__8grMadeinFv
 
 // ftExternalValueAccesser

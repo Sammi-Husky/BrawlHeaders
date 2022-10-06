@@ -3,6 +3,7 @@
 #include <so/so_damage.h>
 #include <so/so_damage_attacker_info.h>
 #include <so/so_collision_log.h>
+#include <so/so_collision_attack_part.h>
 
 class grYakumono : public grGimmick
 {

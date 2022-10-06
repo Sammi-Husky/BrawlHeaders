@@ -5,41 +5,31 @@
 #include <so/so_collision_log.h>
 #include <gr/gr_seq_yakumono.h>
 
-
-class grOverwriteAttackData {
+class grMadeinAttackInfo {
     public:
-        int field_0x0;
-        float field_0x4;
-        float field_0x8;
-        float field_0xc;
-        float field_0x10;
-        int field_0x14;
-        int field_0x18;
-        int field_0x1c;
-        int field_0x20;
-        float field_0x24;
-        float field_0x28;
-        float field_0x2c;
-        int field_0x30;
-        unsigned int field_0x34;
-        unsigned int field_0x38;
-        unsigned int field_0x3c;
+        float radius;
+        float height;
+        float pitch;
+        float yaw;
+        char _spacer[0x18];
+        int preset;
 };
 
 class grMadein : public grSeqYakumono {
 protected:
-    char _spacer[8];
-    grOverwriteAttackData* overwriteAttackData;
+    grMadeinAttackInfo* attackInfo;
+    char _spacer[4];
+    soCollisionAttackData* overwriteAttackData;
     char _spacer2[60];
 public:
 
     void createAttackPoint();
-    void createAttackPointNormal(grOverwriteAttackData* attackData);
+    void createAttackPointNormal(soCollisionAttackData* attackData);
     void deleteAttackPoint();
     void deleteHitPoint();
     void endEntity();
     float getEntityFrame();
-    grOverwriteAttackData* getOverwriteAttackData();
+    soCollisionAttackData* getOverwriteAttackData();
     void initializeEntity();
     bool isEndEntity();
     bool isFrameEndOffset(float unk);
