@@ -76,97 +76,99 @@ enum CollisionAttackHitSoundType {
     Hit_Sound_Type_Frost = 0x1C,
 };
 
-union soCollisionAttackData {
-    struct {
-        int power;
-        Vec3f offsetPos;
-        float size;
-        int vector;
-        int reactionEffect;
-        int reactionFix;
-        int reactionAdd;
-        float tripRate;
-        float hitstopMultiplier;
-        float sdiMultiplier;
-        unsigned int field_0x30_0 : 9; // up to 0x1ff
-        bool isCollisionCategoryUnk1 : 1;
-        bool isCollisionCategoryItems1 : 1; // Soccer Ball, Blast Box etc.
-        bool isCollisionCategoryUnk2 : 1;
-        bool isCollisionCategoryUnk3 : 1;
-        bool isCollisionCategoryUnk4 : 1;
-        bool isCollisionCategoryUnk5 : 1;
-        bool isCollisionCategoryItems2 : 1; // Barrel, Crate etc.
-        bool isCollisionCategoryUnk6 : 1;
-        bool isCollisionCategoryUnk7 : 1;
-        bool isCollisionCategoryFighter : 1;
-        unsigned int field_0x30_2 : 3; // up to 0x7
-        bool field_0x30_3 : 1; // up to 0x1
-        unsigned int field_0x30_4 : 4; // up to 0xf
-        CollisionAttackElementType elementType : 5; // up to 0x1f
-        CollisionAttackHitSoundLevel hitSoundLevel : 2; // up to 0x3
-        CollisionAttackHitSoundType hitSoundType : 5; // up to 0x1f
-        bool field_0x34_2 : 1;
-        bool field_0x34_3 : 1;
-        bool field_0x34_4 : 1;
-        bool field_0x34_5 : 1;
-        bool field_0x34_6 : 1;
-        bool field_0x34_7 : 1;
-        unsigned int field_0x34_8 : 9; // up to 0x1ff
-        unsigned int field_0x34_9 : 10; // ~up to 0x3ff
-        unsigned int field_0x38_0 : 16; // up to 0xffff
-        bool field_0x38_1 : 1;
-        bool field_0x38_2 : 1;
-        bool field_0x38_3 : 1;
-        unsigned int field_0x38_4 : 3; // up to 0x7
-        bool field_0x38_5 : 1;
-        bool field_0x38_6 : 1;
-        bool field_0x38_7 : 1;
-        bool field_0x38_8 : 1;
-        bool field_0x38_9 : 1;
-        unsigned int field_0x38_10 : 5; // up to 0x1f;
-        bool field_0x3c_0 : 1;
-        unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
-    }bits;
+struct soCollisionAttackData {
+    int power;
+    Vec3f offsetPos;
+    float size;
+    int vector;
+    int reactionEffect;
+    int reactionFix;
+    int reactionAdd;
+    float tripRate;
+    float hitstopMultiplier;
+    float sdiMultiplier;
+    union {
+        struct {
+            unsigned int field_0x30_0 : 9; // up to 0x1ff
+            bool isCollisionCategoryUnk1 : 1;
+            bool isCollisionCategoryItems1 : 1; // Soccer Ball, Blast Box etc.
+            bool isCollisionCategoryUnk2 : 1;
+            bool isCollisionCategoryUnk3 : 1;
+            bool isCollisionCategoryUnk4 : 1;
+            bool isCollisionCategoryUnk5 : 1;
+            bool isCollisionCategoryItems2 : 1; // Barrel, Crate etc.
+            bool isCollisionCategoryUnk6 : 1;
+            bool isCollisionCategoryUnk7 : 1;
+            bool isCollisionCategoryFighter : 1;
+            unsigned int field_0x30_2 : 3; // up to 0x7
+            bool field_0x30_3 : 1; // up to 0x1
+            unsigned int field_0x30_4 : 4; // up to 0xf
+            CollisionAttackElementType elementType : 5; // up to 0x1f
+            CollisionAttackHitSoundLevel hitSoundLevel : 2; // up to 0x3
+            CollisionAttackHitSoundType hitSoundType : 5; // up to 0x1f
+            bool field_0x34_2 : 1;
+            bool field_0x34_3 : 1;
+            bool field_0x34_4 : 1;
+            bool field_0x34_5 : 1;
+            bool field_0x34_6 : 1;
+            bool field_0x34_7 : 1;
+            unsigned int field_0x34_8 : 9; // up to 0x1ff
+            unsigned int field_0x34_9 : 10; // ~up to 0x3ff
+            unsigned int field_0x38_0 : 16; // up to 0xffff
+            bool field_0x38_1 : 1;
+            bool field_0x38_2 : 1;
+            bool field_0x38_3 : 1;
+            unsigned int field_0x38_4 : 3; // up to 0x7
+            bool field_0x38_5 : 1;
+            bool field_0x38_6 : 1;
+            bool field_0x38_7 : 1;
+            bool field_0x38_8 : 1;
+            bool field_0x38_9 : 1;
+            unsigned int field_0x38_10 : 5; // up to 0x1f;
+            bool field_0x3c_0 : 1;
+            unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
+        }bits;
 
-    struct {
-        int power;
-        Vec3f offsetPos;
-        float size;
-        int vector;
-        int reactionEffect;
-        int reactionFix;
-        int reactionAdd;
-        float tripRate;
-        float hitstopMultiplier;
-        float sdiMultiplier;
-        unsigned int field_0x30_0 : 9; // up to 0x1ff
-        unsigned int collisionCategory : 10; // up to 0x3ff;
-        unsigned int field_0x30_2 : 3; // up to 0x7
-        bool field_0x30_3 : 1; // up to 0x1
-        unsigned int field_0x30_4 : 4; // up to 0xf
-        CollisionAttackElementType elementType : 5; // up to 0x1f
-        CollisionAttackHitSoundLevel hitSoundLevel : 2; // up to 0x3
-        CollisionAttackHitSoundType hitSoundType : 5; // up to 0x1f
-        bool field_0x34_2 : 1;
-        bool field_0x34_3 : 1;
-        bool field_0x34_4 : 1;
-        bool field_0x34_5 : 1;
-        bool field_0x34_6 : 1;
-        bool field_0x34_7 : 1;
-        unsigned int field_0x34_8 : 9; // up to 0x1ff
-        unsigned int field_0x34_9 : 10; // ~up to 0x3ff
-        unsigned int field_0x38_0 : 16; // up to 0xffff
-        bool field_0x38_1 : 1;
-        bool field_0x38_2 : 1;
-        bool field_0x38_3 : 1;
-        unsigned int field_0x38_4 : 3; // up to 0x7
-        bool field_0x38_5 : 1;
-        bool field_0x38_6 : 1;
-        bool field_0x38_7 : 1;
-        bool field_0x38_8 : 1;
-        bool field_0x38_9 : 1;
-        unsigned int field_0x38_10 : 5; // up to 0x1f;
-        bool field_0x3c_0 : 1;
-        unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
-    }masks;
+        struct {
+            int power;
+            Vec3f offsetPos;
+            float size;
+            int vector;
+            int reactionEffect;
+            int reactionFix;
+            int reactionAdd;
+            float tripRate;
+            float hitstopMultiplier;
+            float sdiMultiplier;
+            unsigned int field_0x30_0 : 9; // up to 0x1ff
+            unsigned int collisionCategory : 10; // up to 0x3ff;
+            unsigned int field_0x30_2 : 3; // up to 0x7
+            bool field_0x30_3 : 1; // up to 0x1
+            unsigned int field_0x30_4 : 4; // up to 0xf
+            CollisionAttackElementType elementType : 5; // up to 0x1f
+            CollisionAttackHitSoundLevel hitSoundLevel : 2; // up to 0x3
+            CollisionAttackHitSoundType hitSoundType : 5; // up to 0x1f
+            bool field_0x34_2 : 1;
+            bool field_0x34_3 : 1;
+            bool field_0x34_4 : 1;
+            bool field_0x34_5 : 1;
+            bool field_0x34_6 : 1;
+            bool field_0x34_7 : 1;
+            unsigned int field_0x34_8 : 9; // up to 0x1ff
+            unsigned int field_0x34_9 : 10; // ~up to 0x3ff
+            unsigned int field_0x38_0 : 16; // up to 0xffff
+            bool field_0x38_1 : 1;
+            bool field_0x38_2 : 1;
+            bool field_0x38_3 : 1;
+            unsigned int field_0x38_4 : 3; // up to 0x7 // probs is Facing Restriction
+            bool field_0x38_5 : 1;
+            bool field_0x38_6 : 1;
+            bool field_0x38_7 : 1;
+            bool field_0x38_8 : 1;
+            bool field_0x38_9 : 1;
+            unsigned int field_0x38_10 : 5; // up to 0x1f;
+            bool field_0x3c_0 : 1;
+            unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
+        }masks;
+    };
 };
