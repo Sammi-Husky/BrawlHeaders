@@ -37,6 +37,45 @@ enum CollisionAttackElementType {
     Element_Type_None11     = 0x1F,
 };
 
+enum CollisionAttackHitSoundLevel {
+    Hit_Sound_Level_Small = 0x0,
+    Hit_Sound_Level_Medium = 0x1,
+    Hit_Sound_Level_Large = 0x2,
+    Hit_Sound_Level_Huge = 0x3,
+};
+
+enum CollisionAttackHitSoundType {
+    Hit_Sound_Type_NoneUnique = 0x0,
+    Hit_Sound_Type_Punch = 0x1,
+    Hit_Sound_Type_Kick = 0x2,
+    Hit_Sound_Type_Slash = 0x3,
+    Hit_Sound_Type_Coin = 0x4,
+    Hit_Sound_Type_Bat = 0x5,
+    Hit_Sound_Type_Fan = 0x6, // (Harisen)
+    Hit_Sound_Type_Electric = 0x7,
+    Hit_Sound_Type_Fire = 0x8,
+    Hit_Sound_Type_Water = 0x9,
+    Hit_Sound_Type_Blank = 0xA,
+    Hit_Sound_Type_Explosion = 0xB,
+    Hit_Sound_Type_Blank2 = 0xC,
+    Hit_Sound_Type_SnakeThud = 0xD, // Exclusive to Snake
+    Hit_Sound_Type_IkeSlam = 0xE, // Exclusive to Ike
+    Hit_Sound_Type_DededeThwomp = 0xF, // Exclusive to Dedede
+    Hit_Sound_Type_Magic = 0x10,
+    Hit_Sound_Type_Shell = 0x11,
+    Hit_Sound_Type_PeachSlap = 0x12, // Exclusive to Peach
+    Hit_Sound_Type_PeachPan = 0x13, // Exclusive to Peach
+    Hit_Sound_Type_PeachClub = 0x14, // Exclusive to Peach
+    Hit_Sound_Type_PeachRacket = 0x15, // Exclusive to Peach
+    Hit_Sound_Type_LucarioAura = 0x16, // Exclusive to Lucario
+    Hit_Sound_Type_MarthTreble = 0x17, // Exclusive to Marth
+    Hit_Sound_Type_MarioCoin = 0x18, // Exclusive to Mario
+    Hit_Sound_Type_MarioStatic = 0x19, // Exclusive to Mario
+    Hit_Sound_Type_LuigiCoin = 0x1A, // Exclusive to Luigi
+    Hit_Sound_Type_NessBat = 0x1B, // Exclusive to Ness
+    Hit_Sound_Type_Frost = 0x1C,
+};
+
 struct soCollisionAttackData {
     int power;
     Vec3f offsetPos;
@@ -45,17 +84,17 @@ struct soCollisionAttackData {
     int reactionEffect;
     int reactionFix;
     int reactionAdd;
-    float field_0x24;
-    float field_0x28;
-    float field_0x2c;
+    float tripRate;
+    float hitstopMultiplier;
+    float sdiMultiplier;
     unsigned int field_0x30_0 : 9; // up to 0x1ff
     unsigned int field_0x30_1 : 10; // up to 0x3ff
     unsigned int field_0x30_2 : 3; // up to 0x7
     bool field_0x30_3 : 1; // up to 0x1
     unsigned int field_0x30_4 : 4; // up to 0xf
     CollisionAttackElementType elementType : 5; // up to 0x1f
-    unsigned int field_0x34_0 : 2; // up to 0x3
-    unsigned int field_0x34_1 : 5; // up to 0x1f
+    CollisionAttackHitSoundLevel hitSoundLevel : 2; // up to 0x3
+    CollisionAttackHitSoundType hitSoundType : 5; // up to 0x1f
     bool field_0x34_2 : 1;
     bool field_0x34_3 : 1;
     bool field_0x34_4 : 1;
