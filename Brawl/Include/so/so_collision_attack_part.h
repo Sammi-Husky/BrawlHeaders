@@ -23,7 +23,7 @@ enum CollisionAttackElementType {
     Element_Type_Grass      = 0x11,
     Element_Type_Water      = 0x12,
     Element_Type_Darkness   = 0x13,
-    Element_Type_Paraylyze  = 0x14,
+    Element_Type_Paralyze   = 0x14,
     Element_Type_Aura       = 0x15,
     Element_Type_Plunge     = 0x16,
     Element_Type_Down       = 0x17,
@@ -76,6 +76,15 @@ enum CollisionAttackHitSoundType {
     Hit_Sound_Type_Frost = 0x1C,
 };
 
+enum CollisionAttackFacingRestriction {
+    Facing_Restriction_Normal = 0x0,
+    Facing_Restriction_TowardsUserDirectionOfHorizontalMomentum = 0x1,
+    Facing_Restriction_AwayFromWhereTargetIsFacing = 0x2,
+    Facing_Restriction_ForwardFromDirectionOfUser = 0x3,
+    Facing_Restriction_BackwardsFromDirectionOfUser = 0x4,
+    Facing_Restriction_AwayFromCenterOfCollision = 0x5,
+};
+
 struct soCollisionAttackData {
     int power;
     Vec3f offsetPos;
@@ -89,7 +98,7 @@ struct soCollisionAttackData {
     float sdiMultiplier;
     union {
         struct {
-            unsigned int field_0x30_0 : 9; // up to 0x1ff
+            unsigned int nodeId : 9; // up to 0x1ff
             bool isCollisionCategoryUnk1 : 1;
             bool isCollisionCategoryItems1 : 1; // Soccer Ball, Blast Box etc.
             bool isCollisionCategoryUnk2 : 1;
@@ -100,9 +109,14 @@ struct soCollisionAttackData {
             bool isCollisionCategoryUnk6 : 1;
             bool isCollisionCategoryUnk7 : 1;
             bool isCollisionCategoryFighter : 1;
-            unsigned int field_0x30_2 : 3; // up to 0x7
+            bool isCollisionSituationUnk : 1;
+            bool isCollisionSituationAir : 1;
+            bool isCollisionSituationGround : 1;
             bool field_0x30_3 : 1; // up to 0x1
-            unsigned int field_0x30_4 : 4; // up to 0xf
+            bool isCollisionPartRegion3 : 1; // Usually body, legs
+            bool isCollisionPartRegion2 : 1; // Usually Shin
+            bool isCollisionPartRegion1 : 1; // Usually forearm
+            bool isCollisionPartRegion0 : 1; // Usually head, pelvis, arm, tail, wing, item
             CollisionAttackElementType elementType : 5; // up to 0x1f
             CollisionAttackHitSoundLevel hitSoundLevel : 2; // up to 0x3
             CollisionAttackHitSoundType hitSoundType : 5; // up to 0x1f
@@ -114,37 +128,27 @@ struct soCollisionAttackData {
             bool field_0x34_7 : 1;
             unsigned int field_0x34_8 : 9; // up to 0x1ff
             unsigned int field_0x34_9 : 10; // ~up to 0x3ff
-            unsigned int field_0x38_0 : 16; // up to 0xffff
+            unsigned int detectionRate : 16; // up to 0xffff
             bool field_0x38_1 : 1;
             bool field_0x38_2 : 1;
             bool field_0x38_3 : 1;
-            unsigned int field_0x38_4 : 3; // up to 0x7
+            CollisionAttackFacingRestriction facingRestriction: 3; // up to 0x7
             bool field_0x38_5 : 1;
             bool field_0x38_6 : 1;
             bool field_0x38_7 : 1;
             bool field_0x38_8 : 1;
             bool field_0x38_9 : 1;
-            unsigned int field_0x38_10 : 5; // up to 0x1f;
+            unsigned int addedShieldDamage : 5; // up to 0x1f;
             bool field_0x3c_0 : 1;
             unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
         }bits;
 
         struct {
-            int power;
-            Vec3f offsetPos;
-            float size;
-            int vector;
-            int reactionEffect;
-            int reactionFix;
-            int reactionAdd;
-            float tripRate;
-            float hitstopMultiplier;
-            float sdiMultiplier;
-            unsigned int field_0x30_0 : 9; // up to 0x1ff
+            unsigned int nodeId : 9; // up to 0x1ff
             unsigned int collisionCategory : 10; // up to 0x3ff;
-            unsigned int field_0x30_2 : 3; // up to 0x7
+            unsigned int collisionSituation : 3; // up to 0x7
             bool field_0x30_3 : 1; // up to 0x1
-            unsigned int field_0x30_4 : 4; // up to 0xf
+            unsigned int collisionPart : 4; // up to 0xf
             CollisionAttackElementType elementType : 5; // up to 0x1f
             CollisionAttackHitSoundLevel hitSoundLevel : 2; // up to 0x3
             CollisionAttackHitSoundType hitSoundType : 5; // up to 0x1f
@@ -156,17 +160,17 @@ struct soCollisionAttackData {
             bool field_0x34_7 : 1;
             unsigned int field_0x34_8 : 9; // up to 0x1ff
             unsigned int field_0x34_9 : 10; // ~up to 0x3ff
-            unsigned int field_0x38_0 : 16; // up to 0xffff
+            unsigned int detectionRate : 16; // up to 0xffff
             bool field_0x38_1 : 1;
             bool field_0x38_2 : 1;
             bool field_0x38_3 : 1;
-            unsigned int field_0x38_4 : 3; // up to 0x7 // probs is Facing Restriction
+            CollisionAttackFacingRestriction facingRestriction : 3; // up to 0x7 // probs is Facing Restriction
             bool field_0x38_5 : 1;
             bool field_0x38_6 : 1;
             bool field_0x38_7 : 1;
             bool field_0x38_8 : 1;
             bool field_0x38_9 : 1;
-            unsigned int field_0x38_10 : 5; // up to 0x1f;
+            unsigned int addedShieldDamage : 5; // up to 0x1f;
             bool field_0x3c_0 : 1;
             unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
         }masks;
