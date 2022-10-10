@@ -5,6 +5,55 @@
 #include <so/so_collision_log.h>
 #include <so/so_collision_attack_part.h>
 
+struct grYakumonoAttackData {
+    float unk1;
+    Vec3f offsetPos;
+    float size;
+    int vector;
+    int reactionEffect;
+    int reactionFix;
+    int reactionAdd;
+    char _spacer[4];
+    CollisionAttackElementType elementType;
+    bool isClankable;
+    bool unk2;
+    bool unk3;
+    bool unk4;
+    char _spacer2[0xC];
+    unsigned int detectionRate;
+    CollisionAttackHitSoundLevel hitSoundLevel;
+    CollisionAttackHitSoundType hitSoundType;
+    bool unk5;
+    bool isShapeCapsule;
+    char _spacer3[6];
+    unsigned int nodeIndex;
+    int power;
+};
+
+struct grYakumonoAttackDetails {
+    union {
+        unsigned int collisionCategoryMask;
+        struct {
+            unsigned int _pad : 22;
+            bool isCollisionCategoryUnk1 : 1;
+            bool isCollisionCategoryItems1 : 1; // Soccer Ball, Blast Box etc.
+            bool isCollisionCategoryUnk2 : 1;
+            bool isCollisionCategoryUnk3 : 1;
+            bool isCollisionCategoryUnk4 : 1;
+            bool isCollisionCategoryUnk5 : 1;
+            bool isCollisionCategoryItems2 : 1; // Barrel, Crate etc.
+            bool isCollisionCategoryUnk6 : 1;
+            bool isCollisionCategoryUnk7 : 1;
+            bool isCollisionCategoryFighter : 1;
+        };
+    };
+    char unk1;
+    bool unk2;
+    char _spacer[2];
+    CollisionAttackFacingRestriction facingRestriction;
+    float hitstopMultiplier;
+};
+
 class grYakumono : public grGimmick
 {
     protected:
@@ -36,9 +85,21 @@ class grYakumono : public grGimmick
         virtual bool getTeamYakumono(u32 unk1);
         virtual bool setOffsetAttack(u32 unk1, u32 unk2);
         virtual void setAreaGimmick(u32 unk1, u32 unk2, u32 unk3, u32 unk4);
-        virtual void setAttackGimmick(u32 unk1, u32 unk2, u32 unk3, u32 unk4, u32 unk5);
-        virtual void setSoCollisionAttackData(u32 unk1, u32 unk2, u32 unk3);
-        virtual void setAttackGimmickDetails(float ,float ,float ,float ,u32,u32 ,u32,u32,u32,u32,u32,int,u32,u32,u32,u32,u32,int,u32,u32,u32,u32,u32,u32,u32,u32,int,u32,u32,u32,u32,u32,u32,u32,u32,u32,u32,int);
+        virtual void setAttackGimmick(int index, int groupUbdex, u32 nodeIndex, grYakumonoAttackData *grAttackData,
+                                      grYakumonoAttackDetails *grAttackDetails);
+        virtual void setSoCollisionAttackData(soCollisionAttackData* attackData, grYakumonoAttackData *grAttackData,
+                                              grYakumonoAttackDetails *grAttackDetails);
+        virtual void setAttackGimmickDetails(soCollisionAttackData* attackData, float size, float tripRate,
+                                             float hitstopMultiplier, float sdiMultiplier, int power, Vec3f* offsetPos,
+                                             int vector, int reactionEffect, int reactionFix, int reactionAdd,
+                                             u32 nodeIndex, u32 collisionCategoryMask, u32 collisionSituationMask,
+                                             bool unk1, u32 collisionPartMask, CollisionAttackElementType elementType,
+                                             CollisionAttackHitSoundLevel hitSoundLevel, CollisionAttackHitSoundType hitSoundType,
+                                             bool isClankable, bool unk2, bool unk3, bool isBlockable, bool isReflectable,
+                                             bool isAbsorbable, u32 unk4, u32 detectionRate, bool unk5, bool ignoreInvincibility,
+                                             bool ignoreIntangibility, CollisionAttackFacingRestriction facingRestriction,
+                                             bool unk6, bool unk7, bool disableHitstop, bool disableHitGfx,
+                                             bool disableFlinch, u32 addedShieldDamage, bool isShapeCapsule);
         virtual bool isEnableAttackPersonAttacked(u32 unk1, u32 unk2, u32 unk3);
         virtual bool isEnableAttackAttribute(u32 unk1, u32 unk2);
 };
