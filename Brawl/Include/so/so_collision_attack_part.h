@@ -99,16 +99,16 @@ struct soCollisionAttackData {
     union {
         struct {
             unsigned int nodeIndex : 9; // up to 0x1ff
-            bool isCollisionCategoryUnk1 : 1;
-            bool isCollisionCategoryItems1 : 1; // Soccer Ball, Blast Box etc.
-            bool isCollisionCategoryUnk2 : 1;
-            bool isCollisionCategoryUnk3 : 1;
-            bool isCollisionCategoryUnk4 : 1;
-            bool isCollisionCategoryUnk5 : 1;
-            bool isCollisionCategoryItems2 : 1; // Barrel, Crate etc.
-            bool isCollisionCategoryUnk6 : 1;
-            bool isCollisionCategoryUnk7 : 1;
-            bool isCollisionCategoryFighter : 1;
+            bool isCollisionCategory9 : 1; // Skyword platforms, Hanenbow platforms, stage blocks
+            bool isCollisionCategory8 : 1; // Soccer Ball, Blast Box etc.
+            bool isCollisionCategory7 : 1;
+            bool isCollisionCategory6 : 1; // Ground
+            bool isCollisionCategory5 : 1;
+            bool isCollisionCategory4 : 1;
+            bool isCollisionCategory3 : 1; // Barrel, Crate etc.
+            bool isCollisionCategory2 : 1;
+            bool isCollisionCategory1 : 1; // SSE enemies
+            bool isCollisionCategory0 : 1; // Fighter
             bool isCollisionSituationUnk : 1;
             bool isCollisionSituationAir : 1;
             bool isCollisionSituationGround : 1;
@@ -134,7 +134,7 @@ struct soCollisionAttackData {
             bool ignoreIntangibility : 1;
             CollisionAttackFacingRestriction facingRestriction: 3; // up to 0x7
             bool field_0x38_5 : 1;
-            bool field_0x38_6 : 1;
+            bool enableFriendlyFire : 1;
             bool disableHitstop : 1;
             bool disableHitGfx : 1;
             bool disableFlinch : 1;
@@ -165,8 +165,8 @@ struct soCollisionAttackData {
             bool ignoreInvincibility : 1;
             bool ignoreIntangibility : 1;
             CollisionAttackFacingRestriction facingRestriction : 3; // up to 0x7
-            bool field_0x38_5 : 1;
-            bool field_0x38_6 : 1;  // friendly fire?
+            bool field_0x38_5 : 1;  // break throws?
+            bool enableFriendlyFire : 1;
             bool disableHitstop : 1;
             bool disableHitGfx : 1;
             bool disableFlinch : 1;

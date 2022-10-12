@@ -14,12 +14,33 @@ class grMadeinAttackInfo {
         int preset;
 };
 
+class grMadeinHitPointInfo {
+    Vec3f startOffsetPos;
+    Vec3f endOffsetPos;
+    char _spacer[12];
+    float size;
+    char _spacer2[16];
+    int lastPlayerHit;
+    int nodeIndex;
+};
+
+class StageHitData {
+    Vec3f startOffsetPos;
+    Vec3f endOffsetPos;
+    float size;
+    char _spacer[8];
+    int nodeIndex;
+    char _spacer2[20];
+};
+
+
 class grMadein : public grSeqYakumono {
 protected:
     grMadeinAttackInfo* attackInfo;
-    char _spacer[4];
+    grMadeinHitPointInfo* hitPointInfo;
     soCollisionAttackData* overwriteAttackData;
-    char _spacer2[60];
+    StageHitData* stageHitData;
+    char _spacer2[56];
 public:
 
     void createAttackPoint();
@@ -35,7 +56,7 @@ public:
     bool isFrameOffset(float unk);
     void pauseEntity(bool isPause);
     void setAttack(float size, Vec3f* offsetPos);
-    void setHitPoint(float unk1, void* unk2, void* unk3, int unk4, int unk5);
+    void setHitPoint(float size, Vec3f* startOffsetPos, Vec3f* endOffsetPos, int unk4, int nodeIndex);
     void setMatrix(Matrix matrix, void* unk1);
     void setMotion(int unk1);
     void setMotionDetails(int unk1, int unk2, int unk3, int unk4, int unk5);

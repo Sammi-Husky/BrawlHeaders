@@ -55,7 +55,7 @@ class grGimmick : public Ground {
         void setMaterialColor(u32* unk1, char* unk2, u32* unk3, u32* sceneModelIndex);
         void setMaterialTevColor(u32* unk1, char* unk2, u32* unk3, u32* sceneModelIndex);
         void setMatrix(int* matrix);
-        void setPos(int* unk1);
+        void setPos(int* matrix);
         void setPos(Vec3f* pos);
         void setPos(float x, float y, float z);
         void setPosGimmickEffect(int unk1, Vec3f* pos);

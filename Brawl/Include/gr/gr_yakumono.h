@@ -4,6 +4,7 @@
 #include <so/so_damage_attacker_info.h>
 #include <so/so_collision_log.h>
 #include <so/so_collision_attack_part.h>
+#include <yk/yakumono.h>
 
 struct grYakumonoAttackData {
     float unk1;
@@ -56,9 +57,8 @@ struct grYakumonoAttackDetails {
 
 class grYakumono : public grGimmick
 {
-    protected:
-        u32 yakumono;
     public:
+        Yakumono* yakumono;
         grYakumono(char* taskName);
         virtual void processUpdate();
         virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
@@ -79,13 +79,13 @@ class grYakumono : public grGimmick
         virtual bool disableAttack(u32 unk1);
         virtual bool enableArea();
         virtual bool disableArea();
-        virtual bool setSleepArea();
-        virtual bool setTeamYakumonoOwnerId(u32 unk1);
-        virtual bool setTeamYakumono(u32 unk1, u32 unk2);
+        virtual bool setSleepArea(bool unk1);
+        virtual bool setTeamYakumonoOwnerId(u32 teamOwnerId);
+        virtual bool setTeamYakumono(u32 teamId, u32 teamOwnerId);
         virtual bool getTeamYakumono(u32 unk1);
-        virtual bool setOffsetAttack(u32 unk1, u32 unk2);
+        virtual bool setOffsetAttack(Vec3f* offsetPos, int index);
         virtual void setAreaGimmick(u32 unk1, u32 unk2, u32 unk3, u32 unk4);
-        virtual void setAttackGimmick(int index, int groupUbdex, u32 nodeIndex, grYakumonoAttackData *grAttackData,
+        virtual void setAttackGimmick(int index, int groupIndex, u32 nodeIndex, grYakumonoAttackData *grAttackData,
                                       grYakumonoAttackDetails *grAttackDetails);
         virtual void setSoCollisionAttackData(soCollisionAttackData* attackData, grYakumonoAttackData *grAttackData,
                                               grYakumonoAttackDetails *grAttackDetails);
@@ -102,4 +102,17 @@ class grYakumono : public grGimmick
                                              bool disableFlinch, u32 addedShieldDamage, bool isShapeCapsule);
         virtual bool isEnableAttackPersonAttacked(u32 unk1, u32 unk2, u32 unk3);
         virtual bool isEnableAttackAttribute(u32 unk1, u32 unk2);
+
+        void clearAttackerInfo();
+        int getPlayerNumber(int* unk1);
+        int getPlayerNumber(grCollStatus* collStatus);
+        bool isSubFighter(int* unk1);
+        void setAreaShape(int unk1, float* unk2, float* unk3);
+        void setAttackSize(int index, int unk2, float size);
+        void setAttackTargetCategory(int index, u32 categoryMask);
+        void setSleepAttack(bool unk1);
+        void setSleepHit(bool unk1);
+        void setSituationODD();
+
+
 };
