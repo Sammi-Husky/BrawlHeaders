@@ -318,11 +318,14 @@
 27,1,0026daf0:dbDispInvalidatedByCameraClippingSphere__9grGimmickFv
 27,1,002304CC:setGimmickData__9grGimmickFUi
 27,1,00231BC4:getTransparencyFlag__9grGimmickFv
-27,1,0026BB1C:makeCalcuCallback__9grGimmickFUiUi
+27,1,0026BB1C:makeCalcuCallback__9grGimmickFUi8HeapType
 27,1,0026BC9C:setCalcuCallbackRoot__9grGimmickFUi
 27,1,0026dbd0:getPos__FP5Vec3fP9grGimmick
 27,1,0026db8c:setPos__9grGimmickFP5Vec3f
-
+27,1,0026DBB4:setPos__9grGimmickFfff
+27,1,0026DD00:getScale__FP5Vec3fP9grGimmick
+27,1,0026DCBC:setScale__9grGimmickFP5Vec3f
+27,1,0026DCE4:setScale__9grGimmickFfff
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc

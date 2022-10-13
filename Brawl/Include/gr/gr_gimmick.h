@@ -48,7 +48,7 @@ class grGimmick : public Ground {
         u32 getMaterialColor(int* unk1, char* unk2, u32* sceneModelIndex);
         u32 getMaterialTevColor(int* unk1, char* unk2, u32* sceneModelIndex);
         void getMatrix(int* matrix);
-        void makeCalcuCallback(u32 unk1, u32 unk2);
+        void makeCalcuCallback(u32 numCallbackData, HeapType heapType);
         void setAttachPathdataFrame(float frame);
         void setCalcuCallbackRoot(u32 unk1);
         void setMaterialAlpha(char* unk1, u32 unk2);
