@@ -64,6 +64,9 @@ class grGimmick : public Ground {
         void setRot(float x, float y, float z);
         void setScale(Vec3f* scale);
         void setScale(float x, float y, float z);
+        static void getPos(Vec3f* pos, grGimmick* ground);
+        static void getRot(Vec3f* rot, grGimmick* ground);
+        static void getScale(Vec3f* scale, grGimmick* ground);
         void startGimmickEffect(u32 unk1);
         void startGimmickSE(u32 unk1);
         void stopGimmickEffect(u32 unk1);
@@ -73,7 +76,5 @@ class grGimmick : public Ground {
         void updateProduction(float unk1);
 };
 
-void getPos(Vec3f* pos, grGimmick* ground);
-void getRot(Vec3f* rot, grGimmick* ground);
-void getScale(Vec3f* scale, grGimmick* ground);
+
 
