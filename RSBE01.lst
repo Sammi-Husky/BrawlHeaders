@@ -100,6 +100,10 @@
 // gfArchive
 80015ddc:getData__9gfArchiveF11ARCNodeTypeiUi
 
+// hkMath
+802a0bcc:fabs__6hkMathFf
+80291dd8:max2f__6hkMathFff
+
 // Stage
 27,1,002225A8:createObj__5StageFv
 27,1,0022269C:createObjPokeTrainer__5StageFiiiii
@@ -377,6 +381,7 @@
 27,1,00278DD0:initializeEntity__8grMadeinFv
 27,1,00278618:createAttackPointNormal__8grMadeinFP21soCollisionAttackData
 27,1,0027928C:startEntityAutoLoop__8grMadeinFv
+27,1,00279590:setMotion__8grMadeinFUi
 
 // ftExternalValueAccesser
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
@@ -390,3 +395,6 @@
 27,1,0026383C:setReactionFrame__8YakumonoFi
 27,1,002638DC:setCollisionHitSelfCategory__8YakumonoFi
 27,1,00263854:setColliisonHitOpponentCategory__8YakumonoFib
+
+// stPositions
+27,1,00226794:getDeadRange__11stPositionsFPA2_f

@@ -6,6 +6,7 @@
 #include <mt/mt_vector.h>
 #include <mt/mt_matrix.h>
 #include <gr/ground.h>
+#include <st/st_positions.h>
 
 class Stage : public gfTask {
     protected:
@@ -18,15 +19,23 @@ class Stage : public gfTask {
         // 28
         char aiRange[0x18];
         // 40
-        char cameraParam[0x1c];
+        void* cameraParam;
+        // 44
+        char _spacer2[8];
+        // 4c
+        void* collConv;
+        // 50
+        stPositions* stagePositions;
+        // 54
+        char _spacer3[8];
         // 5C
         float* stageData;
         // 60
-        char _spacer3[0x1C];
+        char _spacer4[0x1C];
         // 7C
         u32 unk;
         // 80
-        char _spacer2[0x38];
+        char _spacer5[0x38];
         // B8
         char collisionAttrs[0xC];
         // C4
@@ -34,7 +43,7 @@ class Stage : public gfTask {
         // 144
         bool unk2;
         // 145
-        char _spacer5[3];
+        char _spacer6[3];
         // 148
         u32 unk3;
         // 14C
@@ -42,7 +51,7 @@ class Stage : public gfTask {
         // 150
         float frameRuleTime;
         // 154
-        char _spacer6[0xC];
+        char _spacer7[0xC];
         // TOTAL_SIZE == 0x160
     
     public:
