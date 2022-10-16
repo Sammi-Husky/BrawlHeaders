@@ -19,7 +19,9 @@ class grMadeinHitPointInfo {
     Vec3f endOffsetPos;
     char _spacer[12];
     float size;
-    char _spacer2[16];
+    float lastDamageTaken;
+    float lastSide;
+    char _spacer2[8];
     int lastPlayerHit;
     int nodeIndex;
 };

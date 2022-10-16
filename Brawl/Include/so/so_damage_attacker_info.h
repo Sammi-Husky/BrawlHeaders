@@ -24,6 +24,7 @@ class soDamageAttackerInfo {
     int indirectAttackerTaskId;
     soKind indirectAttackerSoKind;
     int indirectAttackerSoSubKind;
+    int indirectAttackerEntryId;
 
-    char _spacer3[8];
+    char _spacer3[4];
 };

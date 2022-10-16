@@ -1,9 +1,16 @@
 #pragma once
 
 class soDamage {
+public:
+    float totalDamage;
     float damage;
-    char _spacer[4];
     float powerMax;
     float reaction;
-    char _spacer2[144];
+    char _spacer2[32];
+    char teamId;
+    char _spacer3[31];
+    int vector;
+    char _spacer4[40];
+    float side;
+    char _spacer5[32];
 }; // size 160

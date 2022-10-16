@@ -100,6 +100,10 @@
 // gfArchive
 80015ddc:getData__9gfArchiveF11ARCNodeTypeiUi
 
+// mttrig
+8003fd5c:mtSinF__Ff
+8003fdfc:mtCosF__Ff
+
 // hkMath
 802a0bcc:fabs__6hkMathFf
 80291dd8:max2f__6hkMathFff
@@ -395,6 +399,7 @@
 27,1,0026383C:setReactionFrame__8YakumonoFi
 27,1,002638DC:setCollisionHitSelfCategory__8YakumonoFi
 27,1,00263854:setColliisonHitOpponentCategory__8YakumonoFib
+27,1,002639D0:setTeam__8YakumonoFi
 
 // stPositions
 27,1,00226794:getDeadRange__11stPositionsFPA2_f
