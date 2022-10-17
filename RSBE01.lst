@@ -100,6 +100,13 @@
 // gfArchive
 80015ddc:getData__9gfArchiveF11ARCNodeTypeiUi
 
+// gfModelAnimation
+800283bc:getFrameCount__16gfModelAnimationFv
+8002858c:getFrame__16gfModelAnimationFv
+80028498:setFrame__16gfModelAnimationFf
+80028650:setUpdateRate__16gfModelAnimationFf
+80028278:setLoop__16gfModelAnimationFb
+
 // mttrig
 8003fd5c:mtSinF__Ff
 8003fdfc:mtCosF__Ff
@@ -367,6 +374,8 @@
 27,1,00267924:isEnableAttackPersonAttacked__10grYakumonoFUiUiUi
 27,1,002679E8:isEnableAttackAttribute__10grYakumonoFUiUi
 27,1,00267AF4:setSituationODD__10grYakumonoFv
+27,1,002652A8:setSleepHit__10grYakumonoFb
+27,1,00265294:setSleepAttack__10grYakumonoFb
 
 // grMadein
 27,1,0027583C:__ct__8grMadeinFPc
@@ -384,6 +393,7 @@
 27,1,002759D8:getOverwriteAttackData__8grMadeinFv
 27,1,00278DD0:initializeEntity__8grMadeinFv
 27,1,00278618:createAttackPointNormal__8grMadeinFP21soCollisionAttackData
+27,1,00278E38:startEntity__8grMadeinFv
 27,1,0027928C:startEntityAutoLoop__8grMadeinFv
 27,1,00279590:setMotion__8grMadeinFUi
 
@@ -400,6 +410,7 @@
 27,1,002638DC:setCollisionHitSelfCategory__8YakumonoFi
 27,1,00263854:setColliisonHitOpponentCategory__8YakumonoFib
 27,1,002639D0:setTeam__8YakumonoFi
+27,1,002639EC:getTeam__8YakumonoFv
 
 // stPositions
 27,1,00226794:getDeadRange__11stPositionsFPA2_f

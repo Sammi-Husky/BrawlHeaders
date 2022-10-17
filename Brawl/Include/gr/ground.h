@@ -21,7 +21,7 @@ class Ground : public gfTask {
         // 4
         ScnMdl** sceneModel; // TODO: supposed to be a wrapper of some kind
         // 8
-        gfModelAnimation* modelAnim;
+        gfModelAnimation** modelAnim;
         // C
         grCollision* collision;   
         // 10

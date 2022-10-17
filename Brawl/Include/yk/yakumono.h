@@ -8,6 +8,7 @@ class Yakumono {
         void setReactionFrame(int reactionFrame);
         void setTeamOwnerId(int teamOwnerId);
         void setTeam(int teamId);
+        int getTeam();
     private:
         char _spacer[853];
 

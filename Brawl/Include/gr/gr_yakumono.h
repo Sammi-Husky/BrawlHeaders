@@ -110,8 +110,8 @@ class grYakumono : public grGimmick
         void setAreaShape(int unk1, float* unk2, float* unk3);
         void setAttackSize(int index, int unk2, float size);
         void setAttackTargetCategory(int index, u32 categoryMask);
-        void setSleepAttack(bool unk1);
-        void setSleepHit(bool unk1);
+        void setSleepAttack(bool isSleep);
+        void setSleepHit(bool isSleep);
         void setSituationODD();
 
 

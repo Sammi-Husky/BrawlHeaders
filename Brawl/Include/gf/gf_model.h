@@ -17,6 +17,13 @@ public:
     AnmObjTexSrtRes* anmObjTexSrtRes;
     AnmObjMatClrRes* anmObjMatClrRes;
     AnmObjShpRes* anmObjShpRes;
+
+    u16 getFrameCount();
+    float getFrame();
+    void setFrame(float frame);
+    void setUpdateRate(float updateRate);
+    void setLoop(bool shouldLoop);
+
 };
 
 // Size: 32
