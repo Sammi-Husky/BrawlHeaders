@@ -6,7 +6,6 @@
 #include <mt/mt_vector.h>
 #include <mt/mt_matrix.h>
 #include <gr/gr_collision_status.h>
-#include <gr/gr_calc_world_callback.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <containers.h>
@@ -43,28 +42,9 @@ class Ground : public gfTask {
         // 30
         HeapType heapType;
         // 34
-        char _spacer5[0x48];
-        // 7C
-        void* gimmickData;
-        // 80
-        u32 unk1;
-        // 84
-        u32 unk2;
-        // 88
-        u32 unk3;
-        // 8C
-        u32 unk4;
-        // 90
-        grCalcWorldCallBack calcWorldCallBack;
-        // A0
-        char unk5;
-        // A1
-        char transparencyFlag;
-        // A2
-        char _spacer7[34];
-        // C4
+        char _spacer5[40];
 
-        // SIZE == C4
+        // SIZE == 5c
     public:
         Ground(char* taskName);
         virtual void processAnim();

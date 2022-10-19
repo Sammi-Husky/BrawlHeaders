@@ -1,7 +1,10 @@
 #pragma once
 
 #include <gr/ground.h>
+#include <gr/gr_calc_world_callback.h>
+#include <snd/snd_3d_generator.h>
 #include <st/st_trigger.h>
+
 
 struct grGimmickMotionPathData {
     float motionRatio;
@@ -28,10 +31,48 @@ struct grGimmickSimpleEffectData {
     char _spacer2[4];
 };
 
+struct grGimmickEffect {
+    char _spacer[40];
+};
+
 class grGimmick : public Ground {
-    protected:
-        char spacer[0x48];
+
     public:
+        // 5C
+        int numSndGenerators;
+        // 60
+        snd3DGenerator* snd3DGenerators;
+        // 64
+        int numSoundEffects;
+        // 68
+        grGimmickEffect* soundEffects;
+        // 6C
+        int numEffects;
+        // 70
+        grGimmickEffect* effects;
+        // 74
+        char _spacer6[8];
+        // 7C
+        void* gimmickData;
+        // 80
+        u32 unk1;
+        // 84
+        u32 unk2;
+        // 88
+        u32 unk3;
+        // 8C
+        u32 unk4;
+        // 90
+        grCalcWorldCallBack calcWorldCallBack;
+        // A0
+        char unk5;
+        // A1
+        char transparencyFlag;
+        // A2
+        char _spacer7[34];
+        // C4
+        char spacer[0x48];
+
         grGimmick(char* taskName);
         
         virtual void processUpdate();
