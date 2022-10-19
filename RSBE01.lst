@@ -2,6 +2,7 @@
 805a0148: g_ecMgr
 8059FFAC: g_gfGameApplication
 805A01D0: g_sndSystem
+27,6,58D8: g_stTriggerMng
 
 // System
 803f1254:__save_fpr
@@ -106,6 +107,7 @@
 80028498:setFrame__16gfModelAnimationFf
 80028650:setUpdateRate__16gfModelAnimationFf
 80028278:setLoop__16gfModelAnimationFb
+800278b0:unbindNodeAnim__16gfModelAnimationFP6ScnMdl
 
 // mttrig
 8003fd5c:mtSinF__Ff
@@ -324,23 +326,26 @@
 27,1,0026b0f8:updateCallback__9grGimmickFUi
 27,1,0026b17c:fixedPosition__9grGimmickFf
 27,1,0026b254:getTgtNode__9grGimmickFv
-27,1,00231bcc:getGimmickData__9grGimmickFUi
+27,1,00231bcc:getGimmickData__9grGimmickFv
 27,1,0026bcc0:changeNodeAnim__9grGimmickFUiUi
 27,1,0026a5e8:createFadeVisibleProduction__9grGimmickFf
 27,1,0026a664:createSoundEffectVisibleProductionForExcel__9grGimmickFUiUiUi
-27,1,0026a6b8:createEffectVisibleProductionForExcel__9grGimmickFUiUiUi
+27,1,0026a6b8:createEffectVisibleProductionForExcel__9grGimmickFP25grGimmickSimpleEffectDataUiUi
 27,1,0026a708:setSimpleEffectVisibleProduction__9grGimmickFv
 27,1,0026daf0:dbDispInvalidatedByCameraClippingSphere__9grGimmickFv
-27,1,002304CC:setGimmickData__9grGimmickFUi
+27,1,002304CC:setGimmickData__9grGimmickFPv
 27,1,00231BC4:getTransparencyFlag__9grGimmickFv
 27,1,0026BB1C:makeCalcuCallback__9grGimmickFUi8HeapType
 27,1,0026BC9C:setCalcuCallbackRoot__9grGimmickFUi
 27,1,0026dbd0:getPos__9grGimmickFP5Vec3fP9grGimmick
 27,1,0026db8c:setPos__9grGimmickFP5Vec3f
 27,1,0026DBB4:setPos__9grGimmickFfff
+27,1,0026DC60:setRot__9grGimmickFfff
 27,1,0026DD00:getScale__9grGimmickFP5Vec3fP9grGimmick
 27,1,0026DCBC:setScale__9grGimmickFP5Vec3f
 27,1,0026DCE4:setScale__9grGimmickFfff
+27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoP11TriggerDataPc
+27,1,0026DA8C:createSimpleEffectData__9grGimmickFP25grGimmickSimpleEffectDataUiPc
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc
@@ -367,7 +372,7 @@
 27,1,002653C8:setTeamYakumono__10grYakumonoFUiUi
 27,1,00265424:getTeamYakumono__10grYakumonoFUi
 27,1,0026546C:setOffsetAttack__10grYakumonoFP5Vec3fi
-27,1,00265480:setAreaGimmick__10grYakumonoFUiUiUiUi
+27,1,00265480:setAreaGimmick__10grYakumonoFP18grYakumonoAreaDataP18grYakumonoAreaInitP18grYakumonoAreaInfob
 27,1,00267548:setAttackGimmick__10grYakumonoFiiUiP20grYakumonoAttackDataP23grYakumonoAttackDetails
 27,1,002675E0:setSoCollisionAttackData__10grYakumonoFP21soCollisionAttackDataP20grYakumonoAttackDataP23grYakumonoAttackDetails
 27,1,002677AC:setAttackGimmickDetails__10grYakumonoFP21soCollisionAttackDataffffiP5Vec3fiiiiUiUiUibUi26CollisionAttackElementType28CollisionAttackHitSoundLevel27CollisionAttackHitSoundTypebbbbbbUiUibbb32CollisionAttackFacingRestrictionbbbbbUib
@@ -414,3 +419,9 @@
 
 // stPositions
 27,1,00226794:getDeadRange__11stPositionsFPA2_f
+
+// stTriggerMng
+27,1,00231FDC:createTrigger__12stTriggerMngFUii
+
+// stTrigger
+27,1,00233640:setObserveYakumono__9stTriggerFP8Yakumono

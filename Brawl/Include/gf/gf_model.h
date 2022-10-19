@@ -6,6 +6,7 @@
 #include <nw4r/g3d/g3d_anmtexpat.h>
 #include <nw4r/g3d/g3d_anmtexsrt.h>
 #include <nw4r/g3d/g3d_anmvis.h>
+#include <nw4r/g3d/g3d_scnmdl.h>
 
 class gfModelAnimation {
 public:
@@ -23,6 +24,7 @@ public:
     void setFrame(float frame);
     void setUpdateRate(float updateRate);
     void setLoop(bool shouldLoop);
+    void unbindNodeAnim(ScnMdl* sceneModel);
 
 };
 

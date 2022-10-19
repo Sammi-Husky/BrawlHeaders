@@ -45,7 +45,7 @@ class Ground : public gfTask {
         // 34
         char _spacer5[0x48];
         // 7C
-        u32 gimmickData;
+        void* gimmickData;
         // 80
         u32 unk1;
         // 84

@@ -1,6 +1,32 @@
 #pragma once
 
 #include <gr/ground.h>
+#include <st/st_trigger.h>
+
+struct grGimmickMotionPathData {
+    float motionRatio;
+    char index;
+    char field_0x5;
+    char mdlIndex;
+};
+
+struct grGimmickMotionPathInfo {
+    gfArchive* archive;
+    grGimmickMotionPathData* motionPathData;
+    int field_0x8;
+    int field_0xc;
+    int field_0x10;
+    int field_0x14;
+    int field_0x18;
+    int field_0x1c;
+    int field_0x20;
+};
+
+struct grGimmickSimpleEffectData {
+    char _spacer[6];
+    short nodeIndex;
+    char _spacer2[4];
+};
 
 class grGimmick : public Ground {
     protected:
@@ -24,12 +50,12 @@ class grGimmick : public Ground {
         virtual void fixedPosition(float unk1);
         virtual void setTgtNode(char* unk1);
         virtual u32 getTgtNode();
-        virtual void setGimmickData(u32 unk);
-        virtual void getGimmickData(u32 unk);
+        virtual void setGimmickData(void* gimmickData);
+        virtual void* getGimmickData();
         virtual void changeNodeAnim(u32 unk1, u32 unk2);
         virtual void createFadeVisibleProduction(float unk);
         virtual void createSoundEffectVisibleProductionForExcel(u32 unk1, u32 unk2, u32 unk3);
-        virtual void createEffectVisibleProductionForExcel(u32 unk1, u32 unk2, u32 unk3);
+        virtual void createEffectVisibleProductionForExcel(grGimmickSimpleEffectData *simpleEffectData, u32 unk2, u32 unk3);
         virtual void setSimpleEffectVisibleProduction(); // TODO
         virtual void dbDispInvalidatedByCameraClippingSphere(); // TODO
         virtual void setTransparency(u32 unk1, u32 unk2);
@@ -40,22 +66,22 @@ class grGimmick : public Ground {
         void changeTexAnim(u32 unk1, u32 unk2);
         void changeTexSrtAnim(u32 unk1, u32 unk2);
         void changeVisibleAnim(u32 unk1, u32 unk2);
-        void createAttachMotionPath(int* unk1, short* unk2, char* unk3);
+        void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, TriggerData* triggerData, char* nodeName);
         void createEffectWork(int unk1);
         void createIsValidTrigger(short* unk1);
-        void createSimpleEffectData(u32* unk1, u32 unk2, char* nodeName);
+        void createSimpleEffectData(grGimmickSimpleEffectData* simpleEffectData, u32 unk2, char* nodeName);
         void createSoundWork(u32 unk1, u32 unk2);
         u32 getMaterialColor(int* unk1, char* unk2, u32* sceneModelIndex);
         u32 getMaterialTevColor(int* unk1, char* unk2, u32* sceneModelIndex);
-        void getMatrix(int* matrix);
+        void getMatrix(Matrix* matrix);
         void makeCalcuCallback(u32 numCallbackData, HeapType heapType);
         void setAttachPathdataFrame(float frame);
         void setCalcuCallbackRoot(u32 unk1);
         void setMaterialAlpha(char* unk1, u32 unk2);
         void setMaterialColor(u32* unk1, char* unk2, u32* unk3, u32* sceneModelIndex);
         void setMaterialTevColor(u32* unk1, char* unk2, u32* unk3, u32* sceneModelIndex);
-        void setMatrix(int* matrix);
-        void setPos(int* matrix);
+        void setMatrix(Matrix* matrix);
+        void setPos(Matrix* matrix);
         void setPos(Vec3f* pos);
         void setPos(float x, float y, float z);
         void setPosGimmickEffect(int unk1, Vec3f* pos);
