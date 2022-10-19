@@ -11,6 +11,7 @@ struct grGimmickMotionPathData {
     char index;
     char field_0x5;
     char mdlIndex;
+    char _pad;
 };
 
 struct grGimmickMotionPathInfo {
@@ -25,14 +26,39 @@ struct grGimmickMotionPathInfo {
     int field_0x20;
 };
 
+struct grGimmickEffect {
+    char _spacer[40];
+};
+
 struct grGimmickSimpleEffectData {
     char _spacer[6];
     short nodeIndex;
     char _spacer2[4];
 };
 
-struct grGimmickEffect {
-    char _spacer[40];
+class grVisibleProduction {
+    virtual ~grVisibleProduction();
+    virtual void updateProduct();
+    virtual void initialize();
+    virtual void remove();
+    virtual void setStart();
+    virtual void productFlowStandby();
+    virtual void productFlowStart();
+    virtual void productFlowProducing();
+    virtual void productFlowEnd();
+    virtual void setEnable(bool enable);
+    virtual bool isEnable();
+    virtual bool isFinished();
+    virtual bool isStandby();
+    virtual bool isExecuting();
+    virtual bool isVisiblePermission();
+    virtual void setForcedEnding();
+
+    int field_0x4;
+    float field_0x8;
+    bool enabled;
+    bool visiblePermission;
+    char _padding[2];
 };
 
 class grGimmick : public Ground {
@@ -69,9 +95,11 @@ class grGimmick : public Ground {
         // A1
         char transparencyFlag;
         // A2
-        char _spacer7[34];
-        // C4
-        char spacer[0x48];
+        char _spacer7[26];
+        // BC
+        grVisibleProduction* visibleProductions[4];
+        // CC
+        char spacer[0x40];
 
         grGimmick(char* taskName);
         
@@ -96,7 +124,7 @@ class grGimmick : public Ground {
         virtual void changeNodeAnim(u32 unk1, u32 unk2);
         virtual void createFadeVisibleProduction(float unk);
         virtual void createSoundEffectVisibleProductionForExcel(u32 unk1, u32 unk2, u32 unk3);
-        virtual void createEffectVisibleProductionForExcel(grGimmickSimpleEffectData *simpleEffectData, u32 unk2, u32 unk3);
+        virtual void createEffectVisibleProductionForExcel(grGimmickSimpleEffectData *simpleEffectData, u32* visProdIndexPtr, grVisibleProduction* visProds[]);
         virtual void setSimpleEffectVisibleProduction(); // TODO
         virtual void dbDispInvalidatedByCameraClippingSphere(); // TODO
         virtual void setTransparency(u32 unk1, u32 unk2);
@@ -109,7 +137,7 @@ class grGimmick : public Ground {
         void changeVisibleAnim(u32 unk1, u32 unk2);
         void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, TriggerData* triggerData, char* nodeName);
         void createEffectWork(int unk1);
-        void createIsValidTrigger(short* unk1);
+        void createIsValidTrigger(TriggerData* triggerData);
         void createSimpleEffectData(grGimmickSimpleEffectData* simpleEffectData, u32 unk2, char* nodeName);
         void createSoundWork(u32 unk1, u32 unk2);
         u32 getMaterialColor(int* unk1, char* unk2, u32* sceneModelIndex);

@@ -330,7 +330,7 @@
 27,1,0026bcc0:changeNodeAnim__9grGimmickFUiUi
 27,1,0026a5e8:createFadeVisibleProduction__9grGimmickFf
 27,1,0026a664:createSoundEffectVisibleProductionForExcel__9grGimmickFUiUiUi
-27,1,0026a6b8:createEffectVisibleProductionForExcel__9grGimmickFP25grGimmickSimpleEffectDataUiUi
+27,1,0026a6b8:createEffectVisibleProductionForExcel__9grGimmickFP25grGimmickSimpleEffectDataPUiPP19grVisibleProduction
 27,1,0026a708:setSimpleEffectVisibleProduction__9grGimmickFv
 27,1,0026daf0:dbDispInvalidatedByCameraClippingSphere__9grGimmickFv
 27,1,002304CC:setGimmickData__9grGimmickFPv
@@ -346,6 +346,7 @@
 27,1,0026DCE4:setScale__9grGimmickFfff
 27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoP11TriggerDataPc
 27,1,0026DA8C:createSimpleEffectData__9grGimmickFP25grGimmickSimpleEffectDataUiPc
+27,1,0026CB94:createIsValidTrigger__9grGimmickFP11TriggerData
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc
