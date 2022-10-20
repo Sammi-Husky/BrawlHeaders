@@ -80,6 +80,10 @@ struct grYakumonoAreaInfo {
 
 };
 
+struct grGimmickEventInfo {
+    int state;
+};
+
 class grYakumono : public grGimmick
 {
     public:
@@ -96,7 +100,7 @@ class grYakumono : public grGimmick
         virtual void onDamage(int index, soDamage* damage, soDamageAttackerInfo* attackerInfo);
         virtual void onInflict(int* unk1, u32 unk2); // TODO
         virtual void onInflictEach(soCollisionLog* collisionLog, float power);
-        virtual void onGimmickEvent(int* unk1, int* taskId);
+        virtual void onGimmickEvent(grGimmickEventInfo* eventInfo, int* taskId);
         virtual bool enableYakumono(u32 unk1);
         virtual bool disableYakumono(u32 unk1, u32 unk2);
         virtual bool enableHit(u32 unk1, u32 unk2);

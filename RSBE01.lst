@@ -344,9 +344,9 @@
 27,1,0026DD00:getScale__9grGimmickFP5Vec3fP9grGimmick
 27,1,0026DCBC:setScale__9grGimmickFP5Vec3f
 27,1,0026DCE4:setScale__9grGimmickFfff
-27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoP11TriggerDataPc
+27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoP13stTriggerDataPc
 27,1,0026DA8C:createSimpleEffectData__9grGimmickFP25grGimmickSimpleEffectDataUiPc
-27,1,0026CB94:createIsValidTrigger__9grGimmickFP11TriggerData
+27,1,0026CB94:createIsValidTrigger__9grGimmickFP13stTriggerData
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc
@@ -360,7 +360,7 @@
 27,1,00264dd4:onDamage__10grYakumonoFiP8soDamageP20soDamageAttackerInfo
 27,1,00264DE4:onInflict__10grYakumonoFPiUi
 27,1,00264DE8:onInflictEach__10grYakumonoFP14soCollisionLogf
-27,1,00264DEC:onGimmickEvent__10grYakumonoFPiPi
+27,1,00264DEC:onGimmickEvent__10grYakumonoFP18grGimmickEventInfoPi
 27,1,002650DC:enableYakumono__10grYakumonoFUi
 27,1,00265160:disableYakumono__10grYakumonoFUiUi
 27,1,002651D4:enableHit__10grYakumonoFUiUi
@@ -403,6 +403,9 @@
 27,1,0027928C:startEntityAutoLoop__8grMadeinFv
 27,1,00279590:setMotion__8grMadeinFUi
 
+// grGimmickMotionPath
+27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf
+
 // ftExternalValueAccesser
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
 
@@ -422,7 +425,8 @@
 27,1,00226794:getDeadRange__11stPositionsFPA2_f
 
 // stTriggerMng
-27,1,00231FDC:createTrigger__12stTriggerMngFUii
+27,1,00231FDC:createTrigger__12stTriggerMngF11GimmickKindi
+27,1,00232118:createTrigger__12stTriggerMngF11GimmickKindP13stTriggerData
 
 // stTrigger
 27,1,00233640:setObserveYakumono__9stTriggerFP8Yakumono

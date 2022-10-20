@@ -5,13 +5,12 @@
 #include <snd/snd_3d_generator.h>
 #include <st/st_trigger.h>
 
-
 struct grGimmickMotionPathData {
     float motionRatio;
     char index;
     char field_0x5;
     char mdlIndex;
-    char _pad;
+    char _padding;
 };
 
 struct grGimmickMotionPathInfo {
@@ -35,6 +34,8 @@ struct grGimmickSimpleEffectData {
     short nodeIndex;
     char _spacer2[4];
 };
+
+class grGimmickMotionPath;
 
 class grVisibleProduction {
     virtual ~grVisibleProduction();
@@ -87,7 +88,7 @@ class grGimmick : public Ground {
         // 88
         u32 unk3;
         // 8C
-        u32 unk4;
+        grGimmickMotionPath* gimmickMotionPath;
         // 90
         grCalcWorldCallBack calcWorldCallBack;
         // A0
@@ -135,9 +136,9 @@ class grGimmick : public Ground {
         void changeTexAnim(u32 unk1, u32 unk2);
         void changeTexSrtAnim(u32 unk1, u32 unk2);
         void changeVisibleAnim(u32 unk1, u32 unk2);
-        void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, TriggerData* triggerData, char* nodeName);
+        void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, stTriggerData* triggerData, char* nodeName);
         void createEffectWork(int unk1);
-        void createIsValidTrigger(TriggerData* triggerData);
+        void createIsValidTrigger(stTriggerData* triggerData);
         void createSimpleEffectData(grGimmickSimpleEffectData* simpleEffectData, u32 unk2, char* nodeName);
         void createSoundWork(u32 unk1, u32 unk2);
         u32 getMaterialColor(int* unk1, char* unk2, u32* sceneModelIndex);
