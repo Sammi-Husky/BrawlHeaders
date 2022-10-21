@@ -1,5 +1,13 @@
 #pragma once
 
+#include <so/so_area_module_impl.h>
+
+struct YakumonoAreaInfo {
+    int field_0x0;
+    int field_0x4;
+    soAreaInit* init;
+};
+
 class Yakumono {
     public:
         void setSituationKind(int situationKind);

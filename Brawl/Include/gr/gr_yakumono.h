@@ -55,31 +55,6 @@ struct grYakumonoAttackDetails {
     float hitstopMultiplier;
 };
 
-struct grYakumonoAreaData {
-    char field0_0x0;
-    char field1_0x1;
-    short field2_0x2;
-    int field3_0x4;
-    int field4_0x8;
-    int field5_0xc;
-    float field6_0x10;
-    float field7_0x14;
-    float field8_0x18;
-    float field9_0x1c;
-};
-
-struct grYakumonoAreaInit {
-    grYakumonoAreaData* data;
-    int field_0x4;
-};
-
-struct grYakumonoAreaInfo {
-    int field_0x0;
-    int field_0x4;
-    grYakumonoAreaInit* init;
-
-};
-
 struct grGimmickEventInfo {
     int state;
 };
@@ -113,7 +88,7 @@ class grYakumono : public grGimmick
         virtual bool setTeamYakumono(u32 teamId, u32 teamOwnerId);
         virtual bool getTeamYakumono(u32 unk1);
         virtual bool setOffsetAttack(Vec3f* offsetPos, int index);
-        virtual void setAreaGimmick(grYakumonoAreaData* areaData, grYakumonoAreaInit* init, grYakumonoAreaInfo* info, bool unk4);
+        virtual void setAreaGimmick(soAreaData* areaData, soAreaInit* areaInit, YakumonoAreaInfo* areaInfo, bool unk4);
         virtual void setAttackGimmick(int index, int groupIndex, u32 nodeIndex, grYakumonoAttackData *grAttackData,
                                       grYakumonoAttackDetails *grAttackDetails);
         virtual void setSoCollisionAttackData(soCollisionAttackData* attackData, grYakumonoAttackData *grAttackData,
