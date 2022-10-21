@@ -2,6 +2,7 @@
 805a0148: g_ecMgr
 8059FFAC: g_gfGameApplication
 805A01D0: g_sndSystem
+805a0140: g_efScreen
 27,6,58D8: g_stTriggerMng
 
 // System
@@ -61,12 +62,16 @@
 
 // NW4R
 8018d2a4:GetResMdlNumEntries__Q24nw4r3g3dFPPQ34nw4r3g3d7ResFile
+8018d770:GetResAnmChrNumEntries__Q24nw4r3g3dFP16gfModelAnimation
 
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
 8005f7a4:setEffect__5ecMgrFUi
 8005fc5c:setParent__5ecMgrFUiP6ScnMdlPci
 8005fc5c:setParent__5ecMgrFUiPP6ScnMdlPci
+
+// efScreen
+8005e0fc:requestFill__8efScreenFfiiP5Color
 
 // sndSystem
 800742b0:playSE__9sndSystemFiiiii
@@ -347,6 +352,7 @@
 27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoP13stTriggerDataPc
 27,1,0026DA8C:createSimpleEffectData__9grGimmickFP25grGimmickSimpleEffectDataUiPc
 27,1,0026CB94:createIsValidTrigger__9grGimmickFP13stTriggerData
+27,1,0026D124:createEffectWork__9grGimmickFi
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc

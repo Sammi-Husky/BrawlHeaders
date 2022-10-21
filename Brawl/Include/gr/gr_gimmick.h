@@ -25,8 +25,19 @@ struct grGimmickMotionPathInfo {
     int field_0x20;
 };
 
-struct grGimmickEffect {
-    char _spacer[40];
+struct Effect_Info {
+    short field_0x0;
+    short field_0x2;
+    float field_0x4;
+    int field_0x8;
+    int field_0xc;
+    int field_0x10;
+    int field_0x14;
+    short nodeIndex;
+    short field_0x1a;
+    float field_0x1c;
+    float field_0x20;
+    float field_0x24;
 };
 
 struct grGimmickSimpleEffectData {
@@ -72,11 +83,11 @@ class grGimmick : public Ground {
         // 64
         int numSoundEffects;
         // 68
-        grGimmickEffect* soundEffects;
+        Effect_Info* soundEffects;
         // 6C
         int numEffects;
         // 70
-        grGimmickEffect* effects;
+        Effect_Info* effects;
         // 74
         char _spacer6[8];
         // 7C
@@ -137,7 +148,7 @@ class grGimmick : public Ground {
         void changeTexSrtAnim(u32 unk1, u32 unk2);
         void changeVisibleAnim(u32 unk1, u32 unk2);
         void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, stTriggerData* triggerData, char* nodeName);
-        void createEffectWork(int unk1);
+        void createEffectWork(int numEffects);
         void createIsValidTrigger(stTriggerData* triggerData);
         void createSimpleEffectData(grGimmickSimpleEffectData* simpleEffectData, u32 unk2, char* nodeName);
         void createSoundWork(u32 unk1, u32 unk2);

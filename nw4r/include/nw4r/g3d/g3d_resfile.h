@@ -1,6 +1,7 @@
 #pragma once
 
 #include <types.h>
+#include <gf/gf_model.h>
 
 namespace nw4r { namespace g3d {
 
@@ -14,7 +15,8 @@ struct ResFile
     /* data */
 };
 
-u32 GetResMdlNumEntries(ResFile** file); 
+u32 GetResMdlNumEntries(ResFile** file);
+u32 GetResAnmChrNumEntries(gfModelAnimation* modelAnim);
 
 } // namespace g3d
 } // namespace nw4 
