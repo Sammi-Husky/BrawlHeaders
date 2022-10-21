@@ -1,6 +1,7 @@
 #pragma once
 
 #include <gf/gf_task.h>
+#include <st/st_trigger_observe.h>
 #include <yk/yakumono.h>
 #include <ut/ut_list.h>
 
@@ -22,29 +23,31 @@ enum GimmickKind {
     Gimmick_Kind_Eat = 0x2f,
     Gimmick_Kind_Elevator = 0x35,
     Gimmick_Kind_Truck = 0x3a,
-
 };
 
 struct stTriggerData {
     unsigned short triggerId;
-    char unk1;
+    bool isValidFlag;
     char unk2;
 };
 
 class stTrigger : public utListEntry {
     GimmickKind gimmickKind;
     int id;
-    char _spacer[12];
+    char _spacer[8];
+    stObsTriggerCB* obsTriggerCB;
     Yakumono* yakumono;
-    char _spacer2[20];
+    char _spacer2[12];
+    bool isValidFlag;
+    char _spacer3[7];
 
     public:
         void setObserveYakumono(Yakumono* yakumono);
 };
 
 class stTriggerMng : public gfTask {
-    utListHead* triggerHead;
-    char _spacer[29];
+    utListHead triggerHead;
+    char _spacer[21];
     public:
 
         virtual void processBegin();
@@ -54,6 +57,7 @@ class stTriggerMng : public gfTask {
 
         stTrigger* createTrigger(GimmickKind gimmickKind, int triggerId);
         stTrigger* createTrigger(GimmickKind gimmickKind, stTriggerData* triggerData);
+        void setTriggerFlag(stTriggerData* triggerData);
 };
 
 extern stTriggerMng* g_stTriggerMng;
