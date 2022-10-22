@@ -27,7 +27,8 @@ enum GimmickKind {
 
 struct stTriggerData {
     unsigned short triggerId;
-    bool isValidFlag;
+    int _padding : 31;
+    bool isValidFlag : 1;
     char unk2;
 };
 
@@ -58,6 +59,7 @@ class stTriggerMng : public gfTask {
         stTrigger* createTrigger(GimmickKind gimmickKind, int triggerId);
         stTrigger* createTrigger(GimmickKind gimmickKind, stTriggerData* triggerData);
         void setTriggerFlag(stTriggerData* triggerData);
+        bool getTriggerFlag(stTriggerData* triggerData, bool defaultFlag);
 };
 
 extern stTriggerMng* g_stTriggerMng;

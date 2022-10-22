@@ -436,6 +436,7 @@
 27,1,00231FDC:createTrigger__12stTriggerMngF11GimmickKindi
 27,1,00232118:createTrigger__12stTriggerMngF11GimmickKindP13stTriggerData
 27,1,00232D4C:setTriggerFlag__12stTriggerMngFP13stTriggerData
+27,1,00232F28:getTriggerFlag__12stTriggerMngFP13stTriggerDatab
 
 // stTrigger
 27,1,00233640:setObserveYakumono__9stTriggerFP8Yakumono
