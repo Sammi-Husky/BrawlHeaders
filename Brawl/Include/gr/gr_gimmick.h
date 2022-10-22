@@ -30,7 +30,7 @@ struct Effect_Info {
     short field_0x2;
     float field_0x4;
     int field_0x8;
-    int field_0xc;
+    int id;
     int field_0x10;
     int field_0x14;
     short nodeIndex;

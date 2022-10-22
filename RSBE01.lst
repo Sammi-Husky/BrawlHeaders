@@ -368,7 +368,7 @@
 27,1,00264dd4:onDamage__10grYakumonoFiP8soDamageP20soDamageAttackerInfo
 27,1,00264DE4:onInflict__10grYakumonoFPiUi
 27,1,00264DE8:onInflictEach__10grYakumonoFP14soCollisionLogf
-27,1,00264DEC:onGimmickEvent__10grYakumonoFP18grGimmickEventInfoPi
+27,1,00264DEC:onGimmickEvent__10grYakumonoFP18soGimmickEventInfoPi
 27,1,002650DC:enableYakumono__10grYakumonoFUi
 27,1,00265160:disableYakumono__10grYakumonoFUiUi
 27,1,002651D4:enableHit__10grYakumonoFUiUi

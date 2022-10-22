@@ -1,6 +1,8 @@
 #pragma once
 
 #include <so/so_area_module_impl.h>
+#include <so/so_gimmick_event_observer.h>
+
 
 struct YakumonoAreaInfo {
     int field_0x0;
