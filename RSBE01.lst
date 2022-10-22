@@ -74,7 +74,7 @@
 8005e0fc:requestFill__8efScreenFfiiP5Color
 
 // sndSystem
-800742b0:playSE__9sndSystemFiiiii
+800742b0:playSE__9sndSystemF5SndIDiiii
 
 // gfTask
 8002d8b8:__ct__6gfTaskFPciiii
@@ -319,6 +319,7 @@
 27,1,0026022C:setVisibility__6GroundFUi
 
 // grGimmick
+27,1,0026A804:update__9grGimmickFf
 27,1,0026DE2C:renderDebug__9grGimmickFv
 27,1,0026daf4:setTransparency__9grGimmickFUi
 27,1,0026C8C8:bindData__9grGimmickFP9gfArchive
@@ -353,6 +354,7 @@
 27,1,0026DA8C:createSimpleEffectData__9grGimmickFP25grGimmickSimpleEffectDataUiPc
 27,1,0026CB94:createIsValidTrigger__9grGimmickFP13stTriggerData
 27,1,0026D124:createEffectWork__9grGimmickFi
+27,1,0026D22C:startGimmickEffect__9grGimmickFUi
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc

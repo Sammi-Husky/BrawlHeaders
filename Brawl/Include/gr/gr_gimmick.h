@@ -127,7 +127,7 @@ class grGimmick : public Ground {
 
         virtual void invalidatedByCameraClipping();
         virtual void setTransparencyFlag(char flag);
-        virtual void updateCallback(u32 unk1);
+        virtual void updateCallback(u32 index);
         virtual void fixedPosition(float unk1);
         virtual void setTgtNode(char* unk1);
         virtual u32 getTgtNode();
@@ -165,7 +165,7 @@ class grGimmick : public Ground {
         void setPos(Matrix* matrix);
         void setPos(Vec3f* pos);
         void setPos(float x, float y, float z);
-        void setPosGimmickEffect(int unk1, Vec3f* pos);
+        void setPosGimmickEffect(u32 index, Vec3f* pos);
         void setPRSGimmickEffect(u32 index);
         void setRot(Vec3f* rot);
         void setRot(float x, float y, float z);
@@ -174,10 +174,10 @@ class grGimmick : public Ground {
         static void getPos(Vec3f* pos, grGimmick* ground);
         static void getRot(Vec3f* rot, grGimmick* ground);
         static void getScale(Vec3f* scale, grGimmick* ground);
-        void startGimmickEffect(u32 unk1);
-        void startGimmickSE(u32 unk1);
-        void stopGimmickEffect(u32 unk1);
-        void stopGimmickSE(u32 unk1);
+        void startGimmickEffect(u32 index);
+        void startGimmickSE(u32 index);
+        void stopGimmickEffect(u32 index);
+        void stopGimmickSE(u32 index);
         void updataGimmickEffect(float unk1);
         void updataGimmickSE(float unk1);
         void updateProduction(float unk1);
