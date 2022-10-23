@@ -410,6 +410,7 @@
 27,1,00278E38:startEntity__8grMadeinFv
 27,1,0027928C:startEntityAutoLoop__8grMadeinFv
 27,1,00279590:setMotion__8grMadeinFUi
+27,1,00279968:setMotionDetails__8grMadeinFUiUiUiUiUi
 
 // grGimmickMotionPath
 27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf

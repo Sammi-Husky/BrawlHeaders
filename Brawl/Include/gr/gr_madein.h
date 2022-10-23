@@ -61,7 +61,7 @@ public:
     void setHitPoint(float size, Vec3f* startOffsetPos, Vec3f* endOffsetPos, int unk4, int nodeIndex);
     void setMatrix(Matrix matrix, void* unk1);
     void setMotion(u32 anmIndex);
-    void setMotionDetails(u32 anmChrInde, u32 anmVisIndex, u32 anmTexPatIndex, u32 anmTexSrtIndex, u32 anmClrIndex);
+    void setMotionDetails(u32 anmChrIndex, u32 anmVisIndex, u32 anmTexPatIndex, u32 anmTexSrtIndex, u32 anmClrIndex);
     void setupYakumonoClass();
     void startEntity();
     void startEntityAutoLoop();
