@@ -2,7 +2,6 @@
 
 #include <ft/fighter.h>
 
-class ftExternalValueAccesser {
-public:
-    static float getWeight(Fighter* fighter);
-};
+namespace ftExternalValueAccesser {
+    float getWeight(Fighter* fighter);
+}

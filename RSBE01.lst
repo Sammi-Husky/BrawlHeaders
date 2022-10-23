@@ -390,6 +390,7 @@
 27,1,00267AF4:setSituationODD__10grYakumonoFv
 27,1,002652A8:setSleepHit__10grYakumonoFb
 27,1,00265294:setSleepAttack__10grYakumonoFb
+27,1,00264EE4:getPlayerNumber__10grYakumonoFP12grCollStatus
 
 // grMadein
 27,1,0027583C:__ct__8grMadeinFPc
@@ -414,6 +415,9 @@
 
 // grGimmickMotionPath
 27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf
+
+// soExternalValueAccesser
+27,1,0008CB0C:getTeamNo__23soExternalValueAccesserFP11StageObject
 
 // ftExternalValueAccesser
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
