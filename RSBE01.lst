@@ -114,6 +114,9 @@
 80028278:setLoop__16gfModelAnimationFb
 800278b0:unbindNodeAnim__16gfModelAnimationFP6ScnMdl
 
+// gfCamera
+80019fa4:getManager__15gfCameraManagerFv
+
 // mttrig
 8003fd5c:mtSinF__Ff
 8003fdfc:mtCosF__Ff
