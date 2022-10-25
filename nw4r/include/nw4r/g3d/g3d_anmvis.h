@@ -16,10 +16,9 @@ public:
     virtual void Release();
     virtual int* GetResult(int* unk1, int unk2);
     virtual int Attach(int unk1, int* unk2); // TODO
-    virtual int* Detach(int unk1); // TODO
+    virtual int* Detach(int unk1);           // TODO
 
     AnmObjVisRes* Construct(int* unk1, int* unk2, int* unk3, int* unk4);
-
 
     char _spacer[40];
 

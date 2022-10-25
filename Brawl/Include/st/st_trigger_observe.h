@@ -1,7 +1,7 @@
 #pragma once
 
-#include <gf/gf_callback.h>
 #include <gf/gf_area.h>
+#include <gf/gf_callback.h>
 
 struct GimmickAreaData {
     char _spacer[40];
@@ -15,7 +15,6 @@ class stObsTriggerCB : public gfCallback {
     virtual gfArea* getAreaPointer();
     virtual bool getAreaID(int* areaID);
     virtual void setAreaSleep(bool isSleep);
-
 };
 
 class stObsTriggerArea : public stObsTriggerCB {
@@ -30,5 +29,4 @@ class stObsTriggerArea : public stObsTriggerCB {
     virtual void setAreaSleep(bool isSleep);
     virtual GimmickAreaData* getAreaDataPointer();
     virtual void setArea(gfArea* area);
-
 };

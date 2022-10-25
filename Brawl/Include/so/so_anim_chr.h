@@ -12,5 +12,3 @@ struct soAnimChr {
 
     char _spacer2[0x8];
 };
-
-

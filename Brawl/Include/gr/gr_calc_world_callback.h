@@ -3,13 +3,13 @@
 #include <mt/mt_matrix.h>
 
 class grNodeCallbackData {
-    public:
-        char _spacer[8];
-        Vec3f pos;
-        Vec3f rot;
-        Vec3f scale;
-        char _spacer2[36];
-        Matrix matrix;
+public:
+    char _spacer[8];
+    Vec3f pos;
+    Vec3f rot;
+    Vec3f scale;
+    char _spacer2[36];
+    Matrix matrix;
 };
 
 class grCalcWorldCallBack {
@@ -25,10 +25,6 @@ public:
     virtual void ExecCallbackC(); // TODO
     virtual int initialize(int unk1, int unk2);
     virtual int clearAll();
-
 };
-
-
-
 
 // Size: 16

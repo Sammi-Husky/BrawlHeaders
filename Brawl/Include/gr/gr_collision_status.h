@@ -1,11 +1,10 @@
 #pragma once
 
+#include <gr/gr_collision.h>
 #include <gr/gr_collision_shape_circle.h>
 #include <gr/gr_collision_shape_rhombus.h>
-#include <gr/gr_collision.h>
 
-class grCollStatus
-{
+class grCollStatus {
 public:
     // 0
     grCollStatus* next;

@@ -5,6 +5,7 @@
 class grSeqYakumono : public grYakumono {
 protected:
     char spacer_[12];
+
 public:
     grSeqYakumono(char* taskName);
     void createSeSeqWork(int unk1);

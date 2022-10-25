@@ -1,19 +1,19 @@
 
 class gfScene {
-    public:
-        char* sceneName;
-        virtual void start();
-        virtual void process();
-        virtual void exit();
-        virtual void setModule();
+public:
+    char* sceneName;
+    virtual void start();
+    virtual void process();
+    virtual void exit();
+    virtual void setModule();
 };
 
 class gfSequence {
-    public:
-        char* sequenceName;
-        virtual void start();
-        virtual void setNext();
-        virtual void exit();
+public:
+    char* sequenceName;
+    virtual void start();
+    virtual void setNext();
+    virtual void exit();
 };
 
 class gfSceneManager {

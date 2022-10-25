@@ -1,5 +1,5 @@
 #pragma once
 
 extern "C" {
-    void OSReport(const char * fmt, ...);
+void OSReport(const char* fmt, ...);
 }

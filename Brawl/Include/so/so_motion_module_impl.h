@@ -1,20 +1,20 @@
 #pragma once
 
+#include <containers.h>
 #include <memory.h>
-#include <so/so_physics_module_impl.h>
-#include <so/so_model_module_impl.h>
+#include <so/so_anim_chr.h>
 #include <so/so_event_observer>
 #include <so/so_event_presenter>
-#include <so/stageobject.h>
-#include <so/so_anim_chr.h>
-#include <containers.h>
+#include <so/so_model_module_impl.h>
 #include <so/so_module_accesser.h>
+#include <so/so_physics_module_impl.h>
+#include <so/stageobject.h>
 
-class soMotionEventObserver : public soEventObserver<soMotionEventObserver>  {
+class soMotionEventObserver : public soEventObserver<soMotionEventObserver> {
     virtual void addObserver(int unk1, int unk2);
     virtual void notifyEventChangeMotion() // TODO
 
-    char _spacer1[2];
+        char _spacer1[2];
 };
 
 class soMotionChangeParam {
@@ -283,5 +283,3 @@ class soMotionModuleImpl : public soMotionModule, public soStatusEventObserver, 
     virtual void notifyEventConstructInstance();
     virtual void notifyEventDestructInstance();
 };
-
-

@@ -2,8 +2,8 @@
 
 #include <gf/gf_task.h>
 #include <st/st_trigger_observe.h>
-#include <yk/yakumono.h>
 #include <ut/ut_list.h>
+#include <yk/yakumono.h>
 
 enum GimmickKind {
     Gimmick_Kind_Valid = 0x0,
@@ -42,24 +42,24 @@ class stTrigger : public utListEntry {
     bool isValidFlag;
     char _spacer3[7];
 
-    public:
-        void setObserveYakumono(Yakumono* yakumono);
+public:
+    void setObserveYakumono(Yakumono* yakumono);
 };
 
 class stTriggerMng : public gfTask {
     utListHead triggerHead;
     char _spacer[21];
-    public:
 
-        virtual void processBegin();
-        virtual void processFix();
-        virtual void processGameProc();
-        virtual ~stTriggerMng();
+public:
+    virtual void processBegin();
+    virtual void processFix();
+    virtual void processGameProc();
+    virtual ~stTriggerMng();
 
-        stTrigger* createTrigger(GimmickKind gimmickKind, int triggerId);
-        stTrigger* createTrigger(GimmickKind gimmickKind, stTriggerData* triggerData);
-        void setTriggerFlag(stTriggerData* triggerData);
-        bool getTriggerFlag(stTriggerData* triggerData, bool defaultFlag);
+    stTrigger* createTrigger(GimmickKind gimmickKind, int triggerId);
+    stTrigger* createTrigger(GimmickKind gimmickKind, stTriggerData* triggerData);
+    void setTriggerFlag(stTriggerData* triggerData);
+    bool getTriggerFlag(stTriggerData* triggerData, bool defaultFlag);
 };
 
 extern stTriggerMng* g_stTriggerMng;

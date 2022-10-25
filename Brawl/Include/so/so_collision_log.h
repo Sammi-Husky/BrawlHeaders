@@ -11,5 +11,4 @@ class soCollisionLog {
 
     char _spacer3[14];
 
-
 }; // size 44

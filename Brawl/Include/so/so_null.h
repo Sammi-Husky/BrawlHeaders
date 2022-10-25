@@ -6,5 +6,3 @@ class soNullable {
     bool null;
     char _spacer[3];
 };
-
-

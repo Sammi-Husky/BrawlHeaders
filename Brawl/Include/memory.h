@@ -56,6 +56,5 @@ enum HeapType {
     Thread = 0x3a
 };
 
-
 void* operator new(size_t size, HeapType heap);
 void* operator new[](size_t size, HeapType heap);

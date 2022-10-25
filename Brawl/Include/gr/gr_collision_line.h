@@ -1,7 +1,6 @@
 #pragma once
 
-struct grCollisionLine
-{
+struct grCollisionLine {
     // 0
     short point0Index;
     // 2
@@ -10,5 +9,4 @@ struct grCollisionLine
     char _spacer[12];
     // 16
     char materialType;
-
 };

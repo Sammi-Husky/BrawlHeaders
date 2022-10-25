@@ -3,11 +3,11 @@
 #include <gf/gf_task.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
 
-class ecMgr : public gfTask
-{
-    
+class ecMgr : public gfTask {
+
 private:
     char unk[0xa8];
+
 public:
     ecMgr();
     void setDrawPrio(int prio);

@@ -1,25 +1,20 @@
 #pragma once
 
-struct VtxData
-{
+struct VtxData {
     char _spacer[8];
 };
 
-struct JointData
-{
+struct JointData {
     char _spacer[108];
 };
 
-struct LineData
-{
+struct LineData {
     short pointX;
     short pointY;
     char _spacer[12];
-
 };
 
-class grCollData
-{
+class grCollData {
     short vtxLen;
     short lineLen;
     short jointLen;
@@ -28,4 +23,3 @@ class grCollData
     LineData* lineDataArray;
     JointData* jointDataArray;
 };
-

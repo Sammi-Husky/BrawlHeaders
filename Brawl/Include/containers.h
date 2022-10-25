@@ -8,10 +8,9 @@ struct Color {
 };
 
 class soNullableInterface {
-
 };
 
-template<class T>
+template <class T>
 class soArrayFixed : public soNullableInterface {
     // TODO: Verify params
     virtual void isNull();
@@ -22,7 +21,7 @@ class soArrayFixed : public soNullableInterface {
     virtual ~soArrayFixed();
 };
 
-template<class T>
+template <class T>
 class soArrayContractible : public soArrayFixed<T> {
     // TODO: Verify params
     virtual ~soArrayContractible();
@@ -31,7 +30,7 @@ class soArrayContractible : public soArrayFixed<T> {
     virtual void clear();
 };
 
-template<class T>
+template <class T>
 class soArray : public soArrayContractible<T> {
     virtual ~soArray();
 
@@ -55,7 +54,7 @@ class soArrayVectorCalcInterface {
     virtual ~soArrayVectorCalcInterface();
 };
 
-template<class T>
+template <class T>
 class soArrayVectorAbstract : public soArray<T>, public soArrayVectorCalcInterface {
 
     // TODO: Verify params
@@ -82,7 +81,7 @@ class soArrayVectorAbstract : public soArray<T>, public soArrayVectorCalcInterfa
     virtual void setSize();
 };
 
-template<class T, int C>
+template <class T, int C>
 class soArrayVector : public soArrayVectorAbstract<T> {
     int* unk1;
 

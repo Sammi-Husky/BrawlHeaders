@@ -1,12 +1,11 @@
 #pragma once
 
-#include <gr/gr_collision_line.h>
 #include <gr/gr_collision_joint.h>
+#include <gr/gr_collision_line.h>
 
 class grCollision;
 
-class grCollisionLineWork
-{
+class grCollisionLineWork {
     // 0
     grCollisionLine* collisionLine;
     // 2

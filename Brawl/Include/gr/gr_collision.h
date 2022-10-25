@@ -1,12 +1,11 @@
 #pragma once
 
-#include <types.h>
 #include <gr/gr_collision_linework.h>
+#include <types.h>
 
 class Stage;
 
-class grCollision
-{
+class grCollision {
 private:
     // 0
     short index;

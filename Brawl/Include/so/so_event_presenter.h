@@ -7,5 +7,3 @@ class soEventPresenter {
     // TODO: Verify
     char _spacer1[8];
 };
-
-

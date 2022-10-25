@@ -84,7 +84,6 @@ class soModelModule : virtual public soNullable {
     virtual void setShadowNode();
     virtual void setDisposeInstanceImm();
     virtual ~soModelModule();
-
 };
 
 class soModelModuleSimple : public soModelModule {
@@ -176,7 +175,4 @@ class soModelModuleSimple : public soModelModule {
     virtual void setShadowNode();
     virtual void setDisposeInstanceImm();
     virtual ~soModelModuleSimple();
-
 };
-
-

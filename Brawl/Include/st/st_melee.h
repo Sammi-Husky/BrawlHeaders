@@ -1,10 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <st/st_common_gimmick.h>
+#include <types.h>
 
-class stMelee : public stCommonGimmick
-{
+class stMelee : public stCommonGimmick {
 protected:
     // 0
     char _spacer[0x14];
@@ -12,7 +11,7 @@ protected:
     char wndOnlyData2[0x10];
 
 public:
-    stMelee(char *name, int stageID);
+    stMelee(char* name, int stageID);
     virtual void processBegin();
     virtual void processUpdate();
     virtual void update(float deltaFrame);

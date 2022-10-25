@@ -25,7 +25,6 @@ public:
     void setUpdateRate(float updateRate);
     void setLoop(bool shouldLoop);
     void unbindNodeAnim(ScnMdl* sceneModel);
-
 };
 
 // Size: 32

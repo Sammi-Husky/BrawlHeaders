@@ -39,5 +39,3 @@ class soResourceModuleImpl : public soResourceModule {
     virtual int* getBinFile(int unk1, int unk2, int unk3);
     virtual int* getFile(int unk1, int unk2, int unk3);
 };
-
-

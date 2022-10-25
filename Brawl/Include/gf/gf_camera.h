@@ -22,7 +22,6 @@ public:
     char _spacer3[8];
     CameraProjection projection;
     char _spacer4[48];
-
 };
 
 class gfCameraManager {

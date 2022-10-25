@@ -1,20 +1,20 @@
 #pragma once
 
 #include <memory.h>
-#include <so/stageobject.h>
-#include <so/so_model_module_simple.h>
-#include <so/so_event_presenter>
 #include <so/so_event_observer>
+#include <so/so_event_presenter>
+#include <so/so_model_module_simple.h>
+#include <so/stageobject.h>
 
-class soModelEventObserver : public soEventObserver<soModelEventObserver>  {
+class soModelEventObserver : public soEventObserver<soModelEventObserver> {
     virtual void addObserver(int unk1, int unk2);
     virtual void notifyEventConstructInstance(); //TODO
-    virtual void notifyEventDestructInstance(); //TODO
+    virtual void notifyEventDestructInstance();  //TODO
 
     char _spacer1[2];
 };
 
-class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObserver, public soEventPresenter<soModelEventObserver>  {
+class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObserver, public soEventPresenter<soModelEventObserver> {
     // TODO: verify of offsets are correct with virtual base class
 
     char _spacer1[160];
@@ -87,7 +87,4 @@ class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObser
 
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(int* unk1, int unk2, int unk3);
-
 };
-
-

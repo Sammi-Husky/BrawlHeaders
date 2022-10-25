@@ -1,9 +1,9 @@
 #pragma once
 #include <gr/gr_gimmick.h>
+#include <so/so_collision_attack_part.h>
+#include <so/so_collision_log.h>
 #include <so/so_damage.h>
 #include <so/so_damage_attacker_info.h>
-#include <so/so_collision_log.h>
-#include <so/so_collision_attack_part.h>
 #include <yk/yakumono.h>
 
 struct grYakumonoAttackData {
@@ -55,64 +55,61 @@ struct grYakumonoAttackDetails {
     float hitstopMultiplier;
 };
 
-class grYakumono : public grGimmick
-{
-    public:
-        Yakumono* yakumono;
-        grYakumono(char* taskName);
-        virtual void processUpdate();
-        virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
-        virtual void setValid(u32 unk1);
-        virtual void setValidAttachedEffect(u32 unk1);
-        virtual void preExit();
-        virtual void setTransparency(u32 unk1, u32 unk2);
-        virtual ~grYakumono();
+class grYakumono : public grGimmick {
+public:
+    Yakumono* yakumono;
+    grYakumono(char* taskName);
+    virtual void processUpdate();
+    virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
+    virtual void setValid(u32 unk1);
+    virtual void setValidAttachedEffect(u32 unk1);
+    virtual void preExit();
+    virtual void setTransparency(u32 unk1, u32 unk2);
+    virtual ~grYakumono();
 
-        virtual void onDamage(int index, soDamage* damage, soDamageAttackerInfo* attackerInfo);
-        virtual void onInflict(int* unk1, u32 unk2); // TODO
-        virtual void onInflictEach(soCollisionLog* collisionLog, float power);
-        virtual void onGimmickEvent(soGimmickEventInfo* eventInfo, int* taskId);
-        virtual bool enableYakumono(u32 unk1);
-        virtual bool disableYakumono(u32 unk1, u32 unk2);
-        virtual bool enableHit(u32 unk1, u32 unk2);
-        virtual bool disableHit(u32 unk1, u32 unk2);
-        virtual bool disableAttack(u32 unk1);
-        virtual bool enableArea();
-        virtual bool disableArea();
-        virtual bool setSleepArea(bool unk1);
-        virtual bool setTeamYakumonoOwnerId(u32 teamOwnerId);
-        virtual bool setTeamYakumono(u32 teamId, u32 teamOwnerId);
-        virtual bool getTeamYakumono(u32 unk1);
-        virtual bool setOffsetAttack(Vec3f* offsetPos, int index);
-        virtual void setAreaGimmick(soAreaData* areaData, soAreaInit* areaInit, YakumonoAreaInfo* areaInfo, bool unk4);
-        virtual void setAttackGimmick(int index, int groupIndex, u32 nodeIndex, grYakumonoAttackData *grAttackData,
-                                      grYakumonoAttackDetails *grAttackDetails);
-        virtual void setSoCollisionAttackData(soCollisionAttackData* attackData, grYakumonoAttackData *grAttackData,
-                                              grYakumonoAttackDetails *grAttackDetails);
-        virtual void setAttackGimmickDetails(soCollisionAttackData* attackData, float size, float tripRate,
-                                             float hitstopMultiplier, float sdiMultiplier, int power, Vec3f* offsetPos,
-                                             int vector, int reactionEffect, int reactionFix, int reactionAdd,
-                                             u32 nodeIndex, u32 collisionCategoryMask, u32 collisionSituationMask,
-                                             bool unk1, u32 collisionPartMask, CollisionAttackElementType elementType,
-                                             CollisionAttackHitSoundLevel hitSoundLevel, CollisionAttackHitSoundType hitSoundType,
-                                             bool isClankable, bool unk2, bool unk3, bool isBlockable, bool isReflectable,
-                                             bool isAbsorbable, u32 unk4, u32 detectionRate, bool unk5, bool ignoreInvincibility,
-                                             bool ignoreIntangibility, CollisionAttackFacingRestriction facingRestriction,
-                                             bool unk6, bool unk7, bool disableHitstop, bool disableHitGfx,
-                                             bool disableFlinch, u32 addedShieldDamage, bool isShapeCapsule);
-        virtual bool isEnableAttackPersonAttacked(u32 unk1, u32 unk2, u32 unk3);
-        virtual bool isEnableAttackAttribute(u32 unk1, u32 unk2);
+    virtual void onDamage(int index, soDamage* damage, soDamageAttackerInfo* attackerInfo);
+    virtual void onInflict(int* unk1, u32 unk2); // TODO
+    virtual void onInflictEach(soCollisionLog* collisionLog, float power);
+    virtual void onGimmickEvent(soGimmickEventInfo* eventInfo, int* taskId);
+    virtual bool enableYakumono(u32 unk1);
+    virtual bool disableYakumono(u32 unk1, u32 unk2);
+    virtual bool enableHit(u32 unk1, u32 unk2);
+    virtual bool disableHit(u32 unk1, u32 unk2);
+    virtual bool disableAttack(u32 unk1);
+    virtual bool enableArea();
+    virtual bool disableArea();
+    virtual bool setSleepArea(bool unk1);
+    virtual bool setTeamYakumonoOwnerId(u32 teamOwnerId);
+    virtual bool setTeamYakumono(u32 teamId, u32 teamOwnerId);
+    virtual bool getTeamYakumono(u32 unk1);
+    virtual bool setOffsetAttack(Vec3f* offsetPos, int index);
+    virtual void setAreaGimmick(soAreaData* areaData, soAreaInit* areaInit, YakumonoAreaInfo* areaInfo, bool unk4);
+    virtual void setAttackGimmick(int index, int groupIndex, u32 nodeIndex, grYakumonoAttackData* grAttackData,
+                                  grYakumonoAttackDetails* grAttackDetails);
+    virtual void setSoCollisionAttackData(soCollisionAttackData* attackData, grYakumonoAttackData* grAttackData,
+                                          grYakumonoAttackDetails* grAttackDetails);
+    virtual void setAttackGimmickDetails(soCollisionAttackData* attackData, float size, float tripRate,
+                                         float hitstopMultiplier, float sdiMultiplier, int power, Vec3f* offsetPos,
+                                         int vector, int reactionEffect, int reactionFix, int reactionAdd,
+                                         u32 nodeIndex, u32 collisionCategoryMask, u32 collisionSituationMask,
+                                         bool unk1, u32 collisionPartMask, CollisionAttackElementType elementType,
+                                         CollisionAttackHitSoundLevel hitSoundLevel, CollisionAttackHitSoundType hitSoundType,
+                                         bool isClankable, bool unk2, bool unk3, bool isBlockable, bool isReflectable,
+                                         bool isAbsorbable, u32 unk4, u32 detectionRate, bool unk5, bool ignoreInvincibility,
+                                         bool ignoreIntangibility, CollisionAttackFacingRestriction facingRestriction,
+                                         bool unk6, bool unk7, bool disableHitstop, bool disableHitGfx,
+                                         bool disableFlinch, u32 addedShieldDamage, bool isShapeCapsule);
+    virtual bool isEnableAttackPersonAttacked(u32 unk1, u32 unk2, u32 unk3);
+    virtual bool isEnableAttackAttribute(u32 unk1, u32 unk2);
 
-        void clearAttackerInfo();
-        int getPlayerNumber(int* unk1);
-        int getPlayerNumber(grCollStatus* collStatus);
-        bool isSubFighter(int* unk1);
-        void setAreaShape(int unk1, float* unk2, float* unk3);
-        void setAttackSize(int index, int unk2, float size);
-        void setAttackTargetCategory(int index, u32 categoryMask);
-        void setSleepAttack(bool isSleep);
-        void setSleepHit(bool isSleep);
-        void setSituationODD();
-
-
+    void clearAttackerInfo();
+    int getPlayerNumber(int* unk1);
+    int getPlayerNumber(grCollStatus* collStatus);
+    bool isSubFighter(int* unk1);
+    void setAreaShape(int unk1, float* unk2, float* unk3);
+    void setAttackSize(int index, int unk2, float size);
+    void setAttackTargetCategory(int index, u32 categoryMask);
+    void setSleepAttack(bool isSleep);
+    void setSleepHit(bool isSleep);
+    void setSituationODD();
 };

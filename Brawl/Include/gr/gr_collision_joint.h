@@ -1,14 +1,13 @@
 #pragma once
 
-#include <mt/mt_matrix.h>
-#include <mt/mt_coll2d.h>
 #include <gr/gr_collision_data.h>
+#include <mt/mt_coll2d.h>
+#include <mt/mt_matrix.h>
 
 class grCollision;
 class Ground;
 
-class grCollisionJoint
-{
+class grCollisionJoint {
     // 0
     char _spacer[16];
     // 16
