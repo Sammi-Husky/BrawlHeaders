@@ -1,6 +1,7 @@
 #pragma once
 
 #include <mt/mt_matrix.h>
+#include <mt/mt_vector.h>
 
 class grNodeCallbackData {
 public:

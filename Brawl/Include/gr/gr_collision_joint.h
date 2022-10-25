@@ -1,6 +1,7 @@
 #pragma once
 
 #include <gr/gr_collision_data.h>
+#include <gr/gr_collision_line.h>
 #include <mt/mt_coll2d.h>
 #include <mt/mt_matrix.h>
 
