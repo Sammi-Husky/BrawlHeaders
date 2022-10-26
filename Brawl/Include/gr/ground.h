@@ -18,9 +18,9 @@ protected:
     // 0
     nw4r::g3d::ResFile* resFile;
     // 4
-    ScnMdl** sceneModel; // TODO: supposed to be a wrapper of some kind
+    nw4r::g3d::ScnMdl** sceneModels; // TODO: supposed to be a wrapper of some kind
     // 8
-    gfModelAnimation** modelAnim;
+    gfModelAnimation** modelAnims;
     // C
     grCollision* collision;
     // 10
@@ -109,7 +109,7 @@ public:
     virtual void setTransparencyFlag(char flag);
 
     bool getNodeIndex(u32* nodeIndex, u32 sceneModelIndex, char* nodeName);
-    void addSceneRoot(ScnMdl* sceneModel, int unk2);
+    void addSceneRoot(nw4r::g3d::ScnMdl* sceneModel, int unk2);
     bool isCollisionStatusOwnerTask(grCollStatus* collStatus, int* unk2);
     bool searchNode(char* unk1, char* nodeName, int* unk3, u32* nodeIndex);
     void setBlendColorDisable();

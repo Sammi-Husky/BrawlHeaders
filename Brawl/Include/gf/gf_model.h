@@ -12,19 +12,19 @@ class gfModelAnimation {
 public:
     char _spacer[8];
 
-    AnmObjVisRes* anmObjVisRes;
-    AnmObjChrRes* anmObjChrRes;
-    AnmObjTexPatRes* anmObjTexPatRes;
-    AnmObjTexSrtRes* anmObjTexSrtRes;
-    AnmObjMatClrRes* anmObjMatClrRes;
-    AnmObjShpRes* anmObjShpRes;
+    nw4r::g3d::AnmObjVisRes* anmObjVisRes;
+    nw4r::g3d::AnmObjChrRes* anmObjChrRes;
+    nw4r::g3d::AnmObjTexPatRes* anmObjTexPatRes;
+    nw4r::g3d::AnmObjTexSrtRes* anmObjTexSrtRes;
+    nw4r::g3d::AnmObjMatClrRes* anmObjMatClrRes;
+    nw4r::g3d::AnmObjShpRes* anmObjShpRes;
 
     u16 getFrameCount();
     float getFrame();
     void setFrame(float frame);
     void setUpdateRate(float updateRate);
     void setLoop(bool shouldLoop);
-    void unbindNodeAnim(ScnMdl* sceneModel);
+    void unbindNodeAnim(nw4r::g3d::ScnMdl* sceneModel);
 };
 
 // Size: 32

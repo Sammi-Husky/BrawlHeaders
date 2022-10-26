@@ -12,6 +12,6 @@ public:
     ecMgr();
     void setDrawPrio(int prio);
     u32 setEffect(u32 effectID);
-    void setParent(u32 unk, ScnMdl*, char*, int);
+    void setParent(u32 unk, nw4r::g3d::ScnMdl*, char*, int);
     virtual ~ecMgr();
 };

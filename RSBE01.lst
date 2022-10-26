@@ -63,12 +63,12 @@
 // NW4R
 8018d2a4:GetResMdlNumEntries__Q24nw4r3g3dFPPQ34nw4r3g3d7ResFile
 8018d770:GetResAnmChrNumEntries__Q24nw4r3g3dFP16gfModelAnimation
+8018ee4c:GetResNodeNumEntries__Q24nw4r3g3dFPPQ34nw4r3g3d6ResMdl
 
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
 8005f7a4:setEffect__5ecMgrFUi
-8005fc5c:setParent__5ecMgrFUiP6ScnMdlPci
-8005fc5c:setParent__5ecMgrFUiPP6ScnMdlPci
+8005fc5c:setParent__5ecMgrFUiPQ34nw4r3g3d6ScnMdlPci
 
 // efScreen
 8005e0fc:requestFill__8efScreenFfiiP5Color

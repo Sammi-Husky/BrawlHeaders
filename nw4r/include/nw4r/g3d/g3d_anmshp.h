@@ -1,33 +1,51 @@
 #pragma once
 
-class AnmObjShpRes {
-public:
-    virtual u32 IsDerivedFrom(int* unk1);
-    virtual void G3dProc(int unk1, int unk2, int unk3);
-    virtual ~AnmObjShpRes();
-    virtual int* GetTypeObj();
-    virtual int GetTypeName();
-    virtual void SetFrame(double unk1);
-    virtual double GetFrame();
-    virtual void UpdateFrame();
-    virtual void SetUpdateRate(double unk1);
-    virtual double GetUpdateRate();
-    virtual int Bind(int* unk1);
-    virtual void Release();
-    virtual int* GetResult(int* unk1, int unk2);
-    virtual int Attach(int unk1, int* unk2); // TODO
-    virtual int* Detach(int unk1);           // TODO
-    virtual void DetachAll();
-    virtual void SetWeight(double unk1, int* unk2); //TODO
-    virtual double GetWeight(int unk1);             // TODO
+namespace nw4r {
+    namespace g3d {
+        class AnmObjShpRes {
+        public:
+            virtual u32 IsDerivedFrom(int *unk1);
 
-    AnmObjShpRes* Construct(int* unk1, int* unk2, int* unk3, int* unk4, u32 unk5);
+            virtual void G3dProc(int unk1, int unk2, int unk3);
 
-    char _spacer[40];
+            virtual ~AnmObjShpRes();
 
-    int* anmShpFile;
+            virtual int *GetTypeObj();
 
-    char _spacer2[8];
-};
+            virtual int GetTypeName();
+
+            virtual void SetFrame(double unk1);
+
+            virtual double GetFrame();
+
+            virtual void UpdateFrame();
+
+            virtual void SetUpdateRate(double unk1);
+
+            virtual double GetUpdateRate();
+
+            virtual int Bind(int *unk1);
+
+            virtual void Release();
+
+            virtual int *GetResult(int *unk1, int unk2);
+
+            virtual int Attach(int unk1, int *unk2); // TODO
+            virtual int *Detach(int unk1);           // TODO
+            virtual void DetachAll();
+
+            virtual void SetWeight(double unk1, int *unk2); //TODO
+            virtual double GetWeight(int unk1);             // TODO
+
+            AnmObjShpRes *Construct(int *unk1, int *unk2, int *unk3, int *unk4, u32 unk5);
+
+            char _spacer[40];
+
+            int *anmShpFile;
+
+            char _spacer2[8];
+        };
+    }
+}
 
 // Size: 56
