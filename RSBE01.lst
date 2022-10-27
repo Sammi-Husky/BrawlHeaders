@@ -121,13 +121,15 @@
 // Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
 
-
 // mttrig
 8003fd5c:mtSinF__Ff
 8003fdfc:mtCosF__Ff
 
 // mtprng
 8003fc7c:randi__FUi
+
+// mtBezierCurve
+8003ffc4:mtBezierCurve__FfP5Vec3fP5Vec3f
 
 // hkMath
 802a0bcc:fabs__6hkMathFf
