@@ -1,12 +1,12 @@
 #pragma once
 
-#include <containers.h>
+#include <GX/GXColor.h>
 
 class efScreen {
     char _spacer[492];
 
 public:
-    int requestFill(float, int, int, Color*);
+    int requestFill(float, int, int, GXColor*);
 };
 
 extern efScreen* g_efScreen;
