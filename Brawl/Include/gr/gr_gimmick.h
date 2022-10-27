@@ -171,9 +171,9 @@ public:
     void setRot(float x, float y, float z);
     void setScale(Vec3f* scale);
     void setScale(float x, float y, float z);
-    static void getPos(Vec3f* pos, grGimmick* ground);
-    static void getRot(Vec3f* rot, grGimmick* ground);
-    static void getScale(Vec3f* scale, grGimmick* ground);
+    Vec3f getPos();
+    Vec3f getRot();
+    Vec3f getScale();
     void startGimmickEffect(u32 index);
     void startGimmickSE(u32 index);
     void stopGimmickEffect(u32 index);

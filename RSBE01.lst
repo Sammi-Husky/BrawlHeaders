@@ -58,6 +58,7 @@
 8000c8b8:__nw__FUl8HeapType
 8000c8c8:__dl__FPv
 8000c8dc:__dla__FPv
+803f11f8:__cvt_fp2unsigned
 801d8600:OSReport
 
 // NW4R
@@ -117,9 +118,16 @@
 // gfCamera
 80019fa4:getManager__15gfCameraManagerFv
 
+// Vec3f
+27,1,00000E30:__mi__5Vec3fFRC5Vec3f
+
+
 // mttrig
 8003fd5c:mtSinF__Ff
 8003fdfc:mtCosF__Ff
+
+// mtprng
+8003fc7c:randi__FUi
 
 // hkMath
 802a0bcc:fabs__6hkMathFf
@@ -346,11 +354,11 @@
 27,1,00231BC4:getTransparencyFlag__9grGimmickFv
 27,1,0026BB1C:makeCalcuCallback__9grGimmickFUi8HeapType
 27,1,0026BC9C:setCalcuCallbackRoot__9grGimmickFUi
-27,1,0026dbd0:getPos__9grGimmickFP5Vec3fP9grGimmick
+27,1,0026dbd0:getPos__9grGimmickFv
 27,1,0026db8c:setPos__9grGimmickFP5Vec3f
 27,1,0026DBB4:setPos__9grGimmickFfff
 27,1,0026DC60:setRot__9grGimmickFfff
-27,1,0026DD00:getScale__9grGimmickFP5Vec3fP9grGimmick
+27,1,0026DD00:getScale__9grGimmickFv
 27,1,0026DCBC:setScale__9grGimmickFP5Vec3f
 27,1,0026DCE4:setScale__9grGimmickFfff
 27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoP13stTriggerDataPc
