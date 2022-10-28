@@ -5,6 +5,7 @@
 namespace nw4r {
     namespace g3d {
 
+        // TODO ScnMdlSimple and all subsequent classes
         class ScnMdl : public ScnMdlSimple {
         public:
             class CopiedMatAccess {

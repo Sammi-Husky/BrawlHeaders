@@ -16,7 +16,7 @@ class Stage;
 class Ground : public gfTask {
 protected:
     // 0
-    nw4r::g3d::ResFile* resFile;
+    nw4r::g3d::ResFile resFile;
     // 4
     nw4r::g3d::ScnMdl** sceneModels; // TODO: supposed to be a wrapper of some kind
     // 8
