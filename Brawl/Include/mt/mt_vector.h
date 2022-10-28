@@ -11,4 +11,9 @@ public:
     float x;
     float y;
     float z;
+
+    Vec3f operator+(const Vec3f& v);
+    Vec3f operator-(const Vec3f& v);
+    Vec3f operator*(const int c);
 };
+

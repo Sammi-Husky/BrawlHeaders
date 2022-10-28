@@ -1,12 +1,5 @@
 #pragma once
 
-struct Color {
-    char r;
-    char g;
-    char b;
-    char a;
-};
-
 class soNullableInterface {
 };
 
