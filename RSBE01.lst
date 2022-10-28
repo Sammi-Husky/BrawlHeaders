@@ -77,6 +77,11 @@
 // sndSystem
 800742b0:playSE__9sndSystemF5SndIDiiii
 
+// snd3DGenerator
+80079550:__ct__14snd3DGeneratorFv
+800795d4:__dt__14snd3DGeneratorFv
+80079718:playSE__14snd3DGeneratorF5SndIDiii
+
 // gfTask
 8002d8b8:__ct__6gfTaskFPciiii
 8002ddc8:processDefault__6gfTaskFv
