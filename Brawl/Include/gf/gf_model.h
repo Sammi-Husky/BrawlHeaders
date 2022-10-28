@@ -7,10 +7,12 @@
 #include <nw4r/g3d/g3d_anmtexsrt.h>
 #include <nw4r/g3d/g3d_anmvis.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
+#include <nw4r/g3d/g3d_resfile.h>
 
 class gfModelAnimation {
 public:
-    char _spacer[8];
+    nw4r::g3d::ResFile resFile;
+    char _spacer[4];
 
     nw4r::g3d::AnmObjVisRes* anmObjVisRes;
     nw4r::g3d::AnmObjChrRes* anmObjChrRes;

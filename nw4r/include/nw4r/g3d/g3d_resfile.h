@@ -16,8 +16,8 @@ namespace nw4r {
             /* data */
         public:
             u32 GetResMdlNumEntries();
+            u32 GetResAnmChrNumEntries();
         };
-        u32 GetResAnmChrNumEntries(gfModelAnimation* modelAnim);
 
     } // namespace g3d
 } // namespace nw4

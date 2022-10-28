@@ -64,7 +64,7 @@
 // NW4R
 8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileFv
 8018d770:GetResAnmChrNumEntries__Q24nw4r3g3dFP16gfModelAnimation
-8018ee4c:GetResNodeNumEntries__Q24nw4r3g3dFPPQ34nw4r3g3d6ResMdl
+8018ee4c:GetResNodeNumEntries__Q34nw4r3g3d6ResMdlFv
 
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
