@@ -1,20 +1,21 @@
+#pragma once
 
+#include <nw4r/g3d/g3d_rescommon.h>
+#include <nw4r/g3d/g3d_resmat.h>
 #include <types.h>
 
 namespace nw4r {
     namespace g3d {
 
-        // NOTE:
-        // This is supposed to be a class,
-        // but until we know ResMdl's size
-        // we can treat it as an opaque pointer
-        class ResMdl{
+        struct ResMdlData; // TODO
+
+        class ResMdl : public ResCommon<ResMdlData> {
             /* data */
+
+        public:
+            ResMat GetResMat(const char* name) const;
+            u32 GetResNodeNumEntries();
         };
-
-        u32 GetResNodeNumEntries(ResMdl** resMdl);
-
-
 
     } // namespace g3d
 } // namespace nw4
