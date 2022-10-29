@@ -1,5 +1,6 @@
 #pragma once
 
+#include <GX/GXColor.h>
 #include <nw4r/g3d/g3d_rescommon.h>
 
 namespace nw4r {
@@ -48,7 +49,28 @@ namespace nw4r {
             // Needs verfication in game
         };
 
+        struct ResTevColorDL {
+            union {
+                struct
+                {
+                    u8 m_tevColor[3][20];
+                    u8 _padding[4];
+                    u8 m_tevKColor[4][10];
+                    u8 _padding2[0x18];
+                } dl;
+                u8 data[0x80];
+            };
+        };
+
+        class ResMatTevColor : public ResCommon<ResTevColorDL> {
+        private:
+        public:
+            void GXSetTevColor(u32 id, GXColor color);
+        };
+
         class ResMat : public ResCommon<ResMatData> {
+        public:
+            void DCStore(bool sync);
         };
     } // namespace g3d
 } // namespace nw4r
