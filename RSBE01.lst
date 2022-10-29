@@ -364,6 +364,8 @@
 27,1,0026dbd0:getPos__9grGimmickFv
 27,1,0026db8c:setPos__9grGimmickFP5Vec3f
 27,1,0026DBB4:setPos__9grGimmickFfff
+27,1,0026DC7C:getRot__9grGimmickFv
+27,1,0026DC38:setRot__9grGimmickFP5Vec3f
 27,1,0026DC60:setRot__9grGimmickFfff
 27,1,0026DD00:getScale__9grGimmickFv
 27,1,0026DCBC:setScale__9grGimmickFP5Vec3f
@@ -453,7 +455,7 @@
 27,1,002639EC:getTeam__8YakumonoFv
 
 // stPositions
-27,1,00226794:getDeadRange__11stPositionsFPA2_f
+27,1,00226794:getDeadRange__11stPositionsFP7stRange
 
 // stTriggerMng
 27,1,00231FDC:createTrigger__12stTriggerMngF11GimmickKindi

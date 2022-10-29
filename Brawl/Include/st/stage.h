@@ -9,13 +9,15 @@
 #include <types.h>
 
 class Stage : public gfTask {
-protected:
+public:
     // 0
     char _spacer[0x04];
     // 4
     int stageID;
     // 8
-    char _spacer1[0x20];
+    char _spacer1[0x10];
+    // 18
+    stRange deadRange;
     // 28
     char aiRange[0x18];
     // 40
@@ -54,7 +56,6 @@ protected:
     char _spacer7[0xC];
     // TOTAL_SIZE == 0x160
 
-public:
     void testStageParamInit(gfArchive* archive, int unk);
     void testStageDataInit(gfArchive* archive, int unk, int unk2);
     void addGround(Ground* Ground);
