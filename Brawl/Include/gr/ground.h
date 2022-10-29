@@ -24,7 +24,9 @@ protected:
     // C
     grCollision* collision;
     // 10
-    char _spacer2[0xC];
+    Ground* nextGround;
+    // 14
+    char _spacer2[0x8];
     // 1C
     u16 mdlIndex;
     // 1E

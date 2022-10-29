@@ -3,6 +3,7 @@
 8059FFAC: g_gfGameApplication
 805A01D0: g_sndSystem
 805a0140: g_efScreen
+805A02D0: g_IfMngr
 27,6,58D8: g_stTriggerMng
 
 // System
@@ -133,6 +134,7 @@
 
 // Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
+27,1,00000EF8:__pl__5Vec3fFRC5Vec3f
 
 // mttrig
 8003fd5c:mtSinf__Ff
