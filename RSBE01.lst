@@ -123,6 +123,9 @@
 // gfCamera
 80019fa4:getManager__15gfCameraManagerFv
 
+// cmQuake
+8009db90:cmReqQuake__FiP5Vec3f
+
 // Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
 
