@@ -2,4 +2,4 @@
 
 float mtSinf(float angle);
 float mtCosf(float angle);
-void mtSinCosf(float angle, float* sinOut, float* cosOut);
+void mtSinCosf(float rad, float* sinOut, float* cosOut);
