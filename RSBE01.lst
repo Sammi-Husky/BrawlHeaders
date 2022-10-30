@@ -5,6 +5,7 @@
 805a0140: g_efScreen
 805A02D0: g_IfMngr
 27,6,58D8: g_stTriggerMng
+27,6,2E68: g_ftManager
 
 // System
 803f1254:__save_fpr
@@ -453,6 +454,14 @@
 
 // ftExternalValueAccesser
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
+
+// ftManager
+27,1,0010B1E4:getEntryIdFromIndex__9ftManagerFi
+27,1,0010A50C:getFighter__9ftManagerFii
+27,1,0010B1D0:getEntryCount__9ftManagerFv
+
+// Fighter
+27,1,00138900:setCurry__7FighterFbi
 
 // BaseItem
 27,1,0028C834:getParam__8BaseItemFUi
