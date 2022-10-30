@@ -4,6 +4,7 @@
 805A01D0: g_sndSystem
 805a0140: g_efScreen
 27,6,58D8: g_stTriggerMng
+805a00e0:g_gameGlobal
 
 // System
 803f1254:__save_fpr
@@ -55,7 +56,7 @@
 803f1370:_restgpr_28
 803f1374:_restgpr_29
 8000c8ac:__nw__FUl
-8000c8b8:__nw__FUl8HeapType
+8000c8b8:__nw__FUlQ25Heaps8HeapType
 8000c8c8:__dl__FPv
 8000c8dc:__dla__FPv
 803f11f8:__cvt_fp2unsigned
@@ -367,7 +368,7 @@
 27,1,0026daf0:dbDispInvalidatedByCameraClippingSphere__9grGimmickFv
 27,1,002304CC:setGimmickData__9grGimmickFPv
 27,1,00231BC4:getTransparencyFlag__9grGimmickFv
-27,1,0026BB1C:makeCalcuCallback__9grGimmickFUi8HeapType
+27,1,0026BB1C:makeCalcuCallback__9grGimmickFUiQ25Heaps8HeapType
 27,1,0026BC9C:setCalcuCallbackRoot__9grGimmickFUi
 27,1,0026dbd0:getPos__9grGimmickFv
 27,1,0026db8c:setPos__9grGimmickFP5Vec3f
