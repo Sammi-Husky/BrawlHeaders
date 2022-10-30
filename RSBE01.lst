@@ -3,8 +3,10 @@
 8059FFAC: g_gfGameApplication
 805A01D0: g_sndSystem
 805a0140: g_efScreen
+805A02D0: g_IfMngr
 27,6,58D8: g_stTriggerMng
 805a00e0:g_gameGlobal
+27,6,2E68: g_ftManager
 
 // System
 803f1254:__save_fpr
@@ -134,13 +136,16 @@
 
 // Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
+27,1,00000EF8:__pl__5Vec3fFRC5Vec3f
 
 // mttrig
-8003fd5c:mtSinF__Ff
-8003fdfc:mtCosF__Ff
+8003fd5c:mtSinf__Ff
+8003fdfc:mtCosf__Ff
+8003fea4:mtSinCosf__FfPfPf
 
 // mtprng
 8003fc7c:randi__FUi
+8003fb64:randf__Fv
 
 // mtBezierCurve
 8003ffc4:mtBezierCurve__FfP5Vec3fP5Vec3f
@@ -450,6 +455,14 @@
 
 // ftExternalValueAccesser
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
+
+// ftManager
+27,1,0010B1E4:getEntryIdFromIndex__9ftManagerFi
+27,1,0010A50C:getFighter__9ftManagerFii
+27,1,0010B1D0:getEntryCount__9ftManagerFv
+
+// Fighter
+27,1,00138900:setCurry__7FighterFbi
 
 // BaseItem
 27,1,0028C834:getParam__8BaseItemFUi

@@ -1,5 +1,5 @@
 #pragma once
 
-float mtSinF(float angle);
-float mtCosF(float angle);
-float mtSinCosF(float angle);
+float mtSinf(float angle);
+float mtCosf(float angle);
+void mtSinCosf(float rad, float* sinOut, float* cosOut);

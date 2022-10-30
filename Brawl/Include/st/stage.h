@@ -23,7 +23,9 @@ public:
     // 40
     void* cameraParam;
     // 44
-    char _spacer2[8];
+    char _spacer2[4];
+    // 48
+    Ground* headGround;
     // 4c
     void* collConv;
     // 50
