@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 class soCollisionLog {
     char _spacer[12];
 

@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 class Fighter {
 public:
     char _spacer[268];

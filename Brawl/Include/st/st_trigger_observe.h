@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <gf/gf_area.h>
 #include <gf/gf_callback.h>
 

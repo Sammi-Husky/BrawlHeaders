@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 struct soAreaData {
     char field0_0x0;
     char field1_0x1;

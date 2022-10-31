@@ -4,6 +4,7 @@
 #include <gr/gr_collision_line.h>
 #include <mt/mt_coll2d.h>
 #include <mt/mt_matrix.h>
+#include <types.h>
 
 class grCollision;
 class Ground;

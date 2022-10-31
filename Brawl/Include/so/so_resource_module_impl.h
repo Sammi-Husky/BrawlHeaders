@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <so/stageobject.h>
 
 class soResourceModule : virtual public soNullable {

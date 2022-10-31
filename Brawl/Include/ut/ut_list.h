@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 class utListEntry {
     utListEntry* next;
     utListEntry* prev;

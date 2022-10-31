@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 struct OrthographicParameters {
     float top;
     float bottom;

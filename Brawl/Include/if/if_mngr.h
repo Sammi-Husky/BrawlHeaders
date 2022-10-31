@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 class IfMngr {
     public:
         char _spacer[169];

@@ -3,6 +3,7 @@
 #include <gr/gr_collision.h>
 #include <gr/gr_collision_shape_circle.h>
 #include <gr/gr_collision_shape_rhombus.h>
+#include <types.h>
 
 class grCollStatus {
 public:

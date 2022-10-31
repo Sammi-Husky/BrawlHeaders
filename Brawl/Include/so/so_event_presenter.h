@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 template <class T>
 class soEventPresenter {
     virtual ~soEventPresenter();

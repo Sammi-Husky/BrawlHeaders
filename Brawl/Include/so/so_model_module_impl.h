@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <memory.h>
 #include <so/so_event_observer>
 #include <so/so_event_presenter>

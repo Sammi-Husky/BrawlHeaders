@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <mt/mt_vector.h>
 
 class stRange {

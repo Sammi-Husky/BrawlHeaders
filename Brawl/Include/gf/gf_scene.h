@@ -1,4 +1,6 @@
 
+#include <types.h>
+
 class gfScene {
 public:
     char* sceneName;

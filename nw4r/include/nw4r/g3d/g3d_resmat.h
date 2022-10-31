@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <GX/GXColor.h>
 #include <nw4r/g3d/g3d_rescommon.h>
 

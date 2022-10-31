@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <gr/gr_gimmick.h>
 
 class grVisibleProductionEffect : public grVisibleProduction {

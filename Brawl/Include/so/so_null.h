@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 class soNullable {
     virtual bool isNull();
 

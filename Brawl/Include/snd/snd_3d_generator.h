@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <snd/snd_id.h>
 
 class snd3DGenerator {

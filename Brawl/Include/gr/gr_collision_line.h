@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 struct grCollisionLine {
     // 0
     short point0Index;

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <so/so_area_module_impl.h>
 #include <so/so_gimmick_event_observer.h>
 

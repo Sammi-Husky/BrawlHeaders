@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 class soDamage {
 public:
     float totalDamage;

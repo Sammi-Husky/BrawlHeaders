@@ -1,4 +1,6 @@
 
+#include <types.h>
+
 namespace hkMath {
     float fabs(float);
     float min2f(float, float);

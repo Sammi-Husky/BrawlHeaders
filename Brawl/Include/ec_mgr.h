@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <gf/gf_task.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
 

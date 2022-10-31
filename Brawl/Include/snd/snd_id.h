@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 enum SndID {
     snd_se_invalid = -0x1,
     snd_se_system_cursor = 0x0,

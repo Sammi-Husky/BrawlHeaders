@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <nw4r/g3d/g3d_anmchr.h>
 
 struct soAnimChr {

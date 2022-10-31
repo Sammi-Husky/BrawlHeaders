@@ -8,6 +8,7 @@
 #include <nw4r/g3d/g3d_anmvis.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
 #include <nw4r/g3d/g3d_resfile.h>
+#include <types.h>
 
 class gfModelAnimation {
 public:

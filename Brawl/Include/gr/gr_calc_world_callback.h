@@ -2,6 +2,7 @@
 
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>
+#include <types.h>
 
 class grNodeCallbackData {
 public:

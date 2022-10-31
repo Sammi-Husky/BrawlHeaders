@@ -1,5 +1,7 @@
 #pragma once
 
+#include <types.h>
+
 class Vec2f {
 public:
     float x;

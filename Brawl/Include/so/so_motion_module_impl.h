@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <containers.h>
 #include <memory.h>
 #include <so/so_anim_chr.h>

@@ -2,6 +2,7 @@
 
 #include <mt/mt_coll2d.h>
 #include <mt/mt_vector.h>
+#include <types.h>
 
 class grCollShape {
     virtual void init();

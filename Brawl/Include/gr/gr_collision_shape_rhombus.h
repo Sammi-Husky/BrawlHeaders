@@ -1,6 +1,7 @@
 #pragma once
 
 #include <gr/gr_collision_shape.h>
+#include <types.h>
 
 class grCollShapeRhombus : public grCollShape {
     clRhombus2D rhombus;

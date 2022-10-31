@@ -1,5 +1,6 @@
 #pragma once
 
+#include <types.h>
 #include <so/so_model_module_impl.h>
 #include <so/so_resource_module_impl.h>
 
