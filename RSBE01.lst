@@ -64,6 +64,9 @@
 803f11f8:__cvt_fp2unsigned
 801d8600:OSReport
 
+// string
+803fa3fc:strcmp__FPcPc
+
 // NW4R
 8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileFv
 8018d770:GetResAnmChrNumEntries__Q34nw4r3g3d7ResFileFv
