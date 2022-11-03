@@ -5,4 +5,5 @@
 
 namespace ftExternalValueAccesser {
     float getWeight(Fighter* fighter);
+    Vec3f getHipPos(Fighter* fighter);
 }

@@ -13,9 +13,7 @@ public:
     void setHammer(bool setStatus, int unk2);
     void setSuperStar(bool setStatus, int unk2, bool unk3);
     void setFlower(bool setStatus, float rate, float size, int unk4, bool unk5);
-    void setSlow(bool setStatus, int slowStrength, int duration, bool unk4);
+    void setSlow(bool setStatus, int slowStrength, int duration, bool useTimerEffect);
     void setHeartSwap(int givingPlayerEntryID, int givingPlayerEntryId, bool setStatus);
     void startScaling(bool setStatus, bool isPoison);
-
-
 };
