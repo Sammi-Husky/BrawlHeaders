@@ -7,6 +7,7 @@ class sndSystem {
 private:
 public:
     void playSE(SndID sndID, int unk, int unk2, int unk3, int unk4);
+    void setBGMVol(bool unk, float volume);
 };
 
 extern sndSystem* g_sndSystem;

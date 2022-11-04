@@ -33,7 +33,7 @@ protected:
     // 1E
     char _spacer3[2];
     // 20
-    float* stageData;
+    void* stageData;
     // 24
     float motionRatio;
     // 28
@@ -73,8 +73,8 @@ public:
     virtual int getModelCount();
     virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
     virtual int setNode();
-    virtual void setStageData(float* stageData);
-    virtual float* getStageData();
+    virtual void setStageData(void* stageData);
+    virtual void* getStageData();
     virtual void initStageData();
     virtual void setMdlIndex(int mdlIndex);
     virtual short getMdlIndex();

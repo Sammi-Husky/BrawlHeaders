@@ -7,6 +7,93 @@
 #include <mt/mt_vector.h>
 #include <st/st_positions.h>
 #include <types.h>
+#include <StaticAssert.h>
+#include <GX/GXColor.h>
+
+class StageParam {
+    public:
+        u8 m_echo;
+        u8 m_id1;
+        u8 m_id2;
+        char _3;
+        float _4;
+        float _8;
+        float _12;
+        float _16;
+        u8 m_bgmVolume;
+        u8 m_sfxVolume;
+        char _22;
+        char _23;
+        float m_shadowPitch;
+        float m_shadowYaw;
+        char _26[8];
+        float m_cameraFOV;
+        float m_minZ;
+        float m_maxZ;
+        float m_minTilt;
+        float m_maxTilt;
+        float m_horizontalRotationFactor;
+        float m_verticalRotationFactor;
+        float m_characterBubbleBufferMultiplier;
+        float _72;
+        float m_cameraSpeed;
+        float m_starKOCamTilt;
+        float m_finalSmashCamTilt;
+        float m_cameraRight;
+        float m_cameraLeft;
+        Vec3f m_pauseCamPos;
+        float m_pauseCamAngle;
+        float m_pauseCamZoomIn;
+        float m_pauseCamZoomDefault;
+        float m_pauseCamZoomOut;
+        float m_pauseCamRotYMin;
+        float m_pauseCamRotYMax;
+        float m_pauseCamRotXMin;
+        float m_pauseCamRotXMax;
+        Vec3f m_fixedCamPos;
+        float m_fixedCamFOV;
+        float m_fixedHorizontalAngle;
+        float m_fixedVerticalAngle;
+        char _164[4];
+        float m_olimarFinalCamAngle;
+        Vec3f m_iceClimbersFinalPos;
+        float m_iceClimbersFinalScaleX;
+        float m_iceClimbersFinalScaleYl;
+        float m_pitFinalPalutenaScaleX;
+        float m_pitFinalPalutenaScaleY;
+        u8 m_kirifudaModelType;
+        bool m_characterWindEnabled;
+        char _202[2];
+        float m_windStrength;
+        float m_horizontalWindRotation;
+        float m_verticalWindRotation;
+        float _216;
+        GXColor _220;
+        char _224[4];
+        bool _228;
+        bool _229;
+        u8 m_effectVol;
+        u8 m_reverbLPF;
+        u8 m_reverbType;
+        u8 m_reverbColoration;
+        u8 m_reverbDamping;
+        u8 m_reverbPreDelay;
+        u8 m_reverbBalance;
+        u8 m_delayFeedback;
+        u8 m_delayOutput;
+        char _239;
+        s16 m_reverbTime;
+        u16 m_delayTime;
+        char _244[16];
+
+        STATIC_CHECK(sizeof(StageParam) == 260)
+};
+
+class CameraParam {
+    char _0[0x40];
+
+    STATIC_CHECK(sizeof(CameraParam) == 0x40)
+};
 
 class Stage : public gfTask {
 public:
@@ -19,9 +106,13 @@ public:
     // 18
     stRange deadRange;
     // 28
-    char aiRange[0x18];
+    char aiRange[0x10];
+    // 38
+    CameraParam* m_cameraParam1;
+    // 3c
+    char _3c[0x4];
     // 40
-    void* cameraParam;
+    CameraParam* m_cameraParam2;
     // 44
     char _spacer2[4];
     // 48
@@ -31,9 +122,11 @@ public:
     // 50
     stPositions* stagePositions;
     // 54
-    char _spacer3[8];
+    char _spacer3[4];
+    // 58
+    StageParam* m_stageParam;
     // 5C
-    float* stageData;
+    void* stageData;
     // 60
     char _spacer4[0x1C];
     // 7C
@@ -58,14 +151,14 @@ public:
     char _spacer7[0xC];
     // TOTAL_SIZE == 0x160
 
-    void testStageParamInit(gfArchive* archive, int unk);
-    void testStageDataInit(gfArchive* archive, int unk, int unk2);
+    void testStageParamInit(gfArchive* archive, int fileIndex);
+    void testStageDataInit(gfArchive* archive, int fileIndex, int unk2);
     void addGround(Ground* Ground);
     Ground* getGround(int index);
     grCollision* createCollision(gfArchive* archive, int index, Ground* ground);
     void createStagePositions();
     void createStagePositions(void* stgPosMdl);
-    void loadStageAttrParam(gfArchive* filedata, int unk1);
+    void loadStageAttrParam(gfArchive* filedata, int fileIndex);
     void registSceneAnim(void* scnData, int unk1);
     void initPosPokeTrainer(int unk1, int unk2);
 
