@@ -86,12 +86,12 @@ public:
     virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, char* nodeName);
     virtual bool getNodeMatrix(u32 nodeMtx, u32 sceneModelIndex, u32 nodeIndex);
     virtual bool getNodeMatrix(u32 nodeMtx, u32 sceneModelIndex, char* nodeName);
-    virtual bool setNodeVisibility(bool unk1, u32 sceneModelIndex, u32 nodeIndex, bool unk4, bool unk5);
-    virtual bool setNodeVisibility(bool unk1, u32 sceneModelIndex, char* nodeName, bool unk4, bool unk5);
+    virtual bool setNodeVisibility(bool setVisibility, u32 sceneModelIndex, u32 nodeIndex, bool recursive, bool recursive_);
+    virtual bool setNodeVisibility(bool setVisibility, u32 sceneModelIndex, char* nodeName, bool recursive, bool recursive_);
     virtual bool setNodeVisibilityAll(bool unk1, u32 sceneModelIndex);
     virtual bool isNodeVisible(u32 sceneModelIndex, u32 nodeIndex);
-    virtual bool setNodeCollision(bool unk1, u32 sceneModelIndex, u32 nodeIndex, bool unk4);
-    virtual bool setNodeCollision(bool unk1, u32 sceneModelIndex, char* nodeName, bool unk4);
+    virtual bool setNodeCollision(bool setCollision, u32 sceneModelIndex, u32 nodeIndex, bool recursive);
+    virtual bool setNodeCollision(bool setCollision, u32 sceneModelIndex, char* nodeName, bool recursive);
     virtual bool getNodeScale(Vec3f* nodeScale, u32 sceneModelIndex, u32 nodeIndex);
     virtual bool getNodeScale(Vec3f* nodeScale, u32 sceneModelIndex, char* nodeName);
     virtual void setValid(u32 unk1);
