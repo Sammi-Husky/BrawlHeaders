@@ -95,9 +95,11 @@ public:
     // 80
     u32 unk1;
     // 84
-    u32 unk2;
+    int m_nodeIndex;
     // 88
-    u32 unk3;
+    bool m_isUpdate;
+    // 89
+    char unk3[3];
     // 8C
     grGimmickMotionPath* gimmickMotionPath;
     // 90

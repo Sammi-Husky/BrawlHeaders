@@ -76,6 +76,7 @@
 801b00b4:GetResMatTevColor__Q44nw4r3g3d6ScnMdl15CopiedMatAccessFb
 801913d0:GXSetTevColor__Q34nw4r3g3d14ResMatTevColorFUi7GXColor
 80190a90:DCStore__Q34nw4r3g3d6ResMatFb
+8018edf8:GetResNode__Q34nw4r3g3d6ResMdlCFUl
 
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi

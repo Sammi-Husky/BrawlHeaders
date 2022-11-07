@@ -1,3 +1,6 @@
+typedef unsigned long u64;
+typedef signed long s64;
+
 typedef unsigned int u32;
 typedef signed int s32;
 
