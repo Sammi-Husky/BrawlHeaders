@@ -12,7 +12,6 @@ namespace nw4r {
 
         class ResMdl : public ResCommon<ResMdlData> {
             /* data */
-
         public:
             ResMat GetResMat(const char* name) const;
             u32 GetResNodeNumEntries();
@@ -21,4 +20,4 @@ namespace nw4r {
         };
 
     } // namespace g3d
-} // namespace nw4
+} // namespace nw4r

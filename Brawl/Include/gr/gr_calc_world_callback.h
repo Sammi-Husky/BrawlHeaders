@@ -1,5 +1,6 @@
 #pragma once
 
+#include <nw4r/g3d/g3d_calcworldcallback.h>
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>
 #include <StaticAssert.h>
@@ -25,16 +26,16 @@ public:
     STATIC_CHECK(sizeof(grNodeCallbackData) == 128)
 };
 
-class grCalcWorldCallBack {
+class grCalcWorldCallBack : public nw4r::g3d::ICalcWorldCallBack {
 
 public:
     grNodeCallbackData* nodeCallbackDataArray;
-    unsigned int numCallbackData;
+    unsigned int m_numNodeCallbackData;
     char _spacer[0x04];
 
     virtual ~grCalcWorldCallBack();
-    virtual void ExecCallbackA(int* unk1, int unk2, int* unk3);
-    virtual void ExecCallbackB(); // TODO
+    virtual void ExecCallbackA(int* unk1, int unk2, int* unk3); // TODO
+    virtual void ExecCallbackB(int* unk1, int unk2, int* unk3); // TODO
     virtual void ExecCallbackC(); // TODO
     virtual int initialize(int unk1, int unk2);
     virtual int clearAll();

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <nw4r/g3d/g3d_rescommon.h>
 #include <mt/mt_vector.h>
 #include <types.h>
 
@@ -15,10 +16,8 @@ namespace nw4r {
                 char _68[140];
         };
 
-        class ResNode {
-
-        public:
-            ResNodeData* m_nodeData;
+        class ResNode : public ResCommon<ResNodeData> {
+            /* data */
         };
 
     } // namespace g3d

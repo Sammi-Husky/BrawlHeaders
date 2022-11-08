@@ -2,6 +2,7 @@
 
 #include <nw4r/g3d/g3d_scnobj.h>
 #include <nw4r/g3d/g3d_resmdl.h>
+#include <nw4r/g3d/g3d_calcworldcallback.h>
 
 namespace nw4r {
     namespace g3d {
@@ -17,7 +18,11 @@ namespace nw4r {
 
             char _spacer[12];
             ResMdl resMdl;
-            char _spacer2[76];
+            char _spacer2[48];
+            ICalcWorldCallBack* m_calcWorldCallBack;
+            char _spacer3[2];
+            short m_nodeIndex;
+            char _spacer4[20];
         };
     }
 }
