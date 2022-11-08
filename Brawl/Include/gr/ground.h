@@ -1,6 +1,5 @@
 #pragma once
 
-#include <types.h>
 #include <containers.h>
 #include <gf/gf_archive.h>
 #include <gf/gf_model.h>
@@ -11,6 +10,7 @@
 #include <mt/mt_vector.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
+#include <types.h>
 
 class Stage;
 
@@ -41,13 +41,14 @@ protected:
     // 29
     char _align[3];
     // 2c
-    char _spacer[4];
+    char visibilityFlags;
+    // 2d
+    char _spacer[3];
     // 30
     HeapType heapType;
     // 34
     char _spacer5[40];
 
-    // SIZE == 5c
 public:
     Ground(char* taskName);
     virtual void processAnim();
@@ -122,6 +123,8 @@ public:
     void setEnableCollisionStatusByClipping(bool enableColl);
     void setVisibilityByClipping(int unk1, u32 sceneModelIndex);
     void updateG3dProcCalcWorldForce();
+
+    STATIC_CHECK(sizeof(Ground) == 0x9C)
 };
 
 // Size: 196

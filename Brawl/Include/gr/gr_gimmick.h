@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_calc_world_callback.h>
 #include <gr/ground.h>
 #include <snd/snd_3d_generator.h>
@@ -181,4 +182,6 @@ public:
     void updataGimmickEffect(float unk1);
     void updataGimmickSE(float unk1);
     void updateProduction(float unk1);
+
+    STATIC_CHECK(sizeof(grGimmick) == 0x14c)
 };
