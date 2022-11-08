@@ -57,7 +57,7 @@ struct grYakumonoAttackDetails {
 };
 
 class grYakumono : public grGimmick {
-private:
+protected:
     Yakumono* yakumono;
 
 public:
