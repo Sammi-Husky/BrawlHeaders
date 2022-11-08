@@ -23,6 +23,8 @@ namespace nw4r {
             char _spacer3[2];
             short m_nodeIndex;
             char _spacer4[20];
+
+            void EnableScnMdlCallbackTiming(u32 flags);
         };
     }
 }

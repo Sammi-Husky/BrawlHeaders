@@ -77,6 +77,7 @@
 801913d0:GXSetTevColor__Q34nw4r3g3d14ResMatTevColorFUi7GXColor
 80190a90:DCStore__Q34nw4r3g3d6ResMatFb
 8018edf8:GetResNode__Q34nw4r3g3d6ResMdlCFUl
+801afaac:EnableScnMdlCallbackTiming__Q34nw4r3g3d12ScnMdlSimpleFUi
 
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
@@ -142,6 +143,8 @@
 // Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
 27,1,00000EF8:__pl__5Vec3fFRC5Vec3f
+27,1,00000F1C:__ml__5Vec3fFf
+27,1,00000F1C:__ml__FfRC5Vec3f
 
 // mtCommon
 8003db08:mtSqrtf__Ff
