@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gf/gf_model.h>
 #include <types.h>
 
@@ -18,6 +19,8 @@ namespace nw4r {
             u32 GetResMdlNumEntries();
             u32 GetResAnmChrNumEntries();
         };
+
+        STATIC_CHECK(sizeof(ResFile) == 0x04)
 
     } // namespace g3d
 } // namespace nw4

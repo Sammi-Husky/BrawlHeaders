@@ -106,6 +106,7 @@
 80079550:__ct__14snd3DGeneratorFv
 800795d4:__dt__14snd3DGeneratorFv
 80079718:playSE__14snd3DGeneratorF5SndIDiii
+80079660:setPos__14snd3DGeneratorFP5Vec3f
 
 // gfTask
 8002d8b8:__ct__6gfTaskFPciiii
@@ -517,3 +518,14 @@
 
 // stTrigger
 27,1,00233640:setObserveYakumono__9stTriggerFP8Yakumono
+
+
+// stDataMultiContainer
+8015bbf4:create__20stDataMultiContainerFPvQ25Heaps8HeapType
+
+// SeSeq
+27,1,00224e44:__ct__Q28StSeUtil5SeSeqFPviPvi
+27,1,002252e0:playFrame__Q28StSeUtil5SeSeqFfUi
+27,1,002252d8:playFrame__Q28StSeUtil5SeSeqFffUi
+27,1,00225108:registId__Q28StSeUtil5SeSeqFP5SndIDi
+27,1,0022517c:registSeq__Q28StSeUtil5SeSeqFiP5SndIDiQ25Heaps8HeapType

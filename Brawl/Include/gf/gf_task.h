@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <types.h>
 
 class gfTask {
@@ -45,4 +46,6 @@ public:
     virtual ~gfTask();
 
     static gfTask* getTask(int taskId);
+
+    STATIC_CHECK(sizeof(gfTask) == 0x40)
 };
