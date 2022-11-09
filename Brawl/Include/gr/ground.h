@@ -100,9 +100,9 @@ public:
     virtual void setInitializeInfo(int initializeInfo);
     virtual bool getInitializeInfo(int initializeInfo);
     virtual void setMotionRatio(float ratio);
-    virtual void setMotionFrame(float frame, u32 anim);
+    virtual void setMotionFrame(float frame, u32 animIndex);
     virtual float getMotionFrame(u32 anim);
-    virtual void setMotionLoop(bool shouldLoop, u32 anim);
+    virtual void setMotionLoop(bool shouldLoop, u32 animIndex);
     virtual void setMatAlphaMul(u32 unk1, u32 sceneModelIndex); // TODO
     virtual void setMatAlpha(u32 unk1, u32 sceneModelIndex);    // TODO
     virtual void updateG3dProcCalcWorld();

@@ -3,6 +3,7 @@
 #include <nw4r/g3d/g3d_calcworldcallback.h>
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>
+#include <memory.h>
 #include <StaticAssert.h>
 #include <types.h>
 
@@ -39,7 +40,7 @@ public:
     virtual void ExecCallbackA(int* unk1, int unk2, int* unk3); // TODO
     virtual void ExecCallbackB(int* unk1, int unk2, int* unk3); // TODO
     virtual void ExecCallbackC(); // TODO
-    virtual int initialize(int unk1, int unk2);
+    virtual int initialize(bool unk1, HeapType heapType);
     virtual int clearAll();
 };
 

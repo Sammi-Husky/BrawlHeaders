@@ -65,7 +65,18 @@
 801d8600:OSReport
 
 // string
-803fa3fc:strcmp__FPcPc
+803fa3fc:strcmp__FPCcPCc
+803fa340:strncpy__6StringF6StringPcUl
+
+// strtoul
+803fc704:atoi__FPCc
+
+// extras
+803fcb50:itoa__FiPci
+
+// __mem
+803f0640:strlen__FPc
+8000443c:__memfill__FPvUcUl
 
 // NW4R
 8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileFv
