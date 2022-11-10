@@ -64,3 +64,5 @@ namespace Heaps {
 typedef Heaps::HeapType HeapType;
 void* operator new(size_t size, HeapType heap);
 void* operator new[](size_t size, HeapType heap);
+
+void __memfill(void* dest, u8 value, size_t count);

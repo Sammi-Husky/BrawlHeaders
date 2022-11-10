@@ -12,3 +12,6 @@ struct CompileTimeError<true> {
 
 #define STATIC_CHECK(expr) \
     inline void UNIQUE_NAME(StaticCheck)() { ((void)CompileTimeError<(expr) != 0>()); }
+
+#define PRINT_SIZEOF(typename) \
+    inline void UNIQUE_NAME(PrintSizeOf)() { char(*__kaboom)[sizeof(typename)] = 1; }

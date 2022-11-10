@@ -1,4 +1,5 @@
 #pragma once
+#include <StaticAssert.h>
 #include <gr/gr_gimmick.h>
 #include <so/so_collision_attack_part.h>
 #include <so/so_collision_log.h>
@@ -56,8 +57,10 @@ struct grYakumonoAttackDetails {
 };
 
 class grYakumono : public grGimmick {
-public:
+protected:
     Yakumono* yakumono;
+
+public:
     grYakumono(char* taskName);
     virtual void processUpdate();
     virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
@@ -112,4 +115,6 @@ public:
     void setSleepAttack(bool isSleep);
     void setSleepHit(bool isSleep);
     void setSituationODD();
+
+    STATIC_CHECK(sizeof(grYakumono) == 0x150)
 };

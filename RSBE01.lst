@@ -65,7 +65,18 @@
 801d8600:OSReport
 
 // string
-803fa3fc:strcmp__FPcPc
+803fa3fc:strcmp__FPCcPCc
+803fa340:strncpy__6StringF6StringPcUl
+
+// strtoul
+803fc704:atoi__FPCc
+
+// extras
+803fcb50:itoa__FiPci
+
+// __mem
+803f0640:strlen__FPc
+8000443c:__memfill__FPvUcUl
 
 // NW4R
 8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileFv
@@ -77,6 +88,8 @@
 801b00b4:GetResMatTevColor__Q44nw4r3g3d6ScnMdl15CopiedMatAccessFb
 801913d0:GXSetTevColor__Q34nw4r3g3d14ResMatTevColorFUi7GXColor
 80190a90:DCStore__Q34nw4r3g3d6ResMatFb
+8018edf8:GetResNode__Q34nw4r3g3d6ResMdlCFUl
+801afaac:EnableScnMdlCallbackTiming__Q34nw4r3g3d12ScnMdlSimpleFUi
 
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
@@ -94,6 +107,7 @@
 80079550:__ct__14snd3DGeneratorFv
 800795d4:__dt__14snd3DGeneratorFv
 80079718:playSE__14snd3DGeneratorF5SndIDiii
+80079660:setPos__14snd3DGeneratorFP5Vec3f
 
 // gfTask
 8002d8b8:__ct__6gfTaskFPciiii
@@ -142,6 +156,8 @@
 // Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
 27,1,00000EF8:__pl__5Vec3fFRC5Vec3f
+27,1,00000F1C:__ml__5Vec3fFf
+27,1,00000F1C:__ml__FfRC5Vec3f
 
 // mtCommon
 8003db08:mtSqrtf__Ff
@@ -503,3 +519,14 @@
 
 // stTrigger
 27,1,00233640:setObserveYakumono__9stTriggerFP8Yakumono
+
+
+// stDataMultiContainer
+8015bbf4:create__20stDataMultiContainerFPvQ25Heaps8HeapType
+
+// SeSeq
+27,1,00224e44:__ct__Q28StSeUtil5SeSeqFPviPvi
+27,1,002252e0:playFrame__Q28StSeUtil5SeSeqFfUi
+27,1,002252d8:playFrame__Q28StSeUtil5SeSeqFffUi
+27,1,00225108:registId__Q28StSeUtil5SeSeqFP5SndIDi
+27,1,0022517c:registSeq__Q28StSeUtil5SeSeqFiP5SndIDiQ25Heaps8HeapType

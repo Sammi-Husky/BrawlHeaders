@@ -1,92 +1,116 @@
 #pragma once
 
+#include <GX/GXColor.h>
+#include <StaticAssert.h>
 #include <gf/gf_archive.h>
 #include <gf/gf_task.h>
 #include <gr/ground.h>
+#include <memory.h>
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>
+#include <snd/snd_3d_generator.h>
+#include <snd/snd_id.h>
 #include <st/st_positions.h>
 #include <types.h>
-#include <StaticAssert.h>
-#include <GX/GXColor.h>
+
+namespace StSeUtil {
+    class SeSeq {
+    public:
+        virtual ~SeSeq();
+
+    public:
+        char _1[0x10];                  // 0x00
+        snd3DGenerator* m_sndGenerator; // 0x14
+        char _2[0x8];                   // 0x18
+
+    public:
+        SeSeq(void* unk, int unk2, void* unk3, int unk4);
+        void playFrame(float frame, u32 unk);
+        void playFrame(float frame, float unk1, u32 unk2);
+        void registId(SndID* ID, int unk1);
+        void registSeq(int unk1, SndID* ID, int unk2, Heaps::HeapType heapType);
+
+        STATIC_CHECK(sizeof(SeSeq) == 0x20)
+    };
+}
 
 class StageParam {
-    public:
-        u8 m_echo;
-        u8 m_id1;
-        u8 m_id2;
-        char _3;
-        float _4;
-        float _8;
-        float _12;
-        float _16;
-        u8 m_bgmVolume;
-        u8 m_sfxVolume;
-        char _22;
-        char _23;
-        float m_shadowPitch;
-        float m_shadowYaw;
-        char _26[8];
-        float m_cameraFOV;
-        float m_minZ;
-        float m_maxZ;
-        float m_minTilt;
-        float m_maxTilt;
-        float m_horizontalRotationFactor;
-        float m_verticalRotationFactor;
-        float m_characterBubbleBufferMultiplier;
-        float _72;
-        float m_cameraSpeed;
-        float m_starKOCamTilt;
-        float m_finalSmashCamTilt;
-        float m_cameraRight;
-        float m_cameraLeft;
-        Vec3f m_pauseCamPos;
-        float m_pauseCamAngle;
-        float m_pauseCamZoomIn;
-        float m_pauseCamZoomDefault;
-        float m_pauseCamZoomOut;
-        float m_pauseCamRotYMin;
-        float m_pauseCamRotYMax;
-        float m_pauseCamRotXMin;
-        float m_pauseCamRotXMax;
-        Vec3f m_fixedCamPos;
-        float m_fixedCamFOV;
-        float m_fixedHorizontalAngle;
-        float m_fixedVerticalAngle;
-        char _164[4];
-        float m_olimarFinalCamAngle;
-        Vec3f m_iceClimbersFinalPos;
-        float m_iceClimbersFinalScaleX;
-        float m_iceClimbersFinalScaleYl;
-        float m_pitFinalPalutenaScaleX;
-        float m_pitFinalPalutenaScaleY;
-        u8 m_kirifudaModelType;
-        bool m_characterWindEnabled;
-        char _202[2];
-        float m_windStrength;
-        float m_horizontalWindRotation;
-        float m_verticalWindRotation;
-        float _216;
-        GXColor _220;
-        char _224[4];
-        bool _228;
-        bool _229;
-        u8 m_effectVol;
-        u8 m_reverbLPF;
-        u8 m_reverbType;
-        u8 m_reverbColoration;
-        u8 m_reverbDamping;
-        u8 m_reverbPreDelay;
-        u8 m_reverbBalance;
-        u8 m_delayFeedback;
-        u8 m_delayOutput;
-        char _239;
-        s16 m_reverbTime;
-        u16 m_delayTime;
-        char _244[16];
+public:
+    u8 m_echo;
+    u8 m_id1;
+    u8 m_id2;
+    char _3;
+    float _4;
+    float _8;
+    float _12;
+    float _16;
+    u8 m_bgmVolume;
+    u8 m_sfxVolume;
+    char _22;
+    char _23;
+    float m_shadowPitch;
+    float m_shadowYaw;
+    char _26[8];
+    float m_cameraFOV;
+    float m_minZ;
+    float m_maxZ;
+    float m_minTilt;
+    float m_maxTilt;
+    float m_horizontalRotationFactor;
+    float m_verticalRotationFactor;
+    float m_characterBubbleBufferMultiplier;
+    float _72;
+    float m_cameraSpeed;
+    float m_starKOCamTilt;
+    float m_finalSmashCamTilt;
+    float m_cameraRight;
+    float m_cameraLeft;
+    Vec3f m_pauseCamPos;
+    float m_pauseCamAngle;
+    float m_pauseCamZoomIn;
+    float m_pauseCamZoomDefault;
+    float m_pauseCamZoomOut;
+    float m_pauseCamRotYMin;
+    float m_pauseCamRotYMax;
+    float m_pauseCamRotXMin;
+    float m_pauseCamRotXMax;
+    Vec3f m_fixedCamPos;
+    float m_fixedCamFOV;
+    float m_fixedHorizontalAngle;
+    float m_fixedVerticalAngle;
+    char _164[4];
+    float m_olimarFinalCamAngle;
+    Vec3f m_iceClimbersFinalPos;
+    float m_iceClimbersFinalScaleX;
+    float m_iceClimbersFinalScaleYl;
+    float m_pitFinalPalutenaScaleX;
+    float m_pitFinalPalutenaScaleY;
+    u8 m_kirifudaModelType;
+    bool m_characterWindEnabled;
+    char _202[2];
+    float m_windStrength;
+    float m_horizontalWindRotation;
+    float m_verticalWindRotation;
+    float _216;
+    GXColor _220;
+    char _224[4];
+    bool _228;
+    bool _229;
+    u8 m_effectVol;
+    u8 m_reverbLPF;
+    u8 m_reverbType;
+    u8 m_reverbColoration;
+    u8 m_reverbDamping;
+    u8 m_reverbPreDelay;
+    u8 m_reverbBalance;
+    u8 m_delayFeedback;
+    u8 m_delayOutput;
+    char _239;
+    s16 m_reverbTime;
+    u16 m_delayTime;
+    char _244[16];
 
-        STATIC_CHECK(sizeof(StageParam) == 260)
+    STATIC_CHECK(sizeof(StageParam) == 260)
 };
 
 class CameraParam {

@@ -1,6 +1,8 @@
 #pragma once
 
 #include <nw4r/g3d/g3d_anmchr.h>
+#include <StaticAssert.h>
+#include <gf/gf_model.h>
 #include <types.h>
 
 namespace nw4r {
@@ -19,6 +21,8 @@ namespace nw4r {
             u32 GetResAnmChrNumEntries();
             CHR0* GetResAnmChr(int);
         };
+
+        STATIC_CHECK(sizeof(ResFile) == 0x04)
 
     } // namespace g3d
 } // namespace nw4

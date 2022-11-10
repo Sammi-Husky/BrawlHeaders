@@ -1,6 +1,5 @@
 #pragma once
 
-#include <types.h>
 #include <containers.h>
 #include <gf/gf_archive.h>
 #include <gf/gf_model.h>
@@ -11,6 +10,7 @@
 #include <mt/mt_vector.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
+#include <types.h>
 
 class Stage;
 
@@ -41,13 +41,14 @@ protected:
     // 29
     char _align[3];
     // 2c
-    char _spacer[4];
+    char visibilityFlags;
+    // 2d
+    char _spacer[3];
     // 30
     HeapType heapType;
     // 34
     char _spacer5[40];
 
-    // SIZE == 5c
 public:
     Ground(char* taskName);
     virtual void processAnim();
@@ -86,12 +87,12 @@ public:
     virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, char* nodeName);
     virtual bool getNodeMatrix(u32 nodeMtx, u32 sceneModelIndex, u32 nodeIndex);
     virtual bool getNodeMatrix(u32 nodeMtx, u32 sceneModelIndex, char* nodeName);
-    virtual bool setNodeVisibility(bool unk1, u32 sceneModelIndex, u32 nodeIndex, bool unk4, bool unk5);
-    virtual bool setNodeVisibility(bool unk1, u32 sceneModelIndex, char* nodeName, bool unk4, bool unk5);
+    virtual bool setNodeVisibility(bool setVisibility, u32 sceneModelIndex, u32 nodeIndex, bool recursive, bool recursive_);
+    virtual bool setNodeVisibility(bool setVisibility, u32 sceneModelIndex, char* nodeName, bool recursive, bool recursive_);
     virtual bool setNodeVisibilityAll(bool unk1, u32 sceneModelIndex);
     virtual bool isNodeVisible(u32 sceneModelIndex, u32 nodeIndex);
-    virtual bool setNodeCollision(bool unk1, u32 sceneModelIndex, u32 nodeIndex, bool unk4);
-    virtual bool setNodeCollision(bool unk1, u32 sceneModelIndex, char* nodeName, bool unk4);
+    virtual bool setNodeCollision(bool setCollision, u32 sceneModelIndex, u32 nodeIndex, bool recursive);
+    virtual bool setNodeCollision(bool setCollision, u32 sceneModelIndex, char* nodeName, bool recursive);
     virtual bool getNodeScale(Vec3f* nodeScale, u32 sceneModelIndex, u32 nodeIndex);
     virtual bool getNodeScale(Vec3f* nodeScale, u32 sceneModelIndex, char* nodeName);
     virtual void setValid(u32 unk1);
@@ -100,9 +101,9 @@ public:
     virtual void setInitializeInfo(int initializeInfo);
     virtual bool getInitializeInfo(int initializeInfo);
     virtual void setMotionRatio(float ratio);
-    virtual void setMotionFrame(float frame, u32 anim);
+    virtual void setMotionFrame(float frame, u32 animIndex);
     virtual float getMotionFrame(u32 anim);
-    virtual void setMotionLoop(bool shouldLoop, u32 anim);
+    virtual void setMotionLoop(bool shouldLoop, u32 animIndex);
     virtual void setMatAlphaMul(u32 unk1, u32 sceneModelIndex); // TODO
     virtual void setMatAlpha(u32 unk1, u32 sceneModelIndex);    // TODO
     virtual void updateG3dProcCalcWorld();
@@ -122,6 +123,8 @@ public:
     void setEnableCollisionStatusByClipping(bool enableColl);
     void setVisibilityByClipping(int unk1, u32 sceneModelIndex);
     void updateG3dProcCalcWorldForce();
+
+    STATIC_CHECK(sizeof(Ground) == 0x9C)
 };
 
 // Size: 196

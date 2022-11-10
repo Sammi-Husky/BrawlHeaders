@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_calc_world_callback.h>
 #include <gr/ground.h>
 #include <snd/snd_3d_generator.h>
@@ -95,9 +96,11 @@ public:
     // 80
     u32 unk1;
     // 84
-    u32 unk2;
+    int m_nodeIndex;
     // 88
-    u32 unk3;
+    bool m_isUpdate;
+    // 89
+    char unk3[3];
     // 8C
     grGimmickMotionPath* gimmickMotionPath;
     // 90
@@ -181,4 +184,6 @@ public:
     void updataGimmickEffect(float unk1);
     void updataGimmickSE(float unk1);
     void updateProduction(float unk1);
+
+    STATIC_CHECK(sizeof(grGimmick) == 0x14c)
 };
