@@ -1,6 +1,6 @@
 #pragma once
 
-#include <gf/gf_model.h>
+#include <nw4r/g3d/g3d_anmchr.h>
 #include <types.h>
 
 namespace nw4r {
@@ -17,6 +17,7 @@ namespace nw4r {
         public:
             u32 GetResMdlNumEntries();
             u32 GetResAnmChrNumEntries();
+            CHR0* GetResAnmChr(int);
         };
 
     } // namespace g3d
