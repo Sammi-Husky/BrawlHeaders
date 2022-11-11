@@ -27,5 +27,8 @@ public:
     virtual void setFrameModelAnim();
     virtual void clearFrame();
 
+    static grGimmickMotionPath* create(int mdlIndex, char* nodeName, char *taskName);
+
     void setFrameUpdate(float);
+
 };

@@ -414,6 +414,7 @@
 27,1,0026CB94:createIsValidTrigger__9grGimmickFP13stTriggerData
 27,1,0026D124:createEffectWork__9grGimmickFi
 27,1,0026D22C:startGimmickEffect__9grGimmickFUi
+27,1,0026CCA0:createSoundWork__9grGimmickFUiUi
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc
@@ -474,6 +475,7 @@
 
 // grGimmickMotionPath
 27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf
+27,1,0026E13C:create__19grGimmickMotionPathFiPcPc
 
 // soExternalValueAccesser
 27,1,0008CB0C:getTeamNo__23soExternalValueAccesserFP11StageObject

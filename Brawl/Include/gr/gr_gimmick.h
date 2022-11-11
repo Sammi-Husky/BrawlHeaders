@@ -42,9 +42,11 @@ struct Effect_Info {
 };
 
 struct grGimmickSimpleEffectData {
-    char _spacer[6];
+    unsigned int m_id;
+    short m_0x4;
     short nodeIndex;
-    char _spacer2[4];
+    short m_0x8;
+    short m_0xc;
 };
 
 class grGimmickMotionPath;

@@ -12,9 +12,9 @@ public:
     int unk_0x10;
     int unk_0x14;
     int unk_0x18;
-    int unk_0x1c;
-    int unk_0x20;
-    int unk_0x24;
+    gfTask* unk_0x1c;
+    gfTask* unk_0x20;
+    gfTask* unk_0x24;
     int taskID;
     u16 unk_0x2c;
     u16 taskCategory;
