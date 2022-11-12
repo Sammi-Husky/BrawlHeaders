@@ -4,6 +4,7 @@
 
 class grGimmickMotionPath : public grGimmick {
 
+public:
     char _spacer[4];
     float frame;
     char _spacer2[12];
@@ -13,7 +14,6 @@ class grGimmickMotionPath : public grGimmick {
     int nodeIndex;
     char nodeName[32];
 
-public:
     grGimmickMotionPath(char* taskName, char* nodeName);
     virtual void processAnim();
     virtual void loadGroundData(u32 unk1, u32 unk2, u32 unk3);
@@ -30,5 +30,6 @@ public:
     static grGimmickMotionPath* create(int mdlIndex, char* nodeName, char *taskName);
 
     void setFrameUpdate(float);
+    void setFrame(float frame);
 
 };

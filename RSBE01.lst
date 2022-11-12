@@ -476,6 +476,7 @@
 // grGimmickMotionPath
 27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf
 27,1,0026E13C:create__19grGimmickMotionPathFiPcPc
+27,1,0026EB5C:setFrame__19grGimmickMotionPathFf
 
 // soExternalValueAccesser
 27,1,0008CB0C:getTeamNo__23soExternalValueAccesserFP11StageObject
