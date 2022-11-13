@@ -2,10 +2,8 @@
 
 #include <types.h>
 #include <so/so_area_module_impl.h>
-#include <so/so_gimmick_event_observer.h>
 #include <so/so_collision_log.h>
 #include <so/stageobject.h>
-#include <so/so_gimmick_event_observer.h>
 #include <StaticAssert.h>
 
 class grYakumono;
@@ -41,8 +39,8 @@ public:
     virtual void initHitPosXWork(int unk1, int unk2);
     virtual void presentEventGimmick(soGimmickEventInfo* eventInfo, int sendID);
 
-    virtual void notifyEventCollisionAttack(void* unk1, void* unk2, void* unk3);
-    virtual void notifyEventCollisionAttackCheck(int unk);
+    virtual void notifyEventCollisionAttack(void* unk1, void* unk2, soModuleAccesser* moduleAccesser);
+    virtual bool notifyEventCollisionAttackCheck(u32 flags);
 
 private:
     grYakumono* m_ground;
