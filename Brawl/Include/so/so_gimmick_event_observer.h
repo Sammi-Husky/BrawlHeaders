@@ -4,5 +4,5 @@
 
 struct soGimmickEventInfo {
     int state;
-    int unk;
+    int sendID;
 };

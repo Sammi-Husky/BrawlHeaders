@@ -414,6 +414,7 @@
 27,1,0026CB94:createIsValidTrigger__9grGimmickFP13stTriggerData
 27,1,0026D124:createEffectWork__9grGimmickFi
 27,1,0026D22C:startGimmickEffect__9grGimmickFUi
+27,1,0026CE10:startGimmickSE__9grGimmickFUi
 27,1,0026CCA0:createSoundWork__9grGimmickFUiUi
 
 // grYakumono
@@ -451,6 +452,8 @@
 27,1,002652A8:setSleepHit__10grYakumonoFb
 27,1,00265294:setSleepAttack__10grYakumonoFb
 27,1,00264EE4:getPlayerNumber__10grYakumonoFP12grCollStatus
+27,1,00264DF0:getPlayerNumber__10grYakumonoFPi
+27,1,00264E5C:isSubFighter__10grYakumonoFPi
 
 // grMadein
 27,1,0027583C:__ct__8grMadeinFPc
