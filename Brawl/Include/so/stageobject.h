@@ -1,39 +1,24 @@
 #pragma once
 
-#include <types.h>
+
 #include <containers.h>
 #include <gf/gf_task.h>
 #include <memory.h>
-#include <so/so_event_observer.h>
+#include <so/so_null.h>
 #include <so/so_module_accesser.h>
 
-enum soKind {
-    So_Kind_Invalid = 0xFFFFFFFF,
-    So_Kind_Fighter = 0x0,
-    So_Kind_Enemy = 0x1,
-    So_Kind_Weapon = 0x2,
-    So_Kind_Yakumono = 0x3,
-    So_Kind_Item = 0x4
-};
-
-class soNullable {
-    virtual bool isNull();
-
-    bool null;
-    char _spacer[3];
-};
+//enum soKind {
+//    So_Kind_Invalid = 0xFFFFFFFF,
+//    So_Kind_Fighter = 0x0,
+//    So_Kind_Enemy = 0x1,
+//    So_Kind_Weapon = 0x2,
+//    So_Kind_Yakumono = 0x3,
+//    So_Kind_Item = 0x4
+//};
 
 class soActivatable {
     virtual ~soActivatable();
     u32 isActive;
-};
-
-class soAnimCmdEventObserver : public soEventObserver<soAnimCmdEventObserver> {
-    virtual void addObserver(int unk1, char unk2);
-    virtual u32 isObserv(char unk1);
-    virtual bool notifyEventAnimCmd(int* unk1, int unk2, int unk3);
-
-    char _spacer1[2];
 };
 
 class soLinkEventObserver : public soEventObserver<soLinkEventObserver> {

@@ -2,8 +2,8 @@
 
 #include <types.h>
 #include <memory.h>
-#include <so/so_event_observer>
-#include <so/so_event_presenter>
+#include <so/so_event_observer.h>
+#include <so/so_event_presenter.h>
 #include <so/so_model_module_simple.h>
 #include <so/stageobject.h>
 
