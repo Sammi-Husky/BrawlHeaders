@@ -1,31 +1,24 @@
 #pragma once
 
-
 #include <containers.h>
 #include <gf/gf_task.h>
 #include <memory.h>
 #include <so/so_null.h>
 #include <so/so_module_accesser.h>
+#include <StaticAssert.h>
 
-//enum soKind {
-//    So_Kind_Invalid = 0xFFFFFFFF,
-//    So_Kind_Fighter = 0x0,
-//    So_Kind_Enemy = 0x1,
-//    So_Kind_Weapon = 0x2,
-//    So_Kind_Yakumono = 0x3,
-//    So_Kind_Item = 0x4
-//};
+enum soKind {
+    So_Kind_Invalid = 0xFFFFFFFF,
+    So_Kind_Fighter = 0x0,
+    So_Kind_Enemy = 0x1,
+    So_Kind_Weapon = 0x2,
+    So_Kind_Yakumono = 0x3,
+    So_Kind_Item = 0x4
+};
 
 class soActivatable {
     virtual ~soActivatable();
     u32 isActive;
-};
-
-class soLinkEventObserver : public soEventObserver<soLinkEventObserver> {
-    virtual void addObserver(int unk1, char unk2);
-    virtual void notifyEventLink(int* unk1, int unk2, int unk3, int unk4);
-
-    char _spacer1[2];
 };
 
 class StageObject : public gfTask, public soActivatable, public soAnimCmdEventObserver, public soLinkEventObserver {
@@ -54,7 +47,7 @@ public:
     virtual void processFixPositionPreAnimCmd();
     virtual int* getInput();
     virtual double getCollisionLr(int* unk1);
-    virtual int soGetKind();
+    virtual soKind soGetKind();
     virtual int soGetSubKind();
     virtual bool isActive();
     virtual bool checkTransitionStatus(int unk1);
@@ -70,4 +63,6 @@ public:
     virtual void notifyArticleEventRemove(int unk1, int* unk2);
     virtual void notifyArticleEventEject(int unk1, int unk2, int* unk3, int* unk4);
     virtual void updateRoughPos();
+
+    STATIC_CHECK(sizeof(StageObject) == 100)
 };

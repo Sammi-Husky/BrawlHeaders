@@ -3,15 +3,20 @@
 #include <types.h>
 #include <so/so_area_module_impl.h>
 #include <so/so_gimmick_event_observer.h>
+#include <so/so_collision_log.h>
 #include <so/stageobject.h>
+#include <so/so_gimmick_event_observer.h>
+#include <StaticAssert.h>
 
-struct YakumonoAreaInfo {
+class grYakumono;
+
+struct ykAreaInfo {
     int field_0x0;
     int field_0x4;
     soAreaInit* init;
 };
 
-class Yakumono {
+class Yakumono : public StageObject, public soCollisionAttackEventObserver {
 public:
     void setSituationKind(int situationKind);
     void setColliisonHitOpponentCategory(int unk1, bool unk2);
@@ -21,6 +26,33 @@ public:
     void setTeam(int teamId);
     int getTeam();
 
+    virtual void processFixPosition();
+    virtual void processPreCollision();
+    virtual void renderDebug();
+    virtual ~Yakumono();
+    virtual void updatePosture(u32 unk1);
+    virtual soKind soGetKind();
+    virtual int soGetSubKind();
+    virtual void updateNodeSRT();
+
+    virtual float getAttackPosX(int index);
+    virtual float getHitPosX(int index);
+    virtual void initAttackPosXWork(int unk1, int unk2);
+    virtual void initHitPosXWork(int unk1, int unk2);
+    virtual void presentEventGimmick(soGimmickEventInfo* eventInfo, int sendID);
+
+    virtual void notifyEventCollisionAttack(void* unk1, void* unk2, void* unk3);
+    virtual void notifyEventCollisionAttackCheck(int unk);
+
 private:
-    char _spacer[853];
+    grYakumono* m_ground;
+    char _104[4];
+    soCollisionLog m_collisionLog;
+    char _116[4];
+    soModuleAccesser m_moduleAccesser;
+    ykAreaInfo* m_areaInfo;
+    char _spacer[457];
+    char _pad[3];
+
+    STATIC_CHECK(sizeof(Yakumono) == 856)
 };
