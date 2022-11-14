@@ -2,13 +2,27 @@
 
 #include <types.h>
 #include <StaticAssert.h>
+#include <so/stageobject.h>
 #include <so/so_article.h>
 
-class BaseItem : public StageObject, public soStatusEventObserver, public soSituationEventObserver, public soCollisionAttackEventObserver, public soCollisionShieldEventObserver, public soCollisionReflectorEventObserver, public soCollisionSearchEventObserver, public soGimmickEventObserver, public soArticle {
+class BaseItem : public StageObject, public soStatusEventObserver, public soSituationEventObserver,
+        public soCollisionAttackEventObserver, public soCollisionShieldEventObserver, public soCollisionReflectorEventObserver,
+        public soCollisionSearchEventObserver, public soGimmickEventObserver, public soArticle {
     soModuleAccesser moduleAccesser;
     char _spacer[15284];
 
 public:
+    virtual void processUpdate();
+    virtual void processMapCorrection();
+    virtual void processFixPosition();
+    virtual void processHit();
+    virtual void processFixCamera();
+    virtual void processGameProc();
+    virtual void renderPre();
+    virtual void renderDebug();
+    virtual ~BaseItem();
+
+    // TODO: Verify parameters
     virtual void reset(float, float*);
     virtual void remove();
     virtual int getArticleId();

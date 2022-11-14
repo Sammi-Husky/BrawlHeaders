@@ -11,13 +11,6 @@
 #include <so/so_physics_module_impl.h>
 #include <so/stageobject.h>
 
-class soMotionEventObserver : public soEventObserver<soMotionEventObserver> {
-    virtual void addObserver(int unk1, int unk2);
-    virtual void notifyEventChangeMotion() // TODO
-
-        char _spacer1[2];
-};
-
 class soMotionChangeParam {
     char _spacer[16];
 };

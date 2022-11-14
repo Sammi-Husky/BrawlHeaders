@@ -5,7 +5,6 @@
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
 #include <so/so_model_module_simple.h>
-#include <so/stageobject.h>
 
 class soModelEventObserver : public soEventObserver<soModelEventObserver> {
     virtual void addObserver(int unk1, int unk2);
