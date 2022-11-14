@@ -44,8 +44,8 @@ public:
     virtual void setSyncOwnerStatus(int);
     virtual void setAttackPowerMulPattern(float);
     virtual void setArticleId(int articleId);
-    virtual void setLogAttackInfo(LogAttackInfo* logAttackInfo);
-    virtual LogAttackInfo getLogAttackInfo();
+    virtual void setLogAttackInfo(soLogAttackInfo* logAttackInfo);
+    virtual soLogAttackInfo getLogAttackInfo();
     virtual void updateLogAttackInfo();
     virtual void deactivate();
     virtual void have(int, int, int);

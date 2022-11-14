@@ -10,7 +10,7 @@ class soArticleEventObserver : public soEventObserver<soArticleEventObserver> {
     STATIC_CHECK(sizeof(soArticleEventObserver) == 12)
 };
 
-struct LogAttackInfo {
+struct soLogAttackInfo {
     int _0;
     int _4;
     int _8;
@@ -43,8 +43,8 @@ class soArticle : public soNullable, public soEventPresenter<soArticleEventObser
     virtual void unlinkOwner(int);
     virtual bool isSyncOwnerStatus();
     virtual void setSyncOwnerStatus(int);
-    virtual void setLogAttackInfo(LogAttackInfo* logAttackInfo);
-    virtual LogAttackInfo getLogAttackInfo();
+    virtual void setLogAttackInfo(soLogAttackInfo* logAttackInfo);
+    virtual soLogAttackInfo getLogAttackInfo();
     virtual void updateLogAttackInfo();
     virtual void intrudeLogAttackInfo();
     virtual float getActiveGlobalFrame();
