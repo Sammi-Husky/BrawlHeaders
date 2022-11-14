@@ -47,7 +47,7 @@ private:
     char _104[4];
     soCollisionLog m_collisionLog;
     char _116[4];
-    soModuleAccesser m_moduleAccesser;
+    soModuleAccesser moduleAccesser;
     ykAreaInfo* m_areaInfo;
     char _spacer[457];
     char _pad[3];
