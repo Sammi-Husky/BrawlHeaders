@@ -8,7 +8,7 @@
 
 class grYakumono;
 
-struct ykAreaInfo {
+struct ykData {
     int field_0x0;
     int field_0x4;
     soAreaInit* init;
@@ -48,7 +48,7 @@ private:
     soCollisionLog m_collisionLog;
     char _116[4];
     soModuleAccesser moduleAccesser;
-    ykAreaInfo* m_areaInfo;
+    ykData* m_data;
     char _spacer[457];
     char _pad[3];
 
