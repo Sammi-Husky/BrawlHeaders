@@ -49,7 +49,6 @@ public:
     virtual void notifyEventCollisionAttack(void* unk1, void* unk2, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionAttackCheck(u32 flags);
 
-private:
     grYakumono* m_ground;
     char _104[4];
     soCollisionLog m_collisionLog;
