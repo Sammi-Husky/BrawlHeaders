@@ -8,9 +8,16 @@
 
 class grYakumono;
 
+struct ykHitGroupInfo {
+    char _0[12];
+};
+
 struct ykData {
-    int field_0x0;
-    int field_0x4;
+    int numHitGroups;
+    ykHitGroupInfo* hitGroupsInfo;
+};
+
+struct ykAreaData : ykData {
     soAreaInit* init;
 };
 
