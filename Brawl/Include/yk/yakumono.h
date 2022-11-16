@@ -24,8 +24,8 @@ struct ykAreaData : ykData {
 class Yakumono : public StageObject, public soCollisionAttackEventObserver {
 public:
     void setSituationKind(int situationKind);
-    void setColliisonHitOpponentCategory(int unk1, bool unk2);
-    void setCollisionHitSelfCategory(int category);
+    void setCollisionHitOpponentCategory(int unk1, bool unk2);
+    void setCollisionHitSelfCatagory(int category);
     void setReactionFrame(int reactionFrame);
     void setTeamOwnerId(int teamOwnerId);
     void setTeam(int teamId);

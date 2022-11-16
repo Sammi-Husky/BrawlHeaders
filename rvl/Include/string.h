@@ -1,13 +1,11 @@
 #pragma once
 
-
 #include <strtoul.h>
 #include <stddef.h>
 #include <types.h>
 #include <extras.h>
 #include <__mem.h>
 
-//template <int C>
 class String {
     char* m_string;
 public:
