@@ -196,7 +196,7 @@
 27,1,00225794:isAdventureStage__5StageFv
 27,1,002225ac:initPosPokeTrainer__5StageFii
 27,1,00224AF4:getItemPac__5StageFP9gfArchiveP9gfArchiveii
-27,1,00224AF8:getItemGenPac__5StageFv
+27,1,00224AF8:getItemGenPac__5StageFPP9gfArchive
 27,1,00224AFC:getItemPacEnemyFigure__5StageFv
 27,1,00224B00:getEnemyPac__5StageFv
 27,1,00224B04:getAdvRadarData__5StageFv
@@ -218,8 +218,8 @@
 27,1,0022259C:entryLocalData__5StageFv
 27,1,002225A4:removeLocalData__5StageFv
 27,1,00225774:appearanceFighterLocal__5StageFv
-27,1,0022341C:getFighterStartPos__5StageFii
-27,1,00223458:getFighterReStartPos__5StageFii
+27,1,0022341C:getFighterStartPos__5StageFP5Vec3fi
+27,1,00223458:getFighterReStartPos__5StageFP5Vec3fi
 27,1,00223494:isReStartSamePoint__5StageFv
 27,1,0022349C:getPokeTrainerStartPos__5StageFii
 27,1,002234D8:getItemPosCount__5StageFv
@@ -324,6 +324,11 @@
 27,1,00239aec:resetChangeScene__7stMeleeFv
 27,1,00239af0:setChangeSceneNumber__7stMeleeFv
 27,1,00238dec:__dt__7stMeleeFv
+27,1,0023A068:getItemGenPac__7stMeleeFPP9gfArchive
+27,1,002398E0:getFighterStartPos__7stMeleeFP5Vec3fi
+27,1,00239974:getFighterReStartPos__7stMeleeFP5Vec3fi
+27,1,00239274:createWind2ndOnly__7stMeleeFv
+27,1,002394A4:updateWind2ndOnly__7stMeleeFv
 
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv

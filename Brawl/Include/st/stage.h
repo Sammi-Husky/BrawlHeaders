@@ -205,7 +205,7 @@ public:
     virtual int getPokeTrainerDrawLayer();
     virtual bool isAdventureStage();
     virtual void getItemPac(gfArchive* archive1, gfArchive* archive2, int itemID, int variantID);
-    virtual void getItemGenPac();         // TODO
+    virtual void getItemGenPac(gfArchive** archive);
     virtual void getItemPacEnemyFigure(); // TODO
     virtual void getEnemyPac();           // TODO
     virtual void getAdvRadarData();       // TODO
@@ -227,8 +227,8 @@ public:
     virtual int entryLocalData();
     virtual void removeLocalData();
     virtual void appearanceFighterLocal();
-    virtual void getFighterStartPos(int unk1, int unk2);   // TODO
-    virtual void getFighterReStartPos(int unk1, int unk2); // TODO
+    virtual void getFighterStartPos(Vec3f* startPos, int fighterIndex);
+    virtual void getFighterReStartPos(Vec3f* startPos, int fighterIndex);
     virtual bool isReStartSamePoint();
     virtual void getPokeTrainerStartPos(int unk1, int unk2);      // TODO
     virtual int getItemPosCount();                                // TODO
@@ -297,7 +297,7 @@ public:
     virtual float getMagmaHeight();             // TODO
     virtual float getAcidHeight();              // TODO
     virtual int getIteamDropStatus();           // TODO
-    virtual int createWind2ndOnly();            // TODO
+    virtual bool createWind2ndOnly();
     virtual int getWind2ndOnlyData();           // TODO
     virtual void updateWind2ndOnly();           // TODO
     virtual void setVision();                   // TODO

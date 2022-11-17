@@ -13,5 +13,6 @@ protected:
 public:
     stCommonGimmick(char* name, int unk1);
     void releaseArchive();
+    virtual void processBegin();
     virtual ~stCommonGimmick();
 };
