@@ -41,7 +41,14 @@ protected:
     // 29
     char _align[3];
     // 2c
-    char visibilityFlags;
+    bool visibilityFlag7 : 1;
+    bool visibilityFlag6 : 1;
+    bool visibilityFlag5 : 1;
+    bool visibilityFlag4 : 1;
+    bool visibilityFlag3 : 1;
+    bool visibilityFlag2 : 1;
+    bool visibilityFlag1 : 1;
+    bool visibilityFlag0 : 1;
     // 2d
     char _spacer[3];
     // 30
@@ -73,7 +80,7 @@ public:
     virtual void unloadData();
     virtual int getModelCount();
     virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
-    virtual int setNode();
+    virtual bool setNode();
     virtual void setStageData(void* stageData);
     virtual void* getStageData();
     virtual void initStageData();

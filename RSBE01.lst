@@ -379,9 +379,16 @@
 27,1,002618c0:setEnableCollisionStatus__6GroundFb
 27,1,00261a90:isCollisionStatusOwnerTask__6GroundFP12grCollStatusPi
 27,1,0026022C:setVisibility__6GroundFUi
+27,1,00261950:setValid__6GroundFUi
+27,1,002619F0:setValidAttachedEffect__6GroundFUi
+27,1,00261B3C:preExit__6GroundFv
 
 // grGimmick
+27,1,0026A314:__ct__9grGimmickFPc
+27,1,0026A450:__dt__9grGimmickFv
+27,1,0026A790:processUpdate__9grGimmickFv
 27,1,0026A804:update__9grGimmickFf
+27,1,0026A5E4:startup__9grGimmickFP9gfArchiveUiUi
 27,1,0026DE2C:renderDebug__9grGimmickFv
 27,1,0026daf4:setTransparency__9grGimmickFUi
 27,1,0026C8C8:bindData__9grGimmickFP9gfArchive
@@ -390,6 +397,7 @@
 27,1,0026b1c0:setTgtNode__9grGimmickFPc
 27,1,0026c2f8:setMotionRatio__9grGimmickFf
 27,1,0026d940:invalidatedByCameraClipping__9grGimmickFv
+27,1,0026DAF4:setTransparency__9grGimmickFUiUi
 27,1,0026d938:setTransparencyFlag__9grGimmickFc
 27,1,0026b0f8:updateCallback__9grGimmickFUi
 27,1,0026b17c:fixedPosition__9grGimmickFf

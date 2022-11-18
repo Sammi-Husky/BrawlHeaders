@@ -125,7 +125,7 @@ public:
     virtual void update(float deltaFrame);
     virtual void bindData(gfArchive* data);
     virtual void setVisibilityAttachedEffect(u32 unk1);
-    virtual int setNode();
+    virtual bool setNode();
     virtual void setMotionRatio(float ratio);
     virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
     virtual ~grGimmick();

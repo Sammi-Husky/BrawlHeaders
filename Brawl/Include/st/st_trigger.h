@@ -8,6 +8,15 @@
 
 enum GimmickKind {
     Gimmick_Kind_Valid = 0x0,
+    Gimmick_Kind_RebirthPoint = 0x5,
+    Gimmick_Kind_Wind = 0xc,
+    Gimmick_Kind_Wind2nd = 0xd,
+    Gimmick_Kind_BeltConveyor = 0xe,
+    Gimmick_Kind_Yuka = 0xf,
+    Gimmick_Kind_Pow = 0x10,
+    Gimmick_Kind_Water = 0x11,
+    Gimmick_Kind_HitPointEffect = 0x12,
+    Gimmick_Kind_ScrollLock = 0x15,
     Gimmick_Kind_AreaCommon = 0x1e,
     Gimmick_Kind_BarrelCannonStatic = 0x1f,
     Gimmick_Kind_BarrelCannonPath = 0x20,
@@ -20,6 +29,7 @@ enum GimmickKind {
     Gimmick_Kind_DoorAir = 0x29,
     Gimmick_Kind_DoorGroundAuto = 0x2a,
     Gimmick_Kind_DoorUnk = 0x2b,
+    Gimmick_Kind_WarpZone = 0x2c,
     Gimmick_Kind_Savepoint = 0x2d,
     Gimmick_Kind_Eat = 0x2f,
     Gimmick_Kind_Elevator = 0x35,
