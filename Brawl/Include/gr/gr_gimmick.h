@@ -110,9 +110,23 @@ public:
     // A0
     char unk5;
     // A1
-    char transparencyFlag;
+    bool m_transparencyFlag;
     // A2
-    char _spacer7[26];
+    char _spacer7[2];
+    // A4
+    union {
+        struct {
+            u32 m_transparencySettingPadding : 27;
+            bool m_transparencySetting4 : 1;
+            bool m_transparencySetting3 : 1;
+            bool m_transparencySetting2 : 1;
+            bool m_transparencySetting1 : 1;
+            bool m_transparencySetting0 : 1;
+        };
+        u32 m_transparencySettings;
+    };
+    // A8
+    char _spacer8[20];
     // BC
     grVisibleProduction* visibleProductions[4];
     // CC
