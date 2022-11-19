@@ -15,13 +15,13 @@ struct GimmickAreaData {
     Vec2f m_range;
 };
 
-struct BeltConveyorGimmickAreaData : GimmickAreaData {
+struct SquareBeltConveyorGimmickAreaData : GimmickAreaData {
     Vec3f m_conveyorPos;
     float m_speed;
     bool m_isRightDirection;
     char _spacer[7];
 
-    STATIC_CHECK(sizeof(BeltConveyorGimmickAreaData) == 64)
+    STATIC_CHECK(sizeof(SquareBeltConveyorGimmickAreaData) == 64)
 };
 
 class stObsTriggerCB : public gfCallback {

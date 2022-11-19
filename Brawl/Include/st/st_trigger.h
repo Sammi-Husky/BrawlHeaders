@@ -55,7 +55,7 @@ class stTrigger : public utListEntry {
 
 public:
     void setObserveYakumono(Yakumono* yakumono);
-    stObsTriggerSquareBeltConveyorCB* setBeltConveyorTrigger(BeltConveyorGimmickAreaData* gimmickAreaData);
+    stObsTriggerSquareBeltConveyorCB* setBeltConveyorTrigger(SquareBeltConveyorGimmickAreaData* gimmickAreaData);
 };
 
 class stTriggerMng : public gfTask {
