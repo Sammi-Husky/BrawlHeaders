@@ -41,14 +41,19 @@ protected:
     // 29
     char _align[3];
     // 2c
-    bool visibilityFlag7 : 1;
-    bool visibilityFlag6 : 1;
-    bool visibilityFlag5 : 1;
-    bool visibilityFlag4 : 1;
-    bool visibilityFlag3 : 1;
-    bool visibilityFlag2 : 1;
-    bool visibilityFlag1 : 1;
-    bool visibilityFlag0 : 1;
+    union {
+        struct {
+            bool m_visibilityFlag7 : 1;
+            bool m_visibilityFlag6 : 1;
+            bool m_visibilityFlag5 : 1;
+            bool m_visibilityFlag4 : 1;
+            bool m_visibilityFlag3 : 1;
+            bool m_visibilityFlag2 : 1;
+            bool m_visibilityFlag1 : 1;
+            bool m_visibilityFlag0 : 1;
+        };
+        u8 m_visibilityFlags;
+    };
     // 2d
     char _spacer[3];
     // 30
