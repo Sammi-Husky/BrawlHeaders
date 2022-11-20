@@ -67,6 +67,7 @@
 // string
 803fa3fc:strcmp__FPCcPCc
 803fa340:strncpy__6StringF6StringPcUl
+803fa340:strncpy__FPcPCcUl
 
 // strtoul
 803fc704:atoi__FPCc
@@ -89,7 +90,9 @@
 801913d0:GXSetTevColor__Q34nw4r3g3d14ResMatTevColorFUi7GXColor
 80190a90:DCStore__Q34nw4r3g3d6ResMatFb
 8018edf8:GetResNode__Q34nw4r3g3d6ResMdlCFUl
+8018ed10:GetResNode__Q34nw4r3g3d6ResMdlCFPCc
 801afaac:EnableScnMdlCallbackTiming__Q34nw4r3g3d12ScnMdlSimpleFUi
+80192f70:SetTranslate__Q34nw4r3g3d7ResNodeFfff
 
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi

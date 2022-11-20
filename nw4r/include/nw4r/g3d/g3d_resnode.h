@@ -18,6 +18,8 @@ namespace nw4r {
 
         class ResNode : public ResCommon<ResNodeData> {
             /* data */
+            public:
+                void SetTranslate(float x, float y, float z);
         };
 
     } // namespace g3d

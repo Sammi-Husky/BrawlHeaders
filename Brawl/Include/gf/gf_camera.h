@@ -1,6 +1,7 @@
 #pragma once
 
 #include <types.h>
+#include <StaticAssert.h>
 
 struct OrthographicParameters {
     float top;
@@ -16,7 +17,10 @@ enum CameraProjection {
 
 class gfCamera {
 public:
-    char _spacer[220];
+    char _spacer[108];
+    float m_108;
+    float m_112;
+    char _spacer1[104];
     float near;
     float far;
     char _spacer2[4];
@@ -31,4 +35,6 @@ public:
     gfCamera cameras[6];
     char _spacer[8];
     static gfCameraManager* getManager();
+
+    STATIC_CHECK(sizeof(gfCameraManager) == 0x740)
 };

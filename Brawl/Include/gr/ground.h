@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <containers.h>
 #include <gf/gf_archive.h>
 #include <gf/gf_model.h>
