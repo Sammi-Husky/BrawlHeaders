@@ -40,5 +40,6 @@ public:
 };
 
 int strcmp(const char* str1, const char* str2);
+int strncmp(const char* str1, const char* str2, size_t num);
 char* strcpy(char* destination, const char* source);
 char* strncpy(char* destination, const char* source, size_t num);

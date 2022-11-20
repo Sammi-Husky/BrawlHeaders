@@ -16,7 +16,7 @@
 class Stage;
 
 class Ground : public gfTask {
-protected:
+public:
     // 0
     nw4r::g3d::ResFile resFile;
     // 4
@@ -62,7 +62,6 @@ protected:
     // 34
     char _spacer5[40];
 
-public:
     Ground(char* taskName);
     virtual void processAnim();
     virtual void processUpdate();
