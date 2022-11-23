@@ -20,6 +20,7 @@ namespace Heaps {
         Physics = 0xd,
         ItemInstance = 0xe,
         StageInstance = 0xf,
+        StageCommonResource = 0x10,
         StageResource = 0x11,
         Fighter1Resource = 0x12,
         Fighter2Resource = 0x13,
@@ -40,6 +41,7 @@ namespace Heaps {
         FighterKirbyResource3 = 0x22,
         AssistFigureResource = 0x23,
         ItemExtraResource = 0x24,
+        EnemyInstance = 0x25,
         PokemonResource = 0x26,
         InfoInstance = 0x28,
         MenuInstance = 0x2a,
@@ -55,6 +57,7 @@ namespace Heaps {
         OverlayFighter2 = 0x36,
         OverlayFighter3 = 0x37,
         OverlayFighter4 = 0x38,
+        OverlayEnemy = 0x39,
         Thread = 0x3a
     };
 } // namespace HeapType

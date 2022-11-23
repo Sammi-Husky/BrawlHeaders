@@ -154,6 +154,11 @@
 // gfCamera
 80019fa4:getManager__15gfCameraManagerFv
 
+// gfModuleManager
+27,1,00143B14:getInstance__15gfModuleManagerFv
+80026e00:loadModuleRequest__15gfModuleManagerFP25gfModuleLoadRequestResultP15gfModuleManagerPcQ25Heaps8HeapTypebb
+80026c78:setTempolaryLoadHeap__15gfModuleManagerFQ25Heaps8HeapType
+
 // cmQuake
 8009db90:cmReqQuake__FiP5Vec3f
 
