@@ -36,30 +36,31 @@ enum GimmickKind {
     Gimmick_Kind_Truck = 0x3a,
 };
 
-struct stTriggerData {
-    unsigned short triggerId;
-    int _padding : 31;
-    bool isValidFlag : 1;
-    char unk2;
-};
-
 class stTrigger : public utListEntry {
-    GimmickKind gimmickKind;
-    int id;
+
+    GimmickKind m_gimmickKind;
+    int m_id;
     char _spacer[8];
-    stObsTriggerCB* obsTriggerCB;
-    Yakumono* yakumono;
+    stObsTriggerCB* m_obsTriggerCB;
+    Yakumono* m_yakumono;
     char _spacer2[12];
-    bool isValidFlag;
+    bool m_isValidFlag;
     char _spacer3[7];
 
 public:
+    struct TriggerData {
+        unsigned short m_triggerId;
+        int _padding : 31;
+        bool m_isValidFlag : 1;
+        char m_unk2;
+    };
+
     void setObserveYakumono(Yakumono* yakumono);
     stObsTriggerSquareBeltConveyorCB* setBeltConveyorTrigger(SquareBeltConveyorGimmickAreaData* gimmickAreaData);
 };
 
 class stTriggerMng : public gfTask {
-    utListHead triggerHead;
+    utListHead m_triggerHead;
     char _spacer[21];
 
 public:
@@ -69,9 +70,9 @@ public:
     virtual ~stTriggerMng();
 
     stTrigger* createTrigger(GimmickKind gimmickKind, int triggerId);
-    stTrigger* createTrigger(GimmickKind gimmickKind, stTriggerData* triggerData);
-    void setTriggerFlag(stTriggerData* triggerData);
-    bool getTriggerFlag(stTriggerData* triggerData, bool defaultFlag);
+    stTrigger* createTrigger(GimmickKind gimmickKind, stTrigger::TriggerData* triggerData);
+    void setTriggerFlag(stTrigger::TriggerData* triggerData);
+    bool getTriggerFlag(stTrigger::TriggerData* triggerData, bool defaultFlag);
 };
 
 extern stTriggerMng* g_stTriggerMng;

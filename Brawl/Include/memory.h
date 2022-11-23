@@ -43,6 +43,7 @@ namespace Heaps {
         ItemExtraResource = 0x24,
         EnemyInstance = 0x25,
         PokemonResource = 0x26,
+        WeaponInstance = 0x27,
         InfoInstance = 0x28,
         MenuInstance = 0x2a,
         MenuResource = 0x2b,

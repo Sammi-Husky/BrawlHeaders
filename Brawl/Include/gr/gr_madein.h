@@ -6,39 +6,39 @@
 #include <so/so_damage.h>
 #include <so/so_damage_attacker_info.h>
 
-class grMadeinAttackInfo {
-public:
-    float size;
-    Vec3f offsetPos;
-    char _spacer[0x18];
-    int preset;
-};
-
-class grMadeinHitPointInfo {
-    Vec3f startOffsetPos;
-    Vec3f endOffsetPos;
-    char _spacer[12];
-    float size;
-    float lastDamageTaken;
-    float lastSide;
-    char _spacer2[8];
-    int lastPlayerHit;
-    int nodeIndex;
-};
-
-class StageHitData {
-    Vec3f startOffsetPos;
-    Vec3f endOffsetPos;
-    float size;
-    char _spacer[8];
-    int nodeIndex;
-    char _spacer2[20];
-};
-
 class grMadein : public grSeqYakumono {
+    class AttackInfo {
+    public:
+        float size;
+        Vec3f offsetPos;
+        char _spacer[0x18];
+        int preset;
+    };
+
+    class HitPointInfo {
+        Vec3f startOffsetPos;
+        Vec3f endOffsetPos;
+        char _spacer[12];
+        float size;
+        float lastDamageTaken;
+        float lastSide;
+        char _spacer2[8];
+        int lastPlayerHit;
+        int nodeIndex;
+    };
+
+    class StageHitData {
+        Vec3f startOffsetPos;
+        Vec3f endOffsetPos;
+        float size;
+        char _spacer[8];
+        int nodeIndex;
+        char _spacer2[20];
+    };
+
 protected:
-    grMadeinAttackInfo* attackInfo;
-    grMadeinHitPointInfo* hitPointInfo;
+    AttackInfo* attackInfo;
+    HitPointInfo* hitPointInfo;
     soCollisionAttackData* overwriteAttackData;
     StageHitData* stageHitData;
     char _spacer2[56];

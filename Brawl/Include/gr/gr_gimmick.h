@@ -166,9 +166,9 @@ public:
     void changeTexAnim(u32 unk1, u32 unk2);
     void changeTexSrtAnim(u32 unk1, u32 unk2);
     void changeVisibleAnim(u32 unk1, u32 unk2);
-    void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, stTriggerData* triggerData, char* nodeName);
+    void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, stTrigger::TriggerData* triggerData, char* nodeName);
     void createEffectWork(int numEffects);
-    void createIsValidTrigger(stTriggerData* triggerData);
+    void createIsValidTrigger(stTrigger::TriggerData* triggerData);
     void createSimpleEffectData(grGimmickSimpleEffectData* simpleEffectData, u32 unk2, char* nodeName);
     void createSoundWork(u32 unk1, u32 unk2);
     u32 getMaterialColor(int* unk1, char* unk2, u32* sceneModelIndex);

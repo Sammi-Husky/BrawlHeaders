@@ -19,18 +19,19 @@ class gfModuleInfo {
     STATIC_CHECK(sizeof(gfModuleInfo) == 60)
 };
 
-struct gfModuleLoadRequestResult {
-    void* _0;
-};
-
 class gfModuleManager {
+
     HeapType m_heapType;
     void* _4;
     gfModuleInfo m_moduleInfos[16];
 
     public:
+        struct LoadRequestResult {
+            void* _0;
+        };
+
         void setTempolaryLoadHeap(HeapType heapType);
-        static void loadModuleRequest(gfModuleLoadRequestResult*, gfModuleManager*, char* moduleName, HeapType heapType, bool, bool);
+        static void loadModuleRequest(LoadRequestResult*, gfModuleManager*, char* moduleName, HeapType heapType, bool, bool);
         static gfModuleManager* getInstance();
 
     STATIC_CHECK(sizeof(gfModuleManager) == 968)
