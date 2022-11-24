@@ -3,6 +3,7 @@
 #include <gf/gf_file_io_handle.h>
 #include <memory.h>
 #include <types.h>
+#include <StaticAssert.h>
 
 enum ARCNodeType {
     DATA_TYPE_NONE = 0x0,
@@ -46,9 +47,12 @@ public:
     void* getData(ARCNodeType nodeType, int fileIndex, u32 endian);
     void* getData(int groupID, ARCNodeType nodeType, int fileIndex, u32 endian);
     void* getData(ARCNodeType nodeType, int fileIndex, int* nodeSize, u32 endian);
-    void* getData(int groupID, ARCNodeType nodeType, int fileIndex, u32* nodeSize, u32 endian);
+    void* getData(int groupID, ARCNodeType nodeType, int fileIndex, int* nodeSize, u32 endian);
+    void setFileImage(void* data, int nodeSize, HeapType heapType);
     ~gfArchive();
 
     // 124
     char _spacer3[4];
+
+    STATIC_CHECK(sizeof(gfArchive) == 0x80)
 };

@@ -12,6 +12,7 @@
 #include <snd/snd_id.h>
 #include <st/st_positions.h>
 #include <types.h>
+#include <em/em_create.h>
 
 namespace StSeUtil {
     class SeSeq {
@@ -207,7 +208,7 @@ public:
     virtual void getItemPac(gfArchive** brres, gfArchive** param, int itemID, int variantID);
     virtual void getItemGenPac(gfArchive** archive);
     virtual void getItemPacEnemyFigure(); // TODO
-    virtual void getEnemyPac(gfArchive **brres, gfArchive **param, gfArchive **enmCommon, gfArchive **primFaceBrres, u32 enemyID);
+    virtual void getEnemyPac(gfArchive **brres, gfArchive **param, gfArchive **enmCommon, gfArchive **primFaceBrres, EnemyID enemyID);
     virtual void getAdvRadarData();       // TODO
     virtual void initializeStage();       // TODO
     virtual void closeStage();

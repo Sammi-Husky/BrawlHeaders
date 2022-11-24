@@ -141,7 +141,9 @@
 8002dc40:getTask__6gfTaskFi
 
 // gfArchive
+8001370c:__ct__9gfArchiveFv
 80015ddc:getData__9gfArchiveF11ARCNodeTypeiUi
+80015e14:getData__9gfArchiveF11ARCNodeTypeiPiUi
 
 // gfModelAnimation
 800283bc:getFrameCount__16gfModelAnimationFv
@@ -150,6 +152,7 @@
 80028650:setUpdateRate__16gfModelAnimationFf
 80028278:setLoop__16gfModelAnimationFb
 800278b0:unbindNodeAnim__16gfModelAnimationFPQ34nw4r3g3d6ScnMdl
+80014890:setFileImage__9gfArchiveFPviQ25Heaps8HeapType
 
 // gfCamera
 80019fa4:getManager__15gfCameraManagerFv
@@ -207,7 +210,7 @@
 27,1,00224AF4:getItemPac__5StageFPP9gfArchivePP9gfArchiveii
 27,1,00224AF8:getItemGenPac__5StageFPP9gfArchive
 27,1,00224AFC:getItemPacEnemyFigure__5StageFv
-27,1,00224B00:getEnemyPac__5StageFPP9gfArchivePP9gfArchivePP9gfArchivePP9gfArchiveUi
+27,1,00224B00:getEnemyPac__5StageFPP9gfArchivePP9gfArchivePP9gfArchivePP9gfArchive7EnemyID
 27,1,00224B04:getAdvRadarData__5StageFv
 27,1,00221B68:initializeStage__5StageFv
 27,1,00221F80:closeStage__5StageFv
@@ -563,3 +566,5 @@
 
 // emManager
 41,1,0000C6B0:create__9emManagerFUiUiUc
+41,1,0000C804:getInstance__9emManagerFv
+41,1,0000D20C:preloadArchive__9emManagerFP9gfArchiveP9gfArchiveP9gfArchiveP9gfArchive7EnemyIDb

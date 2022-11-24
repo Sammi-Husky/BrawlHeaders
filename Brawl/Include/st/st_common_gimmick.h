@@ -6,7 +6,8 @@
 class stCommonGimmick : public Stage {
 protected:
     gfArchive* fileData;
-    char _spacer[9];
+    gfArchive* secondaryFileData;
+    char _spacer[5];
     bool isPaused;
     char _spacer2[2];
     gfArchive* commonFileData;
