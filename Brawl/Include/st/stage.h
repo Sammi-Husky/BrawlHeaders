@@ -204,10 +204,10 @@ public:
     virtual float getPokeTrainerPositionZ();
     virtual int getPokeTrainerDrawLayer();
     virtual bool isAdventureStage();
-    virtual void getItemPac(gfArchive* archive1, gfArchive* archive2, int itemID, int variantID);
+    virtual void getItemPac(gfArchive** brres, gfArchive** param, int itemID, int variantID);
     virtual void getItemGenPac(gfArchive** archive);
     virtual void getItemPacEnemyFigure(); // TODO
-    virtual void getEnemyPac();           // TODO
+    virtual void getEnemyPac(gfArchive **brres, gfArchive **param, gfArchive **enmCommon, gfArchive **primFaceBrres, u32 enemyID);
     virtual void getAdvRadarData();       // TODO
     virtual void initializeStage();       // TODO
     virtual void closeStage();

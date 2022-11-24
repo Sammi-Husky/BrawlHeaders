@@ -204,10 +204,10 @@
 27,1,0022579C:getPokeTrainerDrawLayer__5StageFv
 27,1,00225794:isAdventureStage__5StageFv
 27,1,002225ac:initPosPokeTrainer__5StageFii
-27,1,00224AF4:getItemPac__5StageFP9gfArchiveP9gfArchiveii
+27,1,00224AF4:getItemPac__5StageFPP9gfArchivePP9gfArchiveii
 27,1,00224AF8:getItemGenPac__5StageFPP9gfArchive
 27,1,00224AFC:getItemPacEnemyFigure__5StageFv
-27,1,00224B00:getEnemyPac__5StageFv
+27,1,00224B00:getEnemyPac__5StageFPP9gfArchivePP9gfArchivePP9gfArchivePP9gfArchiveUi
 27,1,00224B04:getAdvRadarData__5StageFv
 27,1,00221B68:initializeStage__5StageFv
 27,1,00221F80:closeStage__5StageFv
@@ -560,3 +560,6 @@
 27,1,002252d8:playFrame__Q28StSeUtil5SeSeqFffUi
 27,1,00225108:registId__Q28StSeUtil5SeSeqFP5SndIDi
 27,1,0022517c:registSeq__Q28StSeUtil5SeSeqFiP5SndIDiQ25Heaps8HeapType
+
+// emManager
+41,1,0000C6B0:create__9emManagerFUiUiUc
