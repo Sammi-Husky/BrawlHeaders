@@ -77,9 +77,10 @@ public:
     float m_posY1;
     float m_posY2;
     EnemyID m_connectedEnemyID;
-    char _60[8];
+    void* m_60;
+    int m_64;
     grGimmickMotionPath* m_motionPath;
-    char _72[4];
+    int m_72;
     virtual ~emCreate() {
 
     };
