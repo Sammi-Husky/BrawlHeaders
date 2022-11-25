@@ -2,20 +2,24 @@
 
 #include <types.h>
 #include <StaticAssert.h>
+#include <em/em_archive.h>
+#include <em/enemy.h>
 
 class emManager {
 
+    template <typename T>
     class Entry {
-        char _0[0x18];
+        char _0[0x14];
+        T* m_dataPtr;
 
-        STATIC_CHECK(sizeof(Entry) == 0x18)
+        STATIC_CHECK(sizeof(Entry) == 0x14)
     };
 
-    u32 m_numEntries1;
-    Entry* m_entries1;
+    u32 m_numEnemyEntries;
+    Entry<Enemy>* m_enemyEntries;
     char _8[4];
-    u32 m_numEntries2;
-    Entry* m_entries2;
+    u32 m_numArchiveEntries;
+    Entry<emArchive>* m_archiveEntries;
     char _20[4];
     u8 m_primidFaceType;
     char _25[3];
@@ -23,7 +27,9 @@ class emManager {
     virtual ~emManager();
 
 public:
+    int getPreloadArchiveCountFromKind(EnemyID enemyId);
     int preloadArchive(gfArchive* param, gfArchive* brres, gfArchive* enmCommon, gfArchive* primFaceBrres, EnemyID enemyID, bool isSoundRequest);
+    int createEnemy(emCreate* create);
     static void create(u32 numEntries1, u32 numEntries2, u8 primidFaceType);
     static emManager* getInstance();
 

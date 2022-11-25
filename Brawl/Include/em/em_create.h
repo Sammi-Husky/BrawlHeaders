@@ -6,6 +6,7 @@
 #include <gr/gr_gimmick_motion_path.h>
 
 enum EnemyID {
+    Enemy_Invalid = -0x1,
     Enemy_Kuribo = 0x0,
     Enemy_Popperam = 0x1,
     Enemy_Pochi = 0x2,
@@ -59,15 +60,16 @@ enum EnemyID {
 };
 
 class emCreate {
+public:
     u8 m_difficultyLevel;
     char _1[3];
     EnemyID m_enemyID;
-    char _8[4];
+    int m_8;
     float m_12;
     Vec2f m_spawnPos;
     float m_24;
     u32 m_startingAction;
-    u8 _32;
+    u8 m_32;
     char _33[3];
     float m_36;
     float m_posX1;
@@ -78,7 +80,9 @@ class emCreate {
     char _60[8];
     grGimmickMotionPath* m_motionPath;
     char _72[4];
-    virtual ~emCreate();
+    virtual ~emCreate() {
+
+    };
 
     STATIC_CHECK(sizeof(emCreate) == 80)
 };

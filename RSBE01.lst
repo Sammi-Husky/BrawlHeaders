@@ -568,3 +568,5 @@
 41,1,0000C6B0:create__9emManagerFUiUiUc
 41,1,0000C804:getInstance__9emManagerFv
 41,1,0000D20C:preloadArchive__9emManagerFP9gfArchiveP9gfArchiveP9gfArchiveP9gfArchive7EnemyIDb
+41,1,0000C9D4:createEnemy__9emManagerFP8emCreate
+41,1,0000D6B8:getPreloadArchiveCountFromKind__9emManagerF7EnemyID
