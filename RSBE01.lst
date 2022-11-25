@@ -140,6 +140,10 @@
 8002da1c:__dt__6gfTaskFv
 8002dc40:getTask__6gfTaskFi
 
+// gfHeapManager
+80024a50:dumpAll__13gfHeapManagerFv
+80024b08:dumpList__13gfHeapManagerFv
+
 // gfArchive
 8001370c:__ct__9gfArchiveFv
 80015ddc:getData__9gfArchiveF11ARCNodeTypeiUi
