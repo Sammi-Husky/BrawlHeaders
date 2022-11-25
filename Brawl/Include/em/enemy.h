@@ -10,12 +10,12 @@ class Enemy : public StageObject, public soStatusEventObserver, public soCollisi
         public soCollisionSearchEventObserver, public soCaptureEventObserver, public soCollisionAbsorberEventObserver,
         public soCollisionReflectorEventObserver {
 
-    EnemyID enemyID;
+    EnemyID m_enemyID;
     char _176[4];
-    EnemyID connectedEnemyID;
-    u32 difficultyLevel;
+    EnemyID m_connectedEnemyID;
+    u32 m_difficultyLevel;
     char _188[12];
-    grGimmickMotionPath* motionPath;
+    grGimmickMotionPath* m_motionPath;
     char _204[16];
     soModuleAccesser moduleAccesser;
     char _444[20820];
