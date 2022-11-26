@@ -30,7 +30,10 @@ public:
     int getPreloadArchiveCountFromKind(EnemyID enemyId);
     int preloadArchive(gfArchive* param, gfArchive* brres, gfArchive* enmCommon, gfArchive* primFaceBrres, EnemyID enemyID, bool isSoundRequest);
     int createEnemy(emCreate* create);
+    void removeEnemyAll();
+    void removeArchiveAll();
     static void create(u32 numEntries1, u32 numEntries2, u8 primidFaceType);
+    static void remove();
     static emManager* getInstance();
 
     STATIC_CHECK(sizeof(emManager) == 32)

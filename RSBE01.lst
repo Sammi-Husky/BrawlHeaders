@@ -148,6 +148,7 @@
 8001370c:__ct__9gfArchiveFv
 80015ddc:getData__9gfArchiveF11ARCNodeTypeiUi
 80015e14:getData__9gfArchiveF11ARCNodeTypeiPiUi
+80013b1c:__dt__9gfArchiveFv
 
 // gfModelAnimation
 800283bc:getFrameCount__16gfModelAnimationFv
@@ -165,6 +166,7 @@
 27,1,00143B14:getInstance__15gfModuleManagerFv
 80026e00:loadModuleRequest__15gfModuleManagerFPQ215gfModuleManager17LoadRequestResultP15gfModuleManagerPcQ25Heaps8HeapTypebb
 80026c78:setTempolaryLoadHeap__15gfModuleManagerFQ25Heaps8HeapType
+8002737c:destroy__15gfModuleManagerFPc
 
 // cmQuake
 8009db90:cmReqQuake__FiP5Vec3f
@@ -574,3 +576,6 @@
 41,1,0000D20C:preloadArchive__9emManagerFP9gfArchiveP9gfArchiveP9gfArchiveP9gfArchive7EnemyIDb
 41,1,0000C9D4:createEnemy__9emManagerFP8emCreate
 41,1,0000D6B8:getPreloadArchiveCountFromKind__9emManagerF7EnemyID
+41,1,0000CCE4:removeEnemyAll__9emManagerFv
+41,1,0000D528:removeArchiveAll__9emManagerFv
+41,1,0000C7B4:remove__9emManagerFv

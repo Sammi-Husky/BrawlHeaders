@@ -31,7 +31,9 @@ class gfModuleManager {
         };
 
         void setTempolaryLoadHeap(HeapType heapType);
+        void destroy(char* moduleName);
         static void loadModuleRequest(LoadRequestResult*, gfModuleManager*, char* moduleName, HeapType heapType, bool, bool);
+
         static gfModuleManager* getInstance();
 
     STATIC_CHECK(sizeof(gfModuleManager) == 968)
