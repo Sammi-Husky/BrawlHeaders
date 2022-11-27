@@ -63,6 +63,7 @@
 8000c8c8:__dl__FPv
 8000c8dc:__dla__FPv
 803f11f8:__cvt_fp2unsigned
+803f0a1c:__construct_new_array
 801d8600:OSReport
 
 // string
@@ -167,6 +168,9 @@
 80026e00:loadModuleRequest__15gfModuleManagerFPQ215gfModuleManager17LoadRequestResultP15gfModuleManagerPcQ25Heaps8HeapTypebb
 80026c78:setTempolaryLoadHeap__15gfModuleManagerFQ25Heaps8HeapType
 8002737c:destroy__15gfModuleManagerFPc
+
+// utList
+800448f8:addTail__6utListFP10utListNode
 
 // cmQuake
 8009db90:cmReqQuake__FiP5Vec3f
@@ -583,3 +587,7 @@
 // emWeaponManager (Note: addresses are based on abridged sora_enemy_vs)
 41,1,0002A7A4:create__15emWeaponManagerFv
 41,1,0002A798:getInstance__15emWeaponManagerFv
+
+// wnemSimple (Note: addresses are based on abridged sora_enemy_vs)
+41,1,0002BE50:__ct__10wnemSimpleFv
+41,1,0002EEAC:__dt__10wnemSimpleFv

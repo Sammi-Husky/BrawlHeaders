@@ -6,14 +6,14 @@
 
 template <typename T, int C>
 class utStageObjectPool {
+public:
+
     T* m_stageObjects;
     u32 m_numStageObjects;
     utList m_list1;
     utList m_list2;
     bool m_32;
     char _pad[3];
-
-public:
 
     virtual ~utStageObjectPool();
     virtual void clean();

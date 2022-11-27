@@ -19,10 +19,10 @@ class utWeaponObjectBase : public utListNode {
 
 class wnemSimple : public utWeaponObjectBase, public wnWeaponBuilder<wnemSimple_ModuleAccesserBuildConfig>, public soDamageEventObserver, public soCollisionSearchEventObserver {
     char _spacer[496];
-    // TODO: virtual functions
-
+public:
     wnemSimple();
     virtual ~wnemSimple();
+    // TODO: virtual functions
 
     STATIC_CHECK(sizeof(wnemSimple) == 9076)
 };
