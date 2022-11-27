@@ -36,7 +36,7 @@ enum GimmickKind {
     Gimmick_Kind_Truck = 0x3a,
 };
 
-class stTrigger : public utListEntry {
+class stTrigger : public utListNode {
 
     GimmickKind m_gimmickKind;
     int m_id;

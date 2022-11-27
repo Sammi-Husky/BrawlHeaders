@@ -2,13 +2,13 @@
 
 #include <types.h>
 
-class utListEntry {
-    utListEntry* next;
-    utListEntry* prev;
+class utListNode {
+    utListNode* next;
+    utListNode* prev;
 };
 
 class utListHead {
-    utListEntry* next;
-    utListEntry* last;
+    utListNode* next;
+    utListNode* last;
     unsigned int length;
 };

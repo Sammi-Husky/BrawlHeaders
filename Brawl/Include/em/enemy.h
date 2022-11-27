@@ -20,5 +20,7 @@ class Enemy : public StageObject, public soStatusEventObserver, public soCollisi
     soModuleAccesser moduleAccesser;
     char _444[20820];
 
+    // TODO: virtual functions
+
     STATIC_CHECK(sizeof(Enemy) == 21264)
 };
