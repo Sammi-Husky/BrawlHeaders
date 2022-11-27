@@ -21,6 +21,9 @@ class wnemSimple : public utWeaponObjectBase, public wnWeaponBuilder<wnemSimple_
     char _spacer[496];
     // TODO: virtual functions
 
+    wnemSimple();
+    virtual ~wnemSimple();
+
     STATIC_CHECK(sizeof(wnemSimple) == 9076)
 };
 

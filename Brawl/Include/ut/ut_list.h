@@ -3,12 +3,12 @@
 #include <types.h>
 
 class utListNode {
-    utListNode* next;
-    utListNode* prev;
+    utListNode* m_next;
+    utListNode* m_prev;
 };
 
-class utListHead {
-    utListNode* next;
-    utListNode* last;
-    unsigned int length;
+class utList {
+    utListNode* m_first;
+    utListNode* m_last;
+    unsigned int m_length;
 };

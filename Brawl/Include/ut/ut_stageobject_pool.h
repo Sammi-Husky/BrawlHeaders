@@ -6,13 +6,20 @@
 
 template <typename T, int C>
 class utStageObjectPool {
-    char _0[36];
+    T* m_stageObjects;
+    u32 m_numStageObjects;
+    utList m_list1;
+    utList m_list2;
+    bool m_32;
+    char _pad[3];
+
+public:
 
     virtual ~utStageObjectPool();
     virtual void clean();
     virtual void reset();
-    virtual void* getObject(bool);
+    virtual utListNode* getObject(bool);
     virtual void releaseObject(utListNode*);
 
-    STATIC_CHECK(sizeof(utStageObjectPool) == 24)
+    STATIC_CHECK(sizeof(utStageObjectPool) == 40)
 };

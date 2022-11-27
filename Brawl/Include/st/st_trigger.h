@@ -60,7 +60,7 @@ public:
 };
 
 class stTriggerMng : public gfTask {
-    utListHead m_triggerHead;
+    utList m_triggerList;
     char _spacer[21];
 
 public:
