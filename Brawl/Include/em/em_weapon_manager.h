@@ -17,6 +17,7 @@ public:
     virtual void resetManageWeaponList();
 
     static void create();
+    static void remove();
     static emWeaponManager* getInstance();
 
     STATIC_CHECK(sizeof(emWeaponManager) == 0x298)
