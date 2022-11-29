@@ -17,6 +17,17 @@ public:
     Vec3f operator+(const Vec3f& v);
     Vec3f operator-(const Vec3f& v);
     Vec3f operator*(const float c);
+
+    inline Vec3f operator+=(const Vec3f& v) {
+        return *this + v;
+    }
+    inline Vec3f operator-=(const Vec3f& v) {
+        return *this - v;
+    }
+    inline Vec3f operator*=(const float c) {
+        return *this * c;
+    }
 };
 
 Vec3f operator*(const float c, const Vec3f& v);
+
