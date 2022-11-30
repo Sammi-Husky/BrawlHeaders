@@ -66,8 +66,7 @@ public:
     EnemyID m_enemyID;
     int m_8;
     float m_facingDirection;
-    Vec2f m_spawnPos;
-    float m_24;
+    Vec3f m_spawnPos;
     u32 m_startingAction;
     u8 m_32;
     char _33[3];
@@ -77,8 +76,8 @@ public:
     float m_posY1;
     float m_posY2;
     EnemyID m_connectedEnemyID;
-    void* m_60;
-    int m_64;
+    void* m_epbm;
+    void* m_epsp;
     grGimmickMotionPath* m_motionPath;
     int m_72;
     virtual ~emCreate() {
