@@ -65,7 +65,7 @@ public:
     char _1[3];
     EnemyID m_enemyID;
     int m_8;
-    float m_12;
+    float m_facingDirection;
     Vec2f m_spawnPos;
     float m_24;
     u32 m_startingAction;
