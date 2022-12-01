@@ -4,6 +4,7 @@
 #include <StaticAssert.h>
 #include <gf/gf_task.h>
 #include <ac/ac_anim_cmd_impl.h>
+#include <so/so_collision_attack_part.h>
 
 class soModuleAccesser;
 class BaseItem;
@@ -102,6 +103,27 @@ class soCollisionSearchEventObserver : public soEventObserver<soCollisionSearchE
 struct soGimmickEventInfo {
     int state;
     int sendID;
+};
+
+struct grGimmickEventDoorInfo : soGimmickEventInfo {
+    Vec3f pos;
+    bool unk2;
+};
+
+struct grGimmickEventBarrelCannonInfo : soGimmickEventInfo {
+    Vec3f pos;
+    unsigned int field_0x14;
+    soCollisionAttackData* attackData;
+    float shootSpeed;
+    float rot;
+    float shootTimerSpeed;
+    float shootAngleOffset;
+    float shootStunTimerSpeed;
+};
+
+struct grGimmickEventElevatorInfo : soGimmickEventInfo {
+    bool canGoUp;
+    bool canGoDown;
 };
 
 class soGimmickEventObserver : public soEventObserver<soGimmickEventObserver> {
