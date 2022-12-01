@@ -101,29 +101,29 @@ class soCollisionSearchEventObserver : public soEventObserver<soCollisionSearchE
 };
 
 struct soGimmickEventInfo {
-    int state;
-    int sendID;
+    int m_state;
+    int m_sendID;
 };
 
 struct grGimmickEventDoorInfo : soGimmickEventInfo {
-    Vec3f pos;
-    bool unk2;
+    Vec3f m_pos;
+    bool m_unk2;
 };
 
 struct grGimmickEventBarrelCannonInfo : soGimmickEventInfo {
-    Vec3f pos;
-    unsigned int field_0x14;
-    soCollisionAttackData* attackData;
-    float shootSpeed;
-    float rot;
-    float shootTimerSpeed;
-    float shootAngleOffset;
-    float shootStunTimerSpeed;
+    Vec3f m_pos;
+    unsigned int m_20;
+    soCollisionAttackData* m_attackData;
+    float m_shootSpeed;
+    float m_rot;
+    float m_shootTimerSpeed;
+    float m_shootAngleOffset;
+    float m_shootStunTimerSpeed;
 };
 
 struct grGimmickEventElevatorInfo : soGimmickEventInfo {
-    bool canGoUp;
-    bool canGoDown;
+    bool m_canGoUp;
+    bool m_canGoDown;
 };
 
 class soGimmickEventObserver : public soEventObserver<soGimmickEventObserver> {

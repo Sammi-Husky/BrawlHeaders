@@ -2,6 +2,7 @@
 
 #include <types.h>
 #include <StaticAssert.h>
+#include <mt/mt_vector.h>
 #include <so/stageobject.h>
 #include <ft/ft_owner.h>
 
@@ -143,6 +144,7 @@ public:
     void setSlow(bool setStatus, int slowStrength, int duration, bool useTimerEffect);
     void setHeartSwap(int givingPlayerEntryID, int givingPlayerEntryId, bool setStatus);
     void startScaling(bool setStatus, bool isPoison);
+    void warp(Vec3f* pos, float lr, bool showEffect);
 
     STATIC_CHECK(sizeof(Fighter) == 332)
 };
