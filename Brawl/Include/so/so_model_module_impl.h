@@ -7,9 +7,8 @@
 #include <so/so_model_module_simple.h>
 
 class soModelEventObserver : public soEventObserver<soModelEventObserver> {
-    virtual void addObserver(int unk1, int unk2);
-    virtual void notifyEventConstructInstance(); //TODO
-    virtual void notifyEventDestructInstance();  //TODO
+    virtual void notifyEventConstructInstance(bool, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventDestructInstance(soModuleAccesser* moduleAccesser);
 
     char _spacer1[2];
 };
@@ -86,5 +85,5 @@ class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObser
     virtual ~soModelModuleImpl();
 
     virtual u32 isObserv(char unk1);
-    virtual bool notifyEventAnimCmd(int* unk1, int unk2, int unk3);
+    virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
 };

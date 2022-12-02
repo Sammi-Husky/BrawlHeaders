@@ -4,6 +4,7 @@
 #include <StaticAssert.h>
 #include <so/so_model_module_impl.h>
 #include <so/so_resource_module_impl.h>
+#include <so/so_status_module_impl.h>
 
 class StageObject;
 
@@ -37,7 +38,7 @@ public:
     void* m_workManageModule;
     void* m_debugModule;
     void* m_animCmdModule;
-    void* m_statusModule;
+    soStatusModule* m_statusModule;
     void* m_generalTermDisideModule;
     void* m_switchDecideModule;
     void* m_kineticModule;
@@ -65,12 +66,17 @@ public:
 };
 
 class soModuleAccesser {
+public:
     void* vtable2;
     char _4[4];
     StageObject* m_stageObject;
     soModuleEnumeration m_moduleEnumeration;
     soModuleEnumeration* m_enumerationStart;
     void* vtable1;
+
+    inline soStatusModule* getStatusModule() {
+        return this->m_enumerationStart->m_statusModule;
+    }
 
     STATIC_CHECK(sizeof(soModuleAccesser) == 224)
 };

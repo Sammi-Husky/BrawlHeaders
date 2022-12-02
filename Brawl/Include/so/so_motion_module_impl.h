@@ -271,9 +271,9 @@ class soMotionModuleImpl : public soMotionModule, public soStatusEventObserver, 
     virtual void changeMotion();
 
     virtual void getResFileData();
-    virtual void isObserv();
-    virtual void notifyEventAnimCmd();
-    virtual void notifyEventChangeStatus();
-    virtual void notifyEventConstructInstance();
-    virtual void notifyEventDestructInstance();
+    virtual u32 isObserv(char unk1);
+    virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
+    virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventConstructInstance(bool, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventDestructInstance(soModuleAccesser* moduleAccesser);
 };
