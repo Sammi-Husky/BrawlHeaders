@@ -78,7 +78,7 @@ class soArrayVectorAbstract : public soArray<T>, public soArrayVectorCalcInterfa
 
 template <class T, int C>
 class soArrayVector : public soArrayVectorAbstract<T> {
-    int* unk1;
+    u32 unk1;
 
     T array[C];
 

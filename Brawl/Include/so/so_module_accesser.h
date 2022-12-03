@@ -5,6 +5,7 @@
 #include <so/so_resource_module_impl.h>
 #include <so/so_model_module_impl.h>
 #include <so/so_motion_module_impl.h>
+#include <so/so_posture_module_impl.h>
 #include <so/so_status_module_impl.h>
 
 class StageObject;
@@ -14,7 +15,7 @@ public:
     soResourceModule* m_resourceModule;
     soModelModule* m_modelModule;
     soMotionModule* m_motionModule;
-    void* m_postureModule;
+    soPostureModule* m_postureModule;
     void* m_groundModule;
     void* m_situationModule;
     void* m_teamModule;
@@ -77,6 +78,10 @@ public:
 
     inline soMotionModule* getMotionModule() {
         return this->m_enumerationStart->m_motionModule;
+    }
+
+    inline soPostureModule* getPostureModule() {
+        return this->m_enumerationStart->m_postureModule;
     }
 
     inline soStatusModule* getStatusModule() {

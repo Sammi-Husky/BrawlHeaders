@@ -3,6 +3,7 @@
 #include <types.h>
 
 class soNullable {
+public:
     virtual bool isNull();
 
     bool null;

@@ -176,3 +176,12 @@ class soTurnEventObserver : public soEventObserver<soTurnEventObserver> {
 
     STATIC_CHECK(sizeof(soTurnEventObserver) == 12)
 };
+
+class soModelEventObserver : public soEventObserver<soModelEventObserver> {
+    virtual void notifyEventConstructInstance(bool, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventDestructInstance(soModuleAccesser* moduleAccesser);
+
+    char _spacer1[2];
+
+    STATIC_CHECK(sizeof(soModelEventObserver) == 12)
+};

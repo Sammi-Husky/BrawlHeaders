@@ -6,13 +6,6 @@
 #include <so/so_event_presenter.h>
 #include <so/so_model_module_simple.h>
 
-class soModelEventObserver : public soEventObserver<soModelEventObserver> {
-    virtual void notifyEventConstructInstance(bool, soModuleAccesser* moduleAccesser);
-    virtual void notifyEventDestructInstance(soModuleAccesser* moduleAccesser);
-
-    char _spacer1[2];
-};
-
 class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObserver, public soEventPresenter<soModelEventObserver> {
     // TODO: verify of offsets are correct with virtual base class
 

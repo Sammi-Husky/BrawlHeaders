@@ -1,7 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <containers.h>
+#include <so/so_array.h>
 #include <gf/gf_archive.h>
 #include <gf/gf_model.h>
 #include <gf/gf_task.h>

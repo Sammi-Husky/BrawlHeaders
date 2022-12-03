@@ -2,7 +2,7 @@
 
 #include <types.h>
 #include <StaticAssert.h>
-#include <containers.h>
+#include <so/so_array.h>
 #include <memory.h>
 #include <mt/mt_vector.h>
 #include <so/so_anim_chr.h>
@@ -13,9 +13,9 @@ class soModuleAccesser;
 
 class soMotionChangeParam {
 public:
-    int m_motionId;
-    float frame;
-    float rate;
+    int m_kind;
+    float m_frame;
+    float m_rate;
     u8 _12;
     u8 _13;
     u8 _14;

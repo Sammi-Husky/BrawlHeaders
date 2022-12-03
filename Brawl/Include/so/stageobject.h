@@ -1,6 +1,7 @@
 #pragma once
 
-#include <containers.h>
+#include <types.h>
+#include <so/so_array.h>
 #include <gf/gf_task.h>
 #include <memory.h>
 #include <so/so_null.h>
