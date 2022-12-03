@@ -2,8 +2,9 @@
 
 #include <types.h>
 #include <StaticAssert.h>
-#include <so/so_model_module_impl.h>
 #include <so/so_resource_module_impl.h>
+#include <so/so_model_module_impl.h>
+#include <so/so_motion_module_impl.h>
 #include <so/so_status_module_impl.h>
 
 class StageObject;
@@ -12,7 +13,7 @@ class soModuleEnumeration {
 public:
     soResourceModule* m_resourceModule;
     soModelModule* m_modelModule;
-    void* m_motionModule;
+    soMotionModule* m_motionModule;
     void* m_postureModule;
     void* m_groundModule;
     void* m_situationModule;
@@ -73,6 +74,10 @@ public:
     soModuleEnumeration m_moduleEnumeration;
     soModuleEnumeration* m_enumerationStart;
     void* vtable1;
+
+    inline soMotionModule* getMotionModule() {
+        return this->m_enumerationStart->m_motionModule;
+    }
 
     inline soStatusModule* getStatusModule() {
         return this->m_enumerationStart->m_statusModule;

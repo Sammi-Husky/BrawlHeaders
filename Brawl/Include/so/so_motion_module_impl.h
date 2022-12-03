@@ -1,129 +1,141 @@
 #pragma once
 
 #include <types.h>
+#include <StaticAssert.h>
 #include <containers.h>
 #include <memory.h>
+#include <mt/mt_vector.h>
 #include <so/so_anim_chr.h>
-#include <so/so_event_observer>
-#include <so/so_event_presenter>
-#include <so/so_model_module_impl.h>
-#include <so/so_module_accesser.h>
-#include <so/so_physics_module_impl.h>
-#include <so/stageobject.h>
+#include <so/so_event_observer.h>
+#include <so/so_event_presenter.h>
+
+class soModuleAccesser;
 
 class soMotionChangeParam {
-    char _spacer[16];
+public:
+    int m_motionId;
+    float frame;
+    float rate;
+    u8 _12;
+    u8 _13;
+    u8 _14;
+    u8 _15;
+
+    STATIC_CHECK(sizeof(soMotionChangeParam) == 16)
 };
 
 class soMotionModule {
+public:
     // TODO: verify params
     virtual ~soMotionModule();
     virtual void activate();
     virtual void deactivate();
-    virtual void setData();
-    virtual void updateFrame();
+    virtual void setData(void*);
+    virtual void updateFrame(float);
     virtual void updateNode();
-    virtual void getRate();
-    virtual void setRate();
-    virtual void setLoopFlag();
-    virtual void isLoopFlag();
-    virtual void setFrame();
-    virtual void setFrameSyncAnimCmd();
-    virtual void getFrame();
-    virtual void isAnimResFile();
-    virtual void getEndFrame();
-    virtual void getEndFrame(u32 unk1);
-    virtual void isEnd();
-    virtual void isLooped();
-    virtual void isAnimCmd();
-    virtual void getName();
-    virtual void getName_overload();
-    virtual void getKind();
-    virtual void getWeight();
-    virtual void getPrevWeight();
-    virtual void setWeight();
-    virtual void setWeightRate();
-    virtual void isBlend();
-    virtual void disableNode();
-    virtual void calcNode();
-    virtual void calcNode_overload();
-    virtual void changeMotionRequest();
+    virtual float getRate();
+    virtual void setRate(float rate);
+    virtual void setLoopFlag(bool loopFlag);
+    virtual bool isLoopFlag();
+    virtual void setFrame(float frame);
+    virtual void setFrameSyncAnimCmd(float frame);
+    virtual float getFrame();
+    virtual bool isAnimResFile(int kind);
+    virtual float getEndFrame(int kind);
+    virtual float getEndFrame();
+    virtual bool isEnd();
+    virtual bool isLooped();
+    virtual bool isAnimCmd(int);
+    virtual char* getName(int kind, bool);
+    virtual char* getName();
+    virtual int getKind();
+    virtual float getWeight();
+    virtual float getPrevWeight();
+    virtual void setWeight(float weight);
+    virtual void setWeightRate(float weightRate);
+    virtual bool isBlend();
+    virtual void disableNode(int);
+    virtual void calcNode(void*, int, int);
+    virtual void calcNode(int, void*, void*);
+    virtual bool changeMotionRequest(soMotionChangeParam* changeParam);
     virtual void processFixPosition();
     virtual void processFixCamera();
-    virtual void add2ndAnimChr();
+    virtual void add2ndAnimChr(float, float, int kind, bool);
     virtual void remove2ndAnimChr();
-    virtual void set2ndRate();
-    virtual void get2ndFrame();
-    virtual void get2ndKind();
-    virtual void is2ndEnd();
-    virtual void addPartialAnimChr();
-    virtual void removePartialAnimChr();
-    virtual void compRemovePartialAnimChr();
-    virtual void detachPartialAnimChr();
-    virtual void attachPartialAnimChr();
-    virtual void getPartialSize();
-    virtual void getPartialKind();
-    virtual void setPartialRate();
-    virtual void getPartialRate();
-    virtual void setPartialFrame();
-    virtual void setPartialFrameSyncAnimCmd();
-    virtual void getPartialFrame();
-    virtual void getPartialEndFrame();
-    virtual void isEndPartial();
-    virtual void isLoopedPartial();
-    virtual void getOtherAnimSize();
-    virtual void getOtherAnimKind();
-    virtual void addOtherAnim(double unk1, double unk2, int unk3, u32 unk4, u32 unk5);
-    virtual void addOtherAnim(double unk1, double unk2, int unk3, int unk4, int unk5, int unk6);
-    virtual void removeOtherAnim();
-    virtual void setOtherAnimRate();
-    virtual void getOtherAnimRate();
-    virtual void setOtherAnimFrame();
-    virtual void getOtherAnimFrame();
-    virtual void getOtherAnimEndFrame();
-    virtual void isEndOtherAnim();
-    virtual void isLoopedOtherAnim();
-    virtual void getTransNTranslateEndFrame();
-    virtual void getTransNTranslate();
+    virtual void set2ndRate(float rate);
+    virtual float get2ndFrame();
+    virtual int get2ndKind();
+    virtual bool is2ndEnd();
+    virtual void addPartialAnimChr(float, float, void*, void*, int, int, int);
+    virtual void removePartialAnimChr(int);
+    virtual void compRemovePartialAnimChr(int);
+    virtual void detachPartialAnimChr(u32, bool);
+    virtual void attachPartialAnimChr(u32);
+    virtual int getPartialSize();
+    virtual int getPartialKind(int);
+    virtual void setPartialRate(float rate, int);
+    virtual float getPartialRate(int);
+    virtual void setPartialFrame(float frame, int);
+    virtual void setPartialFrameSyncAnimCmd(float frame, int);
+    virtual float getPartialFrame(int);
+    virtual float getPartialEndFrame(int);
+    virtual bool isEndPartial(int);
+    virtual bool isLoopedPartial(int);
+    virtual int getOtherAnimSize();
+    virtual int getOtherAnimKind(int);
+    virtual void addOtherAnim(float, float, int, u32, bool);
+    virtual void addOtherAnim(float, float, int, int, int, bool);
+    virtual void removeOtherAnim(int);
+    virtual void setOtherAnimRate(float rate, int);
+    virtual float getOtherAnimRate(int);
+    virtual void setOtherAnimFrame(float frame, int);
+    virtual float getOtherAnimFrame(int);
+    virtual float getOtherAnimEndFrame(int);
+    virtual bool isEndOtherAnim(int);
+    virtual bool isLoopedOtherAnim(int);
+    virtual float getTransNTranslateEndFrame(void*, int kind);
+    virtual Vec3f getTransNTranslate();
     virtual void updateTransMoveSpeed();
-    virtual void isTransMove();
-    virtual void getTransMoveSpeed();
-    virtual void get2ndTransNTranslate();
+    virtual bool isTransMove(float);
+    virtual Vec3f getTransMoveSpeed();
+    virtual Vec3f get2ndTransNTranslate();
     virtual void update2ndTransMoveSpeed();
-    virtual void is2ndTransMove();
-    virtual void get2ndTransMoveSpeed();
-    virtual void getBlendTransMoveSpeed();
-    virtual void getNum();
-    virtual void setShareAdjustNode();
-    virtual void setPartialCancelNodeData();
-    virtual void enablePartialCancelNode();
-    virtual void getNodeRotate();
-    virtual void getNodeTranslate(int unk1, int unk2, int unk3);
-    virtual void getNodeTranslate(double unk1, int* unk2, u32 unk3, int unk4, int unk5);
+    virtual bool is2ndTransMove();
+    virtual Vec3f get2ndTransMoveSpeed();
+    virtual Vec3f getBlendTransMoveSpeed();
+    virtual int getNum();
+    virtual void setShareAdjustNode(float, void*);
+    virtual void setPartialCancelNodeData(void*);
+    virtual void enablePartialCancelNode(bool);
+    virtual Vec3f getNodeRotate(int nodeId);
+    virtual Vec3f getNodeTranslate(int nodeId, bool);
+    virtual Vec3f getNodeTranslate(float, int kind, int nodeId, bool);
     virtual void begin();
     virtual void rewind();
     virtual void turnBack();
-    virtual void checkTransition();
-    virtual void addDefaultTransitionTerm();
-    virtual void addTransitionTerm();
-    virtual void setShareCancelNode();
-    virtual void setOnlyChr();
-    virtual void getLastMotionTransitionInfo();
-    virtual void cacheAnimChrForce();
-    virtual void setAnimObjCacheModule();
-    virtual void setCheckTexBind();
-    virtual void detachAnmObjChrBlend();
-    virtual void setAnmObjChrBlend();
-    virtual void setResourceId();
+    virtual bool checkTransition(int);
+    virtual void addDefaultTransitionTerm(void*, int numTerms);
+    virtual void addTransitionTerm(void*, int numTerms, int);
+    virtual void setShareCancelNode(int, int);
+    virtual void setOnlyChr(bool);
+    virtual void* getLastMotionTransitionInfo();
+    virtual void cacheAnimChrForce(int kind);
+    virtual void setAnimObjCacheModule(void*);
+    virtual void setCheckTexBind(); // TODO
+    virtual void* detachAnmObjChrBlend();
+    virtual void setAnmObjChrBlend(void*);
+    virtual void setResourceId(int, int);
     virtual void clearResourceId();
-    virtual void setKindOffset();
-    virtual void setShareAnimObjKind();
-    virtual void setShareAnimObjPartialInfo();
-    virtual void setNoComp();
-    virtual void setTransMoveSpeedNoScale();
-    virtual void isProcessFixPositionDone();
-    virtual void isForceImmediatelyStatusInterpret();
-    virtual void changeMotion();
+    virtual void setKindOffset(int kindOffset);
+    virtual void setShareAnimObjKind(int shareAnimObjKind);
+    virtual void setShareAnimObjPartialInfo(int, int);
+    virtual void setNoComp(bool);
+    virtual void setTransMoveSpeedNoScale(bool);
+    virtual bool isProcessFixPositionDone();
+    virtual bool isForceImmediatelyStatusInterpret();
+    virtual void changeMotion(soMotionChangeParam* changeParam);
+
+    STATIC_CHECK(sizeof(soMotionModule) == 4)
 };
 
 class soMotionModuleImpl : public soMotionModule, public soStatusEventObserver, public soAnimCmdEventObserver, public soModelEventObserver, public soEventPresenter<soMotionEventObserver> {
@@ -132,148 +144,151 @@ class soMotionModuleImpl : public soMotionModule, public soStatusEventObserver, 
     char _spacer1[8];
 
     // 60
-    soAnimChr mainAnimationData;
+    soAnimChr m_mainAnim;
 
     // 88
-    int subAction;
+    int m_subAction;
 
     // 92
     char _spacer2[16];
 
     // 108
-    soAnimChr unkAnimParams;
+    soAnimChr m_secondaryAnim;
 
     // 136
     char _spacer3[104];
 
     // 240
-    void* transitionModuleEntity;
+    void* m_transitionModuleEntity;
 
     // 244
-    soArrayVector<soMotionChangeParam, 4> motionChangeParamArray;
+    soArrayVector<soMotionChangeParam, 4> m_motionChangeParamArray;
 
     // 320
     char _spacer4[40];
 
     // 360
-    soModuleAccesser* soModuleAccesser;
+    soModuleAccesser* m_moduleAccesser;
 
     // 364
     char _spacer5[4];
 
+public:
     // TODO: verify params
     virtual ~soMotionModuleImpl();
     virtual void activate();
     virtual void deactivate();
-    virtual void setData();
-    virtual void updateFrame();
+    virtual void setData(void*);
+    virtual void updateFrame(float);
     virtual void updateNode();
-    virtual void getRate();
-    virtual void setRate();
-    virtual void setLoopFlag();
-    virtual void isLoopFlag();
-    virtual void setFrame();
-    virtual void setFrameSyncAnimCmd();
-    virtual void getFrame();
-    virtual void isAnimResFile();
-    virtual void getEndFrame();
-    virtual void getEndFrame(u32 unk1);
-    virtual void isEnd();
-    virtual void isLooped();
-    virtual void isAnimCmd();
-    virtual void getName();
-    virtual void getName_overload();
-    virtual void getKind();
-    virtual void getWeight();
-    virtual void getPrevWeight();
-    virtual void setWeight();
-    virtual void setWeightRate();
-    virtual void isBlend();
-    virtual void disableNode();
-    virtual void calcNode();
-    virtual void calcNode_overload();
-    virtual void changeMotionRequest();
+    virtual float getRate();
+    virtual void setRate(float rate);
+    virtual void setLoopFlag(bool loopFlag);
+    virtual bool isLoopFlag();
+    virtual void setFrame(float frame);
+    virtual void setFrameSyncAnimCmd(float frame);
+    virtual float getFrame();
+    virtual bool isAnimResFile(int kind);
+    virtual float getEndFrame(int kind);
+    virtual float getEndFrame();
+    virtual bool isEnd();
+    virtual bool isLooped();
+    virtual bool isAnimCmd(int);
+    virtual char* getName(int kind, bool);
+    virtual char* getName();
+    virtual int getKind();
+    virtual float getWeight();
+    virtual float getPrevWeight();
+    virtual void setWeight(float weight);
+    virtual void setWeightRate(float weightRate);
+    virtual bool isBlend();
+    virtual void disableNode(int);
+    virtual void calcNode(void*, int, int);
+    virtual void calcNode(int, void*, void*);
+    virtual bool changeMotionRequest(u32 motionId);
     virtual void processFixPosition();
     virtual void processFixCamera();
-    virtual void add2ndAnimChr();
+    virtual void add2ndAnimChr(float, float, int kind, bool);
     virtual void remove2ndAnimChr();
-    virtual void set2ndRate();
-    virtual void get2ndFrame();
-    virtual void get2ndKind();
-    virtual void is2ndEnd();
-    virtual void addPartialAnimChr();
-    virtual void removePartialAnimChr();
-    virtual void compRemovePartialAnimChr();
-    virtual void detachPartialAnimChr();
-    virtual void attachPartialAnimChr();
-    virtual void getPartialSize();
-    virtual void getPartialKind();
-    virtual void setPartialRate();
-    virtual void getPartialRate();
-    virtual void setPartialFrame();
-    virtual void setPartialFrameSyncAnimCmd();
-    virtual void getPartialFrame();
-    virtual void getPartialEndFrame();
-    virtual void isEndPartial();
-    virtual void isLoopedPartial();
-    virtual void getOtherAnimSize();
-    virtual void getOtherAnimKind();
-    virtual void addOtherAnim(double unk1, double unk2, int unk3, u32 unk4, u32 unk5);
-    virtual void addOtherAnim(double unk1, double unk2, int unk3, int unk4, int unk5, int unk6);
-    virtual void removeOtherAnim();
-    virtual void setOtherAnimRate();
-    virtual void getOtherAnimRate();
-    virtual void setOtherAnimFrame();
-    virtual void getOtherAnimFrame();
-    virtual void getOtherAnimEndFrame();
-    virtual void isEndOtherAnim();
-    virtual void isLoopedOtherAnim();
-    virtual void getTransNTranslateEndFrame();
-    virtual void getTransNTranslate();
+    virtual void set2ndRate(float rate);
+    virtual float get2ndFrame();
+    virtual int get2ndKind();
+    virtual bool is2ndEnd();
+    virtual void addPartialAnimChr(float, float, void*, void*, int, int, int);
+    virtual void removePartialAnimChr(int);
+    virtual void compRemovePartialAnimChr(int);
+    virtual void detachPartialAnimChr(u32, bool);
+    virtual void attachPartialAnimChr(u32);
+    virtual int getPartialSize();
+    virtual int getPartialKind(int);
+    virtual void setPartialRate(float rate, int);
+    virtual float getPartialRate(int);
+    virtual void setPartialFrame(float frame, int);
+    virtual void setPartialFrameSyncAnimCmd(float frame, int);
+    virtual float getPartialFrame(int);
+    virtual float getPartialEndFrame(int);
+    virtual bool isEndPartial(int);
+    virtual bool isLoopedPartial(int);
+    virtual int getOtherAnimSize();
+    virtual int getOtherAnimKind(int);
+    virtual void addOtherAnim(float, float, int, u32, bool);
+    virtual void addOtherAnim(float, float, int, int, int, bool);
+    virtual void removeOtherAnim(int);
+    virtual void setOtherAnimRate(float rate, int);
+    virtual float getOtherAnimRate(int);
+    virtual void setOtherAnimFrame(float frame, int);
+    virtual float getOtherAnimFrame(int);
+    virtual float getOtherAnimEndFrame(int);
+    virtual bool isEndOtherAnim(int);
+    virtual bool isLoopedOtherAnim(int);
+    virtual float getTransNTranslateEndFrame(void*, int kind);
+    virtual Vec3f getTransNTranslate();
     virtual void updateTransMoveSpeed();
-    virtual void isTransMove();
-    virtual void getTransMoveSpeed();
-    virtual void get2ndTransNTranslate();
+    virtual bool isTransMove(float);
+    virtual Vec3f getTransMoveSpeed();
+    virtual Vec3f get2ndTransNTranslate();
     virtual void update2ndTransMoveSpeed();
-    virtual void is2ndTransMove();
-    virtual void get2ndTransMoveSpeed();
-    virtual void getBlendTransMoveSpeed();
-    virtual void getNum();
-    virtual void setShareAdjustNode();
-    virtual void setPartialCancelNodeData();
-    virtual void enablePartialCancelNode();
-    virtual void getNodeRotate();
-    virtual void getNodeTranslate(int unk1, int unk2, int unk3);
-    virtual void getNodeTranslate(double unk1, int* unk2, u32 unk3, int unk4, int unk5);
+    virtual bool is2ndTransMove();
+    virtual Vec3f get2ndTransMoveSpeed();
+    virtual Vec3f getBlendTransMoveSpeed();
+    virtual int getNum();
+    virtual void setShareAdjustNode(float, void*);
+    virtual void setPartialCancelNodeData(void*);
+    virtual void enablePartialCancelNode(bool);
+    virtual Vec3f getNodeRotate(int nodeId);
+    virtual Vec3f getNodeTranslate(int nodeId, bool);
+    virtual Vec3f getNodeTranslate(float, int kind, int nodeId, bool);
     virtual void begin();
     virtual void rewind();
     virtual void turnBack();
-    virtual void checkTransition();
-    virtual void addDefaultTransitionTerm();
-    virtual void addTransitionTerm();
-    virtual void setShareCancelNode();
-    virtual void setOnlyChr();
-    virtual void getLastMotionTransitionInfo();
-    virtual void cacheAnimChrForce();
-    virtual void setAnimObjCacheModule();
-    virtual void setCheckTexBind();
-    virtual void detachAnmObjChrBlend();
-    virtual void setAnmObjChrBlend();
-    virtual void setResourceId();
+    virtual bool checkTransition(int);
+    virtual void addDefaultTransitionTerm(void*, int numTerms);
+    virtual void addTransitionTerm(void*, int numTerms, int);
+    virtual void setShareCancelNode(int, int);
+    virtual void setOnlyChr(bool);
+    virtual void* getLastMotionTransitionInfo();
+    virtual void cacheAnimChrForce(int kind);
+    virtual void setAnimObjCacheModule(void*);
+    virtual void setCheckTexBind(); // TODO
+    virtual void* detachAnmObjChrBlend();
+    virtual void setAnmObjChrBlend(void*);
+    virtual void setResourceId(int, int);
     virtual void clearResourceId();
-    virtual void setKindOffset();
-    virtual void setShareAnimObjKind();
-    virtual void setShareAnimObjPartialInfo();
-    virtual void setNoComp();
-    virtual void setTransMoveSpeedNoScale();
-    virtual void isProcessFixPositionDone();
-    virtual void isForceImmediatelyStatusInterpret();
-    virtual void changeMotion();
+    virtual void setKindOffset(int kindOffset);
+    virtual void setShareAnimObjKind(int shareAnimObjKind);
+    virtual void setShareAnimObjPartialInfo(int, int);
+    virtual void setNoComp(bool);
+    virtual void setTransMoveSpeedNoScale(bool);
+    virtual bool isProcessFixPositionDone();
+    virtual bool isForceImmediatelyStatusInterpret();
+    virtual void changeMotion(int motionId);
 
-    virtual void getResFileData();
+    virtual void* getResFileData(int);
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
     virtual void notifyEventConstructInstance(bool, soModuleAccesser* moduleAccesser);
     virtual void notifyEventDestructInstance(soModuleAccesser* moduleAccesser);
+
+    STATIC_CHECK(sizeof(soMotionModuleImpl) == 368)
 };

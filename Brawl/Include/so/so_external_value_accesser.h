@@ -8,4 +8,5 @@ class StageObject; // TODO: actually import StageObject
 namespace soExternalValueAccesser {
     int getTeamNo(StageObject* stageObject);
     Vec3f getPos(StageObject* stageObject);
+    soModuleAccesser* getModuleAccesser(StageObject* stageObject);
 }
