@@ -6,6 +6,10 @@ class soNull {
 
 };
 
+class soNullableInterface {
+    virtual void isNull();
+};
+
 class soNullable {
 public:
     virtual bool isNull();

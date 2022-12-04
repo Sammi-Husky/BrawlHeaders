@@ -7,6 +7,7 @@
 #include <so/so_motion_module_impl.h>
 #include <so/so_posture_module_impl.h>
 #include <so/so_ground_module_impl.h>
+#include <so/so_work_manage_module_impl.h>
 #include <so/so_status_module_impl.h>
 
 class StageObject;
@@ -38,7 +39,7 @@ public:
     void* m_visibilityModule;
     void* m_controllerModule;
     void* m_cameraModule;
-    void* m_workManageModule;
+    soWorkManageModule* m_workManageModule;
     void* m_debugModule;
     void* m_animCmdModule;
     soStatusModule* m_statusModule;

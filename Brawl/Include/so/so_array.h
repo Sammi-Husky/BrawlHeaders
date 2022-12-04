@@ -1,9 +1,7 @@
 #pragma once
 
 #include <types.h>
-
-class soNullableInterface {
-};
+#include <so/so_null.h>
 
 template <class T>
 class soArrayFixed : public soNullableInterface {
