@@ -2,8 +2,13 @@
 
 #include <types.h>
 #include <so/so_null.h>
+#include <StaticAssert.h>
 
-class soResourceModule : virtual public soNullable {
+class soResourceNull {
+
+};
+
+class soResourceModule : public soResourceNull, public soNullable {
     virtual ~soResourceModule();
     virtual void* getResourceIdAccesser();
     virtual char getGroupNo(int unk1);
@@ -16,7 +21,6 @@ class soResourceModule : virtual public soNullable {
 };
 
 class soResourceModuleImpl : public soResourceModule {
-    // TODO verify of offsets are correct with virtual base class
     // 0xC
     int managerID;
     // 0x10
@@ -39,4 +43,7 @@ class soResourceModuleImpl : public soResourceModule {
     virtual int* getAnmFile(int unk1, int unk2, int unk3);
     virtual int* getBinFile(int unk1, int unk2, int unk3);
     virtual int* getFile(int unk1, int unk2, int unk3);
+
+    STATIC_CHECK(sizeof(soResourceModuleImpl) == 24)
+
 };

@@ -2,8 +2,13 @@
 
 #include <types.h>
 #include <so/so_null.h>
+#include <StaticAssert.h>
 
-class soModelModule : virtual public soNullable {
+class soModelNull {
+
+};
+
+class soModelModule : public soModelNull, public soNullable {
     // TODO: Verify Params
     virtual void setUpMtx(u32 unk2);
     virtual void setUpMtx(u32* unk2, int unk3);
@@ -88,7 +93,6 @@ class soModelModule : virtual public soNullable {
 };
 
 class soModelModuleSimple : public soModelModule {
-    // TODO: verify of offsets are correct with virtual base class
     // 0xC
     int unk1;
 
@@ -176,4 +180,7 @@ class soModelModuleSimple : public soModelModule {
     virtual void setShadowNode();
     virtual void setDisposeInstanceImm();
     virtual ~soModelModuleSimple();
+
+    STATIC_CHECK(sizeof(soModelModuleSimple) == 20)
+
 };

@@ -2,14 +2,16 @@
 
 #include <types.h>
 #include <memory.h>
+#include <StaticAssert.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
 #include <so/so_model_module_simple.h>
 
-class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObserver, public soEventPresenter<soModelEventObserver> {
-    // TODO: verify of offsets are correct with virtual base class
+class soModuleAccesser;
 
-    char _spacer1[160];
+class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObserver, public soEventPresenter<soModelEventObserver> {
+    char _spacer1[156];
+    soModuleAccesser* m_moduleAccesser;
 
     // TODO: Verify Params
     virtual void setUpMtx(u32 unk2);
@@ -79,4 +81,7 @@ class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObser
 
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
+
+    STATIC_CHECK(sizeof(soModelModuleImpl) == 204)
+
 };
