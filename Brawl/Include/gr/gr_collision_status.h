@@ -53,3 +53,8 @@ public:
     char _spacer8[116];
     // TOTAL SIZE == 636
 };
+
+class grCollStatusEventReceiver {
+public:
+    virtual void receive(int, bool);
+};
