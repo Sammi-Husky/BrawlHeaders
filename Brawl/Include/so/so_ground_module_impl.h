@@ -43,11 +43,7 @@ class soGroundShapeImpl {
     STATIC_CHECK(sizeof(soGroundShapeImpl) == 68)
 };
 
-class soGroundNull {
-
-};
-
-class soGroundModule : public soGroundNull, public soNullable {
+class soGroundModule : public soNull, public soNullable {
 
 public:
     virtual ~soGroundModule();

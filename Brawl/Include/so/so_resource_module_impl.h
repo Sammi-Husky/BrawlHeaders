@@ -4,11 +4,7 @@
 #include <so/so_null.h>
 #include <StaticAssert.h>
 
-class soResourceNull {
-
-};
-
-class soResourceModule : public soResourceNull, public soNullable {
+class soResourceModule : public soNull, public soNullable {
     virtual ~soResourceModule();
     virtual void* getResourceIdAccesser();
     virtual char getGroupNo(int unk1);

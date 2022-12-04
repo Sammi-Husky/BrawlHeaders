@@ -4,11 +4,7 @@
 #include <so/so_null.h>
 #include <StaticAssert.h>
 
-class soModelNull {
-
-};
-
-class soModelModule : public soModelNull, public soNullable {
+class soModelModule : public soNull, public soNullable {
     // TODO: Verify Params
     virtual void setUpMtx(u32 unk2);
     virtual void setUpMtx(u32* unk2, int unk3);

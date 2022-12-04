@@ -2,6 +2,10 @@
 
 #include <types.h>
 
+class soNull {
+
+};
+
 class soNullable {
 public:
     virtual bool isNull();
