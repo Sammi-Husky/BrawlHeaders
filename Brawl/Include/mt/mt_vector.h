@@ -18,14 +18,14 @@ public:
     Vec3f operator-(const Vec3f& v);
     Vec3f operator*(const float c);
 
-    inline Vec3f operator+=(const Vec3f& v) {
-        return *this + v;
+    inline void operator+=(const Vec3f& v) {
+        *this = *this + v;
     }
-    inline Vec3f operator-=(const Vec3f& v) {
-        return *this - v;
+    inline void operator-=(const Vec3f& v) {
+        *this = *this - v;
     }
-    inline Vec3f operator*=(const float c) {
-        return *this * c;
+    inline void operator*=(const float c) {
+        *this = *this * c;
     }
 };
 

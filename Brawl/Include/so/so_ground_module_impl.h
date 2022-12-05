@@ -59,7 +59,7 @@ public:
     virtual float getRotateYForGrCollisionMatrix();
     virtual void updateCheckGrCollision();
     virtual void updateGrCollisionMatrix();
-    virtual void pause(u32);
+    virtual void pause(bool);
     virtual void apply();
     virtual bool isReferenceModelNode();
     virtual void setCorrect(u8 correct, u32 index);
@@ -231,7 +231,7 @@ public:
     virtual float getRotateYForGrCollisionMatrix();
     virtual void updateCheckGrCollision();
     virtual void updateGrCollisionMatrix();
-    virtual void pause(u32);
+    virtual void pause(bool);
     virtual void apply();
     virtual bool isReferenceModelNode();
     virtual void setCorrect(u8 correct, u32 index);
