@@ -7,6 +7,7 @@
 #include <so/so_motion_module_impl.h>
 #include <so/so_posture_module_impl.h>
 #include <so/so_ground_module_impl.h>
+#include <so/so_collision_hit_module_impl.h>
 #include <so/so_work_manage_module_impl.h>
 #include <so/so_status_module_impl.h>
 
@@ -22,7 +23,7 @@ public:
     void* m_situationModule;
     void* m_teamModule;
     void* m_collisionAttackModule;
-    void* m_collisionHitModule;
+    soCollisionHitModule* m_collisionHitModule;
     void* m_collisionShieldModule;
     void* m_collisionReflectorModule;
     void* m_collisionShieldModule2;
@@ -88,6 +89,14 @@ public:
 
     inline soGroundModule* getGroundModule() {
         return this->m_enumerationStart->m_groundModule;
+    }
+
+    inline soCollisionHitModule* getCollisionHitModule() {
+        return this->m_enumerationStart->m_collisionHitModule;
+    }
+
+    inline soWorkManageModule* getWorkManageModule() {
+        return this->m_enumerationStart->m_workManageModule;
     }
 
     inline soStatusModule* getStatusModule() {
