@@ -4,7 +4,7 @@
 #include <StaticAssert.h>
 #include <so/so_null.h>
 #include <mt/mt_vector.h>
-#include <so/so_posture_module_simple.h>
+#include <so/posture/so_posture_module_simple.h>
 
 class soGroundModule;
 

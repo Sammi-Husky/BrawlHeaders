@@ -2,14 +2,14 @@
 
 #include <types.h>
 #include <StaticAssert.h>
-#include <so/so_resource_module_impl.h>
-#include <so/so_model_module_impl.h>
-#include <so/so_motion_module_impl.h>
-#include <so/so_posture_module_impl.h>
-#include <so/so_ground_module_impl.h>
-#include <so/so_collision_hit_module_impl.h>
-#include <so/so_work_manage_module_impl.h>
-#include <so/so_status_module_impl.h>
+#include <so/resource/so_resource_module_impl.h>
+#include <so/model/so_model_module_impl.h>
+#include <so/motion/so_motion_module_impl.h>
+#include <so/posture/so_posture_module_impl.h>
+#include <so/ground/so_ground_module_impl.h>
+#include <so/collision/so_collision_hit_module_impl.h>
+#include <so/work/so_work_manage_module_impl.h>
+#include <so/status/so_status_module_impl.h>
 
 class StageObject;
 

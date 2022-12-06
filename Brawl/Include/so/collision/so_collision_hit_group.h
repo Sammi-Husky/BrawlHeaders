@@ -2,7 +2,7 @@
 
 #include <types.h>
 #include <StaticAssert.h>
-#include <so/so_collision_hit_part.h>
+#include <so/collision/so_collision_hit_part.h>
 
 class soCollisionHitGroup {
     int m_index;

@@ -1,8 +1,8 @@
 #pragma once
 #include <StaticAssert.h>
 #include <gr/gr_gimmick.h>
-#include <so/so_collision_attack_part.h>
-#include <so/so_collision_log.h>
+#include <so/collision/so_collision_attack_part.h>
+#include <so/collision/so_collision_log.h>
 #include <so/so_damage.h>
 #include <so/so_damage_attacker_info.h>
 #include <yk/yakumono.h>

@@ -3,7 +3,7 @@
 #include <types.h>
 #include <StaticAssert.h>
 #include <so/so_array.h>
-#include <so/so_collision_group.h>
+#include <so/collision/so_collision_group.h>
 
 class soCollision {
     int m_kind;

@@ -3,7 +3,7 @@
 #include <types.h>
 #include <StaticAssert.h>
 #include <so/so_array.h>
-#include <so/so_posture_module_simple.h>
+#include <so/posture/so_posture_module_simple.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
 

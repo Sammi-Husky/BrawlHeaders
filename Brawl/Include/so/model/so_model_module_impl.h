@@ -5,7 +5,7 @@
 #include <StaticAssert.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
-#include <so/so_model_module_simple.h>
+#include <so/model/so_model_module_simple.h>
 
 class soModuleAccesser;
 

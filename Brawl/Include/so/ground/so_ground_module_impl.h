@@ -8,9 +8,10 @@
 #include <so/so_array.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
-#include <so/so_ground_tracer_impl.h>
+#include <so/ground/so_ground_tracer_impl.h>
+#include <so/ground/so_ground_shape_impl.h>
 #include <gr/gr_collision_status.h>
-#include <so/so_collision_attack_part.h>
+#include <so/collision/so_collision_attack_part.h>
 
 class soModuleAccesser;
 class StageObject;
@@ -18,29 +19,6 @@ class StageObject;
 class soGroundConditionChecker {
     virtual ~soGroundConditionChecker();
     virtual bool isConditionNoCliffStop(soModuleAccesser* moduleAccesser);
-};
-
-class soGroundShapeImpl {
-    char _0[4];
-    grCollStatus* m_collStatus;
-    Vec2f m_savePos;
-    Vec2f m_offset;
-    float m_24;
-    float m_28;
-    float m_rhombusUp;
-    float m_rhombusDown;
-    float m_rhombusWidth;
-    int m_rhombusFollowNode;
-    float m_downFriction;
-    u8 m_materialType;
-    char _53[3];
-    u8 m_correct;
-    u8 m_cliffCheck;
-    char _58[6];
-
-    virtual ~soGroundShapeImpl();
-
-    STATIC_CHECK(sizeof(soGroundShapeImpl) == 68)
 };
 
 class soGroundModule : public soNull, public soNullable {

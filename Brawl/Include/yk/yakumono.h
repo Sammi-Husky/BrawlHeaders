@@ -1,8 +1,8 @@
 #pragma once
 
 #include <types.h>
-#include <so/so_area_module_impl.h>
-#include <so/so_collision_log.h>
+#include <so/area/so_area_module_impl.h>
+#include <so/collision/so_collision_log.h>
 #include <so/stageobject.h>
 #include <StaticAssert.h>
 

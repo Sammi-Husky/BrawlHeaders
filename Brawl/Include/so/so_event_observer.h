@@ -4,7 +4,7 @@
 #include <StaticAssert.h>
 #include <gf/gf_task.h>
 #include <ac/ac_anim_cmd_impl.h>
-#include <so/so_collision_attack_part.h>
+#include <so/collision/so_collision_attack_part.h>
 
 class soModuleAccesser;
 class BaseItem;

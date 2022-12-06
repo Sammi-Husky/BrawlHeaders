@@ -6,8 +6,8 @@
 #include <so/so_array.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
-#include <so/so_collision.h>
-#include <so/so_collision_hit_group.h>
+#include <so/collision/so_collision.h>
+#include <so/collision/so_collision_hit_group.h>
 
 class soModuleAccesser;
 
