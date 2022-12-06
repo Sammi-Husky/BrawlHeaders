@@ -3,8 +3,8 @@
 #include <gr/gr_gimmick.h>
 #include <so/collision/so_collision_attack_part.h>
 #include <so/collision/so_collision_log.h>
-#include <so/so_damage.h>
-#include <so/so_damage_attacker_info.h>
+#include <so/damage/so_damage.h>
+#include <so/damage/so_damage_attacker_info.h>
 #include <yk/yakumono.h>
 
 class grYakumono : public grGimmick {

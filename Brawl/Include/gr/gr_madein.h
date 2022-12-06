@@ -3,8 +3,8 @@
 #include <gr/gr_seq_yakumono.h>
 #include <mt/mt_vector.h>
 #include <so/collision/so_collision_log.h>
-#include <so/so_damage.h>
-#include <so/so_damage_attacker_info.h>
+#include <so/damage/so_damage.h>
+#include <so/damage/so_damage_attacker_info.h>
 
 class grMadein : public grSeqYakumono {
     class AttackInfo {
