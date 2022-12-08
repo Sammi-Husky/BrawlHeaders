@@ -16,3 +16,5 @@ public:
     void setParent(u32 unk, nw4r::g3d::ScnMdl*, char*, int);
     virtual ~ecMgr();
 };
+
+extern ecMgr* g_ecMgr;
