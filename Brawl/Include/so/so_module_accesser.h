@@ -96,6 +96,10 @@ public:
         return this->m_enumerationStart->m_collisionHitModule;
     }
 
+    inline soControllerModule* getControllerModule() {
+        return this->m_enumerationStart->m_controllerModule;
+    }
+
     inline soWorkManageModule* getWorkManageModule() {
         return this->m_enumerationStart->m_workManageModule;
     }

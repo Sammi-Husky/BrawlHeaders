@@ -172,7 +172,7 @@ public:
     virtual bool isTouchTraceLine(u32 index);
     virtual void updateTrace(bool, u32 index);
     virtual void testGround(u32 index);
-    virtual void* getConditionChecker();
+    virtual soGroundConditionChecker* getConditionChecker();
     virtual void setIgnoreFriction(bool);
     virtual void setDetachChangeStatus(bool);
 
@@ -344,7 +344,7 @@ public:
     virtual bool isTouchTraceLine(u32 index);
     virtual void updateTrace(bool, u32 index);
     virtual void testGround(u32 index);
-    virtual void* getConditionChecker();
+    virtual soGroundConditionChecker* getConditionChecker();
     virtual void setIgnoreFriction(bool);
     virtual void setDetachChangeStatus(bool);
 
