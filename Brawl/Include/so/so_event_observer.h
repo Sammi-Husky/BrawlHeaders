@@ -61,8 +61,9 @@ class soCollisionAttackEventObserver : public soEventObserver<soCollisionAttackE
 };
 
 class soCollisionHitEventObserver : public soEventObserver<soCollisionHitEventObserver> {
-    virtual void notifyEventCollisionHit();     // TODO
-    virtual void notifyEventCollisionHit2nd();
+    virtual void notifyEventCollisionHit(float, int, int index, int, soModuleAccesser* moduleAccesser, void*);
+    virtual void notifyEventCollisionHit2nd(float, float, void*, void*, int index, int, bool);
+    virtual void notifyEventChangeCollisionHit(int index, soModuleAccesser* moduleAccesser);
     char _spacer1[2];
 
     STATIC_CHECK(sizeof(soCollisionHitEventObserver) == 12)

@@ -22,6 +22,7 @@ class ftManager {
         void setScaling(int entryId, int unk1, int unk2);
         void setInfiniteScaling(int entryId, int unk1, int unk2);
         void setThunder(int inflictingEntryId, int unk2);
+        void setDead(int entryId, int unk1, int unk2);
 };
 
 extern ftManager* g_ftManager;

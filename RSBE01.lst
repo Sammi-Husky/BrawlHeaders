@@ -534,6 +534,7 @@
 27,1,0010CF6C:setCurry__9ftManagerFi
 27,1,0010D234:setSlow__9ftManagerFibii
 27,1,0010CA00:searchNearFighter__9ftManagerFffP5Vec3fib
+27,1,0010B604:setDead__9ftManagerFiii
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi
