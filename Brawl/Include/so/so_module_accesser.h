@@ -8,6 +8,7 @@
 #include <so/posture/so_posture_module_impl.h>
 #include <so/ground/so_ground_module_impl.h>
 #include <so/collision/so_collision_hit_module_impl.h>
+#include <so/controller/so_controller_module_impl.h>
 #include <so/work/so_work_manage_module_impl.h>
 #include <so/status/so_status_module_impl.h>
 
@@ -38,7 +39,7 @@ public:
     void* m_soundModule;
     void* m_linkModule;
     void* m_visibilityModule;
-    void* m_controllerModule;
+    soControllerModule* m_controllerModule;
     void* m_cameraModule;
     soWorkManageModule* m_workManageModule;
     void* m_debugModule;
