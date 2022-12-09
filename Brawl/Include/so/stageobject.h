@@ -5,17 +5,9 @@
 #include <gf/gf_task.h>
 #include <memory.h>
 #include <so/so_null.h>
+#include <so/so_kind.h>
 #include <so/so_module_accesser.h>
 #include <StaticAssert.h>
-
-enum soKind {
-    So_Kind_Invalid = 0xFFFFFFFF,
-    So_Kind_Fighter = 0x0,
-    So_Kind_Enemy = 0x1,
-    So_Kind_Weapon = 0x2,
-    So_Kind_Yakumono = 0x3,
-    So_Kind_Item = 0x4
-};
 
 class soActivatable {
     virtual ~soActivatable();

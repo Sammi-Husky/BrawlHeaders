@@ -99,6 +99,7 @@
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
 8005f7a4:setEffect__5ecMgrFUi
+8005f7e0:setEffect__5ecMgrFUiP5Vec3fP5Vec3fP5Vec3f
 8005fc5c:setParent__5ecMgrFUiPQ34nw4r3g3d6ScnMdlPci
 
 // efScreen
@@ -535,6 +536,7 @@
 27,1,0010D234:setSlow__9ftManagerFibii
 27,1,0010CA00:searchNearFighter__9ftManagerFffP5Vec3fib
 27,1,0010B604:setDead__9ftManagerFiii
+27,1,0010C7FC:isProcessHeartSwap__9ftManagerFi
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi

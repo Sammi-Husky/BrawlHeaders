@@ -1,7 +1,8 @@
 #pragma once
 
 #include <types.h>
-#include <so/stageobject.h>
+#include <StaticAssert.h>
+#include <so/so_kind.h>
 
 class soDamageAttackerInfo {
     char _spacer[4];
@@ -18,4 +19,6 @@ class soDamageAttackerInfo {
     int indirectAttackerEntryId;
 
     char _spacer3[4];
+
+    STATIC_CHECK(sizeof(soDamageAttackerInfo) == 40)
 };

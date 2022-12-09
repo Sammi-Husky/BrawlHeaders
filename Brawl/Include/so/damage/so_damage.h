@@ -1,6 +1,7 @@
 #pragma once
 
 #include <types.h>
+#include <StaticAssert.h>
 
 class soDamage {
 public:
@@ -14,5 +15,9 @@ public:
     int vector;
     char _spacer4[40];
     float side;
-    char _spacer5[32];
+    char _spacer5[20];
+    float m_damage_;
+    char _152[8];
+
+    STATIC_CHECK(sizeof(soDamage) == 160)
 }; // size 160

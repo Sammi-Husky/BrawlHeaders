@@ -23,6 +23,8 @@ class ftManager {
         void setInfiniteScaling(int entryId, int unk1, int unk2);
         void setThunder(int inflictingEntryId, int unk2);
         void setDead(int entryId, int unk1, int unk2);
+
+        bool isProcessHeartSwap(int entryId);
 };
 
 extern ftManager* g_ftManager;
