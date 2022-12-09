@@ -14,6 +14,7 @@
 #include <so/so_event_presenter.h>
 
 class StageObject;
+class soModuleAccesser;
 
 class soDamageModule : public soNull, public soNullable {
 public:

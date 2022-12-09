@@ -12,6 +12,7 @@
 #include <so/controller/so_controller_module_impl.h>
 #include <so/work/so_work_manage_module_impl.h>
 #include <so/status/so_status_module_impl.h>
+#include <so/effect/so_effect_module_impl.h>
 
 class StageObject;
 
@@ -51,7 +52,7 @@ public:
     void* m_kineticModule;
     void* m_eventManageModule;
     void* m_generateArticleManageModule;
-    void* m_effectModule;
+    soEffectModule* m_effectModule;
     void* m_comboModule;
     void* m_areaModule;
     void* m_territoryModule;
@@ -97,6 +98,10 @@ public:
         return this->m_enumerationStart->m_collisionHitModule;
     }
 
+    inline soDamageModule* getDamageModule() {
+        return this->m_enumerationStart->m_damageModule;
+    }
+
     inline soControllerModule* getControllerModule() {
         return this->m_enumerationStart->m_controllerModule;
     }
@@ -107,6 +112,10 @@ public:
 
     inline soStatusModule* getStatusModule() {
         return this->m_enumerationStart->m_statusModule;
+    }
+
+    inline soEffectModule* getEffectModule() {
+        return this->m_enumerationStart->m_effectModule;
     }
 
     STATIC_CHECK(sizeof(soModuleAccesser) == 224)

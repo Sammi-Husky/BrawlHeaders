@@ -537,6 +537,7 @@
 27,1,0010CA00:searchNearFighter__9ftManagerFffP5Vec3fib
 27,1,0010B604:setDead__9ftManagerFiii
 27,1,0010C7FC:isProcessHeartSwap__9ftManagerFi
+27,1,0010C834:toKnockOutHeartSwapOpposite__9ftManagerFiP20soDamageAttackerInfo
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi

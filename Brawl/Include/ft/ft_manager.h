@@ -3,6 +3,7 @@
 #include <types.h>
 #include <mt/mt_vector.h>
 #include <ft/fighter.h>
+#include <so/damage/so_damage_attacker_info.h>
 
 class ftManager {
     char _spacer[352];
@@ -25,6 +26,7 @@ class ftManager {
         void setDead(int entryId, int unk1, int unk2);
 
         bool isProcessHeartSwap(int entryId);
+        void toKnockOutHeartSwapOpposite(int entryId, soDamageAttackerInfo* attackerInfo);
 };
 
 extern ftManager* g_ftManager;
