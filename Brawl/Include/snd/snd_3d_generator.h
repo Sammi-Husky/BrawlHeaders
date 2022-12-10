@@ -1,11 +1,11 @@
 #pragma once
 
-#include <snd/snd_3d_actor.h>
+#include <nw4r/snd/snd_Sound3DActor.h>
 #include <snd/snd_id.h>
 #include <types.h>
 
 class snd3DGenerator {
-    Snd3dActor* m_sndActor;
+    nw4r::snd::Sound3DActor* m_sndActor;
 
 public:
     snd3DGenerator();

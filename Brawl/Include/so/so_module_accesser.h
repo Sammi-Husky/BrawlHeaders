@@ -9,6 +9,7 @@
 #include <so/ground/so_ground_module_impl.h>
 #include <so/collision/so_collision_hit_module_impl.h>
 #include <so/damage/so_damage_module_impl.h>
+#include <so/sound/so_sound_module_impl.h>
 #include <so/controller/so_controller_module_impl.h>
 #include <so/work/so_work_manage_module_impl.h>
 #include <so/status/so_status_module_impl.h>
@@ -38,7 +39,7 @@ public:
     void* m_stopModule;
     void* m_turnModule;
     void* m_shakeModule;
-    void* m_soundModule;
+    soSoundModule* m_soundModule;
     void* m_linkModule;
     void* m_visibilityModule;
     soControllerModule* m_controllerModule;
@@ -100,6 +101,10 @@ public:
 
     inline soDamageModule* getDamageModule() {
         return this->m_enumerationStart->m_damageModule;
+    }
+
+    inline soSoundModule* getSoundModule() {
+        return this->m_enumerationStart->m_soundModule;
     }
 
     inline soControllerModule* getControllerModule() {

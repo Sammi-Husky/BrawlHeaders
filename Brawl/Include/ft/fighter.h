@@ -43,7 +43,7 @@ class Fighter : public StageObject, public soStatusEventObserver, public soSitua
         public ftEntryEventObserver, public soTurnEventObserver {
 public:
     int entryId;
-    char _spacer2[60];
+    char _spacer2[132];
 
     virtual void processUpdate();
     virtual void processFixPosition();
@@ -146,5 +146,5 @@ public:
     void startScaling(bool setStatus, bool isPoison);
     void warp(Vec3f* pos, float lr, bool showEffect);
 
-    STATIC_CHECK(sizeof(Fighter) == 332)
+    STATIC_CHECK(sizeof(Fighter) == 404)
 };
