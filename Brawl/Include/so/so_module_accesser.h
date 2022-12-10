@@ -14,6 +14,7 @@
 #include <so/work/so_work_manage_module_impl.h>
 #include <so/status/so_status_module_impl.h>
 #include <so/effect/so_effect_module_impl.h>
+#include <so/slow/so_slow_module_impl.h>
 
 class StageObject;
 
@@ -65,7 +66,7 @@ public:
     void* m_colorBlendModule;
     void* m_jostleModule;
     void* m_abnormalModule;
-    void* m_slowModule;
+    soSlowModule* m_slowModule;
     void* m_reflectModule;
     void* m_heapModule;
     void* m_paramCustomizeModule;
@@ -121,6 +122,10 @@ public:
 
     inline soEffectModule* getEffectModule() {
         return this->m_enumerationStart->m_effectModule;
+    }
+
+    inline soSlowModule* getSlowModule() {
+        return this->m_enumerationStart->m_slowModule;
     }
 
     STATIC_CHECK(sizeof(soModuleAccesser) == 224)

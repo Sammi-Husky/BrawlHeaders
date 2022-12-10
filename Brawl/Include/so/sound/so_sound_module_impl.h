@@ -20,6 +20,18 @@ class soSoundIdExchanger : public soNullable {
 
 class soSoundModule {
 public:
+    class SoundIdList {
+    public:
+        SndID* sndIDs;
+        u32 numSndIDs;
+    };
+
+    class SoundIdData {
+    public:
+        SoundIdList* soundIdLists;
+        u32 numSoundIdLists;
+    };
+
     // TODO: Verify params
     virtual ~soSoundModule();
     virtual void update(Vec3f* pos);
@@ -44,8 +56,8 @@ public:
     virtual void stopSEHandle(int);
     virtual void setSESpeed(int, float);
     virtual void playLandingSE();
-    virtual void setSoundIdData(void*);
-    virtual void* getSoundIdData();
+    virtual void setSoundIdData(SoundIdData*);
+    virtual SoundIdData* getSoundIdData();
     virtual void setFixGeneratorStatus();
     virtual void setCheckSoundGroup(int);
     virtual int getCheckSoundGroup();
@@ -60,7 +72,7 @@ class soSoundModuleImpl : public soSoundModule, public soStatusEventObserver, pu
     soModuleAccesser* m_moduleAccesser;
     soSoundIdExchanger* m_soundIdExchanger;
     SndID m_sndID;
-    void* m_soundIdData;
+    SoundIdData* m_soundIdData;
     float m_sePitch;
     int m_checkSoundGroup;
     bool m_playHitSEFlag;
@@ -92,8 +104,8 @@ public:
     virtual void stopSEHandle(int);
     virtual void setSESpeed(int, float);
     virtual void playLandingSE();
-    virtual void setSoundIdData(void*);
-    virtual void* getSoundIdData();
+    virtual void setSoundIdData(SoundIdData*);
+    virtual SoundIdData* getSoundIdData();
     virtual void setFixGeneratorStatus();
     virtual void setCheckSoundGroup(int);
     virtual int getCheckSoundGroup();

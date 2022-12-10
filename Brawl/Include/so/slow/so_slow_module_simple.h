@@ -1,0 +1,57 @@
+#pragma once
+
+#include <types.h>
+#include <StaticAssert.h>
+#include <so/so_null.h>
+
+class soModuleAccesser;
+
+class soSlowModule : public soNull, public soNullable {
+public:
+    virtual ~soSlowModule();
+    virtual void activate();
+    virtual void deactivate();
+    virtual void update(bool);
+    virtual void resetSkip();
+    virtual bool isSlow();
+    virtual void set(int mag, int frame);
+    virtual int getMag();
+    virtual int getFrame();
+    virtual void clear();
+    virtual float getRate();
+    virtual bool isSkip();
+    virtual void setWhole(bool, int wholeFrame);
+    virtual void clearWhole();
+    virtual u8 getWholeMag();
+    virtual void setWholeFrame(int wholeFrame);
+    virtual int getWholeFrame();
+
+    STATIC_CHECK(sizeof(soSlowModule) == 12)
+};
+
+class soSlowModuleSimple : public soSlowModule {
+    soModuleAccesser* m_moduleAccesser;
+    float m_rate;
+    bool m_isSkip;
+    char _pad[3];
+public:
+    virtual ~soSlowModuleSimple();
+    virtual void activate();
+    virtual void deactivate();
+    virtual void update(bool);
+    virtual void resetSkip();
+    virtual bool isSlow();
+    virtual void set(int mag, int frame);
+    virtual int getMag();
+    virtual int getFrame();
+    virtual void clear();
+    virtual float getRate();
+    virtual bool isSkip();
+    virtual void setWhole(bool, int wholeFrame);
+    virtual void clearWhole();
+    virtual u8 getWholeMag();
+    virtual void setWholeFrame(int wholeFrame);
+    virtual int getWholeFrame();
+
+    STATIC_CHECK(sizeof(soSlowModuleSimple) == 24)
+};
