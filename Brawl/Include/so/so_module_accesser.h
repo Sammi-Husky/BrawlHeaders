@@ -7,6 +7,7 @@
 #include <so/motion/so_motion_module_impl.h>
 #include <so/posture/so_posture_module_impl.h>
 #include <so/ground/so_ground_module_impl.h>
+#include <so/situation/so_situation_module_impl.h>
 #include <so/collision/so_collision_hit_module_impl.h>
 #include <so/damage/so_damage_module_impl.h>
 #include <so/sound/so_sound_module_impl.h>
@@ -25,7 +26,7 @@ public:
     soMotionModule* m_motionModule;
     soPostureModule* m_postureModule;
     soGroundModule* m_groundModule;
-    void* m_situationModule;
+    soSituationModule* m_situationModule;
     void* m_teamModule;
     void* m_collisionAttackModule;
     soCollisionHitModule* m_collisionHitModule;
@@ -94,6 +95,10 @@ public:
 
     inline soGroundModule* getGroundModule() {
         return this->m_enumerationStart->m_groundModule;
+    }
+
+    inline soSituationModule* getSituationModule() {
+        return this->m_enumerationStart->m_situationModule;
     }
 
     inline soCollisionHitModule* getCollisionHitModule() {

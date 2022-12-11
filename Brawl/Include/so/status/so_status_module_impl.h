@@ -123,7 +123,7 @@ public:
 };
 
 namespace ftStatus {
-    enum StatusID {
+    enum Kind {
         Stand = 0x00,
         Walk = 0x01,
         Start_Dash = 0x03,
