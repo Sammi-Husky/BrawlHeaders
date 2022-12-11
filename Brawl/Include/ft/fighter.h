@@ -5,36 +5,8 @@
 #include <mt/mt_vector.h>
 #include <so/stageobject.h>
 #include <ft/ft_owner.h>
-
-class ftEntryEventObserver : public soEventObserver<ftEntryEventObserver> {
-    virtual void notifyEventSetDamage(float);
-    virtual void notifyEventBeat();
-    virtual void notifyEventDeadPartner(int index);
-    virtual void notifyEventPartnerResourcePrepared();
-    virtual void notifyEventChangeAdvUnit();
-    virtual void notifyEventWarp();
-    virtual void notifyEventPokemonStart(int);
-    virtual void notifyEventPokemonRequestChange(Vec3f*, float*);
-    virtual void notifyEventPokemonTrainerUpdate();
-    virtual void notifyEventPokemonCollect();
-    virtual void notifyEventPokemonChangeCancel();
-    virtual void notifyEventPokemonSpecial(int, int);
-    virtual void notifyEventPokemonAppeal();
-    virtual void notifyEventSetRumble(int, int);
-    virtual void notifyEventStopRumble(int);
-    virtual void notifyEventPokemonRebirthEnd();
-    virtual void notifyEventPokemonAttack();
-    virtual void notifyEventPokemonInflict();
-    virtual void notifyEventPokemonDamage();
-    virtual void notifyEventPokeTrainerReplace(u8);
-    virtual void notifyEventPikminFinalAttack(float, int);
-    virtual void notifyEventKirbyResourceLoaded(int index);
-    virtual void notifyEventKirbyResourceUnLoaded(int index);
-    virtual void notifyEventExitFighter(int, int);
-    char _spacer1[2];
-
-    STATIC_CHECK(sizeof(ftEntryEventObserver) == 12)
-};
+#include <ft/ft_entry.h>
+#include <ft/ft_outside_event_presenter.h>
 
 class Fighter : public StageObject, public soStatusEventObserver, public soSituationEventObserver,
         public soCollisionAttackEventObserver, public soCollisionHitEventObserver, public soCollisionShieldEventObserver,
@@ -42,8 +14,10 @@ class Fighter : public StageObject, public soStatusEventObserver, public soSitua
         public soCaptureEventObserver, public soItemManageEventObserver, public soMotionEventObserver, public soDamageEventObserver,
         public ftEntryEventObserver, public soTurnEventObserver {
 public:
-    int entryId;
-    char _spacer2[132];
+    int m_entryId;
+    char _272[44];
+    ftOutsideEventPresenter m_outsideEventPresenter;
+    char _332[72];
 
     virtual void processUpdate();
     virtual void processFixPosition();

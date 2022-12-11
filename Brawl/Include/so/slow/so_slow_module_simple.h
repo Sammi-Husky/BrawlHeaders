@@ -20,7 +20,7 @@ public:
     virtual void clear();
     virtual float getRate();
     virtual bool isSkip();
-    virtual void setWhole(bool, int wholeFrame);
+    virtual void setWhole(int, int wholeFrame);
     virtual void clearWhole();
     virtual u8 getWholeMag();
     virtual void setWholeFrame(int wholeFrame);
@@ -47,7 +47,7 @@ public:
     virtual void clear();
     virtual float getRate();
     virtual bool isSkip();
-    virtual void setWhole(bool, int wholeFrame);
+    virtual void setWhole(int, int wholeFrame);
     virtual void clearWhole();
     virtual u8 getWholeMag();
     virtual void setWholeFrame(int wholeFrame);

@@ -5,18 +5,19 @@
 #include <so/so_kind.h>
 
 class soDamageAttackerInfo {
+public:
     char _spacer[4];
 
-    int directAttackerTaskId;
-    soKind directAttackerSoKind;
-    int directAttackerSoSubKind;
+    int m_directAttackerTaskId;
+    soKind m_directAttackerSoKind;
+    int m_directAttackerSoSubKind;
 
     char _spacer2[4];
 
-    int indirectAttackerTaskId;
-    soKind indirectAttackerSoKind;
-    int indirectAttackerSoSubKind;
-    int indirectAttackerEntryId;
+    int m_indirectAttackerTaskId;
+    soKind m_indirectAttackerSoKind;
+    int m_indirectAttackerSoSubKind;
+    int m_indirectAttackerEntryId;
 
     char _spacer3[4];
 

@@ -25,7 +25,7 @@ public:
     virtual int getMag();
     virtual int getFrame();
     virtual void clear();
-    virtual void setWhole(bool, int wholeFrame);
+    virtual void setWhole(int, int wholeFrame);
     virtual void clearWhole();
     virtual u8 getWholeMag();
     virtual void setWholeFrame(int wholeFrame);

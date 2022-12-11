@@ -1,6 +1,7 @@
 #pragma once
 
 #include <types.h>
+#include <StaticAssert.h>
 #include <mt/mt_vector.h>
 #include <ft/fighter.h>
 #include <so/damage/so_damage_attacker_info.h>
@@ -9,6 +10,7 @@ class ftManager {
     char _spacer[352];
 
     public:
+        bool isValidEntryId(int entryId);
         int getEntryCount();
         int getEntryIdFromIndex(int index);
         int getEntryIdFromTaskId(int taskId, int* unk);
@@ -23,10 +25,14 @@ class ftManager {
         void setScaling(int entryId, int unk1, int unk2);
         void setInfiniteScaling(int entryId, int unk1, int unk2);
         void setThunder(int inflictingEntryId, int unk2);
-        void setDead(int entryId, int unk1, int unk2);
 
+        void setDead(int entryId, int unk1, int unk2);
+        void setBeat(int losingEntryId, int winningEntryId);
+        void setSuicide(int entryId);
         bool isProcessHeartSwap(int entryId);
         void toKnockOutHeartSwapOpposite(int entryId, soDamageAttackerInfo* attackerInfo);
+
+        STATIC_CHECK(sizeof(ftManager) == 352)
 };
 
 extern ftManager* g_ftManager;

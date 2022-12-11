@@ -7,6 +7,7 @@
 27,6,58D8: g_stTriggerMng
 805a00e0:g_gameGlobal
 27,6,2E68: g_ftManager
+27,6,2E70: g_ftAudienceManager
 
 // System
 803f1254:__save_fpr
@@ -518,6 +519,9 @@
 27,1,0026E13C:create__19grGimmickMotionPathFiPcPc
 27,1,0026EB5C:setFrame__19grGimmickMotionPathFf
 
+// soValueAccesser
+27,1,0008C338:getConstantInt__15soValueAccesserFP16soModuleAccesserUiUi
+
 // soExternalValueAccesser
 27,1,0008CB0C:getTeamNo__23soExternalValueAccesserFP11StageObject
 27,1,0008C9D4:getPos__23soExternalValueAccesserFP11StageObject
@@ -527,6 +531,7 @@
 27,1,0014D19C:getHipPos__23ftExternalValueAccesserFP7Fighter
 
 // ftManager
+27,1,00109BCC:isValidEntryId__9ftManagerFi
 27,1,0010B1E4:getEntryIdFromIndex__9ftManagerFi
 27,1,0010A50C:getFighter__9ftManagerFii
 27,1,0010B1D0:getEntryCount__9ftManagerFv
@@ -538,10 +543,15 @@
 27,1,0010B604:setDead__9ftManagerFiii
 27,1,0010C7FC:isProcessHeartSwap__9ftManagerFi
 27,1,0010C834:toKnockOutHeartSwapOpposite__9ftManagerFiP20soDamageAttackerInfo
+27,1,0010B8F8:setBeat__9ftManagerFii
+27,1,0010BCF4:setSuicide__9ftManagerFi
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi
 27,1,0013C860:warp__7FighterFP5Vec3ffb
+
+// ftOutsideEventPresenter
+27,1,0015B0C8:notifyOutsideEventKnockout__23ftOutsideEventPresenterFv
 
 // BaseItem
 27,1,0028C834:getParam__8BaseItemFUi
