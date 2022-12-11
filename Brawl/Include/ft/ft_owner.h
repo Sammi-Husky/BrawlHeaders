@@ -4,6 +4,12 @@
 #include <StaticAssert.h>
 
 class ftOwner {
+    void* m_data;
+    void* m_input;
+    short _8;
+    u8 _10;
+    u8 _11;
+
 public:
     virtual ~ftOwner();
     virtual bool isSubOwner();
@@ -25,4 +31,6 @@ public:
     virtual void setLogActionInfo(void*);
     virtual void addAttackInfo(void*);
     virtual void addAttackPattern(void*);
+
+    STATIC_CHECK(sizeof(ftOwner) == 16)
 };
