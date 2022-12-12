@@ -1,6 +1,7 @@
 #pragma once
 
 #include <types.h>
+#include <StaticAssert.h>
 
 struct VtxData {
     char _spacer[8];
@@ -11,17 +12,19 @@ struct JointData {
 };
 
 struct LineData {
-    short pointX;
-    short pointY;
+    short m_pointX;
+    short m_pointY;
     char _spacer[12];
 };
 
 class grCollData {
-    short vtxLen;
-    short lineLen;
-    short jointLen;
-    short unk1;
-    VtxData* vtxDataArray;
-    LineData* lineDataArray;
-    JointData* jointDataArray;
+    short m_vtxLen;
+    short m_lineLen;
+    short m_jointLen;
+    short m_unk1;
+    VtxData* m_vtxDataArray;
+    LineData* m_lineDataArray;
+    JointData* m_jointDataArray;
+
+    STATIC_CHECK(sizeof(grCollData) == 20)
 };

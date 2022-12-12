@@ -18,27 +18,27 @@ class Stage;
 class Ground : public gfTask {
 public:
     // 0
-    nw4r::g3d::ResFile resFile;
+    nw4r::g3d::ResFile m_resFile;
     // 4
-    nw4r::g3d::ScnMdl** sceneModels; // TODO: supposed to be a wrapper of some kind
+    nw4r::g3d::ScnMdl** m_sceneModels; // TODO: supposed to be a wrapper of some kind
     // 8
-    gfModelAnimation** modelAnims;
+    gfModelAnimation** m_modelAnims;
     // C
-    grCollision* collision;
+    grCollision* m_collision;
     // 10
-    Ground* nextGround;
+    Ground* m_nextGround;
     // 14
     char _spacer2[0x8];
     // 1C
-    u16 mdlIndex;
+    u16 m_mdlIndex;
     // 1E
     char _spacer3[2];
     // 20
-    void* stageData;
+    void* m_stageData;
     // 24
-    float motionRatio;
+    float m_motionRatio;
     // 28
-    char calcCollisionEnable;
+    char m_calcCollisionEnable;
     // 29
     char _align[3];
     // 2c
@@ -58,7 +58,7 @@ public:
     // 2d
     char _spacer[3];
     // 30
-    HeapType heapType;
+    HeapType m_heapType;
     // 34
     char _spacer5[40];
 

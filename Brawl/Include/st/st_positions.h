@@ -2,13 +2,14 @@
 
 #include <types.h>
 #include <mt/mt_vector.h>
+#include <StaticAssert.h>
 
 class stRange {
 public:
-    float left;
-    float right;
-    float top;
-    float bottom;
+    float m_left;
+    float m_right;
+    float m_top;
+    float m_bottom;
 };
 
 class stPositions {
@@ -17,4 +18,6 @@ private:
 
 public:
     float* getDeadRange(stRange* range);
+
+    STATIC_CHECK(sizeof(stPositions) == 100)
 };

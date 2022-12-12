@@ -13,12 +13,12 @@ struct ykHitGroupInfo {
 };
 
 struct ykData {
-    int numHitGroups;
-    ykHitGroupInfo* hitGroupsInfo;
+    int m_numHitGroups;
+    ykHitGroupInfo* m_hitGroupsInfo;
 };
 
 struct ykAreaData : ykData {
-    soAreaInit* init;
+    soAreaInit* m_init;
 };
 
 class Yakumono : public StageObject, public soCollisionAttackEventObserver {

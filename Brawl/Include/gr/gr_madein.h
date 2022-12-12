@@ -9,38 +9,38 @@
 class grMadein : public grSeqYakumono {
     class AttackInfo {
     public:
-        float size;
-        Vec3f offsetPos;
+        float m_size;
+        Vec3f m_offsetPos;
         char _spacer[0x18];
-        int preset;
+        int m_preset;
     };
 
     class HitPointInfo {
-        Vec3f startOffsetPos;
-        Vec3f endOffsetPos;
+        Vec3f m_startOffsetPos;
+        Vec3f m_endOffsetPos;
         char _spacer[12];
-        float size;
-        float lastDamageTaken;
-        float lastSide;
+        float m_size;
+        float m_lastDamageTaken;
+        float m_lastSide;
         char _spacer2[8];
-        int lastPlayerHit;
-        int nodeIndex;
+        int m_lastPlayerHit;
+        int m_nodeIndex;
     };
 
     class StageHitData {
-        Vec3f startOffsetPos;
-        Vec3f endOffsetPos;
-        float size;
+        Vec3f m_startOffsetPos;
+        Vec3f m_endOffsetPos;
+        float m_size;
         char _spacer[8];
-        int nodeIndex;
+        int m_nodeIndex;
         char _spacer2[20];
     };
 
 protected:
-    AttackInfo* attackInfo;
-    HitPointInfo* hitPointInfo;
-    soCollisionAttackData* overwriteAttackData;
-    StageHitData* stageHitData;
+    AttackInfo* m_attackInfo;
+    HitPointInfo* m_hitPointInfo;
+    soCollisionAttackData* m_overwriteAttackData;
+    StageHitData* m_stageHitData;
     char _spacer2[56];
 
 public:

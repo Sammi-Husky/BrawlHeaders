@@ -1,10 +1,11 @@
 #pragma once
 
 #include <gr/gr_yakumono.h>
+#include <StaticAssert.h>
 
 class grSeqYakumono : public grYakumono {
 protected:
-    char spacer_[12];
+    char _spacer[12];
 
 public:
     grSeqYakumono(char* taskName);
@@ -14,4 +15,6 @@ public:
     void registSeSeq(unsigned int unk1, int unk2, int unk3);
 
     virtual ~grSeqYakumono();
+
+    STATIC_CHECK(sizeof(grSeqYakumono) == 348)
 };

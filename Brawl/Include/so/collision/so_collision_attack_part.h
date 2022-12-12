@@ -87,16 +87,16 @@ enum CollisionAttackFacingRestriction {
 };
 
 struct soCollisionAttackData {
-    int power;
-    Vec3f offsetPos;
-    float size;
-    int vector;
-    int reactionEffect;
-    int reactionFix;
-    int reactionAdd;
-    float tripRate;
-    float hitstopMultiplier;
-    float sdiMultiplier;
+    int m_power;
+    Vec3f m_offsetPos;
+    float m_size;
+    int m_vector;
+    int m_reactionEffect;
+    int m_reactionFix;
+    int m_reactionAdd;
+    float m_tripRate;
+    float m_hitstopMultiplier;
+    float m_sdiMultiplier;
     union {
         struct {
             unsigned int nodeIndex : 9;    // up to 0x1ff
@@ -142,7 +142,7 @@ struct soCollisionAttackData {
             unsigned int addedShieldDamage : 5; // up to 0x1f;
             bool isShapeCapsule : 1;
             unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
-        } bits;
+        } m_bits;
 
         struct {
             unsigned int nodeIndex : 9;                     // up to 0x1ff
@@ -174,6 +174,6 @@ struct soCollisionAttackData {
             unsigned int addedShieldDamage : 5; // up to 0x1f;
             bool isShapeCapsule : 1;
             unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
-        } masks;
+        } m_masks;
     };
 };

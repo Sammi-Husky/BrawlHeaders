@@ -40,7 +40,7 @@ namespace nw4r {
 
             char _spacer[40];
 
-            int *anmVisFile;
+            int* m_anmVisFile;
         };
     }
 }

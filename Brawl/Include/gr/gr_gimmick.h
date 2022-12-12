@@ -7,44 +7,44 @@
 #include <st/st_trigger.h>
 
 struct grGimmickMotionPathData {
-    float motionRatio;
-    char index;
-    char field_0x5;
-    char mdlIndex;
+    float m_motionRatio;
+    char m_index;
+    char m_0x5;
+    char m_mdlIndex;
     char _padding;
 };
 
 struct grGimmickMotionPathInfo {
-    gfArchive* archive;
-    grGimmickMotionPathData* motionPathData;
-    int field_0x8;
-    int field_0xc;
-    int field_0x10;
-    int field_0x14;
-    int field_0x18;
-    int field_0x1c;
-    int field_0x20;
+    gfArchive* m_archive;
+    grGimmickMotionPathData* m_motionPathData;
+    int m_0x8;
+    int m_0xc;
+    int m_0x10;
+    int m_0x14;
+    int m_0x18;
+    int m_0x1c;
+    int m_0x20;
 };
 
 struct Effect_Info {
-    short field_0x0;
-    short field_0x2;
-    float field_0x4;
-    int field_0x8;
-    int id;
-    int field_0x10;
-    int field_0x14;
-    short nodeIndex;
-    short field_0x1a;
-    float field_0x1c;
-    float field_0x20;
-    float field_0x24;
+    short m_0x0;
+    short m_0x2;
+    float m_0x4;
+    int m_0x8;
+    int m_id;
+    int m_0x10;
+    int m_0x14;
+    short m_nodeIndex;
+    short m_0x1a;
+    float m_0x1c;
+    float m_0x20;
+    float m_0x24;
 };
 
 struct grGimmickSimpleEffectData {
     unsigned int m_id;
     short m_0x4;
-    short nodeIndex;
+    short m_nodeIndex;
     short m_0x8;
     short m_0xc;
 };
@@ -69,10 +69,10 @@ class grVisibleProduction {
     virtual bool isVisiblePermission();
     virtual void setForcedEnding();
 
-    int field_0x4;
-    float field_0x8;
-    bool enabled;
-    bool visiblePermission;
+    int m_0x4;
+    float m_0x8;
+    bool m_enabled;
+    bool m_visiblePermission;
     char _padding[2];
 };
 
@@ -80,23 +80,23 @@ class grGimmick : public Ground {
 
 public:
     // 5C
-    int numSndGenerators;
+    int m_numSndGenerators;
     // 60
-    snd3DGenerator* snd3DGenerators;
+    snd3DGenerator* m_snd3DGenerators;
     // 64
-    int numSoundEffects;
+    int m_numSoundEffects;
     // 68
-    Effect_Info* soundEffects;
+    Effect_Info* m_soundEffects;
     // 6C
-    int numEffects;
+    int m_numEffects;
     // 70
-    Effect_Info* effects;
+    Effect_Info* m_effects;
     // 74
     char _spacer6[8];
     // 7C
-    void* gimmickData;
+    void* m_gimmickData;
     // 80
-    u32 unk1;
+    u32 m_unk1;
     // 84
     int m_nodeIndex;
     // 88
@@ -104,11 +104,11 @@ public:
     // 89
     char unk3[3];
     // 8C
-    grGimmickMotionPath* gimmickMotionPath;
+    grGimmickMotionPath* m_gimmickMotionPath;
     // 90
-    grCalcWorldCallBack calcWorldCallBack;
+    grCalcWorldCallBack m_calcWorldCallBack;
     // A0
-    char unk5;
+    char m_unk5;
     // A1
     bool m_transparencyFlag;
     // A2
@@ -128,9 +128,9 @@ public:
     // A8
     char _spacer8[20];
     // BC
-    grVisibleProduction* visibleProductions[4];
+    grVisibleProduction* m_visibleProductions[4];
     // CC
-    char spacer[0x40];
+    char _spacer9[0x40];
 
     grGimmick(char* taskName);
 

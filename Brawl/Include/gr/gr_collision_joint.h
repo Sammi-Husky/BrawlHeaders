@@ -5,6 +5,7 @@
 #include <mt/mt_coll2d.h>
 #include <mt/mt_matrix.h>
 #include <types.h>
+#include <StaticAssert.h>
 
 class grCollision;
 class Ground;
@@ -13,19 +14,21 @@ class grCollisionJoint {
     // 0
     char _spacer[16];
     // 16
-    clAABBox2D aabBox;
+    clAABBox2D m_aabBox;
     // 32
     char _spacer2[16];
     // 48
-    grCollision* collision;
+    grCollision* m_collision;
     // 52
-    grCollisionLine* collisionLineArray;
+    grCollisionLine* m_collisionLines;
     // 56
-    VtxData* vtxDataArray;
+    VtxData* m_vtxDataArray;
     // 60
     char _spacer3[28];
     // 88
-    Ground* ground;
+    Ground* m_ground;
     // 92
-    Matrix* matrix;
+    Matrix* m_matrix;
+
+    STATIC_CHECK(sizeof(grCollisionJoint) == 96)
 };

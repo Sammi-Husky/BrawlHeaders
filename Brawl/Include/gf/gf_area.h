@@ -5,7 +5,7 @@
 
 class gfArea {
     char _spacer[0x10];
-    int areaID;
+    int m_areaID;
     char _spacer2[0x30];
 
     virtual bool testIntersectShape(void* unk);

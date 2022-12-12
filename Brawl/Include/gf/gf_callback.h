@@ -3,7 +3,7 @@
 #include <types.h>
 
 class gfCallback {
-    int unk;
+    int m_unk;
 
     virtual void userProc();
     virtual ~gfCallback();

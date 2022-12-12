@@ -5,12 +5,12 @@
 
 class stCommonGimmick : public Stage {
 protected:
-    gfArchive* fileData;
-    gfArchive* secondaryFileData;
+    gfArchive* m_fileData;
+    gfArchive* m_secondaryFileData;
     char _spacer[5];
-    bool isPaused;
+    bool m_isPaused;
     char _spacer2[2];
-    gfArchive* commonFileData;
+    gfArchive* m_commonFileData;
 
 public:
     stCommonGimmick(char* name, int unk1);

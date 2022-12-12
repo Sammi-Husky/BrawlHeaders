@@ -3,6 +3,7 @@
 #include <mt/mt_coll2d.h>
 #include <mt/mt_vector.h>
 #include <types.h>
+#include <StaticAssert.h>
 
 class grCollShape {
     virtual void init();
@@ -28,4 +29,6 @@ class grCollShape {
     virtual void setUD(Vec2f* centerPos, Vec2f* unk1, Vec2f* unk2);
     virtual void setLR(Vec2f* unk1, Vec2f* unk2);
     virtual void modifyDownY(float downY);
+
+    STATIC_CHECK(sizeof(grCollShape) == 4)
 };

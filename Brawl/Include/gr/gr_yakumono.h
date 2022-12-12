@@ -10,56 +10,56 @@
 class grYakumono : public grGimmick {
 public:
     struct AttackData {
-        float unk1;
-        Vec3f offsetPos;
-        float size;
-        int vector;
-        int reactionEffect;
-        int reactionFix;
-        int reactionAdd;
+        float m_unk1;
+        Vec3f m_offsetPos;
+        float m_size;
+        int m_vector;
+        int m_reactionEffect;
+        int m_reactionFix;
+        int m_reactionAdd;
         char _spacer[4];
-        CollisionAttackElementType elementType;
-        bool isClankable;
-        bool unk2;
-        bool unk3;
-        bool unk4;
+        CollisionAttackElementType m_elementType;
+        bool m_isClankable;
+        bool m_unk2;
+        bool m_unk3;
+        bool m_unk4;
         char _spacer2[0xC];
-        unsigned int detectionRate;
-        CollisionAttackHitSoundLevel hitSoundLevel;
-        CollisionAttackHitSoundType hitSoundType;
-        bool unk5;
-        bool isShapeCapsule;
+        unsigned int m_detectionRate;
+        CollisionAttackHitSoundLevel m_hitSoundLevel;
+        CollisionAttackHitSoundType m_hitSoundType;
+        bool m_unk5;
+        bool m_isShapeCapsule;
         char _spacer3[6];
-        unsigned int nodeIndex;
-        int power;
+        unsigned int m_nodeIndex;
+        int m_power;
     };
 
     struct AttackDetails {
         union {
-            unsigned int collisionCategoryMask;
+            unsigned int m_collisionCategoryMask;
             struct {
                 unsigned int _pad : 22;
-                bool isCollisionCategoryUnk1 : 1;
-                bool isCollisionCategoryItems1 : 1; // Soccer Ball, Blast Box etc.
-                bool isCollisionCategoryUnk2 : 1;
-                bool isCollisionCategoryUnk3 : 1;
-                bool isCollisionCategoryUnk4 : 1;
-                bool isCollisionCategoryUnk5 : 1;
-                bool isCollisionCategoryItems2 : 1; // Barrel, Crate etc.
-                bool isCollisionCategoryUnk6 : 1;
-                bool isCollisionCategoryUnk7 : 1;
-                bool isCollisionCategoryFighter : 1;
+                bool m_isCollisionCategoryUnk1 : 1;
+                bool m_isCollisionCategoryItems1 : 1; // Soccer Ball, Blast Box etc.
+                bool m_isCollisionCategoryUnk2 : 1;
+                bool m_isCollisionCategoryUnk3 : 1;
+                bool m_isCollisionCategoryUnk4 : 1;
+                bool m_isCollisionCategoryUnk5 : 1;
+                bool m_isCollisionCategoryItems2 : 1; // Barrel, Crate etc.
+                bool m_isCollisionCategoryUnk6 : 1;
+                bool m_isCollisionCategoryUnk7 : 1;
+                bool m_isCollisionCategoryFighter : 1;
             };
         };
-        char unk1;
-        bool unk2;
+        char m_unk1;
+        bool m_unk2;
         char _spacer[2];
-        CollisionAttackFacingRestriction facingRestriction;
-        float hitstopMultiplier;
+        CollisionAttackFacingRestriction m_facingRestriction;
+        float m_hitstopMultiplier;
     };
 
 protected:
-    Yakumono* yakumono;
+    Yakumono* m_yakumono;
 
 public:
     grYakumono(char* taskName);

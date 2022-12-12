@@ -5,35 +5,36 @@
 #include <st/st_trigger_observe.h>
 #include <ut/ut_list.h>
 #include <yk/yakumono.h>
+#include <StaticAssert.h>
 
 enum GimmickKind {
-    Gimmick_Kind_Valid = 0x0,
-    Gimmick_Kind_RebirthPoint = 0x5,
-    Gimmick_Kind_Wind = 0xc,
-    Gimmick_Kind_Wind2nd = 0xd,
-    Gimmick_Kind_BeltConveyor = 0xe,
-    Gimmick_Kind_Yuka = 0xf,
-    Gimmick_Kind_Pow = 0x10,
-    Gimmick_Kind_Water = 0x11,
-    Gimmick_Kind_HitPointEffect = 0x12,
-    Gimmick_Kind_ScrollLock = 0x15,
-    Gimmick_Kind_AreaCommon = 0x1e,
-    Gimmick_Kind_BarrelCannonStatic = 0x1f,
-    Gimmick_Kind_BarrelCannonPath = 0x20,
-    Gimmick_Kind_BarrelCannonStaticAuto = 0x21,
-    Gimmick_Kind_BarrelCannonPathAuto = 0x22,
-    Gimmick_Kind_Spring = 0x23,
-    Gimmick_Kind_Catapult = 0x24,
-    Gimmick_Kind_Ladder = 0x25,
-    Gimmick_Kind_DoorGround = 0x28,
-    Gimmick_Kind_DoorAir = 0x29,
-    Gimmick_Kind_DoorGroundAuto = 0x2a,
-    Gimmick_Kind_DoorUnk = 0x2b,
-    Gimmick_Kind_WarpZone = 0x2c,
-    Gimmick_Kind_Savepoint = 0x2d,
-    Gimmick_Kind_Eat = 0x2f,
-    Gimmick_Kind_Elevator = 0x35,
-    Gimmick_Kind_Truck = 0x3a,
+    GimmickKind_Valid = 0x0,
+    GimmickKind_RebirthPoint = 0x5,
+    GimmickKind_Wind = 0xc,
+    GimmickKind_Wind2nd = 0xd,
+    GimmickKind_BeltConveyor = 0xe,
+    GimmickKind_Yuka = 0xf,
+    GimmickKind_Pow = 0x10,
+    GimmickKind_Water = 0x11,
+    GimmickKind_HitPointEffect = 0x12,
+    GimmickKind_ScrollLock = 0x15,
+    GimmickKind_AreaCommon = 0x1e,
+    GimmickKind_BarrelCannonStatic = 0x1f,
+    GimmickKind_BarrelCannonPath = 0x20,
+    GimmickKind_BarrelCannonStaticAuto = 0x21,
+    GimmickKind_BarrelCannonPathAuto = 0x22,
+    GimmickKind_Spring = 0x23,
+    GimmickKind_Catapult = 0x24,
+    GimmickKind_Ladder = 0x25,
+    GimmickKind_DoorGround = 0x28,
+    GimmickKind_DoorAir = 0x29,
+    GimmickKind_DoorGroundAuto = 0x2a,
+    GimmickKind_DoorUnk = 0x2b,
+    GimmickKind_WarpZone = 0x2c,
+    GimmickKind_Savepoint = 0x2d,
+    GimmickKind_Eat = 0x2f,
+    GimmickKind_Elevator = 0x35,
+    GimmickKind_Truck = 0x3a,
 };
 
 class stTrigger : public utListNode {
@@ -57,11 +58,13 @@ public:
 
     void setObserveYakumono(Yakumono* yakumono);
     stObsTriggerSquareBeltConveyorCB* setBeltConveyorTrigger(SquareBeltConveyorGimmickAreaData* gimmickAreaData);
+
+    STATIC_CHECK(sizeof(stTrigger) == 52)
 };
 
 class stTriggerMng : public gfTask {
     utList m_triggerList;
-    char _spacer[21];
+    char _spacer[24];
 
 public:
     virtual void processBegin();
@@ -73,6 +76,8 @@ public:
     stTrigger* createTrigger(GimmickKind gimmickKind, stTrigger::TriggerData* triggerData);
     void setTriggerFlag(stTrigger::TriggerData* triggerData);
     bool getTriggerFlag(stTrigger::TriggerData* triggerData, bool defaultFlag);
+
+    STATIC_CHECK(sizeof(stTriggerMng) == 100)
 };
 
 extern stTriggerMng* g_stTriggerMng;

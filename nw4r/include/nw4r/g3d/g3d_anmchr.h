@@ -12,9 +12,9 @@ namespace nw4r {
             //}
 
             char _spacer[0x14];
-            unsigned int stringOffset;
+            unsigned int m_stringOffset;
             char _spacer2[0x1C - 0x14 - 4];
-            unsigned short animLength;
+            unsigned short m_animLength;
         };
 
         class AnmObjChrRes {
@@ -59,7 +59,7 @@ namespace nw4r {
 
             char _spacer[40];
 
-            CHR0 *anmChrFile;
+            CHR0* m_anmChrFile;
 
             char _spacer2[4];
         };

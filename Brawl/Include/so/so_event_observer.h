@@ -17,7 +17,7 @@ class soEventObserver {
     virtual void addObserver(int param1, int param2);
     short _4;
     short _6;
-    short sendID;
+    short m_sendID;
 
     STATIC_CHECK(sizeof(soEventObserver) == 8)
 };

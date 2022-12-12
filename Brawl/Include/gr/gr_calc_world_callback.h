@@ -32,7 +32,7 @@ public:
 class grCalcWorldCallBack : public nw4r::g3d::ICalcWorldCallBack {
 
 public:
-    grNodeCallbackData* nodeCallbackDataArray;
+    grNodeCallbackData* m_nodeCallbackDataArray;
     unsigned int m_numNodeCallbackData;
     unsigned int m_index;
 
@@ -42,6 +42,8 @@ public:
     virtual void ExecCallbackC(); // TODO
     virtual int initialize(bool unk1, HeapType heapType);
     virtual int clearAll();
+
+    STATIC_CHECK(sizeof(grCalcWorldCallBack) == 16)
 };
 
 // Size: 16

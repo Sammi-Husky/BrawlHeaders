@@ -36,8 +36,8 @@ class stObsTriggerCB : public gfCallback {
 
 class stObsTriggerArea : public stObsTriggerCB {
 
-    gfArea* area;
-    GimmickAreaData gimmickAreaData;
+    gfArea* m_area;
+    GimmickAreaData m_gimmickAreaData;
 
     virtual void userProc();
     virtual ~stObsTriggerArea();

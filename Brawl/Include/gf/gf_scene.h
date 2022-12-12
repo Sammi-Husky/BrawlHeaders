@@ -1,30 +1,37 @@
 
 #include <types.h>
+#include <StaticAssert.h>
 
 class gfScene {
 public:
-    char* sceneName;
+    char* m_sceneName;
     virtual void start();
     virtual void process();
     virtual void exit();
     virtual void setModule();
+
+    STATIC_CHECK(sizeof(gfScene) == 4)
 };
 
 class gfSequence {
 public:
-    char* sequenceName;
+    char* m_sequenceName;
     virtual void start();
     virtual void setNext();
     virtual void exit();
+
+    STATIC_CHECK(sizeof(gfSequence) == 4)
 };
 
 class gfSceneManager {
     char _spacer[4];
-    gfScene* currentScene;
+    gfScene* m_currentScene;
     char _spacer2[16];
-    gfScene* scenes[100];
-    gfSequence* sequences[50];
-    int sceneCount;
-    int sequenceCount;
+    gfScene* m_scenes[100];
+    gfSequence* m_sequences[50];
+    int m_sceneCount;
+    int m_sequenceCount;
     char _spacer3[168];
+
+    STATIC_CHECK(sizeof(gfSceneManager) == 800)
 };

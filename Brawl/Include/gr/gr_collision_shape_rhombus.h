@@ -2,9 +2,10 @@
 
 #include <gr/gr_collision_shape.h>
 #include <types.h>
+#include <StaticAssert.h>
 
 class grCollShapeRhombus : public grCollShape {
-    clRhombus2D rhombus;
+    clRhombus2D m_rhombus;
 
     virtual void init();
     virtual int getType();
@@ -29,4 +30,6 @@ class grCollShapeRhombus : public grCollShape {
     virtual void setUD(Vec2f* centerPos, Vec2f* unk1, Vec2f* unk2);
     virtual void setLR(Vec2f* unk1, Vec2f* unk2);
     virtual void modifyDownY(float downY);
+
+    STATIC_CHECK(sizeof(grCollShapeRhombus) == 60)
 };

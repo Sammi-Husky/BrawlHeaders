@@ -11,7 +11,7 @@
 
 class soActivatable {
     virtual ~soActivatable();
-    u32 isActive;
+    u32 m_isActive;
 };
 
 class StageObject : public gfTask, public soActivatable, public soAnimCmdEventObserver, public soLinkEventObserver {

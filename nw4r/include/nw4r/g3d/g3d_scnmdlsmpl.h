@@ -17,7 +17,7 @@ namespace nw4r {
             virtual ~ScnMdlSimple();
 
             char _spacer[12];
-            ResMdl resMdl;
+            ResMdl m_resMdl;
             char _spacer2[48];
             ICalcWorldCallBack* m_calcWorldCallBack;
             char _spacer3[2];

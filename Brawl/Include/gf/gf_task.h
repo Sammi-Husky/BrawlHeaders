@@ -5,9 +5,9 @@
 
 class gfTask {
 public:
-    char* taskName;
-    gfTask* next;
-    gfTask* prev;
+    char* m_taskName;
+    gfTask* m_next;
+    gfTask* m_prev;
     int unk_0xC;
     int unk_0x10;
     int unk_0x14;
@@ -15,9 +15,9 @@ public:
     gfTask* unk_0x1c;
     gfTask* unk_0x20;
     gfTask* unk_0x24;
-    int taskID;
+    int m_taskID;
     u16 unk_0x2c;
-    u16 taskCategory;
+    u16 m_taskCategory;
     char _unk[0xC];
 
     gfTask(char* name, int unk1, int unk2, int unk3, int unk4);

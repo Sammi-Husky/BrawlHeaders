@@ -41,7 +41,7 @@ namespace nw4r {
 
             char _spacer[40];
 
-            int *anmMatClrFile;
+            int* m_anmMatClrFile;
 
             char _spacer2[4];
         };

@@ -2,40 +2,43 @@
 
 #include <gr/gr_collision_linework.h>
 #include <types.h>
+#include <StaticAssert.h>
 
 class Stage;
 
 class grCollision {
 private:
     // 0
-    short index;
+    short m_index;
     // 2
-    short vtxLen;
+    short m_vtxLen;
     // 4
-    short lineLen;
+    short m_lineLen;
     // 6
-    short jointLen;
+    short m_jointLen;
     // 8
-    grCollData* collData;
+    grCollData* m_collData;
     // 12
-    VtxData* vtxDataArray;
+    VtxData* m_vtxDataArray;
     // 16
-    Vec2f* vtxPosArray;
+    Vec2f* m_vtxPosArray;
     // 20
-    grCollisionLine* collisionLineArray;
+    grCollisionLine* m_collisionLineArray;
     // 24
-    grCollisionJoint* collisionJointArray;
+    grCollisionJoint* m_collisionJointArray;
     // 28
-    clAABBox2D aabBox;
+    clAABBox2D m_aabBox;
     // 44
     char _spacer[4];
     // 48
-    void* next;
+    void* m_next;
     // 52
-    void* prev;
+    void* m_prev;
     // TOTAL_SIZE == 56
 public:
     static grCollision* create(Stage* stage, void* colData, Ground* ground, int unk2);
     grCollision(void* colData, int unk1, int unk2);
     ~grCollision();
+
+    STATIC_CHECK(sizeof(grCollision) == 56)
 };

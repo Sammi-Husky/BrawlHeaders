@@ -41,7 +41,7 @@ namespace nw4r {
 
             char _spacer[40];
 
-            int *anmTexSrtFile;
+            int* m_anmTexSrtFile;
 
             char _spacer2[4];
         };

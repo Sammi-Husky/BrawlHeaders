@@ -13,6 +13,7 @@
 #include <st/st_positions.h>
 #include <types.h>
 #include <em/em_create.h>
+#include <st/st_trigger.h>
 
 namespace StSeUtil {
     class SeSeq {
@@ -125,11 +126,11 @@ public:
     // 0
     char _spacer[0x04];
     // 4
-    int stageID;
+    int m_stageID;
     // 8
     char _spacer1[0x10];
     // 18
-    stRange deadRange;
+    stRange m_deadRange;
     // 28
     char aiRange[0x10];
     // 38
@@ -141,37 +142,39 @@ public:
     // 44
     char _spacer2[4];
     // 48
-    Ground* headGround;
+    Ground* m_headGround;
     // 4c
-    void* collConv;
+    void* m_collConv;
     // 50
-    stPositions* stagePositions;
+    stPositions* m_stagePositions;
     // 54
     char _spacer3[4];
     // 58
     StageParam* m_stageParam;
     // 5C
-    void* stageData;
+    void* m_stageData;
     // 60
-    char _spacer4[0x1C];
+    stTriggerMng* m_triggerMng;
+    // 64
+    char _spacer4[0x18];
     // 7C
-    u32 unk;
+    u32 m_unk;
     // 80
     char _spacer5[0x38];
     // B8
     char collisionAttrs[0xC];
     // C4
-    gfArchive archive;
+    gfArchive m_archive;
     // 144
-    bool unk2;
+    bool m_unk2;
     // 145
     char _spacer6[3];
     // 148
-    u32 unk3;
+    u32 m_unk3;
     // 14C
-    float unk4;
+    float m_unk4;
     // 150
-    float frameRuleTime;
+    float m_frameRuleTime;
     // 154
     char _spacer7[0xC];
     // TOTAL_SIZE == 0x160

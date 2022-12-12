@@ -13,6 +13,6 @@ class grVisibleProductionEffect : public grVisibleProduction {
     virtual void productFlowEnd();
     virtual void setForcedEnding();
 
-    grGimmick* ground;
+    grGimmick* m_ground;
     char _spacer[52];
 };

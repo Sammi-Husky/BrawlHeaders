@@ -30,3 +30,5 @@ struct GameGlobal {
 
     STATIC_CHECK(sizeof(GameGlobal) == 0x50);
 };
+
+extern GameGlobal* g_gameGlobal;

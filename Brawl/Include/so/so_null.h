@@ -1,6 +1,7 @@
 #pragma once
 
 #include <types.h>
+#include <StaticAssert.h>
 
 class soNull {
 
@@ -14,7 +15,9 @@ class soNullable {
 public:
     virtual bool isNull();
 
-    bool null;
+    bool m_null;
     char _spacer[3];
+
+    STATIC_CHECK(sizeof(soNullable) == 8)
 };
 

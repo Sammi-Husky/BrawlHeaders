@@ -6,12 +6,12 @@ class grGimmickMotionPath : public grGimmick {
 
 public:
     char _spacer[4];
-    float frame;
+    float m_frame;
     char _spacer2[12];
-    unsigned int frameCount;
-    grGimmickMotionPathData* motionPathData;
+    unsigned int m_frameCount;
+    grGimmickMotionPathData* m_motionPathData;
     char _spacer3[20];
-    int nodeIndex;
+    int m_nodeIndex;
     char nodeName[32];
 
     grGimmickMotionPath(char* taskName, char* nodeName);

@@ -43,7 +43,7 @@ namespace nw4r {
 
             char _spacer[40];
 
-            int *anmShpFile;
+            int* m_anmShpFile;
 
             char _spacer2[8];
         };

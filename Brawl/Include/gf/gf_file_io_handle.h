@@ -6,5 +6,5 @@
 class gfFileIOHandle {
 public:
     //0
-    gfFileIORequest* request;
+    gfFileIORequest* m_request;
 };

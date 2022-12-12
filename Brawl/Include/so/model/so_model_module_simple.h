@@ -90,10 +90,10 @@ class soModelModule : public soNull, public soNullable {
 
 class soModelModuleSimple : public soModelModule {
     // 0xC
-    int unk1;
+    int m_unk1;
 
     // 0x10
-    int unk2;
+    int m_unk2;
 
     // TODO: Verify Params
     virtual void setUpMtx(u32 unk2);

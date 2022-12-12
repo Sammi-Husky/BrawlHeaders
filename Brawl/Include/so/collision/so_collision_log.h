@@ -6,11 +6,11 @@ class soCollisionLog {
     public:
         char _spacer[12];
 
-        int taskId;
+        int m_taskId;
 
         char _spacer2[12];
 
-        short life;
+        short m_life;
 
         char _spacer3[14];
 

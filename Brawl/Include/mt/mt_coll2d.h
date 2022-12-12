@@ -5,24 +5,24 @@
 
 class clAABBox2D {
 public:
-    float unk1;
-    float unk2;
-    float unk3;
-    float unk4;
+    float m_unk1;
+    float m_unk2;
+    float m_unk3;
+    float m_unk4;
 };
 
 class clCircle2D {
 public:
-    Vec2f centerPos;
-    float radius;
+    Vec2f m_centerPos;
+    float m_radius;
 };
 
 class clRhombus2D {
 public:
-    Vec2f centerPos;
-    Vec2f upPos;
-    Vec2f downPos;
-    Vec2f leftPos;
-    Vec2f rightPos;
-    clAABBox2D aabBox;
+    Vec2f m_centerPos;
+    Vec2f m_upPos;
+    Vec2f m_downPos;
+    Vec2f m_leftPos;
+    Vec2f m_rightPos;
+    clAABBox2D m_aabBox;
 };

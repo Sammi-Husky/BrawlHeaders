@@ -18,17 +18,17 @@ class soResourceModule : public soNull, public soNullable {
 
 class soResourceModuleImpl : public soResourceModule {
     // 0xC
-    int managerID;
+    int m_managerID;
     // 0x10
-    void* resourceIdAccesser;
+    void* m_resourceIdAccesser;
     // 0x14
-    char archiveType1;
+    char m_archiveType1;
     // 0x15
-    char archiveType2;
+    char m_archiveType2;
     // 0x16
-    char archiveType3;
+    char m_archiveType3;
     // 0x17
-    char archiveType4;
+    char m_archiveType4;
 
     virtual ~soResourceModuleImpl();
     virtual void* getResourceIdAccesser();

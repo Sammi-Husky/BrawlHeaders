@@ -20,23 +20,23 @@ enum ARCNodeType {
 class gfArchive {
 public:
     // 0
-    gfArchive* prevArchive;
+    gfArchive* m_prevArchive;
     // 4
-    gfArchive* nextArchive;
+    gfArchive* m_nextArchive;
     // 8
     char _spacer[0xC];
     // 20
-    void* Heap;
+    void* m_Heap;
     // 24
     char _spacer1[0x10];
     // 40
-    char archiveFilePath[64];
+    char m_archiveFilePath[64];
     // 104
-    int* entryArray;
+    int* m_entryArray;
     // 108
-    gfFileIOHandle* requestHandle;
+    gfFileIOHandle* m_requestHandle;
     // 112
-    int returnStatus;
+    int m_returnStatus;
     // 116
     char _spacer2[4];
 

@@ -5,10 +5,10 @@
 #include <types.h>
 
 struct stDataContainerData {
-    u32 MAGIC;
-    s32 numFiles;
-    s32 version;
-    u32 extParam;
+    u32 m_MAGIC;
+    s32 m_numFiles;
+    s32 m_version;
+    u32 m_extParam;
 };
 
 class stDataContainer {

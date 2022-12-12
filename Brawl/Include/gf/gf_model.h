@@ -9,18 +9,19 @@
 #include <nw4r/g3d/g3d_scnmdl.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <types.h>
+#include <StaticAssert.h>
 
 class gfModelAnimation {
 public:
-    nw4r::g3d::ResFile resFile;
+    nw4r::g3d::ResFile m_resFile;
     char _spacer[4];
 
-    nw4r::g3d::AnmObjVisRes* anmObjVisRes;
-    nw4r::g3d::AnmObjChrRes* anmObjChrRes;
-    nw4r::g3d::AnmObjTexPatRes* anmObjTexPatRes;
-    nw4r::g3d::AnmObjTexSrtRes* anmObjTexSrtRes;
-    nw4r::g3d::AnmObjMatClrRes* anmObjMatClrRes;
-    nw4r::g3d::AnmObjShpRes* anmObjShpRes;
+    nw4r::g3d::AnmObjVisRes* m_anmObjVisRes;
+    nw4r::g3d::AnmObjChrRes* m_anmObjChrRes;
+    nw4r::g3d::AnmObjTexPatRes* m_anmObjTexPatRes;
+    nw4r::g3d::AnmObjTexSrtRes* m_anmObjTexSrtRes;
+    nw4r::g3d::AnmObjMatClrRes* m_anmObjMatClrRes;
+    nw4r::g3d::AnmObjShpRes* m_anmObjShpRes;
 
     u16 getFrameCount();
     float getFrame();
@@ -28,6 +29,8 @@ public:
     void setUpdateRate(float updateRate);
     void setLoop(bool shouldLoop);
     void unbindNodeAnim(nw4r::g3d::ScnMdl* sceneModel);
+
+    STATIC_CHECK(sizeof(gfModelAnimation) == 32)
 };
 
 // Size: 32
