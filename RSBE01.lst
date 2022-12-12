@@ -8,6 +8,7 @@
 805a00e0:g_gameGlobal
 27,6,2E68: g_ftManager
 27,6,2E70: g_ftAudienceManager
+27,6,5518: g_aiMgr
 
 // System
 803f1254:__save_fpr
@@ -301,14 +302,14 @@
 27,1,002249D8:notifyEventInfoReady__5StageFv
 27,1,002249DC:notifyEventInfoGo__5StageFv
 27,1,00224B08:getDestroyBossParamCommon__5StageFv
-27,1,00224B3C:stAdventureEventGetItem__5StageFv
+27,1,00224B3C:stAdventureEventGetItem__5StageFiiiii
 27,1,00224D88:setStageOutEffectInit__5StageFv
 27,1,00224D98:setStageInEffectInit__5StageFv
 27,1,002256E4:helperStarWarp__5StageFv
 27,1,002256DC:initializeFighterAttackRatio__5StageFv
 27,1,002256D8:startFighterEvent__5StageFv
 27,1,00224D5C:getZoneState__5StageFv
-27,1,00224D64:getZonePos__5StageFv
+27,1,00224D64:getZonePos__5StageFP5Vec3f
 27,1,00224D68:getMagmaHeight__5StageFv
 27,1,00224D74:getAcidHeight__5StageFv
 27,1,00224D80:getIteamDropStatus__5StageFv
@@ -552,6 +553,9 @@
 
 // ftOutsideEventPresenter
 27,1,0015B0C8:notifyOutsideEventKnockout__23ftOutsideEventPresenterFv
+
+// aiMgr
+27,1,001F27DC:setDangerZone__5aiMgrFP5Vec2fP5Vec2fibb
 
 // BaseItem
 27,1,0028C834:getParam__8BaseItemFUi

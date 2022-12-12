@@ -287,14 +287,14 @@ public:
     virtual void notifyEventInfoReady();        // TODO
     virtual void notifyEventInfoGo();           // TODO
     virtual void getDestroyBossParamCommon();   // TODO
-    virtual void stAdventureEventGetItem();     // TODO
+    virtual void stAdventureEventGetItem(int, int, int, int, int);     // TODO
     virtual void setStageOutEffectInit();       // TODO
     virtual void setStageInEffectInit();        // TODO
     virtual int helperStarWarp();               // TODO
     virtual int initializeFighterAttackRatio(); // TODO
     virtual void startFighterEvent();           // TODO
     virtual int getZoneState();                 // TODO
-    virtual void getZonePos();                  // TODO
+    virtual void getZonePos(Vec3f* pos);
     virtual float getMagmaHeight();             // TODO
     virtual float getAcidHeight();              // TODO
     virtual int getIteamDropStatus();           // TODO
