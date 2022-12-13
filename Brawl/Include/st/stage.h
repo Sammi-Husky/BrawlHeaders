@@ -132,7 +132,7 @@ public:
     // 18
     stRange m_deadRange;
     // 28
-    char aiRange[0x10];
+    stRange m_aiRange;
     // 38
     CameraParam* m_cameraParam1;
     // 3c
@@ -212,7 +212,7 @@ public:
     virtual void getItemGenPac(gfArchive** archive);
     virtual void getItemPacEnemyFigure(); // TODO
     virtual void getEnemyPac(gfArchive **brres, gfArchive **param, gfArchive **enmCommon, gfArchive **primFaceBrres, EnemyID enemyID);
-    virtual void getAdvRadarData();       // TODO
+    virtual void getAdvRadarData(gfArchive**, gfArchive**);
     virtual void initializeStage();       // TODO
     virtual void closeStage();
     virtual void renderDebugPositions();
@@ -220,7 +220,7 @@ public:
     virtual void process();
     virtual void updateStagePositions();
     virtual void debugCollision();
-    virtual int getAIRange(); // TODO
+    virtual stRange* getAIRange();
     virtual int getDefaultLightSetIndex();
     virtual int getZoneLightSetIndex();
     virtual int getScrollDir(u32 unk1);
