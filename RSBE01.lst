@@ -224,7 +224,7 @@
 27,1,00224AF8:getItemGenPac__5StageFPP9gfArchive
 27,1,00224AFC:getItemPacEnemyFigure__5StageFv
 27,1,00224B00:getEnemyPac__5StageFPP9gfArchivePP9gfArchivePP9gfArchivePP9gfArchive7EnemyID
-27,1,00224B04:getAdvRadarData__5StageFv
+27,1,00224B04:getAdvRadarData__5StageFPP9gfArchivePP9gfArchive
 27,1,00221B68:initializeStage__5StageFv
 27,1,00221F80:closeStage__5StageFv
 27,1,00222AAC:renderDebugPositions__5StageFv
