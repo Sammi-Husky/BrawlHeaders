@@ -101,6 +101,7 @@
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
 8005f7a4:setEffect__5ecMgrFUi
+8005f7b8:setEffect__5ecMgrFUiP5Vec3f
 8005f7e0:setEffect__5ecMgrFUiP5Vec3fP5Vec3fP5Vec3f
 8005fc5c:setParent__5ecMgrFUiPQ34nw4r3g3d6ScnMdlPci
 
@@ -183,6 +184,9 @@
 27,1,00000EF8:__pl__5Vec3fFRC5Vec3f
 27,1,00000F1C:__ml__5Vec3fFf
 27,1,00000F1C:__ml__FfRC5Vec3f
+
+// Matrix
+8003ee18:getRotate__6MatrixFP5Vec3f
 
 // mtCommon
 8003db08:mtSqrtf__Ff
@@ -375,8 +379,8 @@
 27,1,00260B48:getNodeIndex__6GroundFUiPc
 27,1,00260c84:getNodePosition__6GroundFP5Vec3fUiUi
 27,1,00260d78:getNodePosition__6GroundFP5Vec3fUiPc
-27,1,00260e88:getNodeMatrix__6GroundFUiUiUi
-27,1,00260f48:getNodeMatrix__6GroundFUiUiPc
+27,1,00260e88:getNodeMatrix__6GroundFP6MatrixUiUi
+27,1,00260f48:getNodeMatrix__6GroundFP6MatrixUiPc
 27,1,0026102c:setNodeVisibility__6GroundFbUiUibb
 27,1,002611dc:setNodeVisibility__6GroundFbUiPcbb
 27,1,002612ac:setNodeVisibilityAll__6GroundFbUi
@@ -514,6 +518,7 @@
 27,1,0027928C:startEntityAutoLoop__8grMadeinFv
 27,1,00279590:setMotion__8grMadeinFUi
 27,1,00279968:setMotionDetails__8grMadeinFUiUiUiUiUi
+27,1,0027855C:deleteHitPoint__8grMadeinFv
 
 // grGimmickMotionPath
 27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf

@@ -97,8 +97,8 @@ public:
     virtual u32 getNodeIndex(u32 sceneModelIndex, char* nodeName);
     virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, u32 nodeIndex);
     virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, char* nodeName);
-    virtual bool getNodeMatrix(u32 nodeMtx, u32 sceneModelIndex, u32 nodeIndex);
-    virtual bool getNodeMatrix(u32 nodeMtx, u32 sceneModelIndex, char* nodeName);
+    virtual bool getNodeMatrix(Matrix* nodeMtx, u32 sceneModelIndex, u32 nodeIndex);
+    virtual bool getNodeMatrix(Matrix* nodeMtx, u32 sceneModelIndex, char* nodeName);
     virtual bool setNodeVisibility(bool setVisibility, u32 sceneModelIndex, u32 nodeIndex, bool recursive, bool recursive_);
     virtual bool setNodeVisibility(bool setVisibility, u32 sceneModelIndex, char* nodeName, bool recursive, bool recursive_);
     virtual bool setNodeVisibilityAll(bool unk1, u32 sceneModelIndex);
