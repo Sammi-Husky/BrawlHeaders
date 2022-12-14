@@ -287,6 +287,8 @@ namespace ftStatus {
         Death = 0xBD,
         Respawn = 0xBE,
 
+        Cannon_Shot = 0xC0,
+
         Enter_Grounded = 0xC7,
         In_Grounded = 0xC8,
         Exit_Grounded = 0xC9,
