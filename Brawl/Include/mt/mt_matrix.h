@@ -2,6 +2,7 @@
 
 #include <types.h>
 #include <StaticAssert.h>
+#include <mt/mt_vector.h>
 
 class Matrix {
     char _spacer[48];
