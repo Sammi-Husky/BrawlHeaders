@@ -110,7 +110,7 @@ struct soCollisionAttackData {
             bool isCollisionCategory2 : 1;
             bool isCollisionCategory1 : 1; // SSE enemies
             bool isCollisionCategory0 : 1; // Fighter
-            bool isCollisionSituationUnk : 1;
+            bool isCollisionSituationODD : 1;
             bool isCollisionSituationAir : 1;
             bool isCollisionSituationGround : 1;
             bool field_0x30_3 : 1;                          // up to 0x1

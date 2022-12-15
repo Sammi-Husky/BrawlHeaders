@@ -32,6 +32,8 @@ public:
         char _spacer3[6];
         unsigned int m_nodeIndex;
         int m_power;
+
+        STATIC_CHECK(sizeof(AttackData) == 88)
     };
 
     struct AttackDetails {
@@ -56,6 +58,8 @@ public:
         char _spacer[2];
         CollisionAttackFacingRestriction m_facingRestriction;
         float m_hitstopMultiplier;
+
+        STATIC_CHECK(sizeof(AttackDetails) == 16)
     };
 
 protected:
