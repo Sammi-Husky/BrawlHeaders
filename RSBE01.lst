@@ -573,6 +573,7 @@
 27,1,00263854:setCollisionHitOpponentCategory__8YakumonoFib
 27,1,002639D0:setTeam__8YakumonoFi
 27,1,002639EC:getTeam__8YakumonoFv
+27,1,00263C64:setSituationKind__8YakumonoFi
 
 // stPositions
 27,1,00226794:getDeadRange__11stPositionsFP7stRange
