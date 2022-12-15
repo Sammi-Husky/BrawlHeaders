@@ -103,6 +103,7 @@
 8005f7a4:setEffect__5ecMgrFUi
 8005f7b8:setEffect__5ecMgrFUiP5Vec3f
 8005f7e0:setEffect__5ecMgrFUiP5Vec3fP5Vec3fP5Vec3f
+80060c54:endEffect__5ecMgrFUi
 8005fc5c:setParent__5ecMgrFUiPQ34nw4r3g3d6ScnMdlPci
 
 // efScreen
@@ -457,6 +458,7 @@
 27,1,0026D124:createEffectWork__9grGimmickFi
 27,1,0026D22C:startGimmickEffect__9grGimmickFUi
 27,1,0026CE10:startGimmickSE__9grGimmickFUi
+27,1,0026D264:stopGimmickEffect__9grGimmickFUi
 27,1,0026D08C:stopGimmickSE__9grGimmickFUi
 27,1,0026CCA0:createSoundWork__9grGimmickFUiUi
 
