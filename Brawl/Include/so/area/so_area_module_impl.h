@@ -10,7 +10,7 @@ struct soAreaData {
     int m_0x4;
     int m_0x8;
     int m_0xc;
-    Vec2f m_pos;
+    Vec2f m_offsetPos;
     Vec2f m_range;
 };
 
