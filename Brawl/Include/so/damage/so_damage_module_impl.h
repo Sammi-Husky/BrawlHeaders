@@ -73,7 +73,7 @@ public:
 
 class soDamageModuleImpl : public soDamageModule, public soCollisionHitEventObserver, public soStatusEventObserver, public soEventPresenter<soDamageEventObserver>, public soAnimCmdEventObserver {
     soModuleAccesser* m_moduleAccesser;
-    soArray<soDamage> m_damageArray;
+    soArray<soDamage>* m_damageArray;
     soDamageNoReactionModule m_noReactionModule;
     soDamageAttackerInfo m_attackerInfo;
     soDamageEffector* m_effector;

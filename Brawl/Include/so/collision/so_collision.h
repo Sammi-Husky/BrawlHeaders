@@ -8,8 +8,10 @@
 class soCollision {
     int m_kind;
     int m_indirectTeam;
-    soArray<soCollisionGroup> m_collisionGroupArray;
-    char _12[7];
+    soArray<soCollisionGroup>* m_collisionGroupArray;
+    int m_taskId;
+    u8 m_category;
+    char _17[2];
     bool m_isNoTeam;
     char _20[4];
 
