@@ -6,6 +6,9 @@
 #include <ft/fighter.h>
 #include <so/damage/so_damage_attacker_info.h>
 #include <so/so_event_observer.h>
+#include <so/so_null.h>
+#include <so/so_dispose_instance_manager.h>
+#include <so/so_log_event_presenter.h>
 
 class ftOutsideEventObserver : public soEventObserver<ftOutsideEventObserver> {
 public:
@@ -53,13 +56,36 @@ public:
 
     char _spacer1[2];
     STATIC_CHECK(sizeof(ftOutsideEventObserver) == 12)
-
 };
 
-class ftManager {
-    char _spacer[352];
+class ftManagerAbstract : public soNull, public gfTask, public ftOutsideEventObserver, public soDisposeInstanceEventObserver, public soLogEventObserver {
+    // Note: Done so that vtable placement is proper
+};
+
+class ftManager : public ftManagerAbstract {
+    char _spacer[248];
 
     public:
+        virtual ~ftManager();
+
+        virtual void processBegin();
+        virtual void processUpdate();
+        virtual void processHit();
+        virtual void processEnd();
+        virtual void processDebug();
+
+        virtual void notifyEventKirbyCopySetup(int entryId, int);
+        virtual void notifyEventKirbyCopyCancel(int entryId, int);
+
+        virtual void notifyDisposeInstance(bool, int, int taskId);
+        virtual void notifyDrawDone();
+
+        virtual void notifyEventEntryEnd(int entryId);
+        virtual void notifyEventResultEnd(int entryId);
+
+        virtual void notifyLogEventCollisionHit(float, int taskId1, int taskId2, int);
+        virtual void notifyLogEventDead(int entryId1, int entryId2, int, int);
+
         bool isValidEntryId(int entryId);
         int getEntryCount();
         int getEntryIdFromIndex(int index);
@@ -82,7 +108,7 @@ class ftManager {
         bool isProcessHeartSwap(int entryId);
         void toKnockOutHeartSwapOpposite(int entryId, soDamageAttackerInfo* attackerInfo);
 
-        STATIC_CHECK(sizeof(ftManager) == 352)
+        STATIC_CHECK(sizeof(ftManager) == 0x160)
 };
 
 extern ftManager* g_ftManager;
