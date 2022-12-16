@@ -21,6 +21,9 @@ public:
     virtual void notifyDisposeInstance(bool, int, int taskId);
     virtual void notifyDrawDone();
 
+    bool isCompItemKindArchive(itKind kind, u32 variation, bool);
+    BaseItem* createItem(itKind kind, u32 variation, int, int, u8, int, int, int);
+    static itManager* getInstance();
 
     STATIC_CHECK(sizeof(itManager) == 0x14c0)
 };
