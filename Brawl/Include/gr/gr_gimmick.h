@@ -26,29 +26,6 @@ struct grGimmickMotionPathInfo {
     int m_0x20;
 };
 
-struct Effect_Info {
-    short m_0x0;
-    short m_0x2;
-    float m_0x4;
-    int m_0x8;
-    int m_id;
-    int m_0x10;
-    int m_0x14;
-    short m_nodeIndex;
-    short m_0x1a;
-    float m_0x1c;
-    float m_0x20;
-    float m_0x24;
-};
-
-struct grGimmickSimpleEffectData {
-    unsigned int m_id;
-    short m_0x4;
-    short m_nodeIndex;
-    short m_0x8;
-    short m_0xc;
-};
-
 class grGimmickMotionPath;
 
 class grVisibleProduction {
@@ -79,6 +56,82 @@ class grVisibleProduction {
 class grGimmick : public Ground {
 
 public:
+    struct AttackData {
+        float m_damage;
+        Vec3f m_offsetPos;
+        float m_size;
+        int m_vector;
+        int m_reactionEffect;
+        int m_reactionFix;
+        int m_reactionAdd;
+        char _spacer[4];
+        CollisionAttackElementType m_elementType;
+        bool m_isClankable;
+        bool m_unk2;
+        bool m_unk3;
+        bool m_unk4;
+        char _spacer2[0xC];
+        unsigned int m_detectionRate;
+        CollisionAttackHitSoundLevel m_hitSoundLevel;
+        CollisionAttackHitSoundType m_hitSoundType;
+        bool m_unk5;
+        bool m_isShapeCapsule;
+        char _spacer3[6];
+        unsigned int m_nodeIndex;
+        int m_power;
+
+        STATIC_CHECK(sizeof(AttackData) == 88)
+    };
+
+    struct AttackDetails {
+        union {
+            unsigned int m_collisionCategoryMask;
+            struct {
+                unsigned int _pad : 22;
+                bool m_isCollisionCategoryUnk1 : 1;
+                bool m_isCollisionCategoryItems1 : 1; // Soccer Ball, Blast Box etc.
+                bool m_isCollisionCategoryUnk2 : 1;
+                bool m_isCollisionCategoryUnk3 : 1;
+                bool m_isCollisionCategoryUnk4 : 1;
+                bool m_isCollisionCategoryUnk5 : 1;
+                bool m_isCollisionCategoryItems2 : 1; // Barrel, Crate etc.
+                bool m_isCollisionCategoryUnk6 : 1;
+                bool m_isCollisionCategoryUnk7 : 1;
+                bool m_isCollisionCategoryFighter : 1;
+            };
+        };
+        char m_unk1;
+        bool m_unk2;
+        char _spacer[2];
+        CollisionAttackFacingRestriction m_facingRestriction;
+        float m_hitstopMultiplier;
+
+        STATIC_CHECK(sizeof(AttackDetails) == 16)
+    };
+
+    struct SimpleEffectData {
+        unsigned int m_id;
+        short m_0x4;
+        short m_nodeIndex;
+        short m_0x8;
+        short m_0xc;
+    };
+
+    struct Effect_Info {
+        short m_0x0;
+        short m_0x2;
+        float m_0x4;
+        int m_0x8;
+        int m_id;
+        int m_0x10;
+        int m_0x14;
+        short m_nodeIndex;
+        short m_0x1a;
+        float m_0x1c;
+        float m_0x20;
+        float m_0x24;
+    };
+
     // 5C
     int m_numSndGenerators;
     // 60
@@ -155,7 +208,7 @@ public:
     virtual void changeNodeAnim(u32 unk1, u32 unk2);
     virtual void createFadeVisibleProduction(float unk);
     virtual void createSoundEffectVisibleProductionForExcel(u32 unk1, u32 unk2, u32 unk3);
-    virtual void createEffectVisibleProductionForExcel(grGimmickSimpleEffectData* simpleEffectData, u32* visProdIndexPtr, grVisibleProduction* visProds[]);
+    virtual void createEffectVisibleProductionForExcel(SimpleEffectData* simpleEffectData, u32* visProdIndexPtr, grVisibleProduction* visProds[]);
     virtual void setSimpleEffectVisibleProduction();        // TODO
     virtual void dbDispInvalidatedByCameraClippingSphere(); // TODO
     virtual void setTransparency(u32 unk1, u32 unk2);
@@ -169,7 +222,7 @@ public:
     void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, stTrigger::TriggerData* triggerData, char* nodeName);
     void createEffectWork(int numEffects);
     void createIsValidTrigger(stTrigger::TriggerData* triggerData);
-    void createSimpleEffectData(grGimmickSimpleEffectData* simpleEffectData, u32 unk2, char* nodeName);
+    void createSimpleEffectData(SimpleEffectData* simpleEffectData, u32 unk2, char* nodeName);
     void createSoundWork(u32 unk1, u32 unk2);
     u32 getMaterialColor(int* unk1, char* unk2, u32* sceneModelIndex);
     u32 getMaterialTevColor(int* unk1, char* unk2, u32* sceneModelIndex);

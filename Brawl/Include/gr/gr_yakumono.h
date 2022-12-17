@@ -1,4 +1,5 @@
 #pragma once
+
 #include <StaticAssert.h>
 #include <gr/gr_gimmick.h>
 #include <so/collision/so_collision_attack_part.h>
@@ -8,59 +9,6 @@
 #include <yk/yakumono.h>
 
 class grYakumono : public grGimmick {
-public:
-    struct AttackData {
-        float m_unk1;
-        Vec3f m_offsetPos;
-        float m_size;
-        int m_vector;
-        int m_reactionEffect;
-        int m_reactionFix;
-        int m_reactionAdd;
-        char _spacer[4];
-        CollisionAttackElementType m_elementType;
-        bool m_isClankable;
-        bool m_unk2;
-        bool m_unk3;
-        bool m_unk4;
-        char _spacer2[0xC];
-        unsigned int m_detectionRate;
-        CollisionAttackHitSoundLevel m_hitSoundLevel;
-        CollisionAttackHitSoundType m_hitSoundType;
-        bool m_unk5;
-        bool m_isShapeCapsule;
-        char _spacer3[6];
-        unsigned int m_nodeIndex;
-        int m_power;
-
-        STATIC_CHECK(sizeof(AttackData) == 88)
-    };
-
-    struct AttackDetails {
-        union {
-            unsigned int m_collisionCategoryMask;
-            struct {
-                unsigned int _pad : 22;
-                bool m_isCollisionCategoryUnk1 : 1;
-                bool m_isCollisionCategoryItems1 : 1; // Soccer Ball, Blast Box etc.
-                bool m_isCollisionCategoryUnk2 : 1;
-                bool m_isCollisionCategoryUnk3 : 1;
-                bool m_isCollisionCategoryUnk4 : 1;
-                bool m_isCollisionCategoryUnk5 : 1;
-                bool m_isCollisionCategoryItems2 : 1; // Barrel, Crate etc.
-                bool m_isCollisionCategoryUnk6 : 1;
-                bool m_isCollisionCategoryUnk7 : 1;
-                bool m_isCollisionCategoryFighter : 1;
-            };
-        };
-        char m_unk1;
-        bool m_unk2;
-        char _spacer[2];
-        CollisionAttackFacingRestriction m_facingRestriction;
-        float m_hitstopMultiplier;
-
-        STATIC_CHECK(sizeof(AttackDetails) == 16)
-    };
 
 protected:
     Yakumono* m_yakumono;

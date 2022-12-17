@@ -4,7 +4,7 @@
 #include <StaticAssert.h>
 #include <gf/gf_archive.h>
 #include <gf/gf_task.h>
-#include <gr/ground.h>
+#include <gr/gr_yakumono.h>
 #include <memory.h>
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>
@@ -14,6 +14,7 @@
 #include <types.h>
 #include <em/em_create.h>
 #include <st/st_trigger.h>
+#include <st/st_collision_attr_param.h>
 
 namespace StSeUtil {
     class SeSeq {
@@ -115,14 +116,14 @@ public:
     STATIC_CHECK(sizeof(StageParam) == 260)
 };
 
-class CameraParam {
-    char _0[0x40];
-
-    STATIC_CHECK(sizeof(CameraParam) == 0x40)
-};
-
 class Stage : public gfTask {
 public:
+    class CameraParam {
+        char _0[0x40];
+
+        STATIC_CHECK(sizeof(CameraParam) == 0x40)
+    };
+
     // 0
     char _spacer[0x04];
     // 4
@@ -189,17 +190,18 @@ public:
     void loadStageAttrParam(gfArchive* filedata, int fileIndex);
     void registSceneAnim(void* scnData, int unk1);
     void initPosPokeTrainer(int unk1, int unk2);
+    void setStageAttackData(grGimmickDamageFloor* attackData, u32 index);
 
     Stage(char* name, int stageID);
-    void processBegin();
-    void processAnim();
-    void processUpdate();
-    void processMapCorrection();
-    void processFixCamera();
-    void processEnd();
-    void renderPre();
-    void renderDebug();
-    ~Stage();
+    virtual void processBegin();
+    virtual void processAnim();
+    virtual void processUpdate();
+    virtual void processMapCorrection();
+    virtual void processFixCamera();
+    virtual  void processEnd();
+    virtual void renderPre();
+    virtual void renderDebug();
+    virtual ~Stage();
 
     virtual void createObj();
     virtual void createObjPokeTrainer(gfArchive* filedata, int fileindex, const char* name, int unk1, int unk2);
