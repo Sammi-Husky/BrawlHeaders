@@ -51,9 +51,11 @@ class stTrigger : public utListNode {
 public:
     struct TriggerData {
         unsigned short m_triggerId;
-        int _padding : 31;
+        int _padding : 7;
         bool m_isValidFlag : 1;
         char m_unk2;
+
+        STATIC_CHECK(sizeof(TriggerData) == 4)
     };
 
     void setObserveYakumono(Yakumono* yakumono);
