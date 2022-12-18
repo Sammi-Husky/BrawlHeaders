@@ -106,6 +106,18 @@ struct soGimmickEventInfo {
     int m_sendID;
 };
 
+struct grGimmickEventSpringInfo : soGimmickEventInfo {
+    Vec3f m_topPos;
+    float m_20;
+    float m_rot;
+};
+
+struct grGimmickEventCatapultInfo : soGimmickEventInfo {
+    char _8[0xc];
+    float m_motionRatio;
+    char _24[4];
+};
+
 struct grGimmickEventDoorInfo : soGimmickEventInfo {
     Vec3f m_pos;
     bool m_unk2;

@@ -14,7 +14,9 @@ protected:
 
 public:
     stCommonGimmick(char* name, int unk1);
-    void releaseArchive();
     virtual void processBegin();
     virtual ~stCommonGimmick();
+
+    void releaseArchive();
+    void createGimmickCollision(int collIndex, Ground* ground, gfArchive* archive);
 };

@@ -22,6 +22,8 @@ struct grGimmickCatapultData {
 };
 
 class grGimmickCatapult : public grYakumono {
+
+protected:
     grGimmickCatapultData* m_catapultData;
     grGimmickMotionPath* m_motionPath;
     u8 m_344;
@@ -32,6 +34,7 @@ class grGimmickCatapult : public grYakumono {
     soAreaInit m_areaInit;
     ykAreaData m_ykData;
 
+public:
     virtual void processFixPosition();
     virtual void update(float deltaFrame);
     virtual void startup(gfArchive* archive, u32 unk1, u32 unk2);
@@ -39,6 +42,8 @@ class grGimmickCatapult : public grYakumono {
     virtual ~grGimmickCatapult() { };
 
     void presentFighterPosEvent();
+
+    static grGimmickCatapult* create(int mdlIndex, char* taskName);
 
     STATIC_CHECK(sizeof(grGimmickCatapult) == 420)
 };

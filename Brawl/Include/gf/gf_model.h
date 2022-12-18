@@ -29,6 +29,7 @@ public:
     void setUpdateRate(float updateRate);
     void setLoop(bool shouldLoop);
     void unbindNodeAnim(nw4r::g3d::ScnMdl* sceneModel);
+    void unbindShapeAnim(nw4r::g3d::ScnMdl* sceneModel);
 
     STATIC_CHECK(sizeof(gfModelAnimation) == 32)
 };

@@ -164,6 +164,7 @@
 80028278:setLoop__16gfModelAnimationFb
 800278b0:unbindNodeAnim__16gfModelAnimationFPQ34nw4r3g3d6ScnMdl
 80014890:setFileImage__9gfArchiveFPviQ25Heaps8HeapType
+80027ba8:unbindShapeAnim__16gfModelAnimationFPQ34nw4r3g3d6ScnMdl
 
 // gfCamera
 80019fa4:getManager__15gfCameraManagerFv
@@ -338,6 +339,7 @@
 
 // stCommonGimmick
 27,1,002380b0:releaseArchive__15stCommonGimmickFv
+27,1,00238018:createGimmickCollision__15stCommonGimmickFiP6GroundP9gfArchive
 
 // stClassInfo
 27,1,002257bc:__ct__11stClassInfoFv
@@ -462,6 +464,7 @@
 27,1,0026D264:stopGimmickEffect__9grGimmickFUi
 27,1,0026D08C:stopGimmickSE__9grGimmickFUi
 27,1,0026CCA0:createSoundWork__9grGimmickFUiUi
+27,1,0026C1BC:changeShapeAnim__9grGimmickFUiUi
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc
@@ -500,6 +503,16 @@
 27,1,00264EE4:getPlayerNumber__10grYakumonoFP12grCollStatus
 27,1,00264DF0:getPlayerNumber__10grYakumonoFPi
 27,1,00264E5C:isSubFighter__10grYakumonoFPi
+
+// grGimmickSpring
+27,1,0026FC6C:__ct__15grGimmickSpringFPc
+27,1,0026FD20:update__15grGimmickSpringFf
+27,1,0026FFC4:startup__15grGimmickSpringFP9gfArchiveUiUi
+27,1,0027020C:setInitializeFlag__15grGimmickSpringFv
+27,1,002702A8:disableArea__15grGimmickSpringFv
+27,1,00270310:setSleepArea__15grGimmickSpringFb
+27,1,00270384:onGimmickEvent__15grGimmickSpringFP18soGimmickEventInfoPi
+27,1,0026FFB4:getTopNode__15grGimmickSpringFP5Vec3f
 
 // grMadein
 27,1,0027583C:__ct__8grMadeinFPc
