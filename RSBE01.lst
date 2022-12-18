@@ -513,6 +513,7 @@
 27,1,00270310:setSleepArea__15grGimmickSpringFb
 27,1,00270384:onGimmickEvent__15grGimmickSpringFP18soGimmickEventInfoPi
 27,1,0026FFB4:getTopNode__15grGimmickSpringFP5Vec3f
+27,1,00270464:presentPosEvent__15grGimmickSpringFv
 
 // grMadein
 27,1,0027583C:__ct__8grMadeinFPc

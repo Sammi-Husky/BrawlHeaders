@@ -41,11 +41,17 @@ namespace nw4r {
 
             AnmObjShpRes *Construct(int *unk1, int *unk2, int *unk3, int *unk4, u32 unk5);
 
-            char _spacer[40];
+            char _spacer[32];
+
+            unsigned short m_animLength;
+
+            char _spacer2[6];
 
             int* m_anmShpFile;
 
-            char _spacer2[8];
+            char _spacer3[8];
+
+            STATIC_CHECK(sizeof(AnmObjShpRes) == 56)
         };
     }
 }

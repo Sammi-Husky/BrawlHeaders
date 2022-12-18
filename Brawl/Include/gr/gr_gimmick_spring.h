@@ -25,13 +25,19 @@ public:
 class grGimmickSpring : public grYakumono {
 
 protected:
+    enum State {
+        State_Rest = 0x0,
+        State_On = 0x1,
+        State_Off = 0x2
+    };
+
     grGimmickSpringData* m_springData;
     int m_276;
-    u8 m_280;
+    State m_state : 8;
     char _281[3];
-    int m_284;
-    int m_288;
-    int m_292;
+    float m_animFrame;
+    u32 m_animOnLength;
+    u32 m_animOffLength;
     soAreaData m_areaData;
     soAreaInit m_areaInit;
     ykAreaData m_ykData;

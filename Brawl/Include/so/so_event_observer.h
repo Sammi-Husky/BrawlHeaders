@@ -108,7 +108,7 @@ struct soGimmickEventInfo {
 
 struct grGimmickEventSpringInfo : soGimmickEventInfo {
     Vec3f m_topPos;
-    float m_20;
+    float m_bounce;
     float m_rot;
 };
 
