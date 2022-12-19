@@ -90,6 +90,7 @@ class ftManager : public ftManagerAbstract {
         int getEntryCount();
         int getEntryIdFromIndex(int index);
         int getEntryIdFromTaskId(int taskId, int* unk);
+        int getPlayerNo(int entryId);
         Fighter* getFighter(int entryId, int unk);
         int getTeam(int entryId, bool unk2, bool unk3);
         Fighter* searchNearFighter(float unk1, float radius, Vec3f* pos, int team, bool unk4);

@@ -28,4 +28,6 @@ public:
     virtual void resetChangeScene();                                                  // TODO
     virtual void setChangeSceneNumber();                                              // TODO
     ~stMelee();
+
+    STATIC_CHECK(sizeof(stMelee) == 472)
 };
