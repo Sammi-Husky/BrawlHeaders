@@ -13,13 +13,21 @@ public:
 
 class Vec3f {
 public:
-    float m_x;
-    float m_y;
+    union {
+        struct {
+            float m_x;
+            float m_y;
+        };
+        Vec2f m_xy;
+    };
     float m_z;
 
     Vec3f operator+(const Vec3f& v);
     Vec3f operator-(const Vec3f& v);
     Vec3f operator*(const float c);
+    inline Vec3f operator/(const float c) {
+        return *this*(1/c);
+    }
 
     inline void operator+=(const Vec3f& v) {
         *this = *this + v;
