@@ -41,7 +41,17 @@ protected:
     HitPointInfo* m_hitPointInfo;
     soCollisionAttackData* m_overwriteAttackData;
     StageHitData* m_stageHitData;
-    char _spacer2[56];
+    bool m_300_7 : 1; // | 0x80
+    bool m_hasAttack : 1; // | 0x40
+    bool m_hasHitPoint : 1; // | 0x20
+    bool m_isHit : 1; // | 0x10
+    bool m_useCollisionCategory1 : 1; // | 0x8   // This takes priority over category flag below
+    bool m_useCollisionCategory7 : 1; // | 0x4
+    bool m_isLandedOn : 1; // | 0x2
+    bool m_useLandCheck : 1; // | 0x1
+    char _301[11];
+    int m_landerTaskId;
+    char _316[50];
 
 public:
     void createAttackPoint();
@@ -57,7 +67,7 @@ public:
     bool isFrameOffset(float unk);
     void pauseEntity(bool isPause);
     void setAttack(float size, Vec3f* offsetPos);
-    void setHitPoint(float size, Vec3f* startOffsetPos, Vec3f* endOffsetPos, int unk4, int nodeIndex);
+    void setHitPoint(float size, Vec3f* startOffsetPos, Vec3f* endOffsetPos, bool, int nodeIndex);
     void setMatrix(Matrix matrix, void* unk1);
     void setMotion(u32 anmIndex);
     void setMotionDetails(u32 anmChrIndex, u32 anmVisIndex, u32 anmTexPatIndex, u32 anmTexSrtIndex, u32 anmClrIndex);

@@ -527,7 +527,7 @@
 27,1,00279f14:receiveCollMsg_Landing__8grMadeinFP12grCollStatusP16grCollisionJointb
 27,1,00278DC4:setTgtNode__8grMadeinFPc
 27,1,00278DC8:getTgtNode__8grMadeinFv
-27,1,00278494:setHitPoint__8grMadeinFfP5Vec3fP5Vec3fii
+27,1,00278494:setHitPoint__8grMadeinFfP5Vec3fP5Vec3fbi
 27,1,00278584:setAttack__8grMadeinFfP5Vec3f
 27,1,002759D8:getOverwriteAttackData__8grMadeinFv
 27,1,00278DD0:initializeEntity__8grMadeinFv
