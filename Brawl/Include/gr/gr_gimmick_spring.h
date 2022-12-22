@@ -6,7 +6,7 @@
 
 struct grGimmickSpringData {
 public:
-    grGimmickMotionPathData motionPathData;
+    grGimmickMotionPathData m_motionPathData;
     char _8[24];
     Vec2f m_areaOffsetPos;
     Vec2f m_areaRange;
