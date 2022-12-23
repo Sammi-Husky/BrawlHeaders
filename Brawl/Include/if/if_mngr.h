@@ -2,6 +2,7 @@
 
 #include <types.h>
 #include <StaticAssert.h>
+#include <if/if_player.h>
 
 class IfMngr {
     public:

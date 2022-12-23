@@ -10,6 +10,12 @@
 #include <so/so_dispose_instance_manager.h>
 #include <so/so_log_event_presenter.h>
 
+enum Rule {
+    Rule_Time = 0x0,
+    Rule_Stock = 0x1,
+    Rule_Coin = 0x2
+};
+
 class ftOutsideEventObserver : public soEventObserver<ftOutsideEventObserver> {
 public:
     // TODO: Verify params
@@ -63,9 +69,14 @@ class ftManagerAbstract : public soNull, public gfTask, public ftOutsideEventObs
 };
 
 class ftManager : public ftManagerAbstract {
-    char _spacer[248];
 
-    public:
+public:
+        char _104[2];
+        Rule m_rule : 8;
+        char _107[2];
+        bool m_isStamina;
+        char _110[242];
+
         virtual ~ftManager();
 
         virtual void processBegin();
@@ -92,6 +103,7 @@ class ftManager : public ftManagerAbstract {
         int getEntryIdFromTaskId(int taskId, int* unk);
         int getPlayerNo(int entryId);
         Fighter* getFighter(int entryId, int unk);
+        ftOwner* getOwner(int entryId);
         int getTeam(int entryId, bool unk2, bool unk3);
         Fighter* searchNearFighter(float unk1, float radius, Vec3f* pos, int team, bool unk4);
         void setHeal(int entryId, float heal);
@@ -103,6 +115,7 @@ class ftManager : public ftManagerAbstract {
         void setInfiniteScaling(int entryId, int unk1, int unk2);
         void setThunder(int inflictingEntryId, int unk2);
 
+        void pickupCoin(int entryId, int amount);
         void setDead(int entryId, int unk1, int unk2);
         void setBeat(int losingEntryId, int winningEntryId);
         void setSuicide(int entryId);

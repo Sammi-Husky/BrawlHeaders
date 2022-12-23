@@ -570,6 +570,7 @@
 27,1,0010C834:toKnockOutHeartSwapOpposite__9ftManagerFiP20soDamageAttackerInfo
 27,1,0010B8F8:setBeat__9ftManagerFii
 27,1,0010BCF4:setSuicide__9ftManagerFi
+27,1,0010BF4C:pickupCoin__9ftManagerFii
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi
