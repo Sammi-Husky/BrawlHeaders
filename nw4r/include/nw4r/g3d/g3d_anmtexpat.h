@@ -5,6 +5,11 @@
 namespace nw4r {
     namespace g3d {
 
+        struct PAT0 {
+            char _spacer2[0x2C];
+            unsigned short m_animLength;
+        };
+
         class AnmObjTexPatRes {
         public:
             virtual u32 IsDerivedFrom(int *unk1);
@@ -17,15 +22,15 @@ namespace nw4r {
 
             virtual int GetTypeName();
 
-            virtual void SetFrame(double unk1);
+            virtual void SetFrame(float frame);
 
-            virtual double GetFrame();
+            virtual float GetFrame();
 
             virtual void UpdateFrame();
 
-            virtual void SetUpdateRate(double unk1);
+            virtual void SetUpdateRate(float updateRate);
 
-            virtual double GetUpdateRate();
+            virtual float GetUpdateRate();
 
             virtual int Bind(int *unk1);
 
@@ -41,7 +46,7 @@ namespace nw4r {
 
             char _spacer[40];
 
-            int* m_anmTexPatFile;
+            PAT0* m_anmTexPatFile;
 
             char _spacer2[4];
         };

@@ -4,6 +4,12 @@
 
 namespace nw4r {
     namespace g3d {
+
+        struct SHP0 {
+            char _spacer2[0x20];
+            unsigned short m_animLength;
+        };
+
         class AnmObjShpRes {
         public:
             virtual u32 IsDerivedFrom(int *unk1);
@@ -16,15 +22,15 @@ namespace nw4r {
 
             virtual int GetTypeName();
 
-            virtual void SetFrame(double unk1);
+            virtual void SetFrame(float frame);
 
-            virtual double GetFrame();
+            virtual float GetFrame();
 
             virtual void UpdateFrame();
 
-            virtual void SetUpdateRate(double unk1);
+            virtual void SetUpdateRate(float updateRate);
 
-            virtual double GetUpdateRate();
+            virtual float GetUpdateRate();
 
             virtual int Bind(int *unk1);
 
@@ -36,18 +42,14 @@ namespace nw4r {
             virtual int *Detach(int unk1);           // TODO
             virtual void DetachAll();
 
-            virtual void SetWeight(double unk1, int *unk2); //TODO
-            virtual double GetWeight(int unk1);             // TODO
+            virtual void SetWeight(float unk1, int *unk2); //TODO
+            virtual float GetWeight(int unk1);             // TODO
 
             AnmObjShpRes *Construct(int *unk1, int *unk2, int *unk3, int *unk4, u32 unk5);
 
-            char _spacer[32];
+            char _spacer[40];
 
-            unsigned short m_animLength;
-
-            char _spacer2[6];
-
-            int* m_anmShpFile;
+            SHP0* m_anmShpFile;
 
             char _spacer3[8];
 

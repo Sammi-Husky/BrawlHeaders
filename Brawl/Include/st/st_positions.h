@@ -18,6 +18,7 @@ private:
 
 public:
     float* getDeadRange(stRange* range);
+    float* getCameraRange(stRange* range);
 
     STATIC_CHECK(sizeof(stPositions) == 100)
 };

@@ -363,6 +363,8 @@
 27,1,00239974:getFighterReStartPos__7stMeleeFP5Vec3fi
 27,1,00239274:createWind2ndOnly__7stMeleeFv
 27,1,002394A4:updateWind2ndOnly__7stMeleeFv
+27,1,0023959C:zoomInCamera__7stMeleeFv
+27,1,00239574:zoomOutCamera__7stMeleeFff
 
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv
@@ -564,6 +566,7 @@
 27,1,0010A02C:getTeam__9ftManagerFibb
 27,1,0010CF6C:setCurry__9ftManagerFi
 27,1,0010D234:setSlow__9ftManagerFibii
+27,1,0010D0D8:setHeal__9ftManagerFif
 27,1,0010CA00:searchNearFighter__9ftManagerFffP5Vec3fib
 27,1,0010B604:setDead__9ftManagerFiii
 27,1,0010C7FC:isProcessHeartSwap__9ftManagerFi
@@ -604,6 +607,7 @@
 
 // stPositions
 27,1,00226794:getDeadRange__11stPositionsFP7stRange
+27,1,00226584:getCameraRange__11stPositionsFP7stRange
 
 // stTriggerMng
 27,1,00231FDC:createTrigger__12stTriggerMngF11GimmickKindi

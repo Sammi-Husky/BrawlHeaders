@@ -29,5 +29,8 @@ public:
     virtual void setChangeSceneNumber();                                              // TODO
     ~stMelee();
 
+    void zoomInCamera();
+    void zoomOutCamera(float, float);
+
     STATIC_CHECK(sizeof(stMelee) == 472)
 };

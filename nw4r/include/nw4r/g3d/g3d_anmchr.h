@@ -29,15 +29,15 @@ namespace nw4r {
 
             virtual int GetTypeName();
 
-            virtual void SetFrame(double unk1);
+            virtual void SetFrame(float frame);
 
-            virtual double GetFrame();
+            virtual float GetFrame();
 
             virtual void UpdateFrame();
 
-            virtual void SetUpdateRate(double unk1);
+            virtual void SetUpdateRate(float updateRate);
 
-            virtual double GetUpdateRate();
+            virtual float GetUpdateRate();
 
             virtual int Bind(int *unk1);
 
@@ -49,8 +49,8 @@ namespace nw4r {
             virtual int *Detach(int unk1);           // TODO
             virtual void DetachAll();
 
-            virtual void SetWeight(double unk1, int *unk2); //TODO
-            virtual double GetWeight(int unk1);             // TODO
+            virtual void SetWeight(float unk1, int *unk2); //TODO
+            virtual float GetWeight(int unk1);             // TODO
             virtual int Bind(int *unk1, u32 unk2, int unk3);
 
             virtual void Release(int *unk1, u32 unk2, int unk3);
