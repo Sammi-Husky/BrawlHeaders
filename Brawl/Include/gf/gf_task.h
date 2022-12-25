@@ -8,15 +8,15 @@ public:
     char* m_taskName;
     gfTask* m_next;
     gfTask* m_prev;
-    int unk_0xC;
-    int unk_0x10;
-    int unk_0x14;
-    int unk_0x18;
-    gfTask* unk_0x1c;
-    gfTask* unk_0x20;
-    gfTask* unk_0x24;
+    int m_0xC;
+    int m_0x10;
+    int m_0x14;
+    int m_0x18;
+    gfTask* m_connectedTask;
+    gfTask* m_attachedTask;
+    gfTask* m_nextTask;
     int m_taskID;
-    u16 unk_0x2c;
+    u16 m_0x2c;
     u16 m_taskCategory;
     char _unk[0xC];
 
