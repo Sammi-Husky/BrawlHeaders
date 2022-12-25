@@ -33,6 +33,7 @@ enum GimmickKind {
     GimmickKind_WarpZone = 0x2c,
     GimmickKind_Savepoint = 0x2d,
     GimmickKind_Eat = 0x2f,
+    GimmickKind_MotionPath = 0x32,
     GimmickKind_Elevator = 0x35,
     GimmickKind_Truck = 0x3a,
 };

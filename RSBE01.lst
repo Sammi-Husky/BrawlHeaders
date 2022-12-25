@@ -146,6 +146,7 @@
 8002ddc4:init__6gfTaskFv
 8002da1c:__dt__6gfTaskFv
 8002dc40:getTask__6gfTaskFi
+8002df34:exit__6gfTaskFv
 
 // gfHeapManager
 80024a50:dumpAll__13gfHeapManagerFv

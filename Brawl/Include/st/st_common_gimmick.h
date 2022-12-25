@@ -4,7 +4,7 @@
 #include <types.h>
 
 class stCommonGimmick : public Stage {
-protected:
+public:
     gfArchive* m_fileData;
     gfArchive* m_secondaryFileData;
     char _spacer[5];
@@ -12,7 +12,6 @@ protected:
     char _spacer2[2];
     gfArchive* m_commonFileData;
 
-public:
     stCommonGimmick(char* name, int unk1);
     virtual void processBegin();
     virtual ~stCommonGimmick();

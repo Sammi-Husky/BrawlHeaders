@@ -45,6 +45,7 @@ public:
     virtual void init();
     virtual ~gfTask();
 
+    void exit();
     static gfTask* getTask(int taskId);
 
     STATIC_CHECK(sizeof(gfTask) == 0x40)
