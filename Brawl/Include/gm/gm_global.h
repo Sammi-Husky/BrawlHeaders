@@ -1,7 +1,7 @@
 #pragma once
 
-#include <SaveData.h>
 #include <StaticAssert.h>
+#include <gm/SaveData.h>
 #include <gm/gm_global_corps.h>
 #include <gm/gm_global_mode_melee.h>
 #include <gm/gm_menu_data.h>
@@ -9,7 +9,8 @@
 #include <gm/gm_sel_char_data.h>
 #include <gm/gm_tournament_data.h>
 
-struct GameGlobal {
+class GameGlobal {
+public:
     /* data */
     char _0[0x8];                       // 0x00
     gmGlobalModeMelee* m_globalMode;    // 0x08

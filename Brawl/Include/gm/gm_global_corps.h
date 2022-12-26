@@ -18,7 +18,8 @@ struct PlayerCorpsInit {
     STATIC_CHECK(sizeof(PlayerCorpsInit) == 0x14)
 };
 
-struct gmGlobalCorps {
+class gmGlobalCorps {
+public:
     u8 _0;                                  // 0x00
     s8 m_numFightersToBeat;                 // 0x01
     u8 _1;                                  // 0x02

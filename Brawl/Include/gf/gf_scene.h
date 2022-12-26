@@ -10,7 +10,7 @@ public:
     virtual void exit();
     virtual void setModule();
 
-    STATIC_CHECK(sizeof(gfScene) == 4)
+    STATIC_CHECK(sizeof(gfScene) == 8)
 };
 
 class gfSequence {
@@ -20,10 +20,11 @@ public:
     virtual void setNext();
     virtual void exit();
 
-    STATIC_CHECK(sizeof(gfSequence) == 4)
+    STATIC_CHECK(sizeof(gfSequence) == 8)
 };
 
 class gfSceneManager {
+public:
     char _spacer[4];
     gfScene* m_currentScene;
     char _spacer2[16];
@@ -32,6 +33,9 @@ class gfSceneManager {
     int m_sceneCount;
     int m_sequenceCount;
     char _spacer3[168];
+
+    gfScene* searchScene(char* sceneName);
+    static gfSceneManager* getInstance();
 
     STATIC_CHECK(sizeof(gfSceneManager) == 800)
 };

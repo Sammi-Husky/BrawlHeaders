@@ -177,6 +177,10 @@
 80026c78:setTempolaryLoadHeap__15gfModuleManagerFQ25Heaps8HeapType
 8002737c:destroy__15gfModuleManagerFPc
 
+// gfSceneManager
+8002d018:getInstance__14gfSceneManagerFv
+8002d3f4:searchScene__14gfSceneManagerFPc
+
 // utList
 800448f8:addTail__6utListFP10utListNode
 
