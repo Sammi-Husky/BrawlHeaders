@@ -5,7 +5,7 @@
 805a0140: g_efScreen
 805A02D0: g_IfMngr
 27,6,58D8: g_stTriggerMng
-805a00e0:g_gameGlobal
+805a00e0:g_GameGlobal
 27,6,2E68: g_ftManager
 27,6,2E70: g_ftAudienceManager
 27,6,5518: g_aiMgr
