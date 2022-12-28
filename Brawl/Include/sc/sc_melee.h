@@ -17,7 +17,7 @@ public:
     void* m_operatorReadyGo;
     void* m_operatorReadyGoSuddenDeath;
     char _76[4];
-    void* m_operatorRuleGameMode;
+    stOperatorRule* m_operatorRuleGameMode;
     stOperatorRuleMelee* m_operatorRuleMelee;
     void* m_operatorNoContest;
     void* m_operatorNetwork;

@@ -9,12 +9,7 @@
 #include <so/so_null.h>
 #include <so/so_dispose_instance_manager.h>
 #include <so/so_log_event_presenter.h>
-
-enum Rule {
-    Rule_Time = 0x0,
-    Rule_Stock = 0x1,
-    Rule_Coin = 0x2
-};
+#include <gm/gm_result_info.h>
 
 class ftOutsideEventObserver : public soEventObserver<ftOutsideEventObserver> {
 public:
@@ -72,7 +67,7 @@ class ftManager : public ftManagerAbstract {
 
 public:
         char _104[2];
-        Rule m_rule : 8;
+        GameRule m_gameRule : 8;
         char _107[2];
         bool m_isStamina;
         char _110[242];
