@@ -4,7 +4,7 @@
 #include <gm/SaveData.h>
 #include <gm/gm_global_corps.h>
 #include <gm/gm_global_mode_melee.h>
-#include <gm/gm_menu_data.h>
+#include <gm/gm_set_rule.h>
 #include <gm/gm_result_info.h>
 #include <gm/gm_sel_char_data.h>
 #include <gm/gm_tournament_data.h>
@@ -18,7 +18,7 @@ public:
     gmSelCharData* m_selCharData;       // 0x10
     char _2[0x04];                      // 0x14
     gmResultInfo* m_resultInfo;         // 0x18
-    gmMenuData* m_menuData;             // 0x1C
+    gmSetRule* m_setRule;               // 0x1C
     char _3[0x04];                      // 0x20
     SaveData1* m_saveData1;             // 0x24
     SaveData2* m_saveData2;             // 0x28

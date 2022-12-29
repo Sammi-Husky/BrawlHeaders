@@ -3,7 +3,7 @@
 #include <StaticAssert.h>
 #include <types.h>
 
-struct gmMenuData {
+struct gmSetRule {
     char _0[0x18];       // 0x0
     u8 m_spMeleeOption1; // 0x18
     u8 m_spMeleeOption2; // 0x19
@@ -15,5 +15,5 @@ struct gmMenuData {
     u8 m_spMeleeOption8; // 0x1F
     char _1[0x68];       // 0x20
 
-    STATIC_CHECK(sizeof(gmMenuData) == 0x88)
+    STATIC_CHECK(sizeof(gmSetRule) == 0x88)
 };
