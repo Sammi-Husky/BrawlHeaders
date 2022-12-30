@@ -82,7 +82,7 @@ class gmGlobalModeMelee {
 public:
     char _0[0x08];                          // 0x00
     gmMeleeInitData m_meleeInitData;        // 0x08
-    gmPlayerInitData m_playerInitData[7];  // 0x98
+    gmPlayerInitData m_playersInitData[7];  // 0x98
     char _1[4];
 
     STATIC_CHECK(sizeof(gmGlobalModeMelee) == 0x320)

@@ -23,11 +23,11 @@ public:
     u8 _0;                                  // 0x00
     s8 m_numFightersToBeat;                 // 0x01
     u8 _1;                                  // 0x02
-    s8 m_numFightersInCurStage;             // 0x03
+    s8 m_numFightersInCurrentStage;         // 0x03
     char _2[0x19];                          // 0x04
     s8 m_remainingFightersToBeat;           // 0x1D
     char _3[0x06];                          // 0x1E
-    PlayerCorpsInit m_playerInitData[0x24]; // 0x24
+    PlayerCorpsInit m_playersInitData[0x24]; // 0x24
 
     STATIC_CHECK(sizeof(gmGlobalCorps) == 0x2f4)
 };
