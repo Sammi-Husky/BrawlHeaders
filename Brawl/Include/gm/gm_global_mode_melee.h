@@ -80,15 +80,9 @@ public:
 
 class gmGlobalModeMelee {
 public:
-    char _0[0x08];                      // 0x00
-    gmMeleeInitData m_meleeInitData;    // 0x08
-    gmPlayerInitData m_player1InitData; // 0x98
-    gmPlayerInitData m_player2InitData; // 0xF4
-    gmPlayerInitData m_player3InitData; // 0x150
-    gmPlayerInitData m_player4InitData; // 0x1AC
-    gmPlayerInitData m_player5InitData; // 0x208
-    gmPlayerInitData m_player6InitData; // 0x264
-    gmPlayerInitData m_player7InitData; // 0x2C0
+    char _0[0x08];                          // 0x00
+    gmMeleeInitData m_meleeInitData;        // 0x08
+    gmPlayerInitData m_player1InitData[7];  // 0x98
     char _1[4];
 
     STATIC_CHECK(sizeof(gmGlobalModeMelee) == 0x320)
