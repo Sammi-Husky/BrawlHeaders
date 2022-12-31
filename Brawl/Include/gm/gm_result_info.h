@@ -4,9 +4,17 @@
 #include <types.h>
 
 enum GameRule {
-    GameRule_Time = 0x0,
-    GameRule_Stock = 0x1,
-    GameRule_Coin = 0x2
+    Game_Rule_Time = 0x0,
+    Game_Rule_Stock = 0x1,
+    Game_Rule_Coin = 0x2
+};
+
+enum GameDecision {
+    Game_Decision_Timeup = 0x0,
+    Game_Decision_Gameset = 0x1,
+    Game_Decision_Complete = 0x2,
+    Game_Decision_Failure = 0x3,
+    Game_Decision_Success = 0x4
 };
 
 class gmResultInfo {

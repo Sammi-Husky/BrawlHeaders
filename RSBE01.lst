@@ -99,6 +99,9 @@
 801afaac:EnableScnMdlCallbackTiming__Q34nw4r3g3d12ScnMdlSimpleFUi
 80192f70:SetTranslate__Q34nw4r3g3d7ResNodeFfff
 
+// GameGlobal
+8004e5cc:getGlobalRecordMenuDatap__10GameGlobalFv
+
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
 8005f7a4:setEffect__5ecMgrFUi

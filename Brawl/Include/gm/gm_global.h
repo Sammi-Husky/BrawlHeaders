@@ -29,6 +29,8 @@ public:
     gmGlobalCorps* m_corps;             // 0x3C
     char _5[0x10];                      // 0x40
 
+    gmGlobalRecord1::MenuData* getGlobalRecordMenuDatap();
+
     STATIC_CHECK(sizeof(GameGlobal) == 0x50);
 };
 

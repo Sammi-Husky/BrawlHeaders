@@ -4,7 +4,35 @@
 #include <types.h>
 
 struct gmGlobalRecord1 {
-    char _spacer[0x3cf0]; // 0x00
+
+    struct EventSaveData {
+        u32 m_easyScores[51];
+        u32 m_normalScores[51];
+        u32 m_hardScores[51];
+    };
+
+    struct MenuData {
+        char _0[40];
+        bool m_isWidescreen : 1;
+        bool m_41_6 : 1;
+        bool m_41_5 : 1;
+        bool m_41_4 : 1;
+        bool m_41_3 : 1;
+        bool m_41_2 : 1;
+        bool m_41_1 : 1;
+        bool m_41_0 : 1;
+        char _41[3];
+    };
+
+    char _0[812];
+
+    EventSaveData m_eventSaveData[2];
+
+    char _2036[28];
+
+    MenuData m_menuData; // 2064
+
+    char _spacer[0x34B4];
 
     STATIC_CHECK(sizeof(gmGlobalRecord1) == 0x3cf0)
 };
