@@ -31,7 +31,11 @@ struct gmPlayerResultInfo {
     u32 m_koCount;
     u32 m_deadCount;
     u16 m_suicideCount;
-    char _26[574];
+    u16 m_playerBeatCounts[7];
+    u32 m_coins;
+    u32 m_pickupCoins;
+    u32 m_lostCoins;
+    char _26[548];
     int m_rankCount;
     char _604[80];
 
