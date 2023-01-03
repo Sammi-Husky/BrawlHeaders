@@ -17,13 +17,39 @@ enum GameDecision {
     Game_Decision_Success = 0x4
 };
 
+struct gmPlayerResultInfo {
+    u8 m_slotID;
+    u8 m_initState;
+    s8 m_colorFileIdx;
+    char _3[5];
+    s16 m_hitPointMax;
+    u8 m_startStockCount;
+    char _11[1];
+    s16 m_startDamage;
+    u8 m_rank;
+    char _15[1];
+    u32 m_koCount;
+    u32 m_deadCount;
+    u16 m_suicideCount;
+    char _26[574];
+    int m_rankCount;
+    char _604[80];
+
+    STATIC_CHECK(sizeof(gmPlayerResultInfo) == 684)
+};
+
 class gmResultInfo {
 public:
     char _0[1];
     GameRule m_gameRule : 8;
     char _3[0xd];
     u8 m_numWinners;
-    char _16[0x1378];
+    char _16[15];
+    s8 m_winningPlayer;
+    char _32[4];
+    gmPlayerResultInfo m_playersResultInfo[7];
+    char _4824[172];
+    int m_time;
 
     STATIC_CHECK(sizeof(gmResultInfo) == 0x1388)
 };

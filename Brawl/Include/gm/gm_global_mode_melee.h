@@ -23,7 +23,8 @@ public:
     s8 m_eventId;               // 0x08
     char _0x9[0x5];             // 0x09
     u8 m_itemFrequency;         // 0x0E
-    char _0xf[0x03];            // 0x0F
+    s8 m_suicideScoreMultiplier; // 0x0F
+    char _0xa[0x02];            // 0x10
     short m_stageID;            // 0x12
     u8 m_subStageID;            // 0x14
     char _0x15[0x3];            // 0x15
