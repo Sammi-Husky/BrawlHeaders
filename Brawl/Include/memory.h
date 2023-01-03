@@ -45,6 +45,7 @@ namespace Heaps {
         PokemonResource = 0x26,
         WeaponInstance = 0x27,
         InfoInstance = 0x28,
+        InfoExtraResource = 0x29,
         MenuInstance = 0x2a,
         MenuResource = 0x2b,
         CopyFB = 0x2c,
