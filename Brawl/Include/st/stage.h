@@ -184,6 +184,7 @@ public:
     void testStageDataInit(gfArchive* archive, int fileIndex, int unk2);
     void addGround(Ground* Ground);
     Ground* getGround(int index);
+    u32 getGroundNum();
     grCollision* createCollision(gfArchive* archive, int index, Ground* ground);
     void createStagePositions();
     void createStagePositions(void* stgPosMdl);
