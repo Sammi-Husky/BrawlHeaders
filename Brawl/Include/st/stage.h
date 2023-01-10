@@ -189,7 +189,7 @@ public:
     void createStagePositions();
     void createStagePositions(void* stgPosMdl);
     void loadStageAttrParam(gfArchive* filedata, int fileIndex);
-    void registSceneAnim(void* scnData, int unk1);
+    void registScnAnim(void* scnData, int unk1);
     void initPosPokeTrainer(int unk1, int unk2);
     void setStageAttackData(grGimmickDamageFloor* attackData, u32 index);
 

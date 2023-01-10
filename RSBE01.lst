@@ -226,7 +226,7 @@
 27,1,002227b0:addGround__5StageFP6Ground
 27,1,00222850:getGround__5StageFi
 27,1,00222830:getGroundNum__5StageFv
-27,1,00222904:registSceneAnim__5StageFPvi
+27,1,00222904:registScnAnim__5StageFPvi
 27,1,00222ab0:createCollision__5StageFP9gfArchiveiP6Ground
 27,1,00224574:createStagePositions__5StageFv
 27,1,00224524:createStagePositions__5StageFPv
