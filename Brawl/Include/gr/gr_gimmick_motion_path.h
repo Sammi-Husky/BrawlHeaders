@@ -31,5 +31,6 @@ public:
 
     void setFrameUpdate(float);
     void setFrame(float frame);
+    float getFrame();
 
 };

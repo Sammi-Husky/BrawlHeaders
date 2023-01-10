@@ -1,6 +1,8 @@
 #pragma once
 
 #include <st/stage.h>
+#include <gr/gr_gimmick_spring.h>
+#include <gr/gr_gimmick_ladder.h>
 #include <types.h>
 
 class stCommonGimmick : public Stage {
@@ -18,4 +20,6 @@ public:
 
     void releaseArchive();
     void createGimmickCollision(int collIndex, Ground* ground, gfArchive* archive);
+    void createGimmickBeltConveyor2(SquareBeltConveyorGimmickAreaData* beltConveyorAreaData);
+    void createGimmickLadder(grGimmickLadderData *ladderData, gfArchive *archive);
 };

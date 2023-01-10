@@ -9,6 +9,7 @@
 27,6,2E68: g_ftManager
 27,6,2E70: g_ftAudienceManager
 27,6,5518: g_aiMgr
+27,6,E8: g_Gravity
 
 // System
 803f1254:__save_fpr
@@ -350,6 +351,7 @@
 // stCommonGimmick
 27,1,002380b0:releaseArchive__15stCommonGimmickFv
 27,1,00238018:createGimmickCollision__15stCommonGimmickFiP6GroundP9gfArchive
+27,1,00237E18:createGimmickBeltConveyor2__15stCommonGimmickFP33SquareBeltConveyorGimmickAreaData
 
 // stClassInfo
 27,1,002257bc:__ct__11stClassInfoFv
@@ -518,6 +520,7 @@
 
 // grGimmickSpring
 27,1,0026FC6C:__ct__15grGimmickSpringFPc
+27,1,0026FCC8:__dt__15grGimmickSpringFv
 27,1,0026FD20:update__15grGimmickSpringFf
 27,1,0026FFC4:startup__15grGimmickSpringFP9gfArchiveUiUi
 27,1,0027020C:setInitializeFlag__15grGimmickSpringFv
@@ -553,6 +556,7 @@
 27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf
 27,1,0026E13C:create__19grGimmickMotionPathFiPcPc
 27,1,0026EB5C:setFrame__19grGimmickMotionPathFf
+27,1,0026EB64:getFrame__19grGimmickMotionPathFv
 
 // soValueAccesser
 27,1,0008C338:getConstantInt__15soValueAccesserFP16soModuleAccesserUiUi

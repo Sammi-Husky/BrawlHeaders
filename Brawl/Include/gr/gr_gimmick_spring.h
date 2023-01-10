@@ -47,11 +47,11 @@ public:
     virtual void update(float deltaFrame);
     virtual void startup(gfArchive* archive, u32 unk1, u32 unk2);
     virtual void onGimmickEvent(soGimmickEventInfo* eventInfo, int* taskId);
-    virtual ~grGimmickSpring() { };
-    virtual void setMotionOff();
+    virtual ~grGimmickSpring();
     virtual void setInitializeFlag();
     virtual bool setSleepArea(bool);
     virtual bool disableArea();
+    virtual void setMotionOff();
     virtual void getTopNode(Vec3f* pos);
 
     void presentPosEvent();
