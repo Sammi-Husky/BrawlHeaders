@@ -4,8 +4,8 @@
 #include <types.h>
 
 struct Gravity {
-    float up;
-    float down;
+    float m_up;
+    float m_down;
 };
 
 extern Gravity* g_Gravity;
