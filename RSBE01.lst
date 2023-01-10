@@ -10,6 +10,7 @@
 27,6,2E70: g_ftAudienceManager
 27,6,5518: g_aiMgr
 27,6,E8: g_Gravity
+8059FF80:g_gfSceneRoot
 
 // System
 803f1254:__save_fpr
@@ -184,6 +185,9 @@
 // gfSceneManager
 8002d018:getInstance__14gfSceneManagerFv
 8002d3f4:searchScene__14gfSceneManagerFPc
+
+// gfSceneRoot
+8000d818:setCurrentFrame__11gfSceneRootFf
 
 // utList
 800448f8:addTail__6utListFP10utListNode
