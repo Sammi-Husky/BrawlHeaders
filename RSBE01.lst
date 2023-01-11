@@ -91,7 +91,7 @@
 8018d770:GetResAnmChrNumEntries__Q34nw4r3g3d7ResFileFv
 8018ee4c:GetResNodeNumEntries__Q34nw4r3g3d6ResMdlFv
 801b0520:__ct__Q44nw4r3g3d6ScnMdl15CopiedMatAccessFPQ34nw4r3g3d6ScnMdlUi
-8018d640:GetResAnmChr__Q34nw4r3g3d7ResFileFi
+8018d640:GetResAnmChr__Q34nw4r3g3d7ResFileFUi
 8018f258:GetResMat__Q34nw4r3g3d6ResMdlCFPCc
 801b00b4:GetResMatTevColor__Q44nw4r3g3d6ScnMdl15CopiedMatAccessFb
 801913d0:GXSetTevColor__Q34nw4r3g3d14ResMatTevColorFUi7GXColor
@@ -230,7 +230,7 @@
 27,1,002227b0:addGround__5StageFP6Ground
 27,1,00222850:getGround__5StageFi
 27,1,00222830:getGroundNum__5StageFv
-27,1,00222904:registScnAnim__5StageFPvi
+27,1,00222904:registScnAnim__5StageFPQ34nw4r3g3d11ResFileDataUi
 27,1,00222ab0:createCollision__5StageFP9gfArchiveiP6Ground
 27,1,00224574:createStagePositions__5StageFv
 27,1,00224524:createStagePositions__5StageFPv
