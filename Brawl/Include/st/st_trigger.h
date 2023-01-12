@@ -60,7 +60,7 @@ public:
     };
 
     void setObserveYakumono(Yakumono* yakumono);
-    stObsTriggerSquareBeltConveyorCB* setBeltConveyorTrigger(SquareBeltConveyorGimmickAreaData* gimmickAreaData);
+    stObsTriggerSquareBeltConveyorCB* setBeltConveyorTrigger(grGimmickBeltConveyorData* gimmickAreaData);
 
     STATIC_CHECK(sizeof(stTrigger) == 52)
 };

@@ -356,9 +356,9 @@
 // stCommonGimmick
 27,1,002380b0:releaseArchive__15stCommonGimmickFv
 27,1,00238018:createGimmickCollision__15stCommonGimmickFiP6GroundP9gfArchive
-27,1,00237E18:createGimmickBeltConveyor2__15stCommonGimmickFP33SquareBeltConveyorGimmickAreaData
+27,1,00237E18:createGimmickBeltConveyor2__15stCommonGimmickFP25grGimmickBeltConveyorData
 27,1,00237D20:createGimmickLadder__15stCommonGimmickFP19grGimmickLadderDataP9gfArchive
-27,1,00237E60:createGimmickWaterArea__15stCommonGimmickFP26SquareWaterGimmickAreaData
+27,1,00237E60:createGimmickWaterArea__15stCommonGimmickFP18grGimmickWaterData
 
 // stClassInfo
 27,1,002257bc:__ct__11stClassInfoFv
@@ -649,7 +649,7 @@
 
 // stTrigger
 27,1,00233640:setObserveYakumono__9stTriggerFP8Yakumono
-27,1,00233778:setBeltConveyorTrigger__9stTriggerFP33SquareBeltConveyorGimmickAreaData
+27,1,00233778:setBeltConveyorTrigger__9stTriggerFP25grGimmickBeltConveyorData
 
 
 // stDataMultiContainer

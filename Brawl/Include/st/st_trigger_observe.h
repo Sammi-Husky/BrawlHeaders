@@ -15,23 +15,23 @@ struct GimmickAreaData {
     Vec2f m_range;
 };
 
-struct SquareBeltConveyorGimmickAreaData : GimmickAreaData {
+struct grGimmickBeltConveyorData : GimmickAreaData {
     Vec3f m_conveyorPos;
     float m_speed;
     bool m_isRightDirection;
     char _spacer[7];
 
-    STATIC_CHECK(sizeof(SquareBeltConveyorGimmickAreaData) == 64)
+    STATIC_CHECK(sizeof(grGimmickBeltConveyorData) == 64)
 };
 
-struct SquareWaterGimmickAreaData : GimmickAreaData {
+struct grGimmickWaterData : GimmickAreaData {
     float m_swimHeight;
     bool m_canDrown;
     char _45[3];
     float m_currentSpeed;
     char m_52[4];
 
-    STATIC_CHECK(sizeof(SquareWaterGimmickAreaData) == 56)
+    STATIC_CHECK(sizeof(grGimmickWaterData) == 56)
 };
 
 class stObsTriggerCB : public gfCallback {
