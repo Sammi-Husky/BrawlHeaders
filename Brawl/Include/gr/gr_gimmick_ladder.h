@@ -11,8 +11,8 @@ struct grGimmickLadderData {
     Vec2f m_areaRange;
     u8 m_mdlIndex;
     char _49[1];
-    u8 m_50;
-    u8 m_51;
+    bool m_restrictUpExit;
+    bool m_51;
     char _52[32];
     stTrigger::TriggerData m_isValidTriggerData;
     stTrigger::TriggerData m_motionPathTriggerData;

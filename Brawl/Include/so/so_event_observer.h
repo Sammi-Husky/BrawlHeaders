@@ -112,6 +112,13 @@ struct grGimmickEventSpringInfo : soGimmickEventInfo {
     float m_rot;
 };
 
+struct grGimmickEventLadderInfo : soGimmickEventInfo {
+    Vec3f m_upperNode;
+    Vec3f m_underNode;
+    bool m_restrictUpExit;
+    bool m_33;
+};
+
 struct grGimmickEventCatapultInfo : soGimmickEventInfo {
     char _8[0xc];
     float m_motionRatio;

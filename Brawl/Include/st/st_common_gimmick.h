@@ -20,6 +20,7 @@ public:
 
     void releaseArchive();
     void createGimmickCollision(int collIndex, Ground* ground, gfArchive* archive);
-    void createGimmickBeltConveyor2(SquareBeltConveyorGimmickAreaData* beltConveyorAreaData);
-    void createGimmickLadder(grGimmickLadderData *ladderData, gfArchive *archive);
+    bool createGimmickBeltConveyor2(SquareBeltConveyorGimmickAreaData* beltConveyorAreaData);
+    bool createGimmickWaterArea(SquareWaterGimmickAreaData* waterAreaData);
+    grGimmickLadder* createGimmickLadder(grGimmickLadderData *ladderData, gfArchive *archive);
 };

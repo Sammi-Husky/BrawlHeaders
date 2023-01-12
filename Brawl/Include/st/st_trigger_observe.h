@@ -24,6 +24,16 @@ struct SquareBeltConveyorGimmickAreaData : GimmickAreaData {
     STATIC_CHECK(sizeof(SquareBeltConveyorGimmickAreaData) == 64)
 };
 
+struct SquareWaterGimmickAreaData : GimmickAreaData {
+    float m_swimHeight;
+    bool m_canDrown;
+    char _45[3];
+    float m_currentSpeed;
+    char m_52[4];
+
+    STATIC_CHECK(sizeof(SquareWaterGimmickAreaData) == 56)
+};
+
 class stObsTriggerCB : public gfCallback {
 
     char _spacer[8];

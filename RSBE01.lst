@@ -357,6 +357,8 @@
 27,1,002380b0:releaseArchive__15stCommonGimmickFv
 27,1,00238018:createGimmickCollision__15stCommonGimmickFiP6GroundP9gfArchive
 27,1,00237E18:createGimmickBeltConveyor2__15stCommonGimmickFP33SquareBeltConveyorGimmickAreaData
+27,1,00237D20:createGimmickLadder__15stCommonGimmickFP19grGimmickLadderDataP9gfArchive
+27,1,00237E60:createGimmickWaterArea__15stCommonGimmickFP26SquareWaterGimmickAreaData
 
 // stClassInfo
 27,1,002257bc:__ct__11stClassInfoFv
@@ -434,6 +436,7 @@
 27,1,00261950:setValid__6GroundFUi
 27,1,002619F0:setValidAttachedEffect__6GroundFUi
 27,1,00261B3C:preExit__6GroundFv
+27,1,00260924:startup__6GroundFP9gfArchiveUiUi
 
 // grGimmick
 27,1,0026A314:__ct__9grGimmickFPc
@@ -534,6 +537,17 @@
 27,1,00270384:onGimmickEvent__15grGimmickSpringFP18soGimmickEventInfoPi
 27,1,0026FFB4:getTopNode__15grGimmickSpringFP5Vec3f
 27,1,00270464:presentPosEvent__15grGimmickSpringFv
+
+// grGimmickLadder
+27,1,0026F6C4:__ct__15grGimmickLadderFPc
+27,1,0026F734:__dt__15grGimmickLadderFv
+27,1,0026F940:setInitializeFlag__15grGimmickLadderFv
+27,1,0026F78C:startup__15grGimmickLadderFP9gfArchiveUiUi
+27,1,0026F9DC:update__15grGimmickLadderFf
+27,1,0026FA14:getUpperNode__15grGimmickLadderFP5Vec3f
+27,1,0026FA84:getUnderNode__15grGimmickLadderFP5Vec3f
+27,1,0026FAF4:disableArea__15grGimmickLadderFv
+27,1,0026FB5C:setSleepArea__15grGimmickLadderFb
 
 // grMadein
 27,1,0027583C:__ct__8grMadeinFPc
