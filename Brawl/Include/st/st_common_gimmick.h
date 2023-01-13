@@ -22,5 +22,6 @@ public:
     void createGimmickCollision(int collIndex, Ground* ground, gfArchive* archive);
     bool createGimmickBeltConveyor2(grGimmickBeltConveyorData* beltConveyorAreaData);
     bool createGimmickWaterArea(grGimmickWaterData* waterAreaData);
+    bool createGimmickWind2(grGimmickWindData* windAreaData);
     grGimmickLadder* createGimmickLadder(grGimmickLadderData *ladderData, gfArchive *archive);
 };

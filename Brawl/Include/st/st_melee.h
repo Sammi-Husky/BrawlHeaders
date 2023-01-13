@@ -13,9 +13,14 @@ extern Gravity* g_Gravity;
 class stMelee : public stCommonGimmick {
 protected:
     // 0
-    char _spacer[0x14];
-    // 0x14
-    char wndOnlyData2[0x10];
+    char _spacer[0x10];
+
+    stTrigger* m_wind2ndTrigger;
+
+    grGimmickWindData2nd* m_windAreaData2nd;
+
+    // 0x18
+    char wndOnlyData2[0xc];
 
 public:
     stMelee(char* name, int stageID);
