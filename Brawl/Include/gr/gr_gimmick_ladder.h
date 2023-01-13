@@ -14,8 +14,8 @@ struct grGimmickLadderData {
     bool m_restrictUpExit;
     bool m_51;
     char _52[32];
-    stTrigger::TriggerData m_isValidTriggerData;
-    stTrigger::TriggerData m_motionPathTriggerData;
+    stTriggerData m_isValidTriggerData;
+    stTriggerData m_motionPathTriggerData;
 
     STATIC_CHECK(sizeof(grGimmickLadderData) == 92)
 };

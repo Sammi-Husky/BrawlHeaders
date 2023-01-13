@@ -12,7 +12,7 @@ struct stTriggerData {
     bool m_isValidFlag : 1;
     char m_unk2;
 
-    STATIC_CHECK(sizeof(TriggerData) == 4)
+    STATIC_CHECK(sizeof(stTriggerData) == 4)
 };
 
 struct GimmickAreaData {

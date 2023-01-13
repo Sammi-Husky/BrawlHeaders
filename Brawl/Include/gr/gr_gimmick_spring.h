@@ -17,7 +17,7 @@ public:
     u8 m_mdlIndex;
     u8 m_collIndex;
     char _74[2];
-    stTrigger::TriggerData m_triggerData;
+    stTriggerData m_triggerData;
 
     STATIC_CHECK(sizeof(grGimmickSpringData) == 80)
 };

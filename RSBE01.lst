@@ -478,9 +478,9 @@
 27,1,0026DD00:getScale__9grGimmickFv
 27,1,0026DCBC:setScale__9grGimmickFP5Vec3f
 27,1,0026DCE4:setScale__9grGimmickFfff
-27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoPQ29stTrigger11TriggerDataPc
+27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoP13stTriggerDataPc
 27,1,0026DA8C:createSimpleEffectData__9grGimmickFPQ29grGimmick16SimpleEffectDataUiPc
-27,1,0026CB94:createIsValidTrigger__9grGimmickFPQ29stTrigger11TriggerData
+27,1,0026CB94:createIsValidTrigger__9grGimmickFP13stTriggerData
 27,1,0026D124:createEffectWork__9grGimmickFi
 27,1,0026D22C:startGimmickEffect__9grGimmickFUi
 27,1,0026CE10:startGimmickSE__9grGimmickFUi
@@ -644,9 +644,9 @@
 
 // stTriggerMng
 27,1,00231FDC:createTrigger__12stTriggerMngF11GimmickKindi
-27,1,00232118:createTrigger__12stTriggerMngF11GimmickKindPQ29stTrigger11TriggerData
-27,1,00232D4C:setTriggerFlag__12stTriggerMngFPQ29stTrigger11TriggerData
-27,1,00232F28:getTriggerFlag__12stTriggerMngFPQ29stTrigger11TriggerDatab
+27,1,00232118:createTrigger__12stTriggerMngF11GimmickKindP13stTriggerData
+27,1,00232D4C:setTriggerFlag__12stTriggerMngFP13stTriggerData
+27,1,00232F28:getTriggerFlag__12stTriggerMngFP13stTriggerDatab
 
 // stTrigger
 27,1,00233640:setObserveYakumono__9stTriggerFP8Yakumono

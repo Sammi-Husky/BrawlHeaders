@@ -68,9 +68,9 @@ public:
     virtual ~stTriggerMng();
 
     stTrigger* createTrigger(GimmickKind gimmickKind, int triggerId);
-    stTrigger* createTrigger(GimmickKind gimmickKind, stTrigger::TriggerData* triggerData);
-    void setTriggerFlag(stTrigger::TriggerData* triggerData);
-    bool getTriggerFlag(stTrigger::TriggerData* triggerData, bool defaultFlag);
+    stTrigger* createTrigger(GimmickKind gimmickKind, stTriggerData* triggerData);
+    void setTriggerFlag(stTriggerData* triggerData);
+    bool getTriggerFlag(stTriggerData* triggerData, bool defaultFlag);
 
     STATIC_CHECK(sizeof(stTriggerMng) == 100)
 };
