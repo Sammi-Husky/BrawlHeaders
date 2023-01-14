@@ -45,11 +45,9 @@ struct grGimmickWaterData : GimmickAreaData {
 };
 
 struct grGimmickWindData : GimmickAreaData {
-    float m_40;
-    float m_44;
-    float m_48;
+    Vec3f m_windPos;
     float m_strength;
-    float m_56;
+    float m_angle;
     stTriggerData m_isValidTriggerData;
 
     STATIC_CHECK(sizeof(grGimmickWindData) == 64)
