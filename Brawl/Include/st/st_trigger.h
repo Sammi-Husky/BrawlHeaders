@@ -29,7 +29,7 @@ enum GimmickKind {
     GimmickKind_DoorGround = 0x28,
     GimmickKind_DoorAir = 0x29,
     GimmickKind_DoorGroundAuto = 0x2a,
-    GimmickKind_DoorUnk = 0x2b,
+    GimmickKind_DoorAirAuto = 0x2b,
     GimmickKind_WarpZone = 0x2c,
     GimmickKind_Savepoint = 0x2d,
     GimmickKind_Eat = 0x2f,
