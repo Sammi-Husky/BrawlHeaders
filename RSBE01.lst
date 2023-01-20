@@ -75,6 +75,7 @@
 803fa3fc:strcmp__FPCcPCc
 803fa340:strncpy__6StringF6StringPcUl
 803fa340:strncpy__FPcPCcUl
+803fa280:strcpy__FPcPCc
 
 // strtoul
 803fc704:atoi__FPCc
@@ -499,7 +500,7 @@
 27,1,00267ab8:preExit__10grYakumonoFv
 27,1,00267a10:setTransparency__10grYakumonoFUiUi
 27,1,00264dd4:onDamage__10grYakumonoFiP8soDamageP20soDamageAttackerInfo
-27,1,00264DE4:onInflict__10grYakumonoFPiUi
+27,1,00264DE4:onInflict__10grYakumonoFP14soCollisionLogUif
 27,1,00264DE8:onInflictEach__10grYakumonoFP14soCollisionLogf
 27,1,00264DEC:onGimmickEvent__10grYakumonoFP18soGimmickEventInfoPi
 27,1,002650DC:enableYakumono__10grYakumonoFUi
@@ -538,6 +539,7 @@
 27,1,00270384:onGimmickEvent__15grGimmickSpringFP18soGimmickEventInfoPi
 27,1,0026FFB4:getTopNode__15grGimmickSpringFP5Vec3f
 27,1,00270464:presentPosEvent__15grGimmickSpringFv
+27,1,0026FF18:setMotionOff__15grGimmickSpringFv
 
 // grGimmickLadder
 27,1,0026F6C4:__ct__15grGimmickLadderFPc
@@ -549,6 +551,17 @@
 27,1,0026FA84:getUnderNode__15grGimmickLadderFP5Vec3f
 27,1,0026FAF4:disableArea__15grGimmickLadderFv
 27,1,0026FB5C:setSleepArea__15grGimmickLadderFb
+
+// grYakumonoPunchSlider
+27,1,00268B18:__ct__21grYakumonoPunchSliderFPc
+27,1,00268BCC:__dt__21grYakumonoPunchSliderFv
+27,1,00268C24:update__21grYakumonoPunchSliderFf
+27,1,0026907C:startup__21grYakumonoPunchSliderFP9gfArchiveUiUi
+27,1,002698C0:onDamage__21grYakumonoPunchSliderFiP8soDamageP20soDamageAttackerInfo
+27,1,00269A6C:onInflict__21grYakumonoPunchSliderFP14soCollisionLogUif
+27,1,00268F5C:updateMove__21grYakumonoPunchSliderFf
+27,1,00268FE4:createMotionPath__21grYakumonoPunchSliderFv
+27,1,00269830:setCulcCallback__21grYakumonoPunchSliderFP9gfArchive
 
 // grMadein
 27,1,0027583C:__ct__8grMadeinFPc

@@ -24,7 +24,7 @@ public:
     virtual ~grYakumono();
 
     virtual void onDamage(int index, soDamage* damage, soDamageAttackerInfo* attackerInfo);
-    virtual void onInflict(int* unk1, u32 unk2); // TODO
+    virtual void onInflict(soCollisionLog* collisionLog, u32 unk2, float power);
     virtual void onInflictEach(soCollisionLog* collisionLog, float power);
     virtual void onGimmickEvent(soGimmickEventInfo* eventInfo, int* taskId);
     virtual bool enableYakumono(u32 unk1);

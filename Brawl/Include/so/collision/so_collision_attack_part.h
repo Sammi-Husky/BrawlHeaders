@@ -176,4 +176,7 @@ struct soCollisionAttackData {
             unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
         } m_masks;
     };
+
+    STATIC_CHECK(sizeof(soCollisionAttackData) == 64)
+
 };
