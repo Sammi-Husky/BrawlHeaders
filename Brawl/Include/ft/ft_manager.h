@@ -94,6 +94,7 @@ public:
 
         bool isValidEntryId(int entryId);
         int getEntryCount();
+        int getEntryId(int playerNo);
         int getEntryIdFromIndex(int index);
         int getEntryIdFromTaskId(int taskId, int* unk);
         int getPlayerNo(int entryId);

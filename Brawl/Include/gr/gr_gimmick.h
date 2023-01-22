@@ -205,7 +205,7 @@ public:
     virtual u32 getTgtNode();
     virtual void setGimmickData(void* gimmickData);
     virtual void* getGimmickData();
-    virtual void changeNodeAnim(u32 unk1, u32 unk2);
+    virtual void changeNodeAnim(u32 chrIndex, u32 modelAnimIndex);
     virtual void createFadeVisibleProduction(float unk);
     virtual void createSoundEffectVisibleProductionForExcel(u32 unk1, u32 unk2, u32 unk3);
     virtual void createEffectVisibleProductionForExcel(SimpleEffectData* simpleEffectData, u32* visProdIndexPtr, grVisibleProduction* visProds[]);
@@ -214,11 +214,11 @@ public:
     virtual void setTransparency(u32 unk1, u32 unk2);
     virtual char getTransparencyFlag();
 
-    void changeMatColAnim(u32 unk1, u32 unk2);
-    void changeShapeAnim(u32 unk1, u32 unk2);
-    void changeTexAnim(u32 unk1, u32 unk2);
-    void changeTexSrtAnim(u32 unk1, u32 unk2);
-    void changeVisibleAnim(u32 unk1, u32 unk2);
+    void changeMatColAnim(u32 clrIndex, u32 modelAnimIndex);
+    void changeShapeAnim(u32 shpIndex, u32 modelAnimIndex);
+    void changeTexAnim(u32 patIndex, u32 modelAnimIndex);
+    void changeTexSrtAnim(u32 srtIndex, u32 modelAnimIndex);
+    void changeVisibleAnim(u32 visIndex, u32 modelAnimIndex);
     void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, stTriggerData* triggerData, char* nodeName);
     void createEffectWork(int numEffects);
     void createIsValidTrigger(stTriggerData* triggerData);
