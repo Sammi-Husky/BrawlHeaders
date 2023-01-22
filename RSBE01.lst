@@ -76,6 +76,15 @@
 803fa340:strncpy__6StringF6StringPcUl
 803fa340:strncpy__FPcPCcUl
 803fa280:strcpy__FPcPCc
+803f89fc:sprintf__FPcPCce
+803fa384:strcat__FPcPc
+803fa3b0:strncat__FPcPc
+803fa518:strncmp__FPcPc
+803fa558:strchr__FPcPc
+803fa588:strrchr__FPcPc
+803fa5d0:strcspn__FPcPc
+803fa674:strtok__FPcPc
+803fa798:strstr__FPcPc
 
 // strtoul
 803fc704:atoi__FPCc
@@ -190,8 +199,21 @@
 8002737c:destroy__15gfModuleManagerFPc
 
 // gfSceneManager
+8002cc14:__ct__14gfSceneManagerFv
+8002cfd0:create__14gfSceneManagerFv
 8002d018:getInstance__14gfSceneManagerFv
-8002d3f4:searchScene__14gfSceneManagerFPc
+8002d020:changeNextScene__14gfSceneManagerFv
+8002d160:registScene__14gfSceneManagerFv
+8002d180:registSequence__14gfSceneManagerFv
+8002d1a0:process__14gfSceneManagerFv
+8002d32c:postProcess__14gfSceneManagerFv
+8002d3f4:searchScene__14gfSceneManagerFv
+8002d474:searchSequence__14gfSceneManagerFv
+8002d4f4:startSequence__14gfSceneManagerFv
+8002d5ac:setNextScene__14gfSceneManagerFv
+8002d640:setNextSequence__14gfSceneManagerFv
+8002d6d4:setLoadModuleName__14gfSceneManagerFv
+8002d73c:loadModule__14gfSceneManagerFv
 
 // gfSceneRoot
 8000d818:setCurrentFrame__11gfSceneRootFf
@@ -739,45 +761,25 @@
 80021f94:getBuffer__14gfFileIOHandleFv
 80021fa0:getPool__14gfFileIOHandleFv
 80021fac:release__14gfFileIOHandleFv
+80021498:readRequest__14gfFileIOHandleFPcQ25Heaps8HeapTypeii
 
 // gameGlobal
 8004D9DC:getLanguage__10GameGlobalFv
 
-//unSorted 
 
-800b2394:create__8MuObjectFPPQ34nw4r3g3d7ResFilePcciQ25Heaps8HeapType
-800b2404:create__8MuObjectFPPQ34nw4r3g3d7ResFileiciQ25Heaps8HeapType
-80021498:readRequest__14gfFileIOHandleFPcQ25Heaps8HeapTypeii
-80021498:readRequest__14gfFileIOHandleFPcQ25Heaps8HeapTypeii
-803f89fc:sprintf__FPcPCce
-803fa280:strcpy__FPcPc
-803fa340:strncpy__FPcPc
-803fa384:strcat__FPcPc
-803fa3b0:strncat__FPcPc
-803fa3fc:strcmp__FPcPc
-803fa518:strncmp__FPcPc
-803fa558:strchr__FPcPc
-803fa588:strrchr__FPcPc
-803fa5d0:strcspn__FPcPc
-803fa674:strtok__FPcPc
-803fa798:strstr__FPcPc
-800afb80:loadMenuSound__6muMenuFv
-800afb88:isLoadFinishMenuSound__6muMenuFv
-8018ea08:Init__Q34nw4r3g3d7ResFileFPv
-800af85c:exchangeSelchkind2SelCharVoice__6muMenuFi
-800af8a0:exchangeSelCharVoice2SelCharVoiceLengthE__6muMenuFi
-800AF8B8:exchangeSelCharVoice2SelCharVoiceLengthJ__6muMenuFi
-800af600:exchangeGmCharacterKind2Something__6muMenuFi
 
+// ScnMdl
 801b4af4:Construct__Q34nw4r3g3d6ScnMdlFPviiPv
 801b4d94:Pushback__Q34nw4r3g3d6ScnMdlFPvPvPc
 80024430:getMEMAllocator__13gfHeapManagerFQ25Heaps8HeapType
 
+// gfKeepFrameBuffer
 80024d6c:update__17gfKeepFrameBufferFv
 80024dc0:render__17gfKeepFrameBufferFv
 8002b61c:startKeepScreen__17gfKeepFrameBufferFv
 80024e38:endKeepScreen__17gfKeepFrameBufferFv
 
+// MuObject
 800b534c:changeAnimN__8MuObjectFPc
 800b45a8:changeNodeAnimN__8MuObjectFPc
 800b46f0:changeNodeAnimNIf__8MuObjectFPc
@@ -792,7 +794,10 @@
 800b51f4:changeClrAnimNIf__8MuObjectFPc
 800b784c:setFrameVisible__8MuObjectFf
 800b7a18:setFrameMatCol__8MuObjectFf
+800b2394:create__8MuObjectFPPQ34nw4r3g3d7ResFilePcciQ25Heaps8HeapType
+800b2404:create__8MuObjectFPPQ34nw4r3g3d7ResFileiciQ25Heaps8HeapType
 
+//gfModelAnimation
 80027c40:__ct__16gfModelAnimationFd
 80027fa4:__ct1__16gfModelAnimationFd
 80028278:setLoop__16gfModelAnimationFd
@@ -807,6 +812,7 @@
 80028650:setUpdateRate__16gfModelAnimationFd
 80028744:getUpdateRate__16gfModelAnimationFd
 
+//muMenu
 800af088:init__6muMenuFiii
 800af08c:start__6muMenuFiii
 800af0f0:process__6muMenuFiii
@@ -851,24 +857,16 @@
 800afb80:loadMenuSound__6muMenuFiii
 800afb88:isLoadFinishMenuSound__6muMenuFiii
 800afb90:freeMenuSound__6muMenuFiii
+800afb80:loadMenuSound__6muMenuFv
+800afb88:isLoadFinishMenuSound__6muMenuFv
+8018ea08:Init__Q34nw4r3g3d7ResFileFPv
+800af8a0:exchangeSelCharVoice2SelCharVoiceLengthE__6muMenuFi
+800AF8B8:exchangeSelCharVoice2SelCharVoiceLengthJ__6muMenuFi
+800af600:exchangeGmCharacterKind2Something__6muMenuFi
+// aboves exact meaning unsure, file ID in classic mode intro
 
-8002cc14:__ct__14gfSceneManagerFv
-8002cfd0:create__14gfSceneManagerFv
-8002d018:getInstance__14gfSceneManagerFv
-8002d020:changeNextScene__14gfSceneManagerFv
-8002d160:registScene__14gfSceneManagerFv
-8002d180:registSequence__14gfSceneManagerFv
-8002d1a0:process__14gfSceneManagerFv
-8002d32c:postProcess__14gfSceneManagerFv
-8002d3f4:searchScene__14gfSceneManagerFv
-8002d474:searchSequence__14gfSceneManagerFv
-8002d4f4:startSequence__14gfSceneManagerFv
-8002d5ac:setNextScene__14gfSceneManagerFv
-8002d640:setNextSequence__14gfSceneManagerFv
-8002d6d4:setLoadModuleName__14gfSceneManagerFv
-8002d73c:loadModule__14gfSceneManagerFv
 
+//sndSystem
 800742b0:playSE__9sndSystemFiiiii
 
-800b2394:create__8MuObjectFPPQ34nw4r3g3d7ResFilePcciQ25Heaps8HeapType
-800b2404:create__8MuObjectFPPQ34nw4r3g3d7ResFileiciQ25Heaps8HeapType
+
