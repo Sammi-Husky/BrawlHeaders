@@ -606,6 +606,7 @@
 // soExternalValueAccesser
 27,1,0008CB0C:getTeamNo__23soExternalValueAccesserFP11StageObject
 27,1,0008C9D4:getPos__23soExternalValueAccesserFP11StageObject
+27,1,0008CAB4:getLr__23soExternalValueAccesserFP11StageObject
 
 // ftExternalValueAccesser
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
