@@ -1,4 +1,4 @@
-
+#pragma once
 #include <types.h>
 #include <StaticAssert.h>
 
@@ -38,7 +38,10 @@ public:
     gfSequence *m_sequences[50];
     int m_sceneCount;
     int m_sequenceCount;
-    char _spacer3[168];
+    char _spacer3[12];
+    int unk1;
+    int processStep;
+    char _spacer4[148];
 
     gfScene *searchScene(char *sceneName);
     static gfSceneManager *getInstance();
