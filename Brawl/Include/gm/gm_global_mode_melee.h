@@ -19,10 +19,12 @@ public:
     bool m_0x4_2 : 1;
     bool m_0x4_1 : 1;
     bool m_0x4_0 : 1;
-    char _0x5[0x3];            // 0x05
-    s8 m_eventId;               // 0x08
-    char _0x9[0x5];             // 0x09
-    u8 m_itemFrequency;         // 0x0E
+    char _0x5[0x3];              // 0x05
+    s8 m_eventId;                // 0x08
+    char _0x9[0x2];              // 0x09
+    bool m_isTeams;              // 0x0B
+    char _0xC[0x2];              // 0x09
+    u8 m_itemFrequency;          // 0x0E
     s8 m_suicideScoreMultiplier; // 0x0F
     char _0xa[0x02];            // 0x10
     short m_stageID;            // 0x12
