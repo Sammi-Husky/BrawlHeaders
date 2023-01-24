@@ -24,6 +24,7 @@ public:
     bool createGimmickBeltConveyor2(grGimmickBeltConveyorData* beltConveyorAreaData);
     bool createGimmickWaterArea(grGimmickWaterData* waterAreaData);
     bool createGimmickWind2(grGimmickWindData* windAreaData);
+    bool createGimmickHitPointEffectArea(grGimmickHitPointEffectData* hitPointEffectData);
     grGimmickLadder* createGimmickLadder(grGimmickLadderData* ladderData, gfArchive* archive);
     grGimmickCatapult* createGimmickCatapult(grGimmickCatapultData* catapultData, gfArchive* archive);
 };

@@ -65,6 +65,15 @@ struct grGimmickWindData2nd : GimmickAreaData {
     STATIC_CHECK(sizeof(grGimmickWindData2nd) == 76)
 };
 
+struct grGimmickHitPointEffectData : GimmickAreaData {
+    u8 m_damage;
+    bool m_isHeal;
+    short m_detectionRate;
+    stTriggerData m_isValidTriggerData;
+
+    STATIC_CHECK(sizeof(grGimmickHitPointEffectData) == 48)
+};
+
 class stObsTriggerCB : public gfCallback {
 
     char _spacer[8];

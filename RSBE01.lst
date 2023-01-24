@@ -388,6 +388,7 @@
 27,1,00237D20:createGimmickLadder__15stCommonGimmickFP19grGimmickLadderDataP9gfArchive
 27,1,00237E60:createGimmickWaterArea__15stCommonGimmickFP18grGimmickWaterData
 27,1,00237DD0:createGimmickWind2__15stCommonGimmickFP17grGimmickWindData
+27,1,00237EA8:createGimmickHitPointEffectArea__15stCommonGimmickFP27grGimmickHitPointEffectData
 
 // stClassInfo
 27,1,002257bc:__ct__11stClassInfoFv
