@@ -120,9 +120,11 @@ struct grGimmickEventLadderInfo : soGimmickEventInfo {
 };
 
 struct grGimmickEventCatapultInfo : soGimmickEventInfo {
-    char _8[0xc];
-    float m_motionRatio;
-    char _24[4];
+    float m_8;
+    float m_12;
+    float m_lr;
+    float m_launchSpeed;
+    float m_vector;
 };
 
 struct grGimmickEventDoorInfo : soGimmickEventInfo {

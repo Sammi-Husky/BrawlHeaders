@@ -3,6 +3,7 @@
 #include <st/stage.h>
 #include <gr/gr_gimmick_spring.h>
 #include <gr/gr_gimmick_ladder.h>
+#include <gr/gr_gimmick_catapult.h>
 #include <types.h>
 
 class stCommonGimmick : public Stage {
@@ -23,5 +24,6 @@ public:
     bool createGimmickBeltConveyor2(grGimmickBeltConveyorData* beltConveyorAreaData);
     bool createGimmickWaterArea(grGimmickWaterData* waterAreaData);
     bool createGimmickWind2(grGimmickWindData* windAreaData);
-    grGimmickLadder* createGimmickLadder(grGimmickLadderData *ladderData, gfArchive *archive);
+    grGimmickLadder* createGimmickLadder(grGimmickLadderData* ladderData, gfArchive* archive);
+    grGimmickCatapult* createGimmickCatapult(grGimmickCatapultData* catapultData, gfArchive* archive);
 };

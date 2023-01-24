@@ -579,6 +579,14 @@
 27,1,0026FAF4:disableArea__15grGimmickLadderFv
 27,1,0026FB5C:setSleepArea__15grGimmickLadderFb
 
+// grGimmickCatapult
+27,1,00274708:__dt__17grGimmickCatapultFv
+27,1,00274824:processFixPosition__17grGimmickCatapultFv
+27,1,00274760:update__17grGimmickCatapultFf
+27,1,002749CC:startup__17grGimmickCatapultFP9gfArchiveUiUi
+27,1,00274DF4:onGimmickEvent__17grGimmickCatapultFP18soGimmickEventInfoPi
+27,5,58B78:__vt__17grGimmickCatapult
+
 // grGimmickWarpZone
 27,1,00274078:__ct__17grGimmickWarpZoneFPc
 27,1,002740EC:__dt__17grGimmickWarpZoneFv
