@@ -26,7 +26,8 @@ class grGimmickLadder : public grYakumono {
         soAreaData m_areaData;
         soAreaInit m_areaInit;
         ykAreaData m_ykData;
-        char _328[24];
+        Vec3f m_upperOffset;
+        Vec3f m_underOffset;
 
     public:
         grGimmickLadder(char* taskName);
