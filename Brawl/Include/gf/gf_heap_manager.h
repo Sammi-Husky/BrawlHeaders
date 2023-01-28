@@ -5,10 +5,11 @@
 
 class gfHeapManager
 {
-    int getMaxFreeSize(u32);
-    void dumpAll();
-    void dumpList();
-
 public:
+
+    static int getMaxFreeSize(u32);
+    static void dumpAll();
+    static void dumpList();
+
     static void *getMEMAllocator(Heaps::HeapType heapType);
 };

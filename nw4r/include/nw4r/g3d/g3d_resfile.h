@@ -18,23 +18,12 @@ namespace nw4r
         // This is supposed to be a class,
         // but until we know ResFile's size
         // we can treat it as an opaque pointer
-        // class ResFile : public ResCommon<ResFileData>
-        //{
-        //    /* data */
-        // public:
-        //    inline ResFile(ResFileData *data) : ResCommon(data) {}
-        //
-        //    static void Init(void *arg);
-        //    u32 GetResMdlNumEntries();
-        //    u32 GetResAnmChrNumEntries();
-        //    CHR0 *GetResAnmChr(int index);
-        //    SCN0 *GetResAnmScn(int index);
-        //};
-        //
-        // STATIC_CHECK(sizeof(ResFile) == 0x04)
-        class ResFile
+        class ResFile : public ResCommon<ResFileData>
         {
+            /* data */
         public:
+            inline ResFile(ResFileData *data) : ResCommon(data) {}
+
             static void Init(void *arg);
             u32 GetResMdlNumEntries();
             u32 GetResAnmChrNumEntries();
