@@ -6,12 +6,20 @@
 #include <snd/snd_3d_generator.h>
 #include <st/st_trigger.h>
 
+enum MotionPathMode {
+    MotionPathMode_Return = 0x0,
+    MotionPathMode_Loop = 0x1,
+    MotionPathMode_Once = 0x2,
+};
+
 struct grGimmickMotionPathData {
     float m_motionRatio;
     char m_index;
-    char m_0x5;
+    MotionPathMode m_pathMode : 8;
     char m_mdlIndex;
     char _padding;
+
+    STATIC_CHECK(sizeof(grGimmickMotionPathData) == 8)
 };
 
 struct grGimmickMotionPathInfo {
