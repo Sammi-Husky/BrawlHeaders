@@ -635,6 +635,10 @@
 27,1,0026E13C:create__19grGimmickMotionPathFiPcPc
 27,1,0026EB5C:setFrame__19grGimmickMotionPathFf
 27,1,0026EB64:getFrame__19grGimmickMotionPathFv
+27,1,0026EC24:startMove__19grGimmickMotionPathFv
+27,1,0026EFF4:isEndFrame__19grGimmickMotionPathFv
+27,1,0026EFD8:isStartFrame__19grGimmickMotionPathFv
+27,1,0026EFA0:applyEndFrame__19grGimmickMotionPathFv
 
 // soValueAccesser
 27,1,0008C338:getConstantInt__15soValueAccesserFP16soModuleAccesserUiUi
