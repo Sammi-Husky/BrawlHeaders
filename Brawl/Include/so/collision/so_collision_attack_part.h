@@ -127,7 +127,7 @@ struct soCollisionAttackData {
             bool isBlockable : 1;
             bool isReflectable : 1;
             bool isAbsorbable : 1;
-            unsigned int field_0x34_8 : 9;   // up to 0x1ff
+            unsigned int addedShieldDamage : 9;   // up to 0x1ff
             unsigned int field_0x34_9 : 10;  // ~up to 0x3ff
             unsigned int detectionRate : 16; // up to 0xffff
             bool field_0x38_1 : 1;
@@ -139,7 +139,7 @@ struct soCollisionAttackData {
             bool disableHitstop : 1;
             bool disableHitGfx : 1;
             bool disableFlinch : 1;
-            unsigned int addedShieldDamage : 5; // up to 0x1f;
+            unsigned int field_0x38_10 : 5; // up to 0x1f;
             bool isShapeCapsule : 1;
             unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
         } m_bits;
@@ -159,7 +159,7 @@ struct soCollisionAttackData {
             bool isBlockable : 1;
             bool isReflectable : 1;
             bool isAbsorbable : 1;
-            unsigned int field_0x34_8 : 9;   // up to 0x1ff
+            unsigned int addedShieldDamage : 9;   // up to 0x1ff
             unsigned int field_0x34_9 : 10;  // ~up to 0x3ff
             unsigned int detectionRate : 16; // up to 0xffff
             bool field_0x38_1 : 1;
@@ -171,7 +171,7 @@ struct soCollisionAttackData {
             bool disableHitstop : 1;
             bool disableHitGfx : 1;
             bool disableFlinch : 1;
-            unsigned int addedShieldDamage : 5; // up to 0x1f;
+            unsigned int field_0x38_10 : 5; // up to 0x1f;
             bool isShapeCapsule : 1;
             unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
         } m_masks;

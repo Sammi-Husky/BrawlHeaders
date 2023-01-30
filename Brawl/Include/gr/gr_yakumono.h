@@ -51,10 +51,10 @@ public:
                                          bool unk1, u32 collisionPartMask, CollisionAttackElementType elementType,
                                          CollisionAttackHitSoundLevel hitSoundLevel, CollisionAttackHitSoundType hitSoundType,
                                          bool isClankable, bool unk2, bool unk3, bool isBlockable, bool isReflectable,
-                                         bool isAbsorbable, u32 unk4, u32 detectionRate, bool unk5, bool ignoreInvincibility,
+                                         bool isAbsorbable, u32 addedShieldDamage, u32 detectionRate, bool unk5, bool ignoreInvincibility,
                                          bool ignoreIntangibility, CollisionAttackFacingRestriction facingRestriction,
                                          bool unk6, bool unk7, bool disableHitstop, bool disableHitGfx,
-                                         bool disableFlinch, u32 addedShieldDamage, bool isShapeCapsule);
+                                         bool disableFlinch, u32 unk8, bool isShapeCapsule);
     virtual bool isEnableAttackPersonAttacked(u32 unk1, u32 unk2, u32 unk3);
     virtual bool isEnableAttackAttribute(u32 unk1, u32 unk2);
 
