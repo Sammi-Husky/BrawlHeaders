@@ -29,8 +29,12 @@ public:
 
     static grGimmickMotionPath* create(int mdlIndex, char* nodeName, char *taskName);
 
+    void startMove();
     void setFrameUpdate(float);
     void setFrame(float frame);
+    void applyEndFrame();
     float getFrame();
+    bool isEndFrame();
+    bool isStartFrame();
 
 };
