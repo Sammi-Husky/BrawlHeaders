@@ -12,7 +12,7 @@ public:
     grGimmickMotionPathData* m_motionPathData;
     char _spacer3[20];
     int m_nodeIndex;
-    char nodeName[32];
+    char m_nodeName[32];
 
     grGimmickMotionPath(char* taskName, char* nodeName);
     virtual void processAnim();
