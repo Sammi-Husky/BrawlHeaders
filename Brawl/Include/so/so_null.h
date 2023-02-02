@@ -8,7 +8,7 @@ class soNull {
 };
 
 class soNullableInterface {
-    virtual void isNull();
+    virtual bool isNull();
 };
 
 class soNullable {

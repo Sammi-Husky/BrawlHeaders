@@ -5,18 +5,18 @@
 
 template <class T>
 class soArrayFixed : public soNullableInterface {
-    // TODO: Verify params
-    virtual void isNull();
-    virtual void at();
-    virtual void at_overload();
-    virtual void size();
-    virtual void isEmpty();
+public:
+    virtual bool isNull();
+    virtual T* at(u32);
+    virtual T* at(int);
+    virtual u32 size();
+    virtual bool isEmpty();
     virtual ~soArrayFixed();
 };
 
 template <class T>
 class soArrayContractible : public soArrayFixed<T> {
-    // TODO: Verify params
+public:
     virtual ~soArrayContractible();
     virtual void shift();
     virtual void pop();
@@ -25,74 +25,72 @@ class soArrayContractible : public soArrayFixed<T> {
 
 template <class T>
 class soArray : public soArrayContractible<T> {
+public:
     virtual ~soArray();
 
-    // TODO: Verify params
-    virtual void unshift();
-    virtual void push();
-    virtual void insert();
-    virtual void erase();
-    virtual void capacity();
-    virtual void isFull();
-    virtual void set();
+    virtual void unshift(T*);
+    virtual void push(T*);
+    virtual void insert(int,T*);
+    virtual void erase(int);
+    virtual u32 capacity();
+    virtual bool isFull();
+    virtual void set(int,T*,int);
 };
 
 class soArrayVectorCalcInterface {
-    // TODO: Verify params
-    virtual void substitution();
+public:
+    virtual void substitution(u32, u32);
     virtual void onFull();
     virtual void offFull();
-    virtual void setTopIndex();
-    virtual void setLastIndex();
+    virtual void setTopIndex(u32);
+    virtual void setLastIndex(u32);
     virtual ~soArrayVectorCalcInterface();
 };
 
 template <class T>
 class soArrayVectorAbstract : public soArray<T>, public soArrayVectorCalcInterface {
-
-    // TODO: Verify params
-    virtual void isNull();
-    virtual void at();
-    virtual void at_overload();
+public:
+    virtual bool isNull();
+    virtual T* at(u32);
+    virtual T* at(int);
     virtual ~soArrayVectorAbstract();
     virtual void shift();
     virtual void pop();
     virtual void clear();
-    virtual void unshift();
-    virtual void push();
-    virtual void insert();
-    virtual void erase();
-    virtual void capacity();
-    virtual void isFull();
-    virtual void set();
+    virtual void unshift(T*);
+    virtual void push(T*);
+    virtual void insert(int,T*);
+    virtual void erase(int);
+    virtual u32 capacity();
+    virtual bool isFull();
+    virtual void set(int,T*,int);
 
-    virtual void atFastAbstractSub();
-    virtual void substitution();
-    virtual void getArrayValueConst();
-    virtual void getTopIndex();
-    virtual void getLastIndex();
-    virtual void setSize();
+    virtual T* atFastAbstractSub(int);
+    virtual void substitution(u32, u32);
+    virtual T* getArrayValueConst(u32);
+    virtual u32 getTopIndex();
+    virtual u32 getLastIndex();
+    virtual void setSize(u32);
 };
 
-template <class T, int C>
+template <class T, u32 C>
 class soArrayVector : public soArrayVectorAbstract<T> {
     u32 unk1;
 
     T array[C];
 
-    // TODO: Verify params
-    virtual void size();
+    virtual u32 size();
     virtual ~soArrayVector();
-    virtual void capacity();
-    virtual void isFull();
+    virtual u32 capacity();
+    virtual bool isFull();
 
-    virtual void atFastAbstractSub();
-    virtual void getArrayValueConst();
-    virtual void getTopIndex();
-    virtual void getLastIndex();
-    virtual void setSize();
-    virtual void setTopIndex();
-    virtual void setLastIndex();
+    virtual T* atFastAbstractSub(int);
+    virtual T* getArrayValueConst(u32);
+    virtual u32 getTopIndex();
+    virtual u32 getLastIndex();
+    virtual void setSize(u32);
+    virtual void setTopIndex(u32);
+    virtual void setLastIndex(u32);
     virtual void onFull();
     virtual void offFull();
 };

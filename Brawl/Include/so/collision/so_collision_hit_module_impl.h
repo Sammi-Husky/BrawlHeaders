@@ -70,6 +70,8 @@ public:
 };
 
 class soCollisionHitModuleImpl : public soCollisionHitModule, public soStatusEventObserver, public soAnimCmdEventObserver, public soEventPresenter<soCollisionHitEventObserver> {
+
+public:
     soModuleAccesser* m_moduleAccesser;
     char _48[8];
     soCollision m_collision;
@@ -79,7 +81,6 @@ class soCollisionHitModuleImpl : public soCollisionHitModule, public soStatusEve
     short m_reactionFrame;
     char _102[2];
 
-public:
     virtual ~soCollisionHitModuleImpl();
     virtual void activate(float, float, float, u32 collisionIndex, u32 collisionHitGroupIndex);
     virtual void activate(float, float, float, void*, u32 collisionIndex);

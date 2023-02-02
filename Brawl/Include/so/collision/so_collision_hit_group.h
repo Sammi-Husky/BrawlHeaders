@@ -24,6 +24,8 @@ class soCollisionHitGroup {
     u8 m_51;
     u8 m_globalOffset;
     char _53[3];
+public:
+    void setInvincibleGlobal();
 
     STATIC_CHECK(sizeof(soCollisionHitGroup) == 56)
 

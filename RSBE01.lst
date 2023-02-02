@@ -640,6 +640,9 @@
 27,1,0026EFD8:isStartFrame__19grGimmickMotionPathFv
 27,1,0026EFA0:applyEndFrame__19grGimmickMotionPathFv
 
+// soCollisionHitGroup
+27,1,000426AC:setInvincibleGlobal__19soCollisionHitGroupFv
+
 // soValueAccesser
 27,1,0008C338:getConstantInt__15soValueAccesserFP16soModuleAccesserUiUi
 
