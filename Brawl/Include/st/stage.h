@@ -15,6 +15,7 @@
 #include <em/em_create.h>
 #include <st/st_trigger.h>
 #include <st/st_collision_attr_param.h>
+#include <cm/cm_camera_controller.h>
 
 namespace StSeUtil {
     class SeSeq {
@@ -118,12 +119,6 @@ public:
 
 class Stage : public gfTask {
 public:
-    class CameraParam {
-        char _0[0x40];
-
-        STATIC_CHECK(sizeof(CameraParam) == 0x40)
-    };
-
     // 0
     char _spacer[0x04];
     // 4

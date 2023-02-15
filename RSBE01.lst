@@ -253,6 +253,14 @@
 802a0bcc:fabs__6hkMathFf
 80291dd8:max2f__6hkMathFff
 
+// CameraController
+8009c69c:changeInput__16CameraControllerFQ216CameraController4Kind
+8009be74:getInstance__16CameraControllerFv
+
+// cmAnimationController
+800a624c:setScnAnmRes__21cmAnimationControllerFPPQ34nw4r3g3d4SCN0Ui
+800a6348:releaseScnAnmRes__21cmAnimationControllerFv
+
 // Stage
 27,1,002225A8:createObj__5StageFv
 27,1,0022269C:createObjPokeTrainer__5StageFiiiii
