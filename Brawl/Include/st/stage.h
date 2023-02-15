@@ -130,11 +130,11 @@ public:
     // 28
     stRange m_aiRange;
     // 38
-    CameraParam* m_cameraParam1;
+    cmStageParam* m_cameraParam1;
     // 3c
     char _3c[0x4];
     // 40
-    CameraParam* m_cameraParam2;
+    cmStageParam* m_cameraParam2;
     // 44
     char _spacer2[4];
     // 48

@@ -2,56 +2,9 @@
 
 #include <types.h>
 #include <gf/gf_task.h>
-#include <st/st_positions.h>
+#include <cm/cm_stage_param.h>
 #include <cm/cm_controller_anm.h>
 #include <cm/cm_quake.h>
-
-class CameraParam {
-    stRange m_range;
-    float m_verticalRotationFactor;
-    float m_horizontalRotationFactor;
-    float m_minZ;
-    float m_maxZ;
-    float m_32;
-    float m_36;
-    float m_40;
-    float m_characterBubbleBufferMultiplier;
-    float m_48;
-    float m_speed;
-    float m_tiltThreshold;
-    float m_fov;
-
-    STATIC_CHECK(sizeof(CameraParam) == 0x40)
-};
-
-class CameraParamFixed {
-    Vec3f m_pos;
-    float m_fov;
-    float m_verticalAngle;
-    float m_horizontalAngle;
-
-    STATIC_CHECK(sizeof(CameraParamFixed) == 24)
-};
-
-class CameraParamPaused {
-    float m_angle;
-    float m_zoomIn;
-    float m_zoomDefault;
-    float m_zoomOUt;
-    float m_rotYMin;
-    float m_rotYMax;
-    float m_rotXMin;
-    float m_rotXMax;
-    Vec3f m_pos;
-    float m_44;
-    float m_48;
-    float m_52;
-    float m_56;
-    char _60[16];
-
-    STATIC_CHECK(sizeof(CameraParamPaused) == 76)
-};
-
 
 class CameraController : public gfTask {
 public:
@@ -90,11 +43,11 @@ public:
     gfCameraController* m_techController;
     void* m_quake;
     gfCameraController* m_demoController;
-    CameraParam m_cameraParam;
-    CameraParamPaused m_cameraParamPaused;
-    CameraParamFixed m_cameraParamFixed;
-    stRange m_cameraRange;
-    stRange m_deadRange;
+    cmStageParam m_stageCameraParam;
+    cmStageParamPaused m_stageCameraParamPaused;
+    cmStageParamFixed m_stageCameraParamFixed;
+    stRange m_stageCameraRange;
+    stRange m_stageDeadRange;
     char _328[92];
 
     virtual void processCamera();
