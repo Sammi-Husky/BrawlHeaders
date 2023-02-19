@@ -13,7 +13,7 @@ struct grGimmickLadderData {
     char _49[1];
     bool m_restrictUpExit;
     bool m_51;
-    char _52[32];
+    char m_nodeName[32]; // unused
     stTriggerData m_isValidTriggerData;
     stTriggerData m_motionPathTriggerData;
 
