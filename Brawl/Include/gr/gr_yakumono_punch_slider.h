@@ -8,7 +8,7 @@
 struct grGimmickPunchSliderData {
     grGimmickMotionPathData m_motionPathData;
     grGimmickMotionPathData m_sliderPathData;
-    soCollisionHitData m_hitData;
+    grGimmick::HitData m_hitData;
     char _48[4];
     grGimmick::AttackData m_attackData;
     char _140[8];

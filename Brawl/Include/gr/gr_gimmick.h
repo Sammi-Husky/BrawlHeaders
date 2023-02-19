@@ -91,6 +91,16 @@ public:
         STATIC_CHECK(sizeof(AttackData) == 88)
     };
 
+    struct HitData {
+        Vec3f m_startOffset;
+        Vec3f m_endOffset;
+        float m_size;
+        u8 m_nodeIndex;
+        char _29[3];
+
+        STATIC_CHECK(sizeof(HitData) == 32)
+    };
+
     struct AttackDetails {
         union {
             unsigned int m_collisionCategoryMask;
