@@ -15,8 +15,23 @@ struct stTriggerData {
     STATIC_CHECK(sizeof(stTriggerData) == 4)
 };
 
+struct SimpleAreaData {
+    bool m_useTwoBoundingPoints;
+    char _1[3];
+    Vec2f m_pos1;
+    Vec2f m_pos2;
+};
+
+struct grAdventureTruckReactorData : public SimpleAreaData {
+    stTriggerData m_triggerData;
+
+    STATIC_CHECK(sizeof(grAdventureTruckReactorData) == 24)
+};
+
 struct GimmickAreaData {
-    char _0[16];
+    int m_0;
+    int m_4;
+    char _8[8];
     short m_16;
     short m_18;
     char _20[4];
@@ -96,6 +111,8 @@ class stObsTriggerArea : public stObsTriggerCB {
     virtual void setAreaSleep(bool isSleep);
     virtual GimmickAreaData* getAreaDataPointer();
     virtual void setArea(gfArea* area);
+
+    void setDefaultGimmickAreaData(SimpleAreaData* simpleAreaData, GimmickAreaData *gimmickAreaData);
 };
 
 class stObsTriggerSquareBeltConveyorCB : public stObsTriggerArea {
