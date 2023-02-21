@@ -10,6 +10,7 @@
 enum GimmickKind {
     GimmickKind_Valid = 0x0,
     GimmickKind_RebirthPoint = 0x5,
+    GimmickKind_TruckReactor = 0x6,
     GimmickKind_Wind = 0xc,
     GimmickKind_Wind2nd = 0xd,
     GimmickKind_BeltConveyor = 0xe,
