@@ -86,6 +86,9 @@
 803fa674:strtok__FPcPc
 803fa798:strstr__FPcPc
 
+// module
+80043b18:moUnResolvedMessage__FPCc
+
 // strtoul
 803fc704:atoi__FPCc
 
@@ -171,7 +174,7 @@
 
 // gfArchive
 8001370c:__ct__9gfArchiveFv
-80015ddc:getData__9gfArchiveF11ARCNodeTypeiUi
+80015ddc:getData__9gfArchiveF11ARCNodeTypeiUs
 80015e14:getData__9gfArchiveF11ARCNodeTypeiPiUi
 80013b1c:__dt__9gfArchiveFv
 
@@ -400,14 +403,14 @@
 
 // stClassInfo
 27,1,002257bc:__ct__11stClassInfoFv
-27,1,002258fc:setClassInfo__11stClassInfoFiP11stClassInfo
+27,1,002258fc:setClassInfo__11stClassInfoF9StageKindP11stClassInfo
 27,1,002258a8:__dt__11stClassInfoFv
 
 // stMelee
-27,1,00238bdc:__ct__7stMeleeFPci
+27,1,00238bdc:__ct__7stMeleeFPCci
 27,1,002395bc:processBegin__7stMeleeFv
 27,1,002395c0:processUpdate__7stMeleeFv
-27,1,00239660:update__7stMeleeFv
+27,1,00239660:update__7stMeleeFf
 27,1,002394cc:setCameraLimitRange__7stMeleeFffff
 27,1,00239534:resetCameraLimitRange__7stMeleeFv
 27,1,00239ae4:checkChangeScene__7stMeleeFv
@@ -421,6 +424,7 @@
 27,1,002394A4:updateWind2ndOnly__7stMeleeFv
 27,1,0023959C:zoomInCamera__7stMeleeFv
 27,1,00239574:zoomOutCamera__7stMeleeFff
+27,1,00238DB4:setPlayerPositionIndexSerial__7stMeleeFv
 
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv
@@ -623,7 +627,7 @@
 27,1,00279D50:onDamage__8grMadeinFiP8soDamageP20soDamageAttackerInfo
 27,1,00279E04:onInflictEach__8grMadeinFP14soCollisionLogf
 27,1,00278c54:update__8grMadeinFf
-27,1,00275778:create__8grMadeinFiPcPc8HeapType
+27,1,00275778:create__8grMadeinFiPcPcQ25Heaps8HeapType
 27,1,00279f14:receiveCollMsg_Landing__8grMadeinFP12grCollStatusP16grCollisionJointb
 27,1,00278DC4:setTgtNode__8grMadeinFPc
 27,1,00278DC8:getTgtNode__8grMadeinFv
@@ -698,6 +702,8 @@
 27,1,002A1718:getInstance__9itManagerFv
 27,1,002A55CC:isCompItemKindArchive__9itManagerF6itKindUib
 27,1,002A7070:createItem__9itManagerF6itKindUiiiUciii
+27,1,002A8640:getItemNum__9itManagerF6itKind
+27,1,002A7BA0:removeItem__9itManagerFP8BaseItem
 
 // BaseItem
 27,1,0028C834:getParam__8BaseItemFUi

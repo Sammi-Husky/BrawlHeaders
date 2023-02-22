@@ -23,6 +23,8 @@ public:
 
     bool isCompItemKindArchive(itKind kind, u32 variation, bool);
     BaseItem* createItem(itKind kind, u32 variation, int, int, u8, int, int, int);
+    u32 getItemNum(itKind kind);
+    void removeItem(BaseItem*);
     static itManager* getInstance();
 
     STATIC_CHECK(sizeof(itManager) == 0x14c0)
