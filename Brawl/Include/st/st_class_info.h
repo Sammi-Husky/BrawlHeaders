@@ -1,16 +1,17 @@
 #pragma once
 
 #include <types.h>
+#include <gm/gm_lib.h>
 
 class stClassInfo {
 private:
 public:
-    void setClassInfo(int, stClassInfo*);
+    void setClassInfo(Stages::srStageKind, stClassInfo*);
     stClassInfo();
     virtual ~stClassInfo();
 };
 
-template <int I, class T>
+template <Stages::srStageKind I, class T>
 class stClassInfoImpl : public stClassInfo {
 private:
 public:
@@ -21,18 +22,18 @@ public:
 };
 
 #define ST_CLASS_INFO                              \
-    template <int I, typename T>                   \
+    template <Stages::srStageKind I, typename T>   \
     T* stClassInfoImpl<I, T>::create()             \
     {                                              \
         T* stage = new (Heaps::StageInstance) T(); \
         return stage;                              \
     };                                             \
-    template <int I, typename T>                   \
+    template <Stages::srStageKind I, typename T>   \
     stClassInfoImpl<I, T>::~stClassInfoImpl()      \
     {                                              \
         setClassInfo(I, 0);                        \
     }                                              \
-    template <int I, typename T>                   \
+    template <Stages::srStageKind I, typename T>   \
     void stClassInfoImpl<I, T>::preload()          \
     {                                              \
         return;                                    \

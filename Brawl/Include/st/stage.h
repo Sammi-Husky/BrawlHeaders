@@ -16,6 +16,7 @@
 #include <st/st_trigger.h>
 #include <st/st_collision_attr_param.h>
 #include <cm/cm_camera_controller.h>
+#include <gm/gm_lib.h>
 
 namespace StSeUtil {
     class SeSeq {
@@ -122,7 +123,7 @@ public:
     // 0
     char _spacer[0x04];
     // 4
-    int m_stageID;
+    srStageKind m_stageKind;
     // 8
     char _spacer1[0x10];
     // 18
