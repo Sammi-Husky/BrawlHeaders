@@ -39,7 +39,7 @@ namespace Stages {
         DxOnett = 0x2C,
         DxGreens = 0x2D,
         DxPStadium = 0x2E,
-        DxRCruise = 0x2F,
+        DxCruise = 0x2F,
         DxCorneria = 0x30,
         DxBigBlue = 0x31,
         DxZebes = 0x32,
