@@ -189,7 +189,7 @@ public:
     void initPosPokeTrainer(int unk1, int unk2);
     void setStageAttackData(grGimmickDamageFloor* attackData, u32 index);
 
-    Stage(char* name, int stageID);
+    Stage(char* name, srStageKind stageKind);
     virtual void processBegin();
     virtual void processAnim();
     virtual void processUpdate();

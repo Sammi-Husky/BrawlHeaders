@@ -23,7 +23,7 @@ protected:
     char wndOnlyData2[0xc];
 
 public:
-    stMelee(char const* name, int stageID);
+    stMelee(char const* name, srStageKind stageKind);
     virtual void processBegin();
     virtual void processUpdate();
     virtual void getItemGenPac(gfArchive** archive);

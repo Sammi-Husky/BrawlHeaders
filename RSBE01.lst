@@ -407,7 +407,7 @@
 27,1,002258a8:__dt__11stClassInfoFv
 
 // stMelee
-27,1,00238bdc:__ct__7stMeleeFPCci
+27,1,00238bdc:__ct__7stMeleeFPCcQ26Stages11srStageKind
 27,1,002395bc:processBegin__7stMeleeFv
 27,1,002395c0:processUpdate__7stMeleeFv
 27,1,00239660:update__7stMeleeFf
