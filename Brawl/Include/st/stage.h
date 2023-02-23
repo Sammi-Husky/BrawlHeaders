@@ -201,11 +201,11 @@ public:
 
     virtual void createObj();
     virtual void createObjPokeTrainer(gfArchive* filedata, int fileindex, const char* name, int unk1, int unk2);
-    virtual int getPokeTrainerPointNum();
-    virtual void getPokeTrainerPointData(int* unk1, int unk2);
-    virtual float getPokeTrainerPositionZ();
-    virtual int getPokeTrainerDrawLayer();
-    virtual bool isAdventureStage();
+    virtual int getPokeTrainerPointNum() { return 0; }
+    virtual void getPokeTrainerPointData(int* unk1, int unk2) { }
+    virtual float getPokeTrainerPositionZ() { return 0.0f; }
+    virtual int getPokeTrainerDrawLayer() { return 0; }
+    virtual bool isAdventureStage() { return false; }
     virtual void getItemPac(gfArchive** brres, gfArchive** param, int itemID, int variantID);
     virtual void getItemGenPac(gfArchive** archive);
     virtual void getItemPacEnemyFigure(); // TODO
@@ -218,17 +218,22 @@ public:
     virtual void process();
     virtual void updateStagePositions();
     virtual void debugCollision();
-    virtual stRange* getAIRange();
-    virtual int getDefaultLightSetIndex();
+    virtual stRange* getAIRange() { return &m_aiRange; }
+    virtual int getDefaultLightSetIndex() { return 0x14; }
     virtual int getZoneLightSetIndex();
-    virtual int getScrollDir(u32 unk1);
+    virtual int getScrollDir(Vec3f* unk1) {
+        unk1->m_x = 0.0f;
+        unk1->m_y = 0.0f;
+        unk1->m_z = 0.0f;
+        return 0;
+    }
     virtual void clearCameraParam();
     virtual void initCameraParam();
     virtual void startLoadLocalData();
     virtual bool isLoadLocalData();
     virtual int entryLocalData();
     virtual void removeLocalData();
-    virtual void appearanceFighterLocal();
+    virtual void appearanceFighterLocal() { }
     virtual void getFighterStartPos(Vec3f* startPos, int fighterIndex);
     virtual void getFighterReStartPos(Vec3f* startPos, int fighterIndex);
     virtual bool isReStartSamePoint();
@@ -245,19 +250,26 @@ public:
     virtual float getFighterDeadEffectSizeRate();
     virtual float getEnemyDeadEffectSizeRate();
     virtual float getEnableZ();
-    virtual int getBgmID();         // TODO
-    virtual int getBgmIDOverload(); // TODO, overloaded
-    virtual int getNowStepBgmID();
-    virtual int getBgmOptionID();
-    virtual bool isBgmChange();
-    virtual void getBgmChangeID(u32 unk1, float unk2);         // TODO
-    virtual void setBgmChange(float unk1, u32 unk2, u32 unk3); // TODO
-    virtual float getBgmVolume();
-    virtual float getBgmPlayOffsetFrame();
-    virtual bool isNextStepBgmEqualNowStepBgmFromFlag(); // TODO
-    virtual void setFrameRuleTime(float unk1);
-    virtual float getFrameRuleTime();      // TODO
-    virtual void notifyTimmingGameStart(); // TODO
+    virtual int getBgmID();
+    virtual int getBgmIDOverload() { return 0; }
+    virtual int getNowStepBgmID() { return 0; }
+    virtual int getBgmOptionID() { return 0; }
+    virtual bool isBgmChange() { return m_unk2; }
+    virtual void getBgmChangeID(u32* unk1, float* unk2) {
+        *unk1 = m_unk3;
+        *unk2 = m_unk4;
+    }
+    virtual void setBgmChange(float unk1, bool unk2, u32 unk3) {
+        m_unk2 = unk2;
+        m_unk3 = unk3;
+        m_unk4 = unk1;
+    }
+    virtual float getBgmVolume() { return 1.0f; }
+    virtual float getBgmPlayOffsetFrame() { return 0.0f; }
+    virtual bool isNextStepBgmEqualNowStepBgmFromFlag() { return false; }
+    virtual void setFrameRuleTime(float unk1) { m_frameRuleTime = unk1; }
+    virtual float getFrameRuleTime() { return m_frameRuleTime; }
+    virtual void notifyTimmingGameStart() { }
     virtual bool isEnd();
     virtual bool isEventEnd();
     virtual void enableDevil();
@@ -277,9 +289,9 @@ public:
     virtual void setMotionSubRatio(float unk1, float unk2);  // TODO
     virtual void saveMotionSubRatio(int unk1);               // TODO
     virtual void restoreMotionSubRatio(int unk1);            // TODO
-    virtual bool isCameraLocked();                           // TODO
-    virtual bool isBossBattleMode();                         // TODO
-    virtual bool isSimpleBossBattleMode();                   // TODO
+    virtual bool isCameraLocked() { return true; }
+    virtual bool isBossBattleMode() { return false; }
+    virtual bool isSimpleBossBattleMode() { return false; }
     virtual bool isAppear();                                 // TODO
     virtual bool isStartAppearTimming();                     // TODO
     virtual void getMadeinAiData();                          // TODO
@@ -291,9 +303,9 @@ public:
     virtual void stAdventureEventGetItem(int, int, int, int, int);     // TODO
     virtual void setStageOutEffectInit();       // TODO
     virtual void setStageInEffectInit();        // TODO
-    virtual int helperStarWarp();               // TODO
-    virtual int initializeFighterAttackRatio(); // TODO
-    virtual void startFighterEvent();           // TODO
+    virtual int helperStarWarp() { return 0; }
+    virtual int initializeFighterAttackRatio() { return 0; }
+    virtual void startFighterEvent() { }
     virtual int getZoneState();                 // TODO
     virtual void getZonePos(Vec3f* pos);
     virtual float getMagmaHeight();             // TODO
