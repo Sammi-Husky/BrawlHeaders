@@ -6,15 +6,15 @@
 #include <StaticAssert.h>
 
 enum ARCNodeType {
-    DATA_TYPE_NONE = 0x0,
-    DATA_TYPE_MISC = 0x1,
-    DATA_TYPE_MODEL = 0x2,
-    DATA_TYPE_TEX = 0x3,
-    DATA_TYPE_ANIM = 0x4,
-    DATA_TYPE_SCENE = 0x5,
-    DATA_TYPE_6 = 0x6,
-    DATA_TYPE_GROUP = 0x7,
-    DATA_TYPE_EFFECT = 0x8
+    Data_Type_None = 0x0,
+    Data_Type_Misc = 0x1,
+    Data_Type_Model = 0x2,
+    Data_Type_Tex = 0x3,
+    Data_Type_Anim = 0x4,
+    Data_Type_Scene = 0x5,
+    Data_Type_6 = 0x6,
+    Data_Type_Group = 0x7,
+    Data_Type_Effect = 0x8
 };
 
 class gfArchive {
