@@ -27,8 +27,8 @@ class emManager {
     virtual ~emManager();
 
 public:
-    int getPreloadArchiveCountFromKind(EnemyID enemyId);
-    int preloadArchive(gfArchive* param, gfArchive* brres, gfArchive* enmCommon, gfArchive* primFaceBrres, EnemyID enemyID, bool isSoundRequest);
+    int getPreloadArchiveCountFromKind(EnemyKind enemyKind);
+    int preloadArchive(gfArchive* param, gfArchive* brres, gfArchive* enmCommon, gfArchive* primFaceBrres, EnemyKind enemyKind, bool isSoundRequest);
     int createEnemy(emCreate* create);
     void removeEnemyAll();
     void removeArchiveAll();

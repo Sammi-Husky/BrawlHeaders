@@ -281,10 +281,10 @@
 27,1,0022579C:getPokeTrainerDrawLayer__5StageFv
 27,1,00225794:isAdventureStage__5StageFv
 27,1,002225ac:initPosPokeTrainer__5StageFii
-27,1,00224AF4:getItemPac__5StageFPP9gfArchivePP9gfArchiveii
+27,1,00224AF4:getItemPac__5StageFPP9gfArchivePP9gfArchive6itKindi
 27,1,00224AF8:getItemGenPac__5StageFPP9gfArchive
 27,1,00224AFC:getItemPacEnemyFigure__5StageFv
-27,1,00224B00:getEnemyPac__5StageFPP9gfArchivePP9gfArchivePP9gfArchivePP9gfArchive7EnemyID
+27,1,00224B00:getEnemyPac__5StageFPP9gfArchivePP9gfArchivePP9gfArchivePP9gfArchive9EnemyKind
 27,1,00224B04:getAdvRadarData__5StageFPP9gfArchivePP9gfArchive
 27,1,00221B68:initializeStage__5StageFv
 27,1,00221F80:closeStage__5StageFv
@@ -748,9 +748,9 @@
 // emManager
 41,1,0000C6B0:create__9emManagerFUiUiUc
 41,1,0000C804:getInstance__9emManagerFv
-41,1,0000D20C:preloadArchive__9emManagerFP9gfArchiveP9gfArchiveP9gfArchiveP9gfArchive7EnemyIDb
+41,1,0000D20C:preloadArchive__9emManagerFP9gfArchiveP9gfArchiveP9gfArchiveP9gfArchive9EnemyKindb
 41,1,0000C9D4:createEnemy__9emManagerFP8emCreate
-41,1,0000D6B8:getPreloadArchiveCountFromKind__9emManagerF7EnemyID
+41,1,0000D6B8:getPreloadArchiveCountFromKind__9emManagerF9EnemyKind
 41,1,0000CCE4:removeEnemyAll__9emManagerFv
 41,1,0000D528:removeArchiveAll__9emManagerFv
 41,1,0000C7B4:remove__9emManagerFv

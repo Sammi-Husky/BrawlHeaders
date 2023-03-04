@@ -13,6 +13,7 @@
 #include <st/st_positions.h>
 #include <types.h>
 #include <em/em_create.h>
+#include <it/item.h>
 #include <st/st_trigger.h>
 #include <st/st_collision_attr_param.h>
 #include <cm/cm_camera_controller.h>
@@ -207,10 +208,10 @@ public:
     virtual float getPokeTrainerPositionZ() { return 0.0f; }
     virtual int getPokeTrainerDrawLayer() { return 0; }
     virtual bool isAdventureStage() { return false; }
-    virtual void getItemPac(gfArchive** brres, gfArchive** param, int itemID, int variantID);
+    virtual void getItemPac(gfArchive** brres, gfArchive** param, itKind itemID, int variantID);
     virtual void getItemGenPac(gfArchive** archive);
     virtual void getItemPacEnemyFigure(); // TODO
-    virtual void getEnemyPac(gfArchive **brres, gfArchive **param, gfArchive **enmCommon, gfArchive **primFaceBrres, EnemyID enemyID);
+    virtual void getEnemyPac(gfArchive **brres, gfArchive **param, gfArchive **enmCommon, gfArchive **primFaceBrres, EnemyKind enemyKind);
     virtual void getAdvRadarData(gfArchive**, gfArchive**);
     virtual void initializeStage();       // TODO
     virtual void closeStage();

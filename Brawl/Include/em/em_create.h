@@ -5,7 +5,7 @@
 #include <mt/mt_vector.h>
 #include <gr/gr_gimmick_motion_path.h>
 
-enum EnemyID {
+enum EnemyKind {
     Enemy_Invalid = -0x1,
     Enemy_Kuribo = 0x0,
     Enemy_Popperam = 0x1,
@@ -63,7 +63,7 @@ class emCreate {
 public:
     u8 m_difficultyLevel;
     char _1[3];
-    EnemyID m_enemyID;
+    EnemyKind m_enemyKind;
     int m_8;
     float m_facingDirection;
     Vec3f m_spawnPos;
@@ -75,7 +75,7 @@ public:
     float m_posX2;
     float m_posY1;
     float m_posY2;
-    EnemyID m_connectedEnemyID;
+    EnemyKind m_connectedEnemyKind;
     void* m_epbm;
     void* m_epsp;
     grGimmickMotionPath* m_motionPath;

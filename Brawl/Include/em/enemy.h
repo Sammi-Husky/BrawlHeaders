@@ -10,9 +10,9 @@ class Enemy : public StageObject, public soStatusEventObserver, public soCollisi
         public soCollisionSearchEventObserver, public soCaptureEventObserver, public soCollisionAbsorberEventObserver,
         public soCollisionReflectorEventObserver {
 
-    EnemyID m_enemyID;
+    EnemyKind m_enemyKind;
     char _176[4];
-    EnemyID m_connectedEnemyID;
+    EnemyKind m_connectedEnemyKind;
     u32 m_difficultyLevel;
     char _188[12];
     grGimmickMotionPath* m_motionPath;
