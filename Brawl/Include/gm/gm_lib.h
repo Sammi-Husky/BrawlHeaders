@@ -50,6 +50,7 @@ namespace Stages {
         OTrain = 0x37,
         TBreak = 0x38,
         CRoll = 0x39,
+        SSE = 0x3d,
         BattleS = 0x41
     };
 }; // namespace Stages

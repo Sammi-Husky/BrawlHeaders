@@ -9,7 +9,11 @@ class emManager {
 
     template <typename T>
     class Entry {
-        char _0[0x14];
+        char _0[0x4];
+        EnemyKind m_enemyKind;
+        int m_parentCreateId;
+        int m_createId;
+        int m_soundGroupOffset;
         T* m_dataPtr;
 
         STATIC_CHECK(sizeof(Entry) == 0x14)

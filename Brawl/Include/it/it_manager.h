@@ -3,13 +3,45 @@
 #include <types.h>
 #include <StaticAssert.h>
 #include <it/item.h>
+#include <it/it_archive.h>
+#include <it/it_gen_archive.h>
 #include <so/so_dispose_instance_manager.h>
 
 class itManager : public gfTask, public soDisposeInstanceEventObserver {
-
-    char _spacer[5236];
-
 public:
+    char _76[120];
+    int m_numItems;
+    soArrayList<itArchive*, 128> m_itArchiveArrayList;
+    bool m_drawDone;
+    char _1749[3];
+    soArrayList<BaseItem*, 64> m_itemArrayList;
+    soArrayList<BaseItem*, 64> m_itemArrayList2;
+    soArrayList<BaseItem*, 64> m_itemArrayList3;
+    char _4080[25];
+    u8 m_itKindNums[178];
+    char _4283[1];
+    itKind m_nextAssistItKind;
+    int m_numAssists;
+    char _4292[4];
+    soArrayList<itKind, 12> m_pokemonItKindArrayList;
+    char _4448[4];
+    int m_numPokemon;
+    int m_numPokeballs;
+    char _4460[4];
+    soArrayList<itGenArchive*, 3> m_itGenArchiveArrayList;
+    char _4508[24];
+    float m_itKindLotRates[178];
+    int m_crateVariation;
+    char _5248[12];
+    int m_smashBallDropFrame1;
+    int m_smashBallDropFrame2;
+    char _5268[28];
+    int m_itemGenLevel;
+    bool m_needsToProcess;
+    char _5301[3];
+    void* m_figureManager;
+    char _5308[4];
+
     virtual void processDefault();
     virtual void processBegin();
     virtual void processUpdate();
@@ -23,6 +55,7 @@ public:
 
     bool isCompItemKindArchive(itKind kind, u32 variation, bool);
     BaseItem* createItem(itKind kind, u32 variation, int, int, u8, int, int, int);
+    BaseItem* createItemInstance(itCreate* create);
     u32 getItemNum(itKind kind);
     void removeItem(BaseItem*);
     static itManager* getInstance();

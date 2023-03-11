@@ -191,6 +191,26 @@ enum itKind {
     Item_Unknown5 = 0x7D5
 };
 
+struct itCreate {
+    int m_index;
+    int m_connectedTaskId;
+    int m_8;
+    itKind m_kind;
+    u32 m_variation;
+    Vec3f* m_pos1;
+    Vec3f* m_pos2;
+    float m_28;
+    int m_32;
+    int m_36;
+    u8 m_40;
+    char _41[3];
+    int m_44;
+    int m_48;
+    int m_52;
+
+    STATIC_CHECK(sizeof(itCreate) == 56)
+};
+
 class BaseItem : public StageObject, public soStatusEventObserver, public soSituationEventObserver,
         public soCollisionAttackEventObserver, public soCollisionShieldEventObserver, public soCollisionReflectorEventObserver,
         public soCollisionSearchEventObserver, public soGimmickEventObserver, public soArticle {
@@ -198,6 +218,7 @@ class BaseItem : public StageObject, public soStatusEventObserver, public soSitu
     char _spacer[15284];
 
 public:
+    BaseItem(itCreate* create);
     virtual void processUpdate();
     virtual void processMapCorrection();
     virtual void processFixPosition();
@@ -264,7 +285,6 @@ public:
 
     void warp(Vec3f* pos);
     void setVanishMode(bool);
-
 
     STATIC_CHECK(sizeof(BaseItem) == 0x3d60)
 };

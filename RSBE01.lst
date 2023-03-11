@@ -702,6 +702,7 @@
 27,1,002A1718:getInstance__9itManagerFv
 27,1,002A55CC:isCompItemKindArchive__9itManagerF6itKindUib
 27,1,002A7070:createItem__9itManagerF6itKindUiiiUciii
+27,1,002A8124:createItemInstance__9itManagerFP8itCreate
 27,1,002A8640:getItemNum__9itManagerF6itKind
 27,1,002A7BA0:removeItem__9itManagerFP8BaseItem
 
