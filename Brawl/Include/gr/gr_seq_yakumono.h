@@ -5,7 +5,7 @@
 
 class grSeqYakumono : public grYakumono {
 
-protected
+protected:
     class SeSeqBank {
         char _0[8];
 
