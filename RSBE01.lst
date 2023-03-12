@@ -9,7 +9,7 @@
 27,6,2E68: g_ftManager
 27,6,2E70: g_ftAudienceManager
 27,6,5518: g_aiMgr
-27,6,E8: g_Gravity
+27,6,E8: g_soWorld
 8059FF80:g_gfSceneRoot
 
 // System
