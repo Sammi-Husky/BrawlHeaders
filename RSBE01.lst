@@ -652,6 +652,9 @@
 27,1,0026EFD8:isStartFrame__19grGimmickMotionPathFv
 27,1,0026EFA0:applyEndFrame__19grGimmickMotionPathFv
 
+// StageObject
+27,1,00003C64:activate__11StageObjectFffP5Vec3fb
+
 // soCollisionHitGroup
 27,1,000426AC:setInvincibleGlobal__19soCollisionHitGroupFv
 
@@ -707,11 +710,13 @@
 27,1,002A7BA0:removeItem__9itManagerFP8BaseItem
 
 // BaseItem
+27,1,0027F564:__ct__8BaseItemFP8itCreate
 27,1,0028C834:getParam__8BaseItemFUi
 27,1,0028C85C:getParam__8BaseItemFi
 27,1,0028C884:getParamFloat__8BaseItemFUi
 27,1,0028DE00:warp__8BaseItemFP5Vec3f
 27,1,0028C7E8:setVanishMode__8BaseItemFb
+27,1,0028FF6C:setSafePos__8BaseItemFP5Vec2f
 
 // Yakumono
 27,1,0026383C:setReactionFrame__8YakumonoFi

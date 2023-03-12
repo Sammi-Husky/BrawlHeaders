@@ -193,7 +193,7 @@ enum itKind {
 
 struct itCreate {
     int m_index;
-    int m_connectedTaskId;
+    int m_creatorItemTaskId;
     int m_8;
     itKind m_kind;
     u32 m_variation;
@@ -230,7 +230,7 @@ public:
     virtual ~BaseItem();
 
     // TODO: Verify parameters
-    virtual void reset(float, float*);
+    virtual void reset(float, Vec3f* pos);
     virtual void remove();
     virtual int getArticleId();
     virtual int getArticleEventManageId();
@@ -283,6 +283,7 @@ public:
     float getParam(int param);
     float getParamFloat(unsigned int param);
 
+    void setSafePos(Vec2f* pos);
     void warp(Vec3f* pos);
     void setVanishMode(bool);
 

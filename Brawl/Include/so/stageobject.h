@@ -57,5 +57,7 @@ public:
     virtual void notifyArticleEventEject(int unk1, int unk2, int* unk3, int* unk4);
     virtual void updateRoughPos();
 
+    void activate(float, float, Vec3f* pos, bool);
+
     STATIC_CHECK(sizeof(StageObject) == 100)
 };

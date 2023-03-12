@@ -3,13 +3,6 @@
 #include <st/st_common_gimmick.h>
 #include <types.h>
 
-struct Gravity {
-    float m_up;
-    float m_down;
-};
-
-extern Gravity* g_Gravity;
-
 class stMelee : public stCommonGimmick {
 protected:
     // 0

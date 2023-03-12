@@ -32,7 +32,8 @@ public:
     char _4508[24];
     float m_itKindLotRates[178];
     int m_crateVariation;
-    char _5248[12];
+    int m_smashBallDropTimer;
+    char _5252[8];
     int m_smashBallDropFrame1;
     int m_smashBallDropFrame2;
     char _5268[28];
