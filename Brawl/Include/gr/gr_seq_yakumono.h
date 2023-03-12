@@ -4,8 +4,18 @@
 #include <StaticAssert.h>
 
 class grSeqYakumono : public grYakumono {
-protected:
-    char _spacer[12];
+
+protected
+    class SeSeqBank {
+        char _0[8];
+
+        STATIC_CHECK(sizeof(SeSeqBank) == 8)
+    };
+
+    SeSeqBank* m_seSeqBanks;
+    u32 m_numSeSeqBanks;
+
+    char _spacer[4];
 
 public:
     grSeqYakumono(char* taskName);

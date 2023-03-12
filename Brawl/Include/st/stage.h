@@ -314,7 +314,7 @@ public:
     virtual float getAcidHeight();              // TODO
     virtual int getIteamDropStatus();           // TODO
     virtual bool createWind2ndOnly();
-    virtual int getWind2ndOnlyData();           // TODO
+    virtual grGimmickWindData2nd* getWind2ndOnlyData(); // TODO
     virtual void updateWind2ndOnly();           // TODO
     virtual void setVision();                   // TODO
 };

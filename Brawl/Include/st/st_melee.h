@@ -13,7 +13,7 @@ protected:
     grGimmickWindData2nd* m_windAreaData2nd;
 
     // 0x18
-    char wndOnlyData2[0xc];
+    char _396[0xc];
 
 public:
     stMelee(char const* name, srStageKind stageKind);
@@ -23,7 +23,7 @@ public:
     virtual void getFighterStartPos(Vec3f* startPos, int fighterIndex);
     virtual void getFighterReStartPos(Vec3f* startPos, int fighterIndex);
     virtual bool createWind2ndOnly();
-    virtual int getWind2ndOnlyData() { return (int) m_windAreaData2nd; } // TODO
+    virtual grGimmickWindData2nd* getWind2ndOnlyData() { return m_windAreaData2nd; } // TODO
     virtual void updateWind2ndOnly();           // TODO
     virtual bool isReStartSamePoint() { return true; }
     virtual void update(float deltaFrame);

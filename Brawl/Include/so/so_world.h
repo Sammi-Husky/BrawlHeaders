@@ -3,7 +3,8 @@
 #include <types.h>
 #include <StaticAssert.h>
 
-struct soWorld {
+class soWorld {
+public:
     float m_gravityUp;
     float m_gravityDown;
     float m_8;
