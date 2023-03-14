@@ -4,6 +4,7 @@
 #include <StaticAssert.h>
 #include <so/stageobject.h>
 #include <so/so_article.h>
+#include <ut/ut_uncopyable.h>
 
 enum itKind {
     Item_AssistTrophy = 0x00,
@@ -288,4 +289,68 @@ public:
     void setVanishMode(bool);
 
     STATIC_CHECK(sizeof(BaseItem) == 0x3d60)
+};
+
+class itCustomizerInterface : public utUnCopyable {
+    virtual ~itCustomizerInterface();
+    virtual void onConstruct(BaseItem* item);
+    virtual void onDestruct(BaseItem* item);
+    virtual void onReset(BaseItem* item);
+    virtual void onProcessUpdate(BaseItem* item);
+    virtual void onProcessFixPosition(BaseItem* item);
+    virtual void onProcessHit(BaseItem* item);
+    virtual void onProcessFixCamera(BaseItem* item);
+    virtual void onProcessGameProc(BaseItem* item);
+    virtual void onRenderPre(BaseItem* item);
+    virtual void onRenderDebug(BaseItem* item);
+    virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser); // TODO: Verify observer parameters
+    virtual void onNotifyEventAnimCmd(BaseItem* item, acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
+    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int);
+    virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
+    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, gfTask* task, int unk4);
+    virtual bool onNotifyEventCaptureStatus(BaseItem* item); // TODO
+    virtual void onNotifyEventGimmick(BaseItem* item, soGimmickEventInfo *eventInfo,int *taskId);
+    virtual void onUpdateKinetic(BaseItem* item);
+    virtual void onUpdateAiDir(BaseItem* item, Vec2f*, Vec2f*, Vec2f*, Vec2f*);
+    virtual void onUpdateAiMove(BaseItem* item, Vec2f*, Vec2f*, Vec2f*);
+    virtual bool onSearchTarget(BaseItem* item, int* taskId, Vec3f pos, int);
+    virtual int onShoot(BaseItem* item, float lr, float, int);
+    virtual int onShootBlanks(BaseItem* item, int);
+    virtual int onGetBullet(BaseItem* item);
+    virtual void onThrowAttack(BaseItem* item, float, float* lr, Vec3f*, Vec3f*, float* powerMulStatus, bool*);
+    virtual void onAction(BaseItem* item, int, float rate);
+    virtual int onResult(BaseItem* item);
+    virtual bool onHave(BaseItem* item, int);
+    virtual bool onPreDamageCheck(BaseItem* item, int, void*);
+    virtual bool onDamage(BaseItem* item, int, void*);
+    virtual bool onReflect(BaseItem* item);
+    virtual void onPreBound(BaseItem* item, float*, u32);
+    virtual bool onRemoveModelConstraint(BaseItem* item, int);
+    virtual bool onEnumFighter(BaseItem* item, StageObject*);
+    virtual int onGetLayerType(BaseItem* item);
+    virtual bool isTreadPassive(BaseItem* item);
+    virtual bool isUseTurnDamage(BaseItem* item);
+    virtual bool isUseSpeedDamage(BaseItem* item);
+    virtual bool isUseShake(BaseItem* item);
+    virtual bool isUseScaleZ(BaseItem* item);
+    virtual bool isUseThrowRotParam(BaseItem* item);
+    virtual bool isSafe(BaseItem* item);
+    virtual bool isConstraintHave(BaseItem* item);
+    virtual bool isReferenceControlerHave(BaseItem* item);
+    virtual u32 getKineticFlags(BaseItem* item);
+    virtual bool isUsePhysics(BaseItem* item);
+
+    STATIC_CHECK(sizeof(itCustomizerInterface) == 12)
+};
+
+template <class T>
+class itCustomizer : public itCustomizerInterface {
+    virtual ~itCustomizer();
+};
+
+class itNullCustomizer : public itCustomizer<itNullCustomizer> {
+    virtual ~itNullCustomizer();
+
+    STATIC_CHECK(sizeof(itNullCustomizer) == 12)
 };

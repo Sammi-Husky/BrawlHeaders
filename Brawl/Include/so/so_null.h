@@ -15,7 +15,7 @@ class soNullable {
 public:
     virtual bool isNull();
 
-    bool m_null;
+    bool m_isNull;
     char _spacer[3];
 
     STATIC_CHECK(sizeof(soNullable) == 8)
