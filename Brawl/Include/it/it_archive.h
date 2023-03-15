@@ -30,9 +30,7 @@ public:
 
     virtual ~itArchive();
 
-
     STATIC_CHECK(sizeof(itArchive) == 48)
-
 };
 
 

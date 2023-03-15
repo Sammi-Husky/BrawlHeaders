@@ -102,7 +102,7 @@ class itDragoonSightCustomizer : public itCustomizer<itDragoonSightCustomizer> {
     virtual void onDestruct(BaseItem* item);
     virtual void onReset(BaseItem* item);
     virtual void onProcessFixPosition(BaseItem* item);
-    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, gfTask* task, int unk4);
+    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual int onGetLayerType(BaseItem* item);
 
     STATIC_CHECK(sizeof(itDragoonSightCustomizer) == 12)
@@ -143,7 +143,7 @@ class itGoldenHammerCustomizer : public itCustomizer<itGoldenHammerCustomizer> {
 class itGreenShellCustomizer : public itCustomizer<itGreenShellCustomizer> {
     virtual ~itGreenShellCustomizer();
     virtual void onProcessFixPosition(BaseItem* item);
-    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, gfTask* task, int unk4);
+    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onReflect(BaseItem* item);
     virtual bool isTreadPassive(BaseItem* item);
     virtual bool isUseShake(BaseItem* item);
@@ -231,7 +231,7 @@ class itSandbagCustomizer : public itCustomizer<itSandbagCustomizer> {
     virtual ~itSandbagCustomizer();
     virtual void onReset(BaseItem* item);
     virtual void onProcessFixPosition(BaseItem* item);
-    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, gfTask* task, int unk4);
+    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onNotifyEventCaptureStatus(BaseItem* item); // TODO
     virtual bool onDamage(BaseItem* item, int, void*);
     virtual void onPreBound(BaseItem* item, float*, u32);
@@ -399,7 +399,7 @@ class itRobotGyroCustomizer : public itCustomizer<itRobotGyroCustomizer> {
 class itWarioBikeCustomizer : public itCustomizer<itWarioBikeCustomizer> {
     virtual ~itWarioBikeCustomizer();
     virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser); // TODO: Verify observer parameters
-    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, gfTask* task, int unk4);
+    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onRemoveModelConstraint(BaseItem* item, int);
     virtual u32 getKineticFlags(BaseItem* item);
 
@@ -411,7 +411,7 @@ class itGokulinCustomizer : public itCustomizer<itGokulinCustomizer> {
     virtual void onDestruct(BaseItem* item);
     virtual void onProcessFixPosition(BaseItem* item);
     virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser); // TODO: Verify observer parameters
-    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, gfTask* task, int unk4);
+    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onEnumFighter(BaseItem* item, Fighter* fighter);
 
     STATIC_CHECK(sizeof(itGokulinCustomizer) == 12)

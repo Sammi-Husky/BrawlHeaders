@@ -7,6 +7,7 @@
 #include <so/collision/so_collision_attack_part.h>
 
 class soModuleAccesser;
+class StageObject;
 class BaseItem;
 
 // TODO: Throw the event observers in the respective modules once they're done
@@ -31,7 +32,7 @@ class soAnimCmdEventObserver : public soEventObserver<soAnimCmdEventObserver> {
 };
 
 class soLinkEventObserver : public soEventObserver<soLinkEventObserver> {
-    virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, gfTask* task, int unk4);
+    virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     char _spacer1[2];
 
     STATIC_CHECK(sizeof(soLinkEventObserver) == 12)

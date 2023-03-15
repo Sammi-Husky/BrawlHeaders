@@ -213,13 +213,27 @@ struct itCreate {
     STATIC_CHECK(sizeof(itCreate) == 56)
 };
 
+class itCustomizerInterface;
+class itArchive;
+
 class BaseItem : public StageObject, public soStatusEventObserver, public soSituationEventObserver,
         public soCollisionAttackEventObserver, public soCollisionShieldEventObserver, public soCollisionReflectorEventObserver,
         public soCollisionSearchEventObserver, public soGimmickEventObserver, public soArticle {
+protected:
     soModuleAccesser moduleAccesser;
-    char _spacer[15284];
-
+    char _428[1808];
 public:
+    int m_instanceId;
+    itKind m_kind;
+    int m_variation;
+    int m_creatorItemTaskId;
+    itKind m_lotCreateKind;
+    itCustomizerInterface* m_customizer;
+    u8 m_2260;
+    char _2261[7];
+    itArchive* m_itArchive;
+    char _2272[13440];
+
     BaseItem(itCreate* create);
     virtual void processUpdate();
     virtual void processMapCorrection();
@@ -310,7 +324,7 @@ public:
     virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int);
     virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
     virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
-    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, gfTask* task, int unk4);
+    virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onNotifyEventCaptureStatus(BaseItem* item); // TODO
     virtual void onNotifyEventGimmick(BaseItem* item, soGimmickEventInfo *eventInfo,int *taskId);
     virtual void onUpdateKinetic(BaseItem* item);
