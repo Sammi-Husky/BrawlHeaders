@@ -6,6 +6,7 @@
 #include <it/it_archive.h>
 #include <it/it_gen_archive.h>
 #include <so/so_dispose_instance_manager.h>
+#include <it/it_customizer.h>
 
 class itManager : public gfTask, public soDisposeInstanceEventObserver {
 public:

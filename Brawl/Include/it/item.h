@@ -4,6 +4,7 @@
 #include <StaticAssert.h>
 #include <so/stageobject.h>
 #include <so/so_article.h>
+#include <ft/fighter.h>
 #include <ut/ut_uncopyable.h>
 
 enum itKind {
@@ -292,6 +293,7 @@ public:
 };
 
 class itCustomizerInterface : public utUnCopyable {
+public:
     virtual ~itCustomizerInterface();
     virtual void onConstruct(BaseItem* item);
     virtual void onDestruct(BaseItem* item);
@@ -327,7 +329,7 @@ class itCustomizerInterface : public utUnCopyable {
     virtual bool onReflect(BaseItem* item);
     virtual void onPreBound(BaseItem* item, float*, u32);
     virtual bool onRemoveModelConstraint(BaseItem* item, int);
-    virtual bool onEnumFighter(BaseItem* item, StageObject*);
+    virtual bool onEnumFighter(BaseItem* item, Fighter* fighter);
     virtual int onGetLayerType(BaseItem* item);
     virtual bool isTreadPassive(BaseItem* item);
     virtual bool isUseTurnDamage(BaseItem* item);
@@ -351,6 +353,8 @@ class itCustomizer : public itCustomizerInterface {
 
 class itNullCustomizer : public itCustomizer<itNullCustomizer> {
     virtual ~itNullCustomizer();
+
+    static itNullCustomizer* getInstance();
 
     STATIC_CHECK(sizeof(itNullCustomizer) == 12)
 };
