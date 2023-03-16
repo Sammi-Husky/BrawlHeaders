@@ -45,7 +45,7 @@ namespace Stages {
         Brinstar = 0x32, DxZebes = 0x32,
         BridgeOfEldin = 0x33, Oldin = 0x33,
         HomerunStadium = 0x34, Homerun = 0x34,
-        StageBuilder = 0x35, StageEdit = 0x35,
+        Builder = 0x35, Edit = 0x35,
         RestArea = 0x36, Heal = 0x36,
         OnlineTraining = 0x37, OTrain = 0x37,
         TargetSmash = 0x38, Target = 0x38, TargetBreak = 0x38, TBreak = 0x38,
