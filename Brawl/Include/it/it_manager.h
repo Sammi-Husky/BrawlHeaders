@@ -56,7 +56,7 @@ public:
     virtual void notifyDrawDone();
 
     bool isCompItemKindArchive(itKind kind, u32 variation, bool);
-    BaseItem* createItem(itKind kind, u32 variation, int, int, u8, int, int, int);
+    BaseItem* createItem(itKind kind, u32 variation, int emitterItemTaskId, int, u8, int, int, int);
     BaseItem* createItemInstance(itCreate* create);
     u32 getItemNum(itKind kind);
     void removeItem(BaseItem*);
