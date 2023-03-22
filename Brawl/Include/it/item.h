@@ -8,6 +8,7 @@
 #include <ut/ut_uncopyable.h>
 
 enum itKind {
+    Item_Common = -0x3,
     Item_AssistTrophy = 0x00, Item_Assist = 0x00,
     Item_FranklinBadge = 0x01, Item_Badge = 0x01,
     Item_BananaPeel = 0x02, Item_Banana = 0x02,
@@ -185,7 +186,7 @@ enum itKind {
     Item_Assist_Lakitu_Spiny = 0xAE, Item_Assist_Jugem_Togezo = 0xAE,
     Item_Assist_Waluigi = 0xAF,
     Item_Assist_DrWright = 0xB0, Item_Assist_Wright = 0xB0,
-    Item_Assist_DrWright_Building = 0xB1, Item_Assist_Wright_Building = 0xB1,
+    Item_Assist_DrWright_Building = 0xB1, Item_Assist_Wright_Buil = 0xB1,
     Item_Unknown1 = 0x7D1,
     Item_Unknown2 = 0x7D2,
     Item_Unknown3 = 0x7D3,
