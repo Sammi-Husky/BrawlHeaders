@@ -44,7 +44,7 @@ namespace Stages {
         BigBlue = 0x31, DxBigBlue = 0x31,
         Brinstar = 0x32, DxZebes = 0x32,
         BridgeOfEldin = 0x33, Oldin = 0x33,
-        HomerunStadium = 0x34, Homerun = 0x34,
+        HomeRunContest = 0x34, Homerun = 0x34,
         Builder = 0x35, Edit = 0x35,
         RestArea = 0x36, Heal = 0x36,
         OnlineTraining = 0x37, OTrain = 0x37,
