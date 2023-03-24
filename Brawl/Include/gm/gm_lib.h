@@ -49,7 +49,7 @@ namespace Stages {
         RestArea = 0x36, Heal = 0x36,
         OnlineTraining = 0x37, OTrain = 0x37,
         TargetSmash = 0x38, Target = 0x38, TargetBreak = 0x38, TBreak = 0x38,
-        CharacterRoll = 0x39, CRoll = 0x39,
+        CharacterRoll = 0x39, CharaRoll = 0x39, CRoll = 0x39,
         Subspace = 0x3d, Adventure = 0x3d,
         BattleFieldS = 0x41, BattleS = 0x41
     };

@@ -53,18 +53,18 @@ enum EnemyKind {
     Enemy_Glire = 0x2B, Enemy_Gal_Fire = 0x2B,
     Enemy_Glice = 0x2C, Enemy_Gal_Ice = 0x2C,
     Enemy_Glunder = 0x2D, Enemy_Gal_Thunder = 0x2D,
-    Enemy_PeteyPiranha = 0x2E, Enemy_Bosspackun = 0x2E,
+    Enemy_Boss_PeteyPiranha = 0x2E, Enemy_Boss_BossPackun = 0x2E,
     Enemy_GamygaBase = 0x2F, Enemy_Ghamghabase = 0x2F,
-    Enemy_Galleom = 0x33,
-    Enemy_Ridley = 0x34,
-    Enemy_Rayquaza = 0x35,
-    Enemy_Duon = 0x36,
-    Enemy_Porky = 0x37,
-    Enemy_MetaRidley = 0x38, Enemy_Metaridley = 0x38,
-    Enemy_FalconFlyer = 0x39, Enemy_Falconflyer = 0x39,
-    Enemy_Tabuu = 0x3A, Enemy_Taboo = 0x3A,
-    Enemy_MasterHand = 0x3B, Enemy_Masterhand = 0x3B,
-    Enemy_CrazyHand = 0x3C, Enemy_Crazyhand = 0x3C
+    Enemy_Boss_Galleom = 0x33,
+    Enemy_Boss_Ridley = 0x34,
+    Enemy_Boss_Rayquaza = 0x35,
+    Enemy_Boss_Duon = 0x36,
+    Enemy_Boss_Porky = 0x37,
+    Enemy_Boss_MetaRidley = 0x38, Enemy_Boss_Metaridley = 0x38,
+    Enemy_Boss_FalconFlyer = 0x39, Enemy_Boss_Falconflyer = 0x39,
+    Enemy_Boss_Tabuu = 0x3A, Enemy_Boss_Taboo = 0x3A,
+    Enemy_Boss_MasterHand = 0x3B, Enemy_Boss_Masterhand = 0x3B,
+    Enemy_Boss_CrazyHand = 0x3C, Enemy_Boss_Crazyhand = 0x3C
 };
 
 class emCreate {
