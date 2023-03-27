@@ -208,7 +208,7 @@ public:
     virtual float getPokeTrainerPositionZ() { return 0.0f; }
     virtual int getPokeTrainerDrawLayer() { return 0; }
     virtual bool isAdventureStage() { return false; }
-    virtual void getItemPac(gfArchive** brres, gfArchive** param, itKind itemID, int variantID);
+    virtual void getItemPac(gfArchive** brres, gfArchive** param, itKind itemID, int variantID, gfArchive** commonParam = NULL, itCustomizerInterface** customizer = NULL); // Note: Optional parameters for modding purposes to use custom itmParams and customizers
     virtual void getItemGenPac(gfArchive** archive);
     virtual void getItemPacEnemyFigure(); // TODO
     virtual void getEnemyPac(gfArchive **brres, gfArchive **param, gfArchive **enmCommon, gfArchive **primFaceBrres, EnemyKind enemyKind);
