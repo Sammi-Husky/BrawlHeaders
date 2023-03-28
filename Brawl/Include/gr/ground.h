@@ -86,7 +86,7 @@ public:
     virtual int getModelCount();
     virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
     virtual bool setNode();
-    virtual void setStageData(void* stageData) { this->m_stageData = stageData; };
+    virtual void setStageData(void* stageData);
     virtual void* getStageData();
     virtual void initStageData();
     virtual void setMdlIndex(int mdlIndex);
