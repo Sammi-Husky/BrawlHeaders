@@ -120,7 +120,7 @@ public:
     virtual void notifyEventCollisionAttack(void* unk1, void* unk2, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionAttackFighter(void* unk, soModuleAccesser* moduleAccesser);
     virtual ftOwner* getOwner();
-    virtual int getFtKind();
+    virtual ftKind getFtKind();
     virtual bool isInclude(float* rect, Vec3f* out);
     virtual void eatItem(void*);
     virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
