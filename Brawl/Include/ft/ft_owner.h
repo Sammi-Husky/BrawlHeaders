@@ -32,5 +32,7 @@ public:
     virtual void addAttackInfo(void*);
     virtual void addAttackPattern(void*);
 
+    int getStockCount();
+
     STATIC_CHECK(sizeof(ftOwner) == 16)
 };

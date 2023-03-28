@@ -210,7 +210,7 @@
 8002d180:registSequence__14gfSceneManagerFv
 8002d1a0:process__14gfSceneManagerFv
 8002d32c:postProcess__14gfSceneManagerFv
-8002d3f4:searchScene__14gfSceneManagerFv
+8002d3f4:searchScene__14gfSceneManagerFPc
 8002d474:searchSequence__14gfSceneManagerFv
 8002d4f4:startSequence__14gfSceneManagerFv
 8002d5ac:setNextScene__14gfSceneManagerFv
@@ -678,8 +678,10 @@
 27,1,0010B1D0:getEntryCount__9ftManagerFv
 27,1,0010B22C:getEntryId__9ftManagerFi
 27,1,0010B29C:getEntryIdFromTaskId__9ftManagerFiPi
+27,1,0010A620:isFighterActivate__9ftManagerFii
 27,1,0010B0BC:getPlayerNo__9ftManagerFi
 27,1,0010A02C:getTeam__9ftManagerFibb
+27,1,0010AFD0:getOwner__9ftManagerFi
 27,1,0010CF6C:setCurry__9ftManagerFi
 27,1,0010D234:setSlow__9ftManagerFibii
 27,1,0010D0D8:setHeal__9ftManagerFif
@@ -695,6 +697,9 @@
 // Fighter
 27,1,00138900:setCurry__7FighterFbi
 27,1,0013C860:warp__7FighterFP5Vec3ffb
+
+// ftOwner
+27,1,00111B2C:getStockCount__7ftOwnerFv
 
 // ftOutsideEventPresenter
 27,1,0015B0C8:notifyOutsideEventKnockout__23ftOutsideEventPresenterFv
