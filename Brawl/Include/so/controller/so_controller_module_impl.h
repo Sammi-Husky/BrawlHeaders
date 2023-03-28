@@ -5,6 +5,34 @@
 #include <so/controller/so_controller_impl.h>
 #include <so/so_event_observer.h>
 
+union Button {
+    struct {
+        unsigned int m_bits;
+    };
+
+    struct {
+        unsigned short : 16;
+        bool m_tapJump : 1;
+        bool m_rightTaunt : 1;
+        bool m_leftTaunt : 1;
+        bool m_downTaunt : 1;
+        bool m_sideTaunt : 1;
+        bool m_upTaunt : 1;
+        bool _6 : 1;
+        bool m_cStick : 1;
+        bool _8 : 1;
+        bool _9 : 1;
+        bool _10 : 1;
+        bool _11 : 1;
+        bool m_shield : 1;
+        bool m_jump : 1;
+        bool m_special : 1;
+        bool m_attack : 1;
+    };
+
+    STATIC_CHECK(sizeof(Button) == 4)
+};
+
 class soControllerModule {
 public:
     virtual ~soControllerModule();
@@ -48,7 +76,7 @@ public:
     virtual int getTrigger();
     virtual u8 getTriggerCount(u8 index);
     virtual u8 getTriggerCountPrev(u8 index);
-    virtual int getButton();
+    virtual Button getButton();
     virtual int getRelease();
     virtual void setOff(bool);
     virtual void setPrev(int);
