@@ -66,7 +66,7 @@ public:
     virtual bool isNull();
     virtual T* at(u32);
     virtual T* at(int);
-    virtual u32 size() { return m_size };
+    virtual u32 size() { return m_size; };
     virtual ~soArrayList();
     virtual void shift();
     virtual void pop();
