@@ -12,7 +12,7 @@ struct itSheet {
 
 class itGenArchive {
 public:
-    itArchiveType m_itArchiveType;
+    itArchive::Type m_itArchiveType;
     itSheet m_sheet;
     int m_archiveId;
     u8 m_16;

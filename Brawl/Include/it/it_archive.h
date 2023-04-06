@@ -4,18 +4,20 @@
 #include <StaticAssert.h>
 #include <it/item.h>
 
-enum itArchiveType {
-    Normal = 0x0,
-    Assist = 0x1,
-    C = 0x2,
-    D = 0x3,
-    E = 0x4,
-    F = 0x5
-};
+
 
 class itArchive {
 public:
-    itArchiveType m_itArchiveType;
+    enum Type {
+        Temp = 0x0,
+        Assist = 0x1,
+        Common = 0x2,
+        D = 0x3,
+        Stage = 0x4,
+        F = 0x5
+    };
+
+    Type m_itArchiveType;
     u8 m_4;
     char _5[3];
     itKind m_itKind;
