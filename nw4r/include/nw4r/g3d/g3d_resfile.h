@@ -1,16 +1,14 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <nw4r/g3d/g3d_anmchr.h>
 #include <nw4r/g3d/g3d_anmscn.h>
 #include <nw4r/g3d/g3d_rescommon.h>
 #include <nw4r/g3d/g3d_resfile.h>
-#include <StaticAssert.h>
 #include <types.h>
 
-namespace nw4r
-{
-    namespace g3d
-    {
+namespace nw4r {
+    namespace g3d {
 
         struct ResFileData; // TODO
 
@@ -18,17 +16,16 @@ namespace nw4r
         // This is supposed to be a class,
         // but until we know ResFile's size
         // we can treat it as an opaque pointer
-        class ResFile : public ResCommon<ResFileData>
-        {
+        class ResFile : public ResCommon<ResFileData> {
             /* data */
         public:
-            inline ResFile(ResFileData *data) : ResCommon(data) {}
+            inline ResFile(ResFileData* data) : ResCommon(data) {}
 
-            static void Init(void *arg);
+            static void Init(void* arg);
             u32 GetResMdlNumEntries();
             u32 GetResAnmChrNumEntries();
-            CHR0 *GetResAnmChr(int index);
-            SCN0 *GetResAnmScn(int index);
+            CHR0* GetResAnmChr(int index);
+            SCN0* GetResAnmScn(int index);
         };
     } // namespace g3d
 } // namespace nw4
