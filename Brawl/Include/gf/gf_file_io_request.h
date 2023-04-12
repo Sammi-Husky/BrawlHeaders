@@ -2,7 +2,7 @@
 
 #include <types.h>
 
-struct gfFileIORequest {
+class gfFileIORequest {
 public:
     char* m_pFilepath;
     int m_offset;
@@ -15,4 +15,6 @@ public:
     u16 m_unk3;
     int m_unk4;
     char m_filepath[128];
+
+    static void setReadParam(gfFileIORequest* request, char* filepath, void* addr, int length, int offset);
 };
