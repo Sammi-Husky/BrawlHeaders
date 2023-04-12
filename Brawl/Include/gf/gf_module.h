@@ -1,11 +1,12 @@
 #pragma once
 
-#include <types.h>
-#include <memory.h>
 #include <StaticAssert.h>
 #include <gf/gf_file_io_handle.h>
+#include <memory.h>
+#include <types.h>
 
 class gfModuleInfo {
+public:
     void* m_module;
     int m_buffer;
     int m_size;
@@ -25,18 +26,16 @@ class gfModuleManager {
     void* _4;
     gfModuleInfo m_moduleInfos[16];
 
-    public:
-        struct LoadRequestResult {
-            void* _0;
-        };
+public:
+    struct LoadRequestResult {
+        void* _0;
+    };
 
-        void setTempolaryLoadHeap(HeapType heapType);
-        void destroy(char* moduleName);
-        static void loadModuleRequest(LoadRequestResult*, gfModuleManager*, char* moduleName, HeapType heapType, bool, bool);
+    void setTempolaryLoadHeap(HeapType heapType);
+    void destroy(char* moduleName);
+    static void loadModuleRequest(LoadRequestResult*, gfModuleManager*, char* moduleName, HeapType heapType, bool, bool);
 
-        static gfModuleManager* getInstance();
+    static gfModuleManager* getInstance();
 
     STATIC_CHECK(sizeof(gfModuleManager) == 968)
 };
-
-

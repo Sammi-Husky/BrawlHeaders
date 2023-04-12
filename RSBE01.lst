@@ -63,13 +63,20 @@
 803f1374:_restgpr_29
 8000c8ac:__nw__FUl
 8000c8b8:__nw__FUlQ25Heaps8HeapType
+8000c8ac:__nwa__FUl
 8000c8cc:__nwa__FUlQ25Heaps8HeapType
 8000c8c8:__dl__FPv
 8000c8dc:__dla__FPv
 803f11f8:__cvt_fp2unsigned
 803f0a1c:__construct_new_array
-801d8600:OSReport
 80403664:TRK_flush_cache__FPvUl
+801e892c:VIWaitForRetrace__Fv
+801d76e8:DCFlushRange__FPvi
+
+// OS
+801d8600:OSReport
+801e0cfc:OSCreateThread__FP8OSThreadPFPv_PvPvPvUiii
+801e1364:OSResumeThread__FP8OSThread
 
 // string
 803fa3fc:strcmp__FPCcPCc
@@ -780,6 +787,8 @@
 
 
 //gfFileIO
+8001bf0c:readFile__8gfFileIOFP15gfFileIORequest
+8001cbf4:readSDFile__8gfFileIOFP15gfFileIORequest
 80020b38:__dt__14gfFileIOHandleFv
 80020b98:setNotify__14gfFileIOHandleFv
 80020bec:createDirRequest__14gfFileIOHandleFv
@@ -796,9 +805,9 @@
 800212b0:checkFreeSize__14gfFileIOHandleFv
 8002134c:del__14gfFileIOHandleFv
 800213e8:writeNAND__14gfFileIOHandleFv
-80021498:readRequest__14gfFileIOHandleF14gfFileIOHandlePc8HeapTypeii
+800215e0:readRequest__14gfFileIOHandleFPcPvii
+80021498:readRequest__14gfFileIOHandleFPcQ25Heaps8HeapTypeii
 80021540:readRequest1__14gfFileIOHandleFv
-800215e0:readRequest2__14gfFileIOHandleFv
 80021680:readRequestCached__14gfFileIOHandleFv
 80021738:readRequestCached1__14gfFileIOHandleFv
 800217e8:readRequestCached2__14gfFileIOHandleFv
@@ -817,7 +826,7 @@
 80021f94:getBuffer__14gfFileIOHandleFv
 80021fa0:getPool__14gfFileIOHandleFv
 80021fac:release__14gfFileIOHandleFv
-80021498:readRequest__14gfFileIOHandleFPcQ25Heaps8HeapTypeii
+8002239c:setReadParam__15gfFileIORequestFP15gfFileIORequestPcPvii
 
 // gameGlobal
 8004D9DC:getLanguage__10GameGlobalFv
@@ -886,6 +895,7 @@
 800af5a4:getInfoMsgID__6muMenuFiii
 800af5b4:exchangeGmCharacterKind2MuStockchkind__6muMenuFi
 800acdec:getStockFrameID__6muMenuFiii
+800af600:getStockFrameID__6muMenuFi
 800af614:exchangeMuStageKindToSrStageKind__6muMenuFiii
 800af628:exchangeSrStageKindToMuStageKind__6muMenuFiii
 800af6a0:getStageFrameNo__6muMenuFiii
@@ -894,6 +904,7 @@
 800af708:exchangeGmCharacterKind2MuSelchkind__6muMenuFiii
 800af80c:exchangeMuSelchkind2GmCharacterKind__6muMenuFiii
 800af844:exchangeMuSelchkind2MuStockchkind__6muMenuFiii
+800af82c:exchangeMuSelchkind2MuStockchkind__6muMenuFi
 800af85c:exchangeSelchkind2SelCharVoice__6muMenuFi
 800ae4a0:exchangeStockchkind2SelCharNarrationSndID__6muMenuFiii
 800af874:exchangeSelchkind2SelCharNarrationSndID__6muMenuFiii
@@ -919,6 +930,7 @@
 800af8a0:exchangeSelCharVoice2SelCharVoiceLengthE__6muMenuFi
 800AF8B8:exchangeSelCharVoice2SelCharVoiceLengthJ__6muMenuFi
 800af600:exchangeGmCharacterKind2Something__6muMenuFi
+8069742c:setCharPic__19muSelCharPlayerAreaFiiibii
 // aboves exact meaning unsure, file ID in classic mode intro
 
 
