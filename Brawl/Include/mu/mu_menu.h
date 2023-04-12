@@ -1,7 +1,6 @@
 #pragma once
 
-class muMenu
-{
+class muMenu {
 public:
     //    int activeRumbleController;
     //    int globalRumbleSetting;
@@ -14,4 +13,6 @@ public:
     static int exchangeGmCharacterKind2MuStockchkind(int id);
     static int exchangeGmCharacterKind2Something(int id);
     static void startRumbleController(int controller, int rumbleStrength, int rumbleSetting);
+    static int exchangeMuSelchkind2MuStockchkind(int id);
+    static int getStockFrameID(int id);
 };
