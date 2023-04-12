@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <stddef.h>
+#include <types.h>
 
 namespace Heaps {
     enum HeapType {
@@ -69,5 +69,6 @@ namespace Heaps {
 typedef Heaps::HeapType HeapType;
 void* operator new(size_t size, HeapType heap);
 void* operator new[](size_t size, HeapType heap);
+void* operator new[](size_t size);
 
 void __memfill(void* dest, u8 value, size_t count);
