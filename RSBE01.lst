@@ -75,8 +75,9 @@
 
 // OS
 801d8600:OSReport
-801e0cfc:OSCreateThread__FP8OSThreadPFPv_PvPvPvUiii
+801e0cfc:OSCreateThread__FP8OSThreadPFPv_PvPvPvUii14OS_THREAD_ATTR
 801e1364:OSResumeThread__FP8OSThread
+801e1224:OSJoinThread__FP8OSThreadPPv
 
 // string
 803fa3fc:strcmp__FPCcPCc
