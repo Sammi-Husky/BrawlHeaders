@@ -4,13 +4,30 @@
 #include <nw4r/g3d/g3d_anmchr.h>
 #include <nw4r/g3d/g3d_anmscn.h>
 #include <nw4r/g3d/g3d_rescommon.h>
+#include <nw4r/g3d/g3d_resdict.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <types.h>
 
 namespace nw4r {
     namespace g3d {
+        struct ResFileHeaderData {
+            char magic[4];
+            u16 endian;
+            u16 version;
+            u32 fileSize;
+            u16 headerSize;
+            u16 dataBlocks;
+        };
 
-        struct ResFileData; // TODO
+        struct ResTopLevelDictData {
+            ResBlockHeaderData header;
+            ResDicData data;
+        };
+
+        struct ResFileData {
+            ResFileHeaderData fileHeader;
+            ResTopLevelDictData dict;
+        };
 
         // NOTE:
         // This is supposed to be a class,

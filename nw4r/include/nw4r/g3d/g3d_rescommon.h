@@ -4,6 +4,11 @@
 
 namespace nw4r {
     namespace g3d {
+        struct ResBlockHeaderData {
+            char kind[4];
+            u32 size;
+        };
+
         template <typename T>
         class ResCommon {
             T* m_dataPtr;
