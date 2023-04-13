@@ -31,6 +31,13 @@ public:
         delete[] arr;
     }
 
+    void clear()
+    {
+        delete[] arr;
+        arr = new T[1];
+        current = 0;
+    }
+
     // Function to add an element at the last
     void push(T data)
     {
@@ -67,9 +74,14 @@ public:
         // if index is equal to capacity then this
         // function is same as push defined above
         if (index == capacity)
+        {
             push(data);
+        }
         else
+        {
             arr[index] = data;
+            current++;
+        }
     }
 
     // function to extract element at any index
