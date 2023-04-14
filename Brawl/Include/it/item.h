@@ -92,7 +92,7 @@ enum itKind {
     Item_Enemy_Auroros = 0x50, Item_Enemy_Aroaros = 0x50,
     Item_Enemy_Koopa1 = 0x51, Item_Enemy_Patapata = 0x51,
     Item_Enemy_Koopa2 = 0x52, Item_Enemy_PatapataG = 0x52,
-    Item_Snake_Box = 0x53,
+    Item_Snake_CardboardBox = 0x53, Item_Snake_CBox = 0x53,
     Item_DiddyKong_Peanut = 0x54, Item_Diddy_Peanuts = 0x54,
     Item_Link_Bomb = 0x55,
     Item_Peach_Turnip = 0x56, Item_Peach_Daikon = 0x56,

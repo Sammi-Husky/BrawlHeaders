@@ -90,7 +90,7 @@ public:
     virtual void attachInstance();
     virtual void detachInstance();
     virtual void standbyAdvFollow();
-    virtual void onStartFinal();
+    virtual void onStartFinal(int variantID = -1, itCustomizerInterface** customizer = NULL); // Note: Optional parameters for modding purposes to use custom customizers
     virtual void onEndFinal();
     virtual void toDead(int);
     virtual int checkDead();

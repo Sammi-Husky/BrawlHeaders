@@ -33,6 +33,7 @@ namespace Stages {
         PictoChat = 0x24, PictChat = 0x24,
         Hanenbow = 0x25, Plankton = 0x25,
         Config = 0x26,
+        Result = 0x28,
         Temple = 0x29, DxShrine = 0x29,
         YoshiIslandMelee = 0x2A, DxYorster = 0x2A,
         JungleJapes = 0x2B, DxGarden = 0x2B,
