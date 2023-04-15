@@ -1,11 +1,11 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <so/so_array.h>
 #include <so/posture/so_posture_module_simple.h>
+#include <so/so_array.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
+#include <types.h>
 
 template <class T>
 class soInterpolation {
@@ -52,7 +52,5 @@ public:
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
-
-    STATIC_CHECK(sizeof(soPostureModuleImpl) == 120)
-
 };
+static_assert(sizeof(soPostureModuleImpl) == 120, "Class is wrong size!");

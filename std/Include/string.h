@@ -1,20 +1,19 @@
 #pragma once
 
-#include "strtoul.h"
-#include "stddef.h"
-#include "types.h"
-#include "extras.h"
 #include "__mem.h"
+#include "extras.h"
+#include "stddef.h"
+#include "strtoul.h"
+#include "types.h"
 
-class String
-{
-    char *m_string;
+class String {
+    char* m_string;
 
 public:
     int strcmp(const String str2);
-    static String strncpy(String destination, char *source, size_t num);
+    static String strncpy(String destination, char* source, size_t num);
 
-    inline String(char *ss)
+    inline String(char* ss)
     {
         m_string = ss;
     };
@@ -46,8 +45,8 @@ public:
     };
 };
 
-int strcmp(const char *str1, const char *str2);
-int strncmp(const char *str1, const char *str2, size_t num);
-char *strcpy(char *destination, const char *source);
-char *strncpy(char *destination, const char *source, size_t num);
-char *strcat(char *output, char *append);
+int strcmp(const char* str1, const char* str2);
+int strncmp(const char* str1, const char* str2, size_t num);
+char* strcpy(char* destination, const char* source);
+char* strncpy(char* destination, const char* source, size_t num);
+char* strcat(char* output, char* append);

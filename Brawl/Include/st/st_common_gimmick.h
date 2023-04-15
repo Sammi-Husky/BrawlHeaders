@@ -1,9 +1,9 @@
 #pragma once
 
-#include <st/stage.h>
-#include <gr/gr_gimmick_spring.h>
-#include <gr/gr_gimmick_ladder.h>
 #include <gr/gr_gimmick_catapult.h>
+#include <gr/gr_gimmick_ladder.h>
+#include <gr/gr_gimmick_spring.h>
+#include <st/stage.h>
 #include <types.h>
 
 class stCommonGimmick : public Stage {

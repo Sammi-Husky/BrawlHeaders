@@ -1,13 +1,13 @@
 #pragma once
 
-#include <types.h>
-#include <so/so_array.h>
+#include <StaticAssert.h>
 #include <gf/gf_task.h>
 #include <memory.h>
-#include <so/so_null.h>
+#include <so/so_array.h>
 #include <so/so_kind.h>
 #include <so/so_module_accesser.h>
-#include <StaticAssert.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class soActivatable {
     virtual ~soActivatable();
@@ -59,6 +59,5 @@ public:
     virtual void updateRoughPos();
 
     void activate(float, float, Vec3f* pos, bool);
-
-    STATIC_CHECK(sizeof(StageObject) == 100)
 };
+static_assert(sizeof(StageObject) == 100, "Class is wrong size!");

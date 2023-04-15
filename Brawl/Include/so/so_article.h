@@ -1,14 +1,14 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <so/so_null.h>
 #include <so/so_event_presenter.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class soArticleEventObserver : public soEventObserver<soArticleEventObserver> {
     char _spacer1[2];
-    STATIC_CHECK(sizeof(soArticleEventObserver) == 12)
 };
+static_assert(sizeof(soArticleEventObserver) == 12, "Class is wrong size!");
 
 struct soLogAttackInfo {
     int _0;
@@ -23,7 +23,7 @@ class soArticle : public soNullable, public soEventPresenter<soArticleEventObser
     virtual int getArticleId();
     virtual int getArticleEventManageId();
     virtual int getTaskId();
-    virtual void changeMotion(int,int);
+    virtual void changeMotion(int, int);
     virtual void setFrame(float frame);
     virtual void setRate(float rate);
     virtual void changeStatus(int actionID);
@@ -39,7 +39,7 @@ class soArticle : public soNullable, public soEventPresenter<soArticleEventObser
     virtual int getOwnerDeactiveTreatType();
     virtual int getFounderTaskId();
     virtual void have(int, int, int);
-    virtual void linkOwner(int,int);
+    virtual void linkOwner(int, int);
     virtual void unlinkOwner(int);
     virtual bool isSyncOwnerStatus();
     virtual void setSyncOwnerStatus(int);
@@ -49,6 +49,5 @@ class soArticle : public soNullable, public soEventPresenter<soArticleEventObser
     virtual void intrudeLogAttackInfo();
     virtual float getActiveGlobalFrame();
     virtual void setAttackPowerMulPattern(float);
-
-    STATIC_CHECK(sizeof(soArticle) == 20)
 };
+static_assert(sizeof(soArticle) == 20, "Class is wrong size!");

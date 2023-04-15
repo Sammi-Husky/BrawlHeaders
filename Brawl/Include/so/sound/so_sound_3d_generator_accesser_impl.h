@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <snd/snd_3d_generator.h>
+#include <types.h>
 
 class soSound3dGeneratorAccesser {
 protected:
@@ -26,7 +26,5 @@ public:
     virtual void activate(Vec3f* pos);
     virtual void deactivate();
     virtual GeneratorInstance* getInstance(int);
-
-    STATIC_CHECK(sizeof(soSound3dGeneratorAccesserImpl) == 16)
-
 };
+static_assert(sizeof(soSound3dGeneratorAccesserImpl) == 16, "Class is wrong size!");

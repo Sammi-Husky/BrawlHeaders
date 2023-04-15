@@ -1,9 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <so/controller/so_controller_impl.h>
 #include <so/so_event_observer.h>
+#include <types.h>
 
 union Button {
     struct {
@@ -29,9 +29,8 @@ union Button {
         bool m_special : 1;
         bool m_attack : 1;
     };
-
-    STATIC_CHECK(sizeof(Button) == 4)
 };
+static_assert(sizeof(Button) == 4, "Class is wrong size!");
 
 class soControllerModule {
 public:
@@ -48,7 +47,7 @@ public:
     virtual void resetSubStickX();
     virtual void resetSubStickY();
     virtual void resetSubStick();
-    virtual void update(void*,bool);
+    virtual void update(void*, bool);
     virtual void resetFlickX();
     virtual void resetFlickY();
     virtual float getStickX();
@@ -101,12 +100,12 @@ public:
     virtual u8 getFlickBonusLr();
     virtual void resetFlickBonus();
     virtual void resetFlickBonusLr();
-
-    STATIC_CHECK(sizeof(soControllerModule) == 4)
 };
+static_assert(sizeof(soControllerModule) == 4, "Class is wrong size!");
 
 class soControllerModuleImpl : public soControllerModule, public soAnimCmdEventObserver {
     char _16[4];
+
 public:
     virtual ~soControllerModuleImpl();
     virtual void activate();
@@ -139,6 +138,5 @@ public:
 
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-
-    STATIC_CHECK(sizeof(soControllerModuleImpl) == 20)
 };
+static_assert(sizeof(soControllerModuleImpl) == 20, "Class is wrong size!");

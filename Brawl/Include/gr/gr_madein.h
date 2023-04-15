@@ -41,14 +41,14 @@ protected:
     HitPointInfo* m_hitPointInfo;
     soCollisionAttackData* m_overwriteAttackData;
     StageHitData* m_stageHitData;
-    bool m_300_7 : 1; // | 0x80
-    bool m_hasAttack : 1; // | 0x40
-    bool m_hasHitPoint : 1; // | 0x20
-    bool m_isHit : 1; // | 0x10
+    bool m_300_7 : 1;                 // | 0x80
+    bool m_hasAttack : 1;             // | 0x40
+    bool m_hasHitPoint : 1;           // | 0x20
+    bool m_isHit : 1;                 // | 0x10
     bool m_useCollisionCategory1 : 1; // | 0x8   // This takes priority over category flag below
     bool m_useCollisionCategory7 : 1; // | 0x4
-    bool m_isLandedOn : 1; // | 0x2
-    bool m_useLandCheck : 1; // | 0x1
+    bool m_isLandedOn : 1;            // | 0x2
+    bool m_useLandCheck : 1;          // | 0x1
     char _301[11];
     int m_landerTaskId;
     char _316[50];

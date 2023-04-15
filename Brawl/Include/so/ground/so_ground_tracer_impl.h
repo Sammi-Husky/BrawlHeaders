@@ -1,10 +1,10 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <so/so_null.h>
 #include <mt/mt_vector.h>
 #include <so/posture/so_posture_module_simple.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class soGroundModule;
 
@@ -35,6 +35,7 @@ class soGroundTracerImpl : public soGroundTracer {
     Vec2f m_groundMovementSpeed;
     bool m_isTraced;
     char _pad[3];
+
 public:
     virtual ~soGroundTracerImpl();
     virtual bool isTraced();
@@ -53,7 +54,5 @@ public:
     virtual bool isSameNormalTraceLineCurrentAndNext(soGroundModule* groundModule, u32);
     virtual bool isOpenTraceLineCurrentAndNext(soGroundModule* groundModule, u32);
     virtual bool isTouchCurrentLine(soGroundModule* groundModule, u32 index);
-
-    STATIC_CHECK(sizeof(soGroundTracerImpl) == 40)
-
 };
+static_assert(sizeof(soGroundTracerImpl) == 40, "Class is wrong size!");

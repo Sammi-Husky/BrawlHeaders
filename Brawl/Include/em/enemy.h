@@ -1,14 +1,12 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <em/em_create.h>
-#include <so/stageobject.h>
 #include <gr/gr_gimmick_motion_path.h>
+#include <so/stageobject.h>
+#include <types.h>
 
-class Enemy : public StageObject, public soStatusEventObserver, public soCollisionAttackEventObserver,
-        public soCollisionSearchEventObserver, public soCaptureEventObserver, public soCollisionAbsorberEventObserver,
-        public soCollisionReflectorEventObserver {
+class Enemy : public StageObject, public soStatusEventObserver, public soCollisionAttackEventObserver, public soCollisionSearchEventObserver, public soCaptureEventObserver, public soCollisionAbsorberEventObserver, public soCollisionReflectorEventObserver {
 
     EnemyKind m_enemyKind;
     char _176[4];
@@ -21,6 +19,5 @@ class Enemy : public StageObject, public soStatusEventObserver, public soCollisi
     char _444[20820];
 
     // TODO: virtual functions
-
-    STATIC_CHECK(sizeof(Enemy) == 21264)
 };
+static_assert(sizeof(Enemy) == 21264, "Class is wrong size!");

@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <types.h>
 
 class soDamageNoReactionModule {
     int m_mode;
@@ -12,6 +12,5 @@ class soDamageNoReactionModule {
     bool m_isModeAlways;
     bool m_isModePerfect;
     char _30[2];
-
-    STATIC_CHECK(sizeof(soDamageNoReactionModule) == 32)
 };
+static_assert(sizeof(soDamageNoReactionModule) == 32, "Class is wrong size!");

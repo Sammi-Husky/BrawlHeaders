@@ -47,6 +47,5 @@ public:
 
     void exit();
     static gfTask* getTask(int taskId);
-
-    STATIC_CHECK(sizeof(gfTask) == 0x40)
 };
+static_assert(sizeof(gfTask) == 0x40, "Class is wrong size!");

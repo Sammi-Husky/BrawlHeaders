@@ -1,17 +1,17 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <so/so_null.h>
+#include <so/collision/so_collision_attack_part.h>
 #include <so/damage/so_damage.h>
 #include <so/damage/so_damage_attacker_info.h>
 #include <so/damage/so_damage_effector_impl.h>
-#include <so/damage/so_damage_transactor_actor.h>
 #include <so/damage/so_damage_no_reaction_module.h>
-#include <so/collision/so_collision_attack_part.h>
+#include <so/damage/so_damage_transactor_actor.h>
 #include <so/so_array.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class StageObject;
 class soModuleAccesser;
@@ -67,9 +67,8 @@ public:
     virtual bool isDamageLock();
     virtual void heal(float healAmount, u32 damageIndex);
     virtual void updateAttackerInfo();
-
-    STATIC_CHECK(sizeof(soDamageModule) == 12)
 };
+static_assert(sizeof(soDamageModule) == 12, "Class is wrong size!");
 
 class soDamageModuleImpl : public soDamageModule, public soCollisionHitEventObserver, public soStatusEventObserver, public soEventPresenter<soDamageEventObserver>, public soAnimCmdEventObserver {
     soModuleAccesser* m_moduleAccesser;
@@ -154,6 +153,5 @@ public:
     virtual void notifyEventCollisionHit(float, int, int index, int, soModuleAccesser* moduleAccesser, void*);
     virtual void notifyEventCollisionHit2nd(float, float, void*, void*, int index, int, bool);
     virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
-
-    STATIC_CHECK(sizeof(soDamageModuleImpl) == 172)
 };
+static_assert(sizeof(soDamageModuleImpl) == 172, "Class is wrong size!");

@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <ft/fighter.h>
+#include <types.h>
 
 namespace ftExternalValueAccesser {
     float getWeight(Fighter* fighter);

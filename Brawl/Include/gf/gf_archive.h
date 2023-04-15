@@ -1,9 +1,9 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gf/gf_file_io_handle.h>
 #include <memory.h>
 #include <types.h>
-#include <StaticAssert.h>
 
 enum ARCNodeType {
     Data_Type_None = 0x0,
@@ -53,6 +53,5 @@ public:
 
     // 124
     char _spacer3[4];
-
-    STATIC_CHECK(sizeof(gfArchive) == 0x80)
 };
+static_assert(sizeof(gfArchive) == 0x80, "Class is wrong size!");

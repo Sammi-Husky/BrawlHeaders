@@ -1,17 +1,17 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <gr/gr_collision_status.h>
 #include <memory.h>
 #include <mt/mt_coll2d.h>
-#include <so/so_null.h>
+#include <so/collision/so_collision_attack_part.h>
+#include <so/ground/so_ground_shape_impl.h>
+#include <so/ground/so_ground_tracer_impl.h>
 #include <so/so_array.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
-#include <so/ground/so_ground_tracer_impl.h>
-#include <so/ground/so_ground_shape_impl.h>
-#include <gr/gr_collision_status.h>
-#include <so/collision/so_collision_attack_part.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class soModuleAccesser;
 class StageObject;
@@ -53,7 +53,7 @@ public:
     virtual void setCorrectIgnoreSlope(u8 correctIgnoreSlope, u32 index);
     virtual void setCliffCheck(u8 cliffCheck, u32 index);
     virtual void setCliffHangData(void*);
-    virtual void selectCliffHangData(u32 i,u32 index);
+    virtual void selectCliffHangData(u32 i, u32 index);
     virtual void setCliffBackRangeXMul(float cliffBackRangeXMul);
     virtual bool isStCliff(u32 index);
     virtual Vec3f getCorrectPos(u32 index);
@@ -89,7 +89,7 @@ public:
     virtual float getTouchLength(u8, u32 index);
     virtual float getTouchLineRate(u8, u32 index);
     virtual bool getTouchNextNormal(bool getNext, Vec2f* outNormal, u8, u32 index);
-    virtual void ignoreTouchLine(u8,u32 index);
+    virtual void ignoreTouchLine(u8, u32 index);
     virtual bool isDiveDown(u32 index);
     virtual bool isCrush(float, u32 index);
     virtual bool isOnDynamicCollision(u32 index);
@@ -143,7 +143,7 @@ public:
     virtual void test(u32 index);
     virtual bool rayCheckTarget(StageObject* stageobject, u8);
     virtual bool rayCheck(Vec3f*, Vec3f*, u8);
-    virtual bool rayCheck(Vec3f*, Vec3f*, Vec3f* out1, Vec3f* out2,u8);
+    virtual bool rayCheck(Vec3f*, Vec3f*, Vec3f* out1, Vec3f* out2, u8);
     virtual bool rayCheck(Vec3f*, Vec3f*, int* out0, Vec3f* out1, Vec3f* out2, u8);
     virtual float getDistanceFromUnderGrCol(float, Vec3f*, u8);
     virtual grCollision* getGrCollision();
@@ -157,11 +157,11 @@ public:
     virtual void renderDebug();
     virtual bool isTraced();
     virtual bool canTraceStart(u8, u32, u32 index, float);
-    virtual bool startTrace(u8, u32 , u32 index, u8, float, float, float);
+    virtual bool startTrace(u8, u32, u32 index, u8, float, float, float);
     virtual Vec2f getTraceTargetVec(u32 index, float);
     virtual Vec2f getTraceTargetPosturePos(u32 index, float);
     virtual bool isTraceArrived(u32 index, float);
-    virtual bool canIntercept(u8 ,u32 , u32 index, float );
+    virtual bool canIntercept(u8, u32, u32 index, float);
     virtual bool renewTrace(u8, u32, u32 index, float, float);
     virtual void endTrace(u32 index);
     virtual Vec2f getTraceGroundMovementSpeed();
@@ -175,9 +175,8 @@ public:
     virtual soGroundConditionChecker* getConditionChecker();
     virtual void setIgnoreFriction(bool);
     virtual void setDetachChangeStatus(bool);
-
-    STATIC_CHECK(sizeof(soGroundModule) == 12)
 };
+static_assert(sizeof(soGroundModule) == 12, "Class is wrong size!");
 
 class soGroundModuleImpl : public soGroundModule, public soStatusEventObserver, public soAnimCmdEventObserver, public grCollStatusEventReceiver {
     soArray<soGroundShapeImpl>* m_groundShapeArray;
@@ -225,7 +224,7 @@ public:
     virtual void setCorrectIgnoreSlope(u8 correctIgnoreSlope, u32 index);
     virtual void setCliffCheck(u8 cliffCheck, u32 index);
     virtual void setCliffHangData(void*);
-    virtual void selectCliffHangData(u32 i,u32 index);
+    virtual void selectCliffHangData(u32 i, u32 index);
     virtual void setCliffBackRangeXMul(float cliffBackRangeXMul);
     virtual bool isStCliff(u32 index);
     virtual Vec3f getCorrectPos(u32 index);
@@ -261,7 +260,7 @@ public:
     virtual float getTouchLength(u8, u32 index);
     virtual float getTouchLineRate(u8, u32 index);
     virtual bool getTouchNextNormal(bool getNext, Vec2f* outNormal, u8, u32 index);
-    virtual void ignoreTouchLine(u8,u32 index);
+    virtual void ignoreTouchLine(u8, u32 index);
     virtual bool isDiveDown(u32 index);
     virtual bool isCrush(float, u32 index);
     virtual bool isOnDynamicCollision(u32 index);
@@ -315,7 +314,7 @@ public:
     virtual void test(u32 index);
     virtual bool rayCheckTarget(StageObject* stageobject, u8);
     virtual bool rayCheck(Vec3f*, Vec3f*, u8);
-    virtual bool rayCheck(Vec3f*, Vec3f*, Vec3f* out1, Vec3f* out2,u8);
+    virtual bool rayCheck(Vec3f*, Vec3f*, Vec3f* out1, Vec3f* out2, u8);
     virtual bool rayCheck(Vec3f*, Vec3f*, int* out0, Vec3f* out1, Vec3f* out2, u8);
     virtual float getDistanceFromUnderGrCol(float, Vec3f*, u8);
     virtual grCollision* getGrCollision();
@@ -329,11 +328,11 @@ public:
     virtual void renderDebug();
     virtual bool isTraced();
     virtual bool canTraceStart(u8, u32, u32 index, float);
-    virtual bool startTrace(u8, u32 , u32 index, u8, float, float, float);
+    virtual bool startTrace(u8, u32, u32 index, u8, float, float, float);
     virtual Vec2f getTraceTargetVec(u32 index, float);
     virtual Vec2f getTraceTargetPosturePos(u32 index, float);
     virtual bool isTraceArrived(u32 index, float);
-    virtual bool canIntercept(u8 ,u32 , u32 index, float );
+    virtual bool canIntercept(u8, u32, u32 index, float);
     virtual bool renewTrace(u8, u32, u32 index, float, float);
     virtual void endTrace(u32 index);
     virtual Vec2f getTraceGroundMovementSpeed();
@@ -352,7 +351,5 @@ public:
     virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-
-    STATIC_CHECK(sizeof(soGroundModuleImpl) == 88)
-
 };
+static_assert(sizeof(soGroundModuleImpl) == 88, "Class is wrong size!");

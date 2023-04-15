@@ -1,9 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <it/it_archive.h>
 #include <gm/gm_lib.h>
+#include <it/it_archive.h>
+#include <types.h>
 
 struct itSheet {
     Stages::srStageKind m_stageKind;

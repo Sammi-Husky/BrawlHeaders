@@ -1,8 +1,8 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <types.h>
 #include <gf/gf_task.h>
+#include <types.h>
 
 class gfSceneRoot : public gfTask {
     char _spacer[1228];
@@ -17,8 +17,7 @@ public:
     virtual ~gfSceneRoot();
 
     void setCurrentFrame(float);
-
-    STATIC_CHECK(sizeof(gfSceneRoot) == 1292)
 };
+static_assert(sizeof(gfSceneRoot) == 1292, "Class is wrong size!");
 
 extern gfSceneRoot* g_gfSceneRoot;

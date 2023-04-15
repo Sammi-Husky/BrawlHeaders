@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <so/so_kind.h>
+#include <types.h>
 
 class soDamageAttackerInfo {
 public:
@@ -20,6 +20,5 @@ public:
     int m_indirectAttackerEntryId;
 
     char _spacer3[4];
-
-    STATIC_CHECK(sizeof(soDamageAttackerInfo) == 40)
 };
+static_assert(sizeof(soDamageAttackerInfo) == 40, "Class is wrong size!");

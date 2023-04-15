@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <gf/gf_task.h>
+#include <types.h>
 
 class ftAudience {
 public:
@@ -17,9 +17,8 @@ public:
     virtual bool checkTumultLanding(float, float, int entryId);
     virtual bool checkTumultFallSpecial(float, int entryId);
     virtual void checkCheerDefeat(int entryId);
-
-    STATIC_CHECK(sizeof(ftAudience) == 4)
 };
+static_assert(sizeof(ftAudience) == 4, "Class is wrong size!");
 
 class ftAudienceImpl : public gfTask, public ftAudience {
     char _68[4];
@@ -42,6 +41,5 @@ public:
     virtual bool checkTumultLanding(float, float, int entryId);
     virtual bool checkTumultFallSpecial(float, int entryId);
     virtual void checkCheerDefeat(int entryId);
-
-    STATIC_CHECK(sizeof(ftAudienceImpl) == 128)
 };
+static_assert(sizeof(ftAudienceImpl) == 128, "Class is wrong size!");

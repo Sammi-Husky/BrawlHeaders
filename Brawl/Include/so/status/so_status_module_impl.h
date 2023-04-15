@@ -1,10 +1,10 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <so/so_null.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class soModuleAccesser;
 
@@ -62,13 +62,12 @@ public:
     virtual int getPrevStatusKind(u32);
     virtual void connectStatusDataList(void*);
     virtual void changeStatusForce(int status, soModuleAccesser* moduleAccesser);
-    virtual void unableTransitionTerm(int,int);
+    virtual void unableTransitionTerm(int, int);
     virtual void setUniqProc(u32 index, soStatusUniqProcess* uniqProc);
     virtual ~soStatusModule();
     virtual void changeStatus(int status, soModuleAccesser* moduleAccesser);
-
-    STATIC_CHECK(sizeof(soStatusModule) == 8)
 };
+static_assert(sizeof(soStatusModule) == 8, "Class is wrong size!");
 
 class soStatusModuleImpl : public soStatusModule, public soEventPresenter<soStatusEventObserver>, public soAnimCmdEventObserver, public soCollisionAttackEventObserver {
 
@@ -109,7 +108,7 @@ public:
     virtual int getPrevStatusKind(u32);
     virtual void connectStatusDataList(void*);
     virtual void changeStatusForce(int status, soModuleAccesser* moduleAccesser);
-    virtual void unableTransitionTerm(int,int);
+    virtual void unableTransitionTerm(int, int);
     virtual void setUniqProc(u32 index, soStatusUniqProcess* uniqProc);
     virtual ~soStatusModuleImpl();
     virtual void changeStatus(int status, soModuleAccesser* moduleAccesser);
@@ -118,9 +117,8 @@ public:
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventCollisionAttack(void* unk1, void* unk2, soModuleAccesser* moduleAccesser);
-
-    STATIC_CHECK(sizeof(soStatusModuleImpl) == 144)
 };
+static_assert(sizeof(soStatusModuleImpl) == 144, "Class is wrong size!");
 
 namespace ftStatus {
     enum Kind {

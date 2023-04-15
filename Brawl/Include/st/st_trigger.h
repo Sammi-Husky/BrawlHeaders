@@ -1,11 +1,11 @@
 #pragma once
 
-#include <types.h>
+#include <StaticAssert.h>
 #include <gf/gf_task.h>
 #include <st/st_trigger_observe.h>
+#include <types.h>
 #include <ut/ut_list.h>
 #include <yk/yakumono.h>
-#include <StaticAssert.h>
 
 enum GimmickKind {
     Gimmick_Valid = 0x0,
@@ -52,12 +52,10 @@ class stTrigger : public utListNode {
     char _spacer3[7];
 
 public:
-
     void setObserveYakumono(Yakumono* yakumono);
     stObsTriggerSquareBeltConveyorCB* setBeltConveyorTrigger(grGimmickBeltConveyorData* gimmickAreaData);
-
-    STATIC_CHECK(sizeof(stTrigger) == 52)
 };
+static_assert(sizeof(stTrigger) == 52, "Class is wrong size!");
 
 class stTriggerMng : public gfTask {
     utList m_triggerList;
@@ -73,8 +71,7 @@ public:
     stTrigger* createTrigger(GimmickKind gimmickKind, stTriggerData* triggerData);
     void setTriggerFlag(stTriggerData* triggerData);
     bool getTriggerFlag(stTriggerData* triggerData, bool defaultFlag);
-
-    STATIC_CHECK(sizeof(stTriggerMng) == 100)
 };
+static_assert(sizeof(stTriggerMng) == 100, "Class is wrong size!");
 
 extern stTriggerMng* g_stTriggerMng;

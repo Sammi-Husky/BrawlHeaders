@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <so/so_null.h>
+#include <types.h>
 
 class soModuleAccesser;
 
@@ -25,15 +25,15 @@ public:
     virtual u8 getWholeMag();
     virtual void setWholeFrame(int wholeFrame);
     virtual int getWholeFrame();
-
-    STATIC_CHECK(sizeof(soSlowModule) == 12)
 };
+static_assert(sizeof(soSlowModule) == 12, "Class is wrong size!");
 
 class soSlowModuleSimple : public soSlowModule {
     soModuleAccesser* m_moduleAccesser;
     float m_rate;
     bool m_isSkip;
     char _pad[3];
+
 public:
     virtual ~soSlowModuleSimple();
     virtual void activate();
@@ -52,6 +52,5 @@ public:
     virtual u8 getWholeMag();
     virtual void setWholeFrame(int wholeFrame);
     virtual int getWholeFrame();
-
-    STATIC_CHECK(sizeof(soSlowModuleSimple) == 24)
 };
+static_assert(sizeof(soSlowModuleSimple) == 24, "Class is wrong size!");

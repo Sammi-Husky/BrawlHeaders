@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <gf/gf_camera.h>
+#include <types.h>
 
 class gfCameraController {
     gfCameraManager* m_cameraManager;
@@ -9,6 +9,5 @@ class gfCameraController {
 public:
     virtual void update(float);
     virtual void draw();
-
-    STATIC_CHECK(sizeof(gfCameraController) == 8)
 };
+static_assert(sizeof(gfCameraController) == 8, "Class is wrong size!");

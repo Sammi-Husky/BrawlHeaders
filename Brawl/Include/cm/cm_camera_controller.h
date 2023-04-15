@@ -1,10 +1,10 @@
 #pragma once
 
-#include <types.h>
-#include <gf/gf_task.h>
-#include <cm/cm_stage_param.h>
 #include <cm/cm_controller_anm.h>
 #include <cm/cm_quake.h>
+#include <cm/cm_stage_param.h>
+#include <gf/gf_task.h>
+#include <types.h>
 
 class CameraController : public gfTask {
 public:
@@ -58,6 +58,5 @@ public:
 
     void changeInput(Kind cameraControllerKind);
     static CameraController* getInstance();
-
-    STATIC_CHECK(sizeof(CameraController) == 420)
 };
+static_assert(sizeof(CameraController) == 420, "Class is wrong size!");

@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
-#include <so/so_null.h>
 #include <StaticAssert.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class soModelModule : public soNull, public soNullable {
     // TODO: Verify Params
@@ -176,7 +176,5 @@ class soModelModuleSimple : public soModelModule {
     virtual void setShadowNode();
     virtual void setDisposeInstanceImm();
     virtual ~soModelModuleSimple();
-
-    STATIC_CHECK(sizeof(soModelModuleSimple) == 20)
-
 };
+static_assert(sizeof(soModelModuleSimple) == 20, "Class is wrong size!");

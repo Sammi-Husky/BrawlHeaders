@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <so/so_event_observer.h>
+#include <types.h>
 
 class ftEntryEventObserver : public soEventObserver<ftEntryEventObserver> {
     virtual void notifyEventSetDamage(float);
@@ -30,6 +30,5 @@ class ftEntryEventObserver : public soEventObserver<ftEntryEventObserver> {
     virtual void notifyEventKirbyResourceUnLoaded(int index);
     virtual void notifyEventExitFighter(int, int);
     char _spacer1[2];
-
-    STATIC_CHECK(sizeof(ftEntryEventObserver) == 12)
 };
+static_assert(sizeof(ftEntryEventObserver) == 12, "Class is wrong size!");

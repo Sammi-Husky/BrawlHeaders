@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <so/so_null.h>
+#include <types.h>
 
 class soController : public soNullable {
 public:
@@ -18,7 +18,7 @@ public:
     virtual void resetSubStickY();
     virtual void resetSubStick();
     virtual void reset();
-    virtual void update(void*,bool);
+    virtual void update(void*, bool);
     virtual void resetFlickX();
     virtual void resetFlickY();
     virtual void setOff(bool);
@@ -50,9 +50,8 @@ public:
     virtual void resetFlickBonus();
     virtual void resetFlickBonusLr();
     virtual ~soController();
-
-    STATIC_CHECK(sizeof(soController) == 8)
 };
+static_assert(sizeof(soController) == 8, "Class is wrong size!");
 
 class soControllerImpl : public soController {
 
@@ -110,7 +109,7 @@ public:
     virtual void resetSubStickY();
     virtual void resetSubStick();
     virtual void reset();
-    virtual void update(void*,bool);
+    virtual void update(void*, bool);
     virtual void resetFlickX();
     virtual void resetFlickY();
     virtual void setOff(bool);
@@ -142,6 +141,5 @@ public:
     virtual void resetFlickBonus();
     virtual void resetFlickBonusLr();
     virtual ~soControllerImpl();
-
-    STATIC_CHECK(sizeof(soControllerImpl) == 140)
 };
+static_assert(sizeof(soControllerImpl) == 140, "Class is wrong size!");

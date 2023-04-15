@@ -1,10 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <types.h>
 
 class soNull {
-
 };
 
 class soNullableInterface {
@@ -17,7 +16,5 @@ public:
 
     bool m_isNull;
     char _spacer[3];
-
-    STATIC_CHECK(sizeof(soNullable) == 8)
 };
-
+static_assert(sizeof(soNullable) == 8, "Class is wrong size!");

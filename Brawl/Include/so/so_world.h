@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <types.h>
 
 class soWorld {
 public:
@@ -11,8 +11,7 @@ public:
     u8 m_12;
     u8 m_13;
     char _14[2];
-
-    STATIC_CHECK(sizeof(soWorld) == 0x10)
 };
+static_assert(sizeof(soWorld) == 0x10, "Class is wrong size!");
 
 extern soWorld* g_soWorld;

@@ -68,6 +68,5 @@ public:
     void setSleepAttack(bool isSleep);
     void setSleepHit(bool isSleep);
     void setSituationODD();
-
-    STATIC_CHECK(sizeof(grYakumono) == 0x150)
 };
+static_assert(sizeof(grYakumono) == 0x150, "Class is wrong size!");

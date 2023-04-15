@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <types.h>
 
 struct OrthographicParameters {
     float m_top;
@@ -28,15 +28,13 @@ public:
     char _spacer3[8];
     CameraProjection m_projection;
     char _spacer4[48];
-
-    STATIC_CHECK(sizeof(gfCamera) == 308)
 };
+static_assert(sizeof(gfCamera) == 308, "Class is wrong size!");
 
 class gfCameraManager {
 public:
     gfCamera m_cameras[6];
     char _spacer[8];
     static gfCameraManager* getManager();
-
-    STATIC_CHECK(sizeof(gfCameraManager) == 0x740)
 };
+static_assert(sizeof(gfCameraManager) == 0x740, "Class is wrong size!");

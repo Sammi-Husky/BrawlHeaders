@@ -17,7 +17,6 @@ namespace nw4r {
             u32 GetResNodeNumEntries();
             ResNode GetResNode(const u64 nodeIndex) const;
             ResNode GetResNode(const char* nodeName) const;
-
         };
 
     } // namespace g3d

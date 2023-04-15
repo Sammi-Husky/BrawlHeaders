@@ -1,9 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <mt/mt_vector.h>
 #include <so/so_null.h>
+#include <types.h>
 
 class soModuleAccesser;
 
@@ -43,7 +43,6 @@ public:
     virtual void setSyncConstraintNode(int);
     virtual void fixConstraintNodePosture(int, void*);
     virtual void fixRot();
-
 };
 
 class soPostureModuleSimple : public soPostureModule {
@@ -91,7 +90,5 @@ public:
     virtual void setSyncConstraintNode(int);
     virtual void fixConstraintNodePosture(int, void*);
     virtual void fixRot();
-
-    STATIC_CHECK(sizeof(soPostureModuleSimple) == 68)
-
 };
+static_assert(sizeof(soPostureModuleSimple) == 68, "Class is wrong size!");

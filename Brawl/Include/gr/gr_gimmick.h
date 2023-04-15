@@ -18,9 +18,8 @@ struct grGimmickMotionPathData {
     MotionPathMode m_pathMode : 8;
     char m_mdlIndex;
     char _padding;
-
-    STATIC_CHECK(sizeof(grGimmickMotionPathData) == 8)
 };
+static_assert(sizeof(grGimmickMotionPathData) == 8, "Class is wrong size!");
 
 struct grGimmickMotionPathInfo {
     gfArchive* m_archive;
@@ -87,9 +86,8 @@ public:
         char _spacer3[6];
         unsigned int m_nodeIndex;
         int m_power;
-
-        STATIC_CHECK(sizeof(AttackData) == 88)
     };
+    static_assert(sizeof(AttackData) == 88, "Class is wrong size!");
 
     struct HitData {
         Vec3f m_startOffset;
@@ -97,9 +95,8 @@ public:
         float m_size;
         u8 m_nodeIndex;
         char _29[3];
-
-        STATIC_CHECK(sizeof(HitData) == 32)
     };
+    static_assert(sizeof(HitData) == 32, "Class is wrong size!");
 
     struct AttackDetails {
         union {
@@ -123,9 +120,8 @@ public:
         char _spacer[2];
         CollisionAttackFacingRestriction m_facingRestriction;
         float m_hitstopMultiplier;
-
-        STATIC_CHECK(sizeof(AttackDetails) == 16)
     };
+    static_assert(sizeof(AttackDetails) == 16, "Class is wrong size!");
 
     struct SimpleEffectData {
         unsigned int m_id;
@@ -271,6 +267,5 @@ public:
     void updataGimmickEffect(float unk1);
     void updataGimmickSE(float unk1);
     void updateProduction(float unk1);
-
-    STATIC_CHECK(sizeof(grGimmick) == 0x14c)
 };
+static_assert(sizeof(grGimmick) == 0x14c, "Class is wrong size!");

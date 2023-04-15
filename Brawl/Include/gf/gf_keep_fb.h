@@ -2,8 +2,7 @@
 
 #include <gf/gf_task.h>
 
-class gfKeepFrameBuffer
-{
+class gfKeepFrameBuffer {
 
 private:
 public:

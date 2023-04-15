@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <so/collision/so_collision_hit_part.h>
+#include <types.h>
 
 class soCollisionHitGroup {
     int m_index;
@@ -24,9 +24,8 @@ class soCollisionHitGroup {
     u8 m_51;
     u8 m_globalOffset;
     char _53[3];
+
 public:
     void setInvincibleGlobal();
-
-    STATIC_CHECK(sizeof(soCollisionHitGroup) == 56)
-
 };
+static_assert(sizeof(soCollisionHitGroup) == 56, "Class is wrong size!");

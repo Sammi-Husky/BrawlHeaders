@@ -2,22 +2,22 @@
 
 #include <GX/GXColor.h>
 #include <StaticAssert.h>
+#include <cm/cm_camera_controller.h>
+#include <em/em_create.h>
 #include <gf/gf_archive.h>
 #include <gf/gf_task.h>
+#include <gm/gm_lib.h>
 #include <gr/gr_yakumono.h>
+#include <it/item.h>
 #include <memory.h>
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>
 #include <snd/snd_3d_generator.h>
 #include <snd/snd_id.h>
-#include <st/st_positions.h>
-#include <types.h>
-#include <em/em_create.h>
-#include <it/item.h>
-#include <st/st_trigger.h>
 #include <st/st_collision_attr_param.h>
-#include <cm/cm_camera_controller.h>
-#include <gm/gm_lib.h>
+#include <st/st_positions.h>
+#include <st/st_trigger.h>
+#include <types.h>
 
 namespace StSeUtil {
     class SeSeq {
@@ -35,9 +35,8 @@ namespace StSeUtil {
         void playFrame(float frame, float unk1, u32 unk2);
         void registId(SndID* ID, int unk1);
         void registSeq(int unk1, SndID* ID, int unk2, Heaps::HeapType heapType);
-
-        STATIC_CHECK(sizeof(SeSeq) == 0x20)
     };
+    static_assert(sizeof(SeSeq) == 0x20, "Class is wrong size!");
 }
 
 class StageParam {
@@ -115,9 +114,8 @@ public:
     s16 m_reverbTime;
     u16 m_delayTime;
     char _244[16];
-
-    STATIC_CHECK(sizeof(StageParam) == 260)
 };
+static_assert(sizeof(StageParam) == 260, "Class is wrong size!");
 
 class Stage : public gfTask {
 public:
@@ -196,7 +194,7 @@ public:
     virtual void processUpdate();
     virtual void processMapCorrection();
     virtual void processFixCamera();
-    virtual  void processEnd();
+    virtual void processEnd();
     virtual void renderPre();
     virtual void renderDebug();
     virtual ~Stage();
@@ -204,16 +202,16 @@ public:
     virtual void createObj();
     virtual void createObjPokeTrainer(gfArchive* filedata, int fileindex, const char* name, int unk1, int unk2);
     virtual int getPokeTrainerPointNum() { return 0; }
-    virtual void getPokeTrainerPointData(int* unk1, int unk2) { }
+    virtual void getPokeTrainerPointData(int* unk1, int unk2) {}
     virtual float getPokeTrainerPositionZ() { return 0.0f; }
     virtual int getPokeTrainerDrawLayer() { return 0; }
     virtual bool isAdventureStage() { return false; }
     virtual void getItemPac(gfArchive** brres, gfArchive** param, itKind itemID, int variantID, gfArchive** commonParam = NULL, itCustomizerInterface** customizer = NULL); // Note: Optional parameters for modding purposes to use custom itmParams and customizers
     virtual void getItemGenPac(gfArchive** archive);
     virtual void getItemPacEnemyFigure(); // TODO
-    virtual void getEnemyPac(gfArchive **brres, gfArchive **param, gfArchive **enmCommon, gfArchive **primFaceBrres, EnemyKind enemyKind);
+    virtual void getEnemyPac(gfArchive** brres, gfArchive** param, gfArchive** enmCommon, gfArchive** primFaceBrres, EnemyKind enemyKind);
     virtual void getAdvRadarData(gfArchive**, gfArchive**);
-    virtual void initializeStage();       // TODO
+    virtual void initializeStage(); // TODO
     virtual void closeStage();
     virtual void renderDebugPositions();
     virtual bool loading();
@@ -223,7 +221,8 @@ public:
     virtual stRange* getAIRange() { return &m_aiRange; }
     virtual int getDefaultLightSetIndex() { return 0x14; }
     virtual int getZoneLightSetIndex();
-    virtual int getScrollDir(Vec3f* unk1) {
+    virtual int getScrollDir(Vec3f* unk1)
+    {
         unk1->m_x = 0.0f;
         unk1->m_y = 0.0f;
         unk1->m_z = 0.0f;
@@ -235,7 +234,7 @@ public:
     virtual bool isLoadLocalData();
     virtual int entryLocalData();
     virtual void removeLocalData();
-    virtual void appearanceFighterLocal() { }
+    virtual void appearanceFighterLocal() {}
     virtual void getFighterStartPos(Vec3f* startPos, int fighterIndex);
     virtual void getFighterReStartPos(Vec3f* startPos, int fighterIndex);
     virtual bool isReStartSamePoint();
@@ -257,11 +256,13 @@ public:
     virtual int getNowStepBgmID() { return 0; }
     virtual int getBgmOptionID() { return 0; }
     virtual bool isBgmChange() { return m_unk2; }
-    virtual void getBgmChangeID(u32* unk1, float* unk2) {
+    virtual void getBgmChangeID(u32* unk1, float* unk2)
+    {
         *unk1 = m_unk3;
         *unk2 = m_unk4;
     }
-    virtual void setBgmChange(float unk1, bool unk2, u32 unk3) {
+    virtual void setBgmChange(float unk1, bool unk2, u32 unk3)
+    {
         m_unk2 = unk2;
         m_unk3 = unk3;
         m_unk4 = unk1;
@@ -271,7 +272,7 @@ public:
     virtual bool isNextStepBgmEqualNowStepBgmFromFlag() { return false; }
     virtual void setFrameRuleTime(float unk1) { m_frameRuleTime = unk1; }
     virtual float getFrameRuleTime() { return m_frameRuleTime; }
-    virtual void notifyTimmingGameStart() { }
+    virtual void notifyTimmingGameStart() {}
     virtual bool isEnd();
     virtual bool isEventEnd();
     virtual void enableDevil();
@@ -294,27 +295,27 @@ public:
     virtual bool isCameraLocked() { return true; }
     virtual bool isBossBattleMode() { return false; }
     virtual bool isSimpleBossBattleMode() { return false; }
-    virtual bool isAppear();                                 // TODO
-    virtual bool isStartAppearTimming();                     // TODO
-    virtual void getMadeinAiData();                          // TODO
-    virtual bool isBamperVector();                           // TODO
+    virtual bool isAppear();             // TODO
+    virtual bool isStartAppearTimming(); // TODO
+    virtual void getMadeinAiData();      // TODO
+    virtual bool isBamperVector();       // TODO
     virtual void getBamperVector(int unk1);
-    virtual void notifyEventInfoReady();        // TODO
-    virtual void notifyEventInfoGo();           // TODO
-    virtual void getDestroyBossParamCommon();   // TODO
-    virtual void stAdventureEventGetItem(int, int, int, int, int);     // TODO
-    virtual void setStageOutEffectInit();       // TODO
-    virtual void setStageInEffectInit();        // TODO
+    virtual void notifyEventInfoReady();                           // TODO
+    virtual void notifyEventInfoGo();                              // TODO
+    virtual void getDestroyBossParamCommon();                      // TODO
+    virtual void stAdventureEventGetItem(int, int, int, int, int); // TODO
+    virtual void setStageOutEffectInit();                          // TODO
+    virtual void setStageInEffectInit();                           // TODO
     virtual int helperStarWarp() { return 0; }
     virtual int initializeFighterAttackRatio() { return 0; }
-    virtual void startFighterEvent() { }
-    virtual int getZoneState();                 // TODO
+    virtual void startFighterEvent() {}
+    virtual int getZoneState(); // TODO
     virtual void getZonePos(Vec3f* pos);
-    virtual float getMagmaHeight();             // TODO
-    virtual float getAcidHeight();              // TODO
-    virtual int getIteamDropStatus();           // TODO
+    virtual float getMagmaHeight();   // TODO
+    virtual float getAcidHeight();    // TODO
+    virtual int getIteamDropStatus(); // TODO
     virtual bool createWind2ndOnly();
     virtual grGimmickWindData2nd* getWind2ndOnlyData(); // TODO
-    virtual void updateWind2ndOnly();           // TODO
-    virtual void setVision();                   // TODO
+    virtual void updateWind2ndOnly();                   // TODO
+    virtual void setVision();                           // TODO
 };

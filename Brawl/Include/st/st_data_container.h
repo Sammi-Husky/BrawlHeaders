@@ -22,9 +22,8 @@ public:
     virtual stDataContainerData* getData(int index);
     virtual void* getDataAddressHead();
     virtual ~stDataContainer();
-
-    STATIC_CHECK(sizeof(stDataContainer) == 0x0C)
 };
+static_assert(sizeof(stDataContainer) == 0x0C, "Class is wrong size!");
 
 class stDataMultiContainer : public stDataContainer {
 private:
@@ -39,6 +38,5 @@ public:
     void* getContainerData(u32 targetMagic, int nodeDataIdx, int nodeIdx);
     int getContainerDataNum(u32 targetMagic, int nodeIdx);
     stDataContainer* searchContainer(u32 targetMagic, int nodeIdx);
-
-    STATIC_CHECK(sizeof(stDataMultiContainer) == 0x14)
 };
+static_assert(sizeof(stDataMultiContainer) == 0x14, "Class is wrong size!");

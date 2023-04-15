@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <mt/mt_vector.h>
+#include <types.h>
 #include <ut/ut_stageobject_pool.h>
 #include <wn/wn_em_simple.h>
 
@@ -19,6 +19,5 @@ public:
     static void create();
     static void remove();
     static emWeaponManager* getInstance();
-
-    STATIC_CHECK(sizeof(emWeaponManager) == 0x298)
 };
+static_assert(sizeof(emWeaponManager) == 0x298, "Class is wrong size!");

@@ -16,9 +16,8 @@ public:
     char _24[2];
     char m_moduleName;
     char _30[33];
-
-    STATIC_CHECK(sizeof(gfModuleInfo) == 60)
 };
+static_assert(sizeof(gfModuleInfo) == 60, "Class is wrong size!");
 
 class gfModuleManager {
 
@@ -36,6 +35,5 @@ public:
     static void loadModuleRequest(LoadRequestResult*, gfModuleManager*, char* moduleName, HeapType heapType, bool, bool);
 
     static gfModuleManager* getInstance();
-
-    STATIC_CHECK(sizeof(gfModuleManager) == 968)
 };
+static_assert(sizeof(gfModuleManager) == 968, "Class is wrong size!");

@@ -1,9 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <st/operator/st_operator_rule.h>
 #include <gm/gm_result_info.h>
+#include <st/operator/st_operator_rule.h>
+#include <types.h>
 
 class stOperatorRuleMelee : public stOperatorRule {
 public:
@@ -36,6 +36,5 @@ public:
     virtual bool getNextCorpsPutMemberCharaKind(u8*, u8*);
     virtual bool searchCorpsPutMember(u32, int, u32*, u32*, u8*);
     virtual void putCorpsPutMember(void*, u32 characterKind, u32 costumeId, u8, bool);
-
-    STATIC_CHECK(sizeof(stOperatorRuleMelee) == 604)
 };
+static_assert(sizeof(stOperatorRuleMelee) == 604, "Class is wrong size!");

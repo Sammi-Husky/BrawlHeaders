@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <gr/gr_gimmick.h>
+#include <types.h>
 
 class grVisibleProductionEffect : public grVisibleProduction {
     virtual ~grVisibleProductionEffect();

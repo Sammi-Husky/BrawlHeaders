@@ -1,9 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <so/so_null.h>
 #include <so/so_lock.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class soWorkManageModule : public soNullable {
 public:
@@ -30,9 +30,8 @@ public:
     virtual bool turnOffFlag(u32 index);
     virtual void clearAll(u32 index);
     virtual void* getParamAccesser();
-
-    STATIC_CHECK(sizeof(soWorkManageModule) == 8)
 };
+static_assert(sizeof(soWorkManageModule) == 8, "Class is wrong size!");
 
 class soWorkManageModuleImpl : public soWorkManageModule, public soLockable, public soAnimCmdEventObserver {
     char _spacer[20];
@@ -64,6 +63,5 @@ public:
 
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-
-    STATIC_CHECK(sizeof(soWorkManageModuleImpl) == 48)
 };
+static_assert(sizeof(soWorkManageModuleImpl) == 48, "Class is wrong size!");

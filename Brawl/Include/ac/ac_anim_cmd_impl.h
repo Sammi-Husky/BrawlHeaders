@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <so/so_null.h>
+#include <types.h>
 
 class acAnimCmd : public soNullable {
     // TODO

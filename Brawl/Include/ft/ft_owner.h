@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <types.h>
 
 class ftOwner {
     void* m_data;
@@ -33,6 +33,5 @@ public:
     virtual void addAttackPattern(void*);
 
     int getStockCount();
-
-    STATIC_CHECK(sizeof(ftOwner) == 16)
 };
+static_assert(sizeof(ftOwner) == 16, "Class is wrong size!");

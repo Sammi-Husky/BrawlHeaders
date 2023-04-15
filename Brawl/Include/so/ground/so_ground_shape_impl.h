@@ -1,9 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <gr/gr_collision_status.h>
 #include <mt/mt_vector.h>
+#include <types.h>
 
 class soGroundShapeImpl {
     char _0[4];
@@ -24,6 +24,5 @@ class soGroundShapeImpl {
     char _58[6];
 
     virtual ~soGroundShapeImpl();
-
-    STATIC_CHECK(sizeof(soGroundShapeImpl) == 68)
 };
+static_assert(sizeof(soGroundShapeImpl) == 68, "Class is wrong size!");

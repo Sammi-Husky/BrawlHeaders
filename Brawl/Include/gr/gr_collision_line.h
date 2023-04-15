@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <types.h>
 
 struct grCollisionLine {
     // 0
@@ -18,7 +18,5 @@ struct grCollisionLine {
     char m_materialType;
     // 18
     char _pad[2];
-
-    STATIC_CHECK(sizeof(grCollisionLine) == 20)
-
 };
+static_assert(sizeof(grCollisionLine) == 20, "Class is wrong size!");

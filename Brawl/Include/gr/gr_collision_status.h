@@ -1,10 +1,10 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_collision.h>
 #include <gr/gr_collision_shape_circle.h>
 #include <gr/gr_collision_shape_rhombus.h>
 #include <types.h>
-#include <StaticAssert.h>
 
 class grCollStatus {
 public:
@@ -57,9 +57,8 @@ public:
     // 520
     char _spacer9[116];
     // TOTAL SIZE == 636
-
-    STATIC_CHECK(sizeof(grCollStatus) == 636)
 };
+static_assert(sizeof(grCollStatus) == 636, "Class is wrong size!");
 
 class grCollStatusEventReceiver {
 public:

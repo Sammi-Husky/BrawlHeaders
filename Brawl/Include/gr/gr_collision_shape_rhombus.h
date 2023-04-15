@@ -1,8 +1,8 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_collision_shape.h>
 #include <types.h>
-#include <StaticAssert.h>
 
 class grCollShapeRhombus : public grCollShape {
     clRhombus2D m_rhombus;
@@ -30,6 +30,5 @@ class grCollShapeRhombus : public grCollShape {
     virtual void setUD(Vec2f* centerPos, Vec2f* unk1, Vec2f* unk2);
     virtual void setLR(Vec2f* unk1, Vec2f* unk2);
     virtual void modifyDownY(float downY);
-
-    STATIC_CHECK(sizeof(grCollShapeRhombus) == 60)
 };
+static_assert(sizeof(grCollShapeRhombus) == 60, "Class is wrong size!");

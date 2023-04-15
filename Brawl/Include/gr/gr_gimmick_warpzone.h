@@ -1,8 +1,8 @@
 #pragma once
 
-#include <gr/gr_yakumono.h>
-#include <gr/gr_gimmick_motion_path.h>
 #include <StaticAssert.h>
+#include <gr/gr_gimmick_motion_path.h>
+#include <gr/gr_yakumono.h>
 #include <snd/snd_id.h>
 #include <st/st_trigger.h>
 
@@ -20,9 +20,8 @@ struct grGimmickWarpData {
     stTriggerData m_warpTriggerData;
     char _112[12];
     stTriggerData m_isValidTriggerData;
-
-    STATIC_CHECK(sizeof(grGimmickWarpData) == 128)
 };
+static_assert(sizeof(grGimmickWarpData) == 128, "Class is wrong size!");
 
 class grGimmickWarpZone : public grYakumono {
 protected:
@@ -46,6 +45,5 @@ public:
     virtual void setInitializeFlag();
     virtual void onGimmickEvent(soGimmickEventInfo* eventInfo, int* taskId);
     virtual void setWarpAttrData(Vec3f* warpDest, u8 warpType, bool isNotAuto);
-
-    STATIC_CHECK(sizeof(grGimmickWarpZone) == 416)
 };
+static_assert(sizeof(grGimmickWarpZone) == 416, "Class is wrong size!");

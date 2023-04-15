@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <gr/gr_yakumono.h>
+#include <types.h>
 
 struct grGimmickSpringData {
 public:
@@ -18,9 +18,8 @@ public:
     u8 m_collIndex;
     char _74[2];
     stTriggerData m_triggerData;
-
-    STATIC_CHECK(sizeof(grGimmickSpringData) == 80)
 };
+static_assert(sizeof(grGimmickSpringData) == 80, "Class is wrong size!");
 
 class grGimmickSpring : public grYakumono {
 
@@ -56,6 +55,5 @@ public:
 
     void presentPosEvent();
     void presentShootEvent();
-
-    STATIC_CHECK(sizeof(grGimmickSpring) == 412)
 };
+static_assert(sizeof(grGimmickSpring) == 412, "Class is wrong size!");

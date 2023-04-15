@@ -5,6 +5,5 @@
 
 struct gmTournamentData {
     char _spacer[0x510]; // 0x00
-
-    STATIC_CHECK(sizeof(gmTournamentData) == 0x510)
 };
+static_assert(sizeof(gmTournamentData) == 0x510, "Class is wrong size!");

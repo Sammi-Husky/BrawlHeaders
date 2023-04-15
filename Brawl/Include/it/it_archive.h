@@ -1,10 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <it/item.h>
-
-
+#include <types.h>
 
 class itArchive {
 public:
@@ -31,8 +29,5 @@ public:
     int m_40;
 
     virtual ~itArchive();
-
-    STATIC_CHECK(sizeof(itArchive) == 48)
 };
-
-
+static_assert(sizeof(itArchive) == 48, "Class is wrong size!");
