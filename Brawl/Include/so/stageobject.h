@@ -58,6 +58,6 @@ public:
     virtual void notifyArticleEventEject(int unk1, int unk2, int* unk3, int* unk4);
     virtual void updateRoughPos();
 
-    void activate(float, float, Vec3f* pos, bool);
+    void activate(float lr, float, Vec3f* pos, bool);
 };
 static_assert(sizeof(StageObject) == 100, "Class is wrong size!");

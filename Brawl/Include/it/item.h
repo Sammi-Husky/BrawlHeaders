@@ -303,7 +303,7 @@ struct itCreate {
     u32 m_variation;
     Vec3f* m_pos1;
     Vec3f* m_pos2;
-    float m_28;
+    float m_lr;
     int m_32;
     int m_36;
     u8 m_40;
