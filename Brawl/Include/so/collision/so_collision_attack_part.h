@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <mt/mt_vector.h>
+#include <types.h>
 
 enum CollisionAttackElementType {
     Element_Type_Normal = 0x0,
@@ -127,9 +127,9 @@ struct soCollisionAttackData {
             bool isBlockable : 1;
             bool isReflectable : 1;
             bool isAbsorbable : 1;
-            unsigned int addedShieldDamage : 9;   // up to 0x1ff
-            unsigned int field_0x34_9 : 10;  // ~up to 0x3ff
-            unsigned int detectionRate : 16; // up to 0xffff
+            unsigned int addedShieldDamage : 9; // up to 0x1ff
+            unsigned int field_0x34_9 : 10;     // ~up to 0x3ff
+            unsigned int detectionRate : 16;    // up to 0xffff
             bool field_0x38_1 : 1;
             bool ignoreInvincibility : 1;
             bool ignoreIntangibility : 1;
@@ -159,9 +159,9 @@ struct soCollisionAttackData {
             bool isBlockable : 1;
             bool isReflectable : 1;
             bool isAbsorbable : 1;
-            unsigned int addedShieldDamage : 9;   // up to 0x1ff
-            unsigned int field_0x34_9 : 10;  // ~up to 0x3ff
-            unsigned int detectionRate : 16; // up to 0xffff
+            unsigned int addedShieldDamage : 9; // up to 0x1ff
+            unsigned int field_0x34_9 : 10;     // ~up to 0x3ff
+            unsigned int detectionRate : 16;    // up to 0xffff
             bool field_0x38_1 : 1;
             bool ignoreInvincibility : 1;
             bool ignoreIntangibility : 1;
@@ -176,7 +176,5 @@ struct soCollisionAttackData {
             unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
         } m_masks;
     };
-
-    STATIC_CHECK(sizeof(soCollisionAttackData) == 64)
-
 };
+static_assert(sizeof(soCollisionAttackData) == 64, "Class is wrong size!");

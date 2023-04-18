@@ -1,14 +1,14 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <st/operator/st_operator.h>
+#include <types.h>
 
 class stOperatorRule : public stOperator {
 public:
-    void *m_operatorBgm;
-    void *m_operatorNetwork;
-    void *m_operatorController;
+    void* m_operatorBgm;
+    void* m_operatorNetwork;
+    void* m_operatorController;
     char _20[32];
     bool m_isGameSet;
     char _53[87];
@@ -34,6 +34,5 @@ public:
     virtual void nortifyNetworkOtherNodeExit();
     virtual void networkWriteRanking();
     virtual void setOpAppearanceHelper(void*);
-
-    STATIC_CHECK(sizeof(stOperatorRule) == 204)
 };
+static_assert(sizeof(stOperatorRule) == 204, "Class is wrong size!");

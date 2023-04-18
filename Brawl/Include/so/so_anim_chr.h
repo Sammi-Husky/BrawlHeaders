@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <nw4r/g3d/g3d_anmchr.h>
+#include <types.h>
 
 struct soAnimChr {
     nw4r::g3d::AnmObjChrRes* m_anmChrRes;
@@ -27,7 +27,5 @@ struct soAnimChr {
     bool _24_0 : 1;
 
     char _pad[3];
-
-    STATIC_CHECK(sizeof(soAnimChr) == 28)
-
 };
+static_assert(sizeof(soAnimChr) == 28, "Class is wrong size!");

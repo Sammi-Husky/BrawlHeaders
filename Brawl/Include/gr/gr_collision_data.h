@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <types.h>
 
 struct VtxData {
     char _spacer[8];
@@ -25,6 +25,5 @@ class grCollData {
     VtxData* m_vtxDataArray;
     LineData* m_lineDataArray;
     JointData* m_jointDataArray;
-
-    STATIC_CHECK(sizeof(grCollData) == 20)
 };
+static_assert(sizeof(grCollData) == 20, "Class is wrong size!");

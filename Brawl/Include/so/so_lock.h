@@ -1,10 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <types.h>
 
 class soLockable {
     char _spacer[8];
-
-    STATIC_CHECK(sizeof(soLockable) == 8)
 };
+static_assert(sizeof(soLockable) == 8, "Class is wrong size!");

@@ -1,11 +1,11 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_collision_data.h>
 #include <gr/gr_collision_line.h>
 #include <mt/mt_coll2d.h>
 #include <mt/mt_matrix.h>
 #include <types.h>
-#include <StaticAssert.h>
 
 class grCollision;
 class Ground;
@@ -29,6 +29,5 @@ class grCollisionJoint {
     Ground* m_ground;
     // 92
     Matrix* m_matrix;
-
-    STATIC_CHECK(sizeof(grCollisionJoint) == 96)
 };
+static_assert(sizeof(grCollisionJoint) == 96, "Class is wrong size!");

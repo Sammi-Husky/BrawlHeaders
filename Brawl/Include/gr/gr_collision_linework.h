@@ -1,9 +1,9 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_collision_joint.h>
 #include <gr/gr_collision_line.h>
 #include <types.h>
-#include <StaticAssert.h>
 
 class grCollision;
 
@@ -16,6 +16,5 @@ class grCollisionLineWork {
     grCollision* m_collision;
     // 12
     char _spacer[4];
-
-    STATIC_CHECK(sizeof(grCollisionLineWork) == 16)
 };
+static_assert(sizeof(grCollisionLineWork) == 16, "Class is wrong size!");

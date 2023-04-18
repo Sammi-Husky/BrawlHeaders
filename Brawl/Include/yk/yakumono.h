@@ -1,11 +1,11 @@
 #pragma once
 
-#include <types.h>
-#include <so/area/so_area_module_impl.h>
-#include <so/collision/so_collision_log.h>
-#include <so/collision/so_collision_hit_part.h>
-#include <so/stageobject.h>
 #include <StaticAssert.h>
+#include <so/area/so_area_module_impl.h>
+#include <so/collision/so_collision_hit_part.h>
+#include <so/collision/so_collision_log.h>
+#include <so/stageobject.h>
+#include <types.h>
 
 class grYakumono;
 
@@ -59,6 +59,5 @@ public:
     ykData* m_data;
     char _spacer[457];
     char _pad[3];
-
-    STATIC_CHECK(sizeof(Yakumono) == 856)
 };
+static_assert(sizeof(Yakumono) == 856, "Class is wrong size!");

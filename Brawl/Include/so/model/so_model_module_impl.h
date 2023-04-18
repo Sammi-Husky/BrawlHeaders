@@ -1,11 +1,11 @@
 #pragma once
 
-#include <types.h>
-#include <memory.h>
 #include <StaticAssert.h>
+#include <memory.h>
+#include <so/model/so_model_module_simple.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
-#include <so/model/so_model_module_simple.h>
+#include <types.h>
 
 class soModuleAccesser;
 
@@ -81,7 +81,5 @@ class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObser
 
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-
-    STATIC_CHECK(sizeof(soModelModuleImpl) == 204)
-
 };
+static_assert(sizeof(soModelModuleImpl) == 204, "Class is wrong size!");

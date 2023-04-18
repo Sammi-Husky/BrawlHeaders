@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <gr/gr_yakumono.h>
+#include <types.h>
 
 struct grGimmickCatapultData {
     grGimmickMotionPathData m_motionPathData;
@@ -18,9 +18,8 @@ struct grGimmickCatapultData {
     bool m_isFaceLeft;
     bool m_useNoHelperWarp;
     char _82[1];
-
-    STATIC_CHECK(sizeof(grGimmickCatapultData) == 84)
 };
+static_assert(sizeof(grGimmickCatapultData) == 84, "Class is wrong size!");
 
 class grGimmickCatapult : public grYakumono {
 
@@ -38,7 +37,8 @@ protected:
     ykAreaData m_ykData;
 
 public:
-    grGimmickCatapult(char* taskName) : grYakumono(taskName){
+    grGimmickCatapult(char* taskName) : grYakumono(taskName)
+    {
         m_motionPath = NULL;
         m_state = 0;
         m_frameCount = 0.0;
@@ -56,6 +56,5 @@ public:
     void presentFighterPosEvent();
 
     static grGimmickCatapult* create(int mdlIndex, char* taskName);
-
-    STATIC_CHECK(sizeof(grGimmickCatapult) == 420)
 };
+static_assert(sizeof(grGimmickCatapult) == 420, "Class is wrong size!");

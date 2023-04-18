@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <types.h>
 
 class soDamageTransactor {
     // TODO:

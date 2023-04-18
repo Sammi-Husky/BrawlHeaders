@@ -38,9 +38,8 @@ struct gmPlayerResultInfo {
     char _26[548];
     int m_rankCount;
     char _604[80];
-
-    STATIC_CHECK(sizeof(gmPlayerResultInfo) == 684)
 };
+static_assert(sizeof(gmPlayerResultInfo) == 684, "Class is wrong size!");
 
 class gmResultInfo {
 public:
@@ -54,9 +53,8 @@ public:
     gmPlayerResultInfo m_playersResultInfo[7];
     char _4824[172];
     int m_time;
-
-    STATIC_CHECK(sizeof(gmResultInfo) == 0x1388)
 };
+static_assert(sizeof(gmResultInfo) == 0x1388, "Class is wrong size!");
 
 namespace static_checks {
 

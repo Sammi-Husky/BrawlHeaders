@@ -1,7 +1,6 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <so/so_array.h>
 #include <gf/gf_archive.h>
 #include <gf/gf_model.h>
 #include <gf/gf_task.h>
@@ -11,6 +10,7 @@
 #include <mt/mt_vector.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
+#include <so/so_array.h>
 #include <types.h>
 
 class Stage;
@@ -135,8 +135,7 @@ public:
     void setEnableCollisionStatusByClipping(bool enableColl);
     void setVisibilityByClipping(int unk1, u32 sceneModelIndex);
     void updateG3dProcCalcWorldForce();
-
-    STATIC_CHECK(sizeof(Ground) == 0x9C)
 };
+static_assert(sizeof(Ground) == 0x9C, "Class is wrong size!");
 
 // Size: 196

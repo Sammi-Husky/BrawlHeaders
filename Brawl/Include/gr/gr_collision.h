@@ -1,8 +1,8 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_collision_linework.h>
 #include <types.h>
-#include <StaticAssert.h>
 
 class Stage;
 
@@ -39,6 +39,5 @@ public:
     static grCollision* create(Stage* stage, void* colData, Ground* ground, int unk2);
     grCollision(void* colData, int unk1, int unk2);
     ~grCollision();
-
-    STATIC_CHECK(sizeof(grCollision) == 56)
 };
+static_assert(sizeof(grCollision) == 56, "Class is wrong size!");

@@ -1,8 +1,8 @@
 #pragma once
 
-#include <gr/gr_yakumono.h>
-#include <gr/gr_gimmick_motion_path.h>
 #include <StaticAssert.h>
+#include <gr/gr_gimmick_motion_path.h>
+#include <gr/gr_yakumono.h>
 #include <st/st_trigger.h>
 
 struct grGimmickPunchSliderData {
@@ -25,9 +25,8 @@ struct grGimmickPunchSliderData {
     char _249[3];
     char m_ballNodeName[32];
     char _284[4];
-
-    STATIC_CHECK(sizeof(grGimmickPunchSliderData) == 288)
 };
+static_assert(sizeof(grGimmickPunchSliderData) == 288, "Class is wrong size!");
 
 class grYakumonoPunchSlider : public grYakumono {
 protected:
@@ -54,9 +53,5 @@ public:
     virtual void updateMove(float deltaFrame);
     virtual void createMotionPath();
     virtual void setCulcCallback(gfArchive* archive);
-
-    STATIC_CHECK(sizeof(grYakumonoPunchSlider) == 452)
 };
-
-
-
+static_assert(sizeof(grYakumonoPunchSlider) == 452, "Class is wrong size!");

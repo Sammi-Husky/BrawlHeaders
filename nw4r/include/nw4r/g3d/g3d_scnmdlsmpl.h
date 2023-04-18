@@ -1,8 +1,8 @@
 #pragma once
 
-#include <nw4r/g3d/g3d_scnobj.h>
-#include <nw4r/g3d/g3d_resmdl.h>
 #include <nw4r/g3d/g3d_calcworldcallback.h>
+#include <nw4r/g3d/g3d_resmdl.h>
+#include <nw4r/g3d/g3d_scnobj.h>
 
 namespace nw4r {
     namespace g3d {
@@ -10,7 +10,7 @@ namespace nw4r {
         class ScnMdlSimple : public ScnObj {
         public:
             // TODO
-            virtual u32 IsDerivedFrom(int *unk1);
+            virtual u32 IsDerivedFrom(int* unk1);
 
             virtual void G3dProc(int unk1, int unk2, int unk3);
 

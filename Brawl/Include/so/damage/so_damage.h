@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
+#include <types.h>
 
 class soDamage {
 public:
@@ -18,6 +18,5 @@ public:
     char _spacer5[20];
     float m_damage_;
     char _152[8];
-
-    STATIC_CHECK(sizeof(soDamage) == 160)
-}; // size 160
+};
+static_assert(sizeof(soDamage) == 160, "Class is wrong size!"); // size 160

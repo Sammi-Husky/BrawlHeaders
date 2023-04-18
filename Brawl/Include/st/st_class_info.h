@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <gm/gm_lib.h>
+#include <types.h>
 
 class stClassInfo {
 private:

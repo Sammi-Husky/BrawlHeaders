@@ -1,15 +1,15 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <mt/mt_vector.h>
 #include <ft/fighter.h>
-#include <so/damage/so_damage_attacker_info.h>
-#include <so/so_event_observer.h>
-#include <so/so_null.h>
-#include <so/so_dispose_instance_manager.h>
-#include <so/so_log_event_presenter.h>
 #include <gm/gm_result_info.h>
+#include <mt/mt_vector.h>
+#include <so/damage/so_damage_attacker_info.h>
+#include <so/so_dispose_instance_manager.h>
+#include <so/so_event_observer.h>
+#include <so/so_log_event_presenter.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class ftOutsideEventObserver : public soEventObserver<ftOutsideEventObserver> {
 public:
@@ -22,7 +22,7 @@ public:
     virtual void notifyEventDead(int entryId, int, int, u32);
     virtual void notifyEventBeat(int entryId1, int entryId2);
     virtual void notifyEventSuicide(int entryId);
-    virtual void notifyEventChangeStart(int,int playerNo);
+    virtual void notifyEventChangeStart(int, int playerNo);
     virtual void notifyEventChangeEnd(int entryId, u32 index, int, int);
     virtual void notifyEventChangeAppear();
     virtual void notifyEventAddDragoonParts(int entryId, int);
@@ -56,8 +56,8 @@ public:
     virtual void notifyEventHeartSwapEnd();
 
     char _spacer1[2];
-    STATIC_CHECK(sizeof(ftOutsideEventObserver) == 12)
 };
+static_assert(sizeof(ftOutsideEventObserver) == 12, "Class is wrong size!");
 
 class ftManagerAbstract : public soNull, public gfTask, public ftOutsideEventObserver, public soDisposeInstanceEventObserver, public soLogEventObserver {
     // Note: Done so that vtable placement is proper
@@ -66,61 +66,60 @@ class ftManagerAbstract : public soNull, public gfTask, public ftOutsideEventObs
 class ftManager : public ftManagerAbstract {
 
 public:
-        char _104[2];
-        GameRule m_gameRule : 8;
-        char _107[2];
-        bool m_isStamina;
-        char _110[242];
+    char _104[2];
+    GameRule m_gameRule : 8;
+    char _107[2];
+    bool m_isStamina;
+    char _110[242];
 
-        virtual ~ftManager();
+    virtual ~ftManager();
 
-        virtual void processBegin();
-        virtual void processUpdate();
-        virtual void processHit();
-        virtual void processEnd();
-        virtual void processDebug();
+    virtual void processBegin();
+    virtual void processUpdate();
+    virtual void processHit();
+    virtual void processEnd();
+    virtual void processDebug();
 
-        virtual void notifyEventKirbyCopySetup(int entryId, int);
-        virtual void notifyEventKirbyCopyCancel(int entryId, int);
+    virtual void notifyEventKirbyCopySetup(int entryId, int);
+    virtual void notifyEventKirbyCopyCancel(int entryId, int);
 
-        virtual void notifyDisposeInstance(bool, int, int taskId);
-        virtual void notifyDrawDone();
+    virtual void notifyDisposeInstance(bool, int, int taskId);
+    virtual void notifyDrawDone();
 
-        virtual void notifyEventEntryEnd(int entryId);
-        virtual void notifyEventResultEnd(int entryId);
+    virtual void notifyEventEntryEnd(int entryId);
+    virtual void notifyEventResultEnd(int entryId);
 
-        virtual void notifyLogEventCollisionHit(float, int taskId1, int taskId2, int);
-        virtual void notifyLogEventDead(int entryId1, int entryId2, int, int);
+    virtual void notifyLogEventCollisionHit(float, int taskId1, int taskId2, int);
+    virtual void notifyLogEventDead(int entryId1, int entryId2, int, int);
 
-        bool isValidEntryId(int entryId);
-        int getEntryCount();
-        int getEntryId(int playerNo);
-        int getEntryIdFromIndex(int index);
-        int getEntryIdFromTaskId(int taskId, int* unk);
-        int getPlayerNo(int entryId);
-        bool isFighterActivate(int entryId, int);
-        Fighter* getFighter(int entryId, int unk);
-        ftOwner* getOwner(int entryId);
-        int getTeam(int entryId, bool unk2, bool unk3);
-        Fighter* searchNearFighter(float unk1, float radius, Vec3f* pos, int team, bool unk4);
-        void setHeal(int entryId, float heal);
-        void setCurry(int entryId);
-        void setSuperStar(int entryId);
-        void setSlow(int inflictingTeam, bool setStatus, int slowStrength, int slowDuration);
-        void setTimerSlow(int inflictingEntryId, bool setStatus, int slowStrength, int slowDuration);
-        void setScaling(int entryId, int unk1, int unk2);
-        void setInfiniteScaling(int entryId, int unk1, int unk2);
-        void setThunder(int inflictingEntryId, int unk2);
-        void setWarpFighter(int entryId, Vec3f* pos, float lr, bool showEffect);
+    bool isValidEntryId(int entryId);
+    int getEntryCount();
+    int getEntryId(int playerNo);
+    int getEntryIdFromIndex(int index);
+    int getEntryIdFromTaskId(int taskId, int* unk);
+    int getPlayerNo(int entryId);
+    bool isFighterActivate(int entryId, int);
+    Fighter* getFighter(int entryId, int unk);
+    ftOwner* getOwner(int entryId);
+    int getTeam(int entryId, bool unk2, bool unk3);
+    Fighter* searchNearFighter(float unk1, float radius, Vec3f* pos, int team, bool unk4);
+    void setHeal(int entryId, float heal);
+    void setCurry(int entryId);
+    void setSuperStar(int entryId);
+    void setSlow(int inflictingTeam, bool setStatus, int slowStrength, int slowDuration);
+    void setTimerSlow(int inflictingEntryId, bool setStatus, int slowStrength, int slowDuration);
+    void setScaling(int entryId, int unk1, int unk2);
+    void setInfiniteScaling(int entryId, int unk1, int unk2);
+    void setThunder(int inflictingEntryId, int unk2);
+    void setWarpFighter(int entryId, Vec3f* pos, float lr, bool showEffect);
 
-        void pickupCoin(int entryId, int amount);
-        void setDead(int entryId, int unk1, int unk2);
-        void setBeat(int losingEntryId, int winningEntryId);
-        void setSuicide(int entryId);
-        bool isProcessHeartSwap(int entryId);
-        void toKnockOutHeartSwapOpposite(int entryId, soDamageAttackerInfo* attackerInfo);
-
-        STATIC_CHECK(sizeof(ftManager) == 0x160)
+    void pickupCoin(int entryId, int amount);
+    void setDead(int entryId, int unk1, int unk2);
+    void setBeat(int losingEntryId, int winningEntryId);
+    void setSuicide(int entryId);
+    bool isProcessHeartSwap(int entryId);
+    void toKnockOutHeartSwapOpposite(int entryId, soDamageAttackerInfo* attackerInfo);
 };
+static_assert(sizeof(ftManager) == 0x160, "Class is wrong size!");
 
 extern ftManager* g_ftManager;

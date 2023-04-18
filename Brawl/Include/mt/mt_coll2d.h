@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <mt/mt_vector.h>
+#include <types.h>
 
 class clAABBox2D {
 public:

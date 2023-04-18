@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
-#include <st/st_positions.h>
 #include <mt/mt_vector.h>
+#include <st/st_positions.h>
+#include <types.h>
 
 struct cmStageParam {
     stRange m_range;
@@ -18,27 +18,24 @@ struct cmStageParam {
     float m_speed;
     float m_tiltThreshold;
     float m_fov;
-
-    STATIC_CHECK(sizeof(cmStageParam) == 0x40)
 };
+static_assert(sizeof(cmStageParam) == 0x40, "Class is wrong size!");
 
 struct cmStageParamFixed {
     Vec3f m_pos;
     float m_fov;
     float m_verticalAngle;
     float m_horizontalAngle;
-
-    STATIC_CHECK(sizeof(cmStageParamFixed) == 24)
 };
+static_assert(sizeof(cmStageParamFixed) == 24, "Class is wrong size!");
 
 struct cmStageParamPausedOffsetRange {
     float m_0;
     float m_4;
     float m_8;
     float m_12;
-
-    STATIC_CHECK(sizeof(cmStageParamPausedOffsetRange) == 16)
 };
+static_assert(sizeof(cmStageParamPausedOffsetRange) == 16, "Class is wrong size!");
 
 struct cmStageParamPaused {
     float m_angle;
@@ -52,6 +49,5 @@ struct cmStageParamPaused {
     Vec3f m_pos;
     cmStageParamPausedOffsetRange m_offsetRange;
     char _60[16];
-
-    STATIC_CHECK(sizeof(cmStageParamPaused) == 76)
 };
+static_assert(sizeof(cmStageParamPaused) == 76, "Class is wrong size!");

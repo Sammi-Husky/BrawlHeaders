@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
-#include <so/so_null.h>
 #include <StaticAssert.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class soResourceModule : public soNull, public soNullable {
     virtual ~soResourceModule();
@@ -39,7 +39,5 @@ class soResourceModuleImpl : public soResourceModule {
     virtual int* getAnmFile(int unk1, int unk2, int unk3);
     virtual int* getBinFile(int unk1, int unk2, int unk3);
     virtual int* getFile(int unk1, int unk2, int unk3);
-
-    STATIC_CHECK(sizeof(soResourceModuleImpl) == 24)
-
 };
+static_assert(sizeof(soResourceModuleImpl) == 24, "Class is wrong size!");

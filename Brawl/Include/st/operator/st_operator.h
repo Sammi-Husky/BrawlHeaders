@@ -1,9 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <gf/gf_task.h>
 #include <gm/gm_global_mode_melee.h>
+#include <types.h>
 
 class stOperator : public gfTask {
 public:
@@ -15,7 +15,5 @@ public:
 
     virtual void processBegin();
     virtual ~stOperator();
-
-    STATIC_CHECK(sizeof(stOperator) == 72)
-
 };
+static_assert(sizeof(stOperator) == 72, "Class is wrong size!");

@@ -1,14 +1,15 @@
 #pragma once
 
-#include <types.h>
 #include <so/so_null.h>
+#include <types.h>
 
-template<size_t N>
+template <size_t N>
 struct bit_width {
-    u8 bits[1 + sizeof(bit_width<N/2>)];
+    u8 bits[1 + sizeof(bit_width<N / 2>)];
 };
 
-template <> struct bit_width<1> {
+template <>
+struct bit_width<1> {
     u8 bits[1];
 };
 
@@ -39,11 +40,11 @@ public:
 
     virtual void unshift(T*);
     virtual void push(T*);
-    virtual void insert(int,T*);
+    virtual void insert(int, T*);
     virtual void erase(int);
     virtual u32 capacity();
     virtual bool isFull();
-    virtual void set(int,T*,int);
+    virtual void set(int, T*, int);
 };
 
 template <class T, class s> // TODO: Not sure what second template argument is
@@ -73,12 +74,11 @@ public:
     virtual void clear();
     virtual void unshift(T*);
     virtual void push(T*);
-    virtual void insert(int,T*);
+    virtual void insert(int, T*);
     virtual void erase(int);
     virtual u32 capacity() { return C; };
     virtual bool isFull();
-    virtual void set(int,T*,int);
-
+    virtual void set(int, T*, int);
 };
 
 class soArrayVectorCalcInterface {
@@ -103,11 +103,11 @@ public:
     virtual void clear();
     virtual void unshift(T*);
     virtual void push(T*);
-    virtual void insert(int,T*);
+    virtual void insert(int, T*);
     virtual void erase(int);
     virtual u32 capacity();
     virtual bool isFull();
-    virtual void set(int,T*,int);
+    virtual void set(int, T*, int);
 
     virtual T* atFastAbstractSub(int);
     virtual void substitution(u32, u32);
@@ -127,7 +127,7 @@ class soArrayVector : public soArrayVectorAbstract<T> {
 
     virtual u32 size() { return m_size; };
     virtual ~soArrayVector();
-    virtual u32 capacity() { return C };
+    virtual u32 capacity(){ return C };
     virtual bool isFull();
 
     virtual T* atFastAbstractSub(int);

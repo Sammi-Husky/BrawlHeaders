@@ -1,21 +1,21 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <so/resource/so_resource_module_impl.h>
+#include <so/collision/so_collision_hit_module_impl.h>
+#include <so/controller/so_controller_module_impl.h>
+#include <so/damage/so_damage_module_impl.h>
+#include <so/effect/so_effect_module_impl.h>
+#include <so/ground/so_ground_module_impl.h>
 #include <so/model/so_model_module_impl.h>
 #include <so/motion/so_motion_module_impl.h>
 #include <so/posture/so_posture_module_impl.h>
-#include <so/ground/so_ground_module_impl.h>
+#include <so/resource/so_resource_module_impl.h>
 #include <so/situation/so_situation_module_impl.h>
-#include <so/collision/so_collision_hit_module_impl.h>
-#include <so/damage/so_damage_module_impl.h>
-#include <so/sound/so_sound_module_impl.h>
-#include <so/controller/so_controller_module_impl.h>
-#include <so/work/so_work_manage_module_impl.h>
-#include <so/status/so_status_module_impl.h>
-#include <so/effect/so_effect_module_impl.h>
 #include <so/slow/so_slow_module_impl.h>
+#include <so/sound/so_sound_module_impl.h>
+#include <so/status/so_status_module_impl.h>
+#include <so/work/so_work_manage_module_impl.h>
+#include <types.h>
 
 class StageObject;
 
@@ -72,9 +72,8 @@ public:
     void* m_heapModule;
     void* m_paramCustomizeModule;
     void* m_glowModule;
-
-    STATIC_CHECK(sizeof(soModuleEnumeration) == 204)
 };
+static_assert(sizeof(soModuleEnumeration) == 204, "Class is wrong size!");
 
 class soModuleAccesser {
 public:
@@ -85,53 +84,64 @@ public:
     soModuleEnumeration* m_enumerationStart;
     void* vtable1;
 
-    inline soMotionModule* getMotionModule() {
+    inline soMotionModule* getMotionModule()
+    {
         return this->m_enumerationStart->m_motionModule;
     }
 
-    inline soPostureModule* getPostureModule() {
+    inline soPostureModule* getPostureModule()
+    {
         return this->m_enumerationStart->m_postureModule;
     }
 
-    inline soGroundModule* getGroundModule() {
+    inline soGroundModule* getGroundModule()
+    {
         return this->m_enumerationStart->m_groundModule;
     }
 
-    inline soSituationModule* getSituationModule() {
+    inline soSituationModule* getSituationModule()
+    {
         return this->m_enumerationStart->m_situationModule;
     }
 
-    inline soCollisionHitModule* getCollisionHitModule() {
+    inline soCollisionHitModule* getCollisionHitModule()
+    {
         return this->m_enumerationStart->m_collisionHitModule;
     }
 
-    inline soDamageModule* getDamageModule() {
+    inline soDamageModule* getDamageModule()
+    {
         return this->m_enumerationStart->m_damageModule;
     }
 
-    inline soSoundModule* getSoundModule() {
+    inline soSoundModule* getSoundModule()
+    {
         return this->m_enumerationStart->m_soundModule;
     }
 
-    inline soControllerModule* getControllerModule() {
+    inline soControllerModule* getControllerModule()
+    {
         return this->m_enumerationStart->m_controllerModule;
     }
 
-    inline soWorkManageModule* getWorkManageModule() {
+    inline soWorkManageModule* getWorkManageModule()
+    {
         return this->m_enumerationStart->m_workManageModule;
     }
 
-    inline soStatusModule* getStatusModule() {
+    inline soStatusModule* getStatusModule()
+    {
         return this->m_enumerationStart->m_statusModule;
     }
 
-    inline soEffectModule* getEffectModule() {
+    inline soEffectModule* getEffectModule()
+    {
         return this->m_enumerationStart->m_effectModule;
     }
 
-    inline soSlowModule* getSlowModule() {
+    inline soSlowModule* getSlowModule()
+    {
         return this->m_enumerationStart->m_slowModule;
     }
-
-    STATIC_CHECK(sizeof(soModuleAccesser) == 224)
 };
+static_assert(sizeof(soModuleAccesser) == 224, "Class is wrong size!");

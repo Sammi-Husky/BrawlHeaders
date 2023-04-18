@@ -1,12 +1,12 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <it/item.h>
 #include <it/it_archive.h>
-#include <it/it_gen_archive.h>
-#include <so/so_dispose_instance_manager.h>
 #include <it/it_customizer.h>
+#include <it/it_gen_archive.h>
+#include <it/item.h>
+#include <so/so_dispose_instance_manager.h>
+#include <types.h>
 
 class itManager : public gfTask, public soDisposeInstanceEventObserver {
 public:
@@ -62,7 +62,5 @@ public:
     u32 getItemNum(itKind kind);
     void removeItem(BaseItem*);
     static itManager* getInstance();
-
-    STATIC_CHECK(sizeof(itManager) == 0x14c0)
 };
-
+static_assert(sizeof(itManager) == 0x14c0, "Class is wrong size!");

@@ -10,8 +10,8 @@ public:
 
 class gmMeleeInitData {
 public:
-    char _0x0[0x4];             // 0x00
-    bool m_0x4_7 : 1;           // 0x04
+    char _0x0[0x4];   // 0x00
+    bool m_0x4_7 : 1; // 0x04
     bool m_0x4_6 : 1;
     bool m_0x4_5 : 1;
     bool m_0x4_4 : 1;
@@ -26,24 +26,23 @@ public:
     char _0xC[0x2];              // 0x09
     u8 m_itemFrequency;          // 0x0E
     s8 m_suicideScoreMultiplier; // 0x0F
-    char _0xa[0x02];            // 0x10
-    short m_stageID;            // 0x12
-    u8 m_subStageID;            // 0x14
-    char _0x15[0x3];            // 0x15
-    s32 m_timeLimitFrames;      // 0x18
-    char _0x1c[0x0C];           // 0x1C
-    gmItSwitch m_itSwitchData;  // 0x28
-    char _0x38[0x08];           // 0x38
-    float m_cameraShakeScale;   // 0x40
-    char _0x44[0x04];           // 0x44
-    float m_gameSpeed;          // 0x48
-    char _0x4c[0x2C];           // 0x4C
-    short m_globalOffenseRatio; // 0x78
-    short m_globalDefenseRatio; // 0x7A
-    char _0x7c[0x14];           // 0x7C
-
-    STATIC_CHECK(sizeof(gmMeleeInitData) == 0x90)
+    char _0xa[0x02];             // 0x10
+    short m_stageID;             // 0x12
+    u8 m_subStageID;             // 0x14
+    char _0x15[0x3];             // 0x15
+    s32 m_timeLimitFrames;       // 0x18
+    char _0x1c[0x0C];            // 0x1C
+    gmItSwitch m_itSwitchData;   // 0x28
+    char _0x38[0x08];            // 0x38
+    float m_cameraShakeScale;    // 0x40
+    char _0x44[0x04];            // 0x44
+    float m_gameSpeed;           // 0x48
+    char _0x4c[0x2C];            // 0x4C
+    short m_globalOffenseRatio;  // 0x78
+    short m_globalDefenseRatio;  // 0x7A
+    char _0x7c[0x14];            // 0x7C
 };
+static_assert(sizeof(gmMeleeInitData) == 0x90, "Class is wrong size!");
 
 class gmPlayerInitData {
 public:
@@ -77,16 +76,14 @@ public:
     float m_visibilityScale;   // 0x44
     float m_gravity;           // 0x48
     char _8[0x10];             // 0x4C
-
-    STATIC_CHECK(sizeof(gmPlayerInitData) == 0x5C)
 };
+static_assert(sizeof(gmPlayerInitData) == 0x5C, "Class is wrong size!");
 
 class gmGlobalModeMelee {
 public:
-    char _0[0x08];                          // 0x00
-    gmMeleeInitData m_meleeInitData;        // 0x08
-    gmPlayerInitData m_playersInitData[7];  // 0x98
+    char _0[0x08];                         // 0x00
+    gmMeleeInitData m_meleeInitData;       // 0x08
+    gmPlayerInitData m_playersInitData[7]; // 0x98
     char _1[4];
-
-    STATIC_CHECK(sizeof(gmGlobalModeMelee) == 0x320)
 };
+static_assert(sizeof(gmGlobalModeMelee) == 0x320, "Class is wrong size!");

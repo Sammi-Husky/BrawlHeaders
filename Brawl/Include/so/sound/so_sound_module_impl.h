@@ -1,22 +1,21 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <so/so_null.h>
 #include <mt/mt_vector.h>
-#include <so/sound/so_sound_3d_generator_accesser_impl.h>
 #include <so/so_event_observer.h>
+#include <so/so_null.h>
+#include <so/sound/so_sound_3d_generator_accesser_impl.h>
+#include <types.h>
 
 class soModuleAccesser;
 
 class soSoundIdExchanger : public soNullable {
     virtual ~soSoundIdExchanger();
     virtual SndID getId(SndID sndID, soModuleAccesser* moduleAccesser);
-    virtual int getStepId(int); // TODO: Verify
+    virtual int getStepId(int);    // TODO: Verify
     virtual int getLandingId(int); // TODO: Verify
-
-    STATIC_CHECK(sizeof(soSoundIdExchanger) == 8)
 };
+static_assert(sizeof(soSoundIdExchanger) == 8, "Class is wrong size!");
 
 class soSoundModule {
 public:
@@ -62,9 +61,8 @@ public:
     virtual void setCheckSoundGroup(int);
     virtual int getCheckSoundGroup();
     virtual bool isPlay(int);
-
-    STATIC_CHECK(sizeof(soSoundModule) == 4)
 };
+static_assert(sizeof(soSoundModule) == 4, "Class is wrong size!");
 
 class soSoundModuleImpl : public soSoundModule, public soStatusEventObserver, public soAnimCmdEventObserver, public soCollisionHitEventObserver, public soSituationEventObserver {
     char _52[8];
@@ -116,6 +114,5 @@ public:
     virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
     virtual void notifyEventCollisionHit(float, int, int index, int, soModuleAccesser* moduleAccesser, void*);
     virtual void notifyEventChangeSituation(int unk1, int unk2, soModuleAccesser* moduleAccesser);
-
-    STATIC_CHECK(sizeof(soSoundModuleImpl) == 92)
 };
+static_assert(sizeof(soSoundModuleImpl) == 92, "Class is wrong size!");

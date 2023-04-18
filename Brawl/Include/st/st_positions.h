@@ -1,8 +1,8 @@
 #pragma once
 
-#include <types.h>
-#include <mt/mt_vector.h>
 #include <StaticAssert.h>
+#include <mt/mt_vector.h>
+#include <types.h>
 
 class stRange {
 public:
@@ -19,6 +19,5 @@ private:
 public:
     float* getDeadRange(stRange* range);
     float* getCameraRange(stRange* range);
-
-    STATIC_CHECK(sizeof(stPositions) == 100)
 };
+static_assert(sizeof(stPositions) == 100, "Class is wrong size!");

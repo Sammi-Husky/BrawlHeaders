@@ -1,15 +1,13 @@
 #pragma once
 
-#include <types.h>
 #include <memory.h>
+#include <types.h>
 
-class gfHeapManager
-{
+class gfHeapManager {
 public:
-
     static int getMaxFreeSize(u32);
     static void dumpAll();
     static void dumpList();
 
-    static void *getMEMAllocator(Heaps::HeapType heapType);
+    static void* getMEMAllocator(Heaps::HeapType heapType);
 };

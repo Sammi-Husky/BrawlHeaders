@@ -1,13 +1,13 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <so/so_array.h>
 #include <memory.h>
 #include <mt/mt_vector.h>
 #include <so/so_anim_chr.h>
+#include <so/so_array.h>
 #include <so/so_event_observer.h>
 #include <so/so_event_presenter.h>
+#include <types.h>
 
 class soModuleAccesser;
 
@@ -20,9 +20,8 @@ public:
     u8 _13;
     u8 _14;
     u8 _15;
-
-    STATIC_CHECK(sizeof(soMotionChangeParam) == 16)
 };
+static_assert(sizeof(soMotionChangeParam) == 16, "Class is wrong size!");
 
 class soMotionModule {
 public:
@@ -134,9 +133,8 @@ public:
     virtual bool isProcessFixPositionDone();
     virtual bool isForceImmediatelyStatusInterpret();
     virtual void changeMotion(soMotionChangeParam* changeParam);
-
-    STATIC_CHECK(sizeof(soMotionModule) == 4)
 };
+static_assert(sizeof(soMotionModule) == 4, "Class is wrong size!");
 
 class soMotionModuleImpl : public soMotionModule, public soStatusEventObserver, public soAnimCmdEventObserver, public soModelEventObserver, public soEventPresenter<soMotionEventObserver> {
 
@@ -289,6 +287,5 @@ public:
     virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
     virtual void notifyEventConstructInstance(bool, soModuleAccesser* moduleAccesser);
     virtual void notifyEventDestructInstance(soModuleAccesser* moduleAccesser);
-
-    STATIC_CHECK(sizeof(soMotionModuleImpl) == 368)
 };
+static_assert(sizeof(soMotionModuleImpl) == 368, "Class is wrong size!");

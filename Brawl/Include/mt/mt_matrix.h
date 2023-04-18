@@ -1,14 +1,13 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <mt/mt_vector.h>
+#include <types.h>
 
 class Matrix {
     char _spacer[48];
 
 public:
     void getRotate(Vec3f* outRot);
-
-    STATIC_CHECK(sizeof(Matrix) == 48)
 };
+static_assert(sizeof(Matrix) == 48, "Class is wrong size!");

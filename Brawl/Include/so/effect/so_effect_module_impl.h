@@ -1,10 +1,10 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
-#include <so/so_null.h>
 #include <mt/mt_vector.h>
 #include <so/so_event_observer.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class soModuleAccesser;
 
@@ -60,14 +60,13 @@ public:
     virtual bool isSyncScale();
     virtual void setShieldEffect(int);
     virtual void ignoreScaleZ(bool);
-
-    STATIC_CHECK(sizeof(soEffectModule) == 8)
 };
+static_assert(sizeof(soEffectModule) == 8, "Class is wrong size!");
 
-class soEffectModuleImpl : public soEffectModule, public soAnimCmdEventObserver, public soStatusEventObserver, public soModelEventObserver,
-        public soCollisionAttackEventObserver, public soCollisionShieldEventObserver {
+class soEffectModuleImpl : public soEffectModule, public soAnimCmdEventObserver, public soStatusEventObserver, public soModelEventObserver, public soCollisionAttackEventObserver, public soCollisionShieldEventObserver {
     soModuleAccesser* m_moduleAccesser;
     char _72[240];
+
 public:
     virtual ~soEffectModuleImpl();
     virtual void activate();
@@ -128,7 +127,5 @@ public:
     virtual void notifyEventCollisionShield(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser);
     virtual void notifyEventCollisionShieldSearch(void*, void*);
     virtual u32 isObserv(char unk1);
-
-    STATIC_CHECK(sizeof(soEffectModuleImpl) == 312)
 };
-
+static_assert(sizeof(soEffectModuleImpl) == 312, "Class is wrong size!");

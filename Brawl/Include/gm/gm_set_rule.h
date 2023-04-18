@@ -1,8 +1,8 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <types.h>
 #include <gm/gm_result_info.h>
+#include <types.h>
 
 struct gmSetRule {
     char _0[0x2];
@@ -27,6 +27,5 @@ struct gmSetRule {
     u8 m_spMeleeSetting7; // 0x1E
     u8 m_spMeleeSetting8; // 0x1F
     char _32[0x68];       // 0x20
-
-    STATIC_CHECK(sizeof(gmSetRule) == 0x88)
 };
+static_assert(sizeof(gmSetRule) == 0x88, "Class is wrong size!");

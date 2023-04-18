@@ -1,8 +1,8 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_collision_shape.h>
 #include <types.h>
-#include <StaticAssert.h>
 
 class grCollShapeCircle : public grCollShape {
     clCircle2D m_circle;
@@ -30,6 +30,5 @@ class grCollShapeCircle : public grCollShape {
     virtual void setUD(Vec2f* centerPos, Vec2f* unk1, Vec2f* unk2);
     virtual void setLR(Vec2f* unk1, Vec2f* unk2);
     virtual void modifyDownY(float downY);
-
-    STATIC_CHECK(sizeof(grCollShapeCircle) == 16)
 };
+static_assert(sizeof(grCollShapeCircle) == 16, "Class is wrong size!");

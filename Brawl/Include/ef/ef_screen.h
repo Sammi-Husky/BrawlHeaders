@@ -1,7 +1,7 @@
 #pragma once
 
-#include <types.h>
 #include <GX/GXColor.h>
+#include <types.h>
 
 class efScreen {
     char _spacer[492];

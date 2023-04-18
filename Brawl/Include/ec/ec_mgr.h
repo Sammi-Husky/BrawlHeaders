@@ -1,9 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <gf/gf_task.h>
 #include <mt/mt_vector.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
+#include <types.h>
 
 class ecMgr : public gfTask {
 

@@ -1,9 +1,9 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <gf/gf_scene.h>
 #include <st/operator/st_operator_rule_melee.h>
+#include <types.h>
 
 class scMelee : public gfScene {
 public:
@@ -42,6 +42,5 @@ public:
     virtual void exit();
     virtual ~scMelee();
     virtual int getEndNum();
-
-    STATIC_CHECK(sizeof(scMelee) == 256)
 };
+static_assert(sizeof(scMelee) == 256, "Class is wrong size!");

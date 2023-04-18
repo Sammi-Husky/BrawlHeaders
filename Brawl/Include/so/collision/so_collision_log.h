@@ -3,15 +3,15 @@
 #include <types.h>
 
 class soCollisionLog {
-    public:
-        char _spacer[12];
+public:
+    char _spacer[12];
 
-        int m_taskId;
+    int m_taskId;
 
-        char _spacer2[12];
+    char _spacer2[12];
 
-        short m_life;
+    short m_life;
 
-        char _spacer3[14];
+    char _spacer3[14];
 
 }; // size 44

@@ -1,15 +1,15 @@
 #pragma once
 
-#include <types.h>
 #include <StaticAssert.h>
 #include <so/so_event_presenter.h>
+#include <types.h>
 
 class ftOutsideEventPresenter : public soEventPresenter<ftOutsideEventPresenter> {
     int m_entryId;
+
 public:
     virtual ~ftOutsideEventPresenter();
 
     void notifyOutsideEventKnockout();
-
-    STATIC_CHECK(sizeof(ftOutsideEventPresenter) == 16)
 };
+static_assert(sizeof(ftOutsideEventPresenter) == 16, "Class is wrong size!");
