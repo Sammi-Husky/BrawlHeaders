@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <mu/mu_menu_controller.h>
+#include <mu/mu_object.h>
 #include <mu/mu_selchar.h>
 #include <mu/mu_select_character_list.h>
 #include <mu/mu_select_character_name_entry.h>
@@ -13,7 +14,9 @@ protected:
 public:
     u32 _0;
     muMenuController menuController;
-    char _0xAC[0xA4];
+    char _0xAC[0x1C];
+    MuObject* muObject;
+    char _0xCC[0x84];
     void* objProcTask;
     muSelCharCBCalcWorld callbacks[7];
     void* selCharHand;

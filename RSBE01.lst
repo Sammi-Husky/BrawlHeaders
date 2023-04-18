@@ -72,6 +72,7 @@
 80403664:TRK_flush_cache__FPvUl
 801e892c:VIWaitForRetrace__Fv
 801d76e8:DCFlushRange__FPvi
+801d77cc:ICInvalidateRange__FPvi
 
 // OS
 801d8600:OSReport
@@ -860,6 +861,7 @@
 800b51f4:changeClrAnimNIf__8MuObjectFPc
 800b784c:setFrameVisible__8MuObjectFf
 800b7a18:setFrameMatCol__8MuObjectFf
+800b7900:setFrameTex__8MuObjectFf
 800b2394:create__8MuObjectFPPQ34nw4r3g3d7ResFilePcciQ25Heaps8HeapType
 800b2404:create__8MuObjectFPPQ34nw4r3g3d7ResFileiciQ25Heaps8HeapType
 
