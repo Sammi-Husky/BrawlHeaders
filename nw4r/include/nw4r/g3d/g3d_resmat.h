@@ -1,6 +1,6 @@
 #pragma once
 
-#include <GX/GXColor.h>
+#include <GX.h>
 #include <nw4r/g3d/g3d_rescommon.h>
 #include <types.h>
 

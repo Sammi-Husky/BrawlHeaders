@@ -1,0 +1,3 @@
+[submodule "OpenRVL"]
+	path = OpenRVL
+	url = https://github.com/kiwi515/open_rvl.git

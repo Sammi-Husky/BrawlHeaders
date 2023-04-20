@@ -70,15 +70,15 @@
 803f11f8:__cvt_fp2unsigned
 803f0a1c:__construct_new_array
 80403664:TRK_flush_cache__FPvUl
-801e892c:VIWaitForRetrace__Fv
-801d76e8:DCFlushRange__FPvi
-801d77cc:ICInvalidateRange__FPvi
+801e892c:VIWaitForRetrace
+801d76e8:DCFlushRange
+801d77cc:ICInvalidateRange
 
 // OS
 801d8600:OSReport
-801e0cfc:OSCreateThread__FP8OSThreadPFPv_PvPvPvUii14OS_THREAD_ATTR
-801e1364:OSResumeThread__FP8OSThread
-801e1224:OSJoinThread__FP8OSThreadPPv
+801e0cfc:OSCreateThread
+801e1364:OSResumeThread
+801e1224:OSJoinThread
 
 // string
 803fa3fc:strcmp__FPCcPCc
