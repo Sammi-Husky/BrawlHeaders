@@ -208,10 +208,10 @@ public:
     virtual bool isAdventureStage() { return false; }
     virtual void getItemPac(gfArchive** brres, gfArchive** param, itKind itemID, int variantID, gfArchive** commonParam = NULL, itCustomizerInterface** customizer = NULL); // Note: Optional parameters for modding purposes to use custom itmParams and customizers
     virtual void getItemGenPac(gfArchive** archive);
-    virtual void getItemPacEnemyFigure(); // TODO
+    virtual void getItemPacEnemyFigure(gfArchive** archive);
     virtual void getEnemyPac(gfArchive** brres, gfArchive** param, gfArchive** enmCommon, gfArchive** primFaceBrres, EnemyKind enemyKind);
     virtual void getAdvRadarData(gfArchive**, gfArchive**);
-    virtual void initializeStage(); // TODO
+    virtual void initializeStage();
     virtual void closeStage();
     virtual void renderDebugPositions();
     virtual bool loading();
