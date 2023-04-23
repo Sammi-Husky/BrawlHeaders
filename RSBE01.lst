@@ -69,7 +69,7 @@
 8000c8dc:__dla__FPv
 803f11f8:__cvt_fp2unsigned
 803f0a1c:__construct_new_array
-80403664:TRK_flush_cache__FPvUl
+80403664:__flush_cache
 801e892c:VIWaitForRetrace
 801d76e8:DCFlushRange
 801d77cc:ICInvalidateRange
@@ -84,6 +84,7 @@
 803fa3fc:strcmp__FPCcPCc
 803fa340:strncpy
 803fa280:strcpy__FPcPCc
+803fa280:strcpy
 803f89fc:sprintf
 803fa384:strcat__FPcPc
 803fa3b0:strncat__FPcPc
