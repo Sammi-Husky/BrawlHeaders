@@ -85,15 +85,18 @@
 803fa340:strncpy__6StringF6StringPcUl
 803fa340:strncpy__FPcPCcUl
 803fa280:strcpy__FPcPCc
-803f89fc:sprintf__FPcPCce
+803f89fc:sprintf
 803fa384:strcat__FPcPc
 803fa3b0:strncat__FPcPc
 803fa518:strncmp__FPcPc
+803fa518:strncmp
 803fa558:strchr__FPcPc
 803fa588:strrchr__FPcPc
 803fa5d0:strcspn__FPcPc
 803fa674:strtok__FPcPc
 803fa798:strstr__FPcPc
+803f87a8:vprintf
+803f8820:vsnprintf
 
 // module
 80043b18:moUnResolvedMessage__FPCc
@@ -105,8 +108,10 @@
 803fcb50:itoa__FiPci
 
 // __mem
-803f0640:strlen__FPc
+803f0640:strlen__FPc 
+803f0640:strlen
 8000443c:__memfill__FPvUcUl
+8000443c:memset
 
 // NW4R
 8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileFv
@@ -934,10 +939,32 @@
 800AF8B8:exchangeSelCharVoice2SelCharVoiceLengthJ__6muMenuFi
 800af600:exchangeGmCharacterKind2Something__6muMenuFi
 8069742c:setCharPic__19muSelCharPlayerAreaFiiibii
-// aboves exact meaning unsure, file ID in classic mode intro
-
 
 //sndSystem
 800742b0:playSE__9sndSystemFiiiii
 
 
+// SOCommon.h
+803a5e40:SOInit
+803a6104:SOStartupEx
+
+// SOBasic.h
+803a6f68:SOSocket
+803a7058:SOClose
+803a7b00:SOHtoNl
+803a7b04:SOHtoNs
+803a72f0:SOBind
+803a7b0c:SORecvFrom
+803a7aa0:SOInetNtoA
+803a7608:SOSendTo
+80151098:SOAlloc
+801510c4:SOFree
+
+// more socket stuff (nonport.h)
+8035c26c:socket
+8035c30c:bind
+8035c4b0:recvfrom
+8035c544:sendto
+8035c2a4:closesocket
+8035cefc:CanReceiveOnSocket
+8035cf44:CanSendOnSocket

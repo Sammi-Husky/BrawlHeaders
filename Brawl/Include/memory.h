@@ -71,4 +71,5 @@ void* operator new(size_t size, HeapType heap);
 void* operator new[](size_t size, HeapType heap);
 void* operator new[](size_t size);
 
-void __memfill(void* dest, u8 value, size_t count);
+void* __memfill(void* dest, u8 value, size_t count);
+void* memset(void* dest, u8 value, size_t count);
