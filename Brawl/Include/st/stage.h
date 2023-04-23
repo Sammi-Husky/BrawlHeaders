@@ -1,6 +1,6 @@
 #pragma once
 
-#include <GX/GXColor.h>
+#include <GX.h>
 #include <StaticAssert.h>
 #include <cm/cm_camera_controller.h>
 #include <em/em_create.h>
