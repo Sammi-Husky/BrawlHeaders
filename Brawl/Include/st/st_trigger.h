@@ -54,6 +54,8 @@ class stTrigger : public utListNode {
 public:
     void setObserveYakumono(Yakumono* yakumono);
     stObsTriggerSquareBeltConveyorCB* setBeltConveyorTrigger(grGimmickBeltConveyorData* gimmickAreaData);
+    void setAreaSleep(u32 p1);
+    void setWindParam(grGimmickWindData2nd* wnd, s32 p2);
 };
 static_assert(sizeof(stTrigger) == 52, "Class is wrong size!");
 

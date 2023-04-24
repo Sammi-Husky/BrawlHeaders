@@ -8,9 +8,9 @@ protected:
     // 0
     char _spacer[0x10];
 
-    stTrigger* m_wind2ndTrigger;
+    stTrigger* m_wind2ndTrigger; // +0x1C4
 
-    grGimmickWindData2nd* m_windAreaData2nd;
+    grGimmickWindData2nd* m_windAreaData2nd; // +0x1C8
 
     // 0x18
     char _396[0xc];
@@ -29,13 +29,14 @@ public:
     virtual void update(float deltaFrame);
     virtual void setCameraLimitRange(float unk1, float unk2, float unk3, float unk4); // TODO
     virtual void resetCameraLimitRange();                                             // TODO
-    virtual void checkChangeScene();                                                  // TODO
+    virtual bool checkChangeScene();                                                  // TODO
     virtual void resetChangeScene();                                                  // TODO
-    virtual void setChangeSceneNumber();                                              // TODO
+    virtual void setChangeSceneNumber(s32 n);                                         // TODO
     ~stMelee();
 
     void zoomInCamera();
     void zoomOutCamera(float, float);
     void setPlayerPositionIndexSerial();
+    void playSeBasic(SndID id, float p2);
 };
 static_assert(sizeof(stMelee) == 472, "Class is wrong size!");

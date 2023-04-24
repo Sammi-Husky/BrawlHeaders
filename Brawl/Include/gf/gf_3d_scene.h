@@ -17,6 +17,7 @@ public:
     virtual ~gfSceneRoot();
 
     void setCurrentFrame(float);
+    void removeResAnmScn();
 };
 static_assert(sizeof(gfSceneRoot) == 1292, "Class is wrong size!");
 
