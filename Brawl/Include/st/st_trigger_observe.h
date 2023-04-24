@@ -70,7 +70,7 @@ struct grGimmickWindData2nd : GimmickAreaData {
     float m_verticalWindRotation;
     float m_64;
     float m_68;
-    char _72[4];
+    u32 m_72;
 };
 static_assert(sizeof(grGimmickWindData2nd) == 76, "Class is wrong size!");
 

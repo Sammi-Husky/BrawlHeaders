@@ -135,6 +135,7 @@
 
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
+80060d8c:killEffect__5ecMgrFUlUlUl
 8005f7a4:setEffect__5ecMgrFUl
 8005f7b8:setEffect__5ecMgrFUlP5Vec3f
 8005f7e0:setEffect__5ecMgrFUlP5Vec3fP5Vec3fP5Vec3f
@@ -153,6 +154,9 @@
 800795d4:__dt__14snd3DGeneratorFv
 80079718:playSE__14snd3DGeneratorF5SndIDiii
 80079660:setPos__14snd3DGeneratorFP5Vec3f
+80079788:startSE__14snd3DGeneratorFll
+80079794:stopSE__14snd3DGeneratorFll
+80079758:prepareSE__14snd3DGeneratorF5SndIDl
 
 // gfTask
 8002d8b8:__ct__6gfTaskFPciiii
@@ -234,6 +238,7 @@
 
 // gfSceneRoot
 8000d818:setCurrentFrame__11gfSceneRootFf
+8000d56c:removeResAnmScn__11gfSceneRootFv
 
 // utList
 800448f8:addTail__6utListFP10utListNode
@@ -336,7 +341,7 @@
 27,1,002237A8:getEnemyDeadEffectSizeRate__5StageFv
 27,1,002237B0:getEnableZ__5StageFv
 27,1,00225764:getBgmID__5StageFv
-27,1,0022576C:getBgmIDOverload__5StageFv
+27,1,0022576C:getBgmID__5StageCFv
 27,1,0022575C:getNowStepBgmID__5StageFv
 27,1,00225754:getBgmOptionID__5StageFv
 27,1,0022574C:isBgmChange__5StageFv
@@ -356,7 +361,7 @@
 27,1,002247E0:setDevilScrool__5StageFff
 27,1,0022485C:getLucarioFinalTechniquePosition__5StageFi
 27,1,00224B40:startAppear__5StageFv
-27,1,00224B5C:setAppearKind__5StageFv
+27,1,00224B5C:setAppearKind__5StageFUc
 27,1,00224B58:endAppear__5StageFv
 27,1,00224DAC:getAppearTask__5StageFv
 27,1,00224DB4:forceStopAppear__5StageFv
@@ -405,6 +410,7 @@
 27,1,00223140:testStageParamInit__5StageFP9gfArchivei
 27,1,00223398:testStageDataInit__5StageFP9gfArchiveii
 27,1,0022269c:createObjPokeTrainer__5StageFP9gfArchiveiPCcii
+27,1,002227E8:removeGround__5StageFP6Ground
 27,1,00223A08:setStageAttackData__5StageFP20grGimmickDamageFloorUl
 27,1,00222794:setStageData__6GroundFPv
 
@@ -431,7 +437,7 @@
 27,1,00239534:resetCameraLimitRange__7stMeleeFv
 27,1,00239ae4:checkChangeScene__7stMeleeFv
 27,1,00239aec:resetChangeScene__7stMeleeFv
-27,1,00239af0:setChangeSceneNumber__7stMeleeFv
+27,1,00239af0:setChangeSceneNumber__7stMeleeFl
 27,1,00238dec:__dt__7stMeleeFv
 27,1,0023A068:getItemGenPac__7stMeleeFPP9gfArchive
 27,1,002398E0:getFighterStartPos__7stMeleeFP5Vec3fi
@@ -441,6 +447,7 @@
 27,1,0023959C:zoomInCamera__7stMeleeFv
 27,1,00239574:zoomOutCamera__7stMeleeFff
 27,1,00238DB4:setPlayerPositionIndexSerial__7stMeleeFv
+27,1,002399FC:playSeBasic__7stMeleeF5SndIDf
 
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv
@@ -657,6 +664,10 @@
 27,1,00279590:setMotion__8grMadeinFUl
 27,1,00279968:setMotionDetails__8grMadeinFUlUlUlUlUl
 27,1,0027855C:deleteHitPoint__8grMadeinFv
+27,1,00279044:endEntity__8grMadeinFv
+27,1,002792C8:isEndEntity__8grMadeinFv
+27,1,002794CC:getEntityFrame__8grMadeinFv
+27,1,002794F0:isFrameOffset__8grMadeinFf
 
 // grGimmickMotionPath
 27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf
@@ -761,17 +772,19 @@
 // stTrigger
 27,1,00233640:setObserveYakumono__9stTriggerFP8Yakumono
 27,1,00233778:setBeltConveyorTrigger__9stTriggerFP25grGimmickBeltConveyorData
-
+27,1,00234040:setAreaSleep__9stTriggerFUl
+27,1,00233A48:setWindParam__9stTriggerFP20grGimmickWindData2ndl
 
 // stDataMultiContainer
 8015bbf4:create__20stDataMultiContainerFPvQ25Heaps8HeapType
 
 // SeSeq
-27,1,00224e44:__ct__Q28StSeUtil5SeSeqFPviPvi
-27,1,002252e0:playFrame__Q28StSeUtil5SeSeqFfUl
-27,1,002252d8:playFrame__Q28StSeUtil5SeSeqFffUl
-27,1,00225108:registId__Q28StSeUtil5SeSeqFP5SndIDi
-27,1,0022517c:registSeq__Q28StSeUtil5SeSeqFiP5SndIDiQ25Heaps8HeapType
+27,1,00224e44:__ct__Q28StSeUtil5SeSeqFPQ28StSeUtil10UnkStruct2UlPQ28StSeUtil10UnkStruct3Ul
+27,1,0022506c:__dt__Q28StSeUtil5SeSeqFv
+27,1,002252e0:playFrame__Q28StSeUtil5SeSeqFlf
+27,1,002252d8:playFrame__Q28StSeUtil5SeSeqFlff
+27,1,00225108:registId__Q28StSeUtil5SeSeqFP5SndIDUl
+27,1,0022517c:registSeq__Q28StSeUtil5SeSeqFiPQ28StSeUtil9UnkStructUlQ25Heaps8HeapType
 
 // emManager
 41,1,0000C6B0:create__9emManagerFUlUlUc
@@ -943,6 +956,20 @@
 //sndSystem
 800742b0:playSE__9sndSystemFiiiii
 
+// grTenganEvent
+27,1,0027BBD8:__ct__13grTenganEventFv
+27,1,0027BBF8:__dt__13grTenganEventFv
+27,1,0027BC4C:update__13grTenganEventFf
+27,1,0027BCA0:set__13grTenganEventFff
+27,1,0027BCEC:start__13grTenganEventFv
+27,1,0027BD68:end__13grTenganEventFv
+27,1,0027BD80:isEvent__13grTenganEventCFv
+27,1,0027BD94:isReadyEnd__13grTenganEventCFv
+27,1,0027BDA8:getPhase__13grTenganEventCFv
+27,1,0027BDB0:setPhase__13grTenganEventFl
+
+// IfFoxSmashAppearTask
+800F6374:create__20IfFoxSmashAppearTaskFP9gfArchive
 
 // SOCommon.h
 803a5e40:SOInit
