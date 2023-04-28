@@ -8,9 +8,10 @@
 
 class stCommonGimmick : public Stage {
 public:
-    gfArchive* m_fileData;
-    gfArchive* m_secondaryFileData;
-    char _spacer[5];
+    gfArchive* m_fileData; // 0x1A0
+    gfArchive* m_secondaryFileData; // 0x1A4
+    gfArchive* unk1A8; // 0x1A8
+    char _spacer[1];
     bool m_isPaused;
     char _spacer2[2];
     gfArchive* m_commonFileData;

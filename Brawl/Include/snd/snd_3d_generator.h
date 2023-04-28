@@ -11,6 +11,9 @@ public:
     snd3DGenerator();
     virtual ~snd3DGenerator();
 
-    void playSE(SndID sndID, int unk, int unk2, int unk4);
+    s32 playSE(SndID sndID, int unk, int unk2, int unk4);
+    s32 prepareSE(SndID p1, s32 p2);
+    void startSE(s32 p1, s32 p2);
     void setPos(Vec3f* pos);
+    void stopSE(s32 p1, s32 p2);
 };

@@ -1,6 +1,6 @@
 #pragma once
 
-#include <GX/GXColor.h>
+#include <GX.h>
 #include <types.h>
 
 class efScreen {

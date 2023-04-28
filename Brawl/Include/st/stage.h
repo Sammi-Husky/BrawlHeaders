@@ -1,6 +1,6 @@
 #pragma once
 
-#include <GX/GXColor.h>
+#include <GX.h>
 #include <StaticAssert.h>
 #include <cm/cm_camera_controller.h>
 #include <em/em_create.h>
@@ -8,6 +8,7 @@
 #include <gf/gf_task.h>
 #include <gm/gm_lib.h>
 #include <gr/gr_yakumono.h>
+#include <if/if_smash_appear.h>
 #include <it/item.h>
 #include <memory.h>
 #include <mt/mt_matrix.h>
@@ -18,26 +19,6 @@
 #include <st/st_positions.h>
 #include <st/st_trigger.h>
 #include <types.h>
-
-namespace StSeUtil {
-    class SeSeq {
-    public:
-        virtual ~SeSeq();
-
-    public:
-        char _1[0x10];                  // 0x00
-        snd3DGenerator* m_sndGenerator; // 0x14
-        char _2[0x8];                   // 0x18
-
-    public:
-        SeSeq(void* unk, int unk2, void* unk3, int unk4);
-        void playFrame(float frame, u32 unk);
-        void playFrame(float frame, float unk1, u32 unk2);
-        void registId(SndID* ID, int unk1);
-        void registSeq(int unk1, SndID* ID, int unk2, Heaps::HeapType heapType);
-    };
-    static_assert(sizeof(SeSeq) == 0x20, "Class is wrong size!");
-}
 
 class StageParam {
 public:
@@ -187,6 +168,7 @@ public:
     void registScnAnim(nw4r::g3d::ResFileData* scnData, u32 index);
     void initPosPokeTrainer(int unk1, int unk2);
     void setStageAttackData(grGimmickDamageFloor* attackData, u32 index);
+    void removeGround(Ground*);
 
     Stage(char* name, srStageKind stageKind);
     virtual void processBegin();
@@ -251,8 +233,8 @@ public:
     virtual float getFighterDeadEffectSizeRate();
     virtual float getEnemyDeadEffectSizeRate();
     virtual float getEnableZ();
-    virtual int getBgmID();
-    virtual int getBgmIDOverload() { return 0; }
+    virtual int getBgmID() { return 0; }
+    virtual int getBgmID() const { return 0; }
     virtual int getNowStepBgmID() { return 0; }
     virtual int getBgmOptionID() { return 0; }
     virtual bool isBgmChange() { return m_unk2; }
@@ -280,10 +262,10 @@ public:
     virtual bool isDevil();
     virtual void setDevilScrool(float unk1, float unk2);     // TODO
     virtual void getLucarioFinalTechniquePosition(int unk1); // TODO
-    virtual int startAppear();                               // TODO
-    virtual void setAppearKind();                            // TODO
+    virtual bool startAppear();                              // TODO
+    virtual void setAppearKind(u8 kind);                     // TODO
     virtual void endAppear();                                // TODO
-    virtual int getAppearTask();                             // TODO
+    virtual IfSmashAppearTask* getAppearTask();              // TODO
     virtual void forceStopAppear();                          // TODO
     virtual int getFinalTechniqColor();                      // TODO
     virtual void setMotionRatio(float unk1, float unk2);     // TODO
@@ -296,7 +278,7 @@ public:
     virtual bool isBossBattleMode() { return false; }
     virtual bool isSimpleBossBattleMode() { return false; }
     virtual bool isAppear();             // TODO
-    virtual bool isStartAppearTimming(); // TODO
+    virtual s32 isStartAppearTimming();  // TODO
     virtual void getMadeinAiData();      // TODO
     virtual bool isBamperVector();       // TODO
     virtual void getBamperVector(int unk1);

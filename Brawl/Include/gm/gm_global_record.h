@@ -12,7 +12,83 @@ struct gmGlobalRecord1 {
     };
 
     struct MenuData {
-        char _0[40];
+
+        union RandomStageSwitch {
+            struct {
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool dxPStadium : 1;
+                bool dxZebes : 1;
+                bool dxBigBlue : 1;
+                bool dxCorneria : 1;
+                bool dxCruise : 1;
+                bool dxGreens : 1;
+                bool dxOnett : 1;
+                bool dxGarden : 1;
+                bool dxYorster : 1;
+                bool dxShrine : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool plankton : 1;
+                bool pictChat : 1;
+                bool greenHill : 1;
+                bool metalGear : 1;
+                bool village : 1;
+                bool newPork : 1;
+                bool famicom : 1;
+                bool palutena : 1;
+                bool earth : 1;
+                bool madein : 1;
+                bool emblem : 1;
+                bool gW : 1;
+                bool ice : 1;
+                bool fZero : 1;
+                bool tengan : 1;
+                bool stadium : 1;
+                bool starFox : 1;
+                bool halberd : 1;
+                bool crayon : 1;
+                bool orpheon : 1;
+                bool norfair : 1;
+                bool oldin : 1;
+                bool pirates : 1;
+                bool jungle : 1;
+                bool donkey : 1;
+                bool kart : 1;
+                bool marioPast : 1;
+                bool mansion : 1;
+                bool dolpic : 1;
+                bool final : 1;
+                bool battle : 1;
+            };
+            struct {
+                u32 meleeMask;
+                u32 normalMask;
+            };
+        };
+
+        char _0[32];
+        RandomStageSwitch randomStageSwitch;
+
         bool m_isWidescreen : 1;
         bool m_41_6 : 1;
         bool m_41_5 : 1;
@@ -25,6 +101,7 @@ struct gmGlobalRecord1 {
     };
 
     char _0[812];
+
 
     EventSaveData m_eventSaveData[2];
 

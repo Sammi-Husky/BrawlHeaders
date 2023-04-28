@@ -69,7 +69,7 @@
 8000c8dc:__dla__FPv
 803f11f8:__cvt_fp2unsigned
 803f0a1c:__construct_new_array
-80403664:TRK_flush_cache__FPvUl
+80403664:__flush_cache
 801e892c:VIWaitForRetrace
 801d76e8:DCFlushRange
 801d77cc:ICInvalidateRange
@@ -83,10 +83,9 @@
 // string
 803fa3fc:strcmp__FPCcPCc
 803fa3fc:strcmp
-803fa340:strncpy__6StringF6StringPcUl
-803fa340:strncpy__FPcPCcUl
 803fa340:strncpy
 803fa280:strcpy__FPcPCc
+803fa280:strcpy
 803f89fc:sprintf
 803fa384:strcat__FPcPc
 803fa3b0:strncat__FPcPc
@@ -121,16 +120,16 @@
 8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileFv
 8018d770:GetResAnmChrNumEntries__Q34nw4r3g3d7ResFileFv
 8018ee4c:GetResNodeNumEntries__Q34nw4r3g3d6ResMdlFv
-801b0520:__ct__Q44nw4r3g3d6ScnMdl15CopiedMatAccessFPQ34nw4r3g3d6ScnMdlUi
+801b0520:__ct__Q44nw4r3g3d6ScnMdl15CopiedMatAccessFPQ34nw4r3g3d6ScnMdlUl
 8018d640:GetResAnmChr__Q34nw4r3g3d7ResFileFi
 8018e270:GetResAnmScn__Q34nw4r3g3d7ResFileFi
 8018f258:GetResMat__Q34nw4r3g3d6ResMdlCFPCc
 801b00b4:GetResMatTevColor__Q44nw4r3g3d6ScnMdl15CopiedMatAccessFb
-801913d0:GXSetTevColor__Q34nw4r3g3d14ResMatTevColorFUi7GXColor
+801913d0:GXSetTevColor__Q34nw4r3g3d14ResMatTevColorFUl8_GXColor
 80190a90:DCStore__Q34nw4r3g3d6ResMatFb
-8018edf8:GetResNode__Q34nw4r3g3d6ResMdlCFUl
+8018edf8:GetResNode__Q34nw4r3g3d6ResMdlCFUx
 8018ed10:GetResNode__Q34nw4r3g3d6ResMdlCFPCc
-801afaac:EnableScnMdlCallbackTiming__Q34nw4r3g3d12ScnMdlSimpleFUi
+801afaac:EnableScnMdlCallbackTiming__Q34nw4r3g3d12ScnMdlSimpleFUl
 80192f70:SetTranslate__Q34nw4r3g3d7ResNodeFfff
 
 // GameGlobal
@@ -139,14 +138,15 @@
 
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
-8005f7a4:setEffect__5ecMgrFUi
-8005f7b8:setEffect__5ecMgrFUiP5Vec3f
-8005f7e0:setEffect__5ecMgrFUiP5Vec3fP5Vec3fP5Vec3f
-80060c54:endEffect__5ecMgrFUi
-8005fc5c:setParent__5ecMgrFUiPQ34nw4r3g3d6ScnMdlPci
+80060d8c:killEffect__5ecMgrFUlUlUl
+8005f7a4:setEffect__5ecMgrFUl
+8005f7b8:setEffect__5ecMgrFUlP5Vec3f
+8005f7e0:setEffect__5ecMgrFUlP5Vec3fP5Vec3fP5Vec3f
+80060c54:endEffect__5ecMgrFUl
+8005fc5c:setParent__5ecMgrFUlPQ34nw4r3g3d6ScnMdlPci
 
 // efScreen
-8005e0fc:requestFill__8efScreenFfiiP7GXColor
+8005e0fc:requestFill__8efScreenFfiiP8_GXColor
 
 // sndSystem
 800742b0:playSE__9sndSystemF5SndIDiiii
@@ -157,6 +157,9 @@
 800795d4:__dt__14snd3DGeneratorFv
 80079718:playSE__14snd3DGeneratorF5SndIDiii
 80079660:setPos__14snd3DGeneratorFP5Vec3f
+80079788:startSE__14snd3DGeneratorFll
+80079794:stopSE__14snd3DGeneratorFll
+80079758:prepareSE__14snd3DGeneratorF5SndIDl
 
 // gfTask
 8002d8b8:__ct__6gfTaskFPciiii
@@ -193,7 +196,7 @@
 // gfArchive
 8001370c:__ct__9gfArchiveFv
 80015ddc:getData__9gfArchiveF11ARCNodeTypeiUs
-80015e14:getData__9gfArchiveF11ARCNodeTypeiPiUi
+80015e14:getData__9gfArchiveF11ARCNodeTypeiPiUl
 80013b1c:__dt__9gfArchiveFv
 
 //NMWException
@@ -241,6 +244,7 @@
 
 // gfSceneRoot
 8000d818:setCurrentFrame__11gfSceneRootFf
+8000d56c:removeResAnmScn__11gfSceneRootFv
 
 // utList
 800448f8:addTail__6utListFP10utListNode
@@ -267,7 +271,7 @@
 8003fea4:mtSinCosf__FfPfPf
 
 // mtprng
-8003fc7c:randi__FUi
+8003fc7c:randi__FUl
 8003fb64:randf__Fv
 
 // rand
@@ -285,7 +289,7 @@
 8009be74:getInstance__16CameraControllerFv
 
 // cmAnimationController
-800a624c:setScnAnmRes__21cmAnimationControllerFPPQ34nw4r3g3d4SCN0Ui
+800a624c:setScnAnmRes__21cmAnimationControllerFPPQ34nw4r3g3d4SCN0Ul
 800a6348:releaseScnAnmRes__21cmAnimationControllerFv
 
 // Stage
@@ -294,7 +298,7 @@
 27,1,002227b0:addGround__5StageFP6Ground
 27,1,00222850:getGround__5StageFi
 27,1,00222830:getGroundNum__5StageFv
-27,1,00222904:registScnAnim__5StageFPQ34nw4r3g3d11ResFileDataUi
+27,1,00222904:registScnAnim__5StageFPQ34nw4r3g3d11ResFileDataUl
 27,1,00222ab0:createCollision__5StageFP9gfArchiveiP6Ground
 27,1,00224574:createStagePositions__5StageFv
 27,1,00224524:createStagePositions__5StageFPv
@@ -346,7 +350,7 @@
 27,1,002237A8:getEnemyDeadEffectSizeRate__5StageFv
 27,1,002237B0:getEnableZ__5StageFv
 27,1,00225764:getBgmID__5StageFv
-27,1,0022576C:getBgmIDOverload__5StageFv
+27,1,0022576C:getBgmID__5StageCFv
 27,1,0022575C:getNowStepBgmID__5StageFv
 27,1,00225754:getBgmOptionID__5StageFv
 27,1,0022574C:isBgmChange__5StageFv
@@ -366,7 +370,7 @@
 27,1,002247E0:setDevilScrool__5StageFff
 27,1,0022485C:getLucarioFinalTechniquePosition__5StageFi
 27,1,00224B40:startAppear__5StageFv
-27,1,00224B5C:setAppearKind__5StageFv
+27,1,00224B5C:setAppearKind__5StageFUc
 27,1,00224B58:endAppear__5StageFv
 27,1,00224DAC:getAppearTask__5StageFv
 27,1,00224DB4:forceStopAppear__5StageFv
@@ -415,7 +419,8 @@
 27,1,00223140:testStageParamInit__5StageFP9gfArchivei
 27,1,00223398:testStageDataInit__5StageFP9gfArchiveii
 27,1,0022269c:createObjPokeTrainer__5StageFP9gfArchiveiPCcii
-27,1,00223A08:setStageAttackData__5StageFP20grGimmickDamageFloorUi
+27,1,002227E8:removeGround__5StageFP6Ground
+27,1,00223A08:setStageAttackData__5StageFP20grGimmickDamageFloorUl
 27,1,00222794:setStageData__6GroundFPv
 
 // stCommonGimmick
@@ -441,7 +446,7 @@
 27,1,00239534:resetCameraLimitRange__7stMeleeFv
 27,1,00239ae4:checkChangeScene__7stMeleeFv
 27,1,00239aec:resetChangeScene__7stMeleeFv
-27,1,00239af0:setChangeSceneNumber__7stMeleeFv
+27,1,00239af0:setChangeSceneNumber__7stMeleeFl
 27,1,00238dec:__dt__7stMeleeFv
 27,1,0023A068:getItemGenPac__7stMeleeFPP9gfArchive
 27,1,002398E0:getFighterStartPos__7stMeleeFP5Vec3fi
@@ -451,16 +456,17 @@
 27,1,0023959C:zoomInCamera__7stMeleeFv
 27,1,00239574:zoomOutCamera__7stMeleeFff
 27,1,00238DB4:setPlayerPositionIndexSerial__7stMeleeFv
+27,1,002399FC:playSeBasic__7stMeleeF5SndIDf
 
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv
-27,1,0025f64c:loadGroundData__6GroundFUiUiUi
+27,1,0025f64c:loadGroundData__6GroundFUlUlUl
 27,1,0025fbcc:setupMelee__6GroundFv
 27,1,0025fbe8:processAnim__6GroundFv
 27,1,00260834:processGameProc__6GroundFv
 27,1,00261d70:renderPre__6GroundFv
-27,1,00260534:setVisibilityByClipping__6GroundFUi
-27,1,002606a0:setVisibilityAttachedEffect__6GroundFUi
+27,1,00260534:setVisibilityByClipping__6GroundFUl
+27,1,002606a0:setVisibilityAttachedEffect__6GroundFUl
 27,1,00260838:receiveCollMsg__6GroundFiP12grCollStatusP16grCollisionJoint
 27,1,00260910:receiveCollMsg_Landing__6GroundFP12grCollStatusP16grCollisionJointb
 27,1,00260914:receiveCollMsg_Heading__6GroundFP12grCollStatusP16grCollisionJointb
@@ -469,26 +475,26 @@
 27,1,00228dd8:getModelCount__6GroundFv
 27,1,0025fa34:unloadData__6GroundFv
 27,1,00230728:setMdlIndex__6GroundFi
-27,1,00260B48:getNodeIndex__6GroundFUiPc
-27,1,00260c84:getNodePosition__6GroundFP5Vec3fUiUi
-27,1,00260d78:getNodePosition__6GroundFP5Vec3fUiPc
-27,1,00260e88:getNodeMatrix__6GroundFP6MatrixUiUi
-27,1,00260f48:getNodeMatrix__6GroundFP6MatrixUiPc
-27,1,0026102c:setNodeVisibility__6GroundFbUiUibb
-27,1,002611dc:setNodeVisibility__6GroundFbUiPcbb
-27,1,002612ac:setNodeVisibilityAll__6GroundFbUi
-27,1,002613ac:isNodeVisible__6GroundFUiUi
-27,1,00261434:setNodeCollision__6GroundFbUiUib
-27,1,002615ec:setNodeCollision__6GroundFbUiPcb
-27,1,00261718:getNodeScale__6GroundFP5Vec3fUiUi
-27,1,002617d8:getNodeScale__6GroundFP5Vec3fUiPc
+27,1,00260B48:getNodeIndex__6GroundFUlPc
+27,1,00260c84:getNodePosition__6GroundFP5Vec3fUlUl
+27,1,00260d78:getNodePosition__6GroundFP5Vec3fUlPc
+27,1,00260e88:getNodeMatrix__6GroundFP6MatrixUlUl
+27,1,00260f48:getNodeMatrix__6GroundFP6MatrixUlPc
+27,1,0026102c:setNodeVisibility__6GroundFbUlUlbb
+27,1,002611dc:setNodeVisibility__6GroundFbUlPcbb
+27,1,002612ac:setNodeVisibilityAll__6GroundFbUl
+27,1,002613ac:isNodeVisible__6GroundFUlUl
+27,1,00261434:setNodeCollision__6GroundFbUlUlb
+27,1,002615ec:setNodeCollision__6GroundFbUlPcb
+27,1,00261718:getNodeScale__6GroundFP5Vec3fUlUl
+27,1,002617d8:getNodeScale__6GroundFP5Vec3fUlPc
 27,1,00231b80:setInitializeInfo__6GroundFi
 27,1,00231b78:getInitializeInfo__6GroundFi
-27,1,0025fd1c:setMotionFrame__6GroundFfUi
-27,1,0025fd38:getMotionFrame__6GroundFUi
-27,1,0025fd60:setMotionLoop__6GroundFbUi
-27,1,0025fd7c:setMatAlphaMul__6GroundFUiUi
-27,1,0025feec:setMatAlpha__6GroundFUiUi
+27,1,0025fd1c:setMotionFrame__6GroundFfUl
+27,1,0025fd38:getMotionFrame__6GroundFUl
+27,1,0025fd60:setMotionLoop__6GroundFbUl
+27,1,0025fd7c:setMatAlphaMul__6GroundFUlUl
+27,1,0025feec:setMatAlpha__6GroundFUlUl
 27,1,0025ffe0:updateG3dProcCalcWorld__6GroundFv
 27,1,00231b70:adventureEventGetItem__6GroundFiPi
 27,1,00231BBC:getStageData__6GroundFv
@@ -500,42 +506,42 @@
 27,1,00261EA8:setInitializeFlag__6GroundFv
 27,1,002618c0:setEnableCollisionStatus__6GroundFb
 27,1,00261a90:isCollisionStatusOwnerTask__6GroundFP12grCollStatusPi
-27,1,0026022C:setVisibility__6GroundFUi
-27,1,00261950:setValid__6GroundFUi
-27,1,002619F0:setValidAttachedEffect__6GroundFUi
+27,1,0026022C:setVisibility__6GroundFUl
+27,1,00261950:setValid__6GroundFUl
+27,1,002619F0:setValidAttachedEffect__6GroundFUl
 27,1,00261B3C:preExit__6GroundFv
-27,1,00260924:startup__6GroundFP9gfArchiveUiUi
+27,1,00260924:startup__6GroundFP9gfArchiveUlUl
 
 // grGimmick
 27,1,0026A314:__ct__9grGimmickFPc
 27,1,0026A450:__dt__9grGimmickFv
 27,1,0026A790:processUpdate__9grGimmickFv
 27,1,0026A804:update__9grGimmickFf
-27,1,0026A5E4:startup__9grGimmickFP9gfArchiveUiUi
+27,1,0026A5E4:startup__9grGimmickFP9gfArchiveUlUl
 27,1,0026DE2C:renderDebug__9grGimmickFv
-27,1,0026daf4:setTransparency__9grGimmickFUi
+27,1,0026daf4:setTransparency__9grGimmickFUl
 27,1,0026C8C8:bindData__9grGimmickFP9gfArchive
-27,1,0026D798:setVisibilityAttachedEffect__9grGimmickFUi
+27,1,0026D798:setVisibilityAttachedEffect__9grGimmickFUl
 27,1,0026b25c:setNode__9grGimmickFv
 27,1,0026b1c0:setTgtNode__9grGimmickFPc
 27,1,0026c2f8:setMotionRatio__9grGimmickFf
 27,1,0026d940:invalidatedByCameraClipping__9grGimmickFv
-27,1,0026DAF4:setTransparency__9grGimmickFUiUi
+27,1,0026DAF4:setTransparency__9grGimmickFUlUl
 27,1,0026d938:setTransparencyFlag__9grGimmickFc
-27,1,0026b0f8:updateCallback__9grGimmickFUi
+27,1,0026b0f8:updateCallback__9grGimmickFUl
 27,1,0026b17c:fixedPosition__9grGimmickFf
 27,1,0026b254:getTgtNode__9grGimmickFv
 27,1,00231bcc:getGimmickData__9grGimmickFv
-27,1,0026bcc0:changeNodeAnim__9grGimmickFUiUi
+27,1,0026bcc0:changeNodeAnim__9grGimmickFUlUl
 27,1,0026a5e8:createFadeVisibleProduction__9grGimmickFf
-27,1,0026a664:createSoundEffectVisibleProductionForExcel__9grGimmickFUiUiUi
-27,1,0026a6b8:createEffectVisibleProductionForExcel__9grGimmickFPQ29grGimmick16SimpleEffectDataPUiPP19grVisibleProduction
+27,1,0026a664:createSoundEffectVisibleProductionForExcel__9grGimmickFUlUlUl
+27,1,0026a6b8:createEffectVisibleProductionForExcel__9grGimmickFPQ29grGimmick16SimpleEffectDataPUlPP19grVisibleProduction
 27,1,0026a708:setSimpleEffectVisibleProduction__9grGimmickFv
 27,1,0026daf0:dbDispInvalidatedByCameraClippingSphere__9grGimmickFv
 27,1,002304CC:setGimmickData__9grGimmickFPv
 27,1,00231BC4:getTransparencyFlag__9grGimmickFv
-27,1,0026BB1C:makeCalcuCallback__9grGimmickFUiQ25Heaps8HeapType
-27,1,0026BC9C:setCalcuCallbackRoot__9grGimmickFUi
+27,1,0026BB1C:makeCalcuCallback__9grGimmickFUlQ25Heaps8HeapType
+27,1,0026BC9C:setCalcuCallbackRoot__9grGimmickFUl
 27,1,0026dbd0:getPos__9grGimmickFv
 27,1,0026db8c:setPos__9grGimmickFP5Vec3f
 27,1,0026DBB4:setPos__9grGimmickFfff
@@ -546,47 +552,47 @@
 27,1,0026DCBC:setScale__9grGimmickFP5Vec3f
 27,1,0026DCE4:setScale__9grGimmickFfff
 27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoP13stTriggerDataPc
-27,1,0026DA8C:createSimpleEffectData__9grGimmickFPQ29grGimmick16SimpleEffectDataUiPc
+27,1,0026DA8C:createSimpleEffectData__9grGimmickFPQ29grGimmick16SimpleEffectDataUlPc
 27,1,0026CB94:createIsValidTrigger__9grGimmickFP13stTriggerData
 27,1,0026D124:createEffectWork__9grGimmickFi
-27,1,0026D22C:startGimmickEffect__9grGimmickFUi
-27,1,0026CE10:startGimmickSE__9grGimmickFUi
-27,1,0026D264:stopGimmickEffect__9grGimmickFUi
-27,1,0026D08C:stopGimmickSE__9grGimmickFUi
-27,1,0026CCA0:createSoundWork__9grGimmickFUiUi
-27,1,0026C1BC:changeShapeAnim__9grGimmickFUiUi
+27,1,0026D22C:startGimmickEffect__9grGimmickFUl
+27,1,0026CE10:startGimmickSE__9grGimmickFUl
+27,1,0026D264:stopGimmickEffect__9grGimmickFUl
+27,1,0026D08C:stopGimmickSE__9grGimmickFUl
+27,1,0026CCA0:createSoundWork__9grGimmickFUlUl
+27,1,0026C1BC:changeShapeAnim__9grGimmickFUlUl
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc
 27,1,00264cc4:__dt__10grYakumonoFv
 27,1,00264d1c:processUpdate__10grYakumonoFv
-27,1,00264f58:startup__10grYakumonoFP9gfArchiveUiUi
-27,1,00264f5c:setValid__10grYakumonoFUi
-27,1,0026501c:setValidAttachedEffect__10grYakumonoFUi
+27,1,00264f58:startup__10grYakumonoFP9gfArchiveUlUl
+27,1,00264f5c:setValid__10grYakumonoFUl
+27,1,0026501c:setValidAttachedEffect__10grYakumonoFUl
 27,1,00267ab8:preExit__10grYakumonoFv
-27,1,00267a10:setTransparency__10grYakumonoFUiUi
+27,1,00267a10:setTransparency__10grYakumonoFUlUl
 27,1,00264dd4:onDamage__10grYakumonoFiP8soDamageP20soDamageAttackerInfo
-27,1,00264DE4:onInflict__10grYakumonoFP14soCollisionLogUif
+27,1,00264DE4:onInflict__10grYakumonoFP14soCollisionLogUlf
 27,1,00264DE8:onInflictEach__10grYakumonoFP14soCollisionLogf
 27,1,00264DEC:onGimmickEvent__10grYakumonoFP18soGimmickEventInfoPi
-27,1,002650DC:enableYakumono__10grYakumonoFUi
-27,1,00265160:disableYakumono__10grYakumonoFUiUi
-27,1,002651D4:enableHit__10grYakumonoFUiUi
-27,1,00265214:disableHit__10grYakumonoFUiUi
-27,1,00265254:disableAttack__10grYakumonoFUi
+27,1,002650DC:enableYakumono__10grYakumonoFUl
+27,1,00265160:disableYakumono__10grYakumonoFUlUl
+27,1,002651D4:enableHit__10grYakumonoFUlUl
+27,1,00265214:disableHit__10grYakumonoFUlUl
+27,1,00265254:disableAttack__10grYakumonoFUl
 27,1,002652BC:enableArea__10grYakumonoFv
 27,1,00265300:disableArea__10grYakumonoFv
 27,1,00265344:setSleepArea__10grYakumonoFb
-27,1,00265390:setTeamYakumonoOwnerId__10grYakumonoFUi
-27,1,002653C8:setTeamYakumono__10grYakumonoFUiUi
-27,1,00265424:getTeamYakumono__10grYakumonoFUi
+27,1,00265390:setTeamYakumonoOwnerId__10grYakumonoFUl
+27,1,002653C8:setTeamYakumono__10grYakumonoFUlUl
+27,1,00265424:getTeamYakumono__10grYakumonoFUl
 27,1,0026546C:setOffsetAttack__10grYakumonoFP5Vec3fi
 27,1,00265480:setAreaGimmick__10grYakumonoFP10soAreaDataP10soAreaInitP10ykAreaDatab
-27,1,00267548:setAttackGimmick__10grYakumonoFiiUiPQ29grGimmick10AttackDataPQ29grGimmick13AttackDetails
+27,1,00267548:setAttackGimmick__10grYakumonoFiiUlPQ29grGimmick10AttackDataPQ29grGimmick13AttackDetails
 27,1,002675E0:setSoCollisionAttackData__10grYakumonoFP21soCollisionAttackDataPQ29grGimmick10AttackDataPQ29grGimmick13AttackDetails
-27,1,002677AC:setAttackGimmickDetails__10grYakumonoFP21soCollisionAttackDataffffiP5Vec3fiiiiUiUiUibUi26CollisionAttackElementType28CollisionAttackHitSoundLevel27CollisionAttackHitSoundTypebbbbbbUiUibbb32CollisionAttackFacingRestrictionbbbbbUib
-27,1,00267924:isEnableAttackPersonAttacked__10grYakumonoFUiUiUi
-27,1,002679E8:isEnableAttackAttribute__10grYakumonoFUiUi
+27,1,002677AC:setAttackGimmickDetails__10grYakumonoFP21soCollisionAttackDataffffiP5Vec3fiiiiUlUlUlbUl26CollisionAttackElementType28CollisionAttackHitSoundLevel27CollisionAttackHitSoundTypebbbbbbUlUlbbb32CollisionAttackFacingRestrictionbbbbbUlb
+27,1,00267924:isEnableAttackPersonAttacked__10grYakumonoFUlUlUl
+27,1,002679E8:isEnableAttackAttribute__10grYakumonoFUlUl
 27,1,00267AF4:setSituationODD__10grYakumonoFv
 27,1,002652A8:setSleepHit__10grYakumonoFb
 27,1,00265294:setSleepAttack__10grYakumonoFb
@@ -598,7 +604,7 @@
 27,1,0026FC6C:__ct__15grGimmickSpringFPc
 27,1,0026FCC8:__dt__15grGimmickSpringFv
 27,1,0026FD20:update__15grGimmickSpringFf
-27,1,0026FFC4:startup__15grGimmickSpringFP9gfArchiveUiUi
+27,1,0026FFC4:startup__15grGimmickSpringFP9gfArchiveUlUl
 27,1,0027020C:setInitializeFlag__15grGimmickSpringFv
 27,1,002702A8:disableArea__15grGimmickSpringFv
 27,1,00270310:setSleepArea__15grGimmickSpringFb
@@ -611,7 +617,7 @@
 27,1,0026F6C4:__ct__15grGimmickLadderFPc
 27,1,0026F734:__dt__15grGimmickLadderFv
 27,1,0026F940:setInitializeFlag__15grGimmickLadderFv
-27,1,0026F78C:startup__15grGimmickLadderFP9gfArchiveUiUi
+27,1,0026F78C:startup__15grGimmickLadderFP9gfArchiveUlUl
 27,1,0026F9DC:update__15grGimmickLadderFf
 27,1,0026FA14:getUpperNode__15grGimmickLadderFP5Vec3f
 27,1,0026FA84:getUnderNode__15grGimmickLadderFP5Vec3f
@@ -622,7 +628,7 @@
 27,1,00274708:__dt__17grGimmickCatapultFv
 27,1,00274824:processFixPosition__17grGimmickCatapultFv
 27,1,00274760:update__17grGimmickCatapultFf
-27,1,002749CC:startup__17grGimmickCatapultFP9gfArchiveUiUi
+27,1,002749CC:startup__17grGimmickCatapultFP9gfArchiveUlUl
 27,1,00274DF4:onGimmickEvent__17grGimmickCatapultFP18soGimmickEventInfoPi
 27,5,58B78:__vt__17grGimmickCatapult
 
@@ -630,7 +636,7 @@
 27,1,00274078:__ct__17grGimmickWarpZoneFPc
 27,1,002740EC:__dt__17grGimmickWarpZoneFv
 27,1,0027455C:update__17grGimmickWarpZoneFf
-27,1,00274168:startup__17grGimmickWarpZoneFP9gfArchiveUiUi
+27,1,00274168:startup__17grGimmickWarpZoneFP9gfArchiveUlUl
 27,1,002744C0:setInitializeFlag__17grGimmickWarpZoneFv
 27,1,00274594:onGimmickEvent__17grGimmickWarpZoneFP18soGimmickEventInfoPi
 27,1,00274144:setWarpAttrData__17grGimmickWarpZoneFP5Vec3fUcb
@@ -639,9 +645,9 @@
 27,1,00268B18:__ct__21grYakumonoPunchSliderFPc
 27,1,00268BCC:__dt__21grYakumonoPunchSliderFv
 27,1,00268C24:update__21grYakumonoPunchSliderFf
-27,1,0026907C:startup__21grYakumonoPunchSliderFP9gfArchiveUiUi
+27,1,0026907C:startup__21grYakumonoPunchSliderFP9gfArchiveUlUl
 27,1,002698C0:onDamage__21grYakumonoPunchSliderFiP8soDamageP20soDamageAttackerInfo
-27,1,00269A6C:onInflict__21grYakumonoPunchSliderFP14soCollisionLogUif
+27,1,00269A6C:onInflict__21grYakumonoPunchSliderFP14soCollisionLogUlf
 27,1,00268F5C:updateMove__21grYakumonoPunchSliderFf
 27,1,00268FE4:createMotionPath__21grYakumonoPunchSliderFv
 27,1,00269830:setCulcCallback__21grYakumonoPunchSliderFP9gfArchive
@@ -649,7 +655,7 @@
 // grMadein
 27,1,0027583C:__ct__8grMadeinFPc
 27,1,00275928:__dt__8grMadeinFv
-27,1,00275A98:startup__8grMadeinFP9gfArchiveUiUi
+27,1,00275A98:startup__8grMadeinFP9gfArchiveUlUl
 27,1,00279D50:onDamage__8grMadeinFiP8soDamageP20soDamageAttackerInfo
 27,1,00279E04:onInflictEach__8grMadeinFP14soCollisionLogf
 27,1,00278c54:update__8grMadeinFf
@@ -664,9 +670,13 @@
 27,1,00278618:createAttackPointNormal__8grMadeinFP21soCollisionAttackData
 27,1,00278E38:startEntity__8grMadeinFv
 27,1,0027928C:startEntityAutoLoop__8grMadeinFv
-27,1,00279590:setMotion__8grMadeinFUi
-27,1,00279968:setMotionDetails__8grMadeinFUiUiUiUiUi
+27,1,00279590:setMotion__8grMadeinFUl
+27,1,00279968:setMotionDetails__8grMadeinFUlUlUlUlUl
 27,1,0027855C:deleteHitPoint__8grMadeinFv
+27,1,00279044:endEntity__8grMadeinFv
+27,1,002792C8:isEndEntity__8grMadeinFv
+27,1,002794CC:getEntityFrame__8grMadeinFv
+27,1,002794F0:isFrameOffset__8grMadeinFf
 
 // grGimmickMotionPath
 27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf
@@ -685,7 +695,7 @@
 27,1,000426AC:setInvincibleGlobal__19soCollisionHitGroupFv
 
 // soValueAccesser
-27,1,0008C338:getConstantInt__15soValueAccesserFP16soModuleAccesserUiUi
+27,1,0008C338:getConstantInt__15soValueAccesserFP16soModuleAccesserUlUl
 
 // soExternalValueAccesser
 27,1,0008CB0C:getTeamNo__23soExternalValueAccesserFP11StageObject
@@ -715,7 +725,7 @@
 27,1,0010C7FC:isProcessHeartSwap__9ftManagerFi
 27,1,0010C834:toKnockOutHeartSwapOpposite__9ftManagerFiP20soDamageAttackerInfo
 27,1,0010B8F8:setBeat__9ftManagerFii
-27,1,0010BCF4:setSuicide__9ftManagerFi
+27,1,0010BCF4:setSUlcide__9ftManagerFi
 27,1,0010BF4C:pickupCoin__9ftManagerFii
 27,1,00109E14:setWarpFighter__9ftManagerFiP5Vec3ffb
 
@@ -734,16 +744,16 @@
 
 // itManager
 27,1,002A1718:getInstance__9itManagerFv
-27,1,002A55CC:isCompItemKindArchive__9itManagerF6itKindUib
-27,1,002A3F4C:preloadItemKindArchive__9itManagerF6itKindUiQ29itArchive4Typeb
-27,1,002A7070:createItem__9itManagerF6itKindUiiiUciii
+27,1,002A55CC:isCompItemKindArchive__9itManagerF6itKindUlb
+27,1,002A3F4C:preloadItemKindArchive__9itManagerF6itKindUlQ29itArchive4Typeb
+27,1,002A7070:createItem__9itManagerF6itKindUliiUciii
 27,1,002A8124:createItemInstance__9itManagerFP8itCreate
 27,1,002A8640:getItemNum__9itManagerF6itKind
 27,1,002A7BA0:removeItem__9itManagerFP8BaseItem
 
 // BaseItem
 27,1,0027F564:__ct__8BaseItemFP8itCreate
-27,1,0028C834:getParam__8BaseItemFUi
+27,1,0028C834:getParam__8BaseItemFUl
 27,1,0028C85C:getParam__8BaseItemFi
 27,1,0028C884:getParamFloat__8BaseItemFUi
 27,1,0028DE00:warp__8BaseItemFP5Vec3f
@@ -771,20 +781,22 @@
 // stTrigger
 27,1,00233640:setObserveYakumono__9stTriggerFP8Yakumono
 27,1,00233778:setBeltConveyorTrigger__9stTriggerFP25grGimmickBeltConveyorData
-
+27,1,00234040:setAreaSleep__9stTriggerFUl
+27,1,00233A48:setWindParam__9stTriggerFP20grGimmickWindData2ndl
 
 // stDataMultiContainer
 8015bbf4:create__20stDataMultiContainerFPvQ25Heaps8HeapType
 
 // SeSeq
-27,1,00224e44:__ct__Q28StSeUtil5SeSeqFPviPvi
-27,1,002252e0:playFrame__Q28StSeUtil5SeSeqFfUi
-27,1,002252d8:playFrame__Q28StSeUtil5SeSeqFffUi
-27,1,00225108:registId__Q28StSeUtil5SeSeqFP5SndIDi
-27,1,0022517c:registSeq__Q28StSeUtil5SeSeqFiP5SndIDiQ25Heaps8HeapType
+27,1,00224e44:__ct__Q28StSeUtil5SeSeqFPQ28StSeUtil10UnkStruct2UlPQ28StSeUtil10UnkStruct3Ul
+27,1,0022506c:__dt__Q28StSeUtil5SeSeqFv
+27,1,002252e0:playFrame__Q28StSeUtil5SeSeqFlf
+27,1,002252d8:playFrame__Q28StSeUtil5SeSeqFlff
+27,1,00225108:registId__Q28StSeUtil5SeSeqFP5SndIDUl
+27,1,0022517c:registSeq__Q28StSeUtil5SeSeqFiPQ28StSeUtil9UnkStructUlQ25Heaps8HeapType
 
 // emManager
-41,1,0000C6B0:create__9emManagerFUiUiUc
+41,1,0000C6B0:create__9emManagerFUlUlUc
 41,1,0000C804:getInstance__9emManagerFv
 41,1,0000D20C:preloadArchive__9emManagerFP9gfArchiveP9gfArchiveP9gfArchiveP9gfArchive9EnemyKindb
 41,1,0000C9D4:createEnemy__9emManagerFP8emCreate
@@ -953,6 +965,20 @@
 //sndSystem
 800742b0:playSE__9sndSystemFiiiii
 
+// grTenganEvent
+27,1,0027BBD8:__ct__13grTenganEventFv
+27,1,0027BBF8:__dt__13grTenganEventFv
+27,1,0027BC4C:update__13grTenganEventFf
+27,1,0027BCA0:set__13grTenganEventFff
+27,1,0027BCEC:start__13grTenganEventFv
+27,1,0027BD68:end__13grTenganEventFv
+27,1,0027BD80:isEvent__13grTenganEventCFv
+27,1,0027BD94:isReadyEnd__13grTenganEventCFv
+27,1,0027BDA8:getPhase__13grTenganEventCFv
+27,1,0027BDB0:setPhase__13grTenganEventFl
+
+// IfFoxSmashAppearTask
+800F6374:create__20IfFoxSmashAppearTaskFP9gfArchive
 
 // SOCommon.h
 803a5e40:SOInit
