@@ -9,4 +9,10 @@ u32 recvfrom(int socket, void* buffer, u32 length, int flags, struct sockaddr* a
 u32 sendto(int socket, const void* message, u32 length, int flags, const struct sockaddr* dest_addr, u32 dest_len);
 bool CanReceiveOnSocket(int socket);
 bool CanSendOnSocket(int socket);
+
+u32 recv(int sockfd, void* buf, size_t len, int flags);
+u32 send(int sockfd, const void* buf, size_t len, int flags);
+int accept(int sockfd, struct sockaddr* addr, u32* addrlen);
+int listen(int sockfd, int backlog);
+int getsockname(int sockfd, struct sockaddr* addr, u32* addrlen);
 }

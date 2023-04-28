@@ -1,0 +1,20 @@
+#pragma once
+
+#include "fa/FAFclose.h"
+#include "fa/FAFopen.h"
+#include "fa/FAFread.h"
+#include "fa/FAFseek.h"
+#include "fa/FAFsfirst.h"
+#include "fa/FAFsnext.h"
+#include "fa/FAFwrite.h"
+#include "fa/FAremove.h"
+
+struct FAEntryInfo {
+    char _0x0[0x228];
+    int size;
+    char _flag;
+    char shortname[0xd];
+    char name[0x38];
+    char unk[0x1e2];
+    /* data */
+};

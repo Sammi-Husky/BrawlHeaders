@@ -82,12 +82,15 @@
 
 // string
 803fa3fc:strcmp__FPCcPCc
+803fa3fc:strcmp
 803fa340:strncpy__6StringF6StringPcUl
 803fa340:strncpy__FPcPCcUl
+803fa340:strncpy
 803fa280:strcpy__FPcPCc
 803f89fc:sprintf
 803fa384:strcat__FPcPc
 803fa3b0:strncat__FPcPc
+803fa3b0:strncat
 803fa518:strncmp__FPcPc
 803fa518:strncmp
 803fa558:strchr__FPcPc
@@ -111,6 +114,7 @@
 803f0640:strlen__FPc 
 803f0640:strlen
 8000443c:__memfill__FPvUcUl
+8000443c:memset__FPvUcUl
 8000443c:memset
 
 // NW4R
@@ -215,6 +219,9 @@
 80026c78:setTempolaryLoadHeap__15gfModuleManagerFQ25Heaps8HeapType
 8002737c:destroy__15gfModuleManagerFPc
 
+// gfModuleHeader
+80026478:getTextSectionAddr__14gfModuleHeaderFv
+
 // gfSceneManager
 8002cc14:__ct__14gfSceneManagerFv
 8002cfd0:create__14gfSceneManagerFv
@@ -262,6 +269,9 @@
 // mtprng
 8003fc7c:randi__FUi
 8003fb64:randf__Fv
+
+// rand
+803f8c3c:rand
 
 // mtBezierCurve
 8003ffc4:mtBezierCurve__FfP5Vec3fP5Vec3f
@@ -959,6 +969,7 @@
 803a7608:SOSendTo
 80151098:SOAlloc
 801510c4:SOFree
+803a7af8:SONtoHs
 
 // more socket stuff (nonport.h)
 8035c26c:socket
@@ -968,3 +979,18 @@
 8035c2a4:closesocket
 8035cefc:CanReceiveOnSocket
 8035cf44:CanSendOnSocket
+8035c3e8:listen
+8035c478:recv
+8035c41c:accept
+8035c510:send
+8035c5c4:getsockname
+
+// FA.h
+803ebeb8:FAFopen
+803ebee8:FAFseek
+803ebee4:FAFread
+803ebf98:FAFwrite
+803ebe8c:FAFclose
+803ec200:FARemove
+803ebf14:FAFsfirst__FPciP11FAEntryInfo
+803ebf40:FAFsnext__FP11FAEntryInfo
