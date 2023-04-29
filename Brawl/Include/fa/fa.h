@@ -1,5 +1,6 @@
 #pragma once
 
+#include "fa/FAClosedir.h"
 #include "fa/FAFclose.h"
 #include "fa/FAFopen.h"
 #include "fa/FAFread.h"
@@ -7,6 +8,7 @@
 #include "fa/FAFsfirst.h"
 #include "fa/FAFsnext.h"
 #include "fa/FAFwrite.h"
+#include "fa/FAOpendir.h"
 #include "fa/FAremove.h"
 
 struct FAEntryInfo {

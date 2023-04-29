@@ -856,6 +856,7 @@
 80021fa0:getPool__14gfFileIOHandleFv
 80021fac:release__14gfFileIOHandleFv
 8002239c:setReadParam__15gfFileIORequestFP15gfFileIORequestPcPvii
+8001be00:gfFACreateDir__8gfFileIOFPc
 
 // gameGlobal
 8004D9DC:getLanguage__10GameGlobalFv
@@ -1018,5 +1019,7 @@
 803ebf98:FAFwrite
 803ebe8c:FAFclose
 803ec200:FARemove
+803ec128:FAOpendir
+803ebe20:FAClosedir
 803ebf14:FAFsfirst__FPciP11FAEntryInfo
 803ebf40:FAFsnext__FP11FAEntryInfo
