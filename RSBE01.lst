@@ -84,6 +84,7 @@
 803fa3fc:strcmp__FPCcPCc
 803fa3fc:strcmp
 803fa340:strncpy
+803fa340:strncpy__6StringF6StringPcUl
 803fa280:strcpy__FPcPCc
 803fa280:strcpy
 803f89fc:sprintf
