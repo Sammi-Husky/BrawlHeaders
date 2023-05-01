@@ -1,4 +1,4 @@
 #pragma once
 
 struct FAHandle;
-extern "C" FAHandle* FAOpendir(char* path);
+extern "C" FAHandle* FAOpendir(const char* path);
