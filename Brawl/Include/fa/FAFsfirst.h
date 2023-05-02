@@ -2,4 +2,4 @@
 
 struct FAEntryInfo;
 
-int FAFsfirst(char* pattern, int filter, FAEntryInfo* ret);
+extern "C" int FAFsfirst(const char* pattern, int filter, FAEntryInfo* ret);

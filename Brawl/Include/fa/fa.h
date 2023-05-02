@@ -7,6 +7,7 @@
 #include "fa/FAFseek.h"
 #include "fa/FAFsfirst.h"
 #include "fa/FAFsnext.h"
+#include "fa/FAFstat.h"
 #include "fa/FAFwrite.h"
 #include "fa/FAOpendir.h"
 #include "fa/FAremove.h"

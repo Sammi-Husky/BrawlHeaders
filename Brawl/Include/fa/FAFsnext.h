@@ -2,4 +2,4 @@
 
 struct FAEntryInfo;
 
-int FAFsnext(FAEntryInfo* ret);
+extern "C" int FAFsnext(FAEntryInfo* ret);

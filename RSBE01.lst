@@ -1015,6 +1015,7 @@
 8035c5c4:getsockname
 
 // FA.h
+803ebf6c:FAFstat
 803ebeb8:FAFopen
 803ebee8:FAFseek
 803ebee4:FAFread
@@ -1023,5 +1024,5 @@
 803ec200:FARemove
 803ec128:FAOpendir
 803ebe20:FAClosedir
-803ebf14:FAFsfirst__FPciP11FAEntryInfo
-803ebf40:FAFsnext__FP11FAEntryInfo
+803ebf14:FAFsfirst
+803ebf40:FAFsnext
