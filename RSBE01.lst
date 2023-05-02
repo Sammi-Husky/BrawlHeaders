@@ -408,7 +408,7 @@
 27,1,002256D0:createWind2ndOnly__5StageFv
 27,1,002256C8:getWind2ndOnlyData__5StageFv
 27,1,002256C4:updateWind2ndOnly__5StageFv
-27,1,00224DA8:setVision__5StageFv
+27,1,00224DA8:setVision__5StageFUc
 27,1,00222190:processBegin__5StageFv
 27,1,00222288:processAnim__5StageFv
 27,1,002224cc:processUpdate__5StageFv

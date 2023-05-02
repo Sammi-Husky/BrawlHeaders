@@ -299,5 +299,5 @@ public:
     virtual bool createWind2ndOnly();
     virtual grGimmickWindData2nd* getWind2ndOnlyData(); // TODO
     virtual void updateWind2ndOnly();                   // TODO
-    virtual void setVision();                           // TODO
+    virtual void setVision(u8);
 };
