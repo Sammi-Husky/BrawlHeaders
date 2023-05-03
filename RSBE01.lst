@@ -690,6 +690,9 @@
 27,1,0026EFD8:isStartFrame__19grGimmickMotionPathFv
 27,1,0026EFA0:applyEndFrame__19grGimmickMotionPathFv
 
+// grStadiumVision
+27,1,0027AAF8:create__15grStadiumVisionFiPcPc
+
 // StageObject
 27,1,00003C64:activate__11StageObjectFffP5Vec3fb
 
