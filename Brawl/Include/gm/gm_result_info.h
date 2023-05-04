@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <types.h>
+#include <gm/gm_lib.h>
 
 enum GameRule {
     Game_Rule_Time = 0x0,
@@ -18,8 +19,8 @@ enum GameDecision {
 };
 
 struct gmPlayerResultInfo {
-    u8 m_slotID;
-    u8 m_initState;
+    gmCharacterKind m_characterKind : 8;
+    u8 m_state;
     s8 m_colorFileIdx;
     char _3[5];
     s16 m_hitPointMax;
