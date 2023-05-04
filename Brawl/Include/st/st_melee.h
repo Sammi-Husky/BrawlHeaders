@@ -38,5 +38,6 @@ public:
     void zoomOutCamera(float, float);
     void setPlayerPositionIndexSerial();
     void playSeBasic(SndID id, float p2);
+    void stopSeBasic(int index, float);
 };
 static_assert(sizeof(stMelee) == 472, "Class is wrong size!");

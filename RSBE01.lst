@@ -253,6 +253,7 @@
 
 // cmQuake
 8009db90:cmReqQuake__FiP5Vec3f
+8009dd40:cmRemoveQuake__Fi
 
 // Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
@@ -459,6 +460,7 @@
 27,1,00239574:zoomOutCamera__7stMeleeFff
 27,1,00238DB4:setPlayerPositionIndexSerial__7stMeleeFv
 27,1,002399FC:playSeBasic__7stMeleeF5SndIDf
+27,1,00239A84:stopSeBasic__7stMeleeFif
 
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv
