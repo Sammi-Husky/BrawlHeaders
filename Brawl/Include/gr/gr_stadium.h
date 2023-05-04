@@ -1,6 +1,5 @@
 #pragma once
 
-#include <StaticAssert.h>
 #include <gr/gr_yakumono.h>
 
 class grStadium : public grYakumono {

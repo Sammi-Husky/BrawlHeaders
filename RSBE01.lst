@@ -692,6 +692,7 @@
 
 // grStadiumVision
 27,1,0027AAF8:create__15grStadiumVisionFiPcPc
+27,1,0027ADF8:setDisplay__15grStadiumVisionFb
 
 // StageObject
 27,1,00003C64:activate__11StageObjectFffP5Vec3fb

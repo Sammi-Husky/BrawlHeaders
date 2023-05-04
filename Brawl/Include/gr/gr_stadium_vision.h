@@ -1,15 +1,17 @@
 #pragma once
 
-#include <StaticAssert.h>
 #include <gr/gr_stadium.h>
+#include <ms/ms_message.h>
 
 class grStadiumVision : public grStadium {
-protected:
-    char _348[4];
+public:
+    void* m_msgBinData;
     u8 m_352;
-    char _353[11];
+    char _353[3];
+    int m_stadiumType;
+    char _360[4];
     float _364;
-    char _368[4];
+    Message* message;
     float m_372;
     float m_376;
     float m_380;
@@ -27,7 +29,6 @@ protected:
     u8 m_414;
     char _415;
 
-public:
     grStadiumVision(char* taskName);
     virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
     virtual void update(float deltaFrame);
