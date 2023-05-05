@@ -3,6 +3,7 @@
 #include <types.h>
 
 class grTenganEvent {
+public:
     enum State {
         NoEvent = 0,
         Running = 1,
@@ -13,11 +14,11 @@ class grTenganEvent {
     float m_minFrames;          // +0x4
     float m_maxFrames;          // +0x8
     float m_framesLeft;         // +0xC
-    float m_0x10;
+    float m_manualFramesLeft;
     u8 unk14[0x90];
     State m_state;              // +0xA4
     s32 m_phase;                // +0xA8
-public:
+
     grTenganEvent();
     ~grTenganEvent();
     void update(float delta);
