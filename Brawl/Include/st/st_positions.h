@@ -3,6 +3,7 @@
 #include <StaticAssert.h>
 #include <mt/mt_vector.h>
 #include <types.h>
+#include <nw4r/g3d/g3d_resfile.h>
 
 class stRange {
 public:
@@ -19,5 +20,7 @@ private:
 public:
     float* getDeadRange(stRange* range);
     float* getCameraRange(stRange* range);
+    void loadPositionData(void* stgPosMdl);
+
 };
 static_assert(sizeof(stPositions) == 100, "Class is wrong size!");

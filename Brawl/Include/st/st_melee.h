@@ -37,8 +37,10 @@ public:
     void zoomInCamera();
     void zoomOutCamera(float, float);
     void setPlayerPositionIndexSerial();
-    void playSeBasic(SndID id, float p2);
+    int playSeBasic(SndID id, float p2);
     void stopSeBasic(int index, float);
+    void setGravityHalf();
+    void setGravityNormal();
 
     static bool getPlayerPosition(int playerNo, Vec3f* pos);
 };

@@ -462,6 +462,8 @@
 27,1,002399FC:playSeBasic__7stMeleeF5SndIDf
 27,1,00239A84:stopSeBasic__7stMeleeFif
 27,1,002398C8:getPlayerPosition__7stMeleeFiP5Vec3f
+27,1,00238EB0:setGravityHalf__7stMeleeFv
+27,1,00238E90:setGravityNormal__7stMeleeFv
 
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv
@@ -780,6 +782,7 @@
 // stPositions
 27,1,00226794:getDeadRange__11stPositionsFP7stRange
 27,1,00226584:getCameraRange__11stPositionsFP7stRange
+27,1,00225CE8:loadPositionData__11stPositionsFPv
 
 // stTriggerMng
 27,1,00231FDC:createTrigger__12stTriggerMngF11GimmickKindi
