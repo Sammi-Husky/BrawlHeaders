@@ -7,6 +7,16 @@
 namespace nw4r {
     namespace g3d {
 
+        struct ResTexObjData {
+            int _0;
+            GXTexObj m_texObjs[8];
+        };
+
+        class ResTexObj : public ResCommon<ResTexObjData> {
+        public:
+            GXTexObj* GetTexObj(GXTexMapID);
+        };
+
         struct GenModeData {
             u8 m_numTexGens;
             u8 m_numLightChans;
@@ -43,8 +53,10 @@ namespace nw4r {
             s32 m_offToMatRefs;
 
             s32 m_offToFurData;
-            s32 m_offToUserData;
+            s32 m_offToUserDataoffToUserData;
             s32 m_offToDisplayLists;
+
+            ResTexObjData resTexObjData;
 
             // there may be more after this? This is just file format
             // Needs verfication in game

@@ -37,6 +37,7 @@ namespace nw4r {
             /* data */
         public:
             inline ResFile(ResFileData* data) : ResCommon(data) {}
+            inline ResFile(void* data) : ResCommon(data) {}
 
             static void Init(void* arg);
             u32 GetResMdlNumEntries();

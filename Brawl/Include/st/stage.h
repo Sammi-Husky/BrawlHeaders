@@ -163,7 +163,7 @@ public:
     u32 getGroundNum();
     grCollision* createCollision(gfArchive* archive, int index, Ground* ground);
     void createStagePositions();
-    void createStagePositions(void* stgPosMdl);
+    void createStagePositions(nw4r::g3d::ResFile* resFile);
     void loadStageAttrParam(gfArchive* filedata, int fileIndex);
     void registScnAnim(nw4r::g3d::ResFileData* scnData, u32 index);
     void initPosPokeTrainer(int unk1, int unk2);
