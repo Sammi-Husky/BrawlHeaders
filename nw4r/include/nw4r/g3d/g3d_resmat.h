@@ -1,6 +1,7 @@
 #pragma once
 
 #include <GX.h>
+#include <mt/mt_vector.h>
 #include <nw4r/g3d/g3d_rescommon.h>
 #include <types.h>
 
@@ -21,7 +22,11 @@ namespace nw4r {
                 };
                 u32 m_flags;
             };
-            char _4[584];
+            char _4[4];
+            Vec2f m_range;
+            char _16[4];
+            Vec2f m_pos;
+            char _28[560];
         };
 
         class ResTexSrt : public ResCommon<ResTexSrtData> {
