@@ -7,6 +7,40 @@ class Vec2f {
 public:
     float m_x;
     float m_y;
+
+    Vec2f operator+(const Vec2f& v) {
+        return (Vec2f){this->m_x + v.m_x, this->m_y + v.m_y};
+    }
+
+    Vec2f operator-(const Vec2f& v) {
+        return (Vec2f){this->m_x - v.m_x, this->m_y - v.m_y};
+    }
+
+    Vec2f operator*(const float c) {
+        Vec2f res;
+        res.m_x = m_x * c;
+        res.m_y = m_y * c;
+        return res;
+    }
+
+    inline Vec2f operator/(const float c)
+    {
+        return *this * (1 / c);
+    }
+
+    inline void operator+=(const Vec2f& v)
+    {
+        *this = *this + v;
+    }
+    inline void operator-=(const Vec2f& v)
+    {
+        *this = *this - v;
+    }
+    inline void operator*=(const float c)
+    {
+        *this = *this * c;
+    }
+
 };
 static_assert(sizeof(Vec2f) == 8, "Class is wrong size!");
 

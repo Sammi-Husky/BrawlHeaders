@@ -2,9 +2,10 @@
 
 #include <StaticAssert.h>
 #include <types.h>
+#include <gm/gm_lib.h>
 
 struct PlayerCorpsInit {
-    u8 m_slotID;               // 0x00
+    gmCharacterKind m_characterKind : 8;      // 0x00
     u8 m_costumeID;            // 0x01
     s8 m_stockCount;           // 0x02
     u8 m_cpuType;              // 0x03

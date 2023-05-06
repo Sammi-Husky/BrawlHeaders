@@ -129,6 +129,7 @@
 801b00b4:GetResMatTevColor__Q44nw4r3g3d6ScnMdl15CopiedMatAccessFb
 801913d0:GXSetTevColor__Q34nw4r3g3d14ResMatTevColorFUl8_GXColor
 80190a90:DCStore__Q34nw4r3g3d6ResMatFb
+8018eda4:GetResNode__Q34nw4r3g3d6ResMdlCFi
 8018edf8:GetResNode__Q34nw4r3g3d6ResMdlCFUx
 8018ed10:GetResNode__Q34nw4r3g3d6ResMdlCFPCc
 801afaac:EnableScnMdlCallbackTiming__Q34nw4r3g3d12ScnMdlSimpleFUl
@@ -253,6 +254,7 @@
 
 // cmQuake
 8009db90:cmReqQuake__FiP5Vec3f
+8009dd40:cmRemoveQuake__Fi
 
 // Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
@@ -408,7 +410,7 @@
 27,1,002256D0:createWind2ndOnly__5StageFv
 27,1,002256C8:getWind2ndOnlyData__5StageFv
 27,1,002256C4:updateWind2ndOnly__5StageFv
-27,1,00224DA8:setVision__5StageFv
+27,1,00224DA8:setVision__5StageFUc
 27,1,00222190:processBegin__5StageFv
 27,1,00222288:processAnim__5StageFv
 27,1,002224cc:processUpdate__5StageFv
@@ -459,6 +461,10 @@
 27,1,00239574:zoomOutCamera__7stMeleeFff
 27,1,00238DB4:setPlayerPositionIndexSerial__7stMeleeFv
 27,1,002399FC:playSeBasic__7stMeleeF5SndIDf
+27,1,00239A84:stopSeBasic__7stMeleeFif
+27,1,002398C8:getPlayerPosition__7stMeleeFiP5Vec3f
+27,1,00238EB0:setGravityHalf__7stMeleeFv
+27,1,00238E90:setGravityNormal__7stMeleeFv
 
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv
@@ -690,6 +696,10 @@
 27,1,0026EFD8:isStartFrame__19grGimmickMotionPathFv
 27,1,0026EFA0:applyEndFrame__19grGimmickMotionPathFv
 
+// grStadiumVision
+27,1,0027AAF8:create__15grStadiumVisionFiPcPc
+27,1,0027ADF8:setDisplay__15grStadiumVisionFb
+
 // StageObject
 27,1,00003C64:activate__11StageObjectFffP5Vec3fb
 
@@ -773,6 +783,7 @@
 // stPositions
 27,1,00226794:getDeadRange__11stPositionsFP7stRange
 27,1,00226584:getCameraRange__11stPositionsFP7stRange
+27,1,00225CE8:loadPositionData__11stPositionsFPv
 
 // stTriggerMng
 27,1,00231FDC:createTrigger__12stTriggerMngF11GimmickKindi

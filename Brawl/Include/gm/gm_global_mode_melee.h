@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <types.h>
+#include <gm/gm_lib.h>
 
 class gmItSwitch {
 public:
@@ -19,7 +20,15 @@ public:
     bool m_0x4_2 : 1;
     bool m_0x4_1 : 1;
     bool m_0x4_0 : 1;
-    char _0x5[0x3];              // 0x05
+    char _0x5[0x2];              // 0x05
+    bool m_0x7_7 : 1; // 0x07
+    bool m_0x7_6 : 1;
+    bool m_0x7_5 : 1;
+    bool m_0x7_4 : 1;
+    bool m_0x7_3 : 1;
+    bool m_0x7_2 : 1;
+    bool m_0x7_1 : 1;
+    bool m_0x7_0 : 1;
     s8 m_eventId;                // 0x08
     char _0x9[0x2];              // 0x09
     bool m_isTeams;              // 0x0B
@@ -46,8 +55,8 @@ static_assert(sizeof(gmMeleeInitData) == 0x90, "Class is wrong size!");
 
 class gmPlayerInitData {
 public:
-    s8 m_slotID;               // 0x00
-    u8 m_initState;            // 0x01
+    gmCharacterKind m_characterKind : 8;  // 0x00 (Otherwise known as SlotID)
+    u8 m_state;                // 0x01
     char _0[0x02];             // 0x02
     s8 m_stockCount;           // 0x04
     s8 m_colorFileIdx;         // 0x05

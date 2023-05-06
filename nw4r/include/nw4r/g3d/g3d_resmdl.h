@@ -15,6 +15,7 @@ namespace nw4r {
         public:
             ResMat GetResMat(const char* name) const;
             u32 GetResNodeNumEntries();
+            ResNode GetResNode(const int nodeIndex) const;
             ResNode GetResNode(const u64 nodeIndex) const;
             ResNode GetResNode(const char* nodeName) const;
         };
