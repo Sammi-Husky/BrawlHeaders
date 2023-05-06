@@ -134,6 +134,8 @@
 8018ed10:GetResNode__Q34nw4r3g3d6ResMdlCFPCc
 801afaac:EnableScnMdlCallbackTiming__Q34nw4r3g3d12ScnMdlSimpleFUl
 80192f70:SetTranslate__Q34nw4r3g3d7ResNodeFfff
+80190c2c:GetTexObj__Q34nw4r3g3d9ResTexObjF11_GXTexMapID
+80191018:SetMapMode__Q34nw4r3g3d9ResTexSrtFUlUlii
 
 // GameGlobal
 8004e5cc:getGlobalRecordMenuDatap__10GameGlobalFv
@@ -886,6 +888,11 @@
 80024dc0:render__17gfKeepFrameBufferFv
 8002b61c:startKeepScreen__17gfKeepFrameBufferFv
 80024e38:endKeepScreen__17gfKeepFrameBufferFv
+
+// gfCopyEFBMgr
+8002fe48:getInstance__12gfCopyEFBMgrFv
+8002ff34:isValid__12gfCopyEFBMgrFi
+8002ffb8:getCopyEFBTex__12gfCopyEFBMgrFi
 
 // MuObject
 800b534c:changeAnimN__8MuObjectFPc
