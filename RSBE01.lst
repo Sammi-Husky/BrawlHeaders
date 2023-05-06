@@ -109,6 +109,7 @@
 
 // extras
 803fcb50:itoa__FiPci
+803fc9fc:stricmp
 
 // __mem
 803f0640:strlen__FPc 
@@ -1036,3 +1037,20 @@
 803ebe20:FAClosedir
 803ebf14:FAFsfirst
 803ebf40:FAFsnext
+
+// PF.h
+803d6830:PFSTR_InitStr
+803e7234:PFPATH_GetVolumeFromPath
+803ebaac:PF_enterCritical
+803df748:PFENT_ITER_GetEntryOfPath
+803e8e84:PFSEC_ReadData
+803e4cc4:PFFILE_p_remove
+803db1e0:PFDIR_p_mkdir
+803e9260:PFSEC_WriteData
+803da850:PFCACHE_FlushFATCache
+803da884:PFCACHE_FlushDataCacheSpecific
+803ebb28:PF_exitCritical
+803eb4dc:PFAPI_convertReturnValue
+803ddde4:PFENT_RemoveEntry
+803e18b0:PFFAT_FreeChain
+803ddd60:PFENT_getcurrentDateTimeForEnt

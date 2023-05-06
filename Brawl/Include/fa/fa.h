@@ -13,7 +13,9 @@
 #include "fa/FAremove.h"
 
 struct FAEntryInfo {
-    char _0x0[0x228];
+    char _0x0[0x224];
+    s16 modifiedTime;
+    s16 modifiedDate;
     int size;
     char _flag;
     char shortname[0xd];
