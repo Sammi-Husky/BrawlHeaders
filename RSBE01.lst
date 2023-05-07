@@ -893,6 +893,9 @@
 8002fe48:getInstance__12gfCopyEFBMgrFv
 8002ff34:isValid__12gfCopyEFBMgrFi
 8002ffb8:getCopyEFBTex__12gfCopyEFBMgrFi
+8002fe50:createCopyEFB__12gfCopyEFBMgrFiQ25Heaps8HeapType
+8002ff44:getEFB__12gfCopyEFBMgrFi
+8002ffc8:drawCopyEFB__12gfCopyEFBMgrFiP8_GXColor
 
 // MuObject
 800b534c:changeAnimN__8MuObjectFPc
