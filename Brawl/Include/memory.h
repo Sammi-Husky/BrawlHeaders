@@ -60,7 +60,11 @@ namespace Heaps {
         OverlayFighter3 = 0x37,
         OverlayFighter4 = 0x38,
         OverlayEnemy = 0x39,
-        Thread = 0x3a
+        Thread = 0x3a,
+
+        // NON-STANDARD
+        BrawlEx = 0x3b,
+        Syringe = 0x3c
     };
 } // namespace HeapType
 
