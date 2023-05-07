@@ -14,13 +14,14 @@ public:
 };
 
 class stPositions {
-private:
-    char _spacer[100];
-
 public:
+    char _0[8];
+    nw4r::g3d::ResFileData* m_resFile;
+    char _c[88];
+
     float* getDeadRange(stRange* range);
     float* getCameraRange(stRange* range);
-    void loadPositionData(void* stgPosMdl);
+    void loadPositionData(nw4r::g3d::ResFile* resFile);
 
 };
 static_assert(sizeof(stPositions) == 100, "Class is wrong size!");

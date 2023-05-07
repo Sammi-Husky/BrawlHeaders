@@ -13,13 +13,13 @@ public:
     union {
         struct {
             int _pad : 25;
-            bool m_flag7 : 1; // & 0x40
-            bool m_flag6 : 1; // & 0x20
-            bool m_flag5 : 1; // & 0x10
-            bool m_flag4 : 1; // & 8
-            bool m_flag3 : 1; // & 4
-            bool m_flag2 : 1; // & 2
-            bool m_flag1 : 1; // & 1
+            bool m_flag6 : 1; // & 0x40
+            bool m_flag5 : 1; // & 0x20
+            bool m_flag4 : 1; // & 0x10
+            bool m_flag3 : 1; // & 8
+            bool m_flag2 : 1; // & 4
+            bool m_flag1 : 1; // & 2
+            bool m_flag0 : 1; // & 1
         };
         u32 m_flags;
     };

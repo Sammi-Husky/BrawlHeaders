@@ -1,11 +1,53 @@
 #pragma once
 
 #include <GX.h>
+#include <mt/mt_vector.h>
 #include <nw4r/g3d/g3d_rescommon.h>
 #include <types.h>
 
 namespace nw4r {
     namespace g3d {
+
+        struct ResTexSrtData {
+            union {
+                struct {
+                    int _pad : 25;
+                    bool m_flag6 : 1; // & 0x40
+                    bool m_flag5 : 1; // & 0x20
+                    bool m_flag4 : 1; // & 0x10
+                    bool m_flag3 : 1; // & 8
+                    bool m_flag2 : 1; // & 4
+                    bool m_flag1 : 1; // & 2
+                    bool m_flag0 : 1; // & 1
+                };
+                u32 m_flags;
+            };
+            char _4[4];
+            Vec2f m_range;
+            char _16[4];
+            Vec2f m_pos;
+            char _28[560];
+        };
+
+        class ResTexSrt : public ResCommon<ResTexSrtData> {
+        public:
+            inline ResTexSrt(void* data) : ResCommon(data) {}
+
+            bool SetMapMode(u32, u32, int, int);
+        };
+
+
+        struct ResTexObjData {
+            int _0;
+            GXTexObj m_texObjs[8];
+        };
+
+        class ResTexObj : public ResCommon<ResTexObjData> {
+        public:
+            inline ResTexObj(void* data) : ResCommon(data) {}
+
+            GXTexObj* GetTexObj(GXTexMapID);
+        };
 
         struct GenModeData {
             u8 m_numTexGens;
@@ -43,12 +85,20 @@ namespace nw4r {
             s32 m_offToMatRefs;
 
             s32 m_offToFurData;
-            s32 m_offToUserData;
+            s32 m_offToUserDataoffToUserData;
             s32 m_offToDisplayLists;
 
-            // there may be more after this? This is just file format
-            // Needs verfication in game
+            ResTexObjData m_resTexObjData;
+
+            char _320[100];
+
+            ResTexSrtData m_resTexSrtData;
+
+
         };
+        static_assert(sizeof(ResMatData) == 1008, "Class is wrong size!");
+        // there may be more after this? Check the file format. This is just to verify that offsets are correct
+        // Needs verification
 
         struct ResTevColorDL {
             union {
@@ -71,6 +121,8 @@ namespace nw4r {
 
         class ResMat : public ResCommon<ResMatData> {
         public:
+            inline ResMat(void* data) : ResCommon(data) {}
+
             void DCStore(bool sync);
         };
     } // namespace g3d

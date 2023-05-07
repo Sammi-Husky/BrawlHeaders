@@ -134,6 +134,8 @@
 8018ed10:GetResNode__Q34nw4r3g3d6ResMdlCFPCc
 801afaac:EnableScnMdlCallbackTiming__Q34nw4r3g3d12ScnMdlSimpleFUl
 80192f70:SetTranslate__Q34nw4r3g3d7ResNodeFfff
+80190c2c:GetTexObj__Q34nw4r3g3d9ResTexObjF11_GXTexMapID
+80191018:SetMapMode__Q34nw4r3g3d9ResTexSrtFUlUlii
 
 // GameGlobal
 8004e5cc:getGlobalRecordMenuDatap__10GameGlobalFv
@@ -305,7 +307,7 @@
 27,1,00222904:registScnAnim__5StageFPQ34nw4r3g3d11ResFileDataUl
 27,1,00222ab0:createCollision__5StageFP9gfArchiveiP6Ground
 27,1,00224574:createStagePositions__5StageFv
-27,1,00224524:createStagePositions__5StageFPv
+27,1,00224524:createStagePositions__5StageFPQ34nw4r3g3d7ResFile
 27,1,002237D0:loadStageAttrParam__5StageFP9gfArchivei
 27,1,002257B4:getPokeTrainerPointNum__5StageFv
 27,1,002257B0:getPokeTrainerPointData__5StageFPii
@@ -783,7 +785,7 @@
 // stPositions
 27,1,00226794:getDeadRange__11stPositionsFP7stRange
 27,1,00226584:getCameraRange__11stPositionsFP7stRange
-27,1,00225CE8:loadPositionData__11stPositionsFPv
+27,1,00225CE8:loadPositionData__11stPositionsFPQ34nw4r3g3d7ResFile
 
 // stTriggerMng
 27,1,00231FDC:createTrigger__12stTriggerMngF11GimmickKindi
@@ -886,6 +888,14 @@
 80024dc0:render__17gfKeepFrameBufferFv
 8002b61c:startKeepScreen__17gfKeepFrameBufferFv
 80024e38:endKeepScreen__17gfKeepFrameBufferFv
+
+// gfCopyEFBMgr
+8002fe48:getInstance__12gfCopyEFBMgrFv
+8002ff34:isValid__12gfCopyEFBMgrFi
+8002ffb8:getCopyEFBTex__12gfCopyEFBMgrFi
+8002fe50:createCopyEFB__12gfCopyEFBMgrFiQ25Heaps8HeapType
+8002ff44:getEFB__12gfCopyEFBMgrFi
+8002ffc8:drawCopyEFB__12gfCopyEFBMgrFiP8_GXColor
 
 // MuObject
 800b534c:changeAnimN__8MuObjectFPc
