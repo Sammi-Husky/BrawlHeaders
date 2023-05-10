@@ -26,7 +26,7 @@ public:
     int selectedChar;
     int curCostume;
     int teamColor;
-    char _0x1C4[4];
+    int _0x1C4;
     int nameId;
     char _0x1CC[0x10];
     int controllerId;
@@ -46,5 +46,6 @@ public:
 
     void setCharPic(int charKind, int playerKind, int curCostume, bool isTeamBattle, int teamColor, int unk);
     nw4r::g3d::ResFile* getCharPicTexResFile(int charKind);
+    bool isTeamBattle();
 };
 static_assert(sizeof(muSelCharPlayerArea) == 0x448, "Wrong size for class!");

@@ -222,6 +222,7 @@
 
 // gfCamera
 80019fa4:getManager__15gfCameraManagerFv
+80019a2c:calcProjection3Dto2D__8gfCameraFP5Vec3fP5Vec2f
 
 // gfModule
 800264d8:create__8gfModuleFPvPvUl
@@ -302,6 +303,9 @@
 // cmAnimationController
 800a624c:setScnAnmRes__21cmAnimationControllerFPPQ34nw4r3g3d4SCN0Ul
 800a6348:releaseScnAnmRes__21cmAnimationControllerFv
+
+// cmSubjectList
+8009ece8:getSubjectByPlayerNo__13cmSubjectListFUl
 
 // Stage
 27,1,002225A8:createObj__5StageFv
@@ -991,7 +995,7 @@
 800af8a0:exchangeSelCharVoice2SelCharVoiceLengthE__6muMenuFi
 800AF8B8:exchangeSelCharVoice2SelCharVoiceLengthJ__6muMenuFi
 800af600:exchangeGmCharacterKind2Something__6muMenuFi
-8069742c:setCharPic__19muSelCharPlayerAreaFiiibii
+
 
 //sndSystem
 800742b0:playSE__9sndSystemFiiiii
@@ -1071,3 +1075,7 @@
 803ddde4:PFENT_RemoveEntry
 803e18b0:PFFAT_FreeChain
 803ddd60:PFENT_getcurrentDateTimeForEnt
+
+// sora_men_sel_char
+10,1,00014b68:setCharPic__19muSelCharPlayerAreaFiiibii
+10,1,00015238:isTeamBattle__19muSelCharPlayerAreaFv
