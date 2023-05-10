@@ -70,6 +70,7 @@
 8000c8dc:__dla__FPv
 803f11f8:__cvt_fp2unsigned
 803f0a1c:__construct_new_array
+8002632c:free__FPv
 80403664:__flush_cache
 801e892c:VIWaitForRetrace
 801d76e8:DCFlushRange
@@ -221,6 +222,9 @@
 
 // gfCamera
 80019fa4:getManager__15gfCameraManagerFv
+
+// gfModule
+800264d8:create__8gfModuleFPvPvUl
 
 // gfModuleManager
 27,1,00143B14:getInstance__15gfModuleManagerFv
@@ -850,6 +854,7 @@
 800212b0:checkFreeSize__14gfFileIOHandleFv
 8002134c:del__14gfFileIOHandleFv
 800213e8:writeNAND__14gfFileIOHandleFv
+800219e0:read__14gfFileIOHandleFPCcQ25Heaps8HeapTypei
 800215e0:readRequest__14gfFileIOHandleFPcPvii
 80021498:readRequest__14gfFileIOHandleFPcQ25Heaps8HeapTypeii
 80021540:readRequest1__14gfFileIOHandleFv
@@ -883,6 +888,7 @@
 801b4af4:Construct__Q34nw4r3g3d6ScnMdlFPviiPv
 801b4d94:Pushback__Q34nw4r3g3d6ScnMdlFPvPvPc
 80024430:getMEMAllocator__13gfHeapManagerFQ25Heaps8HeapType
+800249cc:getHeap__13gfHeapManagerFQ25Heaps8HeapType
 
 // gfKeepFrameBuffer
 80024d6c:update__17gfKeepFrameBufferFv

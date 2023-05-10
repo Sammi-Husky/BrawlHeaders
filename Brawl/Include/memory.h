@@ -74,6 +74,7 @@ typedef Heaps::HeapType HeapType;
 void* operator new(size_t size, HeapType heap);
 void* operator new[](size_t size, HeapType heap);
 void* operator new[](size_t size);
+void* free(void* ptr);
 
 void* __memfill(void* dest, u8 value, size_t count);
 void* memset(void* dest, u8 value, size_t count);
