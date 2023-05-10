@@ -11,6 +11,7 @@
 27,6,5518: g_aiMgr
 27,6,E8: g_soWorld
 8059FF80:g_gfSceneRoot
+80406920:MOD_PATCH_DIR
 
 // System
 803f1254:__save_fpr
