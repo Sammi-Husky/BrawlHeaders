@@ -21,5 +21,4 @@ struct FAEntryInfo {
     char shortname[0xd];
     char name[0x38];
     char unk[0x1e2];
-    /* data */
 };
