@@ -984,7 +984,7 @@
 800af8a0:exchangeSelCharVoice2SelCharVoiceLengthE__6muMenuFi
 800AF8B8:exchangeSelCharVoice2SelCharVoiceLengthJ__6muMenuFi
 800af600:exchangeGmCharacterKind2Something__6muMenuFi
-8069742c:setCharPic__19muSelCharPlayerAreaFiiibii
+
 
 //sndSystem
 800742b0:playSE__9sndSystemFiiiii
@@ -1064,3 +1064,7 @@
 803ddde4:PFENT_RemoveEntry
 803e18b0:PFFAT_FreeChain
 803ddd60:PFENT_getcurrentDateTimeForEnt
+
+// sora_men_sel_char
+10,1,00014b68:setCharPic__19muSelCharPlayerAreaFiiibii
+10,1,00015238:isTeamBattle__19muSelCharPlayerAreaFv
