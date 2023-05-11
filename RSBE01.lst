@@ -70,6 +70,7 @@
 8000c8dc:__dla__FPv
 803f11f8:__cvt_fp2unsigned
 803f0a1c:__construct_new_array
+8002632c:free__FPv
 80403664:__flush_cache
 801e892c:VIWaitForRetrace
 801d76e8:DCFlushRange
@@ -225,6 +226,9 @@
 // gfCamera
 80019fa4:getManager__15gfCameraManagerFv
 80019a2c:calcProjection3Dto2D__8gfCameraFP5Vec3fP5Vec2f
+
+// gfModule
+800264d8:create__8gfModuleFPvPvUl
 
 // gfModuleManager
 27,1,00143B14:getInstance__15gfModuleManagerFv
@@ -857,6 +861,7 @@
 800212b0:checkFreeSize__14gfFileIOHandleFv
 8002134c:del__14gfFileIOHandleFv
 800213e8:writeNAND__14gfFileIOHandleFv
+800219e0:read__14gfFileIOHandleFPCcQ25Heaps8HeapTypei
 800215e0:readRequest__14gfFileIOHandleFPcPvii
 80021498:readRequest__14gfFileIOHandleFPcQ25Heaps8HeapTypeii
 80021540:readRequest1__14gfFileIOHandleFv
@@ -890,6 +895,7 @@
 801b4af4:Construct__Q34nw4r3g3d6ScnMdlFPviiPv
 801b4d94:Pushback__Q34nw4r3g3d6ScnMdlFPvPvPc
 80024430:getMEMAllocator__13gfHeapManagerFQ25Heaps8HeapType
+800249cc:getHeap__13gfHeapManagerFQ25Heaps8HeapType
 
 // gfKeepFrameBuffer
 80024d6c:update__17gfKeepFrameBufferFv
@@ -992,6 +998,24 @@
 800af8a0:exchangeSelCharVoice2SelCharVoiceLengthE__6muMenuFi
 800AF8B8:exchangeSelCharVoice2SelCharVoiceLengthJ__6muMenuFi
 800af600:exchangeGmCharacterKind2Something__6muMenuFi
+800afa30:exchangeMuStockchkind2MuCharName__6muMenuFi
+
+// Message
+80454120:__vt__7Message
+80069860:__dt__7MessageFv
+800696b4:__ct__7MessageFUlQ25Heaps8HeapType
+8006b400:allocMsgBuf__7MessageFUlUlQ25Heaps8HeapType
+8006b518:attachMsgBuf__7MessageFUlPQ34nw4r3g3d6ScnMdlPcUcif
+8006a674:changeMsgBuf__7MessageFi
+8006b674:clearMsgBuf__7MessageFv
+80069af0:setWindow__7MessageFffff
+8006a550:setFace__7MessageFUc
+8006a600:setFixedWidth__7MessageFf
+8006a200:setColor__7MessageFi
+8006a018:setScale__7MessageFff
+80069970:setCursorX__7MessageFf
+80069a30:setCursorY__7MessageFf
+80069d40:printf__7MessageFPCce
 
 // grTenganEvent
 27,1,0027BBD8:__ct__13grTenganEventFv
@@ -1074,10 +1098,5 @@
 10,1,00015238:isTeamBattle__19muSelCharPlayerAreaFv
 
 // CUSTOM
-27,5,73648:g_soundOverrideString
-27,5,736B0:g_soundGroupHeapLevel_0D6
-27,5,736B4:g_soundGroupHeapLevel_000
-27,5,736B8:g_soundGroupHeapLevel_0D5
-27,5,736BC:g_soundGroupHeapLevel_0D7
-27,5,736C0:g_soundGroupHeapLevel_0D8
-27,5,736C4:g_soundGroupHeapLevel_027
+27,5,73648:g_commonSndGroupOverrideName
+27,5,736B0:g_commonSndGroupHeapLevels

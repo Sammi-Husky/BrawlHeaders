@@ -10,4 +10,5 @@ public:
     static void dumpList();
 
     static void* getMEMAllocator(Heaps::HeapType heapType);
+    static void* getHeap(Heaps::HeapType heapType);
 };

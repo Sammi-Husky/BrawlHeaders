@@ -40,9 +40,12 @@ public:
     u32 getTextSectionAddr();
 };
 
-struct gfModule {
+class gfModule {
+public:
     gfModuleHeader* header;
     char unk[0x27];
+
+    static gfModule* create(void* heap, void* buffer, size_t size);
 };
 
 class gfModuleInfo {
@@ -61,8 +64,8 @@ static_assert(sizeof(gfModuleInfo) == 60, "Class is wrong size!");
 
 class gfModuleManager {
 
-    HeapType m_heapType;
-    void* _4;
+    HeapType m_loadHeap;
+    void* m_loadHeapAddr;
     gfModuleInfo m_moduleInfos[16];
 
 public:

@@ -26,7 +26,8 @@ public:
     int selectedChar;
     int curCostume;
     int teamColor;
-    int _0x1C4;
+    char curTeamSet;
+    char _0x1C5[3];
     int nameId;
     char _0x1CC[0x10];
     int controllerId;
