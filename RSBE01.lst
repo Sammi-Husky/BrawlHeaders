@@ -157,6 +157,9 @@
 // sndSystem
 800742b0:playSE__9sndSystemF5SndIDiiii
 80077064:setBGMVol__9sndSystemFbf
+80073c98:freeGroup__9sndSystemFii
+800742b0:playSE__9sndSystemFiiiii
+80073b68:loadSoundGroup__9sndSystemF10SndGroupIDib
 
 // snd3DGenerator
 80079550:__ct__14snd3DGeneratorFv
@@ -990,10 +993,6 @@
 800AF8B8:exchangeSelCharVoice2SelCharVoiceLengthJ__6muMenuFi
 800af600:exchangeGmCharacterKind2Something__6muMenuFi
 
-
-//sndSystem
-800742b0:playSE__9sndSystemFiiiii
-
 // grTenganEvent
 27,1,0027BBD8:__ct__13grTenganEventFv
 27,1,0027BBF8:__dt__13grTenganEventFv
@@ -1073,3 +1072,12 @@
 // sora_men_sel_char
 10,1,00014b68:setCharPic__19muSelCharPlayerAreaFiiibii
 10,1,00015238:isTeamBattle__19muSelCharPlayerAreaFv
+
+// CUSTOM
+27,5,73648:g_soundOverrideString
+27,5,736B0:g_soundGroupHeapLevel_0D6
+27,5,736B4:g_soundGroupHeapLevel_000
+27,5,736B8:g_soundGroupHeapLevel_0D5
+27,5,736BC:g_soundGroupHeapLevel_0D7
+27,5,736C0:g_soundGroupHeapLevel_0D8
+27,5,736C4:g_soundGroupHeapLevel_027
