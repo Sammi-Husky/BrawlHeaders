@@ -1,11 +1,13 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <so/so_event_presenter.h>
+#include <so/event/so_event_presenter.h>
 #include <so/so_null.h>
 #include <types.h>
 
 class soArticleEventObserver : public soEventObserver<soArticleEventObserver> {
+public:
+    virtual void addObserver(int param1, int param2);
     char _spacer1[2];
 };
 static_assert(sizeof(soArticleEventObserver) == 12, "Class is wrong size!");

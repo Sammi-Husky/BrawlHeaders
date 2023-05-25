@@ -8,8 +8,8 @@
 #include <so/damage/so_damage_no_reaction_module.h>
 #include <so/damage/so_damage_transactor_actor.h>
 #include <so/so_array.h>
-#include <so/so_event_observer.h>
-#include <so/so_event_presenter.h>
+#include <so/event/so_event_observer.h>
+#include <so/event/so_event_presenter.h>
 #include <so/so_null.h>
 #include <types.h>
 

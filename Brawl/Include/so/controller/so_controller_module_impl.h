@@ -2,7 +2,7 @@
 
 #include <StaticAssert.h>
 #include <so/controller/so_controller_impl.h>
-#include <so/so_event_observer.h>
+#include <so/event/so_event_observer.h>
 #include <types.h>
 
 union Button {

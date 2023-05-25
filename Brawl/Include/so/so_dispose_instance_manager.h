@@ -1,10 +1,12 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <so/so_event_observer.h>
+#include <so/event/so_event_observer.h>
 #include <types.h>
 
 class soDisposeInstanceEventObserver : public soEventObserver<soDisposeInstanceEventObserver> {
+public:
+    virtual void addObserver(int param1, int param2);
     virtual bool isObserv(); // TODO
     virtual void notifyDisposeInstance(bool, int, int taskId);
     virtual void notifyDrawDone(); // TODO

@@ -6,13 +6,14 @@
 #include <mt/mt_vector.h>
 #include <so/damage/so_damage_attacker_info.h>
 #include <so/so_dispose_instance_manager.h>
-#include <so/so_event_observer.h>
+#include <so/event/so_event_observer.h>
 #include <so/so_log_event_presenter.h>
 #include <so/so_null.h>
 #include <types.h>
 
 class ftOutsideEventObserver : public soEventObserver<ftOutsideEventObserver> {
 public:
+    virtual void addObserver(int param1, int param2);
     // TODO: Verify params
     virtual void notifyEventOnDamage(int entryId, bool, void*);
     virtual void notifyEventSetDamage(int entryId, float, int, bool, bool);
@@ -70,7 +71,11 @@ public:
     GameRule m_gameRule : 8;
     char _107[2];
     bool m_isStamina;
-    char _110[242];
+    char _110[70];
+    soEventManageModuleImpl m_eventManageModule;
+    char m_200[4];
+    short m_manageID;
+    char _206[146];
 
     virtual ~ftManager();
 

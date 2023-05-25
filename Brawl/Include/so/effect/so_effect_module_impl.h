@@ -2,7 +2,7 @@
 
 #include <StaticAssert.h>
 #include <mt/mt_vector.h>
-#include <so/so_event_observer.h>
+#include <so/event/so_event_observer.h>
 #include <so/so_null.h>
 #include <types.h>
 

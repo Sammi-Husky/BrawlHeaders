@@ -14,6 +14,7 @@
 #include <so/slow/so_slow_module_impl.h>
 #include <so/sound/so_sound_module_impl.h>
 #include <so/status/so_status_module_impl.h>
+#include <so/event/so_event_manage_module_impl.h>
 #include <so/work/so_work_manage_module_impl.h>
 #include <types.h>
 
@@ -53,7 +54,7 @@ public:
     void* m_generalTermDisideModule;
     void* m_switchDecideModule;
     void* m_kineticModule;
-    void* m_eventManageModule;
+    soEventManageModule* m_eventManageModule;
     void* m_generateArticleManageModule;
     soEffectModule* m_effectModule;
     void* m_comboModule;

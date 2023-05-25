@@ -5,8 +5,8 @@
 #include <mt/mt_vector.h>
 #include <so/so_anim_chr.h>
 #include <so/so_array.h>
-#include <so/so_event_observer.h>
-#include <so/so_event_presenter.h>
+#include <so/event/so_event_observer.h>
+#include <so/event/so_event_presenter.h>
 #include <types.h>
 
 class soModuleAccesser;

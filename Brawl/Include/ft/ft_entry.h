@@ -1,10 +1,12 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <so/so_event_observer.h>
+#include <so/event/so_event_observer.h>
 #include <types.h>
 
 class ftEntryEventObserver : public soEventObserver<ftEntryEventObserver> {
+public:
+    virtual void addObserver(int param1, int param2);
     virtual void notifyEventSetDamage(float);
     virtual void notifyEventBeat();
     virtual void notifyEventDeadPartner(int index);
