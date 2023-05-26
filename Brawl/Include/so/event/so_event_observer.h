@@ -19,12 +19,12 @@ class soEventObserver {
 public:
     virtual void addObserver(int param1, int param2);
     short m_manageID;
-    short m_6;
+    short m_unitID;
     short m_sendID;
 
     inline soEventObserver() {
         m_manageID = -1;
-        m_6 = 0;
+        m_unitID = 0;
         m_sendID = -1;
     }
 };
