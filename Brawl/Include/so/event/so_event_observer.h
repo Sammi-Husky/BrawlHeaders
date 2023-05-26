@@ -4,6 +4,7 @@
 #include <ac/ac_anim_cmd_impl.h>
 #include <gf/gf_task.h>
 #include <so/collision/so_collision_attack_part.h>
+#include <so/damage/so_damage.h>
 #include <types.h>
 
 class soModuleAccesser;
@@ -196,8 +197,8 @@ static_assert(sizeof(soMotionEventObserver) == 12, "Class is wrong size!");
 class soDamageEventObserver : public soEventObserver<soDamageEventObserver> {
 public:
     virtual void addObserver(int param1, int param2);
-    virtual void notifyEventOnDamage(float*, int, soModuleAccesser* moduleAccesser);
-    virtual void notifyEventAddDamage(float*, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventOnDamage(soDamage* damage, bool, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventAddDamage(soDamage* damage, soModuleAccesser* moduleAccesser);
 };
 static_assert(sizeof(soDamageEventObserver) == 12, "Class is wrong size!");
 

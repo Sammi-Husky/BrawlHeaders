@@ -739,7 +739,7 @@
 
 // ftOutsideEventObserver
 27,1,00108BD0:addObserver__22ftOutsideEventObserverFii
-27,1,0010DBFC:notifyEventOnDamage__22ftOutsideEventObserverFibPv
+27,1,0010DBFC:notifyEventOnDamage__22ftOutsideEventObserverFiUlP8soDamage
 27,1,0010DBF8:notifyEventSetDamage__22ftOutsideEventObserverFifibb
 27,1,0010DBF4:notifyEventRecover__22ftOutsideEventObserverFii
 27,1,0010DBF0:notifyEventOutsideDeadArea__22ftOutsideEventObserverFiiPi

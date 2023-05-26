@@ -15,7 +15,7 @@ class ftOutsideEventObserver : public soEventObserver<ftOutsideEventObserver> {
 public:
     virtual void addObserver(int param1, int param2);
     // TODO: Verify params
-    virtual void notifyEventOnDamage(int entryId, bool, void*);
+    virtual void notifyEventOnDamage(int entryId, u32 hp, soDamage* damage);
     virtual void notifyEventSetDamage(int entryId, float, int, bool, bool);
     virtual void notifyEventRecover(int entryId, int);
     virtual void notifyEventOutsideDeadArea(int entryId, int, int*);

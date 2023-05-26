@@ -158,8 +158,8 @@ public:
     virtual void notifyEventCollisionSearch(void*, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionSearchCheck();
     virtual void notifyEventChangeCollisionHit(int index, soModuleAccesser* moduleAccesser);
-    virtual void notifyEventOnDamage(float*, int, soModuleAccesser* moduleAccesser);
-    virtual void notifyEventAddDamage(float*, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventOnDamage(soDamage* damage, bool, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventAddDamage(soDamage* damage, soModuleAccesser* moduleAccesser);
     virtual void setTeam(int, int);
     virtual void setVisibility(int);
     virtual void notifyEventTurn(float, float, soModuleAccesser* moduleAccesser);
