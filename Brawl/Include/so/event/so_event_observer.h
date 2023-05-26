@@ -5,6 +5,7 @@
 #include <gf/gf_task.h>
 #include <so/collision/so_collision_attack_part.h>
 #include <so/damage/so_damage.h>
+#include <so/event/so_event_system.h>
 #include <types.h>
 
 class soModuleAccesser;
@@ -26,6 +27,14 @@ public:
         m_manageID = -1;
         m_unitID = 0;
         m_sendID = -1;
+    }
+
+    inline ~soEventObserver() {
+        if (soEventSystem::getInstance()->m_instanceManager.isContain(m_manageID)) {
+            soEventSystem::getInstance()->getManager(m_manageID)->eraseObserver(m_unitID, m_sendID);
+        }
+        this->m_sendID = -1;
+        this->m_manageID = -1;
     }
 };
 static_assert(sizeof(soEventObserver<void>) == 0xC, "Class is wrong size!");
