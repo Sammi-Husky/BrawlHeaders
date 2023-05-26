@@ -10,7 +10,8 @@
 
 class itManager : public gfTask, public soDisposeInstanceEventObserver {
 public:
-    char _76[120];
+    char _76[116];
+    u32 m_framesIntoCurrentGame;
     int m_numItems;
     soArrayList<itArchive*, 128> m_itArchiveArrayList;
     bool m_drawDone;

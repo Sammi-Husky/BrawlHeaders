@@ -5,16 +5,16 @@
 
 class soDamage {
 public:
-    float totalDamage;
-    float damage;
-    float powerMax;
-    float reaction;
+    float m_totalDamage;
+    float m_damage;
+    float m_powerMax;
+    float m_reaction;
     char _spacer2[32];
-    char teamId;
+    char m_teamId;
     char _spacer3[31];
-    int vector;
+    int m_vector;
     char _spacer4[40];
-    float side;
+    float m_side;
     char _spacer5[20];
     float m_damage_;
     char _152[8];
