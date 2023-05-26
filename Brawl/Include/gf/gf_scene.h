@@ -23,10 +23,10 @@ static_assert(sizeof(gfSequence) == 8, "Class is wrong size!");
 
 class gfSceneManager {
 public:
-    char _spacer[4];
+    gfScene* m_prevScene;
     gfScene* m_currentScene;
     gfScene* m_nextScene;
-    char _spacer2[4];
+    gfSequence* m_prevSequence;
     gfSequence* m_currentSequence;
     gfSequence* m_nextSequence;
     gfScene* m_scenes[100];
