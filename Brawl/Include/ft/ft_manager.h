@@ -44,7 +44,7 @@ public:
     virtual void notifyEventEntryEnd(int entryId);
     virtual void notifyEventResultEnd(int entryId);
     virtual void notifyEventGetItem(int, int, int, int, int);
-    virtual void notifyEventSucceedHit(int entryId, float, u32);
+    virtual void notifyEventSucceedHit(int entryId, u32 consecutiveHits, float totalDamage);
     virtual void notifyEventResultWin(int entryId, int);
     virtual void notifyEventYoshiEggStart(int entryId);
     virtual void notifyEventYoshiEggEnd(int entryId);
