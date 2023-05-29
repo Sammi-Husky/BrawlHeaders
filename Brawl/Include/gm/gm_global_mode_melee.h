@@ -57,7 +57,8 @@ class gmPlayerInitData {
 public:
     gmCharacterKind m_characterKind : 8;  // 0x00 (Otherwise known as SlotID)
     u8 m_state;                // 0x01
-    char _0[0x02];             // 0x02
+    u8 m_playerId;             // 0x02
+    u8 m_playerNo;             // 0x03
     s8 m_stockCount;           // 0x04
     s8 m_colorFileIdx;         // 0x05
     s8 m_costumeID;            // 0x06

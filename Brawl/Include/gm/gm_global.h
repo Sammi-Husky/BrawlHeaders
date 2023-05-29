@@ -6,8 +6,10 @@
 #include <gm/gm_global_record.h>
 #include <gm/gm_result_info.h>
 #include <gm/gm_sel_char_data.h>
+#include <gm/gm_sel_stage_data.h>
 #include <gm/gm_set_rule.h>
 #include <gm/gm_tournament_data.h>
+#include <gm/gm_stage_data.h>
 
 class GameGlobal {
 public:
@@ -16,7 +18,7 @@ public:
     gmGlobalModeMelee* m_modeMelee;     // 0x08
     char _1[0x04];                      // 0x0C
     gmSelCharData* m_selCharData;       // 0x10
-    char _2[0x04];                      // 0x14
+    gmSelStageData* m_selStageData;     // 0x14
     gmResultInfo* m_resultInfo;         // 0x18
     gmSetRule* m_setRule;               // 0x1C
     char _3[0x04];                      // 0x20
@@ -27,7 +29,9 @@ public:
     nteGlobalData* m_nteData;           // 0x34
     char _4[0x04];                      // 0x38
     gmGlobalCorps* m_corps;             // 0x3C
-    char _5[0x10];                      // 0x40
+    char _5[0x4];                       // 0x40
+    gmStageData* m_stageData;           // 0x44
+    char _6[0x8];                       // 0x48
 
     gmGlobalRecord1::MenuData* getGlobalRecordMenuDatap();
 
