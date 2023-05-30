@@ -36,6 +36,61 @@ public:
         this->m_sendID = -1;
         this->m_manageID = -1;
     }
+
+    inline void setupObserver(short manageId) {
+        bool bVar5 = false;
+        bool bVar4 = false;
+        bool bVar3 = false;
+        bool bVar2 = false;
+        if (-1 < m_manageID && -1 < m_unitID) {
+            bVar2 = true;
+        }
+        if (bVar2 && -1 < m_sendID) {
+            bVar3 = true;
+        }
+        if (bVar3) {
+            if (soEventSystem::getInstance()->m_instanceManager.isContain(this->m_manageID)) {
+                bVar4 = true;
+            }
+        }
+        if (bVar4) {
+            if (soEventSystem::getInstance()->getManager(this->m_manageID)->isExist(m_unitID)) {
+                bVar5 = true;
+            }
+        }
+        if (bVar5) {
+            if (soEventSystem::getInstance()->m_instanceManager.isContain(this->m_manageID)) {
+                soEventSystem::getInstance()->getManager(this->m_manageID)->eraseObserver(m_unitID, m_sendID);
+            }
+            m_sendID = -1;
+            m_manageID = -1;
+        }
+        if (-1 < manageId && -1 < m_unitID) {
+            if (soEventSystem::getInstance()->m_instanceManager.isContain(manageId)) {
+                soEventManager* eventManager = soEventSystem::getInstance()->getManager(manageId);
+                if (!eventManager->isNullUnit(m_unitID)) {
+                    int sendId;
+                    if (eventManager->isExist(m_unitID)) {
+                        soEventUnitWrapper<T>* eventUnit = dynamic_cast<soEventUnitWrapper<T>*>(eventManager->getEventUnit(m_unitID));
+                        if (eventUnit == NULL) {
+                            sendId = -1;
+                        }
+                        else {
+                            sendId = eventUnit->addObserverSub(static_cast<T*>(this), -1);
+                        }
+                    }
+                    else {
+                        sendId = -1;
+                    }
+                    this->m_sendID = sendId;
+                    if (-1 < sendId) {
+                        this->m_manageID = manageId;
+                    }
+                }
+            }
+        }
+
+    }
 };
 static_assert(sizeof(soEventObserver<void>) == 0xC, "Class is wrong size!");
 
