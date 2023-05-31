@@ -23,13 +23,13 @@ public:
     short m_unitID;
     short m_sendID;
 
-    inline soEventObserver() {
+    soEventObserver(short unitID) {
         m_manageID = -1;
-        m_unitID = 0;
+        m_unitID = unitID;
         m_sendID = -1;
     }
 
-    inline ~soEventObserver() {
+    void removeObserver() {
         if (soEventSystem::getInstance()->m_instanceManager.isContain(m_manageID)) {
             soEventSystem::getInstance()->getManager(m_manageID)->eraseObserver(m_unitID, m_sendID);
         }
@@ -37,7 +37,11 @@ public:
         this->m_manageID = -1;
     }
 
-    inline void setupObserver(short manageId) {
+    ~soEventObserver() {
+        removeObserver();
+    }
+
+    void setupObserver(short manageId) {
         bool bVar5 = false;
         bool bVar4 = false;
         bool bVar3 = false;
@@ -89,7 +93,6 @@ public:
                 }
             }
         }
-
     }
 };
 static_assert(sizeof(soEventObserver<void>) == 0xC, "Class is wrong size!");
@@ -151,6 +154,8 @@ static_assert(sizeof(soCollisionShieldEventObserver) == 12, "Class is wrong size
 
 class soCollisionReflectorEventObserver : public soEventObserver<soCollisionReflectorEventObserver> {
 public:
+    soCollisionReflectorEventObserver(short unitID) : soEventObserver<soCollisionReflectorEventObserver>(unitID) {};
+
     virtual void addObserver(int param1, int param2);
     virtual void notifyEventCollisionReflector(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser); // TODO: This is a guess based on above
     virtual void notifyEventCollisionReflectorSearch(int, int, int);

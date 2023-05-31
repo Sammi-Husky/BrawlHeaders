@@ -13,6 +13,8 @@
 
 class ftOutsideEventObserver : public soEventObserver<ftOutsideEventObserver> {
 public:
+    ftOutsideEventObserver(short unitID) : soEventObserver<ftOutsideEventObserver>(unitID) {};
+
     virtual void addObserver(int param1, int param2);
     // TODO: Verify params
     virtual void notifyEventOnDamage(int entryId, u32 hp, soDamage* damage);

@@ -135,6 +135,11 @@ public:
         return this->m_enumerationStart->m_statusModule;
     }
 
+    inline soEventManageModule* getEventManageModule()
+    {
+        return this->m_enumerationStart->m_eventManageModule;
+    }
+
     inline soEffectModule* getEffectModule()
     {
         return this->m_enumerationStart->m_effectModule;
