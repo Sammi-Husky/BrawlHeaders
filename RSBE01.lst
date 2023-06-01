@@ -737,6 +737,11 @@
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
 27,1,0014D19C:getHipPos__23ftExternalValueAccesserFP7Fighter
 
+// soStatusEventObserver
+27,1,000133C8:addObserver__21soStatusEventObserverFii
+27,1,00013628:notifyEventChangeStatus__21soStatusEventObserverFiiP12soStatusDataP16soModuleAccesser
+27,1,000136E4:addObserver__40soEventObserver<21soStatusEventObserver>Fii
+
 // soCollisionReflectorEventObserver
 27,1,00129818:addObserver__33soCollisionReflectorEventObserverFii
 27,1,0004838C:notifyEventCollisionReflectorCheck__33soCollisionReflectorEventObserverFv
