@@ -152,6 +152,6 @@ public:
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventCollisionHit(float, int, int index, int, soModuleAccesser* moduleAccesser, void*);
     virtual void notifyEventCollisionHit2nd(float, float, void*, void*, int index, int, bool);
-    virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
 };
 static_assert(sizeof(soDamageModuleImpl) == 172, "Class is wrong size!");

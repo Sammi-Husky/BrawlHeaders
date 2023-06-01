@@ -40,7 +40,7 @@ static_assert(sizeof(itBombheiCustomizer) == 12, "Class is wrong size!");
 
 class itChewingCustomizer : public itCustomizer<itChewingCustomizer> {
     virtual ~itChewingCustomizer();
-    virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
+    virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
     virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
     virtual bool onHave(BaseItem* item, int);
@@ -242,7 +242,7 @@ static_assert(sizeof(itSmashBallCustomizer) == 12, "Class is wrong size!");
 class itSmokeScreenCustomizer : public itCustomizer<itSmokeScreenCustomizer> {
     virtual ~itSmokeScreenCustomizer();
     virtual void onReset(BaseItem* item);
-    virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser); // TODO: Verify observer parameters
+    virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
     virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
     virtual bool onReflect(BaseItem* item);
@@ -254,7 +254,7 @@ class itSpringCustomizer : public itCustomizer<itSpringCustomizer> {
     virtual ~itSpringCustomizer();
     virtual void onDestruct(BaseItem* item);
     virtual void onProcessFixPosition(BaseItem* item);
-    virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser); // TODO: Verify observer parameters
+    virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
     virtual void onNotifyEventGimmick(BaseItem* item, soGimmickEventInfo* eventInfo, int* taskId);
     virtual bool onHave(BaseItem* item, int);
@@ -355,7 +355,7 @@ static_assert(sizeof(itRobotGyroCustomizer) == 12, "Class is wrong size!");
 
 class itWarioBikeCustomizer : public itCustomizer<itWarioBikeCustomizer> {
     virtual ~itWarioBikeCustomizer();
-    virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser); // TODO: Verify observer parameters
+    virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onRemoveModelConstraint(BaseItem* item, int);
     virtual u32 getKineticFlags(BaseItem* item);
@@ -366,7 +366,7 @@ class itGokulinCustomizer : public itCustomizer<itGokulinCustomizer> {
     virtual ~itGokulinCustomizer();
     virtual void onDestruct(BaseItem* item);
     virtual void onProcessFixPosition(BaseItem* item);
-    virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser); // TODO: Verify observer parameters
+    virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onEnumFighter(BaseItem* item, Fighter* fighter);
 };
@@ -437,7 +437,7 @@ static_assert(sizeof(itMetroidCustomizer) == 12, "Class is wrong size!");
 class itNintendogsHiCustomizer : public itCustomizer<itNintendogsHiCustomizer> {
     virtual ~itNintendogsHiCustomizer();
     virtual void onProcessFixPosition(BaseItem* item);
-    virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser); // TODO: Verify observer parameters
+    virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
     virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
     virtual bool onHave(BaseItem* item, int);
@@ -451,13 +451,13 @@ class itResetsanCustomizer : public itCustomizer<itResetsanCustomizer> {
     virtual void onReset(BaseItem* item);
     virtual void onNotifyEventAnimCmd(BaseItem* item, acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual u32 getKineticFlags(BaseItem* item);
-    virtual void getFighterKind(int* fighterKind, char** fighterName, int*, int* fighterKind2, char** fighterName2, int*); // TODO: make and replace with ftKind
+    virtual void getFighterKind(ftKind* fighterKind, char** fighterName, int*, ftKind* fighterKind2, char** fighterName2, int*);
 };
 static_assert(sizeof(itResetsanCustomizer) == 12, "Class is wrong size!");
 
 class itShadowCustomizer : public itCustomizer<itShadowCustomizer> {
     virtual ~itShadowCustomizer();
-    virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser); // TODO: Verify observer parameters
+    virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void onNotifyEventAnimCmd(BaseItem* item, acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
 };
 static_assert(sizeof(itShadowCustomizer) == 12, "Class is wrong size!");

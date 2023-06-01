@@ -174,7 +174,7 @@ public:
     soCollisionReflectorEventObserver(short unitID) : soEventObserver<soCollisionReflectorEventObserver>(unitID) {};
 
     virtual void addObserver(int param1, int param2);
-    virtual void notifyEventCollisionReflector(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser); // TODO: This is a guess based on above
+    virtual void notifyEventCollisionReflector(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser);
     virtual void notifyEventCollisionReflectorSearch(int, int, int);
     virtual bool notifyEventCollisionReflectorCheck();
 };

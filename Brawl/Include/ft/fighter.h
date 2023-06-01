@@ -143,13 +143,13 @@ public:
     virtual ftKind getFtKind();
     virtual bool isInclude(float* rect, Vec3f* out);
     virtual void eatItem(void*);
-    virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void notifyEventChangeSituation(int unk1, int unk2, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionAttackCheck(u32 flags);
     virtual void notifyEventCollisionShield(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser);
     virtual void notifyEventCollisionShieldSearch(void*, void*);
     virtual bool notifyEventCollisionShieldCheck();
-    virtual void notifyEventCollisionReflector(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser); // TODO: This is a guess based on above
+    virtual void notifyEventCollisionReflector(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser);
     virtual void notifyEventCollisionReflectorSearch(int, int, int);
     virtual bool notifyEventCollisionReflectorCheck();
     virtual void notifyEventCollisionAbsorber(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser);

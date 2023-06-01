@@ -375,14 +375,14 @@ public:
     virtual void action(int);
     virtual void setGlowAttack(int glowAttack);
     virtual int getGlowAttack();
-    virtual void notifyEventChangeStatus(int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void notifyEventChangeSituation(int unk1, int unk2, soModuleAccesser* moduleAccesser);
     virtual void notifyEventCollisionAttack(void* unk1, void* unk2, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionAttackCheck(u32 flags);
     virtual void notifyEventCollisionShield(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser);
     virtual void notifyEventCollisionShieldSearch(void*, void*);
     virtual bool notifyEventCollisionShieldCheck();
-    virtual void notifyEventCollisionReflector(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser); // TODO: This is a guess based on above
+    virtual void notifyEventCollisionReflector(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser);
     virtual void notifyEventCollisionReflectorSearch(int, int, int);
     virtual bool notifyEventCollisionReflectorCheck();
     virtual void notifyEventCollisionSearch(void*, soModuleAccesser* moduleAccesser);
@@ -418,7 +418,7 @@ public:
     virtual void onProcessGameProc(BaseItem* item);
     virtual void onRenderPre(BaseItem* item);
     virtual void onRenderDebug(BaseItem* item);
-    virtual void onNotifyEventChangeStatus(BaseItem* item, int unk1, int unk2, void* unk3, soModuleAccesser* moduleAccesser); // TODO: Verify observer parameters
+    virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void onNotifyEventAnimCmd(BaseItem* item, acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int);
     virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
