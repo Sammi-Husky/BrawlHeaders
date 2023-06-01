@@ -1,7 +1,9 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <so/collision/so_collision_attack_module_impl.h>
 #include <so/collision/so_collision_hit_module_impl.h>
+#include <so/collision/so_collision_search_module_impl.h>
 #include <so/controller/so_controller_module_impl.h>
 #include <so/damage/so_damage_module_impl.h>
 #include <so/effect/so_effect_module_impl.h>
@@ -29,13 +31,13 @@ public:
     soGroundModule* m_groundModule;
     soSituationModule* m_situationModule;
     void* m_teamModule;
-    void* m_collisionAttackModule;
+    soCollisionAttackModule* m_collisionAttackModule;
     soCollisionHitModule* m_collisionHitModule;
     void* m_collisionShieldModule;
     void* m_collisionReflectorModule;
     void* m_collisionShieldModule2;
     void* m_collisionCatchModule;
-    void* m_collisionSearchModule;
+    soCollisionSearchModule* m_collisionSearchModule;
     soDamageModule* m_damageModule;
     void* m_catchModule;
     void* m_captureModule;
@@ -105,9 +107,19 @@ public:
         return this->m_enumerationStart->m_situationModule;
     }
 
+    inline soCollisionAttackModule* getCollisionAttackModule()
+    {
+        return this->m_enumerationStart->m_collisionAttackModule;
+    }
+
     inline soCollisionHitModule* getCollisionHitModule()
     {
         return this->m_enumerationStart->m_collisionHitModule;
+    }
+
+    inline soCollisionSearchModule* getCollisionSearchModule()
+    {
+        return this->m_enumerationStart->m_collisionSearchModule;
     }
 
     inline soDamageModule* getDamageModule()

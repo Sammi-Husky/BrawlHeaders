@@ -11,6 +11,9 @@
 class soModuleAccesser;
 class StageObject;
 class BaseItem;
+class soCollisionAttackModule;
+class soCollisionSearchModule;
+class soCollisionLog;
 
 // TODO: Throw the event observers in the respective modules once they're done
 // TODO: Verify parameters
@@ -163,8 +166,8 @@ public:
     soCollisionShieldEventObserver(short unitID) : soEventObserver<soCollisionShieldEventObserver>(unitID) {};
 
     virtual void addObserver(int param1, int param2);
-    virtual void notifyEventCollisionShield(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser);
-    virtual void notifyEventCollisionShieldSearch(void*, void*);
+    virtual void notifyEventCollisionShield(soCollisionAttackModule* attackModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser, float power, float posX, float);
+    virtual void notifyEventCollisionShieldSearch(soCollisionSearchModule* searchModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionShieldCheck();
 };
 static_assert(sizeof(soCollisionShieldEventObserver) == 12, "Class is wrong size!");
@@ -174,8 +177,8 @@ public:
     soCollisionReflectorEventObserver(short unitID) : soEventObserver<soCollisionReflectorEventObserver>(unitID) {};
 
     virtual void addObserver(int param1, int param2);
-    virtual void notifyEventCollisionReflector(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser);
-    virtual void notifyEventCollisionReflectorSearch(int, int, int);
+    virtual void notifyEventCollisionReflector(soCollisionAttackModule* attackModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser, float power, float posX, float);
+    virtual void notifyEventCollisionReflectorSearch(soCollisionSearchModule* searchModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionReflectorCheck();
 };
 static_assert(sizeof(soCollisionReflectorEventObserver) == 12, "Class is wrong size!");
@@ -185,7 +188,7 @@ public:
     soCollisionAbsorberEventObserver(short unitID) : soEventObserver<soCollisionAbsorberEventObserver>(unitID) {};
 
     virtual void addObserver(int param1, int param2);
-    virtual void notifyEventCollisionAbsorber(float, float, float, void*, void*, int, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventCollisionAbsorber(soCollisionAttackModule* attackModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser, float power, float posX, float);
     virtual bool notifyEventCollisionAbsorberCheck();
 };
 static_assert(sizeof(soCollisionAbsorberEventObserver) == 12, "Class is wrong size!");

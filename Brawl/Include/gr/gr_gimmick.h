@@ -90,8 +90,8 @@ public:
     static_assert(sizeof(AttackData) == 88, "Class is wrong size!");
 
     struct HitData {
-        Vec3f m_startOffset;
-        Vec3f m_endOffset;
+        Vec3f m_startOffsetPos;
+        Vec3f m_endOffsetPos;
         float m_size;
         u8 m_nodeIndex;
         char _29[3];

@@ -86,6 +86,18 @@ enum CollisionAttackFacingRestriction {
     Facing_Restriction_AwayFromCenterOfCollision = 0x5,
 };
 
+struct soCollisionAttackAbsoluteData {
+    int m_power;
+    int m_vector;
+    int m_reactionEffect;
+    int m_reactionFix;
+    int m_reactionAdd;
+    float m_tripRate;
+    float m_hitstopMultiplier;
+    float m_sdiMultiplier;
+    u32 _32;
+};
+
 struct soCollisionAttackData {
     int m_power;
     Vec3f m_offsetPos;

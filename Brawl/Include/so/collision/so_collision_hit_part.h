@@ -5,8 +5,8 @@
 #include <types.h>
 
 struct soCollisionHitData {
-    Vec3f m_startOffset;
-    Vec3f m_endOffset;
+    Vec3f m_startOffsetPos;
+    Vec3f m_endOffsetPos;
     float m_size;
     unsigned int m_nodeIndex : 9;
     unsigned int m_0x1c_1 : 23;
