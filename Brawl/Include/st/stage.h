@@ -51,7 +51,7 @@ public:
     float m_finalSmashCamTilt;
     float m_cameraRight;
     float m_cameraLeft;
-    Vec3f m_pauseCamPos;
+    Vec3f m_pauseCamCenterPos;
     float m_pauseCamAngle;
     float m_pauseCamZoomIn;
     float m_pauseCamZoomDefault;
@@ -60,7 +60,7 @@ public:
     float m_pauseCamRotYMax;
     float m_pauseCamRotXMin;
     float m_pauseCamRotXMax;
-    Vec3f m_fixedCamPos;
+    Vec3f m_fixedCamCenterPos;
     float m_fixedCamFOV;
     float m_fixedHorizontalAngle;
     float m_fixedVerticalAngle;
