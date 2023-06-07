@@ -37,7 +37,7 @@ static_assert(sizeof(grNodeCallbackData) == 128, "Class is wrong size!");
 class grCalcWorldCallBack : public nw4r::g3d::ICalcWorldCallBack {
 
 public:
-    grNodeCallbackData* m_nodeCallbackDataArray;
+    grNodeCallbackData* m_nodeCallbackDatas;
     unsigned int m_numNodeCallbackData;
     unsigned int m_index;
 
