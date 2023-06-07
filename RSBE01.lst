@@ -790,6 +790,7 @@
 27,1,0010DB74:notifyEventHeartSwapStart__22ftOutsideEventObserverFii
 27,1,0010DB70:notifyEventHeartSwapEnd__22ftOutsideEventObserverFv
 27,1,0010E030:addObserver__41soEventObserver<22ftOutsideEventObserver>Fii
+27,5,26540:__vt__22ftOutsideEventObserver
 
 // ftManager
 27,1,00109BCC:isValidEntryId__9ftManagerFi
