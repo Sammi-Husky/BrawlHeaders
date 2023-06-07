@@ -11,7 +11,7 @@ struct cmStageParam {
     float m_minZ;
     float m_maxZ;
     Vec3f m_centerPos;
-    float m_characterBubbleBufferMultiplier;
+    float m_fighterBubbleBufferMultiplier;
     float m_48;
     float m_speed;
     float m_tiltThreshold;

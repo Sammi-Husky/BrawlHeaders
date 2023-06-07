@@ -15,9 +15,15 @@ public:
 
 class stPositions {
 public:
-    char _0[8];
+    char _0x8[8];
     nw4r::g3d::ResFileData* m_resFile;
-    char _c[88];
+    char _0xc[8];
+    Vec3f m_centerPos;
+    float m_0x20;
+    float m_0x24;
+    float m_0x28;
+    float m_0x2c;
+    char _0x30[52];
 
     float* getDeadRange(stRange* range);
     float* getCameraRange(stRange* range);
