@@ -20,9 +20,8 @@ public:
 
     char _spacer[96];
     Vec3f m_centerPos;
-    float m_108;
-    float m_112;
-    char _spacer1[104];
+    Vec3f m_targetPos;
+    char _spacer1[100];
     float m_near;
     float m_far;
     char _spacer2[4];
