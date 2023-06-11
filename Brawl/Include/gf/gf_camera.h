@@ -19,8 +19,8 @@ public:
     };
 
     char _spacer[96];
-    Vec3f m_centerPos;
     Vec3f m_targetPos;
+    Vec3f m_centerPos;
     char _spacer1[100];
     float m_near;
     float m_far;

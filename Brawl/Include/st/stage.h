@@ -67,10 +67,8 @@ public:
     char _164[4];
     float m_olimarFinalCamAngle;
     Vec3f m_iceClimbersFinalPos;
-    float m_iceClimbersFinalScaleX;
-    float m_iceClimbersFinalScaleYl;
-    float m_pitFinalPalutenaScaleX;
-    float m_pitFinalPalutenaScaleY;
+    Vec2f m_iceClimbersFinalScale;
+    Vec2f m_pitFinalPalutenaScale;
     u8 m_kirifudaModelType;
     bool m_characterWindEnabled;
     char _202[2];
@@ -220,16 +218,16 @@ public:
     virtual void getFighterStartPos(Vec3f* startPos, int fighterIndex);
     virtual void getFighterReStartPos(Vec3f* startPos, int fighterIndex);
     virtual bool isReStartSamePoint();
-    virtual void getPokeTrainerStartPos(int unk1, int unk2);      // TODO
-    virtual int getItemPosCount();                                // TODO
-    virtual void getItemPos(int unk1, int unk2, int unk3);        // TODO
-    virtual void getRandItemPos(int unk1);                        // TODO
-    virtual void getKirifudaPos(int unk1, int unk2);              // TODO
-    virtual float getKirifudaAngle(int unk1);                     // TODO
-    virtual float getKirifudaScale(int unk1, int unk2);           // TODO
-    virtual int getKirifudaModelType(int unk1);                   // TODO
-    virtual int getPokeTrainerPosCount();                         // TODO
-    virtual void getPokeTrainerPos(int unk1, int unk2, int unk3); // TODO
+    virtual void getPokeTrainerStartPos(Vec3f* pos, u32);
+    virtual u8 getItemPosCount();
+    virtual void getItemPos(Vec3f*, Vec3f*, u32 index);
+    virtual void getRandItemPos(Vec3f* pos);
+    virtual void getKirifudaPos(Vec3f* pos, u32);
+    virtual float getKirifudaAngle(u32);
+    virtual void getKirifudaScale(Vec3f* scale, u32);
+    virtual u8 getKirifudaModelType(u32);
+    virtual u8 getPokeTrainerPosCount();
+    virtual void getPokeTrainerPos(Vec3f*, Vec3f*, u32 index);
     virtual float getFighterDeadEffectSizeRate();
     virtual float getEnemyDeadEffectSizeRate();
     virtual float getEnableZ();

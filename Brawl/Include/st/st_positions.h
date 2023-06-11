@@ -23,7 +23,9 @@ public:
     float m_0x24;
     float m_0x28;
     float m_0x2c;
-    char _0x30[52];
+    char _0x30[36];
+    u8 m_itemPosCount;
+    char _0x55[15];
 
     float* getDeadRange(stRange* range);
     float* getCameraRange(stRange* range);
