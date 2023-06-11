@@ -29,7 +29,9 @@ public:
 
     float* getDeadRange(stRange* range);
     float* getCameraRange(stRange* range);
+    float* getKirifudaPos(u32, Vec3f* pos);
     void loadPositionData(nw4r::g3d::ResFile* resFile);
+
 
 };
 static_assert(sizeof(stPositions) == 100, "Class is wrong size!");
