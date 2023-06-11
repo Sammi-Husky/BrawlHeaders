@@ -4,6 +4,7 @@
 #include <mt/mt_vector.h>
 #include <types.h>
 #include <nw4r/g3d/g3d_resfile.h>
+#include <nw4r/g3d/g3d_scnmdlsmpl.h>
 
 class stRange {
 public:
@@ -17,13 +18,12 @@ class stPositions {
 public:
     char _0x8[8];
     nw4r::g3d::ResFileData* m_resFile;
-    char _0xc[8];
+    nw4r::g3d::ScnMdlSimple* m_scnMdl;
+    char _0x10[4];
     Vec3f m_centerPos;
-    float m_0x20;
-    float m_0x24;
-    float m_0x28;
-    float m_0x2c;
-    char _0x30[36];
+    Vec3f m_offsetPos;
+    short m_0x2c;
+    char _0x30[38];
     u8 m_itemPosCount;
     char _0x55[15];
 
