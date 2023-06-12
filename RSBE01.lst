@@ -109,9 +109,11 @@
 
 // strtoul
 803fc704:atoi__FPCc
+803fc704:atoi
 
 // extras
 803fcb50:itoa__FiPci
+803fcb50:itoa
 803fc9fc:stricmp
 
 // __mem
