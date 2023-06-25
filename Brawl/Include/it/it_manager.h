@@ -58,7 +58,7 @@ public:
 
     bool isCompItemKindArchive(itKind kind, u32 variation, bool);
     itArchive* preloadItemKindArchive(itKind kind, u32 variation, itArchive::Type archiveType, bool);
-    BaseItem* createItem(itKind kind, u32 variation, int emitterItemTaskId, int, u8, int, int, int);
+    BaseItem* createItem(itKind kind, u32 variation, int emitterTaskId, int, u8, int, int, int);
     BaseItem* createItemInstance(itCreate* create);
     u32 getItemNum(itKind kind);
     void removeItem(BaseItem*);
