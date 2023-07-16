@@ -20,7 +20,7 @@
 #include <st/st_trigger.h>
 #include <types.h>
 
-class StageParam {
+class StageParam { // STPM
 public:
     u8 m_echo;
     u8 m_id1;
@@ -298,4 +298,99 @@ public:
     virtual grGimmickWindData2nd* getWind2ndOnlyData(); // TODO
     virtual void updateWind2ndOnly();                   // TODO
     virtual void setVision(u8);
+};
+
+enum ItemOverrideSetting {
+    ItemOverride_None = 0x0,
+    ItemOverride_Brres = 0x1,
+    ItemOverride_Param = 0x2,
+    ItemOverride_Both = 0x3,
+};
+
+struct ItemOverride { // Custom Misc Data node
+    char _header[4];
+    char m_itmOverrideName[12];
+    char m_pkmOverrideName[12];
+    s8 m_pokemonOverload;
+    ItemOverrideSetting m_overrideCommon : 8;
+    ItemOverrideSetting m_overrideTorchic : 8;
+    ItemOverrideSetting m_overrideCelebi : 8;
+    ItemOverrideSetting m_overrideChikorita : 8;
+    ItemOverrideSetting m_overrideChikoritaShot : 8;
+    ItemOverrideSetting m_overrideEntei : 8;
+    ItemOverrideSetting m_overrideMoltres : 8;
+    ItemOverrideSetting m_overrideMunchlax : 8;
+    ItemOverrideSetting m_overrideDeoxys : 8;
+    ItemOverrideSetting m_overrideGroudon : 8;
+    ItemOverrideSetting m_overrideGulpin : 8;
+    ItemOverrideSetting m_overrideStaryu: 8;
+    ItemOverrideSetting m_overrideStaryuShot : 8;
+    ItemOverrideSetting m_overrideHoOh : 8;
+    ItemOverrideSetting m_overrideHoOhShot : 8;
+    ItemOverrideSetting m_overrideJirachi : 8;
+    ItemOverrideSetting m_overrideSnorlax : 8;
+    ItemOverrideSetting m_overrideBellosom : 8;
+    ItemOverrideSetting m_overrideKyogre : 8;
+    ItemOverrideSetting m_overrideKyogreShot : 8;
+    ItemOverrideSetting m_overrideLatiasLatios : 8;
+    ItemOverrideSetting m_overrideLugia : 8;
+    ItemOverrideSetting m_overrideLugiaShot : 8;
+    ItemOverrideSetting m_overrideManaphy : 8;
+    ItemOverrideSetting m_overrideWeavile : 8;
+    ItemOverrideSetting m_overrideElectrode : 8;
+    ItemOverrideSetting m_overrideMetagross : 8;
+    ItemOverrideSetting m_overrideMew : 8;
+    ItemOverrideSetting m_overrideMeowth : 8;
+    ItemOverrideSetting m_overrideMeowthShot : 8;
+    ItemOverrideSetting m_overridePiplup : 8;
+    ItemOverrideSetting m_overrideTogepi : 8;
+    ItemOverrideSetting m_overrideGoldeen : 8;
+    ItemOverrideSetting m_overrideGardevoir : 8;
+    ItemOverrideSetting m_overrideWobbuffet : 8;
+    ItemOverrideSetting m_overrideSuicune : 8;
+    ItemOverrideSetting m_overrideBonsly : 8;
+    ItemOverrideSetting m_overrideAndross : 8;
+    ItemOverrideSetting m_overrideAndrossShot : 8;
+    ItemOverrideSetting m_overrideBarbara : 8;
+    ItemOverrideSetting m_overrideGrayFox : 8;
+    ItemOverrideSetting m_overrideRayMKII : 8;
+    ItemOverrideSetting m_overrideRayMKIIBomb : 8;
+    ItemOverrideSetting m_overrideRayMKIIGun : 8;
+    ItemOverrideSetting m_overrideSamuraiGoroh : 8;
+    ItemOverrideSetting m_overrideDevil : 8;
+    ItemOverrideSetting m_overrideExcitebike : 8;
+    ItemOverrideSetting m_overrideJeff : 8;
+    ItemOverrideSetting m_overrideJeffPencilBullet : 8;
+    ItemOverrideSetting m_overrideJeffPencilRocket : 8;
+    ItemOverrideSetting m_overrideLakitu : 8;
+    ItemOverrideSetting m_overrideKnuckleJoe : 8;
+    ItemOverrideSetting m_overrideKnuckleJoeShot : 8;
+    ItemOverrideSetting m_overrideHammerBro : 8;
+    ItemOverrideSetting m_overrideHammerBroHammer : 8;
+    ItemOverrideSetting m_overrideHelirin : 8;
+    ItemOverrideSetting m_overrideKat : 8;
+    ItemOverrideSetting m_overrideAna : 8;
+    ItemOverrideSetting m_overrideJillDozer : 8;
+    ItemOverrideSetting m_overrideLyn : 8;
+    ItemOverrideSetting m_overrideLittleMac : 8;
+    ItemOverrideSetting m_overrideMetroid : 8;
+    ItemOverrideSetting m_overrideNintendog : 8;
+    ItemOverrideSetting m_overrideNintendogFull : 8;
+    ItemOverrideSetting m_overrideMrResetti : 8;
+    ItemOverrideSetting m_overrideIsaac : 8;
+    ItemOverrideSetting m_overrideIsaacShot : 8;
+    ItemOverrideSetting m_overrideSaki : 8;
+    ItemOverrideSetting m_overrideSakiShot1 : 8;
+    ItemOverrideSetting m_overrideSakiShot2 : 8;
+    ItemOverrideSetting m_overrideShadow : 8;
+    ItemOverrideSetting m_overrideWarInfantry : 8;
+    ItemOverrideSetting m_overrideWarInfantryShot : 8;
+    ItemOverrideSetting m_overrideStarfy : 8;
+    ItemOverrideSetting m_overrideWarTank : 8;
+    ItemOverrideSetting m_overrideWarTankShot : 8;
+    ItemOverrideSetting m_overrideTingle : 8;
+    ItemOverrideSetting m_overrideLakituSpiny : 8;
+    ItemOverrideSetting m_overrideWaluigi : 8;
+    ItemOverrideSetting m_overrideDrWright : 8;
+    ItemOverrideSetting m_overrideDrWrightBuilding : 8;
 };

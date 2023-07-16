@@ -26,7 +26,7 @@ public:
     int m_numAssists;
     char _4292[4];
     soArrayList<itKind, 12> m_pokemonItKindArrayList;
-    char _4448[4];
+    u32 m_nextPokemonIndex;
     int m_numPokemon;
     int m_numPokeballs;
     char _4460[4];
