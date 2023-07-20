@@ -393,4 +393,5 @@ struct ItemOverride { // Custom Misc Data node
     ItemOverrideSetting m_overrideWaluigi : 8;
     ItemOverrideSetting m_overrideDrWright : 8;
     ItemOverrideSetting m_overrideDrWrightBuilding : 8;
+    char m_stageItemFolder[12];
 };

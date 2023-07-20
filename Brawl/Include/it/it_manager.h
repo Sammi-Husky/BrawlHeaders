@@ -24,12 +24,12 @@ public:
     char _4283[1];
     itKind m_nextAssistItKind;
     int m_numAssists;
-    char _4292[4];
+    int m_preloadAssistTimer;
     soArrayList<itKind, 12> m_pokemonItKindArrayList;
     u32 m_nextPokemonIndex;
     int m_numPokemon;
     int m_numPokeballs;
-    char _4460[4];
+    int m_preloadPokemonTimer;
     soArrayList<itGenArchive*, 3> m_itGenArchiveArrayList;
     char _4508[24];
     float m_itKindLotRates[178];
