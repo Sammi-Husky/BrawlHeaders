@@ -6,7 +6,7 @@
 
 class gmItSwitch {
 public:
-    class ItemSwitch {
+    struct ItemSwitch {
         bool : 1;
         bool : 1;
         bool : 1;
@@ -73,7 +73,7 @@ public:
         bool m_smashBall : 1;
     } m_itemSwitch;
 
-    class PokemonSwitch {
+    struct PokemonSwitch {
         bool : 1;
         bool : 1;
         bool m_bonsly : 1;
@@ -109,7 +109,7 @@ public:
 
     } m_pokemon;
 
-    class AssistSwitch {
+    struct AssistSwitch {
         bool : 1;
         bool : 1;
         bool : 1;
