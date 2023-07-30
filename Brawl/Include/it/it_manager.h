@@ -31,7 +31,7 @@ public:
     int m_numPokeballs;
     int m_preloadPokemonTimer;
     soArrayList<itGenArchive*, 3> m_itGenArchiveArrayList;
-    char _4508[24];
+    u8 m_itKindSwitch[24];
     float m_itKindLotRates[178];
     int m_crateVariation;
     int m_smashBallDropTimer;

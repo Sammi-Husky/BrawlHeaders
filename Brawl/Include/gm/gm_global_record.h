@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <types.h>
+#include <gm/gm_global_mode_melee.h>
 
 struct gmGlobalRecord1 {
 
@@ -13,7 +14,7 @@ struct gmGlobalRecord1 {
 
     struct MenuData {
 
-        union RandomStageSwitch {
+        union StageSwitch {
             struct {
                 bool : 1;
                 bool : 1;
@@ -29,16 +30,16 @@ struct gmGlobalRecord1 {
                 bool : 1;
                 bool : 1;
                 bool : 1;
-                bool dxPStadium : 1;
-                bool dxZebes : 1;
-                bool dxBigBlue : 1;
-                bool dxCorneria : 1;
-                bool dxCruise : 1;
-                bool dxGreens : 1;
-                bool dxOnett : 1;
-                bool dxGarden : 1;
-                bool dxYorster : 1;
-                bool dxShrine : 1;
+                bool m_dxPStadium : 1;
+                bool m_dxZebes : 1;
+                bool m_dxBigBlue : 1;
+                bool m_dxCorneria : 1;
+                bool m_dxCruise : 1;
+                bool m_dxGreens : 1;
+                bool m_dxOnett : 1;
+                bool m_dxGarden : 1;
+                bool m_dxYorster : 1;
+                bool m_dxShrine : 1;
                 bool : 1;
                 bool : 1;
                 bool : 1;
@@ -48,46 +49,51 @@ struct gmGlobalRecord1 {
                 bool : 1;
                 bool : 1;
                 bool : 1;
-                bool plankton : 1;
-                bool pictChat : 1;
-                bool greenHill : 1;
-                bool metalGear : 1;
-                bool village : 1;
-                bool newPork : 1;
-                bool famicom : 1;
-                bool palutena : 1;
-                bool earth : 1;
-                bool madein : 1;
-                bool emblem : 1;
-                bool gW : 1;
-                bool ice : 1;
-                bool fZero : 1;
-                bool tengan : 1;
-                bool stadium : 1;
-                bool starFox : 1;
-                bool halberd : 1;
-                bool crayon : 1;
-                bool orpheon : 1;
-                bool norfair : 1;
-                bool oldin : 1;
-                bool pirates : 1;
-                bool jungle : 1;
-                bool donkey : 1;
-                bool kart : 1;
-                bool marioPast : 1;
-                bool mansion : 1;
-                bool dolpic : 1;
-                bool final : 1;
-                bool battle : 1;
+                bool m_plankton : 1;
+                bool m_pictChat : 1;
+                bool m_greenHill : 1;
+                bool m_metalGear : 1;
+                bool m_village : 1;
+                bool m_newPork : 1;
+                bool m_famicom : 1;
+                bool m_palutena : 1;
+                bool m_earth : 1;
+                bool m_madein : 1;
+                bool m_emblem : 1;
+                bool m_gW : 1;
+                bool m_ice : 1;
+                bool m_fZero : 1;
+                bool m_tengan : 1;
+                bool m_stadium : 1;
+                bool m_starFox : 1;
+                bool m_halberd : 1;
+                bool m_crayon : 1;
+                bool m_orpheon : 1;
+                bool m_norfair : 1;
+                bool m_oldin : 1;
+                bool m_pirates : 1;
+                bool m_jungle : 1;
+                bool m_donkey : 1;
+                bool m_kart : 1;
+                bool m_marioPast : 1;
+                bool m_mansion : 1;
+                bool m_dolpic : 1;
+                bool m_final : 1;
+                bool m_battle : 1;
             };
             struct {
-                u32 meleeMask;
-                u32 normalMask;
+                u32 m_meleeMask;
+                u32 m_normalMask;
             };
         };
 
-        char _0[32];
-        RandomStageSwitch randomStageSwitch;
+        u8 m_itemFrequency;
+        char _1[7];
+        gmItSwitch::ItemSwitch m_itemSwitch;
+        char _16[10];
+        u8 m_language;
+        char _27[5];
+        StageSwitch m_stageSwitch;
 
         bool m_isWidescreen : 1;
         bool m_41_6 : 1;

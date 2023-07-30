@@ -103,7 +103,7 @@ enum itKind {
     Item_SuperScope = 0x3D,
     Item_SuperScope_Shot = 0x3E,
     Item_Star = 0x3F,
-    Item_SuperStar = 0x3f,
+    Item_Starman = 0x3f,
     Item_Food = 0x40,
     Item_Tabemono = 0x40,
     Item_TeamHealer = 0x41,

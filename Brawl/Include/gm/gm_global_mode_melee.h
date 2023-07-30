@@ -6,8 +6,145 @@
 
 class gmItSwitch {
 public:
-    char _spacer[0x10];
+    class ItemSwitch {
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool m_cd : 1;
+        bool m_trophy : 1;
+        bool m_sticker : 1;
+        bool m_screwAttack : 1;
+        bool m_franklinBadge : 1;
+        bool m_teamHealer : 1;
+        bool m_soccerBall : 1;
+        bool m_unira : 1;
+        bool m_spring : 1;
+        bool m_bumper : 1;
+        bool m_bananaPeel : 1;
+        bool m_greenShell : 1;
+        bool m_mrSaturn : 1;
+        bool m_hothead : 1;
+        bool m_pitBall : 1;
+        bool m_smokeBall : 1;
+        bool m_freezie : 1;
+        bool m_dekuNut : 1;
+        bool m_smartBomb : 1;
+        bool m_gooeyBomb : 1;
+        bool m_motionSensorBomb : 1;
+        bool m_bobOmb : 1;
+        bool m_crackerLauncher : 1;
+        bool m_fireFlower : 1;
+        bool m_rayGun : 1;
+        bool m_superScope : 1;
+        bool m_goldenHammer : 1;
+        bool m_hammer : 1;
+        bool m_starRod : 1;
+        bool m_lipStick : 1;
+        bool m_fan : 1;
+        bool m_homeRunBat : 1;
+        bool m_beamSword : 1;
+        bool m_lightning : 1;
+        bool m_timer : 1;
+        bool m_superspicyCurry : 1;
+        bool m_bunnyHood : 1;
+        bool m_metalBox : 1;
+        bool m_starman : 1;
+        bool m_warpStar : 1;
+        bool m_poisonMushroom : 1;
+        bool m_superMushroom : 1;
+        bool m_dragoonParts : 1;
+        bool m_heartContainer : 1;
+        bool m_maximTomato : 1;
+        bool m_food : 1;
+        bool m_sandBag : 1;
+        bool m_blastBox : 1;
+        bool m_containers : 1;
+        bool m_pokeBall : 1;
+        bool m_assistTrophy : 1;
+        bool m_smashBall : 1;
+    } m_itemSwitch;
+
+    class PokemonSwitch {
+        bool : 1;
+        bool : 1;
+        bool m_bonsly : 1;
+        bool m_suicune : 1;
+        bool m_wobuffet : 1;
+        bool m_gardevoir : 1;
+        bool m_goldeen : 1;
+        bool m_togepi : 1;
+        bool m_piplup : 1;
+        bool m_meowth : 1;
+        bool m_mew : 1;
+        bool m_metagross : 1;
+        bool m_electrode : 1;
+        bool m_weavile : 1;
+        bool m_manaphy : 1;
+        bool m_lugia : 1;
+        bool m_latiasLatios : 1;
+        bool m_kyogre : 1;
+        bool m_bellosom : 1;
+        bool m_snorlax : 1;
+        bool m_jirachi : 1;
+        bool m_hoOh : 1;
+        bool m_staryu : 1;
+        bool m_gulpin : 1;
+        bool m_groudon : 1;
+        bool m_deoxys : 1;
+        bool m_munchlax : 1;
+        bool m_moltres : 1;
+        bool m_entei : 1;
+        bool m_chikorita : 1;
+        bool m_celebi : 1;
+        bool m_torchic : 1;
+
+    } m_pokemon;
+
+    class AssistSwitch {
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool : 1;
+        bool m_drWright : 1;
+        bool m_waluigi : 1;
+        bool m_tingle : 1;
+        bool m_infantryTank : 1;
+        bool m_starfy : 1;
+        bool m_shadow : 1;
+        bool m_saki : 1;
+        bool m_isaac : 1;
+        bool m_mrResetti : 1;
+        bool m_nintendog : 1;
+        bool m_metroid : 1;
+        bool m_littleMac : 1;
+        bool m_lyn : 1;
+        bool m_jillDozer : 1;
+        bool m_katAna : 1;
+        bool m_helirin : 1;
+        bool m_hammerBro : 1;
+        bool m_knuckleJoe : 1;
+        bool m_lakitu : 1;
+        bool m_jeff : 1;
+        bool m_excitebike : 1;
+        bool m_devil : 1;
+        bool m_samuraiGoroh : 1;
+        bool m_rayMKII : 1;
+        bool m_grayFox : 1;
+        bool m_barbara : 1;
+        bool m_andross : 1;
+    } m_assist ;
 };
+static_assert(sizeof(gmItSwitch) == 0x10, "Class is wrong size!");
 
 class gmMeleeInitData {
 public:
@@ -41,7 +178,7 @@ public:
     char _0x15[0x3];             // 0x15
     s32 m_timeLimitFrames;       // 0x18
     char _0x1c[0x0C];            // 0x1C
-    gmItSwitch m_itSwitchData;   // 0x28
+    gmItSwitch m_itSwitch;       // 0x28
     char _0x38[0x08];            // 0x38
     float m_cameraShakeScale;    // 0x40
     char _0x44[0x04];            // 0x44
