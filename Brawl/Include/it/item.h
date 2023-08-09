@@ -298,7 +298,7 @@ enum itKind {
 struct itCreate {
     int m_index;
     int m_emitterTaskId;
-    int m_8;
+    int m_teamOwnerTaskId;
     itKind m_kind;
     u32 m_variation;
     Vec3f* m_pos1;
