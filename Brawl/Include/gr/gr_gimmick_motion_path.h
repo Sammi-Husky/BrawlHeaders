@@ -36,4 +36,5 @@ public:
     float getFrame();
     bool isEndFrame();
     bool isStartFrame();
+    void getTRS(Vec3f* pos, Vec3f* rotation, Vec3f* scale);
 };

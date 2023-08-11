@@ -716,6 +716,7 @@
 27,1,0026EFF4:isEndFrame__19grGimmickMotionPathFv
 27,1,0026EFD8:isStartFrame__19grGimmickMotionPathFv
 27,1,0026EFA0:applyEndFrame__19grGimmickMotionPathFv
+27,1,0026EB6C:getTRS__19grGimmickMotionPathFP5Vec3fP5Vec3fP5Vec3f
 
 // grStadiumVision
 27,1,0027AAF8:create__15grStadiumVisionFiPcPc
