@@ -78,3 +78,4 @@ void* free(void* ptr);
 
 void* __memfill(void* dest, u8 value, size_t count);
 void* memset(void* dest, u8 value, size_t count);
+void memcpy(void* dest, void* src, size_t count);

@@ -82,6 +82,9 @@
 801e0cfc:OSCreateThread
 801e1364:OSResumeThread
 801e1224:OSJoinThread
+801debb4:OSLockMutex
+801dec90:OSUnlockMutex
+801deb7c:OSInitMutex
 
 // string
 803fa3fc:strcmp__FPCcPCc
@@ -122,6 +125,7 @@
 8000443c:__memfill__FPvUcUl
 8000443c:memset__FPvUcUl
 8000443c:memset
+80004338:memcpy__FPvPvUl
 
 // NW4R
 8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileFv
@@ -1164,3 +1168,9 @@
 // CUSTOM
 27,5,73648:g_commonSndGroupOverrideName
 27,5,736B0:g_commonSndGroupHeapLevels
+// gfMemoryPool
+
+80025c58:alloc__12gfMemoryPoolFPvUli
+
+// Compression
+80206018:CXUncompressLZ__FPvPv
