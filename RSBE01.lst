@@ -594,6 +594,7 @@
 27,1,0026D08C:stopGimmickSE__9grGimmickFUl
 27,1,0026CCA0:createSoundWork__9grGimmickFUlUl
 27,1,0026C1BC:changeShapeAnim__9grGimmickFUlUl
+27,1,0026C0BC:changeMatColAnim__9grGimmickFUlUl
 
 // grYakumono
 27,1,00264c80:__ct__10grYakumonoFPc
