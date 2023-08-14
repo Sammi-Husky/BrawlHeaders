@@ -203,7 +203,8 @@ public:
     s8 m_startPointIdx;        // 0x08
     char _2[0x02];             // 0x09
     s8 m_teamID;               // 0x0B
-    char _3[0x0E];             // 0x0C
+    short m_nameTag[5];        // 0x0c
+    char _3[4];                // 0x16
     bool m_isNoVoice;          // 0x1A
     char _4[0x03];             // 0x1B
     u8 m_cpuType;              // 0x1E
