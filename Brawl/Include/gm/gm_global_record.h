@@ -270,11 +270,11 @@ struct gmAdventure {
 
         char _0[0x04];                    // 0x00
         LevelClear m_levelClears[34]; // 0x04
-        char _684[18020];
+        char _684[18052];
     };
-    static_assert(sizeof(SaveData) == 0x4910, "Class is wrong size!");
+    static_assert(sizeof(SaveData) == 0x4930, "Class is wrong size!");
 
     SaveData m_saveData;
-    char _18704[72];
+    char _18704[40];
 };
 static_assert(sizeof(gmAdventure) == 0x4958, "Class is wrong size!");
