@@ -129,7 +129,7 @@ struct gmGlobalRecord {
     };
     static_assert(sizeof(InfoAppFlagData) == 28, "Class is wrong size!");
 
-    struct EventSaveData {
+    struct EventHiScoreData {
         u32 m_easyScores[51];
         u32 m_normalScores[51];
         u32 m_hardScores[51];
@@ -240,7 +240,7 @@ struct gmGlobalRecord {
 
     char _56[756];
 
-    EventSaveData m_eventSaveData[2];
+    EventHiScoreData m_eventHiScoreData[2];
 
     char _2036[28];
 
