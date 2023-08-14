@@ -4,7 +4,7 @@
 #include <types.h>
 #include <gm/gm_global_mode_melee.h>
 
-struct gmGlobalRecordA {
+struct gmGlobalRecord {
 
     struct InfoAppFlagData {
         enum State {
@@ -229,6 +229,11 @@ struct gmGlobalRecordA {
         char _41[3];
     };
 
+    struct NameData {
+        char _0[0x124];
+    };
+    static_assert(sizeof(NameData) == 0x124, "Class is wrong size!");
+
     char _0[28];
 
     InfoAppFlagData m_infoAppFlagData;
@@ -243,27 +248,33 @@ struct gmGlobalRecordA {
 
     char _spacer[0x34B4];
 };
-static_assert(sizeof(gmGlobalRecordA) == 0x3cf0, "Class is wrong size!");
-struct gmGlobalRecordB {
-    char _spacer[0x88e0]; // 0x00
-};
-static_assert(sizeof(gmGlobalRecordB) == 0x88e0, "Class is wrong size!");
+static_assert(sizeof(gmGlobalRecord) == 0x3cf0, "Class is wrong size!");
+
 struct nteGlobalData {
     char _spacer[0x88]; // 0x00
 };
 static_assert(sizeof(nteGlobalData) == 0x88, "Class is wrong size!");
-struct AdvLevelSaveData {
-    u32 m_clearFlag;       // 0x00
-    u32 m_clearDifficulty; // 0x04
-    u32 m_unk1;            // 0x08
-    s32 m_clearPercent;    // 0x0C
-    u32 m_unk2;            // 0x10
-};
-static_assert(sizeof(AdvLevelSaveData) == 0x14, "Class is wrong size!");
 
-struct adKeep {
-    char _0[0x04];                    // 0x00
-    AdvLevelSaveData m_levelData[34]; // 0x04
-    char _1[0x46AC];                  // 0x2AC
+
+struct gmAdventure {
+
+    struct SaveData {
+        struct LevelClear {
+            u32 m_state;           // 0x00
+            s32 m_difficulty;      // 0x04
+            u32 m_unk1;            // 0x08
+            s32 m_percent;         // 0x0C
+            u32 m_unk2;            // 0x10
+        };
+        static_assert(sizeof(LevelClear) == 0x14, "Class is wrong size!");
+
+        char _0[0x04];                    // 0x00
+        LevelClear m_levelClears[34]; // 0x04
+        char _684[18020];
+    };
+    static_assert(sizeof(SaveData) == 0x4910, "Class is wrong size!");
+
+    SaveData m_saveData;
+    char _18704[72];
 };
-static_assert(sizeof(adKeep) == 0x4958, "Class is wrong size!");
+static_assert(sizeof(gmAdventure) == 0x4958, "Class is wrong size!");
