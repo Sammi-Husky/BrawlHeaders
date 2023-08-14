@@ -4,7 +4,7 @@
 #include <types.h>
 #include <gm/gm_global_mode_melee.h>
 
-struct gmGlobalRecord1 {
+struct gmGlobalRecordA {
 
     struct InfoAppFlagData {
         enum State {
@@ -243,11 +243,11 @@ struct gmGlobalRecord1 {
 
     char _spacer[0x34B4];
 };
-static_assert(sizeof(gmGlobalRecord1) == 0x3cf0, "Class is wrong size!");
-struct gmGlobalRecord2 {
+static_assert(sizeof(gmGlobalRecordA) == 0x3cf0, "Class is wrong size!");
+struct gmGlobalRecordB {
     char _spacer[0x88e0]; // 0x00
 };
-static_assert(sizeof(gmGlobalRecord2) == 0x88e0, "Class is wrong size!");
+static_assert(sizeof(gmGlobalRecordB) == 0x88e0, "Class is wrong size!");
 struct nteGlobalData {
     char _spacer[0x88]; // 0x00
 };

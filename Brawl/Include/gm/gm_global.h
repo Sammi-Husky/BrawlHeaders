@@ -22,8 +22,8 @@ public:
     gmResultInfo* m_resultInfo;         // 0x18
     gmSetRule* m_setRule;               // 0x1C
     char _3[0x04];                      // 0x20
-    gmGlobalRecord1* m_record1;         // 0x24
-    gmGlobalRecord2* m_record2;         // 0x28
+    gmGlobalRecordA* m_recordA;         // 0x24
+    gmGlobalRecordB* m_recordB;         // 0x28
     gmTournamentData* m_tournamentData; // 0x2C
     adKeep* m_adKeep;                   // 0x30
     nteGlobalData* m_nteData;           // 0x34
@@ -33,7 +33,7 @@ public:
     gmStageData* m_stageData;           // 0x44
     char _6[0x8];                       // 0x48
 
-    gmGlobalRecord1::MenuData* getGlobalRecordMenuDatap();
+    gmGlobalRecordA::MenuData* getGlobalRecordMenuDatap();
 
     static int getLanguage();
 
