@@ -5,4 +5,6 @@
 
 namespace soValueAccesser {
     int getConstantInt(soModuleAccesser* moduleAccesser, u32, u32);
+    int getValueInt(soModuleAccesser* moduleAccesser, u32, u32);
+
 }

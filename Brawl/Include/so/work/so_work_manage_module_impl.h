@@ -3,13 +3,14 @@
 #include <StaticAssert.h>
 #include <so/so_lock.h>
 #include <so/so_null.h>
+#include <so/work/so_general_work_simple.h>
 #include <types.h>
 
 class soWorkManageModule : public soNullable {
 public:
     virtual ~soWorkManageModule();
     virtual void activate();
-    virtual void setWork(u32 index, void*);
+    virtual void setWork(u32 index, soGeneralWorkAbstract* generalWork);
     virtual int getInt(u32 index);
     virtual void setInt(int value, u32 index);
     virtual void rndInt(int minValue, int maxValue, u32 index);
@@ -34,12 +35,15 @@ public:
 static_assert(sizeof(soWorkManageModule) == 8, "Class is wrong size!");
 
 class soWorkManageModuleImpl : public soWorkManageModule, public soLockable, public soAnimCmdEventObserver {
-    char _spacer[20];
 
 public:
+    char _spacer[4];
+    soGeneralWorkAbstract* m_generalWorks[2];
+    char _spacer2[8];
+
     virtual ~soWorkManageModuleImpl();
     virtual void activate();
-    virtual void setWork(u32 index, void*);
+    virtual void setWork(u32 index, soGeneralWorkAbstract* generalWork);
     virtual int getInt(u32 index);
     virtual void setInt(int value, u32 index);
     virtual void rndInt(int minValue, int maxValue, u32 index);

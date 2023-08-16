@@ -255,7 +255,7 @@ namespace ftStatus {
         Land_On_Ground_Hard = 0x7E,
         Freeze_Game_1 = 0x7F,
         Landing_Effect = 0x80,
-        TPose_Center_Stage_Rear_End_Subspace_Teleport = 0x81,
+        Tether_Hang = 0x81,
         Freeze_Game_2 = 0x82,
         Big_Smoke_Cloud_Landing_Effect = 0x83,
         Flop_On_Ground_Land_On_Stomach = 0x84,

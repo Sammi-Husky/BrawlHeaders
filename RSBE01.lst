@@ -735,6 +735,7 @@
 
 // soValueAccesser
 27,1,0008C338:getConstantInt__15soValueAccesserFP16soModuleAccesserUlUl
+27,1,0008C6F0:getValueInt__15soValueAccesserFP16soModuleAccesserUlUl
 
 // soExternalValueAccesser
 27,1,0008CB0C:getTeamNo__23soExternalValueAccesserFP11StageObject
