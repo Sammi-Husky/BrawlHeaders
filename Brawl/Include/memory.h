@@ -64,7 +64,11 @@ namespace Heaps {
 
         // NON-STANDARD
         BrawlEx = 0x3b,
-        Syringe = 0x3c
+        Syringe = 0x3c,
+        CodeMenu = 0x3d,
+        FudgeAI = 0x3e,
+        StockFaceResource = 0x3f,
+        RetroMode = 0x40
     };
 } // namespace HeapType
 
