@@ -206,9 +206,6 @@
 8002dc40:getTask__6gfTaskFi
 8002df34:exit__6gfTaskFv
 
-// gfHeapManager
-80024a50:dumpAll__13gfHeapManagerFv
-80024b08:dumpList__13gfHeapManagerFv
 
 // gfArchive
 8001370c:__ct__9gfArchiveFv
@@ -964,6 +961,12 @@
 // ScnMdl
 801b4af4:Construct__Q34nw4r3g3d6ScnMdlFPviiPv
 801b4d94:Pushback__Q34nw4r3g3d6ScnMdlFPvPvPc
+
+
+// gfHeapManager
+80024a50:dumpAll__13gfHeapManagerFv
+80024b08:dumpList__13gfHeapManagerFv
+80024544:createHeap__13gfHeapManagerFiPCcii
 80024430:getMEMAllocator__13gfHeapManagerFQ25Heaps8HeapType
 800249cc:getHeap__13gfHeapManagerFQ25Heaps8HeapType
 
@@ -1170,9 +1173,10 @@
 // CUSTOM
 27,5,73648:g_commonSndGroupOverrideName
 27,5,736B0:g_commonSndGroupHeapLevels
-// gfMemoryPool
 
+// gfMemoryPool
 80025c58:alloc__12gfMemoryPoolFPvUli
+800259a4:create__12gfMemoryPoolFPvUlPCc
 
 // Compression
 80206018:CXUncompressLZ__FPvPv
