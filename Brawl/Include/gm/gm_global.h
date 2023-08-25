@@ -10,6 +10,7 @@
 #include <gm/gm_set_rule.h>
 #include <gm/gm_tournament_data.h>
 #include <gm/gm_stage_data.h>
+#include <gm/gm_stage_edit_data.h>
 
 class GameGlobal {
 public:
@@ -29,7 +30,7 @@ public:
     nteGlobalData* m_nteData;           // 0x34
     char _4[0x04];                      // 0x38
     gmGlobalCorps* m_corps;             // 0x3C
-    char _5[0x4];                       // 0x40
+    gmStageEditData* m_stageEditData;   // 0x40
     gmStageData* m_stageData;           // 0x44
     char _6[0x8];                       // 0x48
 
