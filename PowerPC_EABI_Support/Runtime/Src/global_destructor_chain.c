@@ -30,6 +30,17 @@ void __destroy_global_chain(void)
     }
 }
 
+// With MWCC we use their special section directive
+// to trigger the compiler's handling of global_destructor_chain.
+// For Clang, we emulate it's behavior by placing two references manually.
+#ifdef __MWERKS__
 #pragma section ".dtors$10"
 __declspec(section ".dtors$10") __declspec(weak) 
     extern void * const __destroy_global_chain_reference = __destroy_global_chain;
+#else
+__attribute__((section(".dtors"))) __attribute__((weak))
+    void * const __destroy_global_chain_reference = __destroy_global_chain;
+
+__attribute__((section(".dtors"))) __attribute__((weak)) 
+    void * const __destroy_global_chain_reference2 = __destroy_global_chain;
+#endif

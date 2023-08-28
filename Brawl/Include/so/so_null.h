@@ -4,6 +4,9 @@
 #include <types.h>
 
 class soNull {
+#ifndef __MWERKS__
+    int pad; // fix for bug in Clang fork not producing empty vtable
+#endif
 };
 
 class soNullableInterface {

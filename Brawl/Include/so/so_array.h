@@ -127,7 +127,7 @@ class soArrayVector : public soArrayVectorAbstract<T> {
 
     virtual u32 size() { return m_size; };
     virtual ~soArrayVector();
-    virtual u32 capacity(){ return C };
+    virtual u32 capacity() { return C; };
     virtual bool isFull();
 
     virtual T* atFastAbstractSub(int);
