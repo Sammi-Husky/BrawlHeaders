@@ -4,8 +4,13 @@
 #include <types.h>
 
 class soNull {
+// fix for bug in Clang fork not producing empty vtable.
+// This is technically incorrect as it will make soNull
+// always 4 bytes when the bug only affects multiple
+// inheritance, however soNull is never used on it's own
+// so this shouldn't be an issue (for now?)
 #ifndef __MWERKS__
-    int pad; // fix for bug in Clang fork not producing empty vtable
+    int pad;
 #endif
 };
 
