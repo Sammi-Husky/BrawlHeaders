@@ -9,8 +9,8 @@ public:
     // 0
     gfFileIORequest* fileToLoad;
     int read(const char* filepath, HeapType heap, int offset);
-    int readRequest(char* filename, HeapType heap, int length, int offset);
-    int readRequest(char* filepath, void* addr, int length, int offset);
+    int readRequest(const char* filename, HeapType heap, int length, int offset);
+    int readRequest(const char* filepath, void* addr, int length, int offset);
     bool isReady();
     int getReturnStatus();
     void* getBuffer();

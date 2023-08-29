@@ -17,7 +17,7 @@ protected:
     char _spacer[4];
 
 public:
-    grSeqYakumono(char* taskName);
+    grSeqYakumono(const char* taskName);
     void createSeSeqWork(int unk1);
     void playSeSeq(float unk1, int unk2);
     void playSeSeq(float unk1, float unk2, float unk3);

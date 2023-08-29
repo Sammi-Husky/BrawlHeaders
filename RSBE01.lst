@@ -164,7 +164,7 @@ CC008000:WGPIPE
 8005f7b8:setEffect__5ecMgrFUlP5Vec3f
 8005f7e0:setEffect__5ecMgrFUlP5Vec3fP5Vec3fP5Vec3f
 80060c54:endEffect__5ecMgrFUl
-8005fc5c:setParent__5ecMgrFUlPQ34nw4r3g3d6ScnMdlPci
+8005fc5c:setParent__5ecMgrFUlPQ34nw4r3g3d6ScnMdlPCci
 800606a8:presetAnmIdx__5ecMgrFiiiiii
 8006001c:setGroundAttach__5ecMgrFUlP14soGroundModule
 800600ec:setGroundAttach__5ecMgrFUlP19grCollisionLineWork
@@ -255,9 +255,9 @@ CC008000:WGPIPE
 
 // gfModuleManager
 27,1,00143B14:getInstance__15gfModuleManagerFv
-80026e00:loadModuleRequest__15gfModuleManagerFPQ215gfModuleManager17LoadRequestResultP15gfModuleManagerPcQ25Heaps8HeapTypebb
+80026e00:loadModuleRequest__15gfModuleManagerFPQ215gfModuleManager17LoadRequestResultP15gfModuleManagerPCcQ25Heaps8HeapTypebb
 80026c78:setTempolaryLoadHeap__15gfModuleManagerFQ25Heaps8HeapType
-8002737c:destroy__15gfModuleManagerFPc
+8002737c:destroy__15gfModuleManagerFPCc
 
 // gfModuleHeader
 80026478:getTextSectionAddr__14gfModuleHeaderFv
@@ -271,7 +271,7 @@ CC008000:WGPIPE
 8002d180:registSequence__14gfSceneManagerFv
 8002d1a0:process__14gfSceneManagerFv
 8002d32c:postProcess__14gfSceneManagerFv
-8002d3f4:searchScene__14gfSceneManagerFPc
+8002d3f4:searchScene__14gfSceneManagerFPCc
 8002d474:searchSequence__14gfSceneManagerFv
 8002d4f4:startSequence__14gfSceneManagerFv
 8002d5ac:setNextScene__14gfSceneManagerFv
@@ -524,19 +524,19 @@ CC008000:WGPIPE
 27,1,00228dd8:getModelCount__6GroundFv
 27,1,0025fa34:unloadData__6GroundFv
 27,1,00230728:setMdlIndex__6GroundFi
-27,1,00260B48:getNodeIndex__6GroundFUlPc
+27,1,00260B48:getNodeIndex__6GroundFUlPCc
 27,1,00260c84:getNodePosition__6GroundFP5Vec3fUlUl
-27,1,00260d78:getNodePosition__6GroundFP5Vec3fUlPc
+27,1,00260d78:getNodePosition__6GroundFP5Vec3fUlPCc
 27,1,00260e88:getNodeMatrix__6GroundFP6MatrixUlUl
-27,1,00260f48:getNodeMatrix__6GroundFP6MatrixUlPc
+27,1,00260f48:getNodeMatrix__6GroundFP6MatrixUlPCc
 27,1,0026102c:setNodeVisibility__6GroundFbUlUlbb
-27,1,002611dc:setNodeVisibility__6GroundFbUlPcbb
+27,1,002611dc:setNodeVisibility__6GroundFbUlPCcbb
 27,1,002612ac:setNodeVisibilityAll__6GroundFbUl
 27,1,002613ac:isNodeVisible__6GroundFUlUl
 27,1,00261434:setNodeCollision__6GroundFbUlUlb
-27,1,002615ec:setNodeCollision__6GroundFbUlPcb
+27,1,002615ec:setNodeCollision__6GroundFbUlPCcb
 27,1,00261718:getNodeScale__6GroundFP5Vec3fUlUl
-27,1,002617d8:getNodeScale__6GroundFP5Vec3fUlPc
+27,1,002617d8:getNodeScale__6GroundFP5Vec3fUlPCc
 27,1,00231b80:setInitializeInfo__6GroundFi
 27,1,00231b78:getInitializeInfo__6GroundFi
 27,1,0025fd1c:setMotionFrame__6GroundFfUl
@@ -562,7 +562,7 @@ CC008000:WGPIPE
 27,1,00260924:startup__6GroundFP9gfArchiveUlUl
 
 // grGimmick
-27,1,0026A314:__ct__9grGimmickFPc
+27,1,0026A314:__ct__9grGimmickFPCc
 27,1,0026A450:__dt__9grGimmickFv
 27,1,0026A790:processUpdate__9grGimmickFv
 27,1,0026A804:update__9grGimmickFf
@@ -572,7 +572,7 @@ CC008000:WGPIPE
 27,1,0026C8C8:bindData__9grGimmickFP9gfArchive
 27,1,0026D798:setVisibilityAttachedEffect__9grGimmickFUl
 27,1,0026b25c:setNode__9grGimmickFv
-27,1,0026b1c0:setTgtNode__9grGimmickFPc
+27,1,0026b1c0:setTgtNode__9grGimmickFPCc
 27,1,0026c2f8:setMotionRatio__9grGimmickFf
 27,1,0026d940:invalidatedByCameraClipping__9grGimmickFv
 27,1,0026DAF4:setTransparency__9grGimmickFUlUl
@@ -600,8 +600,8 @@ CC008000:WGPIPE
 27,1,0026DD00:getScale__9grGimmickFv
 27,1,0026DCBC:setScale__9grGimmickFP5Vec3f
 27,1,0026DCE4:setScale__9grGimmickFfff
-27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoP13stTriggerDataPc
-27,1,0026DA8C:createSimpleEffectData__9grGimmickFPQ29grGimmick16SimpleEffectDataUlPc
+27,1,0026B34C:createAttachMotionPath__9grGimmickFP23grGimmickMotionPathInfoP13stTriggerDataPCc
+27,1,0026DA8C:createSimpleEffectData__9grGimmickFPQ29grGimmick16SimpleEffectDataUlPCc
 27,1,0026CB94:createIsValidTrigger__9grGimmickFP13stTriggerData
 27,1,0026D124:createEffectWork__9grGimmickFi
 27,1,0026D22C:startGimmickEffect__9grGimmickFUl
@@ -613,7 +613,7 @@ CC008000:WGPIPE
 27,1,0026C0BC:changeMatColAnim__9grGimmickFUlUl
 
 // grYakumono
-27,1,00264c80:__ct__10grYakumonoFPc
+27,1,00264c80:__ct__10grYakumonoFPCc
 27,1,00264cc4:__dt__10grYakumonoFv
 27,1,00264d1c:processUpdate__10grYakumonoFv
 27,1,00264f58:startup__10grYakumonoFP9gfArchiveUlUl
@@ -703,15 +703,15 @@ CC008000:WGPIPE
 27,1,00269830:setCulcCallback__21grYakumonoPunchSliderFP9gfArchive
 
 // grMadein
-27,1,0027583C:__ct__8grMadeinFPc
+27,1,0027583C:__ct__8grMadeinFPCc
 27,1,00275928:__dt__8grMadeinFv
 27,1,00275A98:startup__8grMadeinFP9gfArchiveUlUl
 27,1,00279D50:onDamage__8grMadeinFiP8soDamageP20soDamageAttackerInfo
 27,1,00279E04:onInflictEach__8grMadeinFP14soCollisionLogf
 27,1,00278c54:update__8grMadeinFf
-27,1,00275778:create__8grMadeinFiPcPcQ25Heaps8HeapType
+27,1,00275778:create__8grMadeinFiPCcPCcQ25Heaps8HeapType
 27,1,00279f14:receiveCollMsg_Landing__8grMadeinFP12grCollStatusP16grCollisionJointb
-27,1,00278DC4:setTgtNode__8grMadeinFPc
+27,1,00278DC4:setTgtNode__8grMadeinFPCc
 27,1,00278DC8:getTgtNode__8grMadeinFv
 27,1,00278494:setHitPoint__8grMadeinFfP5Vec3fP5Vec3fbi
 27,1,00278584:setAttack__8grMadeinFfP5Vec3f
@@ -730,7 +730,7 @@ CC008000:WGPIPE
 
 // grGimmickMotionPath
 27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf
-27,1,0026E13C:create__19grGimmickMotionPathFiPcPc
+27,1,0026E13C:create__19grGimmickMotionPathFiPCcPCc
 27,1,0026EB5C:setFrame__19grGimmickMotionPathFf
 27,1,0026EB64:getFrame__19grGimmickMotionPathFv
 27,1,0026EC24:startMove__19grGimmickMotionPathFv

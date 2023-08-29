@@ -121,6 +121,7 @@ namespace nw4r {
 
         class ResMat : public ResCommon<ResMatData> {
         public:
+            inline ResMat() : ResCommon() {}
             inline ResMat(void* data) : ResCommon(data) {}
 
             void DCStore(bool sync);

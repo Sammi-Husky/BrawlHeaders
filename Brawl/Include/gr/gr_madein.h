@@ -77,8 +77,8 @@ public:
     void startEntityLoop(int unk1);
     void switchToMatrix();
 
-    grMadein(char* taskName);
-    virtual void setTgtNode(char* unk1);
+    grMadein(const char* taskName);
+    virtual void setTgtNode(const char* unk1);
     virtual u32 getTgtNode();
     virtual void onDamage(int index, soDamage* damage, soDamageAttackerInfo* attackerInfo);
     virtual void onInflictEach(soCollisionLog* collisionLog, float power);
@@ -87,5 +87,5 @@ public:
     virtual void update(float deltaFrame);
     virtual ~grMadein();
 
-    static grMadein* create(int mdlIndex, char* tgtNodeName, char* taskName, HeapType heapType);
+    static grMadein* create(int mdlIndex, const char* tgtNodeName, const char* taskName, HeapType heapType);
 };

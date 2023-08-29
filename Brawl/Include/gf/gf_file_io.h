@@ -41,8 +41,8 @@ public:
     static int readDirNAND(gfFileIORequest* request);
     static int readDirVFSub(gfFileIORequest* request);
     static int checkFreeSize(gfFileIORequest* request);
-    static FS_TYPE checkFSType(char* filepath);
-    static int checkFile(char* filepath);
+    static FS_TYPE checkFSType(const char* filepath);
+    static int checkFile(const char* filepath);
     static int checkFile(gfFileIORequest* request);
     static int checkFileNAND(gfFileIORequest* request);
     static int checkFileSD(gfFileIORequest* request);
@@ -66,14 +66,14 @@ public:
     static int getFileSize(gfFileIORequest* request);
     static int getFindFirstFileSD(gfFileIORequest* request);
     static int getFindFirstFileVF(gfFileIORequest* request);
-    static int gfFACreateDir(char* filepath);
+    static int gfFACreateDir(const char* filepath);
     static int gfNandErrorCheck(unsigned int unk1); // TODO
-    static int gfNandSetTmpPath(unsigned int unk1, char* filepath);
-    static int gfVFCreateDir(char* filepath);
+    static int gfNandSetTmpPath(unsigned int unk1, const char* filepath);
+    static int gfVFCreateDir(const char* filepath);
     static void gfVFErrorCheck();
     static void initialize();
     static void server();
-    static void setPermissionNANDFile(char* request, unsigned int perms);
+    static void setPermissionNANDFile(const char* request, unsigned int perms);
     static void setFatalErrorCallback(FatalErrorCB cb);
     static void setSDMountStatusCallback(MountStatusCB cb);
 };

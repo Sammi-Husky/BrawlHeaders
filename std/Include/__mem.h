@@ -1,3 +1,3 @@
 #pragma once
 
-int strlen(char* str);
+int strlen(const char* str);

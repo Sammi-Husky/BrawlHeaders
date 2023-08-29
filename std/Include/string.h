@@ -7,13 +7,13 @@
 #include "types.h"
 
 class String {
-    char* m_string;
+    const char* m_string;
 
 public:
     int strcmp(const String str2);
-    static String strncpy(String destination, char* source, size_t num);
+    static String strncpy(String destination, const char* source, size_t num);
 
-    inline String(char* ss)
+    inline String(const char* ss)
     {
         m_string = ss;
     };
@@ -49,4 +49,4 @@ int strcmp(const char* str1, const char* str2);
 int strncmp(const char* str1, const char* str2, size_t num);
 char* strcpy(char* destination, const char* source);
 char* strncpy(char* destination, const char* source, size_t num);
-char* strcat(char* output, char* append);
+char* strcat(char* output, const char* append);

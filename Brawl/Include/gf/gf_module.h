@@ -74,8 +74,8 @@ public:
     };
 
     void setTempolaryLoadHeap(HeapType heapType);
-    void destroy(char* moduleName);
-    static void loadModuleRequest(LoadRequestResult*, gfModuleManager*, char* moduleName, HeapType heapType, bool, bool);
+    void destroy(const char* moduleName);
+    static void loadModuleRequest(LoadRequestResult*, gfModuleManager*, const char* moduleName, HeapType heapType, bool, bool);
 
     static gfModuleManager* getInstance();
 };

@@ -14,7 +14,7 @@ public:
     int m_nodeIndex;
     char m_nodeName[32];
 
-    grGimmickMotionPath(char* taskName, char* nodeName);
+    grGimmickMotionPath(const char* taskName, const char* nodeName);
     virtual void processAnim();
     virtual void loadGroundData(u32 unk1, u32 unk2, u32 unk3);
     virtual int getModelCount();
@@ -27,7 +27,7 @@ public:
     virtual void setFrameModelAnim();
     virtual void clearFrame();
 
-    static grGimmickMotionPath* create(int mdlIndex, char* nodeName, char* taskName);
+    static grGimmickMotionPath* create(int mdlIndex, const char* nodeName, const char* taskName);
 
     void startMove();
     void setFrameUpdate(float);

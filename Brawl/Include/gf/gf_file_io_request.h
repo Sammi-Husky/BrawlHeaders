@@ -16,5 +16,5 @@ public:
     int m_unk4;
     char m_filepath[128];
 
-    static void setReadParam(gfFileIORequest* request, char* filepath, void* addr, int length, int offset);
+    static void setReadParam(gfFileIORequest* request, const char* filepath, void* addr, int length, int offset);
 };

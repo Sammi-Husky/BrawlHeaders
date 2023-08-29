@@ -18,7 +18,7 @@ class soActivatable {
 class StageObject : public gfTask, public soActivatable, public soAnimCmdEventObserver, public soLinkEventObserver {
 public:
     soModuleAccesser* m_moduleAccesser;
-    StageObject(char* name, int unk1, int unk2, int unk3, int unk4, soModuleAccesser* moduleAccesser);
+    StageObject(const char* name, int unk1, int unk2, int unk3, int unk4, soModuleAccesser* moduleAccesser);
     virtual void processAnim();
     virtual void processUpdate();
     virtual void processPreMapCorrection();

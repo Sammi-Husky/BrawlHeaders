@@ -29,7 +29,7 @@ namespace nw4r {
             virtual ~ScnMdl();
 
             static ScnMdl* Construct(void* memAllocator, int x, int y, void* scnModel);
-            static void Pushback(void* thing, void* thing2, char* str); // PushBack/[nw4r3g3d12ScnMdlExpandFPQ34nw4r3g3]/(g3d_scnmdlexpand.o)
+            static void Pushback(void* thing, void* thing2, const char* str); // PushBack/[nw4r3g3d12ScnMdlExpandFPQ34nw4r3g3]/(g3d_scnmdlexpand.o)
         };
     }
 }

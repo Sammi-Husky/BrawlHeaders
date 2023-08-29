@@ -38,7 +38,7 @@ public:
     int processStep;
     char _spacer4[148];
 
-    gfScene* searchScene(char* sceneName);
+    gfScene* searchScene(const char* sceneName);
     static gfSceneManager* getInstance();
 };
 static_assert(sizeof(gfSceneManager) == 800, "Class is wrong size!");

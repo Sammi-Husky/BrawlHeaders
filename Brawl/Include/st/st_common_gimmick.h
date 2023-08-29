@@ -16,7 +16,7 @@ public:
     char _spacer2[2];
     gfArchive* m_commonFileData;
 
-    stCommonGimmick(char* name, srStageKind stageKind);
+    stCommonGimmick(const char* name, srStageKind stageKind);
     virtual void processBegin();
     virtual ~stCommonGimmick();
 

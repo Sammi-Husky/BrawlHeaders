@@ -168,7 +168,7 @@ public:
     void setStageAttackData(grGimmickDamageFloor* attackData, u32 index);
     void removeGround(Ground*);
 
-    Stage(char* name, srStageKind stageKind);
+    Stage(const char* name, srStageKind stageKind);
     virtual void processBegin();
     virtual void processAnim();
     virtual void processUpdate();

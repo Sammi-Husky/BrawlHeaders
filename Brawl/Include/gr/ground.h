@@ -62,7 +62,7 @@ public:
     // 34
     char _spacer5[40];
 
-    Ground(char* taskName);
+    Ground(const char* taskName);
     virtual void processAnim();
     virtual void processUpdate();
     virtual void processGameProc();
@@ -94,19 +94,19 @@ public:
     virtual bool isEnableCalcCollision();
     virtual void enableCalcCollision();
     virtual void disableCalcCollision();
-    virtual u32 getNodeIndex(u32 sceneModelIndex, char* nodeName);
+    virtual u32 getNodeIndex(u32 sceneModelIndex, const char* nodeName);
     virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, u32 nodeIndex);
-    virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, char* nodeName);
+    virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, const char* nodeName);
     virtual bool getNodeMatrix(Matrix* nodeMtx, u32 sceneModelIndex, u32 nodeIndex);
-    virtual bool getNodeMatrix(Matrix* nodeMtx, u32 sceneModelIndex, char* nodeName);
+    virtual bool getNodeMatrix(Matrix* nodeMtx, u32 sceneModelIndex, const char* nodeName);
     virtual bool setNodeVisibility(bool setVisibility, u32 sceneModelIndex, u32 nodeIndex, bool recursive, bool recursive_);
-    virtual bool setNodeVisibility(bool setVisibility, u32 sceneModelIndex, char* nodeName, bool recursive, bool recursive_);
+    virtual bool setNodeVisibility(bool setVisibility, u32 sceneModelIndex, const char* nodeName, bool recursive, bool recursive_);
     virtual bool setNodeVisibilityAll(bool unk1, u32 sceneModelIndex);
     virtual bool isNodeVisible(u32 sceneModelIndex, u32 nodeIndex);
     virtual bool setNodeCollision(bool setCollision, u32 sceneModelIndex, u32 nodeIndex, bool recursive);
-    virtual bool setNodeCollision(bool setCollision, u32 sceneModelIndex, char* nodeName, bool recursive);
+    virtual bool setNodeCollision(bool setCollision, u32 sceneModelIndex, const char* nodeName, bool recursive);
     virtual bool getNodeScale(Vec3f* nodeScale, u32 sceneModelIndex, u32 nodeIndex);
-    virtual bool getNodeScale(Vec3f* nodeScale, u32 sceneModelIndex, char* nodeName);
+    virtual bool getNodeScale(Vec3f* nodeScale, u32 sceneModelIndex, const char* nodeName);
     virtual void setValid(u32 unk1);
     virtual void setValidAttachedEffect(u32 unk1);
     virtual void setInitializeFlag();
@@ -124,10 +124,10 @@ public:
     virtual void invalidatedByCameraClipping();
     virtual void setTransparencyFlag(char flag);
 
-    bool getNodeIndex(u32* nodeIndex, u32 sceneModelIndex, char* nodeName);
+    bool getNodeIndex(u32* nodeIndex, u32 sceneModelIndex, const char* nodeName);
     void addSceneRoot(nw4r::g3d::ScnMdl* sceneModel, int unk2);
     bool isCollisionStatusOwnerTask(grCollStatus* collStatus, int* unk2);
-    bool searchNode(char* unk1, char* nodeName, int* unk3, u32* nodeIndex);
+    bool searchNode(const char* unk1, const char* nodeName, int* unk3, u32* nodeIndex);
     void setBlendColorDisable();
     void setBlendColorEnable();
     void setDontMoveGround();

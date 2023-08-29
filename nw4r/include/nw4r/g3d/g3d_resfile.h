@@ -36,6 +36,7 @@ namespace nw4r {
         class ResFile : public ResCommon<ResFileData> {
             /* data */
         public:
+            inline ResFile() : ResCommon() {}
             inline ResFile(ResFileData* data) : ResCommon(data) {}
             inline ResFile(void* data) : ResCommon(data) {}
 

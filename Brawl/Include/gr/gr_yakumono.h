@@ -14,7 +14,7 @@ protected:
     Yakumono* m_yakumono;
 
 public:
-    grYakumono(char* taskName);
+    grYakumono(const char* taskName);
     virtual void processUpdate();
     virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
     virtual void setValid(u32 unk1);
