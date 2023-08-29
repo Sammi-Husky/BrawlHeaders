@@ -1,4 +1,5 @@
 // global variables
+805a00d0:g_ipSwitch
 805a0148: g_ecMgr
 8059FFAC: g_gfGameApplication
 805A01D0: g_sndSystem
@@ -164,6 +165,18 @@ CC008000:WGPIPE
 8005f7e0:setEffect__5ecMgrFUlP5Vec3fP5Vec3fP5Vec3f
 80060c54:endEffect__5ecMgrFUl
 8005fc5c:setParent__5ecMgrFUlPQ34nw4r3g3d6ScnMdlPci
+800606a8:presetAnmIdx__5ecMgrFiiiiii
+8006001c:setGroundAttach__5ecMgrFUlP14soGroundModule
+800600ec:setGroundAttach__5ecMgrFUlP19grCollisionLineWork
+8006017c:setVisible__5ecMgrFUlb
+8006020c:setVisibleGroup__5ecMgrFUlbUlUl
+800602b0:setPos__5ecMgrFUlP5Vec3f
+80060340:setRot__5ecMgrFUlP5Vec3f
+800603d0:setScl__5ecMgrFUlP5Vec3f
+80060460:setMdlTexpat__5ecMgrFUlUl
+800604f0:setMdlAnmIdx__5ecMgrFUlUlSc
+80060584:setMdlEnableUpdate__5ecMgrFUlbSc
+80060618:setMdlFrame__5ecMgrFUlfSc
 
 // efScreen
 8005e0fc:requestFill__8efScreenFfiiP8_GXColor
