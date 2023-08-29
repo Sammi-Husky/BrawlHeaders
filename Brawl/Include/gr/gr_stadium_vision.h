@@ -53,13 +53,13 @@ public:
     u8 m_414;
     char _415;
 
-    grStadiumVision(char* taskName);
+    grStadiumVision(const char* taskName);
     virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
     virtual void update(float deltaFrame);
     virtual ~grStadiumVision();
 
     void setDisplay(bool);
 
-    static grStadiumVision* create(int mdlIndex, char* tgtNodeName, char* taskName);
+    static grStadiumVision* create(int mdlIndex, const char* tgtNodeName, const char* taskName);
 };
 static_assert(sizeof(grStadiumVision) == 416, "Class is wrong size!");

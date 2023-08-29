@@ -651,7 +651,7 @@ CC008000:WGPIPE
 27,1,00264E5C:isSubFighter__10grYakumonoFPi
 
 // grGimmickSpring
-27,1,0026FC6C:__ct__15grGimmickSpringFPc
+27,1,0026FC6C:__ct__15grGimmickSpringFPCc
 27,1,0026FCC8:__dt__15grGimmickSpringFv
 27,1,0026FD20:update__15grGimmickSpringFf
 27,1,0026FFC4:startup__15grGimmickSpringFP9gfArchiveUlUl
@@ -664,7 +664,7 @@ CC008000:WGPIPE
 27,1,0026FF18:setMotionOff__15grGimmickSpringFv
 
 // grGimmickLadder
-27,1,0026F6C4:__ct__15grGimmickLadderFPc
+27,1,0026F6C4:__ct__15grGimmickLadderFPCc
 27,1,0026F734:__dt__15grGimmickLadderFv
 27,1,0026F940:setInitializeFlag__15grGimmickLadderFv
 27,1,0026F78C:startup__15grGimmickLadderFP9gfArchiveUlUl
@@ -683,7 +683,7 @@ CC008000:WGPIPE
 27,5,58B78:__vt__17grGimmickCatapult
 
 // grGimmickWarpZone
-27,1,00274078:__ct__17grGimmickWarpZoneFPc
+27,1,00274078:__ct__17grGimmickWarpZoneFPCc
 27,1,002740EC:__dt__17grGimmickWarpZoneFv
 27,1,0027455C:update__17grGimmickWarpZoneFf
 27,1,00274168:startup__17grGimmickWarpZoneFP9gfArchiveUlUl
@@ -692,7 +692,7 @@ CC008000:WGPIPE
 27,1,00274144:setWarpAttrData__17grGimmickWarpZoneFP5Vec3fUcb
 
 // grYakumonoPunchSlider
-27,1,00268B18:__ct__21grYakumonoPunchSliderFPc
+27,1,00268B18:__ct__21grYakumonoPunchSliderFPCc
 27,1,00268BCC:__dt__21grYakumonoPunchSliderFv
 27,1,00268C24:update__21grYakumonoPunchSliderFf
 27,1,0026907C:startup__21grYakumonoPunchSliderFP9gfArchiveUlUl
@@ -740,7 +740,7 @@ CC008000:WGPIPE
 27,1,0026EB6C:getTRS__19grGimmickMotionPathFP5Vec3fP5Vec3fP5Vec3f
 
 // grStadiumVision
-27,1,0027AAF8:create__15grStadiumVisionFiPcPc
+27,1,0027AAF8:create__15grStadiumVisionFiPCcPCc
 27,1,0027ADF8:setDisplay__15grStadiumVisionFb
 
 // StageObject

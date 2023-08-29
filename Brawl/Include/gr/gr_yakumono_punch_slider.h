@@ -44,7 +44,7 @@ protected:
     ykData m_ykData;
 
 public:
-    grYakumonoPunchSlider(char* taskName);
+    grYakumonoPunchSlider(const char* taskName);
     virtual ~grYakumonoPunchSlider();
     virtual void update(float deltaFrame);
     virtual void startup(gfArchive* archive, u32 unk1, u32 unk2);

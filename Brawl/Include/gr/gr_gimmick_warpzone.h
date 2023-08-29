@@ -38,7 +38,7 @@ protected:
     ykAreaData m_ykData;
 
 public:
-    grGimmickWarpZone(char* taskName);
+    grGimmickWarpZone(const char* taskName);
     virtual ~grGimmickWarpZone();
     virtual void update(float deltaFrame);
     virtual void startup(gfArchive* archive, u32 unk1, u32 unk2);

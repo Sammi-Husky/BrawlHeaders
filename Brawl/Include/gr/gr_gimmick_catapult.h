@@ -37,7 +37,7 @@ protected:
     ykAreaData m_ykData;
 
 public:
-    grGimmickCatapult(char* taskName) : grYakumono(taskName)
+    grGimmickCatapult(const char* taskName) : grYakumono(taskName)
     {
         m_motionPath = NULL;
         m_state = 0;
@@ -55,6 +55,6 @@ public:
 
     void presentFighterPosEvent();
 
-    static grGimmickCatapult* create(int mdlIndex, char* taskName);
+    static grGimmickCatapult* create(int mdlIndex, const char* taskName);
 };
 static_assert(sizeof(grGimmickCatapult) == 420, "Class is wrong size!");

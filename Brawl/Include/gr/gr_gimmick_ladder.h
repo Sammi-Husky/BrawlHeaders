@@ -29,7 +29,7 @@ protected:
     Vec3f m_underOffset;
 
 public:
-    grGimmickLadder(char* taskName);
+    grGimmickLadder(const char* taskName);
     virtual void update(float deltaFrame);
     virtual void startup(gfArchive* archive, u32 unk1, u32 unk2);
     virtual void onGimmickEvent(soGimmickEventInfo* eventInfo, int* taskId);

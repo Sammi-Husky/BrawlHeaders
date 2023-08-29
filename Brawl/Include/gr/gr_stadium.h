@@ -8,7 +8,7 @@ protected:
     float m_scaleY;
     float m_0x118;
 public:
-    grStadium(char* taskName);
+    grStadium(const char* taskName);
     virtual void update(float deltaFrame);
     virtual void updateCallback(u32 index);
     virtual void setScaleY(float scaleY);
