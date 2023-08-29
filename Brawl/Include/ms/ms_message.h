@@ -16,6 +16,7 @@ public:
     bool attachMsgBuf(u32 index, nw4r::g3d::ScnMdl* sceneModel, const char* nodeName, u8, int, float);
     bool changeMsgBuf(int index);
     void clearMsgBuf();
+    void getPrintIndexData(u32 index, char**, u32*);
     void setWindow(float, float, float, float);
     void setFace(u8);
     void setFixedWidth(float);
