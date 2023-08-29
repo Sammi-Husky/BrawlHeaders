@@ -3,11 +3,19 @@
 #include <StaticAssert.h>
 #include <gf/gf_task.h>
 #include <types.h>
+#include <nw4r/g3d/g3d_anmscn.h>
 
 class gfSceneRoot : public gfTask {
-    char _spacer[1228];
-
 public:
+
+    char _64[20];
+    nw4r::g3d::AnmScnRes* m_anmScnRes;
+    char _88[1060];
+    float m_shadowPitch;
+    float m_shadowYaw;
+    float m_1156;
+    char _1160[132];
+
     virtual void processAnim();
     virtual void processFixCamera();
     virtual void renderPre();
