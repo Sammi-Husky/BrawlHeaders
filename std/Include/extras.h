@@ -2,4 +2,4 @@
 
 #include "types.h"
 
-void itoa(int value, const char* str, int base);
+void itoa(int value, char* str, int base);

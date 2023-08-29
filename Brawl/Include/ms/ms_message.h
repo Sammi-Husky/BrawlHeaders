@@ -13,7 +13,7 @@ public:
     char _164[316];
 
     bool allocMsgBuf(u32 msgSizes, u32 numMsgs, HeapType heapType);
-    bool attachMsgBuf(u32 index, nw4r::g3d::ScnMdl* sceneModel, char* nodeName, u8, int, float);
+    bool attachMsgBuf(u32 index, nw4r::g3d::ScnMdl* sceneModel, const char* nodeName, u8, int, float);
     bool changeMsgBuf(int index);
     void clearMsgBuf();
     void setWindow(float, float, float, float);

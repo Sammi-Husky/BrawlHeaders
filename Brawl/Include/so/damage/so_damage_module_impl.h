@@ -31,7 +31,7 @@ public:
     virtual float getDamageLr(float, float, void*, void*, int, int);
     virtual bool setForceDamage(StageObject* stageObject, Vec3f* pos, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
     virtual bool setForceDamaage(StageObject* stageObject, int nodeId, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
-    virtual bool setForceDamaage(StageObject* stageObject, char* nodeName, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
+    virtual bool setForceDamaage(StageObject* stageObject, const char* nodeName, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
     virtual void addDamage(float damage, u32 damageIndex);
     virtual float getDamage(u32 damageIndex);
     virtual float getReaction(u32 damageIndex);
@@ -99,7 +99,7 @@ public:
     virtual float getDamageLr(float, float, void*, void*, int, int);
     virtual bool setForceDamage(StageObject* stageObject, Vec3f* pos, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
     virtual bool setForceDamaage(StageObject* stageObject, int nodeId, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
-    virtual bool setForceDamaage(StageObject* stageObject, char* nodeName, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
+    virtual bool setForceDamaage(StageObject* stageObject, const char* nodeName, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
     virtual void addDamage(float damage, u32 damageIndex);
     virtual float getDamage(u32 damageIndex);
     virtual float getReaction(u32 damageIndex);
