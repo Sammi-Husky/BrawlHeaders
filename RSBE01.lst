@@ -97,7 +97,7 @@ CC008000:WGPIPE
 803fa3fc:strcmp__FPCcPCc
 803fa3fc:strcmp
 803fa340:strncpy
-803fa340:strncpy__6StringF6StringPcUl
+803fa340:strncpy__6StringF6StringPCcUl
 803fa280:strcpy__FPcPCc
 803fa280:strcpy
 803f89fc:sprintf
@@ -198,7 +198,7 @@ CC008000:WGPIPE
 80079758:prepareSE__14snd3DGeneratorF5SndIDl
 
 // gfTask
-8002d8b8:__ct__6gfTaskFPciiii
+8002d8b8:__ct__6gfTaskFPCciiii
 8002ddc8:processDefault__6gfTaskFv
 8002ddd8:processBegin__6gfTaskFv
 8002dde8:processAnim__6gfTaskFv
@@ -948,8 +948,8 @@ CC008000:WGPIPE
 8002134c:del__14gfFileIOHandleFv
 800213e8:writeNAND__14gfFileIOHandleFv
 800219e0:read__14gfFileIOHandleFPCcQ25Heaps8HeapTypei
-800215e0:readRequest__14gfFileIOHandleFPcPvii
-80021498:readRequest__14gfFileIOHandleFPcQ25Heaps8HeapTypeii
+800215e0:readRequest__14gfFileIOHandleFPCcPvii
+80021498:readRequest__14gfFileIOHandleFPCcQ25Heaps8HeapTypeii
 80021540:readRequest1__14gfFileIOHandleFv
 80021680:readRequestCached__14gfFileIOHandleFv
 80021738:readRequestCached1__14gfFileIOHandleFv
@@ -970,7 +970,7 @@ CC008000:WGPIPE
 80021fa0:getPool__14gfFileIOHandleFv
 80021fac:release__14gfFileIOHandleFv
 8002239c:setReadParam__15gfFileIORequestFP15gfFileIORequestPcPvii
-8001be00:gfFACreateDir__8gfFileIOFPc
+8001be00:gfFACreateDir__8gfFileIOFPCc
 
 // gameGlobal
 8004D9DC:getLanguage__10GameGlobalFv
@@ -1004,18 +1004,18 @@ CC008000:WGPIPE
 8002ffc8:drawCopyEFB__12gfCopyEFBMgrFiP8_GXColor
 
 // MuObject
-800b534c:changeAnimN__8MuObjectFPc
-800b45a8:changeNodeAnimN__8MuObjectFPc
-800b46f0:changeNodeAnimNIf__8MuObjectFPc
-800b4844:changeVisAnimN__8MuObjectFPc
-800b4988:changeVisAnimNIf__8MuObjectFPc
-800b4ad8:changeTexPatAnim__8MuObjectFPc
-800b4c14:changeTexPatAnimN__8MuObjectFPc
-800b4d3c:changeTexPatAnimNIf__8MuObjectFPc
-800b4e70:changeTexSrtAnimN__8MuObjectFPc
-800b4f98:changeTexSrtAnimNIf__8MuObjectFPc
-800b50cc:changeClrAnimN__8MuObjectFPc
-800b51f4:changeClrAnimNIf__8MuObjectFPc
+800b534c:changeAnimN__8MuObjectFPCc
+800b45a8:changeNodeAnimN__8MuObjectFPCc
+800b46f0:changeNodeAnimNIf__8MuObjectFPCc
+800b4844:changeVisAnimN__8MuObjectFPCc
+800b4988:changeVisAnimNIf__8MuObjectFPCc
+800b4ad8:changeTexPatAnim__8MuObjectFPCc
+800b4c14:changeTexPatAnimN__8MuObjectFPCc
+800b4d3c:changeTexPatAnimNIf__8MuObjectFPCc
+800b4e70:changeTexSrtAnimN__8MuObjectFPCc
+800b4f98:changeTexSrtAnimNIf__8MuObjectFPCc
+800b50cc:changeClrAnimN__8MuObjectFPCc
+800b51f4:changeClrAnimNIf__8MuObjectFPCc
 800b784c:setFrameVisible__8MuObjectFf
 800b7a18:setFrameMatCol__8MuObjectFf
 800b7900:setFrameTex__8MuObjectFf
@@ -1097,7 +1097,7 @@ CC008000:WGPIPE
 80069860:__dt__7MessageFv
 800696b4:__ct__7MessageFUlQ25Heaps8HeapType
 8006b400:allocMsgBuf__7MessageFUlUlQ25Heaps8HeapType
-8006b518:attachMsgBuf__7MessageFUlPQ34nw4r3g3d6ScnMdlPcUcif
+8006b518:attachMsgBuf__7MessageFUlPQ34nw4r3g3d6ScnMdlPCcUcif
 8006a674:changeMsgBuf__7MessageFi
 8006b674:clearMsgBuf__7MessageFv
 80069af0:setWindow__7MessageFffff
