@@ -30,8 +30,8 @@ public:
     virtual bool check(bool);
     virtual float getDamageLr(float, float, void*, void*, int, int);
     virtual bool setForceDamage(StageObject* stageObject, Vec3f* pos, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
-    virtual bool setForceDamaage(StageObject* stageObject, int nodeId, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
-    virtual bool setForceDamaage(StageObject* stageObject, const char* nodeName, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
+    virtual bool setForceDamage(StageObject* stageObject, int nodeId, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
+    virtual bool setForceDamage(StageObject* stageObject, const char* nodeName, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
     virtual void addDamage(float damage, u32 damageIndex);
     virtual float getDamage(u32 damageIndex);
     virtual float getReaction(u32 damageIndex);
@@ -71,6 +71,8 @@ public:
 static_assert(sizeof(soDamageModule) == 12, "Class is wrong size!");
 
 class soDamageModuleImpl : public soDamageModule, public soCollisionHitEventObserver, public soStatusEventObserver, public soEventPresenter<soDamageEventObserver>, public soAnimCmdEventObserver {
+
+public:
     soModuleAccesser* m_moduleAccesser;
     soArray<soDamage>* m_damageArray;
     soDamageNoReactionModule m_noReactionModule;
@@ -85,7 +87,6 @@ class soDamageModuleImpl : public soDamageModule, public soCollisionHitEventObse
     u8 m_sleep;
     char _pad[2];
 
-public:
     virtual ~soDamageModuleImpl();
     virtual void activate(float damage);
     virtual void deactivate();
@@ -98,8 +99,8 @@ public:
     virtual bool check(bool);
     virtual float getDamageLr(float, float, void*, void*, int, int);
     virtual bool setForceDamage(StageObject* stageObject, Vec3f* pos, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
-    virtual bool setForceDamaage(StageObject* stageObject, int nodeId, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
-    virtual bool setForceDamaage(StageObject* stageObject, const char* nodeName, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
+    virtual bool setForceDamage(StageObject* stageObject, int nodeId, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
+    virtual bool setForceDamage(StageObject* stageObject, const char* nodeName, u32 collisionIndex, u32 damageIndex, bool getAbsolute, bool initInfo);
     virtual void addDamage(float damage, u32 damageIndex);
     virtual float getDamage(u32 damageIndex);
     virtual float getReaction(u32 damageIndex);
