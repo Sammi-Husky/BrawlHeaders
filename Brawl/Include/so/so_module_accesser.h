@@ -16,6 +16,7 @@
 #include <so/slow/so_slow_module_impl.h>
 #include <so/sound/so_sound_module_impl.h>
 #include <so/status/so_status_module_impl.h>
+#include <so/kinetic/so_kinetic_module_impl.h>
 #include <so/event/so_event_manage_module_impl.h>
 #include <so/work/so_work_manage_module_impl.h>
 #include <types.h>
@@ -55,7 +56,7 @@ public:
     soStatusModule* m_statusModule;
     void* m_generalTermDisideModule;
     void* m_switchDecideModule;
-    void* m_kineticModule;
+    soKineticModule* m_kineticModule;
     soEventManageModule* m_eventManageModule;
     void* m_generateArticleManageModule;
     soEffectModule* m_effectModule;
@@ -145,6 +146,11 @@ public:
     inline soStatusModule* getStatusModule()
     {
         return this->m_enumerationStart->m_statusModule;
+    }
+
+    inline soKineticModule* getKineticModule()
+    {
+        return this->m_enumerationStart->m_kineticModule;
     }
 
     inline soEventManageModule* getEventManageModule()

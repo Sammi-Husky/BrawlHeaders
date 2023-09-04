@@ -23,6 +23,5 @@ public:
     virtual bool isNull();
 
     bool m_isNull;
-    char _spacer[3];
 };
 static_assert(sizeof(soNullable) == 8, "Class is wrong size!");
