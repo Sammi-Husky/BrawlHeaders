@@ -3,34 +3,8 @@
 #include <StaticAssert.h>
 #include <so/controller/so_controller_impl.h>
 #include <so/event/so_event_observer.h>
+#include <ip/Input.h>
 #include <types.h>
-
-union Button {
-    struct {
-        unsigned int m_bits;
-    };
-
-    struct {
-        unsigned short : 16;
-        bool m_tapJump : 1;
-        bool m_rightTaunt : 1;
-        bool m_leftTaunt : 1;
-        bool m_downTaunt : 1;
-        bool m_sideTaunt : 1;
-        bool m_upTaunt : 1;
-        bool _6 : 1;
-        bool m_cStick : 1;
-        bool _8 : 1;
-        bool _9 : 1;
-        bool _10 : 1;
-        bool _11 : 1;
-        bool m_shield : 1;
-        bool m_jump : 1;
-        bool m_special : 1;
-        bool m_attack : 1;
-    };
-};
-static_assert(sizeof(Button) == 4, "Class is wrong size!");
 
 class soControllerModule {
 public:
@@ -75,7 +49,7 @@ public:
     virtual int getTrigger();
     virtual u8 getTriggerCount(u8 index);
     virtual u8 getTriggerCountPrev(u8 index);
-    virtual Button getButton();
+    virtual ipButton getButton();
     virtual int getRelease();
     virtual void setOff(bool);
     virtual void setPrev(int);
