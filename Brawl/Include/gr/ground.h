@@ -78,8 +78,8 @@ public:
     virtual void setVisibilityByClipping(u32 unk1);
     virtual void setVisibilityAttachedEffect(u32 unk1);
     virtual void receiveCollMsg(int direction, grCollStatus* collStatus, grCollisionJoint* collisionJoint);
-    virtual void receiveCollMsg_Landing(grCollStatus* collStatus, grCollisionJoint* collisionJoint, bool unk3);
-    virtual void receiveCollMsg_Heading(grCollStatus* collStatus, grCollisionJoint* collisionJoint, bool unk3);
+    virtual void receiveCollMsg_Landing(grCollStatus* collStatus, grCollisionJoint* collisionJoint, bool isFirstContact);
+    virtual void receiveCollMsg_Heading(grCollStatus* collStatus, grCollisionJoint* collisionJoint, bool isFirstContact);
     virtual void receiveCollMsg_Wall(grCollStatus* collStatus, grCollisionJoint* collisionJoint);
     virtual void receiveCollMsg_Attack(grCollStatus* collStatus, grCollisionJoint* collisionJoint);
     virtual void unloadData();

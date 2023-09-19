@@ -304,7 +304,7 @@ struct itCreate {
     Vec3f* m_pos1;
     Vec3f* m_pos2;
     float m_lr;
-    int m_32;
+    int m_teamNo;
     int m_36;
     u8 m_40;
     char _41[3];
