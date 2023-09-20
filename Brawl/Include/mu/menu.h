@@ -162,8 +162,52 @@ enum MuCharKind { /* Record Bank */
     MuCharKind_Sonic=34
 };
 
-class muMenu {
-public:
+enum MuStageKind {
+    MuStageKind_Battle = 0,
+    MuStageKind_Final = 1,
+    MuStageKind_Dolpic = 2,
+    MuStageKind_Mansion = 3,
+    MuStageKind_MarioPast = 4,
+    MuStageKind_Kart = 5,
+    MuStageKind_Donkey = 6,
+    MuStageKind_Jungle = 7,
+    MuStageKind_Pirates = 8,
+    MuStageKind_Oldin = 9,
+    MuStageKind_Norfair = 10,
+    MuStageKind_Orpheon = 11,
+    MuStageKind_Crayon = 12,
+    MuStageKind_Halberd = 13,
+    MuStageKind_StarFox = 14,
+    MuStageKind_Stadium = 15,
+    MuStageKind_Tengan = 16,
+    MuStageKind_FZero = 17,
+    MuStageKind_Ice = 18,
+    MuStageKind_GW = 19,
+    MuStageKind_Emblem = 20,
+    MuStageKind_Madein = 21,
+    MuStageKind_Earth = 22,
+    MuStageKind_Palutena = 23,
+    MuStageKind_Famicom = 24,
+    MuStageKind_NewPork = 25,
+    MuStageKind_Village = 26,
+    MuStageKind_MetalGear = 27,
+    MuStageKind_GreenHill = 28,
+    MuStageKind_PictChat = 29,
+    MuStageKind_Plankton = 30,
+    MuStageKind_DxShrine = 31,
+    MuStageKind_DxYorster = 32,
+    MuStageKind_DxGarden = 33,
+    MuStageKind_DxOnett = 34,
+    MuStageKind_DxGreens = 35,
+    MuStageKind_DxCruise = 36,
+    MuStageKind_DxCorneria = 37,
+    MuStageKind_DxBigBlue = 38,
+    MuStageKind_DxZebes = 39,
+    MuStageKind_DxPStadium = 40,
+    MuStageKind_Edit = 41
+};
+
+namespace muMenu {
     //    int activeRumbleController;
     //    int globalRumbleSetting;
 
