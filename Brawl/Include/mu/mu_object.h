@@ -7,9 +7,9 @@
 class MuObject {
 
 public:
-    char unk[0x10]; // this is 0x60 in size
-    nw4r::g3d::ScnObj* scnObj;
-    gfModelAnimation* gfModelAnimation;
+    char unk[0x10];
+    nw4r::g3d::ScnMdl* m_sceneModel;
+    gfModelAnimation* m_modelAnim;
     char unk2[0x44];
 
     static MuObject* create(nw4r::g3d::ResFile** output, const char* node, char flag, int otherflag, HeapType type);
@@ -28,3 +28,4 @@ public:
     void setFrameTex(float frame);
     virtual ~MuObject();
 };
+static_assert(sizeof(MuObject) == 0x60, "Class is wrong size!");

@@ -1003,6 +1003,19 @@ CC008000:WGPIPE
 8002ff44:getEFB__12gfCopyEFBMgrFi
 8002ffc8:drawCopyEFB__12gfCopyEFBMgrFiP8_GXColor
 
+// MuMsg
+800b8930:create__5MuMsgFUlQ25Heaps8HeapTypeUl
+800b8b08:allocMsgBuf__5MuMsgFUlUl
+800b8c7c:setMsgData__5MuMsgFPv
+800b8c90:attachScnMdlSimple__5MuMsgFUlPQ34nw4r3g3d12ScnMdlSimpleUlf
+800b93f4:setFontWidthModeAuto__5MuMsgFUl
+800b93c4:setAlignMode__5MuMsgFUlQ25MuMsg9AlignMode
+800b93a4:setFontColor__5MuMsgFUlUcUcUcUc
+800b9448:FUN_800b9448__5MuMsgFUlb
+800b9460:FUN_800b9460__5MuMsgFUlUcUcUcf
+800b9230:printf__5MuMsgFUlPCce
+800b91b8:printIndex__5MuMsgFUlUlPv
+
 // MuObject
 800b534c:changeAnimN__8MuObjectFPCc
 800b45a8:changeNodeAnimN__8MuObjectFPCc
