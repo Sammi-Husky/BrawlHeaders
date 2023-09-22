@@ -169,3 +169,9 @@ public:
     }
 };
 static_assert(sizeof(soModuleAccesser) == 224, "Class is wrong size!");
+
+
+template <class T>
+class soModuleAccesserBuilder {
+    T t;
+};

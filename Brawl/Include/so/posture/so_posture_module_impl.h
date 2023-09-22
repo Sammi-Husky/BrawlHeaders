@@ -10,6 +10,9 @@
 template <class T>
 class soInterpolation {
     T t[4];
+
+    soInterpolation();
+    ~soInterpolation();
 };
 
 typedef soInterpolation<Vec3f> interpolationVec3f;

@@ -6,6 +6,7 @@
 #include <so/collision/so_collision_attack_part.h>
 #include <so/damage/so_damage.h>
 #include <so/event/so_event_system.h>
+#include <so/so_null.h>
 #include <types.h>
 
 class soModuleAccesser;
@@ -323,3 +324,27 @@ public:
     virtual void notifyEventDestructInstance(soModuleAccesser* moduleAccesser);
 };
 static_assert(sizeof(soModelEventObserver) == 12, "Class is wrong size!");
+
+class soEventObserverRegistrationDesc : public soNullable {
+    virtual ~soEventObserverRegistrationDesc();
+    virtual bool checkCollisionHit();
+    virtual bool checkCollisionAttack();
+    virtual bool checkCollisionCatch();
+    virtual bool checkGimmick();
+    virtual bool checkStatus();
+    virtual bool checkAnimCmd();
+    virtual bool checkDamage();
+    virtual bool checkLink();
+    virtual bool checkSituation();
+    virtual bool checkModel();
+    virtual bool checkMotion();
+    virtual bool checkArticle();
+    virtual bool checkItemManage();
+    virtual bool checkCapture();
+    virtual bool checkCollisionShield();
+    virtual bool checkCollisionReflector();
+    virtual bool checkCollisionAbsorber();
+    virtual bool checkCollisionSearch();
+    virtual bool checkTurn();
+
+};
