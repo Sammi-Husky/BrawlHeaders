@@ -37,14 +37,26 @@ private:
 public:
     bool allocMsgBuf(u32 msgSizes, u32 numMsgs);
     void setMsgData(void* msgBinData);
+    int getMsgData(u32, void** outUnk);
+    void initWindowSetting(WindowSetting* windowSetting);
     void attachScnMdlSimple(u32 msgIndex, nw4r::g3d::ScnMdlSimple* sceneModel, u32 boneTextIndex, float fontSize);
     void setFontWidthModeAuto(u32 msgIndex);
     void setAlignMode(u32 msgIndex, AlignMode alignMode);
     void setFontColor(u32 msgIndex, u8 r, u8 g, u8 b, u8 a);
+    void setHSpace(u32 msgIndex, float);
+    void setWScale(u32 msgIndex, float);
+    void getWScale(u32 msgIndex, float);
+    void setHScale(u32 msgIndex, float);
+    void getHScale(u32 msgIndex, float);
+    void setDelayPrint(u32, float, float, float, float);
+    bool isEndDelayPrint(u32 index);
     void FUN_800b9448(u32 msgIndex, bool);
     void FUN_800b9460(u32 msgIndex, u8, u8, u8, float);
+    void beginPrint(u32 msgIndex);
     void printf(u32 msgIndex, const char* format, ...);
     bool printIndex(u32 msgIndex, u32 lineIndex, void* msgBinData);
+
+
 
     static MuMsg* create(u32 fontSetting, HeapType heapType, u32);
 };

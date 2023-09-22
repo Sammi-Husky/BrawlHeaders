@@ -1015,6 +1015,16 @@ CC008000:WGPIPE
 800b9460:FUN_800b9460__5MuMsgFUlUcUcUcf
 800b9230:printf__5MuMsgFUlPCce
 800b91b8:printIndex__5MuMsgFUlUlPv
+800b9348:getMsgData__5MuMsgFUlPPv
+800b8be0:initWindowSetting__5MuMsgFPQ25MuMsg13WindowSetting
+800b94a0:setHSpace__5MuMsgFUlf
+800b94b4:setWScale__5MuMsgFUlf
+800b94c8:getWScale__5MuMsgFUlf
+800b94dc:setHScale__5MuMsgFUlf
+800b94f0:getHScale__5MuMsgFUlf
+800b9504:setDelayPrint__5MuMsgFUlffff
+800b9524:isEndDelayPrint__5MuMsgFUl
+800b8ee8:beginPrint__5MuMsgFUl
 
 // MuObject
 800b534c:changeAnimN__8MuObjectFPCc
