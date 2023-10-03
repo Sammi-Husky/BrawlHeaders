@@ -6,7 +6,8 @@
 
 struct gmSetRule {
     char _0[0x2];
-    GameRule gameRule : 8;
+    u8 _1 : 5;
+    GameRule m_rule : 3;
     u8 m_timeMinutes;
     u8 m_stockCount;
     u8 m_handicap;
