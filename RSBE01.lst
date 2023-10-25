@@ -321,6 +321,7 @@ CC008000:WGPIPE
 // hkMath
 802a0bcc:fabs__6hkMathFf
 80291dd8:max2f__6hkMathFff
+802a0bf8:sqrt__6hkMathFf
 
 // CameraController
 8009c69c:changeInput__16CameraControllerFQ216CameraController4Kind
@@ -839,6 +840,8 @@ CC008000:WGPIPE
 27,1,0010BCF4:setSUlcide__9ftManagerFi
 27,1,0010BF4C:pickupCoin__9ftManagerFii
 27,1,00109E14:setWarpFighter__9ftManagerFiP5Vec3ffb
+27,1,0010ADE8:getFighterCenterPos__9ftManagerFii
+27,1,0010AF34:getFighterLr__9ftManagerFii
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi

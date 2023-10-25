@@ -110,6 +110,8 @@ public:
     Fighter* getSubFighter(int entryId);
     ftOwner* getOwner(int entryId);
     int getTeam(int entryId, bool unk2, bool unk3);
+    Vec3f getFighterCenterPos(int entryId, int unk);
+    float getFighterLr(int entryId, int unk);
     Fighter* searchNearFighter(float unk1, float radius, Vec3f* pos, int team, bool unk4);
     void setHeal(int entryId, float heal);
     void setCurry(int entryId);
