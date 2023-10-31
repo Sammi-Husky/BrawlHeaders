@@ -134,6 +134,10 @@ CC008000:WGPIPE
 8000443c:memset
 80004338:memcpy__FPvPvUl
 
+// math
+804009e0:sin
+804004d8:cos
+
 // NW4R
 8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileFv
 8018d770:GetResAnmChrNumEntries__Q34nw4r3g3d7ResFileFv
