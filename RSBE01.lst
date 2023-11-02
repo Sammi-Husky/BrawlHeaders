@@ -137,6 +137,7 @@ CC008000:WGPIPE
 // math
 804009e0:sin
 804004d8:cos
+802a0bcc:fabsf
 
 // NW4R
 8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileFv
@@ -299,6 +300,7 @@ CC008000:WGPIPE
 27,1,00000EF8:__pl__5Vec3fFRC5Vec3f
 27,1,00000F1C:__ml__5Vec3fFf
 27,1,00000F1C:__ml__FfRC5Vec3f
+27,1,00000F38:length__5Vec3fFv
 
 // Matrix
 8003ee18:getRotate__6MatrixFP5Vec3f
@@ -326,6 +328,7 @@ CC008000:WGPIPE
 802a0bcc:fabs__6hkMathFf
 80291dd8:max2f__6hkMathFff
 802a0bf8:sqrt__6hkMathFf
+8032ca40:acos__6hkMathFf
 
 // CameraController
 8009c69c:changeInput__16CameraControllerFQ216CameraController4Kind

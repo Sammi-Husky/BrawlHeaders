@@ -24,7 +24,22 @@ static_assert(sizeof(grGimmickMotionPathData) == 8, "Class is wrong size!");
 struct grGimmickMotionPathInfo {
     gfArchive* m_archive;
     grGimmickMotionPathData* m_motionPathData;
-    int m_0x8;
+    union {
+        struct {
+            union {
+                struct {
+                    u8 m_motionPathFlagPadding : 6;
+                    bool m_isMotionPathRotate : 1;
+                    bool m_isMotionPathTranslate : 1;
+                    u32 : 24;
+                };
+                struct {
+                    u32 m_motionPathFlags;
+                };
+            };
+        };
+    };
+
     int m_0xc;
     int m_0x10;
     int m_0x14;
@@ -175,7 +190,15 @@ public:
     // 90
     grCalcWorldCallBack m_calcWorldCallBack;
     // A0
-    char m_unk5;
+    union {
+        struct {
+            u8 m_motionPathFlagPadding : 6;
+            bool m_isMotionPathRotate : 1;
+            bool m_isMotionPathTranslate : 1;
+        };
+        u8 m_motionPathFlags;
+    };
+
     // A1
     bool m_transparencyFlag;
     // A2
