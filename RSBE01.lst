@@ -137,6 +137,7 @@ CC008000:WGPIPE
 // math
 804009e0:sin
 804004d8:cos
+80400b38:atan2
 802a0bcc:fabsf
 
 // NW4R
@@ -515,6 +516,9 @@ CC008000:WGPIPE
 27,1,00238EB0:setGravityHalf__7stMeleeFv
 27,1,00238E90:setGravityNormal__7stMeleeFv
 
+// stUtility
+27,1,00227CC4:stRayCheck__FP5Vec3fP5Vec3fP5Vec3fP5Vec3fUcP11grCollisionUcUc
+
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv
 27,1,0025f64c:loadGroundData__6GroundFUlUlUl
@@ -533,6 +537,7 @@ CC008000:WGPIPE
 27,1,0025fa34:unloadData__6GroundFv
 27,1,00230728:setMdlIndex__6GroundFi
 27,1,00260B48:getNodeIndex__6GroundFUlPCc
+27,1,00260BDC:getNodeIndex__6GroundFPUlUlPCc
 27,1,00260c84:getNodePosition__6GroundFP5Vec3fUlUl
 27,1,00260d78:getNodePosition__6GroundFP5Vec3fUlPCc
 27,1,00260e88:getNodeMatrix__6GroundFP6MatrixUlUl
@@ -746,6 +751,7 @@ CC008000:WGPIPE
 27,1,0026EFD8:isStartFrame__19grGimmickMotionPathFv
 27,1,0026EFA0:applyEndFrame__19grGimmickMotionPathFv
 27,1,0026EB6C:getTRS__19grGimmickMotionPathFP5Vec3fP5Vec3fP5Vec3f
+27,1,0026EDF0:stopStartSE__19grGimmickMotionPathFv
 
 // grStadiumVision
 27,1,0027AAF8:create__15grStadiumVisionFiPCcPCc
@@ -765,6 +771,8 @@ CC008000:WGPIPE
 27,1,0008CB0C:getTeamNo__23soExternalValueAccesserFP11StageObject
 27,1,0008C9D4:getPos__23soExternalValueAccesserFP11StageObject
 27,1,0008CAB4:getLr__23soExternalValueAccesserFP11StageObject
+27,1,0008CBF4:getStatusKind__23soExternalValueAccesserFP11StageObject
+27,1,0008CC4C:getSituationKind__23soExternalValueAccesserFP11StageObject
 
 // ftExternalValueAccesser
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
