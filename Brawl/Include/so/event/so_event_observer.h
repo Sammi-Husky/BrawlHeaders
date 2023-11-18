@@ -146,7 +146,7 @@ public:
     soCollisionAttackEventObserver(short unitID) : soEventObserver<soCollisionAttackEventObserver>(unitID) {};
 
     virtual void addObserver(int param1, int param2);
-    virtual void notifyEventCollisionAttack(void* unk1, void* unk2, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventCollisionAttack(float power, soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);;
     virtual bool notifyEventCollisionAttackCheck(u32 flags);
 };
 static_assert(sizeof(soCollisionAttackEventObserver) == 12, "Class is wrong size!");
@@ -199,7 +199,7 @@ public:
     soCollisionSearchEventObserver(short unitID) : soEventObserver<soCollisionSearchEventObserver>(unitID) {};
 
     virtual void addObserver(int param1, int param2);
-    virtual void notifyEventCollisionSearch(void*, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventCollisionSearch(soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionSearchCheck();
 };
 static_assert(sizeof(soCollisionSearchEventObserver) == 12, "Class is wrong size!");

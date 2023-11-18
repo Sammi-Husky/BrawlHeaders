@@ -332,7 +332,21 @@ public:
     u8 m_2260;
     char _2261[7];
     itArchive* m_itArchive;
-    char _2272[13440];
+    float m_strongestAttackPower;
+    int m_hitStopFrames;
+    char _2280[13368];
+    int m_articleId;
+    char _15652[12];
+    int m_attackHitTaskId;
+    int m_searchHitTaskId;
+    int m_15672;
+    int m_15676;
+    u8 searchHitCollisionIndex;
+    u8 m_15681;
+    char _15682[2];
+    Vec3f m_searchHitPos;
+    Vec3f m_startInhaledPos;
+    char _15708[4];
 
     BaseItem(itCreate* create);
     virtual void processUpdate();
@@ -377,7 +391,7 @@ public:
     virtual int getGlowAttack();
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void notifyEventChangeSituation(int unk1, int unk2, soModuleAccesser* moduleAccesser);
-    virtual void notifyEventCollisionAttack(void* unk1, void* unk2, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventCollisionAttack(float power, soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionAttackCheck(u32 flags);
     virtual void notifyEventCollisionShield(soCollisionAttackModule* attackModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser, float power, float posX, float);
     virtual void notifyEventCollisionShieldSearch(soCollisionSearchModule* searchModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser);
@@ -385,7 +399,7 @@ public:
     virtual void notifyEventCollisionReflector(soCollisionAttackModule* attackModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser, float power, float posX, float);
     virtual void notifyEventCollisionReflectorSearch(soCollisionSearchModule* searchModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionReflectorCheck();
-    virtual void notifyEventCollisionSearch(void*, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventCollisionSearch(soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionSearchCheck();
     virtual void notifyEventInfoWindow(int);
     virtual void notifyEventGimmick(soGimmickEventInfo* eventInfo, int* taskId);
@@ -420,9 +434,9 @@ public:
     virtual void onRenderDebug(BaseItem* item);
     virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void onNotifyEventAnimCmd(BaseItem* item, acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int);
-    virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int hitTaskId);
+    virtual bool onNotifyEventCollisionSearch(BaseItem* item, soCollisionLog* collisionLog);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
     virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onNotifyEventCaptureStatus(BaseItem* item); // TODO
     virtual void onNotifyEventGimmick(BaseItem* item, soGimmickEventInfo* eventInfo, int* taskId);

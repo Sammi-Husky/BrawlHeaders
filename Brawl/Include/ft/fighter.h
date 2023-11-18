@@ -137,7 +137,7 @@ public:
     virtual void dropItemCheck(void*, bool);
     virtual bool isHeartSwapEnableCondition();
     virtual void analyzeSeal(void*);
-    virtual void notifyEventCollisionAttack(void* unk1, void* unk2, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventCollisionAttack(float power, soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionAttackFighter(void* unk, soModuleAccesser* moduleAccesser);
     virtual ftOwner* getOwner();
     virtual ftKind getFtKind();
@@ -155,7 +155,7 @@ public:
     virtual void notifyEventCollisionAbsorber(soCollisionAttackModule* attackModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser, float power, float posX, float);
     virtual bool notifyEventCollisionAbsorberCheck();
     virtual bool notifyEventCaptureStatus(soModuleAccesser* moduleAccesser, int taskId, int, int);
-    virtual void notifyEventCollisionSearch(void*, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventCollisionSearch(soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionSearchCheck();
     virtual void notifyEventChangeCollisionHit(int index, soModuleAccesser* moduleAccesser);
     virtual void notifyEventOnDamage(soDamage* damage, bool, soModuleAccesser* moduleAccesser);

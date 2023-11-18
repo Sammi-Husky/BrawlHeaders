@@ -12,7 +12,7 @@ static_assert(sizeof(itBadgeCustomizer) == 12, "Class is wrong size!");
 
 class itBananaCustomizer : public itCustomizer<itBananaCustomizer> {
     virtual ~itBananaCustomizer();
-    virtual bool notifyEventCollisionAttackCheck(u32 flags);
+    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int hitTaskId);
 };
 static_assert(sizeof(itBananaCustomizer) == 12, "Class is wrong size!");
 
@@ -25,8 +25,8 @@ static_assert(sizeof(itBeamSwordCustomizer) == 12, "Class is wrong size!");
 class itMoneyCustomizer : public itCustomizer<itMoneyCustomizer> {
     virtual ~itMoneyCustomizer();
     virtual void onReset(BaseItem* item);
-    virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual bool onNotifyEventCollisionSearch(BaseItem* item, soCollisionLog* collisionLog);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
     virtual void onAction(BaseItem* item, int, float rate);
     virtual bool isSafe(BaseItem* item);
 };
@@ -41,8 +41,8 @@ static_assert(sizeof(itBombheiCustomizer) == 12, "Class is wrong size!");
 class itChewingCustomizer : public itCustomizer<itChewingCustomizer> {
     virtual ~itChewingCustomizer();
     virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
-    virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual bool onNotifyEventCollisionSearch(BaseItem* item, soCollisionLog* collisionLog);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
     virtual bool onHave(BaseItem* item, int);
     virtual bool onReflect(BaseItem* item);
     virtual bool isReferenceControlerHave(BaseItem* item);
@@ -67,7 +67,7 @@ static_assert(sizeof(itCurryShotCustomizer) == 12, "Class is wrong size!");
 
 class itDoseisanCustomizer : public itCustomizer<itDoseisanCustomizer> {
     virtual ~itDoseisanCustomizer();
-    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int);
+    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int hitTaskId);
     virtual bool isUseSpeedDamage(BaseItem* item);
 };
 static_assert(sizeof(itDoseisanCustomizer) == 12, "Class is wrong size!");
@@ -104,7 +104,7 @@ class itFigureCustomizer : public itCustomizer<itFigureCustomizer> {
     virtual void onReset(BaseItem* item);
     virtual void onProcessFixPosition(BaseItem* item);
     virtual void onRenderPre(BaseItem* item);
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
     virtual void onAction(BaseItem* item, int, float rate);
 };
 static_assert(sizeof(itFigureCustomizer) == 12, "Class is wrong size!");
@@ -120,7 +120,7 @@ static_assert(sizeof(itFireFlowerCustomizer) == 12, "Class is wrong size!");
 
 class itGoldenHammerCustomizer : public itCustomizer<itGoldenHammerCustomizer> {
     virtual ~itGoldenHammerCustomizer();
-    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int);
+    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int hitTaskId);
     virtual void onAction(BaseItem* item, int, float rate);
     virtual bool onHave(BaseItem* item, int);
 };
@@ -156,7 +156,7 @@ static_assert(sizeof(itKusudamaCustomizer) == 12, "Class is wrong size!");
 
 class itTuchCustomizer : public itCustomizer<itTuchCustomizer> {
     virtual ~itTuchCustomizer();
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
 };
 static_assert(sizeof(itTuchCustomizer) == 12, "Class is wrong size!");
 
@@ -243,8 +243,8 @@ class itSmokeScreenCustomizer : public itCustomizer<itSmokeScreenCustomizer> {
     virtual ~itSmokeScreenCustomizer();
     virtual void onReset(BaseItem* item);
     virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
-    virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual bool onNotifyEventCollisionSearch(BaseItem* item, soCollisionLog* collisionLog);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
     virtual bool onReflect(BaseItem* item);
     virtual bool isReferenceControlerHave(BaseItem* item);
 };
@@ -255,7 +255,7 @@ class itSpringCustomizer : public itCustomizer<itSpringCustomizer> {
     virtual void onDestruct(BaseItem* item);
     virtual void onProcessFixPosition(BaseItem* item);
     virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
     virtual void onNotifyEventGimmick(BaseItem* item, soGimmickEventInfo* eventInfo, int* taskId);
     virtual bool onHave(BaseItem* item, int);
 };
@@ -286,13 +286,13 @@ static_assert(sizeof(itSuperScopeCustomizer) == 12, "Class is wrong size!");
 
 class itTeamHealingCustomizer : public itCustomizer<itTeamHealingCustomizer> {
     virtual ~itTeamHealingCustomizer();
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
 };
 static_assert(sizeof(itTeamHealingCustomizer) == 12, "Class is wrong size!");
 
 class itThunderCustomizer : public itCustomizer<itThunderCustomizer> {
     virtual ~itThunderCustomizer();
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
     virtual int onResult(BaseItem* item);
 };
 static_assert(sizeof(itThunderCustomizer) == 12, "Class is wrong size!");
@@ -340,8 +340,8 @@ static_assert(sizeof(itDiddyPeanutsCustomizer) == 12, "Class is wrong size!");
 class itLinkBombCustomizer : public itCustomizer<itLinkBombCustomizer> {
     virtual ~itLinkBombCustomizer();
     virtual void onProcessFixPosition(BaseItem* item);
-    virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual bool onNotifyEventCollisionSearch(BaseItem* item, soCollisionLog* collisionLog);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
 };
 static_assert(sizeof(itLinkBombCustomizer) == 12, "Class is wrong size!");
 
@@ -382,7 +382,7 @@ static_assert(sizeof(itManaphyCustomizer) == 12, "Class is wrong size!");
 class itSonansCustomizer : public itCustomizer<itSonansCustomizer> {
     virtual ~itSonansCustomizer();
     virtual void onProcessFixPosition(BaseItem* item);
-    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int);
+    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int hitTaskId);
     virtual bool onDamage(BaseItem* item, int, void*);
     virtual bool isUseSpeedDamage(BaseItem* item);
     virtual u32 getKineticFlags(BaseItem* item);
@@ -424,7 +424,7 @@ static_assert(sizeof(itKatanaAnaCustomizer) == 12, "Class is wrong size!");
 
 class itLittlemacCustomizer : public itCustomizer<itLittlemacCustomizer> {
     virtual ~itLittlemacCustomizer();
-    virtual bool notifyEventCollisionAttackCheck(u32 flags);
+    virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int hitTaskId);
 };
 static_assert(sizeof(itLittlemacCustomizer) == 12, "Class is wrong size!");
 
@@ -438,8 +438,8 @@ class itNintendogsHiCustomizer : public itCustomizer<itNintendogsHiCustomizer> {
     virtual ~itNintendogsHiCustomizer();
     virtual void onProcessFixPosition(BaseItem* item);
     virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
-    virtual void onNotifyEventCollisionSearch(BaseItem* item, void*);
-    virtual void onNotifyEventCollisionSearchCheck(BaseItem* item, int, u8, Vec3f*);
+    virtual bool onNotifyEventCollisionSearch(BaseItem* item, soCollisionLog* collisionLog);
+    virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
     virtual bool onHave(BaseItem* item, int);
     virtual bool isReferenceControlerHave(BaseItem* item);
 };
