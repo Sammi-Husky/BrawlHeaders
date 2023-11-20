@@ -17,7 +17,7 @@ struct grGimmickMotionPathData {
     char m_index;
     MotionPathMode m_pathMode : 8;
     char m_mdlIndex;
-    char _padding;
+    char m_7;
 };
 static_assert(sizeof(grGimmickMotionPathData) == 8, "Class is wrong size!");
 
@@ -28,7 +28,7 @@ struct grGimmickMotionPathInfo {
         struct {
             union {
                 struct {
-                    u8 m_motionPathFlagPadding : 6;
+                    u8 : 6;
                     bool m_isMotionPathRotate : 1;
                     bool m_isMotionPathTranslate : 1;
                     u32 : 24;
