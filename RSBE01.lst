@@ -769,6 +769,7 @@ CC008000:WGPIPE
 
 // soExternalValueAccesser
 27,1,0008CB0C:getTeamNo__23soExternalValueAccesserFP11StageObject
+27,1,0008C9CC:getModuleAccesser__23soExternalValueAccesserFP11StageObject
 27,1,0008C9D4:getPos__23soExternalValueAccesserFP11StageObject
 27,1,0008CAB4:getLr__23soExternalValueAccesserFP11StageObject
 27,1,0008CBF4:getStatusKind__23soExternalValueAccesserFP11StageObject
@@ -837,6 +838,7 @@ CC008000:WGPIPE
 27,1,00109BCC:isValidEntryId__9ftManagerFi
 27,1,0010B1E4:getEntryIdFromIndex__9ftManagerFi
 27,1,0010A50C:getFighter__9ftManagerFii
+27,1,0010A5A4:getSubFighter__9ftManagerFi
 27,1,0010B1D0:getEntryCount__9ftManagerFv
 27,1,0010B22C:getEntryId__9ftManagerFi
 27,1,0010B29C:getEntryIdFromTaskId__9ftManagerFiPi
