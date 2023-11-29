@@ -336,7 +336,9 @@ public:
     int m_hitStopFrames;
     char _2280[13368];
     int m_articleId;
-    char _15652[12];
+    char _15652[4];
+    int m_genParamId;
+    char _15660[4];
     int m_attackHitTaskId;
     int m_searchHitTaskId;
     int m_15672;

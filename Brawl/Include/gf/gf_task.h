@@ -15,7 +15,7 @@ public:
     gfTask* m_connectedTask;
     gfTask* m_attachedTask;
     gfTask* m_nextTask;
-    int m_taskID;
+    int m_taskId;
     u16 m_0x2c;
     u16 m_taskCategory;
     char _unk[0xC];
