@@ -879,6 +879,7 @@ CC008000:WGPIPE
 27,1,002A3F4C:preloadItemKindArchive__9itManagerF6itKindUlQ29itArchive4Typeb
 27,1,002A7070:createItem__9itManagerF6itKindUliiUciii
 27,1,002A8124:createItemInstance__9itManagerFP8itCreate
+27,1,002A8550:getItemNum__9itManagerF6itKindiii
 27,1,002A8640:getItemNum__9itManagerF6itKind
 27,1,002A7BA0:removeItem__9itManagerFP8BaseItem
 

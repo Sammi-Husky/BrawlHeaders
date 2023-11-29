@@ -61,6 +61,7 @@ public:
     BaseItem* createItem(itKind kind, u32 variation, int emitterTaskId, int, u8, int, int, int);
     BaseItem* createItemInstance(itCreate* create);
     u32 getItemNum(itKind kind);
+    u32 getItemNum(itKind kind, int variation, int taskId, int);
     void removeItem(BaseItem*);
     static itManager* getInstance();
 };
