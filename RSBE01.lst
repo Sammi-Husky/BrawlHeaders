@@ -193,6 +193,8 @@ CC008000:WGPIPE
 80073c98:freeGroup__9sndSystemFii
 800742b0:playSE__9sndSystemFiiiii
 80073b68:loadSoundGroup__9sndSystemF10SndGroupIDib
+80073fe8:getBGMId__9sndSystemFv
+80073db0:playBGM__9sndSystemFiUlb
 
 // snd3DGenerator
 80079550:__ct__14snd3DGeneratorFv
@@ -939,6 +941,7 @@ CC008000:WGPIPE
 41,1,0000CCE4:removeEnemyAll__9emManagerFv
 41,1,0000D528:removeArchiveAll__9emManagerFv
 41,1,0000C7B4:remove__9emManagerFv
+41,1,0000CF18:getEnemyCount__9emManagerFv
 41,1,0000CF8C:getEnemyCountFromKind__9emManagerF9EnemyKind
 
 // emWeaponManager (Note: addresses are based on abridged sora_enemy_vs)

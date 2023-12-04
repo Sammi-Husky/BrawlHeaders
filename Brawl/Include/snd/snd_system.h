@@ -17,6 +17,8 @@ public:
     s32 prepareSE(SndID p1, s32 p2, s32 p3);
     void setPan(s32 p1, float p2);
     void startSE(s32 p1, s32 p2, s32 p3);
+    bool playBGM(int bgmId, u32 fade, bool);
+    int getBGMId();
 };
 static_assert(sizeof(sndSystem) == 0xbd0, "Class is wrong size!");
 
