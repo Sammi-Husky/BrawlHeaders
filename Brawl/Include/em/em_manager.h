@@ -37,6 +37,7 @@ public:
     void removeArchiveAll();
     static void create(u32 numEntries1, u32 numEntries2, u8 primidFaceType);
     static void remove();
+    u32 getEnemyCountFromKind(EnemyKind enemyKind);
     static emManager* getInstance();
 };
 static_assert(sizeof(emManager) == 32, "Class is wrong size!");

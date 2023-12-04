@@ -939,6 +939,7 @@ CC008000:WGPIPE
 41,1,0000CCE4:removeEnemyAll__9emManagerFv
 41,1,0000D528:removeArchiveAll__9emManagerFv
 41,1,0000C7B4:remove__9emManagerFv
+41,1,0000CF8C:getEnemyCountFromKind__9emManagerF9EnemyKind
 
 // emWeaponManager (Note: addresses are based on abridged sora_enemy_vs)
 41,1,0002A7A4:create__15emWeaponManagerFv
