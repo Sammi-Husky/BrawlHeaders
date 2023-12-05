@@ -4,11 +4,11 @@
 #include <types.h>
 
 class emArchive {
-    int enmCommonArchiveId;
-    int brresArchiveId;
-    int paramArchiveId;
-    int brresArchiveId2;
-    int brresArchiveId3;
-    int primFaceBrresArchiveId;
+    int enmCommonResourceId;
+    int brresResourceId;
+    int paramResourceId;
+    int weaponResourceId;
+    int faceTexBrresResourceId;
+    int extendBrresResourceId;
 };
 static_assert(sizeof(emArchive) == 24, "Class is wrong size!");

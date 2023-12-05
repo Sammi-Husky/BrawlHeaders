@@ -124,9 +124,9 @@ public:
     char _1[3];
     EnemyKind m_enemyKind;
     int m_8;
-    float m_facingDirection;
-    Vec3f m_spawnPos;
-    u32 m_startingAction;
+    float m_startLr;
+    Vec3f m_startPos;
+    u32 m_startStatusKind;
     u8 m_32;
     char _33[3];
     float m_36;
@@ -134,7 +134,7 @@ public:
     float m_posX2;
     float m_posY1;
     float m_posY2;
-    EnemyKind m_connectedEnemyKind;
+    EnemyKind m_connectedEnemyKind; // TODO: Needs verifying!
     void* m_epbm;
     void* m_epsp;
     grGimmickMotionPath* m_motionPath;
