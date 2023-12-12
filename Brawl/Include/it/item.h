@@ -297,7 +297,7 @@ enum itKind {
 
 struct itCreate {
     int m_index;
-    int m_emitterTaskId;
+    int m_creatorTaskId;
     int m_teamOwnerTaskId;
     itKind m_kind;
     u32 m_variation;
@@ -326,7 +326,7 @@ public:
     int m_instanceId;
     itKind m_kind;
     int m_variation;
-    int m_emitterTaskId;
+    int m_creatorTaskId;
     itKind m_lotCreateKind;
     itCustomizerInterface* m_customizer;
     u8 m_2260;
