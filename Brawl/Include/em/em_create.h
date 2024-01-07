@@ -134,7 +134,7 @@ public:
     float m_posX2;
     float m_posY1;
     float m_posY2;
-    EnemyKind m_connectedEnemyKind; // TODO: Needs verifying!
+    int m_connectedTriggerId;
     void* m_epbm;
     void* m_epsp;
     grGimmickMotionPath* m_motionPath;
