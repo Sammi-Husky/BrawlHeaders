@@ -171,7 +171,7 @@ CC008000:WGPIPE
 8005f7e0:setEffect__5ecMgrFUlP5Vec3fP5Vec3fP5Vec3f
 80060c54:endEffect__5ecMgrFUl
 8005fc5c:setParent__5ecMgrFUlPQ34nw4r3g3d6ScnMdlPCci
-800606a8:presetAnmIdx__5ecMgrFiiiiii
+800606a8:preSetAnmIdx__5ecMgrFiiiiii
 8006001c:setGroundAttach__5ecMgrFUlP14soGroundModule
 800600ec:setGroundAttach__5ecMgrFUlP19grCollisionLineWork
 8006017c:setVisible__5ecMgrFUlb
@@ -624,6 +624,7 @@ CC008000:WGPIPE
 27,1,0026CE10:startGimmickSE__9grGimmickFUl
 27,1,0026D264:stopGimmickEffect__9grGimmickFUl
 27,1,0026D08C:stopGimmickSE__9grGimmickFUl
+27,1,0026ACA8:updataGimmickEffect__9grGimmickFf
 27,1,0026CCA0:createSoundWork__9grGimmickFUlUl
 27,1,0026C1BC:changeShapeAnim__9grGimmickFUlUl
 27,1,0026C0BC:changeMatColAnim__9grGimmickFUlUl

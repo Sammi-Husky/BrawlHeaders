@@ -20,7 +20,7 @@ public:
     void endEffect(u32);
     void killEffect(u32, u32, u32);
     void setParent(u32 unk, nw4r::g3d::ScnMdl*, const char*, int);
-    void presetAnmIdx(int chrIndex, int visIndex, int patIndex, int srtIndex, int clrIndex, int shpIndex);
+    void preSetAnmIdx(int chrIndex, int visIndex, int patIndex, int srtIndex, int clrIndex, int shpIndex);
     void setGroundAttach(u32, soGroundModule* groundModule);
     void setGroundAttach(u32, grCollisionLineWork* lineWork);
     void setVisible(u32, bool isVisible);
