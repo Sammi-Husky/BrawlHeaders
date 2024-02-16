@@ -139,22 +139,37 @@ static_assert(sizeof(soMotionModule) == 4, "Class is wrong size!");
 class soMotionModuleImpl : public soMotionModule, public soStatusEventObserver, public soAnimCmdEventObserver, public soModelEventObserver, public soEventPresenter<soMotionEventObserver> {
 
     // 52
-    char _spacer1[8];
+    char _spacer1[4];
+
+    // 56
+    int m_kindOffset;
 
     // 60
     soAnimChr m_mainAnim;
 
     // 88
-    int m_subAction;
+    int m_kind;
 
     // 92
-    char _spacer2[16];
+    float m_weight;
+
+    // 96
+    float m_prevWeight;
+
+    // 100
+    char _100[4];
+
+    // 104
+    float m_weightRate;
 
     // 108
     soAnimChr m_secondaryAnim;
 
     // 136
-    char _spacer3[104];
+    int m_secondaryKind;
+
+    // 140
+    char _spacer3[100];
 
     // 240
     void* m_transitionModuleEntity;
@@ -203,7 +218,7 @@ public:
     virtual void disableNode(int);
     virtual void calcNode(void*, int, int);
     virtual void calcNode(int, void*, void*);
-    virtual bool changeMotionRequest(u32 motionId);
+    virtual bool changeMotionRequest(soMotionChangeParam* changeParam);
     virtual void processFixPosition();
     virtual void processFixCamera();
     virtual void add2ndAnimChr(float, float, int kind, bool);
@@ -279,7 +294,7 @@ public:
     virtual void setTransMoveSpeedNoScale(bool);
     virtual bool isProcessFixPositionDone();
     virtual bool isForceImmediatelyStatusInterpret();
-    virtual void changeMotion(int motionId);
+    virtual void changeMotion(soMotionChangeParam* changeParam);
 
     virtual void* getResFileData(int);
     virtual u32 isObserv(char unk1);
