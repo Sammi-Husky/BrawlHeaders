@@ -8,6 +8,8 @@
 #include <so/so_dispose_instance_manager.h>
 #include <so/event/so_event_observer.h>
 #include <so/so_log_event_presenter.h>
+#include <ft/ft_entry_manager.h>
+#include <ft/ft_slot_manager.h>
 #include <so/so_null.h>
 #include <types.h>
 
@@ -77,7 +79,10 @@ public:
     soEventManageModuleImpl m_eventManageModule;
     char m_200[4];
     short m_manageID;
-    char _206[146];
+    char _206[132];
+    ftEntryManager* m_entryManager;
+    ftSlotManager* m_slotManager;
+    void* m_dataProvider;
 
     virtual ~ftManager();
 

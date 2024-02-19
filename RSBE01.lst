@@ -8,6 +8,8 @@
 27,6,58D8: g_stTriggerMng
 805a00e0:g_GameGlobal
 27,6,2E68: g_ftManager
+27,6,2E90, g_ftSlotManager
+27,6,2EB4: g_ftInstanceManager
 27,6,2E70: g_ftAudienceManager
 27,6,5518: g_aiMgr
 27,6,E8: g_soWorld
@@ -837,6 +839,12 @@ CC008000:WGPIPE
 27,1,0010DB70:notifyEventHeartSwapEnd__22ftOutsideEventObserverFv
 27,1,0010E030:addObserver__41soEventObserver<22ftOutsideEventObserver>Fii
 27,5,26540:__vt__22ftOutsideEventObserver
+
+// ftEntryManager
+27,1,00119110:getEntity__14ftEntryManagerFUl
+
+// ftSlotManager
+27,1,001248C0:create__17ftInstanceManagerFP8ftCreate
 
 // ftManager
 27,1,00109BCC:isValidEntryId__9ftManagerFi
