@@ -16,8 +16,8 @@ public:
     gfModelAnimation* m_modelAnim;
     char unk2[0x44];
 
-    static MuObject* create(nw4r::g3d::ResFile* modelSource, const char* node, char flag, nw4r::g3d::ResFile* textureSource, HeapType type);
-    static MuObject* create(nw4r::g3d::ResFile* modelSource, int node, char flag, nw4r::g3d::ResFile* textureSource, HeapType type);
+    static MuObject* create(nw4r::g3d::ResFile* modelSource, const char* node, int drawPriority, nw4r::g3d::ResFile* textureSource, HeapType type);
+    static MuObject* create(nw4r::g3d::ResFile* modelSource, int node, int drawPriority, nw4r::g3d::ResFile* textureSource, HeapType type);
     void changeAnimN(const char* animName);
     void changeNodeAnimN(const char* animName);
     void changeClrAnimN(const char* animName);
