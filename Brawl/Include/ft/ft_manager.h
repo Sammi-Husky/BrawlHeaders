@@ -108,10 +108,10 @@ public:
     int getEntryCount();
     int getEntryId(int playerNo);
     int getEntryIdFromIndex(int index);
-    int getEntryIdFromTaskId(int taskId, int* unk);
+    int getEntryIdFromTaskId(int taskId, int* outInstanceIndex);
     int getPlayerNo(int entryId);
     bool isFighterActivate(int entryId, int);
-    Fighter* getFighter(int entryId, int unk);
+    Fighter* getFighter(int entryId, int instanceIndex);
     Fighter* getSubFighter(int entryId);
     ftOwner* getOwner(int entryId);
     int getTeam(int entryId, bool unk2, bool unk3);
