@@ -5,6 +5,7 @@
 #include <types.h>
 #include <ft/ft_owner.h>
 #include <ft/ft_input.h>
+#include <gm/gm_lib.h>
 
 class Fighter;
 enum ftKind {
@@ -129,7 +130,9 @@ public:
 
     int m_entryId;
     u8 m_entryCount;
-    char _0x9[4];
+    char _0x9;
+    s8 m_activeInstanceIndex;
+    char _0xb[2];
     bool m_isReady;
     char _0xe[3];
     u8 _0x11;
@@ -142,7 +145,7 @@ public:
     int m_heartSwapEntryId;
     char _0x54[4];
     int m_playerNo;
-    char _0x5c[4];
+    gmCharacterKind m_characterKind;
     int m_pointTeam;
     char _0x64[480];
 };
