@@ -88,6 +88,11 @@ public:
     soModuleEnumeration* m_enumerationStart;
     void* vtable1;
 
+    inline soModelModule* getModelModule()
+    {
+        return this->m_enumerationStart->m_modelModule;
+    }
+
     inline soMotionModule* getMotionModule()
     {
         return this->m_enumerationStart->m_motionModule;

@@ -780,6 +780,7 @@ CC008000:WGPIPE
 27,1,0008CAB4:getLr__23soExternalValueAccesserFP11StageObject
 27,1,0008CBF4:getStatusKind__23soExternalValueAccesserFP11StageObject
 27,1,0008CC4C:getSituationKind__23soExternalValueAccesserFP11StageObject
+27,1,0008CCFC:getWorkFlag__23soExternalValueAccesserFP11StageObjectUl
 
 // ftExternalValueAccesser
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
@@ -875,6 +876,7 @@ CC008000:WGPIPE
 // Fighter
 27,1,00138900:setCurry__7FighterFbi
 27,1,0013C860:warp__7FighterFP5Vec3ffb
+27,1,0012B4F0:start__7FighterFP5Vec3fffib
 
 // ftOwner
 27,1,00111B2C:getStockCount__7ftOwnerFv

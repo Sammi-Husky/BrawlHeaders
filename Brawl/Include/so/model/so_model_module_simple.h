@@ -5,6 +5,7 @@
 #include <types.h>
 
 class soModelModule : public soNull, public soNullable {
+public:
     // TODO: Verify Params
     virtual void setUpMtx(u32 unk2);
     virtual void setUpMtx(u32* unk2, int unk3);
@@ -78,7 +79,7 @@ class soModelModule : public soNull, public soNullable {
     virtual void setVirtualNodeUpdate();
     virtual void isAddEnvMapMat();
     virtual void isEnvMap();
-    virtual void switchEnvMap();
+    virtual void switchEnvMap(bool);
     virtual void isRefFB();
     virtual void preShadowCalcView();
     virtual void getWorldMtxArray();
@@ -94,7 +95,7 @@ class soModelModuleSimple : public soModelModule {
 
     // 0x10
     int m_unk2;
-
+public:
     // TODO: Verify Params
     virtual void setUpMtx(u32 unk2);
     virtual void setUpMtx(u32* unk2, int unk3);
@@ -168,7 +169,7 @@ class soModelModuleSimple : public soModelModule {
     virtual void setVirtualNodeUpdate();
     virtual void isAddEnvMapMat();
     virtual void isEnvMap();
-    virtual void switchEnvMap();
+    virtual void switchEnvMap(bool);
     virtual void isRefFB();
     virtual void preShadowCalcView();
     virtual void getWorldMtxArray();

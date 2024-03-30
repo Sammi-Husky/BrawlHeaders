@@ -12,7 +12,7 @@ class soModuleAccesser;
 class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObserver, public soEventPresenter<soModelEventObserver> {
     char _spacer1[156];
     soModuleAccesser* m_moduleAccesser;
-
+public:
     // TODO: Verify Params
     virtual void setUpMtx(u32 unk2);
     virtual void setUpMtx(u32* unk2, int unk3);
@@ -71,7 +71,7 @@ class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObser
     virtual void setVirtualNodeUpdate();
     virtual void isAddEnvMapMat();
     virtual void isEnvMap();
-    virtual void switchEnvMap();
+    virtual void switchEnvMap(bool);
     virtual void isRefFB();
     virtual void preShadowCalcView();
     virtual void getWorldMtxArray();

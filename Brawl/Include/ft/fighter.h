@@ -109,6 +109,7 @@ public:
     virtual void* getStatusGimmickUniqProcessPool();
     virtual void* getVirtualNodeMatrixPool();
 
+    void start(Vec3f* pos, float lr, float damage, int, bool);
     void setCurry(bool setStatus, int unk2);
     void setHammer(bool setStatus, int unk2);
     void setSuperStar(bool setStatus, int unk2, bool unk3);
