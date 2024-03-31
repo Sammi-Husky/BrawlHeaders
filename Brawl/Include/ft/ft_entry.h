@@ -18,7 +18,7 @@ enum ftKind {
     Fighter_Kirby = 0x5,
     Fighter_Fox = 0x6,
     Fighter_Pikachu = 0x7,
-    Fighter_Luigi = 0x7,
+    Fighter_Luigi = 0x8,
     Fighter_CaptainFalcon = 0x9,
     Fighter_Captain = 0x9,
     Fighter_Ness = 0xA,
