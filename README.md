@@ -25,4 +25,4 @@ This project would not be possible without the gracious contributions of many wo
  - [Fudgepop01](https://github.com/fudgepop01)
 
 **This Project also makes use of the following open source projects:**
- - [OpenRVL](https://github.com/kiwi515/open_rvl), an open source reimplementation of the Revolution SDK
+ - [OpenRVL](https://github.com/Sammi-Husky/open_rvl), an open source reimplementation of the Revolution SDK
