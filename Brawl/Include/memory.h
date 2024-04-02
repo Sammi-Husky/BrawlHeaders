@@ -13,6 +13,7 @@ namespace Heaps {
         Network = 0x6,
         WiiPad = 0x7,
         IteamResource = 0x8,
+        ItemResource = 0x8,
         InfoResource = 0x9,
         CommonResource = 0xa,
         Replay = 0xb,

@@ -13,6 +13,7 @@
 27,6,2E70: g_ftAudienceManager
 27,6,5518: g_aiMgr
 27,6,E8: g_soWorld
+80494958:g_HeapInfos
 8059FF80:g_gfSceneRoot
 80406920:MOD_PATCH_DIR
 
@@ -1257,6 +1258,7 @@ CC008000:WGPIPE
 // gfMemoryPool
 80025c58:alloc__12gfMemoryPoolFPvUli
 800259a4:create__12gfMemoryPoolFPvUlPCc
+8002606c:getMaxFreeBlockSize__12gfMemoryPoolFv
 
 // Compression
 80206018:CXUncompressLZ__FPvPv
