@@ -30,6 +30,7 @@ public:
     ProjectionType m_projectionType;
     char _spacer4[48];
 
+    void setGX();
     void calcProjection3Dto2D(Vec3f*, Vec2f*);
 };
 static_assert(sizeof(gfCamera) == 308, "Class is wrong size!");

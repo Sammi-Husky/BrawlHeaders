@@ -5,7 +5,7 @@
 
 namespace ms {
     template <class T>
-    class TextWriterBase : CharWriter {
+    class TextWriterBase : public CharWriter {
         char _112[48];
     };
 }
