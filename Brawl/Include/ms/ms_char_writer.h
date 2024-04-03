@@ -6,14 +6,6 @@
 
 using namespace nw4r::ut;
 
-// Used to print text with a gradient color.
-struct ColorRect {
-    Color topLeft;
-    Color topRight;
-    Color bottomLeft;
-    Color bottomRight;
-};
-
 namespace ms {
     class CharWriter {
     public:
