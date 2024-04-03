@@ -18,22 +18,22 @@ namespace ms {
     class CharWriter {
     public:
         // These get set by SetColorMapping
-        Color color_mapping_1;  // 0
-        Color color_mapping_2;  // 4
+        Color m_colorMapping1;  // 0
+        Color m_colorMapping2;  // 4
         struct {
-            Color topLeft;     // 8
-            Color topRight;    // 12, 0xC
-            Color bottomLeft;  // 16, 0x10
-            Color bottomRight; // 20, 0x14
-        } colorRect; 
-        Color textColor; // 24, 0x18
+            Color m_topLeft;     // 8
+            Color m_topRight;    // 12, 0xC
+            Color m_bottomLeft;  // 16, 0x10
+            Color m_bottomRight; // 20, 0x14
+        } m_colorRect; 
+        Color m_textColor; // 24, 0x18
         int m_28; // Always 0xFFFFFFFF?, 0x1C
-        char _32[4]; // 0x20
-        float fontScaleX; // 36, 0x24
-        float fontScaleY; // 40, 0x28
-        float xPos; // 44, 0x2C
-        float yPos; // 48, 0x30
-        float zPos; // 52, 0x34
+        char m_32[4]; // 0x20
+        float m_fontScaleX; // 36, 0x24
+        float m_fontScaleY; // 40, 0x28
+        float m_xPos; // 44, 0x2C
+        float m_yPos; // 48, 0x30
+        float m_zPos; // 52, 0x34
         int m_56; // Always = 1?, 0x38
         int m_60; // Always = 1?, 0x3C
         char _64[3]; // Always 0xCCCCFF?, 0x40
@@ -45,17 +45,17 @@ namespace ms {
         // More investigation should be used to determine which class specifically.
         // The melee font which is always loaded seems to be at 0x80497e44
         // offset 72
-        void* font;
+        void* m_font;
         char _76[4];
         // offset 80
-        float scale; // World scaler, so it affects positioning too. Usually 1.
+        float m_scale; // World scaler, so it affects positioning too. Usually 1.
         char _84[4];
         // offset 88
-        float unknownFontWidthModifier; // Usually close to 1, seems to affect width.
+        float m_unknownFontWidthModifier; // Usually close to 1, seems to affect width.
         // offset 92
-        float edgeWidth; // Text outline in units / 6
+        float m_edgeWidth; // Text outline in units / 6
         // offset 96
-        Color edgeColor;
+        Color m_edgeColor;
         // offset 100
         int m_100;
         float m_104;
