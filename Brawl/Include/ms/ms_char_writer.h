@@ -1,24 +1,22 @@
 #pragma once
 
+#include <GX.h>
 #include <StaticAssert.h>
 #include <types.h>
-#include <nw4r/ut/color.h>
-
-using namespace nw4r::ut;
 
 namespace ms {
     class CharWriter {
     public:
         // These get set by SetColorMapping
-        Color m_colorMapping1;  // 0
-        Color m_colorMapping2;  // 4
+        GXColor m_colorMapping1;  // 0
+        GXColor m_colorMapping2;  // 4
         struct {
-            Color m_topLeft;     // 8
-            Color m_topRight;    // 12, 0xC
-            Color m_bottomLeft;  // 16, 0x10
-            Color m_bottomRight; // 20, 0x14
-        } m_colorRect; 
-        Color m_textColor; // 24, 0x18
+            GXColor m_topLeft;     // 8
+            GXColor m_topRight;    // 12, 0xC
+            GXColor m_bottomLeft;  // 16, 0x10
+            GXColor m_bottomRight; // 20, 0x14
+        } m_colorRect;
+        GXColor m_textColor; // 24, 0x18
         int m_28; // Always 0xFFFFFFFF?, 0x1C
         char m_32[4]; // 0x20
         float m_fontScaleX; // 36, 0x24
@@ -47,7 +45,7 @@ namespace ms {
         // offset 92
         float m_edgeWidth; // Text outline in units / 6
         // offset 96
-        Color m_edgeColor;
+        GXColor m_edgeColor;
         // offset 100
         int m_100;
         float m_104;
@@ -65,10 +63,10 @@ namespace ms {
         void SetCursorZ(float z);
         void SetScale(float x, float y);
         void SetScale(float scale);
-        void SetEdge(float width, Color color); // 8006ab20
+        void SetEdge(float width, GXColor color); // 8006ab20
         // Not sure what this does yet.
-        void SetColorMapping(Color a, Color b);
-        void SetTextColor(Color textColor);
+        void SetColorMapping(GXColor a, GXColor b);
+        void SetTextColor(GXColor textColor);
         void setAlpha(unsigned char alpha);
         void SetFixedWidth(float fixedWidth);
         void EnableFixedWidth(bool enabled);
@@ -92,7 +90,7 @@ namespace ms {
         /* GFX Stuff */
         void SetupGX(); 
         // Called by SetupGX(), presumably with the values in the charwriter already.
-        void SetupGXWithColorMapping(Color color1, Color color2);
+        void SetupGXWithColorMapping(GXColor color1, GXColor color2);
 
         /* The magic function. */
         void Print(u16 character);
