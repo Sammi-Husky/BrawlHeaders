@@ -137,6 +137,7 @@ public:
 static_assert(sizeof(soMotionModule) == 4, "Class is wrong size!");
 
 class soMotionModuleImpl : public soMotionModule, public soStatusEventObserver, public soAnimCmdEventObserver, public soModelEventObserver, public soEventPresenter<soMotionEventObserver> {
+public:
 
     // 52
     char _spacer1[4];
@@ -186,7 +187,6 @@ class soMotionModuleImpl : public soMotionModule, public soStatusEventObserver, 
     // 364
     char _spacer5[4];
 
-public:
     // TODO: verify params
     virtual ~soMotionModuleImpl();
     virtual void activate();
