@@ -116,6 +116,7 @@ CC008000:WGPIPE
 803fa798:strstr__FPcPc
 803f87a8:vprintf
 803f8820:vsnprintf
+803fa108:sscanf
 
 // module
 80043b18:moUnResolvedMessage__FPCc
