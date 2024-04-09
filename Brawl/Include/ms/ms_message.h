@@ -17,7 +17,6 @@ public:
     bool attachMsgBuf(u32 index, nw4r::g3d::ScnMdlSimple* sceneModel, const char* nodeName, u8, int, float);
     bool changeMsgBuf(int index);
     void clearMsgBuf();
-    void getPrintIndexData(u32 index, char**, u32*);
     void setWindow(float, float, float, float);
     void setFace(u8);
     void setFixedWidth(float);
@@ -27,7 +26,7 @@ public:
     void setCursorY(float);
     void printf(const char* format, ...);
 
-    static void getPrintIndexData(void* msgbin, int messageID, int* outLen, int* outUnk);
+    static void getPrintIndexData(void* msgbin, u32 index, char** outStr, u32* outLen);
 
 
 };

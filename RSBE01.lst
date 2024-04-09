@@ -1064,6 +1064,7 @@ CC008000:WGPIPE
 800b9504:setDelayPrint__5MuMsgFUlffff
 800b9524:isEndDelayPrint__5MuMsgFUl
 800b8ee8:beginPrint__5MuMsgFUl
+800b938c:setWindowRectVisible__5MuMsgFUlb
 
 // MuObject
 800b534c:changeAnimN__8MuObjectFPCc
@@ -1170,7 +1171,7 @@ CC008000:WGPIPE
 80069970:setCursorX__7MessageFf
 80069a30:setCursorY__7MessageFf
 80069d40:printf__7MessageFPCce
-8006b134:getPrintIndexData__7MessageFUlPPcPUl
+8006b134:getPrintIndexData__7MessageFPvUlPPcPUl
 
 // grTenganEvent
 27,1,0027BBD8:__ct__13grTenganEventFv
