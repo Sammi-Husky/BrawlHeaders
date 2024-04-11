@@ -117,6 +117,8 @@ public:
     int getTeam(int entryId, bool unk2, bool unk3);
     Vec3f getFighterCenterPos(int entryId, int unk);
     float getFighterLr(int entryId, int unk);
+    int getFighterOperationType(int entryId);
+    int getFighterOperationStatus(int entryId);
     Fighter* searchNearFighter(float unk1, float radius, Vec3f* pos, int team, bool unk4);
     void setHeal(int entryId, float heal);
     void setCurry(int entryId);
@@ -127,6 +129,7 @@ public:
     void setInfiniteScaling(int entryId, int unk1, int unk2);
     void setThunder(int inflictingEntryId, int unk2);
     void setWarpFighter(int entryId, Vec3f* pos, float lr, bool showEffect);
+    void setFighterOperationStatus(int entryId, int fighterOperationStatus);
 
     void pickupCoin(int entryId, int amount);
     void setDead(int entryId, int unk1, int unk2);

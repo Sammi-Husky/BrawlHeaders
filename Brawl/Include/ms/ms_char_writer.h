@@ -1,22 +1,22 @@
 #pragma once
 
-#include <GX.h>
 #include <StaticAssert.h>
 #include <types.h>
+#include <nw4r/ut/color.h>
 
 namespace ms {
     class CharWriter {
     public:
         // These get set by SetColorMapping
-        GXColor m_colorMapping1;  // 0
-        GXColor m_colorMapping2;  // 4
+        nw4r::ut::Color m_colorMapping1;  // 0
+        nw4r::ut::Color m_colorMapping2;  // 4
         struct {
-            GXColor m_topLeft;     // 8
-            GXColor m_topRight;    // 12, 0xC
-            GXColor m_bottomLeft;  // 16, 0x10
-            GXColor m_bottomRight; // 20, 0x14
+            nw4r::ut::Color m_topLeft;     // 8
+            nw4r::ut::Color m_topRight;    // 12, 0xC
+            nw4r::ut::Color m_bottomLeft;  // 16, 0x10
+            nw4r::ut::Color m_bottomRight; // 20, 0x14
         } m_colorRect;
-        GXColor m_textColor; // 24, 0x18
+        nw4r::ut::Color m_textColor; // 24, 0x18
         int m_28; // Always 0xFFFFFFFF?, 0x1C
         char m_32[4]; // 0x20
         float m_fontScaleX; // 36, 0x24
@@ -45,7 +45,7 @@ namespace ms {
         // offset 92
         float m_edgeWidth; // Text outline in units / 6
         // offset 96
-        GXColor m_edgeColor;
+        nw4r::ut::Color m_edgeColor;
         // offset 100
         int m_100;
         float m_104;
@@ -53,7 +53,7 @@ namespace ms {
         char _109[3];
 
         CharWriter();
-        virtual ~CharWriter();
+        ~CharWriter();
 
         /* Setters */
         void SetCursor(float x, float y); // 
@@ -63,10 +63,10 @@ namespace ms {
         void SetCursorZ(float z);
         void SetScale(float x, float y);
         void SetScale(float scale);
-        void SetEdge(float width, GXColor color); // 8006ab20
+        void SetEdge(float width, nw4r::ut::Color color); // 8006ab20
         // Not sure what this does yet.
-        void SetColorMapping(GXColor a, GXColor b);
-        void SetTextColor(GXColor textColor);
+        void SetColorMapping(nw4r::ut::Color a, nw4r::ut::Color b);
+        void SetTextColor(nw4r::ut::Color textColor);
         void setAlpha(unsigned char alpha);
         void SetFixedWidth(float fixedWidth);
         void EnableFixedWidth(bool enabled);
@@ -90,7 +90,7 @@ namespace ms {
         /* GFX Stuff */
         void SetupGX(); 
         // Called by SetupGX(), presumably with the values in the charwriter already.
-        void SetupGXWithColorMapping(GXColor color1, GXColor color2);
+        void SetupGXWithColorMapping(nw4r::ut::Color color1, nw4r::ut::Color color2);
 
         /* The magic function. */
         void Print(u16 character);
@@ -101,6 +101,5 @@ namespace ms {
         // sets up its args and calls it.
         void PrintGlyph(double x, double y, double z, const void* glyphTexture); // 0x8007001c
     };
-    // Originally 0x70, virtual dtor made it bigger?
-    static_assert(sizeof(CharWriter) == 0x74, "Class is the wrong size!");
+    static_assert(sizeof(CharWriter) == 0x70, "Class is the wrong size!");
 }

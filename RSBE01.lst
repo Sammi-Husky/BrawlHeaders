@@ -86,6 +86,7 @@ CC008000:WGPIPE
 801d76e8:DCFlushRange
 801d77cc:ICInvalidateRange
 803f0f44:__dynamic_cast
+803f0e38:__ptmf_scall
 
 // OS
 801d8600:OSReport
@@ -104,6 +105,7 @@ CC008000:WGPIPE
 803fa280:strcpy__FPcPCc
 803fa280:strcpy
 803f89fc:sprintf
+803f8924:snprintf
 803fa384:strcat__FPcPc
 803fa3b0:strncat__FPcPc
 803fa3b0:strncat
@@ -895,6 +897,8 @@ CC008000:WGPIPE
 27,1,00109E14:setWarpFighter__9ftManagerFiP5Vec3ffb
 27,1,0010ADE8:getFighterCenterPos__9ftManagerFii
 27,1,0010AF34:getFighterLr__9ftManagerFii
+27,1,0010a164:getFighterOperationStatus__9ftManagerFi
+27,1,0010a248:getFighterOperationType__9ftManagerFi
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi
