@@ -372,6 +372,19 @@ CC008000:WGPIPE
 // cmSubjectList
 8009ece8:getSubjectByPlayerNo__13cmSubjectListFUl
 
+// clTarget
+27,1,00038C68:__ct__8clTargetFv
+27,1,00038C78:__dt__8clTargetFv
+
+// soArrayVectorCalculator
+27,1,000C275C:erase__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfaceUlUlUlUlUl
+27,1,000C261C:insert__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfaceUlbUlUlUlUl
+27,1,000C2954:push__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfacebUlUlUl
+27,1,000C285C:unshift__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfacebUlUlUl
+27,1,000C2A88:clear__23soArrayVectorCalculatorFP26soArrayVectorCalcInterface
+27,1,000C29F4:pop__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfacebUlUl
+27,1,000C28EC:shift__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfacebUlUl
+
 // soEventSystem
 27,1,0008F064:getInstance__13soEventSystemFv
 27,1,0008F1BC:getManager__13soEventSystemFs
