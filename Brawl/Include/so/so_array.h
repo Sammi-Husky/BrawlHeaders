@@ -40,13 +40,13 @@ class soArray : public soArrayContractible<T> {
 public:
     virtual ~soArray() {};
 
-    virtual void unshift(T*) = 0;
-    virtual void push(T*) = 0;
-    virtual void insert(u32, T*) = 0;
+    virtual void unshift(const T&) = 0;
+    virtual void push(const T&) = 0;
+    virtual void insert(u32, const T&) = 0;
     virtual void erase(u32) = 0;
     virtual u32 capacity() = 0;
     virtual bool isFull() = 0;
-    virtual void set(u32 startingIndex, T* element, u32 numIndicesToSet) = 0;
+    virtual void set(u32 startingIndex, const T& element, u32 numIndicesToSet) = 0;
 };
 
 template <class T, class s> // TODO: Not sure what second template argument is
@@ -74,13 +74,13 @@ public:
     virtual void shift();
     virtual void pop();
     virtual void clear();
-    virtual void unshift(T*);
-    virtual void push(T*);
-    virtual void insert(u32, T*);
+    virtual void unshift(const T&);
+    virtual void push(const T&);
+    virtual void insert(u32, const T&);
     virtual void erase(u32);
     virtual u32 capacity() { return C; };
     virtual bool isFull();
-    virtual void set(u32 startingIndex, T* element, u32 numIndicesToSet);
+    virtual void set(u32 startingIndex, const T& element, u32 numIndicesToSet);
 };
 
 class soArrayVectorCalcInterface {
@@ -118,22 +118,22 @@ public:
         soArrayVectorCalculator::clear(this);
         this->setSize(0);
     };
-    virtual void unshift(T* newElement) {
+    virtual void unshift(const T& newElement) {
         u32 topIndex = soArrayVectorCalculator::unshift(this, this->isFull(), this->capacity(), this->getTopIndex(), this->getLastIndex());
         T* element = this->getArrayValueConst(topIndex);
-        *element = *newElement;
+        *element = newElement;
         this->setSize(this->size() + 1);
     };
-    virtual void push(T* newElement) {
+    virtual void push(const T& newElement) {
         u32 lastIndex = soArrayVectorCalculator::push(this, this->isFull(), this->capacity(), this->getTopIndex(), this->getLastIndex());
         T* element = this->getArrayValueConst(lastIndex);
-        *element = *newElement;
+        *element = newElement;
         this->setSize(this->size() + 1);
     };
-    virtual void insert(u32 index, T* newElement) {
+    virtual void insert(u32 index, const T& newElement) {
         u32 lastIndex = soArrayVectorCalculator::insert(this, index, this->isFull(), this->size(), this->capacity(), this->getTopIndex(), this->getLastIndex());
         T* element = this->getArrayValueConst(lastIndex);
-        *element = *newElement;
+        *element = newElement;
         this->setSize(this->size() + 1);
     };
     virtual void erase(u32 index) {
@@ -141,13 +141,13 @@ public:
         this->setSize(this->size() - 1);
     };
     virtual u32 capacity() = 0;
-    virtual void set(u32 startingIndex, T* elementToCopy, u32 numIndicesToSet) {
+    virtual void set(u32 startingIndex, const T& elementToCopy, u32 numIndicesToSet) {
         if (this->size() <= startingIndex + numIndicesToSet) {
             numIndicesToSet = this->size() - startingIndex;
         }
         for (u32 i = 0; i < numIndicesToSet; i++) {
             T* element = this->at(i + startingIndex);
-            *element = *elementToCopy;
+            *element = elementToCopy;
         }
     };
 
@@ -203,14 +203,14 @@ public:
         m_size = 0;
         m_isFull = false;
     };
-    soArrayVector(u32 size) {
+    soArrayVector(u32 size, u32) {
         m_topIndex = 0;
         m_lastIndex = 0;
         m_isFull = false;
         m_size = size;
         soArrayVectorCalculator::postInitialize(this, size, C);
     }
-    soArrayVector(u32 size, T* element) {
+    soArrayVector(u32 size, const T& element, u32) {
         m_topIndex = 0;
         m_lastIndex = 0;
         m_size = 0;
