@@ -208,6 +208,20 @@ struct clTarget {
 };
 static_assert(sizeof(clTarget) == 0x8, "Class is wrong size!");
 
+struct soCollisionAttackAbsolute {
+    soCollisionAttackData m_attackData;
+    char _0x40[4];
+    Vec3f m_nodeGlobalPos;
+    char _0x50[15];
+    u8 m_index;
+    int m_groupIndex;
+    bool m_isAttack;
+    char _0x65[3];
+
+    soCollisionAttackAbsolute();
+    ~soCollisionAttackAbsolute();
+};
+
 class soCollisionAttackPart {
     int m_0x0;
     soCollisionAttackData m_attackData;
@@ -216,7 +230,8 @@ class soCollisionAttackPart {
     char _0x8c[4];
 
 public:
-    inline soCollisionAttackPart() {};
-    inline ~soCollisionAttackPart() {};
+    soCollisionAttackPart();
+    soCollisionAttackPart(u8, bool);
+    ~soCollisionAttackPart();
 };
 static_assert(sizeof(soCollisionAttackPart) == 0x90, "Class is wrong size!");
