@@ -203,6 +203,13 @@ public:
         m_size = 0;
         m_isFull = false;
     };
+    soArrayVector(u32 size) {
+        m_topIndex = 0;
+        m_lastIndex = 0;
+        m_isFull = false;
+        m_size = size;
+        soArrayVectorCalculator::postInitialize(this, size, C);
+    }
     soArrayVector(u32 size, T* element) {
         m_topIndex = 0;
         m_lastIndex = 0;
