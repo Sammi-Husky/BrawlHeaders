@@ -2,6 +2,7 @@
 
 #include <mt/mt_vector.h>
 #include <types.h>
+#include <so/collision/so_collision.h>
 #include <so/so_array.h>
 
 enum CollisionAttackElementType {
@@ -198,15 +199,6 @@ struct soCollisionAttackData {
     }
 };
 static_assert(sizeof(soCollisionAttackData) == 64, "Class is wrong size!");
-
-struct clTarget {
-    int m_0;
-    int m_4;
-
-    clTarget();
-    ~clTarget();
-};
-static_assert(sizeof(clTarget) == 0x8, "Class is wrong size!");
 
 struct soCollisionAttackAbsolute {
     soCollisionAttackData m_attackData;

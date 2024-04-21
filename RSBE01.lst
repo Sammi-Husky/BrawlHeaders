@@ -412,6 +412,19 @@ CC008000:WGPIPE
 27,1,000CCDA8:__ct__21soCollisionAttackPartFv
 27,1,000386B4:__dt__21soCollisionAttackPartFv
 
+// soCollisionHitGroup
+27,1,00041B00:__dt__19soCollisionHitGroupFv
+27,1,00041AE0:__ct__19soCollisionHitGroupFv
+
+// soCollisionHitPart
+27,1,000415E4:__dt__18soCollisionHitPartFv
+27,1,0004148C:__ct__18soCollisionHitPartFUcUl
+27,1,000CC22C:__ct__18soCollisionHitPartFv
+
+// soCollisionHitModule
+27,1,00042E4C:__dt__24soCollisionHitModuleImplFv
+27,1,00042AA4:__ct__24soCollisionHitModuleImplFP16soModuleAccesseriUcP29soArray<18soCollisionHitPart>P27soArray<16soCollisionGroup>P30soArray<19soCollisionHitGroup>P31soEventObserverRegistrationDescb
+
 // Stage
 27,1,002225A8:createObj__5StageFv
 27,1,0022269C:createObjPokeTrainer__5StageFiiiii

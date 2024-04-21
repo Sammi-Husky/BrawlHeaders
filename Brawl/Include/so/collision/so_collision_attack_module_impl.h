@@ -197,10 +197,10 @@ public:
 };
 static_assert(sizeof(soCollisionAttackModuleImpl) == 160, "Class is wrong size!");
 
-template <u32 TCategory, u32 TNumParts, u32 TNumAbsolutes, class TCollisionAttackModule, u32 TNumCollisionGroups, bool TBool1, bool TBool2>
+template <u32 TCategory, u32 TNumParts, u32 TNumAbsolutes, class TCollisionAttackModule, u32 TNumGroups, bool TBool1, bool TBool2>
 class soCollisionAttackModuleBuildConfig {
     soArrayVector<soCollisionAttackPart, TNumParts> m_attackPartArrayVector;
-    soArrayVector<soCollisionGroup, TNumCollisionGroups> m_collisionGroupArrayVector;
+    soArrayVector<soCollisionGroup, TNumGroups> m_collisionGroupArrayVector;
     soArrayVector<soCollisionAttackAbsolute, TNumAbsolutes> m_attackAbsoluteArrayVector;
     TCollisionAttackModule m_attackModule;
 public:
@@ -209,7 +209,7 @@ public:
                                        u8 category,
                                        soEventObserverRegistrationDesc* registrationDesc) :
                                        m_attackPartArrayVector(TNumParts, soCollisionAttackPart(TCategory, TBool1), 0),
-                                       m_collisionGroupArrayVector(TNumCollisionGroups, 0),
+                                       m_collisionGroupArrayVector(TNumGroups, 0),
                                        m_attackAbsoluteArrayVector(TNumAbsolutes, 0),
                                        m_attackModule(moduleAccesser, taskId, category, &m_attackPartArrayVector, &m_collisionGroupArrayVector, &m_attackAbsoluteArrayVector, registrationDesc, TBool2) {};
 

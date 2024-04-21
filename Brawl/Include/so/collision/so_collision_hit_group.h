@@ -27,5 +27,8 @@ class soCollisionHitGroup {
 
 public:
     void setInvincibleGlobal();
+
+    soCollisionHitGroup();
+    ~soCollisionHitGroup();
 };
 static_assert(sizeof(soCollisionHitGroup) == 56, "Class is wrong size!");

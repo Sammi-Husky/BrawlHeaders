@@ -9,7 +9,7 @@
 
 template <class T>
 class soInterpolation {
-    T t[4];
+    T m_elements[4];
 public:
     soInterpolation() {};
     ~soInterpolation() {};
