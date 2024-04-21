@@ -219,10 +219,14 @@ template <class TCollisionAttackBuildConfig>
 class soCollisionAttackModuleBuilder {
     TCollisionAttackBuildConfig m_buildConfig;
 public:
+
+    soCollisionAttackModule* getModule() {
+        return &m_buildConfig.m_attackModule;
+    };
+
     soCollisionAttackModuleBuilder(soModuleAccesser* moduleAccesser,
                                    int taskId,
                                    u8 category,
                                    soEventObserverRegistrationDesc* registrationDesc) :
                                    m_buildConfig(moduleAccesser, taskId, category, registrationDesc) { } ;
-
 };

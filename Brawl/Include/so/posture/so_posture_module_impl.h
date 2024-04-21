@@ -10,15 +10,15 @@
 template <class T>
 class soInterpolation {
     T t[4];
-
-    soInterpolation();
-    ~soInterpolation();
+public:
+    soInterpolation() {};
+    ~soInterpolation() {};
 };
 
 typedef soInterpolation<Vec3f> interpolationVec3f;
 
 class soPostureModuleImpl : public soPostureModuleSimple, public soStatusEventObserver, public soAnimCmdEventObserver {
-    soArray<interpolationVec3f>* m_interpolationArray;
+    soArray<soInterpolation<Vec3f> >* m_interpolationArray;
     float m_rotYLr;
     int m_syncConstraintNode;
     float m_ownerScale;
@@ -55,5 +55,35 @@ public:
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
+
+    soPostureModuleImpl(soModuleAccesser*, soArray<soInterpolation<Vec3f> >*, soEventObserverRegistrationDesc*);
 };
 static_assert(sizeof(soPostureModuleImpl) == 120, "Class is wrong size!");
+
+template <u32 TNumInterpolation, class TPostureModule>
+class soPostureModuleBuildConfig {
+public:
+    soArrayVector<soInterpolation<Vec3f>,TNumInterpolation> m_interpolationArrayVector;
+    TPostureModule m_postureModule;
+
+    soPostureModuleBuildConfig(soModuleAccesser* moduleAccesser,
+                               soEventObserverRegistrationDesc* registrationDesc) :
+                               m_interpolationArrayVector(TNumInterpolation, 0),
+                               m_postureModule(moduleAccesser, &m_interpolationArrayVector, registrationDesc) {
+    }
+};
+
+template <class TPostureModuleBuildConfig>
+class soPostureModuleBuilder {
+    TPostureModuleBuildConfig m_buildConfig;
+public:
+    soPostureModule* getModule() {
+        return &m_buildConfig.m_postureModule;
+    }
+
+    soPostureModuleBuilder(soModuleAccesser* moduleAccesser,
+                           soEventObserverRegistrationDesc* registrationDesc) :
+                           m_buildConfig(moduleAccesser, registrationDesc) {
+        this->getModule()->initRot();
+    };
+};

@@ -391,6 +391,10 @@ CC008000:WGPIPE
 27,1,0008F064:getInstance__13soEventSystemFv
 27,1,0008F1BC:getManager__13soEventSystemFs
 
+// soPostureModuleImpl
+27,1,00023364:__ct__19soPostureModuleImplFP16soModuleAccesserP34soArray<23soInterpolation<5Vec3f>>P31soEventObserverRegistrationDesc
+27,1,000234F0:__dt__19soPostureModuleImplFv
+
 // soCollisionGroup
 27,1,00037C80:__ct__16soCollisionGroupFv
 27,1,00037B04:__dt__16soCollisionGroupFv
