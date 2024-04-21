@@ -49,6 +49,37 @@ public:
     virtual void set(u32 startingIndex, const T& element, u32 numIndicesToSet) = 0;
 };
 
+template <class T>
+class soArrayNull : public soArray<T> {
+
+public:
+    virtual bool isNull() { return true; };
+    virtual T* at(u32) {
+        static T m_nullElement;
+        return &m_nullElement;
+    };
+    virtual T* at(int) {
+        static T m_nullElement;
+        return &m_nullElement;
+    };
+    virtual u32 size() { return 0; };
+    virtual ~soArrayNull() {};
+    virtual void shift() { return; };
+    virtual void pop() { return; };
+    virtual void clear() { return; };
+    virtual void unshift(const T&) { return; };
+    virtual void push(const T&) { return; };
+    virtual void insert(u32, const T&) { return; };
+    virtual void erase(u32) { return; };
+    virtual u32 capacity() { return 0; };
+    virtual bool isFull() { return true; };
+    virtual void set(u32 startingIndex, const T& element, u32 numIndicesToSet) { };
+
+    soArrayNull() { };
+    soArrayNull(u32 size, u32) { }
+    soArrayNull(u32 size, const T& element, u32) { };
+};
+
 template <class T, class s> // TODO: Not sure what second template argument is
 class soArrayListUnit {
     T m_element;
@@ -221,3 +252,13 @@ public:
         }
     };
 };
+
+template <class T>
+class soArrayVector<T, 0> : public soArrayNull<T> {
+public:
+    inline soArrayVector() : soArrayNull<T>() { };
+    inline soArrayVector(u32 size, u32 unk) : soArrayNull<T>(size, unk) { };
+    inline soArrayVector(u32 size, const T& element, u32 unk) : soArrayNull<T>(size, element, unk) { };
+};
+
+
