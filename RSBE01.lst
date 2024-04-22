@@ -925,6 +925,11 @@ CC008000:WGPIPE
 27,1,0010E030:addObserver__41soEventObserver<22ftOutsideEventObserver>Fii
 27,5,26540:__vt__22ftOutsideEventObserver
 
+// soColorBlendModuleImpl
+27,1,000c0ef0:setSubColor__soColorBlendModuleImplFQ17GXColorUc
+27,1,000c0ee8:isEnableSubColor__soColorBlendModuleImplFv
+27,1,000c0ee0:getSubColor__soColorBlendModuleImplFv
+
 // ftEntryManager
 27,1,00119110:getEntity__14ftEntryManagerFUl
 
