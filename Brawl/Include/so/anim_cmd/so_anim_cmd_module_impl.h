@@ -63,7 +63,7 @@ typedef struct {
             soInstanceUnitFullProperty<soAnimCmdControlUnit> m_infiniteLoop;
             soInstanceUnitFullProperty<soAnimCmdControlUnit> m_actionHidden;
         };
-        soInstanceUnitFullProperty<soAnimCmdControlUnit> asArray[11];
+        soInstanceUnitFullProperty<soAnimCmdControlUnit> m_asArray[11];
     };
 } animCmdControlUnitVectorHelper;
 
