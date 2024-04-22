@@ -598,6 +598,9 @@ CC008000:WGPIPE
 // stUtility
 27,1,00227CC4:stRayCheck__FP5Vec3fP5Vec3fP5Vec3fP5Vec3fUcP11grCollisionUcUc
 
+// grCollisionJoint
+80111958:getJoint__11grCollisionFUs
+
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv
 27,1,0025f64c:loadGroundData__6GroundFUlUlUl

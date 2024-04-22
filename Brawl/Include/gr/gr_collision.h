@@ -7,7 +7,7 @@
 class Stage;
 
 class grCollision {
-private:
+public:
     // 0
     short m_index;
     // 2
@@ -19,13 +19,13 @@ private:
     // 8
     grCollData* m_collData;
     // 12
-    VtxData* m_vtxDataArray;
+    grCollData::VtxData* m_vtxDatas;
     // 16
-    Vec2f* m_vtxPosArray;
+    Vec2f* m_vtxPositions;
     // 20
-    grCollisionLine* m_collisionLineArray;
+    grCollisionLine* m_lines;
     // 24
-    grCollisionJoint* m_collisionJointArray;
+    grCollisionJoint* m_joints;
     // 28
     clAABBox2D m_aabBox;
     // 44
@@ -39,5 +39,9 @@ public:
     static grCollision* create(Stage* stage, void* colData, Ground* ground, int unk2);
     grCollision(void* colData, int unk1, int unk2);
     ~grCollision();
+
+    grCollisionJoint* getJoint(u16 nodeIndex);
+
+
 };
 static_assert(sizeof(grCollision) == 56, "Class is wrong size!");

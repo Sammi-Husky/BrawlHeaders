@@ -32,7 +32,7 @@ public:
     // 40
     char m_archiveFilePath[64];
     // 104
-    int* m_entryArray;
+    int* m_entries;
     // 108
     gfFileIOHandle* m_requestHandle;
     // 112
