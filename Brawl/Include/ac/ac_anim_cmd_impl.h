@@ -5,9 +5,12 @@
 #include <so/anim_cmd/so_anim_cmd.h>
 #include <types.h>
 
-// TODO: Verify this.
+// TODO: Verify and add virtual functions.
 class acAnimCmd: soNullable {
 public:
+    // There are more methods than just this one,
+    // but I only defined one to force it to be considered
+    // a virtual class with a vtable of its own.
     virtual int getGroup() = 0;
 };
 
