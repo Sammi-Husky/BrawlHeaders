@@ -1,9 +1,11 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <so/anim_cmd/so_anim_cmd_module_impl.h>
 #include <so/collision/so_collision_attack_module_impl.h>
 #include <so/collision/so_collision_hit_module_impl.h>
 #include <so/collision/so_collision_search_module_impl.h>
+#include <so/color_blend/so_color_blend_module_impl.h>
 #include <so/controller/so_controller_module_impl.h>
 #include <so/damage/so_damage_module_impl.h>
 #include <so/effect/so_effect_module_impl.h>
@@ -52,7 +54,7 @@ public:
     void* m_cameraModule;
     soWorkManageModule* m_workManageModule;
     void* m_debugModule;
-    void* m_animCmdModule;
+    soAnimCmdModule* m_animCmdModule;
     soStatusModule* m_statusModule;
     void* m_generalTermDisideModule;
     void* m_switchDecideModule;
@@ -68,7 +70,7 @@ public:
     void* m_slopeModule;
     void* m_shadowModule;
     void* m_itemManageModule;
-    void* m_colorBlendModule;
+    soColorBlendModule* m_colorBlendModule;
     void* m_jostleModule;
     void* m_abnormalModule;
     soSlowModule* m_slowModule;
@@ -148,6 +150,11 @@ public:
         return this->m_enumerationStart->m_workManageModule;
     }
 
+    inline soAnimCmdModule* getAnimCmdModule() 
+    {
+        return this->m_enumerationStart->m_animCmdModule;
+    }
+
     inline soStatusModule* getStatusModule()
     {
         return this->m_enumerationStart->m_statusModule;
@@ -171,6 +178,11 @@ public:
     inline soSlowModule* getSlowModule()
     {
         return this->m_enumerationStart->m_slowModule;
+    }
+
+    inline soColorBlendModule* getColorBlendModule()
+    {
+        return this->m_enumerationStart->m_colorBlendModule;
     }
 };
 static_assert(sizeof(soModuleAccesser) == 224, "Class is wrong size!");

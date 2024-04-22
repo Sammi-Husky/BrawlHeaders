@@ -17,8 +17,9 @@ namespace ms {
             nw4r::ut::Color m_bottomRight; // 20, 0x14
         } m_colorRect;
         nw4r::ut::Color m_textColor; // 24, 0x18
-        int m_28; // Always 0xFFFFFFFF?, 0x1C
-        char m_32[4]; // 0x20
+        nw4r::ut::Color m_unkColor;  // 28, 0x1C some other color, used by setAlpha if offset 0x20 is 1
+        char m_32;    // 0x20, flag used in setAlpha?
+        char m_33[3]; // 0x21 // seems to be an int enum?
         float m_fontScaleX; // 36, 0x24
         float m_fontScaleY; // 40, 0x28
         float m_xPos; // 44, 0x2C
@@ -26,7 +27,8 @@ namespace ms {
         float m_zPos; // 52, 0x34
         int m_56; // Always = 1?, 0x38
         int m_60; // Always = 1?, 0x3C
-        char _64[3]; // Always 0xCCCCFF?, 0x40
+        char _64[2]; // Always 0xCCCC? Might be padding.
+        u8 m_alpha; // 66, 0x42
         // offset 67
         bool m_isFixedWidth;
         // offset 68
@@ -36,20 +38,19 @@ namespace ms {
         // The melee font which is always loaded seems to be at 0x80497e44
         // offset 72
         void* m_font;
-        char _76[4];
+        char _76[4]; // 0x4C, set to 0 in constructor
         // offset 80
-        float m_scale; // World scaler, so it affects positioning too. Usually 1.
-        char _84[4];
-        // offset 88
-        float m_unknownFontWidthModifier; // Usually close to 1, seems to affect width.
-        // offset 92
-        float m_edgeWidth; // Text outline in units / 6
-        // offset 96
-        nw4r::ut::Color m_edgeColor;
+        float m_scale; // 80, 0x50 World scaler, so it affects positioning too. Set to 1 in ctor.
+        u8 _84;  // 84, 0x54 // unk flag, set to 0
+        u8 _85;  // 85, 0x55 // unk flag, set to 0
+        char _86[2];  // 86, 0x56 Looks like padding?
+        float m_unknownFontWidthModifier; // 88, 0x58   Usually close to 1, seems to affect width. Set to 1 in ctor
+        float m_edgeWidth; // 92, 0x5C Text outline in units / 6, set to 0 in ctor
+        nw4r::ut::Color m_edgeColor; // 96, 0x60, set to 0xFF in the constructor, aka black.
         // offset 100
-        int m_100;
-        float m_104;
-        u8 m_108;
+        int m_100; // 100, 0x64, set to 1 in ctor
+        float m_104; // 104, 0x68, set to 1.0 in ctor
+        u8 m_108; // 108, 0x6C, set to 0 in ctor
         char _109[3];
 
         CharWriter();
@@ -67,7 +68,7 @@ namespace ms {
         // Not sure what this does yet.
         void SetColorMapping(nw4r::ut::Color a, nw4r::ut::Color b);
         void SetTextColor(nw4r::ut::Color textColor);
-        void setAlpha(unsigned char alpha);
+        void SetAlpha(unsigned char alpha); // Doesn't affect edge color it seems.
         void SetFixedWidth(float fixedWidth);
         void EnableFixedWidth(bool enabled);
 
