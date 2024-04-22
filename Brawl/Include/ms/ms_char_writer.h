@@ -18,8 +18,10 @@ namespace ms {
         } m_colorRect;
         nw4r::ut::Color m_textColor; // 24, 0x18
         nw4r::ut::Color m_unkColor;  // 28, 0x1C some other color, used by setAlpha if offset 0x20 is 1
-        char m_32;    // 0x20, flag used in setAlpha?
-        char m_33[3]; // 0x21 // seems to be an int enum?
+        // 0x20, flag used in setalpha
+        // seems to toggle between m_textColor(0) and m_unkColor(1) for the active color.
+        char m_32;
+        char m_33[3]; // 0x21, unknown, might be padding or other flags. 
         float m_fontScaleX; // 36, 0x24
         float m_fontScaleY; // 40, 0x28
         float m_xPos; // 44, 0x2C
@@ -64,11 +66,23 @@ namespace ms {
         void SetCursorZ(float z);
         void SetScale(float x, float y);
         void SetScale(float scale);
+        // Text outline color.
         void SetEdge(float width, nw4r::ut::Color color); // 8006ab20
         // Not sure what this does yet.
         void SetColorMapping(nw4r::ut::Color a, nw4r::ut::Color b);
         void SetTextColor(nw4r::ut::Color textColor);
-        void SetAlpha(unsigned char alpha); // Doesn't affect edge color it seems.
+        /*
+         * I reverse engineered SetAlpha a little bit. The way that it works
+         * seems to be that it takes the m_alpha field and the active textColor field
+         * (either m_textColor or m_unknownColor based on whether). It applies the alpha
+         * to the alpha of the base color and assigns that to all four corners of the color
+         * rect structure to form a solid color. This function doesn't seem to affect the
+         * outline color at all, and practically speaking this means that it stays solid
+         * as transparency drops, so with a black outline the text goes black instead of
+         * transparent. This is avoidable by manually setting the edge color to the appropriate
+         * alpha value.
+         */
+        void SetAlpha(unsigned char alpha);
         void SetFixedWidth(float fixedWidth);
         void EnableFixedWidth(bool enabled);
 
