@@ -5,24 +5,32 @@
 #include <so/so_instance_manager.h>
 #include <so/status/so_status_event_observer.h>
 
+/*
+ * This class is weird, it has a bunch of data before the event presenter vtable and info,
+ * but the inheritance info doesn't show any other info. I can't get the layout right while
+ * inheriting the presenter, so I commented it and added a spacer.
+ * 
+ * I'm leaving it like this for now, since it is still somewhat useful/usable.
+ */
 class soAnimCmdInterpreter /*: soEventPresenter<soAnimCmdEventObserver> */ {
 public:
-    char _inheritance_data[8]; // 0x0;
+    char _inheritance_data[8]; // 0x0; not sure what this is.
     float m_frameSpeed; // 0x8
     soAnimCmd* m_currentCmd; // 0xC
     soAnimCmd* m_startCmd; // 0x10
     char _unk0x14[8]; // 0x14
     soAnimCmd* m_lastWaitCmd; // 0x18
-    char _unk0x1C[4]; // 0x1C    
+    char _unk0x1C[4]; // 0x1C, event presenter vtable and fields are in here.
     float m_logicalFrame; // 0x20
 };
 static_assert(sizeof(soAnimCmdInterpreter) == 0x28, "Class is the wrong size!");
 
-class soAnimCmdAddressPackArraySeparate: public soNullableInterface /*,public soEventPresenter<soAnimCmdEventObserver>*/ {
+// This class is very much unfinished.
+class soAnimCmdAddressPackArraySeparate: public soNullableInterface  {
 public:
     virtual ~soAnimCmdAddressPackArraySeparate();
 
-    char _unk1[0x4]; // This would be the event presenter vtable.
+    char _unk1[0x4]; // unknown
     soAnimCmd* m_startCmd;
     char _unk2[0x14];
     void* m_returnStack;
@@ -33,8 +41,11 @@ class soAnimCmdControlUnit {
 public:
     soAnimCmdInterpreter* m_animCmdInterpreter; // 0x0
     soAnimCmdAddressPackArraySeparate* m_animCmdAddressPackArraySeparate; // 0x4
+    int m_id; // 0x8
+    short m_type; // 0xC
+    short m_unk;  // 0xE
 };
-static_assert(sizeof(soAnimCmdControlUnit) == 0x8, "Class is the wrong size!");
+static_assert(sizeof(soAnimCmdControlUnit) == 0x10, "Class is the wrong size!");
 
 // Type punning a soInstanceManagerFullPropertyVector<soAnimCmdControlUnit, 11> here.
 // The purpose is to name the elements, which are what you want out of this object
@@ -97,6 +108,7 @@ class soAnimCmdModuleImpl:
     public soAnimCmdEventObserver
 {
 public:
+    // This is a soInstanceManagerFullPropertyVector<soAnimCmdControlUnit, 11>*
     animCmdControlUnitVectorHelper* m_animCmdThreads; // 0x20
 };
 static_assert(sizeof(soAnimCmdModuleImpl) == 0x24, "Class is the wrong size!");
