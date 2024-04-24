@@ -10,6 +10,12 @@
  * but the inheritance info doesn't show any other info. I can't get the layout right while
  * inheriting the presenter, so I commented it and added a spacer.
  * 
+ * There is an "acCmdInterpreter" class in the code that seems to do a lot
+ * of the same things as this class, but it doesn't seem to be the missing
+ * inherited object, as it is about 0x10 bigger than this class. It is perhaps
+ * the case that the acCmdInterpreter inherits this, but that class doesn't
+ * seem to have provided inheritance info.
+ *
  * I'm leaving it like this for now, since it is still somewhat useful/usable.
  */
 class soAnimCmdInterpreter /*: soEventPresenter<soAnimCmdEventObserver> */ {

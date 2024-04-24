@@ -16,13 +16,13 @@ class soAnimCmd;
 #define ANIM_CMD_VAR_TYPE_RA 2
 
 enum soAnimCmdArgumentType {
-    ANIM_CMD_ARG_INT = 0,
-    ANIM_CMD_ARG_SCALAR = 1,
-    ANIM_CMD_ARG_PTR = 2,
-    ANIM_CMD_ARG_BOOL = 3,
-    ANIM_CMD_ARG_FILE = 4,
-    ANIM_CMD_ARG_VARIABLE = 5,
-    ANIM_CMD_ARG_REQUIREMENT = 6
+    AnimCmd_Arg_Type_Int = 0,
+    AnimCmd_Arg_Type_Scalar = 1,
+    AnimCmd_Arg_Type_Ptr = 2,
+    AnimCmd_Arg_Type_Bool = 3,
+    AnimCmd_Arg_Type_File = 4,
+    AnimCmd_Arg_Type_Variable = 5,
+    AnimCmd_Arg_Type_Requirement = 6
 };
 
 class soAnimCmdArgument {
