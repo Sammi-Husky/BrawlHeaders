@@ -8,6 +8,7 @@
 27,6,58D8: g_stTriggerMng
 805a00e0:g_GameGlobal
 27,6,2E68: g_ftManager
+27,6,2E88: g_ftEntryManager
 27,6,2E90: g_ftSlotManager
 27,6,2EB4: g_ftInstanceManager
 27,6,2E70: g_ftAudienceManager
@@ -863,7 +864,13 @@ CC008000:WGPIPE
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
 27,1,0014D19C:getHipPos__23ftExternalValueAccesserFP7Fighter
 
+// soAnimCmdEventObserver 
+27,5,00000358:__vt__22soAnimCmdEventObserver
+27,5,00000494:__vt__41soEventObserver<22soAnimCmdEventObserver>Fii
+27,1,000077B8:addObserver__41soEventObserver<22soAnimCmdEventObserver>Fii
+
 // soStatusEventObserver
+27,5,00000F98:__vt__21soStatusEventObserver
 27,1,000133C8:addObserver__21soStatusEventObserverFii
 27,1,00013628:notifyEventChangeStatus__21soStatusEventObserverFiiP12soStatusDataP16soModuleAccesser
 27,1,000136E4:addObserver__40soEventObserver<21soStatusEventObserver>Fii
@@ -917,6 +924,11 @@ CC008000:WGPIPE
 27,1,0010DB70:notifyEventHeartSwapEnd__22ftOutsideEventObserverFv
 27,1,0010E030:addObserver__41soEventObserver<22ftOutsideEventObserver>Fii
 27,5,26540:__vt__22ftOutsideEventObserver
+
+// soColorBlendModuleImpl
+27,1,000c0ef0:setSubColor__soColorBlendModuleImplFQ17GXColorUc
+27,1,000c0ee8:isEnableSubColor__soColorBlendModuleImplFv
+27,1,000c0ee0:getSubColor__soColorBlendModuleImplFv
 
 // ftEntryManager
 27,1,00119110:getEntity__14ftEntryManagerFUl
@@ -1374,7 +1386,7 @@ CC008000:WGPIPE
 8006fe48:SetFixedWidth__Q22ms10CharWriterFf
 8006fc60:SetScale__Q22ms10CharWriterFff
 8006fc6c:SetScale__Q22ms10CharWriterFf
-8006fadc:SetAlpha__Q22ms10CharWriterFuc
+8006f988:SetAlpha__Q22ms10CharWriterFUc
 8006f944:SetColorMapping__Q22ms10CharWriterFQ34nw4r2ut5ColorQ34nw4r2ut5Color
 8006fadc:SetTextColor__Q22ms10CharWriterFQ34nw4r2ut5Color
 8006fe38:EnableFixedWidth__Q22ms10CharWriterFb
