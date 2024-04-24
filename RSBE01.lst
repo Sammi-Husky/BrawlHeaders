@@ -335,6 +335,8 @@ CC008000:WGPIPE
 
 // Matrix
 8003ee18:getRotate__6MatrixFP5Vec3f
+8003eb48:rotY__6MatrixFf
+8003e35c:setIdentity__6MatrixFv
 
 // mtCommon
 8003db08:mtSqrtf__Ff

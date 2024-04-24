@@ -29,7 +29,28 @@ public:
     // 80
     u16 m_nodeIndex;
     // 82
-    u16 m_0x52;
+    union {
+        struct {
+            bool m_0x52_15 : 1;
+            bool m_rightLedgeDisabled : 1;
+            bool m_leftLedgeDisabled : 1;
+            bool m_0x52_12 : 1;
+            bool m_0x52_11 : 1;
+            bool m_0x52_10 : 1;
+            bool m_0x52_9 : 1;
+            bool m_0x52_8 : 1;
+            bool m_0x52_7 : 1;
+            bool m_0x52_6 : 1;
+            bool m_0x52_5 : 1;
+            bool m_0x52_4 : 1;
+            bool m_0x52_3 : 1;
+            bool m_0x52_2 : 1;
+            bool m_0x52_1 : 1;
+            bool m_0x52_0 : 1;
+        };
+        u16 m_flags;
+    };
+
     // 84
     bool m_0x54_7 : 1;
     bool m_0x54_6 : 1;
