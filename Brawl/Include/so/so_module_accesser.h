@@ -1,11 +1,11 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <so/anim_cmd/so_anim_cmd_module_impl.h>
+#include <so/anim/so_anim_cmd_module_impl.h>
 #include <so/collision/so_collision_attack_module_impl.h>
 #include <so/collision/so_collision_hit_module_impl.h>
 #include <so/collision/so_collision_search_module_impl.h>
-#include <so/color_blend/so_color_blend_module_impl.h>
+#include <so/color/so_color_blend_module_impl.h>
 #include <so/controller/so_controller_module_impl.h>
 #include <so/damage/so_damage_module_impl.h>
 #include <so/effect/so_effect_module_impl.h>

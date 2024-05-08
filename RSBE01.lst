@@ -680,6 +680,8 @@ CC008000:WGPIPE
 27,1,0026b254:getTgtNode__9grGimmickFv
 27,1,00231bcc:getGimmickData__9grGimmickFv
 27,1,0026bcc0:changeNodeAnim__9grGimmickFUlUl
+27,1,0026BFBC:changeTexSrtAnim__9grGimmickFUlUl
+27,1,0026BDC0:changeVisibleAnim__9grGimmickFUlUl
 27,1,0026a5e8:createFadeVisibleProduction__9grGimmickFf
 27,1,0026a664:createSoundEffectVisibleProductionForExcel__9grGimmickFUlUlUl
 27,1,0026a6b8:createEffectVisibleProductionForExcel__9grGimmickFPQ29grGimmick16SimpleEffectDataPUlPP19grVisibleProduction

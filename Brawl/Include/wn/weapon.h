@@ -1,7 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <so/so_article.h>
+#include <so/article/so_article.h>
 #include <so/event/so_event_observer.h>
 #include <so/stageobject.h>
 #include <types.h>

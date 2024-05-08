@@ -3,7 +3,7 @@
 #include <StaticAssert.h>
 #include <memory.h>
 #include <mt/mt_vector.h>
-#include <so/so_anim_chr.h>
+#include <so/anim/so_anim_chr.h>
 #include <so/so_array.h>
 #include <so/event/so_event_observer.h>
 #include <so/event/so_event_presenter.h>

@@ -2,7 +2,7 @@
 
 #include <StaticAssert.h>
 #include <so/so_null.h>
-#include <so/anim_cmd/so_anim_cmd.h>
+#include <so/anim/so_anim_cmd.h>
 #include <types.h>
 
 // TODO: Verify and add virtual functions.

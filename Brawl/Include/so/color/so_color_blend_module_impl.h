@@ -1,6 +1,6 @@
 #pragma once
 #include <so/so_null.h>
-#include <so/so_anim_chr.h>
+#include <so/anim/so_anim_chr.h>
 #include <so/event/so_event_observer.h>
 #include <GX/GXTypes.h>
 
