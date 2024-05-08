@@ -21,6 +21,7 @@
 #include <so/kinetic/so_kinetic_module_impl.h>
 #include <so/event/so_event_manage_module_impl.h>
 #include <so/work/so_work_manage_module_impl.h>
+#include <so/param/so_param_customize_module_impl.h>
 #include <types.h>
 
 class StageObject;
@@ -76,7 +77,7 @@ public:
     soSlowModule* m_slowModule;
     void* m_reflectModule;
     void* m_heapModule;
-    void* m_paramCustomizeModule;
+    soParamCustomizeModule* m_paramCustomizeModule;
     void* m_glowModule;
 };
 static_assert(sizeof(soModuleEnumeration) == 204, "Class is wrong size!");
@@ -183,6 +184,11 @@ public:
     inline soColorBlendModule* getColorBlendModule()
     {
         return this->m_enumerationStart->m_colorBlendModule;
+    }
+
+    inline soParamCustomizeModule* getParamCustomizeModule()
+    {
+        return this->m_enumerationStart->m_paramCustomizeModule;
     }
 };
 static_assert(sizeof(soModuleAccesser) == 224, "Class is wrong size!");
