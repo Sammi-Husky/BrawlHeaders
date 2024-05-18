@@ -37,7 +37,7 @@ public:
     virtual void processPreCollision();
     virtual void renderDebug();
     virtual ~Yakumono();
-    virtual void updatePosture(u32 unk1);
+    virtual void updatePosture(bool);
     virtual soKind soGetKind();
     virtual int soGetSubKind();
     virtual void updateNodeSRT();
