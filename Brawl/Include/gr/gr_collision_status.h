@@ -35,7 +35,19 @@ public:
     // 111
     char _spacer5[6];
     // 117
-    char m_touchFlags;
+    union {
+        struct {
+            bool m_touchFlag7 : 1;
+            bool m_touchFlag6 : 1;
+            bool m_touchFlag5 : 1;
+            bool m_touchFlag4 : 1;
+            bool m_touchFlag3 : 1;
+            bool m_touchFlag2 : 1;
+            bool m_touchFlag1 : 1;
+            bool m_touchFlag0 : 1;
+        };
+        u8 m_touchFlags;
+    };
     // 118
     char _spacer6[10];
     // 128

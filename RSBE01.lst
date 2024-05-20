@@ -336,6 +336,8 @@ CC008000:WGPIPE
 
 // Matrix
 8003ee18:getRotate__6MatrixFP5Vec3f
+8003eb48:rotY__6MatrixFf
+8003e35c:setIdentity__6MatrixFv
 
 // mtCommon
 8003db08:mtSqrtf__Ff
@@ -597,7 +599,9 @@ CC008000:WGPIPE
 27,1,00238E90:setGravityNormal__7stMeleeFv
 
 // stUtility
-27,1,00227CC4:stRayCheck__FP5Vec3fP5Vec3fP5Vec3fP5Vec3fUcP11grCollisionUcUc
+27,1,00227BEC:stRayCheck__FP5Vec3fP5Vec3fbP11grCollisionbUc
+27,1,00227CC4:stRayCheck__FP5Vec3fP5Vec3fP5Vec3fP5Vec3fbP11grCollisionbUc
+27,1,00227DD8:stRayCheck__FP5Vec3fP5Vec3fPiP5Vec3fP5Vec3fbbUc
 
 // grCollisionJoint
 80111958:getJoint__11grCollisionFUs
@@ -678,6 +682,8 @@ CC008000:WGPIPE
 27,1,0026b254:getTgtNode__9grGimmickFv
 27,1,00231bcc:getGimmickData__9grGimmickFv
 27,1,0026bcc0:changeNodeAnim__9grGimmickFUlUl
+27,1,0026BFBC:changeTexSrtAnim__9grGimmickFUlUl
+27,1,0026BDC0:changeVisibleAnim__9grGimmickFUlUl
 27,1,0026a5e8:createFadeVisibleProduction__9grGimmickFf
 27,1,0026a664:createSoundEffectVisibleProductionForExcel__9grGimmickFUlUlUl
 27,1,0026a6b8:createEffectVisibleProductionForExcel__9grGimmickFPQ29grGimmick16SimpleEffectDataPUlPP19grVisibleProduction

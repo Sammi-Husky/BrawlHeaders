@@ -2,7 +2,7 @@
 
 #include <StaticAssert.h>
 #include <ft/fighter.h>
-#include <so/so_article.h>
+#include <so/article/so_article.h>
 #include <so/stageobject.h>
 #include <types.h>
 #include <ut/ut_uncopyable.h>
