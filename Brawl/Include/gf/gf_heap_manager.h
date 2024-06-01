@@ -1,7 +1,7 @@
 #pragma once
 
-#include <memory.h>
 #include <MEM.h>
+#include <memory.h>
 #include <types.h>
 
 class gfHeapManager {
@@ -11,6 +11,6 @@ public:
     static void dumpList();
     static void createHeap(int heapId, const char* heapName, int memArena, int heapSize);
 
-    static void* getMEMAllocator(Heaps::HeapType heapType);
+    static MEMAllocator* getMEMAllocator(Heaps::HeapType heapType);
     static void* getHeap(Heaps::HeapType heapType);
 };
