@@ -5,7 +5,10 @@
 namespace nw4r {
     namespace g3d {
 
-        struct ResAnmScnData;
+        struct ResAnmScnData {
+            char _spacer2[0x30];
+            unsigned short m_animLength;
+        };
         class ResAnmScn : public ResCommon<ResAnmScnData> {
         public:
             inline ResAnmScn() : ResCommon() {}

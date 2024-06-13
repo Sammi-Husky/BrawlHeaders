@@ -7,8 +7,12 @@
 
 namespace nw4r {
     namespace g3d {
-        // TODO
-        struct ResAnmChrData;
+        struct ResAnmChrData {
+            char _spacer[0x14];
+            unsigned int m_stringOffset;
+            char _spacer2[0x1C - 0x14 - 4];
+            unsigned short m_animLength;
+        };
         class ResAnmChr : public ResCommon<ResAnmChrData> {
         public:
             inline ResAnmChr() : ResCommon() {}

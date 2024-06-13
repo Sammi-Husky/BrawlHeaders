@@ -5,7 +5,10 @@
 namespace nw4r {
     namespace g3d {
 
-        struct ResAnmTexPatData;
+        struct ResAnmTexPatData {
+            char _spacer2[0x2C];
+            unsigned short m_animLength;
+        };
         class ResAnmTexPat : public ResCommon<ResAnmTexPatData> {
         public:
             inline ResAnmTexPat() : ResCommon() {}
