@@ -380,7 +380,7 @@ CC008000:WGPIPE
 8009be74:getInstance__16CameraControllerFv
 
 // cmAnimationController
-800a624c:setScnAnmRes__21cmAnimationControllerFPPQ34nw4r3g3d4SCN0Ul
+800a624c:setScnAnmRes__21cmAnimationControllerFQ34nw4r3g3d9ResAnmScnUl
 800a6348:releaseScnAnmRes__21cmAnimationControllerFv
 
 // cmSubjectList
