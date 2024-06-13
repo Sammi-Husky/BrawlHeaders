@@ -217,7 +217,7 @@ public:
     char _1;                   // 0x07
     s8 m_startPointIdx;        // 0x08
     char _2[0x02];             // 0x09
-    s8 m_teamID;               // 0x0B
+    s8 m_teamId;               // 0x0B
     short m_nameTag[5];        // 0x0c
     char _3[4];                // 0x16
     bool m_isNoVoice;          // 0x1A
