@@ -41,10 +41,23 @@ namespace nw4r {
             inline ResFile(void* data) : ResCommon(data) {}
 
             static void Init(void* arg);
+
             u32 GetResMdlNumEntries();
             u32 GetResAnmChrNumEntries();
-            CHR0* GetResAnmChr(int index);
-            SCN0* GetResAnmScn(int index);
+            u32 GetResAnmClrNumEntries();
+            u32 GetResAnmVisNumEntries();
+            u32 GetResAnmTexPatNumEntries();
+            u32 GetResAnmTexSrtNumEntries();
+            u32 GetResAnmShpNumEntries();
+            u32 GetResAnmScnNumEntries();
+
+            ResAnmChr GetResAnmChr(int index);
+            ResAnmClr GetResAnmClr(int index);
+            ResAnmVis GetResAnmVis(int index);
+            ResAnmTexPat GetResAnmTexPat(int index);
+            ResAnmTexSrt GetResAnmTexSrt(int index);
+            ResAnmShp GetResAnmShp(int index);
+            ResAnmScn GetResAnmScn(int index);
         };
     } // namespace g3d
 } // namespace nw4

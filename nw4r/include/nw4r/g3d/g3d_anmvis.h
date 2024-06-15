@@ -5,12 +5,17 @@
 namespace nw4r {
     namespace g3d {
 
-        struct VIS0 {
+        struct ResAnmVisData {
             char _spacer2[0x1C];
             unsigned short m_animLength;
         };
+        class ResAnmVis : public ResCommon<ResAnmVisData> {
+        public:
+            inline ResAnmVis() : ResCommon() {}
+            inline ResAnmVis(void* data) : ResCommon(data) {}
+        };
 
-        class AnmObjVisRes {
+        class AnmObjVisRes : public G3dObj {
         public:
             virtual u32 IsDerivedFrom(int* unk1);
 
@@ -32,7 +37,7 @@ namespace nw4r {
 
             virtual float GetUpdateRate();
 
-            virtual int Bind(int* unk1);
+            virtual int Bind(ResMdl mdl);
 
             virtual void Release();
 
@@ -41,11 +46,11 @@ namespace nw4r {
             virtual int Attach(int unk1, int* unk2); // TODO
             virtual int* Detach(int unk1);           // TODO
 
-            AnmObjVisRes* Construct(int* unk1, int* unk2, int* unk3, int* unk4);
+            static AnmObjVisRes* Construct(MEMAllocator* allocator, int* instanceSize, ResAnmVis anim, ResMdl mdl);
 
             char _spacer[40];
 
-            VIS0* m_anmVisFile;
+            ResAnmVis m_anmVisFile;
         };
     }
 }

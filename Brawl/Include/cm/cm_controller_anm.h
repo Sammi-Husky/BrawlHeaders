@@ -10,7 +10,7 @@ class cmAnimationController : public gfCameraController {
 public:
     virtual void update(float);
 
-    bool setScnAnmRes(nw4r::g3d::SCN0**, u32);
+    bool setScnAnmRes(nw4r::g3d::ResAnmScn, u32);
     void releaseScnAnmRes();
 };
 static_assert(sizeof(cmAnimationController) == 0x24, "Class is wrong size!");

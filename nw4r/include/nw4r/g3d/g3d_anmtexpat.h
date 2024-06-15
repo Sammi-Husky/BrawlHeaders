@@ -5,12 +5,17 @@
 namespace nw4r {
     namespace g3d {
 
-        struct PAT0 {
+        struct ResAnmTexPatData {
             char _spacer2[0x2C];
             unsigned short m_animLength;
         };
+        class ResAnmTexPat : public ResCommon<ResAnmTexPatData> {
+        public:
+            inline ResAnmTexPat() : ResCommon() {}
+            inline ResAnmTexPat(void* data) : ResCommon(data) {}
+        };
 
-        class AnmObjTexPatRes {
+        class AnmObjTexPatRes : public G3dObj {
         public:
             virtual u32 IsDerivedFrom(int* unk1);
 
@@ -32,7 +37,7 @@ namespace nw4r {
 
             virtual float GetUpdateRate();
 
-            virtual int Bind(int* unk1);
+            virtual int Bind(ResMdl mdl);
 
             virtual void Release();
 
@@ -42,11 +47,11 @@ namespace nw4r {
             virtual int* Detach(int unk1);           // TODO
             virtual void DetachAll();
 
-            AnmObjTexPatRes* Construct(int* unk1, int* unk2, int* unk3, int* unk4, u32 unk5);
+            static AnmObjTexPatRes* Construct(MEMAllocator* allocator, int* instanceSize, ResAnmTexPat anim, ResMdl mdl, bool hasCache);
 
             char _spacer[40];
 
-            PAT0* m_anmTexPatFile;
+            ResAnmTexPat m_anmTexPatFile;
 
             char _spacer2[4];
         };

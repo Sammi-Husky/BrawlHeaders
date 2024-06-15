@@ -5,12 +5,17 @@
 namespace nw4r {
     namespace g3d {
 
-        struct SHP0 {
+        struct ResAnmShpData {
             char _spacer2[0x20];
             unsigned short m_animLength;
         };
+        class ResAnmShp : public ResCommon<ResAnmShpData> {
+        public:
+            inline ResAnmShp() : ResCommon() {}
+            inline ResAnmShp(void* data) : ResCommon(data) {}
+        };
 
-        class AnmObjShpRes {
+        class AnmObjShpRes : public G3dObj {
         public:
             virtual u32 IsDerivedFrom(int* unk1);
 
@@ -32,7 +37,7 @@ namespace nw4r {
 
             virtual float GetUpdateRate();
 
-            virtual int Bind(int* unk1);
+            virtual int Bind(ResMdl mdl);
 
             virtual void Release();
 
@@ -42,14 +47,14 @@ namespace nw4r {
             virtual int* Detach(int unk1);           // TODO
             virtual void DetachAll();
 
-            virtual void SetWeight(float unk1, int* unk2); //TODO
+            virtual void SetWeight(float unk1, int* unk2); // TODO
             virtual float GetWeight(int unk1);             // TODO
 
-            AnmObjShpRes* Construct(int* unk1, int* unk2, int* unk3, int* unk4, u32 unk5);
+            static AnmObjShpRes* Construct(MEMAllocator* allocator, int* instanceSize, ResAnmShp anim, ResMdl mdl, bool hasCache);
 
             char _spacer[40];
 
-            SHP0* m_anmShpFile;
+            ResAnmShp m_anmShpFile;
 
             char _spacer3[8];
         };
