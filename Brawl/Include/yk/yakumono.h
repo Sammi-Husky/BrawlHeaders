@@ -20,7 +20,7 @@ struct ykData {
 };
 
 struct ykAreaData : ykData {
-    soAreaInit* m_init;
+    soAreaInit* m_areaInit;
 };
 
 class Yakumono : public StageObject, public soCollisionAttackEventObserver {

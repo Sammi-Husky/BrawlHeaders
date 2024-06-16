@@ -4,9 +4,25 @@
 #include <types.h>
 
 class gfArea {
-    char _spacer[0x10];
-    int m_areaID;
-    char _spacer2[0x30];
+
+public:
+    enum ShapeType {
+        Shape_Rectangle = 0x0,
+        Shape_Circle = 0x1,
+    };
+
+    char _0x0[8];
+    int m_checkTargetGroup;
+    int m_checkTargetLocalGroup;
+    int m_id;
+    int m_teamId;
+    ShapeType m_shapeType;
+    char _0x1C[4];
+    Vec2f m_pos;
+    char _0x28[4];
+    char _aaabBox[0x10];
+    int m_ownerId;
+    char _0x40[4];
 
     virtual bool testIntersectShape(void* unk);
     virtual void debugDrawImp();
@@ -14,3 +30,4 @@ class gfArea {
     virtual void update();
     virtual bool testIncludePos(Vec2f* pos);
 };
+static_assert(sizeof(gfArea) == 0x48, "Class is wrong size!");
