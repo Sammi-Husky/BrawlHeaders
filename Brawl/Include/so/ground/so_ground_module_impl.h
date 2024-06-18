@@ -179,6 +179,7 @@ public:
 static_assert(sizeof(soGroundModule) == 12, "Class is wrong size!");
 
 class soGroundModuleImpl : public soGroundModule, public soStatusEventObserver, public soAnimCmdEventObserver, public grCollStatusEventReceiver {
+public:
     soArray<soGroundShapeImpl>* m_groundShapeArray;
     grCollData* m_collData;
     grCollision* m_collision;
@@ -194,7 +195,6 @@ class soGroundModuleImpl : public soGroundModule, public soStatusEventObserver, 
     char _81[3];
     soModuleAccesser* m_moduleAccesser;
 
-public:
     virtual ~soGroundModuleImpl();
     virtual void setup(void*, int taskId, bool);
     virtual void clean();

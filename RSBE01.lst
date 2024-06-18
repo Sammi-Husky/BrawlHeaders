@@ -405,7 +405,7 @@ CC008000:WGPIPE
 27,1,0008F064:getInstance__13soEventSystemFv
 27,1,0008F1BC:getManager__13soEventSystemFs
 
-// soGroundShape
+// soGroundShapeImpl
 27,1,0002F9A4:updateRhombus__17soGroundShapeImplFP16soModuleAccesser
 27,1,0002FC10:updateRhombusFollowNode__17soGroundShapeImplFP16soModuleAccesser
 27,1,0002F190:updateRhombusModify__17soGroundShapeImplFP16soModuleAccesser
