@@ -5,6 +5,8 @@
 #include <mt/mt_vector.h>
 #include <types.h>
 
+class soModuleAccesser;
+
 class soGroundShapeImpl {
     char _0[4];
     grCollStatus* m_collStatus;
@@ -23,6 +25,11 @@ class soGroundShapeImpl {
     u8 m_cliffCheck;
     char _58[6];
 
+public:
     virtual ~soGroundShapeImpl();
+
+    void updateRhombus(soModuleAccesser* moduleAccesser);
+    void updateRhombusFollowNode(soModuleAccesser* moduleAccesser);
+    void updateRhombusModify(soModuleAccesser* moduleAccesser);
 };
 static_assert(sizeof(soGroundShapeImpl) == 68, "Class is wrong size!");

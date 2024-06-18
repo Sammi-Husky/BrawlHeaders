@@ -8,12 +8,22 @@
 
 class grCollStatus {
 public:
+    enum Setting {
+        Setting_None = 0x0,
+        Setting_Ground = 0x1,
+        Setting_Air = 0x2,
+        Setting_Cliff = 0x3,
+    };
+
     // 0
     grCollStatus* m_next;
     // 4
     grCollStatus* m_prev;
     // 8
-    char _spacer[6];
+    Setting m_setting : 8;
+    u32 m_0x8_0 : 24;
+
+    char _spacer[2];
     // 14
     short m_exclusiveLineAttr;
     // 16

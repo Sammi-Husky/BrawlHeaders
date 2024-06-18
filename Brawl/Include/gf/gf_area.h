@@ -9,6 +9,7 @@ public:
     enum ShapeType {
         Shape_Rectangle = 0x0,
         Shape_Circle = 0x1,
+        Shape_Triangle = 0x2,
     };
 
     char _0x0[8];
