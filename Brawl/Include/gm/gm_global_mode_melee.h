@@ -6,107 +6,223 @@
 
 class gmItSwitch {
 public:
+    enum Frequency {
+        Frequency_None = 0x0,
+        Frequency_Low = 0x1,
+        Frequency_Medium = 0x2,
+        Frequency_High = 0x3,
+        Frequency_VeryHigh = 0x4,   // Custom
+        Frequency_Intense = 0x5,    // Custom
+        Frequency_BombRain = 0x6    // Custom
+    };
+
     struct ItemSwitch {
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool m_cd : 1;
-        bool m_trophy : 1;
-        bool m_sticker : 1;
-        bool m_screwAttack : 1;
-        bool m_franklinBadge : 1;
-        bool m_teamHealer : 1;
-        bool m_soccerBall : 1;
-        bool m_unira : 1;
-        bool m_spring : 1;
-        bool m_bumper : 1;
-        bool m_bananaPeel : 1;
-        bool m_greenShell : 1;
-        bool m_mrSaturn : 1;
-        bool m_hothead : 1;
-        bool m_pitBall : 1;
-        bool m_smokeBall : 1;
-        bool m_freezie : 1;
-        bool m_dekuNut : 1;
-        bool m_smartBomb : 1;
-        bool m_gooeyBomb : 1;
-        bool m_motionSensorBomb : 1;
-        bool m_bobOmb : 1;
-        bool m_crackerLauncher : 1;
-        bool m_fireFlower : 1;
-        bool m_rayGun : 1;
-        bool m_superScope : 1;
-        bool m_goldenHammer : 1;
-        bool m_hammer : 1;
-        bool m_starRod : 1;
-        bool m_lipStick : 1;
-        bool m_fan : 1;
-        bool m_homeRunBat : 1;
-        bool m_beamSword : 1;
-        bool m_lightning : 1;
-        bool m_timer : 1;
-        bool m_superspicyCurry : 1;
-        bool m_bunnyHood : 1;
-        bool m_metalBox : 1;
-        bool m_starman : 1;
-        bool m_warpStar : 1;
-        bool m_poisonMushroom : 1;
-        bool m_superMushroom : 1;
-        bool m_dragoonParts : 1;
-        bool m_heartContainer : 1;
-        bool m_maximTomato : 1;
-        bool m_food : 1;
-        bool m_sandBag : 1;
-        bool m_blastBox : 1;
-        bool m_containers : 1;
-        bool m_pokeBall : 1;
-        bool m_assistTrophy : 1;
-        bool m_smashBall : 1;
-    } m_itemSwitch;
+        union {
+            struct {
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool m_cd : 1;
+                bool m_trophy : 1;
+                bool m_sticker : 1;
+                bool m_screwAttack : 1;
+                bool m_franklinBadge : 1;
+                bool m_teamHealer : 1;
+                bool m_soccerBall : 1;
+                bool m_unira : 1;
+                bool m_spring : 1;
+                bool m_bumper : 1;
+                bool m_bananaPeel : 1;
+                bool m_greenShell : 1;
+                bool m_mrSaturn : 1;
+                bool m_hothead : 1;
+                bool m_pitfall : 1;
+                bool m_smokeBall : 1;
+                bool m_freezie : 1;
+                bool m_dekuNut : 1;
+                bool m_smartBomb : 1;
+                bool m_gooeyBomb : 1;
+                bool m_motionSensorBomb : 1;
+                bool m_bobOmb : 1;
+                bool m_crackerLauncher : 1;
+                bool m_fireFlower : 1;
+                bool m_rayGun : 1;
+                bool m_superScope : 1;
+                bool m_goldenHammer : 1;
+                bool m_hammer : 1;
+                bool m_starRod : 1;
+                bool m_lipStick : 1;
+                bool m_fan : 1;
+                bool m_homeRunBat : 1;
+                bool m_beamSword : 1;
+                bool m_lightning : 1;
+                bool m_timer : 1;
+                bool m_superspicyCurry : 1;
+                bool m_bunnyHood : 1;
+                bool m_metalBox : 1;
+                bool m_starman : 1;
+                bool m_warpStar : 1;
+                bool m_poisonMushroom : 1;
+                bool m_superMushroom : 1;
+                bool m_dragoonParts : 1;
+                bool m_heartContainer : 1;
+                bool m_maximTomato : 1;
+                bool m_food : 1;
+                bool m_sandBag : 1;
+                bool m_blastBox : 1;
+                bool m_containers : 1;
+                bool m_pokeBall : 1;
+                bool m_assistTrophy : 1;
+                bool m_smashBall : 1;
+            };
+            struct { // Custom
+                bool m_extra3 : 1;
+                bool m_extra2 : 1;
+                bool m_extra1 : 1;
+                bool m_containerPartyBall : 1;
+                bool m_containerRollingCrate : 1;
+                bool m_containerCrate : 1;
+                bool m_containerBarrel : 1;
+                bool m_containerCapsule : 1;
+                bool m_containersExplode : 1;
+                bool m_containersHaveEnemies : 1;
+                bool m_containersHaveItems : 1;
+                bool m_passiveAggression : 1;
+                bool m_mayhem : 1;
+                bool m_extra : 1;
+                bool m_stage : 1;
+                bool m_screwAttack : 1;
+                bool m_franklinBadge : 1;
+                bool m_teamHealer : 1;
+                bool m_soccerBall : 1;
+                bool m_unira : 1;
+                bool m_spring : 1;
+                bool m_bumper : 1;
+                bool m_bananaPeel : 1;
+                bool m_greenShell : 1;
+                bool m_mrSaturn : 1;
+                bool m_hothead : 1;
+                bool m_pitfall : 1;
+                bool m_smokeBall : 1;
+                bool m_freezie : 1;
+                bool m_dekuNut : 1;
+                bool m_smartBomb : 1;
+                bool m_gooeyBomb : 1;
+                bool m_motionSensorBomb : 1;
+                bool m_bobOmb : 1;
+                bool m_crackerLauncher : 1;
+                bool m_fireFlower : 1;
+                bool m_rayGun : 1;
+                bool m_superScope : 1;
+                bool m_goldenHammer : 1;
+                bool m_hammer : 1;
+                bool m_starRod : 1;
+                bool m_lipStick : 1;
+                bool m_fan : 1;
+                bool m_homeRunBat : 1;
+                bool m_beamSword : 1;
+                bool m_lightning : 1;
+                bool m_timer : 1;
+                bool m_superspicyCurry : 1;
+                bool m_bunnyHood : 1;
+                bool m_metalBox : 1;
+                bool m_starman : 1;
+                bool m_warpStar : 1;
+                bool m_poisonMushroom : 1;
+                bool m_superMushroom : 1;
+                bool m_dragoonParts : 1;
+                bool m_heartContainer : 1;
+                bool m_maximTomato : 1;
+                bool m_food : 1;
+                bool m_sandBag : 1;
+                bool m_blastBox : 1;
+                bool m_containers : 1;
+                bool m_pokeBall : 1;
+                bool m_assistTrophy : 1;
+                bool m_smashBall : 1;
+            } ex;
+        };
+    } m_item;
 
     struct PokemonSwitch {
-        bool : 1;
-        bool : 1;
-        bool m_bonsly : 1;
-        bool m_suicune : 1;
-        bool m_wobuffet : 1;
-        bool m_gardevoir : 1;
-        bool m_goldeen : 1;
-        bool m_togepi : 1;
-        bool m_piplup : 1;
-        bool m_meowth : 1;
-        bool m_mew : 1;
-        bool m_metagross : 1;
-        bool m_electrode : 1;
-        bool m_weavile : 1;
-        bool m_manaphy : 1;
-        bool m_lugia : 1;
-        bool m_latiasLatios : 1;
-        bool m_kyogre : 1;
-        bool m_bellosom : 1;
-        bool m_snorlax : 1;
-        bool m_jirachi : 1;
-        bool m_hoOh : 1;
-        bool m_staryu : 1;
-        bool m_gulpin : 1;
-        bool m_groudon : 1;
-        bool m_deoxys : 1;
-        bool m_munchlax : 1;
-        bool m_moltres : 1;
-        bool m_entei : 1;
-        bool m_chikorita : 1;
-        bool m_celebi : 1;
-        bool m_torchic : 1;
-
+        union {
+            struct {
+                bool : 1;
+                bool : 1;
+                bool m_bonsly : 1;
+                bool m_suicune : 1;
+                bool m_wobuffet : 1;
+                bool m_gardevoir : 1;
+                bool m_goldeen : 1;
+                bool m_togepi : 1;
+                bool m_piplup : 1;
+                bool m_meowth : 1;
+                bool m_mew : 1;
+                bool m_metagross : 1;
+                bool m_electrode : 1;
+                bool m_weavile : 1;
+                bool m_manaphy : 1;
+                bool m_lugia : 1;
+                bool m_latiasLatios : 1;
+                bool m_kyogre : 1;
+                bool m_bellosom : 1;
+                bool m_snorlax : 1;
+                bool m_jirachi : 1;
+                bool m_hoOh : 1;
+                bool m_staryu : 1;
+                bool m_gulpin : 1;
+                bool m_groudon : 1;
+                bool m_deoxys : 1;
+                bool m_munchlax : 1;
+                bool m_moltres : 1;
+                bool m_entei : 1;
+                bool m_chikorita : 1;
+                bool m_celebi : 1;
+                bool m_torchic : 1;
+            };
+            struct {    // Custom
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool m_bonsly : 1;
+                bool m_suicune : 1;
+                bool m_wobuffet : 1;
+                bool m_gardevoir : 1;
+                bool m_goldeen : 1;
+                bool m_togepi : 1;
+                bool m_piplup : 1;
+                bool m_meowth : 1;
+                bool m_metagross : 1;
+                bool m_electrode : 1;
+                bool m_weavile : 1;
+                bool m_manaphy : 1;
+                bool m_lugia : 1;
+                bool m_latiasLatios : 1;
+                bool m_kyogre : 1;
+                bool m_bellosom : 1;
+                bool m_snorlax : 1;
+                bool m_hoOh : 1;
+                bool m_staryu : 1;
+                bool m_gulpin : 1;
+                bool m_groudon : 1;
+                bool m_deoxys : 1;
+                bool m_munchlax : 1;
+                bool m_moltres : 1;
+                bool m_entei : 1;
+                bool m_chikorita : 1;
+                bool m_torchic : 1;
+            } ex;
+        };
     } m_pokemon;
 
     struct AssistSwitch {
@@ -175,7 +291,7 @@ public:
     char _0xA[0x1];              // 0x0A
     bool m_isTeams;              // 0x0B
     char _0xC[0x2];              // 0x09
-    u8 m_itemFrequency;          // 0x0E
+    gmItSwitch::Frequency m_itemFrequency : 8;          // 0x0E
     s8 m_suicideScoreMultiplier; // 0x0F
     char _0x10[0x02];             // 0x10
     srStageKind m_stageKind : 2; // 0x12
