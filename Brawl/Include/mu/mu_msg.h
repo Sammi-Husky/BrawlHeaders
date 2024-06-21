@@ -55,6 +55,7 @@ public:
     void beginPrint(u32 msgIndex);
     void printf(u32 msgIndex, const char* format, ...);
     bool printIndex(u32 msgIndex, u32 lineIndex, void* msgBinData);
+    void setWindowRectVisible(u32 msgIndex, bool isVisible);
 
 
 

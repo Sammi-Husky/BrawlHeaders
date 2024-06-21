@@ -8,6 +8,7 @@
 class soModuleAccesser;
 
 class soKineticEnergy : public soNullable, public soEnable, public soSuspendable {
+public:
     virtual void updateEnergy(soModuleAccesser* moduleAccesser);
     virtual Vec2f getSpeed();
     virtual Vec3f getSpeed3f();

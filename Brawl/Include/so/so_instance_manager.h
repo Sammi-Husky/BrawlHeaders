@@ -70,7 +70,7 @@ public:
 };
 
 template <class T>
-class soInstanceManagerFullProperty : public soInstanceManager<T>, public soInstanceManagerPriorityPolicy<T>, public soInstanceManagerAttributePolicy<T> {
+class soInstanceManagerFullProperty : public soInstanceManager<T> {
 public:
     virtual int add(T*, int);
 
@@ -105,3 +105,11 @@ public:
 
 };
 
+template <class T, u32 C>
+class soInstanceManagerFullPropertyVector: 
+    public soInstanceManagerFullProperty<T>,
+    public soInstanceManagerPriorityPolicy<T>,
+    public soInstanceManagerAttributePolicy<T> {
+        // Starts at 0x10, because there are 4 vtables.
+        soArrayVector<soInstanceUnitFullProperty<T>, C> m_arrayVector;
+};

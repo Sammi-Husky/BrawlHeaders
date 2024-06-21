@@ -5,12 +5,17 @@
 namespace nw4r {
     namespace g3d {
 
-        struct CLR0 {
+        struct ResAnmClrData {
             char _spacer2[0x1C];
             unsigned short m_animLength;
         };
+        class ResAnmClr : public ResCommon<ResAnmClrData> {
+        public:
+            inline ResAnmClr() : ResCommon() {}
+            inline ResAnmClr(void* data) : ResCommon(data) {}
+        };
 
-        class AnmObjMatClrRes {
+        class AnmObjMatClrRes : public G3dObj {
         public:
             virtual u32 IsDerivedFrom(int* unk1);
 
@@ -32,7 +37,7 @@ namespace nw4r {
 
             virtual float GetUpdateRate();
 
-            virtual int Bind(int* unk1);
+            virtual int Bind(ResMdl mdl);
 
             virtual void Release();
 
@@ -42,11 +47,11 @@ namespace nw4r {
             virtual int* Detach(int unk1);           // TODO
             virtual void DetachAll();
 
-            AnmObjMatClrRes* Construct(int* unk1, int* unk2, int* unk3, int* unk4, u32 unk5);
+            static AnmObjMatClrRes* Construct(MEMAllocator* allocator, int* size, ResAnmClr anim, ResMdl mdl, bool hasCache);
 
             char _spacer[40];
 
-            CLR0* m_anmMatClrFile;
+            ResAnmClr m_anmMatClrFile;
 
             char _spacer2[4];
         };

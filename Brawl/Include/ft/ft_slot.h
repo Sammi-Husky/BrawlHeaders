@@ -13,7 +13,7 @@ public:
     char _0x15d[3];
     gmCharacterKind m_characterKind;
     HeapType m_instanceHeapType;
-    HeapType m_nwModelInstanceHeapType;
+    HeapType m_resourceHeapType;
     char _0x16c[8];
     int m_slotNo;
     char _0x178[0x35C];

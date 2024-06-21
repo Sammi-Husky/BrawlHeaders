@@ -190,5 +190,43 @@ public:
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
+
+    soCollisionAttackModuleImpl(soModuleAccesser* moduleAccesser, int taskId, u8 category,
+                                soArray<soCollisionAttackPart>*, soArray<soCollisionGroup>*,
+                                        soArray<soCollisionAttackAbsolute>*, soEventObserverRegistrationDesc*, bool);
 };
 static_assert(sizeof(soCollisionAttackModuleImpl) == 160, "Class is wrong size!");
+
+template <u32 TCategory, u32 TNumParts, u32 TNumAbsolutes, class TCollisionAttackModule, u32 TNumGroups, bool TBool1, bool TBool2>
+class soCollisionAttackModuleBuildConfig {
+    soArrayVector<soCollisionAttackPart, TNumParts> m_attackPartArrayVector;
+    soArrayVector<soCollisionGroup, TNumGroups> m_collisionGroupArrayVector;
+    soArrayVector<soCollisionAttackAbsolute, TNumAbsolutes> m_attackAbsoluteArrayVector;
+    TCollisionAttackModule m_attackModule;
+public:
+    soCollisionAttackModuleBuildConfig(soModuleAccesser* moduleAccesser,
+                                       int taskId,
+                                       u8 category,
+                                       soEventObserverRegistrationDesc* registrationDesc) :
+                                       m_attackPartArrayVector(TNumParts, soCollisionAttackPart(TCategory, TBool1), 0),
+                                       m_collisionGroupArrayVector(TNumGroups, 0),
+                                       m_attackAbsoluteArrayVector(TNumAbsolutes, 0),
+                                       m_attackModule(moduleAccesser, taskId, category, &m_attackPartArrayVector, &m_collisionGroupArrayVector, &m_attackAbsoluteArrayVector, registrationDesc, TBool2) {};
+
+};
+
+template <class TCollisionAttackBuildConfig>
+class soCollisionAttackModuleBuilder {
+    TCollisionAttackBuildConfig m_buildConfig;
+public:
+
+    soCollisionAttackModule* getModule() {
+        return &m_buildConfig.m_attackModule;
+    };
+
+    soCollisionAttackModuleBuilder(soModuleAccesser* moduleAccesser,
+                                   int taskId,
+                                   u8 category,
+                                   soEventObserverRegistrationDesc* registrationDesc) :
+                                   m_buildConfig(moduleAccesser, taskId, category, registrationDesc) { } ;
+};

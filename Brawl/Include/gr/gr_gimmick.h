@@ -162,9 +162,9 @@ public:
     };
 
     // 5C
-    int m_numSndGenerators;
+    int m_numSoundGenerators;
     // 60
-    snd3DGenerator* m_snd3DGenerators;
+    snd3DGenerator* m_soundGenerators;
     // 64
     int m_numSoundEffects;
     // 68

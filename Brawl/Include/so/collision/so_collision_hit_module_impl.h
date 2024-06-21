@@ -136,5 +136,41 @@ public:
     virtual u32 isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
+
+    soCollisionHitModuleImpl(soModuleAccesser*, int taskId, u8, soArray<soCollisionHitPart>*,
+            soArray<soCollisionGroup>*, soArray<soCollisionHitGroup>*, soEventObserverRegistrationDesc*, bool);
 };
 static_assert(sizeof(soCollisionHitModuleImpl) == 104, "Class is wrong size!");
+
+template <u32 TCategory, u32 TNumParts, u32 TNumGroups, class TCollisionHitModule, u32 TCategoryMask, bool TBool1>
+class soCollisionHitModuleBuildConfig {
+    soArrayVector<soCollisionHitPart, TNumParts> m_hitPartArrayVector;
+    soArrayVector<soCollisionGroup, TNumGroups> m_collisionGroupArrayVector;
+    soArrayVector<soCollisionHitGroup, TNumGroups> m_hitGroupArrayVector;
+    TCollisionHitModule m_hitModule;
+public:
+    soCollisionHitModuleBuildConfig(soModuleAccesser* moduleAccesser,
+                                    int taskId,
+                                    u8 category,
+                                    soEventObserverRegistrationDesc* registrationDesc) :
+                                    m_hitPartArrayVector(TNumParts, soCollisionHitPart(TCategory, TBool1), 0),
+                                    m_collisionGroupArrayVector(TNumGroups, 0),
+                                    m_hitGroupArrayVector(TNumGroups, 0),
+                                    m_hitModule(moduleAccesser, taskId, category, &m_hitPartArrayVector, &m_collisionGroupArrayVector, &m_hitGroupArrayVector, registrationDesc, TBool1) {};
+};
+
+template <class TCollisionHitBuildConfig>
+class soCollisionHitModuleBuilder {
+    TCollisionHitBuildConfig m_buildConfig;
+public:
+
+    soCollisionHitModule* getModule() {
+        return &m_buildConfig.m_hitModule;
+    };
+
+    soCollisionHitModuleBuilder(soModuleAccesser* moduleAccesser,
+                                   int taskId,
+                                   u8 category,
+                                   soEventObserverRegistrationDesc* registrationDesc) :
+                                   m_buildConfig(moduleAccesser, taskId, category, registrationDesc) { } ;
+};

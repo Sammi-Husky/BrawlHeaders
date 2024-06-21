@@ -5,12 +5,17 @@
 namespace nw4r {
     namespace g3d {
 
-        struct SRT0 {
+        struct ResAnmTexSrtData {
             char _spacer2[0x1C];
             unsigned short m_animLength;
         };
+        class ResAnmTexSrt : public ResCommon<ResAnmTexSrtData> {
+        public:
+            inline ResAnmTexSrt() : ResCommon() {}
+            inline ResAnmTexSrt(void* data) : ResCommon(data) {}
+        };
 
-        class AnmObjTexSrtRes {
+        class AnmObjTexSrtRes : public G3dObj {
         public:
             virtual u32 IsDerivedFrom(int* unk1);
 
@@ -32,7 +37,7 @@ namespace nw4r {
 
             virtual float GetUpdateRate();
 
-            virtual int Bind(int* unk1);
+            virtual int Bind(ResMdl mdl);
 
             virtual void Release();
 
@@ -42,11 +47,11 @@ namespace nw4r {
             virtual int* Detach(int unk1);           // TODO
             virtual void DetachAll();
 
-            AnmObjTexSrtRes* Construct(int* unk1, int* unk2, int* unk3, int* unk4, u32 unk5);
+            static AnmObjTexSrtRes* Construct(MEMAllocator* allocator, int* instanceSize, ResAnmTexSrt anim, ResMdl mdl, bool hasCache);
 
             char _spacer[40];
 
-            SRT0* m_anmTexSrtFile;
+            ResAnmTexSrt m_anmTexSrtFile;
 
             char _spacer2[4];
         };

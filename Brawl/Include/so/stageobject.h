@@ -37,7 +37,7 @@ public:
     virtual ~StageObject();
 
     // TODO: Verify params?
-    virtual void updatePosture(u32 unk1);
+    virtual void updatePosture(bool);
     virtual void processFixPositionPreAnimCmd();
     virtual int* getInput();
     virtual double getCollisionLr(int* unk1);

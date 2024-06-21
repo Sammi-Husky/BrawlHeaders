@@ -2,6 +2,8 @@
 
 #include <mt/mt_vector.h>
 #include <types.h>
+#include <so/collision/so_collision.h>
+#include <so/so_array.h>
 
 enum CollisionAttackElementType {
     Element_Type_Normal = 0x0,
@@ -188,5 +190,40 @@ struct soCollisionAttackData {
             unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
         } m_masks;
     };
+
+    inline soCollisionAttackData() {
+        m_tripRate = 1.0;
+        m_hitstopMultiplier = 1.0;
+        m_sdiMultiplier = 1.0;
+        m_masks.field_0x38_10 = 0;
+    }
 };
 static_assert(sizeof(soCollisionAttackData) == 64, "Class is wrong size!");
+
+struct soCollisionAttackAbsolute {
+    soCollisionAttackData m_attackData;
+    char _0x40[4];
+    Vec3f m_nodeGlobalPos;
+    char _0x50[15];
+    u8 m_index;
+    int m_groupIndex;
+    bool m_isAttack;
+    char _0x65[3];
+
+    soCollisionAttackAbsolute();
+    ~soCollisionAttackAbsolute();
+};
+
+class soCollisionAttackPart {
+    int m_0x0;
+    soCollisionAttackData m_attackData;
+    soArrayVector<clTarget, 7> m_clTargetArrayVector;
+    int m_groupIndex;
+    char _0x8c[4];
+
+public:
+    soCollisionAttackPart();
+    soCollisionAttackPart(u8, bool);
+    ~soCollisionAttackPart();
+};
+static_assert(sizeof(soCollisionAttackPart) == 0x90, "Class is wrong size!");
