@@ -1051,8 +1051,12 @@ CC008000:WGPIPE
 27,1,00234040:setAreaSleep__9stTriggerFUl
 27,1,00233A48:setWindParam__9stTriggerFP20grGimmickWindData2ndl
 
+// stDataContainer
+8015bacc:__dt__15stDataContainerFv
+
 // stDataMultiContainer
 8015bbf4:create__20stDataMultiContainerFPvQ25Heaps8HeapType
+
 
 // SeSeq
 27,1,00224e44:__ct__Q28StSeUtil5SeSeqFPQ28StSeUtil10UnkStruct2UlPQ28StSeUtil10UnkStruct3Ul
