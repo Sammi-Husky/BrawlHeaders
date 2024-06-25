@@ -5,6 +5,7 @@
 #include <types.h>
 
 class soCollisionHitGroup {
+public:
     int m_index;
     char _4[2];
     short m_partSize;
@@ -25,7 +26,6 @@ class soCollisionHitGroup {
     u8 m_globalOffset;
     char _53[3];
 
-public:
     void setInvincibleGlobal();
 
     soCollisionHitGroup();
