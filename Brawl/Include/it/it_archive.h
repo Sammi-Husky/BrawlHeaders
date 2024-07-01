@@ -15,11 +15,18 @@ public:
         F = 0x5
     };
 
-    Type m_itArchiveType;
+    Type m_type;
     u8 m_4;
     char _5[3];
-    itKind m_itKind;
-    int m_itVariation;
+    union {
+        struct {
+            ItemKind m_itemKind;
+        };
+        struct {
+            itKind m_itKind;
+            u32 m_itVariation;
+        };
+    };
     int m_commonParamArchiveId;
     int m_brresArchiveId;
     int m_paramArchiveId;

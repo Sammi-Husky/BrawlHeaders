@@ -7,11 +7,23 @@
 #include <it/item.h>
 #include <so/so_dispose_instance_manager.h>
 #include <types.h>
+#include <bitset>
 
 class itManager : public gfTask, public soDisposeInstanceEventObserver {
 public:
+    struct ItemSwitch {
+        bitset<NUM_IT_KINDS> m_itemSwitch;
+
+        ItemSwitch() : m_itemSwitch(0) {
+
+        }
+        ItemSwitch(bool val) : m_itemSwitch(val) {
+
+        }
+    };
+
     char _76[116];
-    u32 m_framesIntoCurrentGame;
+    u32 m_currentGameFrameCount;
     int m_numItems;
     soArrayList<itArchive*, 128> m_itArchiveArrayList;
     bool m_drawDone;
@@ -20,19 +32,19 @@ public:
     soArrayList<BaseItem*, 64> m_itemArrayList2;
     soArrayList<BaseItem*, 64> m_itemArrayList3;
     char _4080[25];
-    u8 m_itKindNums[178];
+    u8 m_itemNums[NUM_IT_KINDS];
     char _4283[1];
-    itKind m_nextAssistItKind;
+    itKind m_nextAssistKind;
     int m_numAssists;
     int m_preloadAssistTimer;
-    soArrayList<itKind, 12> m_pokemonItKindArrayList;
+    soArrayList<itKind, 12> m_pokemonKindArrayList;
     u32 m_nextPokemonIndex;
     int m_numPokemon;
     int m_numPokeballs;
     int m_preloadPokemonTimer;
     soArrayList<itGenArchive*, 3> m_itGenArchiveArrayList;
-    u8 m_itKindSwitch[24];
-    float m_itKindLotRates[178];
+    ItemSwitch m_itemSwitch;
+    float m_itemLotRates[NUM_IT_KINDS];
     int m_crateVariation;
     int m_smashBallDropTimer;
     char _5252[8];
@@ -58,6 +70,7 @@ public:
 
     bool isCompItemKindArchive(itKind kind, u32 variation, bool);
     itArchive* preloadItemKindArchive(itKind kind, u32 variation, itArchive::Type archiveType, bool);
+    ItemKind getLotOneItemKind(itGenSheetKind* sheetKind, itGenKind genKind, ItemSwitch*, bool);
     BaseItem* createItem(itKind kind, u32 variation, int creatorTaskId, int, u8, int, int, int);
     BaseItem* createItemInstance(itCreate* create);
     u32 getItemNum(itKind kind);

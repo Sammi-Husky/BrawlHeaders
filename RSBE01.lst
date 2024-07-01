@@ -405,6 +405,9 @@ CC008000:WGPIPE
 27,1,0008F064:getInstance__13soEventSystemFv
 27,1,0008F1BC:getManager__13soEventSystemFs
 
+// soGroundUtil
+27,1,00030EC8:checkDeadArea__12soGroundUtilFP5Vec3fff
+
 // soGroundShapeImpl
 27,1,0002F9A4:updateRhombus__17soGroundShapeImplFP16soModuleAccesser
 27,1,0002FC10:updateRhombusFollowNode__17soGroundShapeImplFP16soModuleAccesser

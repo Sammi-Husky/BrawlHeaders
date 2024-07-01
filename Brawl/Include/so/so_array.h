@@ -3,16 +3,7 @@
 #include <so/so_null.h>
 #include <types.h>
 #include <so/so_array_vector_calculator.h>
-
-template <size_t N>
-struct bit_width {
-    u8 bits[1 + sizeof(bit_width<N / 2>)];
-};
-
-template <>
-struct bit_width<1> {
-    u8 bits[1];
-};
+#include <bitset>
 
 template <class T>
 class soArrayFixed : public soNullableInterface {
