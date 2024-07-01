@@ -38,9 +38,7 @@ public:
     // 24
     float m_motionRatio;
     // 28
-    char m_calcCollisionEnable;
-    // 29
-    char _align[3];
+    char _align[4];
     // 2c
     union {
         struct {
