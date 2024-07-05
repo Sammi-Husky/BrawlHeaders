@@ -27,9 +27,9 @@ public:
             u32 m_itVariation;
         };
     };
-    int m_commonParamArchiveId;
-    int m_brresArchiveId;
-    int m_paramArchiveId;
+    int m_commonParamId;
+    int m_brresId;
+    int m_paramId;
     int m_soundGroup;
     int m_32;
     int m_numItemsActive;

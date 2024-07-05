@@ -1,5 +1,11 @@
 #pragma once
 
+enum GameRule {
+    Game_Rule_Time = 0x0,
+    Game_Rule_Stock = 0x1,
+    Game_Rule_Coin = 0x2
+};
+
 enum gmCharacterKind {
     Character_Mario = 0x0,
     Character_DonkeyKong = 0x1, Character_Donkey = 0x1,

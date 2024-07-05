@@ -306,7 +306,7 @@ struct ItemKind {
 struct itCreate {
     int m_index;
     int m_creatorTaskId;
-    int m_teamOwnerTaskId;
+    int m_ownerTaskId;
     union {
         struct {
             ItemKind m_itemKind;
@@ -316,16 +316,16 @@ struct itCreate {
             u32 m_variation;
         };
     };
-    Vec3f* m_pos1;
-    Vec3f* m_pos2;
+    Vec3f* m_safePos;
+    Vec3f* m_pos;
     float m_lr;
     int m_teamNo;
-    int m_36;
-    u8 m_40;
+    soResourceModule* m_resourceModule;
+    u8 m_groupNo;
     char _41[3];
-    int m_44;
-    int m_48;
-    int m_52;
+    int m_brresId;
+    int m_texResIndex;
+    int m_texResId;
 };
 static_assert(sizeof(itCreate) == 56, "Class is wrong size!");
 
