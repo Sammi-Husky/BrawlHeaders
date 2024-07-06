@@ -384,7 +384,7 @@ public:
     virtual ~BaseItem();
 
     // TODO: Verify parameters
-    virtual void reset(float, Vec3f* pos);
+    virtual void reset(Vec3f* pos, float lr, float);
     virtual void remove();
     virtual int getArticleId();
     virtual int getArticleEventManageId();
@@ -436,6 +436,7 @@ public:
     int getParam(unsigned int param);
     float getParam(int param);
     float getParamFloat(unsigned int param);
+    bool isHaved();
 
     void setSafePos(Vec2f* pos);
     void warp(Vec3f* pos);

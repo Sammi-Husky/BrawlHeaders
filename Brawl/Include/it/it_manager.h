@@ -80,6 +80,7 @@ public:
     BaseItem* createItemInstance(itCreate* create);
     u32 getItemNum(itKind kind);
     u32 getItemNum(itKind kind, int variation, int taskId, int);
+    BaseItem* getItemFromInstanceId(int instanceId);
     void removeItem(BaseItem*);
     static itManager* getInstance();
 };
