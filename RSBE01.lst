@@ -1100,6 +1100,7 @@ CC008000:WGPIPE
 //gfFileIO
 8001bf0c:readFile__8gfFileIOFP15gfFileIORequest
 8001cbf4:readSDFile__8gfFileIOFP15gfFileIORequest
+8001f5a0:checkFileSD__8gfFileIOFP15gfFileIORequest
 80020b38:__dt__14gfFileIOHandleFv
 80020b98:setNotify__14gfFileIOHandleFv
 80020bec:createDirRequest__14gfFileIOHandleFv
@@ -1138,7 +1139,7 @@ CC008000:WGPIPE
 80021f94:getBuffer__14gfFileIOHandleFv
 80021fa0:getPool__14gfFileIOHandleFv
 80021fac:release__14gfFileIOHandleFv
-8002239c:setReadParam__15gfFileIORequestFP15gfFileIORequestPcPvii
+8002239c:setReadParam__15gfFileIORequestFP15gfFileIORequestPCcPvii
 8001be00:gfFACreateDir__8gfFileIOFPCc
 
 // gameGlobal
