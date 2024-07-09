@@ -19,19 +19,23 @@
 
 #pragma push
 #pragma enumsalwaysint off // These are char enums.
-enum gfPadError {
-    GF_PAD_ERROR_NONE = 0,
-    GF_PAD_ERROR_NO_CONTROLLER = -1,
-    GF_PAD_ERROR_NOT_READY =  -2,
-    GF_PAD_ERROR_TRANSFER = -3
-};
+namespace gfPadError {
+    enum PadError {
+        NONE = 0,
+        NO_CONTROLLER = -1,
+        NOT_READY =  -2,
+        TRANSFER = -3
+    };
+}
 
-enum gfPadType {
-    GF_PAD_TYPE_GCC = 0,
-    GF_PAD_TYPE_WII_CLASSIC = 1,
-    GF_PAD_TYPE_WIIMOTE = 2,
-    GF_PAD_TYPE_WIIMOTE_NUNCHUK = 3
-};
+namespace gfPadType {
+    enum PadType {
+        GCC = 0,
+        WII_CLASSIC = 1,
+        WIIMOTE = 2,
+        NUNCHUK = 3
+    };
+}
 #pragma pop
 
 union gfPadButtons {
@@ -77,19 +81,19 @@ struct gfPadStatus {
 
     char m_stickX;
     char m_stickY;
-    char m_substickX;
-    char m_substickY;
+    char m_subStickX;
+    char m_subStickY;
     char m_lTriggerAnalog;
     char m_rTriggerAnalog;
     char _0x36;
 
     char _0x37;
-    gfPadError m_error;
+    gfPadError::PadError m_error;
     char _0x39;
     char _0x3a;
     char _0x3b;
 
-    gfPadType m_controllerType;
+    gfPadType::PadType m_controllerType;
 
     void init();
     void clamp();
