@@ -14,6 +14,7 @@
 #include <so/motion/so_motion_module_impl.h>
 #include <so/posture/so_posture_module_impl.h>
 #include <so/resource/so_resource_module_impl.h>
+#include <so/shadow/so_shadow_module_impl.h>
 #include <so/situation/so_situation_module_impl.h>
 #include <so/slow/so_slow_module_impl.h>
 #include <so/sound/so_sound_module_impl.h>
@@ -69,7 +70,7 @@ public:
     void* m_targetSearchModule;
     void* m_physicsModule;
     void* m_slopeModule;
-    void* m_shadowModule;
+    soShadowModule* m_shadowModule;
     void* m_itemManageModule;
     soColorBlendModule* m_colorBlendModule;
     void* m_jostleModule;
@@ -91,102 +92,107 @@ public:
     soModuleEnumeration* m_enumerationStart;
     void* vtable1;
 
-    inline soModelModule* getModelModule()
+    inline soModelModule* getModelModule() const
     {
         return this->m_enumerationStart->m_modelModule;
     }
 
-    inline soMotionModule* getMotionModule()
+    inline soMotionModule* getMotionModule() const
     {
         return this->m_enumerationStart->m_motionModule;
     }
 
-    inline soPostureModule* getPostureModule()
+    inline soPostureModule* getPostureModule() const
     {
         return this->m_enumerationStart->m_postureModule;
     }
 
-    inline soGroundModule* getGroundModule()
+    inline soGroundModule* getGroundModule() const
     {
         return this->m_enumerationStart->m_groundModule;
     }
 
-    inline soSituationModule* getSituationModule()
+    inline soShadowModule* getShadowModule() const
+    {
+        return this->m_enumerationStart->m_shadowModule;
+    }
+
+    inline soSituationModule* getSituationModule() const
     {
         return this->m_enumerationStart->m_situationModule;
     }
 
-    inline soCollisionAttackModule* getCollisionAttackModule()
+    inline soCollisionAttackModule* getCollisionAttackModule() const
     {
         return this->m_enumerationStart->m_collisionAttackModule;
     }
 
-    inline soCollisionHitModule* getCollisionHitModule()
+    inline soCollisionHitModule* getCollisionHitModule() const
     {
         return this->m_enumerationStart->m_collisionHitModule;
     }
 
-    inline soCollisionSearchModule* getCollisionSearchModule()
+    inline soCollisionSearchModule* getCollisionSearchModule() const
     {
         return this->m_enumerationStart->m_collisionSearchModule;
     }
 
-    inline soDamageModule* getDamageModule()
+    inline soDamageModule* getDamageModule() const
     {
         return this->m_enumerationStart->m_damageModule;
     }
 
-    inline soSoundModule* getSoundModule()
+    inline soSoundModule* getSoundModule() const
     {
         return this->m_enumerationStart->m_soundModule;
     }
 
-    inline soControllerModule* getControllerModule()
+    inline soControllerModule* getControllerModule() const
     {
         return this->m_enumerationStart->m_controllerModule;
     }
 
-    inline soWorkManageModule* getWorkManageModule()
+    inline soWorkManageModule* getWorkManageModule() const
     {
         return this->m_enumerationStart->m_workManageModule;
     }
 
-    inline soAnimCmdModule* getAnimCmdModule() 
+    inline soAnimCmdModule* getAnimCmdModule()  const
     {
         return this->m_enumerationStart->m_animCmdModule;
     }
 
-    inline soStatusModule* getStatusModule()
+    inline soStatusModule* getStatusModule() const
     {
         return this->m_enumerationStart->m_statusModule;
     }
 
-    inline soKineticModule* getKineticModule()
+    inline soKineticModule* getKineticModule() const
     {
         return this->m_enumerationStart->m_kineticModule;
     }
 
-    inline soEventManageModule* getEventManageModule()
+    inline soEventManageModule* getEventManageModule() const
     {
         return this->m_enumerationStart->m_eventManageModule;
     }
 
-    inline soEffectModule* getEffectModule()
+    inline soEffectModule* getEffectModule() const
     {
         return this->m_enumerationStart->m_effectModule;
     }
 
-    inline soSlowModule* getSlowModule()
+    inline soSlowModule* getSlowModule() const
     {
         return this->m_enumerationStart->m_slowModule;
     }
 
-    inline soColorBlendModule* getColorBlendModule()
+    inline soColorBlendModule* getColorBlendModule() const
     {
         return this->m_enumerationStart->m_colorBlendModule;
     }
 
-    inline soParamCustomizeModule* getParamCustomizeModule()
+    inline soParamCustomizeModule* getParamCustomizeModule() const
     {
         return this->m_enumerationStart->m_paramCustomizeModule;
     }
