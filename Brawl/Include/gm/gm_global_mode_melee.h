@@ -264,7 +264,8 @@ static_assert(sizeof(gmItSwitch) == 0x10, "Class is wrong size!");
 
 class gmMeleeInitData {
 public:
-    char m_0x0;
+    GameMode m_gameMode : 6;
+    char _0x0_0 : 2;
     GameRule m_gameRule : 3;
     u8 m_numPlayers : 3;
     u8 m_0x1_0 : 2;

@@ -19,7 +19,7 @@ public:
     };
 
     char _76[116];
-    u32 m_currentGameFrameCount;
+    u32 m_frameCount;
     int m_numItems;
     soArrayList<itArchive*, 128> m_itArchiveArrayList;
     bool m_drawDone;

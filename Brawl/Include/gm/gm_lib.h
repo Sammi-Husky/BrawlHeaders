@@ -1,5 +1,40 @@
 #pragma once
 
+enum GameMode {
+    Game_Mode_Melee = 0x0,
+    Game_Mode_Tournament = 0x1,
+    Game_Mode_Simple = 0x2,
+    Game_Mode_Simple_Target = 0x3,
+    Game_Mode_AllStar = 0x4,
+    Game_Mode_Rest = 0x5,
+    Game_Mode_Adventure = 0x6,
+    Game_Mode_Event = 0x7,
+    Game_Mode_Target = 0x8,
+    Game_Mode_Homerun = 0x9,
+    Game_Mode_Kumite = 0xA,
+
+    Game_Mode_Training = 0xD,
+    Game_Mode_Net_Friend = 0xE,
+    Game_Mode_Net_Friend_Practice = 0xF,
+    Game_Mode_Net_Kumite = 0x10,
+    Game_Mode_Net_Kumite_Practice = 0x11,
+    Game_Mode_Net_Homerun = 0x12,
+    Game_Mode_Net_Homerun_Practice = 0x13,
+
+    Game_Mode_Net_Watch = 0x17,
+    Game_Mode_Net_Okiraku = 0x18,
+    Game_Mode_Net_Okiraku_Practice = 0x19,
+
+    Game_Mode_Net_Team = 0x1C,
+    Game_Mode_Net_Team_Practice = 0x1D,
+
+    Game_Mode_Button = 0x1F,
+    Game_Mode_Result = 0x20,
+    Game_Mode_Demo = 0x21,
+
+
+};
+
 enum GameRule {
     Game_Rule_Time = 0x0,
     Game_Rule_Stock = 0x1,
