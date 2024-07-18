@@ -293,7 +293,7 @@ public:
     virtual void getZonePos(Vec3f* pos);
     virtual float getMagmaHeight();   // TODO
     virtual float getAcidHeight();    // TODO
-    virtual int getIteamDropStatus(); // TODO
+    virtual u8 getIteamDropStatus();
     virtual bool createWind2ndOnly();
     virtual grGimmickWindData2nd* getWind2ndOnlyData(); // TODO
     virtual void updateWind2ndOnly();                   // TODO

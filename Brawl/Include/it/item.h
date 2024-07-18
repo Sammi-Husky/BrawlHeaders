@@ -7,6 +7,8 @@
 #include <types.h>
 #include <ut/ut_uncopyable.h>
 
+#define NUM_IT_KINDS 178
+
 enum itKind {
     Item_Common = -0x3,
     Item_AssistTrophy = 0x00,
@@ -95,6 +97,7 @@ enum itKind {
     Item_Slow = 0x35,
     Item_SmartBomb = 0x36,
     Item_SmashBall = 0x37,
+    Item_SmokeBall = 0x38,
     Item_SmokeScreen = 0x38,
     Item_Spring = 0x39,
     Item_StarRod = 0x3A,
@@ -288,29 +291,41 @@ enum itKind {
     Item_Assist_Wright = 0xB0,
     Item_Assist_DrWright_Building = 0xB1,
     Item_Assist_Wright_Buil = 0xB1,
-    Item_Unknown1 = 0x7D1,
+    Item_Group_Food = 0x7D1,
     Item_Unknown2 = 0x7D2,
     Item_Unknown3 = 0x7D3,
     Item_Unknown4 = 0x7D4,
     Item_Unknown5 = 0x7D5
 };
 
+struct ItemKind {
+    itKind m_kind;
+    u32 m_variation;
+};
+
 struct itCreate {
     int m_index;
     int m_creatorTaskId;
-    int m_teamOwnerTaskId;
-    itKind m_kind;
-    u32 m_variation;
-    Vec3f* m_pos1;
-    Vec3f* m_pos2;
+    int m_ownerTaskId;
+    union {
+        struct {
+            ItemKind m_itemKind;
+        };
+        struct {
+            itKind m_kind;
+            u32 m_variation;
+        };
+    };
+    Vec3f* m_safePos;
+    Vec3f* m_pos;
     float m_lr;
     int m_teamNo;
-    int m_36;
-    u8 m_40;
+    soResourceModule* m_resourceModule;
+    u8 m_groupNo;
     char _41[3];
-    int m_44;
-    int m_48;
-    int m_52;
+    int m_brresId;
+    int m_texResIndex;
+    int m_texResId;
 };
 static_assert(sizeof(itCreate) == 56, "Class is wrong size!");
 
@@ -324,8 +339,15 @@ protected:
 
 public:
     int m_instanceId;
-    itKind m_kind;
-    int m_variation;
+    union {
+        struct {
+            ItemKind m_itemKind;
+        };
+        struct {
+            itKind m_kind;
+            u32 m_variation;
+        };
+    };
     int m_creatorTaskId;
     itKind m_lotCreateKind;
     itCustomizerInterface* m_customizer;
@@ -362,7 +384,7 @@ public:
     virtual ~BaseItem();
 
     // TODO: Verify parameters
-    virtual void reset(float, Vec3f* pos);
+    virtual void reset(Vec3f* pos, float lr, float);
     virtual void remove();
     virtual int getArticleId();
     virtual int getArticleEventManageId();
@@ -414,6 +436,7 @@ public:
     int getParam(unsigned int param);
     float getParam(int param);
     float getParamFloat(unsigned int param);
+    bool isHaved();
 
     void setSafePos(Vec2f* pos);
     void warp(Vec3f* pos);

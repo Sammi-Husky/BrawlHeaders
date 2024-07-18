@@ -13,6 +13,7 @@
 27,6,2EB4: g_ftInstanceManager
 27,6,2E70: g_ftAudienceManager
 27,6,5518: g_aiMgr
+805BACC0: g_gfPadSystem
 27,6,E8: g_soWorld
 80494958:g_HeapInfos
 8059FF80:g_gfSceneRoot
@@ -331,6 +332,39 @@ CC008000:WGPIPE
 8000d818:setCurrentFrame__11gfSceneRootFf
 8000d56c:removeResAnmScn__11gfSceneRootFv
 
+// gfPadSystem
+80028c58:__ct__11gfPadSystemFv
+80028c10:create__11gfPadSystemFv
+8002b62c:clearPadEdgeRepert__11gfPadSystemFv
+80029424:clearPadQueue__11gfPadSystemFv
+80029380:createRumbleSystem__11gfPadSystemFv
+800293dc:consumeFrameCounter__11gfPadSystemFi
+8002b480:disconectWiiControler__11gfPadSystemFv
+8002b040:getDebugPadStatus__11gfPadSystemFiP11gfPadStatus
+8002ac54:getGamePadStatus__11gfPadSystemFiP11gfPadStatus
+8002ae48:getSysPadStatus__11gfPadSystemFiP11gfPadStatus
+8002ac2c:getGamePadQueueCount__11gfPadSystemFv
+8002a89c:maskMotor__11gfPadSystemFUs
+8002b470:merge__11gfPadSystemFP11gfPadStatusiP11gfPadStatus
+8002b238:merge__11gfPadSystemFP11gfPadStatusiUlP11gfPadStatus
+8002abd0:pauseNotify__11gfPadSystemFv
+8002b574:readGameDataRequest__11gfPadSystemFiiii
+8002ac4c:setConnectCallback__11gfPadSystemFi
+8002b530:startSimpleSync__11gfPadSystemFv
+8002a948:startMotor__11gfPadSystemFi
+8002a9e8:startMotor__11gfPadSystemFiUs
+8002aa8c:stopMotor__11gfPadSystemFi
+8002ab74:stopMotorAllForce__11gfPadSystemFv
+8002ab00:stopMotorH__11gfPadSystemFi
+8002a4f8:updateGame__11gfPadSystemFv
+80029438:updateLow__11gfPadSystemFv
+80029578:updateLowGC__11gfPadSystemFP11gfPadStatus
+80029750:updateLowWii__11gfPadSystemFP11gfPadStatus
+8002a210:updateSystem__11gfPadSystemFv
+8002b614:wpadGameDataCallback__11gfPadSystemFi
+80026c4c:wpadSimpleSyncCallback__11gfPadSystemFv
+8002b5c4:writeGameDataRequest__11gfPadSystemFiiii
+
 // utList
 800448f8:addTail__6utListFP10utListNode
 
@@ -404,6 +438,9 @@ CC008000:WGPIPE
 // soEventSystem
 27,1,0008F064:getInstance__13soEventSystemFv
 27,1,0008F1BC:getManager__13soEventSystemFs
+
+// soGroundUtil
+27,1,00030EC8:checkDeadArea__12soGroundUtilFP5Vec3fff
 
 // soGroundShapeImpl
 27,1,0002F9A4:updateRhombus__17soGroundShapeImplFP16soModuleAccesser
@@ -1010,11 +1047,16 @@ CC008000:WGPIPE
 27,1,002A1718:getInstance__9itManagerFv
 27,1,002A55CC:isCompItemKindArchive__9itManagerF6itKindUlb
 27,1,002A3F4C:preloadItemKindArchive__9itManagerF6itKindUlQ29itArchive4Typeb
-27,1,002A7070:createItem__9itManagerF6itKindUliiUciii
+27,1,002A904C:getRandBasicItemSheet__9itManagerF9itGenKind
+27,1,002A9E50:getLotOneItemKind__9itManagerFP14itGenSheetKind9itGenKindPQ29itManager10ItemSwitchb
+27,1,002A6FB8:createItem__9itManagerFP5Vec3fP5Vec3ff6itKindUliP16soResourceModuleUciii
+27,1,002A7004:createItem__9itManagerFP5Vec3ff6itKindUliP16soResourceModuleUciii
+27,1,002A7070:createItem__9itManagerF6itKindUliP16soResourceModuleUciii
 27,1,002A8124:createItemInstance__9itManagerFP8itCreate
 27,1,002A8550:getItemNum__9itManagerF6itKindiii
 27,1,002A8640:getItemNum__9itManagerF6itKind
 27,1,002A7BA0:removeItem__9itManagerFP8BaseItem
+27,1,002A8828:getItemFromInstanceId__9itManagerFi
 
 // BaseItem
 27,1,0027F564:__ct__8BaseItemFP8itCreate
@@ -1024,6 +1066,7 @@ CC008000:WGPIPE
 27,1,0028DE00:warp__8BaseItemFP5Vec3f
 27,1,0028C7E8:setVanishMode__8BaseItemFb
 27,1,0028FF6C:setSafePos__8BaseItemFP5Vec2f
+27,1,0028DBA4:isHaved__8BaseItemFv
 
 // Yakumono
 27,1,0026383C:setReactionFrame__8YakumonoFi
@@ -1051,8 +1094,12 @@ CC008000:WGPIPE
 27,1,00234040:setAreaSleep__9stTriggerFUl
 27,1,00233A48:setWindParam__9stTriggerFP20grGimmickWindData2ndl
 
+// stDataContainer
+8015bacc:__dt__15stDataContainerFv
+
 // stDataMultiContainer
 8015bbf4:create__20stDataMultiContainerFPvQ25Heaps8HeapType
+
 
 // SeSeq
 27,1,00224e44:__ct__Q28StSeUtil5SeSeqFPQ28StSeUtil10UnkStruct2UlPQ28StSeUtil10UnkStruct3Ul
@@ -1087,6 +1134,7 @@ CC008000:WGPIPE
 //gfFileIO
 8001bf0c:readFile__8gfFileIOFP15gfFileIORequest
 8001cbf4:readSDFile__8gfFileIOFP15gfFileIORequest
+8001f5a0:checkFileSD__8gfFileIOFP15gfFileIORequest
 80020b38:__dt__14gfFileIOHandleFv
 80020b98:setNotify__14gfFileIOHandleFv
 80020bec:createDirRequest__14gfFileIOHandleFv
@@ -1125,7 +1173,7 @@ CC008000:WGPIPE
 80021f94:getBuffer__14gfFileIOHandleFv
 80021fa0:getPool__14gfFileIOHandleFv
 80021fac:release__14gfFileIOHandleFv
-8002239c:setReadParam__15gfFileIORequestFP15gfFileIORequestPcPvii
+8002239c:setReadParam__15gfFileIORequestFP15gfFileIORequestPCcPvii
 8001be00:gfFACreateDir__8gfFileIOFPCc
 
 // gameGlobal

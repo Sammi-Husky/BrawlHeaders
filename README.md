@@ -15,14 +15,13 @@ These headers are specifically designed to be used with MetroWerks TRK compilers
    - Repository for brawl module reimplementations and decomps
  - [BrawlStageModules](https://github.com/ilazoja/BrawlStageModule)
    - Custom stage modules built with C++ for completely custom functionality
-  
-## Credits
-This project would not be possible without the gracious contributions of many wonderful people in the Brawl Modding scene. While i can't list everyone, i've listed the contributors who have had the greatest impact on this specific repo. If you believe your name to be missing please contact me or submit a PR!
- - [Kapedani](https://github.com/ilazoja)
- - [Sammi Husky](https://github.com/Sammi-Husky)
- - [Eon](https://github.com/EonTAS)
- - [Max Power](https://github.com/mparisi20)
- - [Fudgepop01](https://github.com/fudgepop01)
 
-**This Project also makes use of the following open source projects:**
+## Special Thanks
+This project would not be possible without the gracious contributions of many wonderful people in the Brawl Modding scene. While i can't list everyone, i've listed the contributors who have had the greatest impact on this specific repo. If you believe your name to be missing please contact me or submit a PR!
+
+<a href = "https://github.com/Sammi-Husky/BrawlHeaders/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=Sammi-Husky/BrawlHeaders"/>
+</a>
+
+### This Project also makes use of the following open source projects:
  - [OpenRVL](https://github.com/Sammi-Husky/open_rvl), an open source reimplementation of the Revolution SDK

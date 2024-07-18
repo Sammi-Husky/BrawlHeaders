@@ -1,8 +1,8 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <types.h>
 #include <gm/gm_lib.h>
+#include <types.h>
 
 class gmItSwitch {
 public:
@@ -11,9 +11,9 @@ public:
         Frequency_Low = 0x1,
         Frequency_Medium = 0x2,
         Frequency_High = 0x3,
-        Frequency_VeryHigh = 0x4,   // Custom
-        Frequency_Intense = 0x5,    // Custom
-        Frequency_BombRain = 0x6    // Custom
+        Frequency_VeryHigh = 0x4, // Custom
+        Frequency_Intense = 0x5,  // Custom
+        Frequency_BombRain = 0x6  // Custom
     };
 
     struct ItemSwitch {
@@ -189,7 +189,7 @@ public:
                 bool m_celebi : 1;
                 bool m_torchic : 1;
             };
-            struct {    // Custom
+            struct { // Custom
                 bool : 1;
                 bool : 1;
                 bool : 1;
@@ -258,14 +258,15 @@ public:
         bool m_grayFox : 1;
         bool m_barbara : 1;
         bool m_andross : 1;
-    } m_assist ;
+    } m_assist;
 };
 static_assert(sizeof(gmItSwitch) == 0x10, "Class is wrong size!");
 
 class gmMeleeInitData {
 public:
-    char m_0x0;
-    u8 m_0x1_5 : 3;
+    GameMode m_gameMode : 6;
+    char _0x0_0 : 2;
+    GameRule m_gameRule : 3;
     u8 m_numPlayers : 3;
     u8 m_0x1_0 : 2;
     char m_0x2[2];
@@ -277,7 +278,7 @@ public:
     bool m_0x4_2 : 1;
     bool m_0x4_1 : 1;
     bool m_0x4_0 : 1;
-    char _0x5[0x2];              // 0x05
+    char _0x5[0x2];   // 0x05
     bool m_0x7_7 : 1; // 0x07
     bool m_0x7_6 : 1;
     bool m_0x7_5 : 1;
@@ -286,22 +287,22 @@ public:
     bool m_0x7_2 : 1;
     bool m_0x7_1 : 1;
     bool m_0x7_0 : 1;
-    s8 m_eventId;                // 0x08
-    u8 m_scoreToWin;         // custom
-    char _0xA[0x1];              // 0x0A
-    bool m_isTeams;              // 0x0B
-    char _0xC[0x2];              // 0x09
-    gmItSwitch::Frequency m_itemFrequency : 8;          // 0x0E
-    s8 m_suicideScoreMultiplier; // 0x0F
-    char _0x10[0x02];             // 0x10
-    srStageKind m_stageKind : 2; // 0x12
-    u8 m_subStageKind;           // 0x14
-    char _0x15[0x3];             // 0x15
-    s32 m_timeLimitFrames;       // 0x18
-    char _0x1c[0x5];            // 0x1C
-    bool m_isStaminaKnockback : 1;      // custom
-    bool m_isStaminaDeadZoneWrap : 1;   // custom
-    bool m_isHazardOff : 1;             // custom
+    s8 m_eventId;                              // 0x08
+    u8 m_scoreToWin;                           // custom
+    char _0xA[0x1];                            // 0x0A
+    bool m_isTeams;                            // 0x0B
+    char _0xC[0x2];                            // 0x09
+    gmItSwitch::Frequency m_itemFrequency : 8; // 0x0E
+    s8 m_suicideScoreMultiplier;               // 0x0F
+    char _0x10[0x02];                          // 0x10
+    srStageKind m_stageKind : 16;              // 0x12
+    u8 m_subStageKind;                         // 0x14
+    char _0x15[0x3];                           // 0x15
+    s32 m_timeLimitFrames;                     // 0x18
+    char _0x1c[0x5];                           // 0x1C
+    bool m_isStaminaKnockback : 1;             // custom
+    bool m_isStaminaDeadZoneWrap : 1;          // custom
+    bool m_isHazardOff : 1;                    // custom
     bool : 1;
     bool : 1;
     bool : 1;
@@ -309,52 +310,52 @@ public:
     bool : 1;
     char _0x22[6];
 
-    gmItSwitch m_itSwitch;       // 0x28
-    char _0x38[0x08];            // 0x38
-    float m_cameraShakeScale;    // 0x40
-    char _0x44[0x04];            // 0x44
-    float m_gameSpeed;           // 0x48
-    char _0x4c[0x2C];            // 0x4C
-    short m_globalOffenseRatio;  // 0x78
-    short m_globalDefenseRatio;  // 0x7A
-    char _0x7c[0x14];            // 0x7C
+    gmItSwitch m_itSwitch;      // 0x28
+    char _0x38[0x08];           // 0x38
+    float m_cameraShakeScale;   // 0x40
+    char _0x44[0x04];           // 0x44
+    float m_gameSpeed;          // 0x48
+    char _0x4c[0x2C];           // 0x4C
+    short m_globalOffenseRatio; // 0x78
+    short m_globalDefenseRatio; // 0x7A
+    char _0x7c[0x14];           // 0x7C
 };
 static_assert(sizeof(gmMeleeInitData) == 0x90, "Class is wrong size!");
 
 class gmPlayerInitData {
 public:
-    gmCharacterKind m_characterKind : 8;  // 0x00 (Otherwise known as SlotID)
-    u8 m_state;                // 0x01
-    u8 m_playerId;             // 0x02
-    u8 m_playerNo;             // 0x03
-    s8 m_stockCount;           // 0x04
-    s8 m_colorFileIdx;         // 0x05
-    s8 m_costumeID;            // 0x06
-    char _1;                   // 0x07
-    s8 m_startPointIdx;        // 0x08
-    char _2[0x02];             // 0x09
-    s8 m_teamId;               // 0x0B
-    short m_nameTag[5];        // 0x0c
-    char _3[4];                // 0x16
-    bool m_isNoVoice;          // 0x1A
-    char _4[0x03];             // 0x1B
-    u8 m_cpuType;              // 0x1E
-    u8 m_cpuRank;              // 0x1F
-    char _5[0x02];             // 0x20
-    short m_startDamage;       // 0x22
-    short m_hitPointMax;       // 0x24
-    char _6[0x02];             // 0x26
-    short m_glowAttack;        // 0x28
-    short m_glowDefense;       // 0x2A
-    float m_attackRatio;       // 0x2C
-    float m_damageRatio;       // 0x30
-    float m_attackReactionMul; // 0x34
-    float m_damageReactionMul; // 0x38
-    char _7[0x04];             // 0x3C
-    float m_scale;             // 0x40
-    float m_visibilityScale;   // 0x44
-    float m_gravity;           // 0x48
-    char _8[0x10];             // 0x4C
+    gmCharacterKind m_characterKind : 8; // 0x00 (Otherwise known as SlotID)
+    u8 m_state;                          // 0x01
+    u8 m_playerId;                       // 0x02
+    u8 m_playerNo;                       // 0x03
+    s8 m_stockCount;                     // 0x04
+    s8 m_colorFileIdx;                   // 0x05
+    s8 m_costumeID;                      // 0x06
+    char _1;                             // 0x07
+    s8 m_startPointIdx;                  // 0x08
+    char _2[0x02];                       // 0x09
+    s8 m_teamId;                         // 0x0B
+    short m_nameTag[5];                  // 0x0c
+    char _3[4];                          // 0x16
+    bool m_isNoVoice;                    // 0x1A
+    char _4[0x03];                       // 0x1B
+    u8 m_cpuType;                        // 0x1E
+    u8 m_cpuRank;                        // 0x1F
+    char _5[0x02];                       // 0x20
+    short m_startDamage;                 // 0x22
+    short m_hitPointMax;                 // 0x24
+    char _6[0x02];                       // 0x26
+    short m_glowAttack;                  // 0x28
+    short m_glowDefense;                 // 0x2A
+    float m_attackRatio;                 // 0x2C
+    float m_damageRatio;                 // 0x30
+    float m_attackReactionMul;           // 0x34
+    float m_damageReactionMul;           // 0x38
+    char _7[0x04];                       // 0x3C
+    float m_scale;                       // 0x40
+    float m_visibilityScale;             // 0x44
+    float m_gravity;                     // 0x48
+    char _8[0x10];                       // 0x4C
 };
 static_assert(sizeof(gmPlayerInitData) == 0x5C, "Class is wrong size!");
 
