@@ -7,9 +7,9 @@
 #include <st/st_trigger.h>
 
 enum MotionPathMode {
-    MotionPathMode_Return = 0x0,
-    MotionPathMode_Loop = 0x1,
-    MotionPathMode_Once = 0x2,
+    MotionPath_Return = 0x0,
+    MotionPath_Loop = 0x1,
+    MotionPath_Once = 0x2,
 };
 
 struct grGimmickMotionPathData {

@@ -885,6 +885,17 @@ CC008000:WGPIPE
 27,1,002794F0:isFrameOffset__8grMadeinFf
 
 // grGimmickMotionPath
+27,1,0026E1C8:__ct__19grGimmickMotionPathFPCcPCc
+27,1,0026E90C:update__19grGimmickMotionPathFf
+27,1,0026E2A4:__dt__19grGimmickMotionPathFv
+27,1,0026E43C:processAnim__19grGimmickMotionPathFv
+27,1,0026EE70:loadGroundData__19grGimmickMotionPathFUlUlUl
+27,1,0026F064:getModelCount__19grGimmickMotionPathFv
+27,1,0026E2FC:startup__19grGimmickMotionPathFP9gfArchiveUlUl
+27,1,0026EAE4:isMoveEnd__19grGimmickMotionPathFv
+27,1,0026EB00:isReturnEnd__19grGimmickMotionPathFv
+27,1,0026E964:setFrameModelAnim__19grGimmickMotionPathFv
+27,1,0026F03C:clearFrame__19grGimmickMotionPathFv
 27,1,0026EB3C:setFrameUpdate__19grGimmickMotionPathFf
 27,1,0026E13C:create__19grGimmickMotionPathFiPCcPCc
 27,1,0026EB5C:setFrame__19grGimmickMotionPathFf
