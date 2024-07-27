@@ -5,89 +5,6 @@
 #include <so/collision/so_collision.h>
 #include <so/so_array.h>
 
-enum CollisionAttackElementType {
-    Element_Type_Normal = 0x0,
-    Element_Type_None = 0x1,
-    Element_Type_Slash = 0x2,
-    Element_Type_Electric = 0x3,
-    Element_Type_Freezing = 0x4,
-    Element_Type_Flame = 0x5,
-    Element_Type_Coin = 0x6,
-    Element_Type_Reverse = 0x7,
-    Element_Type_Trip = 0x8,
-    Element_Type_Sleep = 0x9,
-    Element_Type_None2 = 0xA,
-    Element_Type_Bury = 0xB,
-    Element_Type_Stun = 0xC,
-    Element_Type_Sparkle = 0xD,
-    Element_Type_Flower = 0xE,
-    Element_Type_YellowSteam = 0xF,
-    Element_Type_None3 = 0x10,
-    Element_Type_Grass = 0x11,
-    Element_Type_Water = 0x12,
-    Element_Type_Darkness = 0x13,
-    Element_Type_Paralyze = 0x14,
-    Element_Type_Aura = 0x15,
-    Element_Type_Plunge = 0x16,
-    Element_Type_Down = 0x17,
-    Element_Type_Flinchless = 0x18,
-    Element_Type_None5 = 0x19,
-    Element_Type_None6 = 0x1A,
-    Element_Type_None7 = 0x1B,
-    Element_Type_None8 = 0x1C,
-    Element_Type_None9 = 0x1D,
-    Element_Type_None10 = 0x1E,
-    Element_Type_None11 = 0x1F,
-};
-
-enum CollisionAttackHitSoundLevel {
-    Hit_Sound_Level_Small = 0x0,
-    Hit_Sound_Level_Medium = 0x1,
-    Hit_Sound_Level_Large = 0x2,
-    Hit_Sound_Level_Huge = 0x3,
-};
-
-enum CollisionAttackHitSoundType {
-    Hit_Sound_Type_NoneUnique = 0x0,
-    Hit_Sound_Type_Punch = 0x1,
-    Hit_Sound_Type_Kick = 0x2,
-    Hit_Sound_Type_Slash = 0x3,
-    Hit_Sound_Type_Coin = 0x4,
-    Hit_Sound_Type_Bat = 0x5,
-    Hit_Sound_Type_Paper = 0x6, // (Harisen)
-    Hit_Sound_Type_Electric = 0x7,
-    Hit_Sound_Type_Fire = 0x8,
-    Hit_Sound_Type_Water = 0x9,
-    Hit_Sound_Type_Blank = 0xA,
-    Hit_Sound_Type_Explosion = 0xB,
-    Hit_Sound_Type_Blank2 = 0xC,
-    Hit_Sound_Type_SnakeThud = 0xD,    // Exclusive to Snake
-    Hit_Sound_Type_IkeSlam = 0xE,      // Exclusive to Ike
-    Hit_Sound_Type_DededeThwomp = 0xF, // Exclusive to Dedede
-    Hit_Sound_Type_Magic = 0x10,
-    Hit_Sound_Type_Shell = 0x11,
-    Hit_Sound_Type_PeachSlap = 0x12,   // Exclusive to Peach
-    Hit_Sound_Type_PeachPan = 0x13,    // Exclusive to Peach
-    Hit_Sound_Type_PeachClub = 0x14,   // Exclusive to Peach
-    Hit_Sound_Type_PeachRacket = 0x15, // Exclusive to Peach
-    Hit_Sound_Type_LucarioAura = 0x16, // Exclusive to Lucario
-    Hit_Sound_Type_MarthTreble = 0x17, // Exclusive to Marth
-    Hit_Sound_Type_MarioCoin = 0x18,   // Exclusive to Mario
-    Hit_Sound_Type_MarioStatic = 0x19, // Exclusive to Mario
-    Hit_Sound_Type_LuigiCoin = 0x1A,   // Exclusive to Luigi
-    Hit_Sound_Type_NessBat = 0x1B,     // Exclusive to Ness
-    Hit_Sound_Type_Frost = 0x1C,
-};
-
-enum CollisionAttackFacingRestriction {
-    Facing_Restriction_Normal = 0x0,
-    Facing_Restriction_TowardsUserDirectionOfHorizontalMomentum = 0x1,
-    Facing_Restriction_AwayFromWhereTargetIsFacing = 0x2,
-    Facing_Restriction_ForwardFromDirectionOfUser = 0x3,
-    Facing_Restriction_BackwardsFromDirectionOfUser = 0x4,
-    Facing_Restriction_AwayFromCenterOfCollision = 0x5,
-};
-
 struct soCollisionAttackAbsoluteData {
     int m_power;
     int m_vector;
@@ -101,6 +18,90 @@ struct soCollisionAttackAbsoluteData {
 };
 
 struct soCollisionAttackData {
+    enum ElementType {
+        Element_Normal = 0x0,
+        Element_None = 0x1,
+        Element_Slash = 0x2,
+        Element_Electric = 0x3,
+        Element_Freezing = 0x4,
+        Element_Flame = 0x5,
+        Element_Coin = 0x6,
+        Element_Reverse = 0x7,
+        Element_Trip = 0x8,
+        Element_Sleep = 0x9,
+        Element_None2 = 0xA,
+        Element_Bury = 0xB,
+        Element_Stun = 0xC,
+        Element_Sparkle = 0xD,
+        Element_Flower = 0xE,
+        Element_YellowSteam = 0xF,
+        Element_None3 = 0x10,
+        Element_Grass = 0x11,
+        Element_Water = 0x12,
+        Element_Darkness = 0x13,
+        Element_Paralyze = 0x14,
+        Element_Aura = 0x15,
+        Element_Plunge = 0x16,
+        Element_Down = 0x17,
+        Element_Flinchless = 0x18,
+        Element_None5 = 0x19,
+        Element_None6 = 0x1A,
+        Element_None7 = 0x1B,
+        Element_None8 = 0x1C,
+        Element_None9 = 0x1D,
+        Element_None10 = 0x1E,
+        Element_None11 = 0x1F,
+    };
+
+    enum HitSoundLevel {
+        Hit_Sound_Small = 0x0,
+        Hit_Sound_Medium = 0x1,
+        Hit_Sound_Large = 0x2,
+        Hit_Sound_Huge = 0x3,
+    };
+
+    enum HitSoundType {
+        Hit_Sound_NoneUnique = 0x0,
+        Hit_Sound_Punch = 0x1,
+        Hit_Sound_Kick = 0x2,
+        Hit_Sound_Slash = 0x3,
+        Hit_Sound_Coin = 0x4,
+        Hit_Sound_Bat = 0x5,
+        Hit_Sound_Paper = 0x6, // (Harisen)
+        Hit_Sound_Electric = 0x7,
+        Hit_Sound_Fire = 0x8,
+        Hit_Sound_Water = 0x9,
+        Hit_Sound_Blank = 0xA,
+        Hit_Sound_Explosion = 0xB,
+        Hit_Sound_Blank2 = 0xC,
+        Hit_Sound_SnakeThud = 0xD,    // Exclusive to Snake
+        Hit_Sound_IkeSlam = 0xE,      // Exclusive to Ike
+        Hit_Sound_DededeThwomp = 0xF, // Exclusive to Dedede
+        Hit_Sound_Magic = 0x10,
+        Hit_Sound_Shell = 0x11,
+        Hit_Sound_PeachSlap = 0x12,   // Exclusive to Peach
+        Hit_Sound_PeachPan = 0x13,    // Exclusive to Peach
+        Hit_Sound_PeachClub = 0x14,   // Exclusive to Peach
+        Hit_Sound_PeachRacket = 0x15, // Exclusive to Peach
+        Hit_Sound_LucarioAura = 0x16, // Exclusive to Lucario
+        Hit_Sound_MarthTreble = 0x17, // Exclusive to Marth
+        Hit_Sound_MarioCoin = 0x18,   // Exclusive to Mario
+        Hit_Sound_MarioStatic = 0x19, // Exclusive to Mario
+        Hit_Sound_LuigiCoin = 0x1A,   // Exclusive to Luigi
+        Hit_Sound_NessBat = 0x1B,     // Exclusive to Ness
+        Hit_Sound_Frost = 0x1C,
+    };
+
+    enum FacingRestriction {
+        Facing_Restriction_Normal = 0x0,
+        Facing_Restriction_TowardsUserDirectionOfHorizontalMomentum = 0x1,
+        Facing_Restriction_AwayFromWhereTargetIsFacing = 0x2,
+        Facing_Restriction_ForwardFromDirectionOfUser = 0x3,
+        Facing_Restriction_BackwardsFromDirectionOfUser = 0x4,
+        Facing_Restriction_AwayFromCenterOfCollision = 0x5,
+    };
+
+
     int m_power;
     Vec3f m_offsetPos;
     float m_size;
@@ -132,9 +133,9 @@ struct soCollisionAttackData {
             bool isCollisionPartRegion2 : 1;                // Usually Shin
             bool isCollisionPartRegion1 : 1;                // Usually forearm
             bool isCollisionPartRegion0 : 1;                // Usually head, pelvis, arm, tail, wing, item
-            CollisionAttackElementType elementType : 5;     // up to 0x1f
-            CollisionAttackHitSoundLevel hitSoundLevel : 2; // up to 0x3
-            CollisionAttackHitSoundType hitSoundType : 5;   // up to 0x1f
+            ElementType elementType : 5;     // up to 0x1f
+            HitSoundLevel hitSoundLevel : 2; // up to 0x3
+            HitSoundType hitSoundType : 5;   // up to 0x1f
             bool isClankable : 1;
             bool field_0x34_3 : 1;
             bool field_0x34_4 : 1;
@@ -147,7 +148,7 @@ struct soCollisionAttackData {
             bool field_0x38_1 : 1;
             bool ignoreInvincibility : 1;
             bool ignoreIntangibility : 1;
-            CollisionAttackFacingRestriction facingRestriction : 3; // up to 0x7
+            FacingRestriction facingRestriction : 3; // up to 0x7
             bool field_0x38_5 : 1;
             bool enableFriendlyFire : 1;
             bool disableHitstop : 1;
@@ -155,7 +156,8 @@ struct soCollisionAttackData {
             bool disableFlinch : 1;
             unsigned int field_0x38_10 : 5; // up to 0x1f;
             bool isShapeCapsule : 1;
-            unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
+            bool isDangerZone : 1; // custom
+            unsigned int field_0x3c_2 : 30; // ~up to 0x3fffffff
         } m_bits;
 
         struct {
@@ -164,9 +166,9 @@ struct soCollisionAttackData {
             unsigned int collisionSituation : 3;            // up to 0x7
             bool field_0x30_3 : 1;                          // up to 0x1
             unsigned int collisionPart : 4;                 // up to 0xf
-            CollisionAttackElementType elementType : 5;     // up to 0x1f
-            CollisionAttackHitSoundLevel hitSoundLevel : 2; // up to 0x3
-            CollisionAttackHitSoundType hitSoundType : 5;   // up to 0x1f
+            ElementType elementType : 5;     // up to 0x1f
+            HitSoundLevel hitSoundLevel : 2; // up to 0x3
+            HitSoundType hitSoundType : 5;   // up to 0x1f
             bool isClankable : 1;
             bool field_0x34_3 : 1;
             bool field_0x34_4 : 1;
@@ -179,7 +181,7 @@ struct soCollisionAttackData {
             bool field_0x38_1 : 1;
             bool ignoreInvincibility : 1;
             bool ignoreIntangibility : 1;
-            CollisionAttackFacingRestriction facingRestriction : 3; // up to 0x7
+            FacingRestriction facingRestriction : 3; // up to 0x7
             bool field_0x38_5 : 1;                                  // break throws?
             bool enableFriendlyFire : 1;
             bool disableHitstop : 1;
@@ -187,7 +189,8 @@ struct soCollisionAttackData {
             bool disableFlinch : 1;
             unsigned int field_0x38_10 : 5; // up to 0x1f;
             bool isShapeCapsule : 1;
-            unsigned int field_0x3c_1 : 31; // ~up to 0x7fffffff
+            bool isDangerZone : 1; // custom
+            unsigned int field_0x3c_2 : 30; // ~up to 0x3fffffff
         } m_masks;
     };
 

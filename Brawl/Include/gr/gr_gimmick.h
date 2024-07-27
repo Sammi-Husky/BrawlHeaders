@@ -87,17 +87,19 @@ public:
         int m_reactionFix;
         int m_reactionAdd;
         char _spacer[4];
-        CollisionAttackElementType m_elementType;
+        soCollisionAttackData::ElementType m_elementType;
         bool m_isClankable;
         bool m_unk2;
         bool m_unk3;
         bool m_unk4;
         char _spacer2[0xC];
         unsigned int m_detectionRate;
-        CollisionAttackHitSoundLevel m_hitSoundLevel;
-        CollisionAttackHitSoundType m_hitSoundType;
+        soCollisionAttackData::HitSoundLevel m_hitSoundLevel;
+        soCollisionAttackData::HitSoundType m_hitSoundType;
         bool m_unk5;
-        bool m_isShapeCapsule;
+        u8 : 6;
+        bool m_isDangerZone : 1; // custom
+        bool m_isShapeCapsule : 1;
         char _spacer3[6];
         unsigned int m_nodeIndex;
         int m_power;
@@ -133,7 +135,7 @@ public:
         char m_unk1;
         bool m_unk2;
         char _spacer[2];
-        CollisionAttackFacingRestriction m_facingRestriction;
+        soCollisionAttackData::FacingRestriction m_facingRestriction;
         float m_hitstopMultiplier;
     };
     static_assert(sizeof(AttackDetails) == 16, "Class is wrong size!");

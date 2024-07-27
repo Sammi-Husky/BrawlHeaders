@@ -30,6 +30,7 @@ class emManager {
     virtual ~emManager();
 
 public:
+    bool isCompArchiveAll();
     int getPreloadArchiveCountFromKind(EnemyKind enemyKind);
     int preloadArchive(gfArchive* param, gfArchive* brres, gfArchive* enmCommon, gfArchive* primFaceBrres, EnemyKind enemyKind, bool isSoundRequest);
     int createEnemy(emCreate* create);
