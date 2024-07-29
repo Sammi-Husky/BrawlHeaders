@@ -6,14 +6,6 @@
 #include <nw4r/g3d/g3d_resfile.h>
 #include <nw4r/g3d/g3d_scnmdlsmpl.h>
 
-class stRange {
-public:
-    float m_left;
-    float m_right;
-    float m_top;
-    float m_bottom;
-};
-
 class stPositions {
 public:
     char _0x8[8];
@@ -27,8 +19,8 @@ public:
     u8 m_itemPosCount;
     char _0x55[15];
 
-    float* getDeadRange(stRange* range);
-    float* getCameraRange(stRange* range);
+    float* getDeadRange(Rect2D* range);
+    float* getCameraRange(Rect2D* range);
     float* getKirifudaPos(u32, Vec3f* pos);
     void loadPositionData(nw4r::g3d::ResFile* resFile);
 

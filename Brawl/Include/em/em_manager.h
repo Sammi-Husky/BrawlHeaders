@@ -40,6 +40,7 @@ public:
     static void remove();
     u32 getEnemyCount();
     u32 getEnemyCountFromKind(EnemyKind enemyKind);
+    Enemy* getEnemyPtrFromId(int createId);
     static emManager* getInstance();
 };
 static_assert(sizeof(emManager) == 32, "Class is wrong size!");

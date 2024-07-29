@@ -105,9 +105,9 @@ public:
     // 8
     char _spacer1[0x10];
     // 18
-    stRange m_deadRange;
+    Rect2D m_deadRange;
     // 28
-    stRange m_aiRange;
+    Rect2D m_aiRange;
     // 38
     cmStageParam* m_cameraParam1;
     // 3c
@@ -198,7 +198,7 @@ public:
     virtual void process();
     virtual void updateStagePositions();
     virtual void debugCollision();
-    virtual stRange* getAIRange() { return &m_aiRange; }
+    virtual Rect2D* getAIRange() { return &m_aiRange; }
     virtual int getDefaultLightSetIndex() { return 0x14; }
     virtual int getZoneLightSetIndex();
     virtual int getScrollDir(Vec3f* unk1)

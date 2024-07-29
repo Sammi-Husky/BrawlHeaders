@@ -23,6 +23,7 @@
 #include <so/event/so_event_manage_module_impl.h>
 #include <so/work/so_work_manage_module_impl.h>
 #include <so/param/so_param_customize_module_impl.h>
+#include <so/camera/so_camera_module_impl.h>
 #include <types.h>
 
 class StageObject;
@@ -53,7 +54,7 @@ public:
     void* m_linkModule;
     void* m_visibilityModule;
     soControllerModule* m_controllerModule;
-    void* m_cameraModule;
+    soCameraModule* m_cameraModule;
     soWorkManageModule* m_workManageModule;
     void* m_debugModule;
     soAnimCmdModule* m_animCmdModule;
@@ -150,6 +151,11 @@ public:
     inline soControllerModule* getControllerModule() const
     {
         return this->m_enumerationStart->m_controllerModule;
+    }
+
+    inline soCameraModule* getCameraModule() const
+    {
+        return this->m_enumerationStart->m_cameraModule;
     }
 
     inline soWorkManageModule* getWorkManageModule() const

@@ -5,7 +5,7 @@
 #include <types.h>
 
 struct cmStageParam {
-    stRange m_range;
+    Rect2D m_range;
     float m_verticalRotationFactor;
     float m_horizontalRotationFactor;
     float m_minZ;

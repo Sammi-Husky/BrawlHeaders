@@ -1089,8 +1089,8 @@ CC008000:WGPIPE
 27,1,00263C64:setSituationKind__8YakumonoFi
 
 // stPositions
-27,1,00226794:getDeadRange__11stPositionsFP7stRange
-27,1,00226584:getCameraRange__11stPositionsFP7stRange
+27,1,00226794:getDeadRange__11stPositionsFP6Rect2D
+27,1,00226584:getCameraRange__11stPositionsFP6Rect2D
 27,1,00225CE8:loadPositionData__11stPositionsFPQ34nw4r3g3d7ResFile
 27,1,002274dc:getKirifudaPos__11stPositionsFUlP5Vec3f
 
@@ -1133,6 +1133,7 @@ CC008000:WGPIPE
 41,1,0000CF18:getEnemyCount__9emManagerFv
 41,1,0000CF8C:getEnemyCountFromKind__9emManagerF9EnemyKind
 41,1,0000D42C:isCompArchiveAll__9emManagerFv
+41,1,0000CE84:getEnemyPtrFromId__9emManagerFi
 
 // emWeaponManager (Note: addresses are based on abridged sora_enemy_vs)
 41,1,0002A7A4:create__15emWeaponManagerFv

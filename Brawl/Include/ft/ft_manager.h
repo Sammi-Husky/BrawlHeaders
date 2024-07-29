@@ -75,7 +75,9 @@ public:
     GameRule m_gameRule : 8;
     char _107[2];
     bool m_isStamina;
-    char _110[70];
+    char _110[35];
+    s8 m_parasitePlayerNo;    // custom
+    char _146[34];
     soEventManageModuleImpl m_eventManageModule;
     char m_200[4];
     short m_manageID;

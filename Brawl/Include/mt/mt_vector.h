@@ -118,4 +118,12 @@ public:
 };
 static_assert(sizeof(Vec3f) == 12, "Class is wrong size!");
 
+class Rect2D {
+public:
+    float m_left;
+    float m_right;
+    float m_top;
+    float m_bottom;
+};
+
 Vec3f operator*(const float c, const Vec3f& v);

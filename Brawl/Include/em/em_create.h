@@ -123,7 +123,7 @@ public:
     u8 m_difficulty;
     char _1[3];
     EnemyKind m_enemyKind;
-    int m_8;
+    int m_teamNo;
     float m_startLr;
     Vec3f m_startPos;
     u32 m_startStatusKind;
@@ -138,7 +138,7 @@ public:
     void* m_epbm;
     void* m_epsp;
     grGimmickMotionPath* m_motionPath;
-    int m_72;
+    int m_parentCreateId;
     virtual ~emCreate(){
 
     };

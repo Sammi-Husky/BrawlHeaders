@@ -46,8 +46,8 @@ public:
     cmStageParam m_stageCameraParam;
     cmStageParamPaused m_stageCameraParamPaused;
     cmStageParamFixed m_stageCameraParamFixed;
-    stRange m_stageCameraRange;
-    stRange m_stageDeadRange;
+    Rect2D m_stageCameraRange;
+    Rect2D m_stageDeadRange;
     char _328[92];
 
     virtual void processCamera();
