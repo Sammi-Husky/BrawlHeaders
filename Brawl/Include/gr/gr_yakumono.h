@@ -48,13 +48,13 @@ public:
                                          float hitstopMultiplier, float sdiMultiplier, int power, Vec3f* offsetPos,
                                          int vector, int reactionEffect, int reactionFix, int reactionAdd,
                                          u32 nodeIndex, u32 collisionCategoryMask, u32 collisionSituationMask,
-                                         bool unk1, u32 collisionPartMask, soCollisionAttackData::ElementType elementType,
-                                         soCollisionAttackData::HitSoundLevel hitSoundLevel, soCollisionAttackData::HitSoundType hitSoundType,
+                                         bool unk1, u32 collisionPartMask, soCollisionAttackData::Attribute attribute,
+                                         soCollisionAttackData::SoundLevel soundLevel, soCollisionAttackData::SoundAttribute soundAttr,
                                          bool isClankable, bool unk2, bool unk3, bool isBlockable, bool isReflectable,
                                          bool isAbsorbable, u32 addedShieldDamage, u32 detectionRate, bool unk5, bool ignoreInvincibility,
-                                         bool ignoreIntangibility, soCollisionAttackData::FacingRestriction facingRestriction,
+                                         bool ignoreIntangibility, soCollisionAttackData::LrCheck lrCheck,
                                          bool unk6, bool unk7, bool disableHitstop, bool disableHitGfx,
-                                         bool disableFlinch, u32 unk8, bool isShapeCapsule);
+                                         bool disableFlinch, soCollisionAttackData::Region region, bool isShapeCapsule);
     virtual bool isEnableAttackPersonAttacked(u32 unk1, u32 unk2, u32 unk3);
     virtual bool isEnableAttackAttribute(u32 unk1, u32 unk2);
 

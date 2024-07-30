@@ -87,15 +87,15 @@ public:
         int m_reactionFix;
         int m_reactionAdd;
         char _spacer[4];
-        soCollisionAttackData::ElementType m_elementType;
+        soCollisionAttackData::Attribute m_attribute;
         bool m_isClankable;
         bool m_unk2;
         bool m_unk3;
         bool m_unk4;
         char _spacer2[0xC];
         unsigned int m_detectionRate;
-        soCollisionAttackData::HitSoundLevel m_hitSoundLevel;
-        soCollisionAttackData::HitSoundType m_hitSoundType;
+        soCollisionAttackData::SoundLevel m_soundLevel;
+        soCollisionAttackData::SoundAttribute m_soundAttribute;
         bool m_unk5;
         u8 : 6;
         bool m_isDangerZone : 1; // custom
@@ -117,25 +117,25 @@ public:
 
     struct AttackDetails {
         union {
-            unsigned int m_collisionCategoryMask;
+            u32 m_categoryMask;
             struct {
                 unsigned int _pad : 22;
-                bool m_isCollisionCategoryUnk1 : 1;
-                bool m_isCollisionCategoryItems1 : 1; // Soccer Ball, Blast Box etc.
-                bool m_isCollisionCategoryUnk2 : 1;
-                bool m_isCollisionCategoryUnk3 : 1;
-                bool m_isCollisionCategoryUnk4 : 1;
-                bool m_isCollisionCategoryUnk5 : 1;
-                bool m_isCollisionCategoryItems2 : 1; // Barrel, Crate etc.
-                bool m_isCollisionCategoryUnk6 : 1;
-                bool m_isCollisionCategoryUnk7 : 1;
-                bool m_isCollisionCategoryFighter : 1;
+                bool m_isCategoryFloor : 1;
+                bool m_isCategoryItemE : 1; // Soccer Ball, Blast Box etc.
+                bool m_isCategory7 : 1;
+                bool m_isCategoryGimmick : 1;
+                bool m_isCategory5 : 1;
+                bool m_isCategory4 : 1;
+                bool m_isCategoryItem : 1; // Barrel, Crate etc.
+                bool m_isCategory2 : 1;
+                bool m_isCategoryEnemy : 1;
+                bool m_isCategoryFighter : 1;
             };
         };
         char m_unk1;
         bool m_unk2;
         char _spacer[2];
-        soCollisionAttackData::FacingRestriction m_facingRestriction;
+        soCollisionAttackData::LrCheck m_lrCheck;
         float m_hitstopMultiplier;
     };
     static_assert(sizeof(AttackDetails) == 16, "Class is wrong size!");
