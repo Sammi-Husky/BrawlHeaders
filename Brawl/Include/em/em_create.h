@@ -130,10 +130,7 @@ public:
     u8 m_level;
     char _33[3];
     float m_36;
-    float m_posX1;
-    float m_posX2;
-    float m_posY1;
-    float m_posY2;
+    Rect2D m_territoryRange;
     int m_connectedTriggerId;
     void* m_epbm;
     void* m_epsp;
