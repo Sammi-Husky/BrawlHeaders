@@ -71,7 +71,7 @@ static_assert(sizeof(soStatusModule) == 8, "Class is wrong size!");
 
 class soStatusModuleImpl : public soStatusModule, public soEventPresenter<soStatusEventObserver>, public soAnimCmdEventObserver, public soCollisionAttackEventObserver {
 
-    char _spacer[100];
+    char _spacer[120];
 
 public:
     virtual void activate(soModuleAccesser* moduleAccesser);
@@ -118,7 +118,7 @@ public:
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventCollisionAttack(float power, soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);;
 };
-static_assert(sizeof(soStatusModuleImpl) == 144, "Class is wrong size!");
+static_assert(sizeof(soStatusModuleImpl) == 0xA4, "Class is wrong size!");
 
 namespace ftStatus {
     enum Kind {
