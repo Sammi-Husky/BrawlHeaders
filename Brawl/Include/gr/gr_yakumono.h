@@ -50,7 +50,7 @@ public:
                                          u32 nodeIndex, u32 collisionCategoryMask, u32 collisionSituationMask,
                                          bool unk1, u32 collisionPartMask, soCollisionAttackData::Attribute attribute,
                                          soCollisionAttackData::SoundLevel soundLevel, soCollisionAttackData::SoundAttribute soundAttr,
-                                         bool isClankable, bool unk2, bool unk3, bool isBlockable, bool isReflectable,
+                                         bool isClankable, bool unk2, bool unk3, bool isShieldable, bool isReflectable,
                                          bool isAbsorbable, u32 addedShieldDamage, u32 detectionRate, bool unk5, bool ignoreInvincibility,
                                          bool ignoreIntangibility, soCollisionAttackData::LrCheck lrCheck,
                                          bool unk6, bool unk7, bool disableHitstop, bool disableHitGfx,

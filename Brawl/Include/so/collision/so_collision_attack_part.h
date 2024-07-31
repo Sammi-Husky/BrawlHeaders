@@ -182,7 +182,7 @@ struct soCollisionAttackData {
             bool isClankable : 1;
             bool field_0x34_3 : 1;
             bool field_0x34_4 : 1;
-            bool isBlockable : 1;
+            bool isShieldable : 1;
             bool isReflectable : 1;
             bool isAbsorbable : 1;
             unsigned int addedShieldDamage : 9; // up to 0x1ff
@@ -215,7 +215,7 @@ struct soCollisionAttackData {
             bool isClankable : 1;
             bool field_0x34_3 : 1;
             bool field_0x34_4 : 1;
-            bool isBlockable : 1;
+            bool isShieldable : 1;
             bool isReflectable : 1;
             bool isAbsorbable : 1;
             unsigned int addedShieldDamage : 9; // up to 0x1ff
