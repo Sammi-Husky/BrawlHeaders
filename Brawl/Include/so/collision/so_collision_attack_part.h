@@ -133,16 +133,16 @@ struct soCollisionAttackData {
         Region_Spin = 0xD,
         Region_Bite = 0xE,
         Region_Magic = 0xF,
-        Region_Psi = 0xA,
-        Region_Palutena = 0xB,
-        Region_Aura = 0xC,
-        Region_Bat = 0xD,
-        Region_Parasol = 0xE,
-        Region_Pikmin = 0xF,
-        Region_Water = 0x10,
-        Region_Whip = 0x11,
-        Region_Tail = 0x12,
-        Region_Energy = 0x13
+        Region_Psi = 0x10,
+        Region_Palutena = 0x11,
+        Region_Aura = 0x12,
+        Region_Bat = 0x13,
+        Region_Parasol = 0x14,
+        Region_Pikmin = 0x15,
+        Region_Water = 0x16,
+        Region_Whip = 0x17,
+        Region_Tail = 0x18,
+        Region_Energy = 0x19
     };
 
     int m_power;
