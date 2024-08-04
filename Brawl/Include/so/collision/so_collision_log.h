@@ -10,7 +10,7 @@ public:
     Vec3f m_pos;
     short m_life;
     short m_30;
-    s8 m_teamId;
+    s8 m_teamNo;
     char _33;
     u8 m_category;
     char _35;

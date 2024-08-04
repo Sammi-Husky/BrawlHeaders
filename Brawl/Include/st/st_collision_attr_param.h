@@ -8,6 +8,6 @@ struct grGimmickDamageFloor {
     grGimmick::AttackData attackData;
     char _88[4];
     u32 m_index;
-    int m_teamId;
+    int m_teamNo;
 };
 static_assert(sizeof(grGimmickDamageFloor) == 100, "Class is wrong size!");
