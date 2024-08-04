@@ -6,16 +6,16 @@
 #include <snd/snd_3d_generator.h>
 #include <st/st_trigger.h>
 
-enum MotionPathMode {
-    MotionPath_Return = 0x0,
-    MotionPath_Loop = 0x1,
-    MotionPath_Once = 0x2,
-};
-
 struct grGimmickMotionPathData {
+    enum PathMode {
+        Path_Return = 0x0,
+        Path_Loop = 0x1,
+        Path_Once = 0x2,
+    };
+
     float m_motionRatio;
     char m_index;
-    MotionPathMode m_pathMode : 8;
+    PathMode m_pathMode : 8;
     char m_mdlIndex;
     char m_7;
 };
