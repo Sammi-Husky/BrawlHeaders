@@ -90,8 +90,8 @@ public:
         soCollisionAttackData::Attribute m_attribute;
         bool m_isClankable;
         bool m_unk2;
-        bool m_unk3;
-        bool m_unk4;
+        bool m_isSituationAir;
+        bool m_isSituationGround;
         char _spacer2[0xC];
         unsigned int m_detectionRate;
         soCollisionAttackData::SoundLevel m_soundLevel;
@@ -133,7 +133,7 @@ public:
             };
         };
         char m_unk1;
-        bool m_unk2;
+        bool m_isSituationODD;
         char _spacer[2];
         soCollisionAttackData::LrCheck m_lrCheck;
         float m_hitstopMultiplier;
