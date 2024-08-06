@@ -14,8 +14,8 @@ struct soCollisionAttackAbsoluteData {
     int m_reactionFix;
     int m_reactionAdd;
     float m_slipChance;
-    float m_stopFrame;
-    float m_stopDelay;
+    float m_hitStopFrame;
+    float m_hitStopDelay;
     u32 _32;
 };
 
