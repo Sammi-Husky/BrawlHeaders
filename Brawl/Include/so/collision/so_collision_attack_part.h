@@ -163,89 +163,89 @@ struct soCollisionAttackData {
     float m_hitStopDelay;  // sdi multiplier
     union {
         struct {
-            unsigned int nodeIndex : 9;    // up to 0x1ff
-            bool targetCategoryFloor : 1; // Skyword platforms, Hanenbow platforms, stage blocks
-            bool targetCategoryItemE : 1; // Soccer Ball, Blast Box etc. (items enemies can hit)
-            bool targetCategory7 : 1;
-            bool targetCategoryGimmick : 1; // Ground
-            bool targetCategory5 : 1;
-            bool targetCategory4 : 1;
-            bool targetCategoryItem : 1; // Barrel, Crate etc.
-            bool targetCategory2 : 1;
-            bool targetCategoryEnemy : 1; // SSE enemies
-            bool targetCategoryFighter : 1; // Fighter
-            bool targetSituationODD : 1;
-            bool targetSituationAir : 1;
-            bool targetSituationGround : 1;
-            bool targetLr : 1;                          // up to 0x1  // targetLr?
-            bool targetPartLeg : 1;                // Usually legs
-            bool targetPartKnee : 1;                // Usually Shin
-            bool targetPartArm : 1;                // Usually forearm, wing
-            bool targetPartBody : 1;                // Usually head, pelvis, upper arm, tail, item
-            Attribute attribute : 5;     // up to 0x1f
-            SoundLevel soundLevel : 2; // up to 0x3
-            SoundAttribute soundAttribute : 5;   // up to 0x1f
-            SetOffKind setOffKind : 2; // up to 0x3
-            bool noScale : 1;
-            bool isShieldable : 1;
-            bool isReflectable : 1;
-            bool isAbsorbable : 1;
-            unsigned int subShield : 9; // up to 0x1ff added shield damage
-            unsigned int field_0x34_9 : 10;     // ~up to 0x3ff
-            unsigned int serialHitFrame : 16;    // up to 0xffff detectionRate
-            bool isDirect : 1;
-            bool isInvalidInvincible : 1;   // ignore invincibility
-            bool isInvalidXlu : 1; // ignore intangibility
-            LrCheck lrCheck : 3; // up to 0x7
-            bool isCatch : 1;  // only affect grabbed opponent
-            bool noTeam : 1;    // friendly fire
-            bool noHitStop : 1;    // no hitlag
-            bool noEffect : 1; // disable gfx on hit
-            bool noTransaction : 1; // flinchless
-            Region region : 5; // up to 0x1f;
-            bool isCapsule : 1;
-            bool isDangerZone : 1; // custom
-            unsigned int field_0x3c_2 : 30; // ~up to 0x3fffffff
-        } m_bits;
+            unsigned int : 9;    // up to 0x1ff
+            bool m_targetCategoryFloor : 1; // Skyword platforms, Hanenbow platforms, stage blocks
+            bool m_targetCategoryItemE : 1; // Soccer Ball, Blast Box etc. (items enemies can hit)
+            bool m_targetCategory7 : 1;
+            bool m_targetCategoryGimmick : 1; // Ground
+            bool m_targetCategory5 : 1;
+            bool m_targetCategory4 : 1;
+            bool m_targetCategoryItem : 1; // Barrel, Crate etc.
+            bool m_targetCategory2 : 1;
+            bool m_targetCategoryEnemy : 1; // SSE enemies
+            bool m_targetCategoryFighter : 1; // Fighter
+            bool m_targetSituationODD : 1;
+            bool m_targetSituationAir : 1;
+            bool m_targetSituationGround : 1;
+            bool : 1;                          // up to 0x1
+            bool m_targetPartLeg : 1;                // Usually legs
+            bool m_targetPartKnee : 1;                // Usually Shin
+            bool m_targetPartArm : 1;                // Usually forearm, wing
+            bool m_targetPartBody : 1;                // Usually head, pelvis, upper arm, tail, item
+            Attribute : 5;     // up to 0x1f
+            SoundLevel : 2; // up to 0x3
+            SoundAttribute : 5;   // up to 0x1f
+            SetOffKind : 2; // up to 0x3
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            unsigned int : 9; // up to 0x1ff added shield damage
+            unsigned int : 10;     // ~up to 0x3ff
+            unsigned int : 16;    // up to 0xffff detectionRate
+            bool : 1;
+            bool : 1;   // ignore invincibility
+            bool : 1; // ignore intangibility
+            LrCheck : 3; // up to 0x7
+            bool : 1;  // only affect grabbed opponent
+            bool : 1;    // friendly fire
+            bool : 1;    // no hitlag
+            bool : 1; // disable gfx on hit
+            bool : 1; // flinchless
+            Region : 5; // up to 0x1f;
+            bool : 1;
+            bool : 1; // custom
+            unsigned int : 30; // ~up to 0x3fffffff
+        };
 
         struct {
-            unsigned int nodeIndex : 9;                     // up to 0x1ff
-            unsigned int targetCategory : 10;            // up to 0x3ff;
-            unsigned int targetSituation : 3;            // up to 0x7
-            bool targetLr : 1;                          // up to 0x1
-            unsigned int targetPart : 4;                 // up to 0xf
-            Attribute attribute : 5;     // up to 0x1f
-            SoundLevel soundLevel : 2; // up to 0x3
-            SoundAttribute soundAttribute : 5;   // up to 0x1f
-            SetOffKind setOffKind : 2; // up to 0x3
-            bool noScale : 1;
-            bool isShieldable : 1;
-            bool isReflectable : 1;
-            bool isAbsorbable : 1;
-            unsigned int subShield : 9; // up to 0x1ff added shield damage
+            unsigned int m_nodeIndex : 9;                     // up to 0x1ff
+            unsigned int m_targetCategory : 10;            // up to 0x3ff;
+            unsigned int m_targetSituation : 3;            // up to 0x7
+            bool m_targetLr : 1;                          // up to 0x1 // unused in vBrawl?
+            unsigned int m_targetPart : 4;                 // up to 0xf
+            Attribute m_attribute : 5;     // up to 0x1f
+            SoundLevel m_soundLevel : 2; // up to 0x3
+            SoundAttribute m_soundAttribute : 5;   // up to 0x1f
+            SetOffKind m_setOffKind : 2; // up to 0x3
+            bool m_noScale : 1;
+            bool m_isShieldable : 1;
+            bool m_isReflectable : 1;
+            bool m_isAbsorbable : 1;
+            unsigned int m_subShield : 9; // up to 0x1ff added shield damage
             unsigned int field_0x34_9 : 10;     // ~up to 0x3ff
-            unsigned int serialHitFrame : 16;    // up to 0xffff detectionRate
-            bool isDirect : 1;
-            bool isInvalidInvincible : 1;   // ignore invincibility
-            bool isInvalidXlu : 1; // ignore intangibility
-            LrCheck lrCheck : 3; // up to 0x7
-            bool isCatch : 1;  // only affect grabbed opponent
-            bool noTeam : 1;    // friendly fire
-            bool noHitStop : 1;    // no hitlag
-            bool noEffect : 1; // disable gfx on hit
-            bool noTransaction : 1; // flinchless
-            Region region : 5; // up to 0x1f;
-            bool isCapsule : 1;
-            bool isDangerZone : 1; // custom
+            unsigned int m_serialHitFrame : 16;    // up to 0xffff detectionRate
+            bool m_isDirect : 1;
+            bool m_isInvalidInvincible : 1;   // ignore invincibility
+            bool m_isInvalidXlu : 1; // ignore intangibility
+            LrCheck m_lrCheck : 3; // up to 0x7
+            bool m_isCatch : 1;  // only affect grabbed opponent
+            bool m_noTeam : 1;    // friendly fire
+            bool m_noHitStop : 1;    // no hitlag
+            bool m_noEffect : 1; // disable gfx on hit
+            bool m_noTransaction : 1; // flinchless
+            Region m_region : 5; // up to 0x1f;
+            bool m_isCapsule : 1;
+            bool m_isDangerZone : 1; // custom
             unsigned int field_0x3c_2 : 30; // ~up to 0x3fffffff
-        } m_masks;
+        };
     };
 
     inline soCollisionAttackData() {
         m_slipChance = 1.0;
         m_hitStopFrame = 1.0;
         m_hitStopDelay = 1.0;
-        m_masks.region = Region_None;
+        m_region = Region_None;
     }
 };
 static_assert(sizeof(soCollisionAttackData) == 64, "Class is wrong size!");
