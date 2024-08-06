@@ -9,24 +9,24 @@
 struct stTriggerData {
     unsigned short m_triggerId;
     int _padding : 7;
-    bool m_isValidFlag : 1;
+    bool m_isValid : 1;
     char m_unk2;
 };
 static_assert(sizeof(stTriggerData) == 4, "Class is wrong size!");
 
-struct SimpleAreaData {
+struct stSimpleAreaData {
     bool m_useTwoBoundingPoints;
     char _1[3];
     Vec2f m_pos1;
     Vec2f m_pos2;
 };
 
-struct grAdventureTruckReactorData : public SimpleAreaData {
+struct grAdventureTruckReactorData : public stSimpleAreaData {
     stTriggerData m_triggerData;
 };
 static_assert(sizeof(grAdventureTruckReactorData) == 24, "Class is wrong size!");
 
-struct GimmickAreaData {
+struct stGimmickAreaData {
     int m_0;
     int m_4;
     char _8[8];
@@ -37,47 +37,47 @@ struct GimmickAreaData {
     Vec2f m_range;
 };
 
-struct grGimmickBeltConveyorData : GimmickAreaData {
+struct grGimmickBeltConveyorData : stGimmickAreaData {
     Vec3f m_conveyorPos;
     float m_speed;
-    bool m_isRightDirection;
+    bool m_isRight;
     char _spacer[3];
     stTriggerData m_isValidTriggerData;
 };
 static_assert(sizeof(grGimmickBeltConveyorData) == 64, "Class is wrong size!");
 
-struct grGimmickWaterData : GimmickAreaData {
+struct grGimmickWaterData : stGimmickAreaData {
     float m_swimHeight;
     bool m_canDrown;
     char _45[3];
-    float m_currentSpeed;
+    float m_speed;
     char m_52[4];
 };
 static_assert(sizeof(grGimmickWaterData) == 56, "Class is wrong size!");
 
-struct grGimmickWindData : GimmickAreaData {
+struct grGimmickWindData : stGimmickAreaData {
     Vec3f m_windPos;
-    float m_strength;
-    float m_angle;
+    float m_speed;
+    float m_vector;
     stTriggerData m_isValidTriggerData;
 };
 static_assert(sizeof(grGimmickWindData) == 64, "Class is wrong size!");
 
-struct grGimmickWindData2nd : GimmickAreaData {
-    char _40[12];
-    float m_windStrength;
-    float m_horizontalWindRotation;
-    float m_verticalWindRotation;
+struct grGimmickWindData2nd : stGimmickAreaData {
+    Vec3f m_windPos;
+    float m_speed;
+    float m_vector;
+    float m_60;
     float m_64;
     float m_68;
     u32 m_72;
 };
 static_assert(sizeof(grGimmickWindData2nd) == 76, "Class is wrong size!");
 
-struct grGimmickHitPointEffectData : GimmickAreaData {
+struct grGimmickHitPointEffectData : stGimmickAreaData {
     u8 m_damage;
     bool m_isHeal;
-    short m_detectionRate;
+    short m_serialHitFrame;
     stTriggerData m_isValidTriggerData;
 };
 static_assert(sizeof(grGimmickHitPointEffectData) == 48, "Class is wrong size!");
@@ -95,17 +95,17 @@ class stObsTriggerCB : public gfCallback {
 class stObsTriggerArea : public stObsTriggerCB {
 
     gfArea* m_area;
-    GimmickAreaData m_gimmickAreaData;
+    stGimmickAreaData m_gimmickAreaData;
 
     virtual void userProc();
     virtual ~stObsTriggerArea();
     virtual gfArea* getAreaPointer();
     virtual bool getAreaID(int* areaID);
     virtual void setAreaSleep(bool isSleep);
-    virtual GimmickAreaData* getAreaDataPointer();
+    virtual stGimmickAreaData* getAreaDataPointer();
     virtual void setArea(gfArea* area);
 
-    void setDefaultGimmickAreaData(SimpleAreaData* simpleAreaData, GimmickAreaData* gimmickAreaData);
+    void setDefaultGimmickAreaData(stSimpleAreaData* simpleAreaData, stGimmickAreaData* gimmickAreaData);
 };
 
 class stObsTriggerSquareBeltConveyorCB : public stObsTriggerArea {

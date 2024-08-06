@@ -13,9 +13,9 @@ struct soCollisionAttackAbsoluteData {
     int m_reactionEffect;
     int m_reactionFix;
     int m_reactionAdd;
-    float m_tripRate;
-    float m_hitstopMultiplier;
-    float m_sdiMultiplier;
+    float m_slipChance;
+    float m_stopFrame;
+    float m_stopDelay;
     u32 _32;
 };
 
@@ -102,6 +102,12 @@ struct soCollisionAttackData {
         Sound_Attribute_Freeze = 0x1C,
     };
 
+    enum SetOffKind {
+        SetOff_Off = 0x0,   // transcendent
+        SetOff_Thru = 0x2,  // trample (not properly implemented in vBrawl)
+        SetOff_On = 0x3,    // clank
+    };
+
     enum LrCheck {
         Lr_Check_Pos = 0x0, // normal reverse hit
         Lr_Check_Speed = 0x1,   // reverse hit based on horizontal momentum
@@ -149,98 +155,96 @@ struct soCollisionAttackData {
     Vec3f m_offsetPos;
     float m_size;
     int m_vector;
-    int m_reactionEffect;
-    int m_reactionFix;
-    int m_reactionAdd;
-    float m_tripRate;
-    float m_hitstopMultiplier;
-    float m_sdiMultiplier;
+    int m_reactionEffect;   // kbg
+    int m_reactionFix;      // fkb
+    int m_reactionAdd;      // bkb
+    float m_slipChance;       // trip chance
+    float m_hitStopFrame;  // hitstop multiplier
+    float m_hitStopDelay;  // sdi multiplier
     union {
         struct {
             unsigned int nodeIndex : 9;    // up to 0x1ff
-            bool isCategoryFloor : 1; // Skyword platforms, Hanenbow platforms, stage blocks
-            bool isCategoryItemE : 1; // Soccer Ball, Blast Box etc. (items enemies can hit)
-            bool isCategory7 : 1;
-            bool isCategoryGimmick : 1; // Ground
-            bool isCategory5 : 1;
-            bool isCategory4 : 1;
-            bool isCategoryItem : 1; // Barrel, Crate etc.
-            bool isCategory2 : 1;
-            bool isCategoryEnemy : 1; // SSE enemies
-            bool isCategoryFighter : 1; // Fighter
-            bool isSituationODD : 1;
-            bool isSituationAir : 1;
-            bool isSituationGround : 1;
-            bool field_0x30_3 : 1;                          // up to 0x1
-            bool isPartLeg : 1;                // Usually legs
-            bool isPartKnee : 1;                // Usually Shin
-            bool isPartArm : 1;                // Usually forearm, wing
-            bool isPartBody : 1;                // Usually head, pelvis, upper arm, tail, item
+            bool targetCategoryFloor : 1; // Skyword platforms, Hanenbow platforms, stage blocks
+            bool targetCategoryItemE : 1; // Soccer Ball, Blast Box etc. (items enemies can hit)
+            bool targetCategory7 : 1;
+            bool targetCategoryGimmick : 1; // Ground
+            bool targetCategory5 : 1;
+            bool targetCategory4 : 1;
+            bool targetCategoryItem : 1; // Barrel, Crate etc.
+            bool targetCategory2 : 1;
+            bool targetCategoryEnemy : 1; // SSE enemies
+            bool targetCategoryFighter : 1; // Fighter
+            bool targetSituationODD : 1;
+            bool targetSituationAir : 1;
+            bool targetSituationGround : 1;
+            bool targetLr : 1;                          // up to 0x1  // targetLr?
+            bool targetPartLeg : 1;                // Usually legs
+            bool targetPartKnee : 1;                // Usually Shin
+            bool targetPartArm : 1;                // Usually forearm, wing
+            bool targetPartBody : 1;                // Usually head, pelvis, upper arm, tail, item
             Attribute attribute : 5;     // up to 0x1f
             SoundLevel soundLevel : 2; // up to 0x3
             SoundAttribute soundAttribute : 5;   // up to 0x1f
-            bool isClankable : 1;
-            bool field_0x34_3 : 1;
-            bool field_0x34_4 : 1;
+            SetOffKind setOffKind : 2; // up to 0x3
+            bool noScale : 1;
             bool isShieldable : 1;
             bool isReflectable : 1;
             bool isAbsorbable : 1;
-            unsigned int addedShieldDamage : 9; // up to 0x1ff
+            unsigned int subShield : 9; // up to 0x1ff added shield damage
             unsigned int field_0x34_9 : 10;     // ~up to 0x3ff
-            unsigned int detectionRate : 16;    // up to 0xffff
-            bool field_0x38_1 : 1;
-            bool ignoreInvincibility : 1;
-            bool ignoreIntangibility : 1;
+            unsigned int serialHitFrame : 16;    // up to 0xffff detectionRate
+            bool isDirect : 1;
+            bool isInvalidInvincible : 1;   // ignore invincibility
+            bool isInvalidXlu : 1; // ignore intangibility
             LrCheck lrCheck : 3; // up to 0x7
-            bool field_0x38_5 : 1;
-            bool enableFriendlyFire : 1;
-            bool disableHitstop : 1;
-            bool disableHitGfx : 1;
-            bool disableFlinch : 1;
+            bool isCatch : 1;  // only affect grabbed opponent
+            bool noTeam : 1;    // friendly fire
+            bool noHitStop : 1;    // no hitlag
+            bool noEffect : 1; // disable gfx on hit
+            bool noTransaction : 1; // flinchless
             Region region : 5; // up to 0x1f;
-            bool isShapeCapsule : 1;
+            bool isCapsule : 1;
             bool isDangerZone : 1; // custom
             unsigned int field_0x3c_2 : 30; // ~up to 0x3fffffff
         } m_bits;
 
         struct {
             unsigned int nodeIndex : 9;                     // up to 0x1ff
-            unsigned int category : 10;            // up to 0x3ff;
-            unsigned int situation : 3;            // up to 0x7
-            bool field_0x30_3 : 1;                          // up to 0x1
-            unsigned int part : 4;                 // up to 0xf
+            unsigned int targetCategory : 10;            // up to 0x3ff;
+            unsigned int targetSituation : 3;            // up to 0x7
+            bool targetLr : 1;                          // up to 0x1
+            unsigned int targetPart : 4;                 // up to 0xf
             Attribute attribute : 5;     // up to 0x1f
             SoundLevel soundLevel : 2; // up to 0x3
             SoundAttribute soundAttribute : 5;   // up to 0x1f
-            bool isClankable : 1;
-            bool field_0x34_3 : 1;
-            bool field_0x34_4 : 1;
+            SetOffKind setOffKind : 2; // up to 0x3
+            bool noScale : 1;
             bool isShieldable : 1;
             bool isReflectable : 1;
             bool isAbsorbable : 1;
-            unsigned int addedShieldDamage : 9; // up to 0x1ff
+            unsigned int subShield : 9; // up to 0x1ff added shield damage
             unsigned int field_0x34_9 : 10;     // ~up to 0x3ff
-            unsigned int detectionRate : 16;    // up to 0xffff
-            bool field_0x38_1 : 1;
-            bool ignoreInvincibility : 1;
-            bool ignoreIntangibility : 1;
+            unsigned int serialHitFrame : 16;    // up to 0xffff detectionRate
+            bool isDirect : 1;
+            bool isInvalidInvincible : 1;   // ignore invincibility
+            bool isInvalidXlu : 1; // ignore intangibility
             LrCheck lrCheck : 3; // up to 0x7
-            bool field_0x38_5 : 1;                                  // break throws?
-            bool enableFriendlyFire : 1;
-            bool disableHitstop : 1;
-            bool disableHitGfx : 1;
-            bool disableFlinch : 1;
+            bool isCatch : 1;  // only affect grabbed opponent
+            bool noTeam : 1;    // friendly fire
+            bool noHitStop : 1;    // no hitlag
+            bool noEffect : 1; // disable gfx on hit
+            bool noTransaction : 1; // flinchless
             Region region : 5; // up to 0x1f;
-            bool isShapeCapsule : 1;
+            bool isCapsule : 1;
             bool isDangerZone : 1; // custom
             unsigned int field_0x3c_2 : 30; // ~up to 0x3fffffff
         } m_masks;
     };
 
     inline soCollisionAttackData() {
-        m_tripRate = 1.0;
-        m_hitstopMultiplier = 1.0;
-        m_sdiMultiplier = 1.0;
+        m_slipChance = 1.0;
+        m_hitStopFrame = 1.0;
+        m_hitStopDelay = 1.0;
         m_masks.region = Region_None;
     }
 };

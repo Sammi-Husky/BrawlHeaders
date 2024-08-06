@@ -49,7 +49,7 @@ class stTrigger : public utListNode {
     stObsTriggerCB* m_obsTriggerCB;
     Yakumono* m_yakumono;
     char _spacer2[12];
-    bool m_isValidFlag;
+    bool m_isValid;
     char _spacer3[7];
 
 public:

@@ -88,18 +88,18 @@ public:
         int m_reactionAdd;
         char _spacer[4];
         soCollisionAttackData::Attribute m_attribute;
-        bool m_isClankable;
-        bool m_unk2;
-        bool m_isSituationAir;
-        bool m_isSituationGround;
+        bool m_isSetOffOn;
+        bool m_noSetOffThru;
+        bool m_targetSituationAir;
+        bool m_targetSituationGround;
         char _spacer2[0xC];
-        unsigned int m_detectionRate;
+        unsigned int m_serialHitFrame;
         soCollisionAttackData::SoundLevel m_soundLevel;
         soCollisionAttackData::SoundAttribute m_soundAttribute;
         bool m_unk5;
         u8 : 6;
         bool m_isDangerZone : 1; // custom
-        bool m_isShapeCapsule : 1;
+        bool m_isCapsule : 1;
         char _spacer3[6];
         unsigned int m_nodeIndex;
         int m_power;
@@ -117,26 +117,26 @@ public:
 
     struct AttackDetails {
         union {
-            u32 m_categoryMask;
+            u32 m_targetCategory;
             struct {
                 unsigned int _pad : 22;
-                bool m_isCategoryFloor : 1;
-                bool m_isCategoryItemE : 1; // Soccer Ball, Blast Box etc.
-                bool m_isCategory7 : 1;
-                bool m_isCategoryGimmick : 1;
-                bool m_isCategory5 : 1;
-                bool m_isCategory4 : 1;
-                bool m_isCategoryItem : 1; // Barrel, Crate etc.
-                bool m_isCategory2 : 1;
-                bool m_isCategoryEnemy : 1;
-                bool m_isCategoryFighter : 1;
+                bool m_targetCategoryFloor : 1;
+                bool m_targetCategoryItemE : 1; // Soccer Ball, Blast Box etc.
+                bool m_targetCategory7 : 1;
+                bool m_targetCategoryGimmick : 1;
+                bool m_targetCategory5 : 1;
+                bool m_targetCategory4 : 1;
+                bool m_targetCategoryItem : 1; // Barrel, Crate etc.
+                bool m_targetCategory2 : 1;
+                bool m_targetCategoryEnemy : 1;
+                bool m_targetCategoryFighter : 1;
             };
         };
         char m_unk1;
-        bool m_isSituationODD;
+        bool m_targetSituationODD;
         char _spacer[2];
         soCollisionAttackData::LrCheck m_lrCheck;
-        float m_hitstopMultiplier;
+        float m_hitStopFrame;
     };
     static_assert(sizeof(AttackDetails) == 16, "Class is wrong size!");
 
