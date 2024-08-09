@@ -117,7 +117,7 @@ struct soCollisionAttackData {
         Lr_Check_Reverse = 0x3,
         Lr_Check_Backward = 0x4,    // backward from attacker direction
         Lr_Check_B = 0x4,
-        LR_Check_Along = 0x4,
+        Lr_Check_Along = 0x4,
         Lr_Check_Part = 0x5, // based on where on hitbox you connect / away from center of collision
         // LR_Check_Left/LR_Check_Right/LR_Check_BackSlash?
     };
@@ -236,7 +236,7 @@ struct soCollisionAttackData {
             bool m_noTransaction : 1; // flinchless
             Region m_region : 5; // up to 0x1f;
             bool m_isCapsule : 1;
-            bool m_isDangerZone : 1; // custom
+            bool m_isDeath100 : 1; // custom
             unsigned int field_0x3c_2 : 30; // ~up to 0x3fffffff
         };
     };

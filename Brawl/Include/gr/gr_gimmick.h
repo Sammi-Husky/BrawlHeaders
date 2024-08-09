@@ -98,7 +98,7 @@ public:
         soCollisionAttackData::SoundAttribute m_soundAttribute;
         bool m_unk5;
         u8 : 6;
-        bool m_isDangerZone : 1; // custom
+        bool m_isDeath100 : 1; // custom
         bool m_isCapsule : 1;
         char _spacer3[6];
         unsigned int m_nodeIndex;
