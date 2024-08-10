@@ -122,7 +122,7 @@ public:
                 unsigned int _pad : 22;
                 bool m_targetCategoryFloor : 1;
                 bool m_targetCategoryItemE : 1; // Soccer Ball, Blast Box etc.
-                bool m_targetCategoryBreak : 1;
+                bool m_targetCategoryWall : 1;
                 bool m_targetCategoryGimmick : 1;
                 bool m_targetCategory5 : 1;
                 bool m_targetCategory4 : 1;

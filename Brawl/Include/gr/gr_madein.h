@@ -39,7 +39,7 @@ public:
 
     enum Category {
         Category_Gimmick = 0x0,
-        Category_Break = 0x1,
+        Category_Wall = 0x1,
         Category_Enemy = 0x2
     };
 

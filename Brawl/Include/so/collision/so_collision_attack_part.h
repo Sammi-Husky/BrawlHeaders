@@ -166,7 +166,7 @@ struct soCollisionAttackData {
             unsigned int : 9;    // up to 0x1ff
             bool m_targetCategoryFloor : 1; // Skyword platforms, Hanenbow platforms, stage blocks
             bool m_targetCategoryItemE : 1; // Soccer Ball, Blast Box etc. (items enemies can hit)
-            bool m_targetCategoryBreak : 1; // Summit ice, Green Hill break, Metal Gear wall, Mario Bros. Pow
+            bool m_targetCategoryWall : 1; // Summit ice, Green Hill break, Metal Gear wall, Mario Bros. Pow
             bool m_targetCategoryGimmick : 1; // Ground
             bool m_targetCategory5 : 1;
             bool m_targetCategory4 : 1;
