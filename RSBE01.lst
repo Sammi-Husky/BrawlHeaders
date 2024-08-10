@@ -880,6 +880,7 @@ CC008000:WGPIPE
 27,1,00279590:setMotion__8grMadeinFUl
 27,1,00279968:setMotionDetails__8grMadeinFUlUlUlUlUl
 27,1,0027855C:deleteHitPoint__8grMadeinFv
+27,1,00278C30:deleteAttackPoint__8grMadeinFv
 27,1,00279044:endEntity__8grMadeinFv
 27,1,002792C8:isEndEntity__8grMadeinFv
 27,1,002794CC:getEntityFrame__8grMadeinFv

@@ -7,6 +7,7 @@
 #include <so/damage/so_damage_attacker_info.h>
 
 class grMadein : public grSeqYakumono {
+public:
     class AttackInfo {
     public:
         float m_size;
@@ -36,6 +37,12 @@ class grMadein : public grSeqYakumono {
         char _spacer2[20];
     };
 
+    enum Category {
+        Category_Gimmick = 0x0,
+        Category_Break = 0x1,
+        Category_Enemy = 0x2
+    };
+
 protected:
     AttackInfo* m_attackInfo;
     HitPointInfo* m_hitPointInfo;
@@ -45,8 +52,7 @@ protected:
     bool m_hasAttack : 1;             // | 0x40
     bool m_hasHitPoint : 1;           // | 0x20
     bool m_isHit : 1;                 // | 0x10
-    bool m_useCollisionCategory1 : 1; // | 0x8   // This takes priority over category flag below
-    bool m_useCollisionCategory7 : 1; // | 0x4
+    Category m_category : 2; // | 0x4, 0x8
     bool m_isLandedOn : 1;            // | 0x2
     bool m_useLandCheck : 1;          // | 0x1
     char _301[11];
