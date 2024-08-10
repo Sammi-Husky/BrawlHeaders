@@ -5,7 +5,7 @@
 #include <types.h>
 
 struct grGimmickDamageFloor {
-    grGimmick::AttackData attackData;
+    grGimmick::AttackData m_attackData;
     char _88[4];
     u32 m_index;
     int m_teamNo;
