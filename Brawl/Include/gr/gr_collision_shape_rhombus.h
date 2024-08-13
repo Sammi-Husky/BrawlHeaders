@@ -6,7 +6,7 @@
 
 class grCollShapeRhombus : public grCollShape {
     clRhombus2D m_rhombus;
-
+public:
     virtual void init();
     virtual int getType();
     virtual void getAABBox(clAABBox2D* aabBox);

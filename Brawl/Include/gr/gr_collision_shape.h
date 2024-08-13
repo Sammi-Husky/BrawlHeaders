@@ -6,6 +6,7 @@
 #include <types.h>
 
 class grCollShape {
+public:
     virtual void init();
     virtual int getType();
     virtual void getAABBox(clAABBox2D* aabBox);

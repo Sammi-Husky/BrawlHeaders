@@ -6,7 +6,7 @@
 
 class grCollShapeCircle : public grCollShape {
     clCircle2D m_circle;
-
+public:
     virtual void init();
     virtual int getType();
     virtual void getAABBox(clAABBox2D* aabBox);
