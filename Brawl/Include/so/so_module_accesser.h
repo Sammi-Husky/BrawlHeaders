@@ -59,7 +59,7 @@ public:
     void* m_debugModule;
     soAnimCmdModule* m_animCmdModule;
     soStatusModule* m_statusModule;
-    void* m_generalTermDisideModule;
+    void* m_generalTermDecideModule;
     void* m_switchDecideModule;
     soKineticModule* m_kineticModule;
     soEventManageModule* m_eventManageModule;
