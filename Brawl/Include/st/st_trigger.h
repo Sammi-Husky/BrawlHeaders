@@ -10,7 +10,7 @@
 enum GimmickKind {
     Gimmick_Valid = 0x0,
     Gimmick_RebirthPoint = 0x5,
-    Gimmick_TruckReactor = 0x6,
+    Gimmick_Reactor = 0x6,
     Gimmick_Camera = 0x7,
     Gimmick_Sound = 0xb,
     Gimmick_Wind = 0xc,
