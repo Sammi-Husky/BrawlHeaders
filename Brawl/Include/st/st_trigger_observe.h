@@ -7,10 +7,16 @@
 #include <types.h>
 
 struct stTriggerData {
+    enum KeepKind {
+        Keep_None = 0x0,
+        Keep_Stage = 0x1,
+        Keep_Global = 0x2
+    };
+
     unsigned short m_triggerId;
     int _padding : 7;
     bool m_isValid : 1;
-    char m_unk2;
+    KeepKind m_keepKind : 8;
 };
 static_assert(sizeof(stTriggerData) == 4, "Class is wrong size!");
 

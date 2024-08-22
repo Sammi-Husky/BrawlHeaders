@@ -45,7 +45,8 @@ class stTrigger : public utListNode {
 
     GimmickKind m_gimmickKind;
     int m_id;
-    char _spacer[8];
+    stTriggerData::KeepKind m_keepKind : 8;
+    char _spacer[7];
     stObsTriggerCB* m_obsTriggerCB;
     Yakumono* m_yakumono;
     char _spacer2[12];
