@@ -1458,8 +1458,8 @@ CC008000:WGPIPE
 800259a4:create__12gfMemoryPoolFPvUlPCc
 8002606c:getMaxFreeBlockSize__12gfMemoryPoolFv
 
-// Compression
-80206018:CXUncompressLZ__FPvPv
+// OpenRVL CX (Compression) functions.
+80206018:CXUncompressLZ
 
 // OpenRVL GX functions.
 801f1088:GXBegin
