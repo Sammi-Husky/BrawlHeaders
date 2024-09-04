@@ -1,7 +1,7 @@
 #pragma once
 
-#include <net/SOBasic.h>
-#include <net/nonport.h>
+#include <SO.h>
+#include <nt/nonport.h>
 
 #define AF_INET 0x2
 
