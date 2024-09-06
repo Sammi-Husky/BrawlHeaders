@@ -1,12 +1,32 @@
 #pragma once
 
+#include <nt/d_net_connect.h>
+#include <nt/nt_etc_dwc.h>
+#include <DWC.h>
 #include <types.h>
 
-class ntShutdown {
-    virtual ~ntShutdown();
-    virtual
+class ntResetCallback {
+    virtual void userProc();
+    virtual ~ntResetCallback();
 };
 
-class Network : public ntShutdown {
-    char _
+class ntReturnStatusCallback {
+    virtual bool returnStatus();
 };
+
+class ntShutdown : public ntReturnStatusCallback {
+public:
+    virtual bool returnStatus();
+};
+
+class Network {
+public:
+    virtual ~Network();
+    void create(bool);
+
+private:
+    char _0x4[0x3C];
+};
+static_assert(sizeof(Network) == 0x40, "Class is wrong size!");
+
+extern Network g_Network;

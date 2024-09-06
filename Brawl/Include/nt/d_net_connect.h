@@ -1,7 +1,7 @@
 #pragma once
 
 #include <SO.h>
-#include <nt/nonport.h>
+#include <DWC/nonport.h>
 
 #define AF_INET 0x2
 
@@ -23,3 +23,5 @@ struct sockaddr_in {
     unsigned short sin_port; // e.g. htons(3490)
     struct in_addr sin_addr; // see struct in_addr, below
 };
+
+int dNetConnect_Start();

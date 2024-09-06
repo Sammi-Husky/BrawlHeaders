@@ -17,6 +17,8 @@
 27,6,E8: g_soWorld
 80494958:g_HeapInfos
 8059FF80:g_gfSceneRoot
+8049ebe0:g_Network
+805a02a4:g_muWifiInterfaceTask
 80406920:MOD_PATCH_DIR
 
 // Hardware
@@ -1444,6 +1446,23 @@ CC008000:WGPIPE
 803ddde4:PFENT_RemoveEntry
 803e18b0:PFFAT_FreeChain
 803ddd60:PFENT_getcurrentDateTimeForEnt
+
+// DWC.h
+80335264:DWC_Init
+
+// muWifiInterfaceTask
+800c7410:create__19muWifiInterfaceTaskFv
+800c9b44:connect__19muWifiInterfaceTaskFb
+
+// dNetConnect
+8014cc4c:dNetConnect_Start__Fv
+
+// Network
+801462c0:create__7NetworkFb
+
+// nteDWC
+80150ba8:AllocEx__6nteDWCFiUli
+80150c20:FreeEx__6nteDWCFiPv
 
 // sora_men_sel_char
 10,1,00014b68:setCharPic__19muSelCharPlayerAreaFiiibii
