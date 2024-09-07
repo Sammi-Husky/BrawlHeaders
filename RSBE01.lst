@@ -1447,8 +1447,15 @@ CC008000:WGPIPE
 803e18b0:PFFAT_FreeChain
 803ddd60:PFENT_getcurrentDateTimeForEnt
 
-// DWC.h
+// NHTTP
+80396248:NHTTPStartup
+80396510:NHTTPCreateRequest
+80396774:NHTTPSSendRequestAsync
+
+// DWC
 80335264:DWC_Init
+803557a0:DWCi_NdAlloc
+803557b0:DWCi_NdFree
 
 // muWifiInterfaceTask
 800c7410:create__19muWifiInterfaceTaskFv
