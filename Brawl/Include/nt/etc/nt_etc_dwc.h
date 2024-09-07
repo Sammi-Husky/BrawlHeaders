@@ -2,7 +2,7 @@
 
 #include <types.h>
 #include <gf/gf_task.h>
-#include <nt/nt_etc_so.h>
+#include <nt/etc/nt_etc_so.h>
 
 class nteDWC : public gfTask, public nteSODone {
     char _0x44[0x384];

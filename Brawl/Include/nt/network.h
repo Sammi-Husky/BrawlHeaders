@@ -1,7 +1,7 @@
 #pragma once
 
 #include <nt/d_net_connect.h>
-#include <nt/nt_etc_dwc.h>
+#include <nt/etc/nt_etc_dwc.h>
 #include <DWC.h>
 #include <NHTTP.h>
 #include <types.h>
