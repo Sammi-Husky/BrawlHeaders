@@ -3,9 +3,9 @@
 #include <StaticAssert.h>
 #include <mu/mu_menu_controller.h>
 #include <mu/mu_object.h>
-#include <mu/mu_selchar.h>
-#include <mu/mu_select_character_list.h>
-#include <mu/mu_select_character_name_entry.h>
+#include <mu/selchar/mu_selchar.h>
+#include <mu/selchar/mu_select_character_list.h>
+#include <mu/selchar/mu_select_character_name_entry.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <types.h>
 
