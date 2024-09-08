@@ -1,6 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <mu/menu.h>
 #include <mu/mu_menu_controller.h>
 #include <mu/mu_object.h>
 #include <mu/selchar/mu_selchar.h>
@@ -13,36 +14,36 @@ class muSelCharPlayerArea {
 protected:
 public:
     u32 _0;
-    muMenuController menuController;
+    muMenuController m_menuController;
     char _0xAC[0x1C];
-    MuObject* muObject;
+    MuObject* m_muObject;
     char _0xCC[0x84];
-    void* objProcTask;
-    muSelCharCBCalcWorld callbacks[7];
-    void* selCharHand;
-    void* selCharCoin;
-    int areaIdx;
-    int playerKind;
-    int selectedChar;
-    int curCostume;
-    int teamColor;
-    char curTeamSet;
+    void* m_objProcTask;
+    muSelCharCBCalcWorld m_calcWorldCBs[7];
+    void* m_selCharHand;
+    void* m_selCharCoin;
+    int m_areaIdx;
+    int m_playerKind;
+    MuSelchkind m_charKind;
+    int m_charColorNo;
+    int m_teamColor;
+    u8 m_teamSet;
     char _0x1C5[3];
-    int nameId;
+    int m_nameId;
     char _0x1CC[0x10];
-    int controllerId;
-    int controllerType;
+    int m_controllerId;
+    int m_controllerType;
     char _0x1E4[0x4];
-    int selectedZelda;
-    int selectedSamus;
-    int selectedPoke;
+    int m_selectedZelda;
+    int m_selectedSamus;
+    int m_selectedPoke;
     char _0x1F4[0x8];
-    muSelctChrList chrList;
+    MuSelctChrList m_chrList;
     char _0x35C[0x14];
-    muSelctChrNameEntry nameEntry;
+    MuSelctChrNameEntry m_nameEntry;
     char _0x404[0x34];
-    nw4r::g3d::ResFileData* charPicData;
-    nw4r::g3d::ResFile charPicRes;
+    nw4r::g3d::ResFileData* m_charPicData;
+    nw4r::g3d::ResFile m_charPicRes;
     char _0x440[0x8];
 
     void setCharPic(int charKind, int playerKind, int curCostume, bool isTeamBattle, int teamColor, int unk);

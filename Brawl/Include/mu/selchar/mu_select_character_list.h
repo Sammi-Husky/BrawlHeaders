@@ -3,9 +3,9 @@
 #include <StaticAssert.h>
 #include <types.h>
 
-class muSelctChrList {
+class MuSelctChrList {
 public:
     char _0[0x160];
 };
 
-static_assert(sizeof(muSelctChrList) == 0x160, "Wrong size for class!");
+static_assert(sizeof(MuSelctChrList) == 0x160, "Wrong size for class!");
