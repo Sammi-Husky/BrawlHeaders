@@ -27,6 +27,7 @@ namespace gfPadError {
         TRANSFER = -3
     };
 }
+#pragma pop
 
 namespace gfPadType {
     enum PadType {
@@ -36,7 +37,6 @@ namespace gfPadType {
         NUNCHUK = 3
     };
 }
-#pragma pop
 
 union gfPadButtons {
     u32 bits;
