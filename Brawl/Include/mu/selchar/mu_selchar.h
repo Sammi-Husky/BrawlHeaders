@@ -1,7 +1,10 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <gf/gf_task.h>
 #include <types.h>
+
+class muSelCharPlayerArea;
 
 class muSelCharCBCalcWorld {
 public:
@@ -15,4 +18,16 @@ public:
     char _0[0x8];
 };
 
-static_assert(sizeof(muSelCharCBCalcWorld) == 0xC, "Wrong size for class!");
+class muSelCharTask : public gfTask {
+public:
+    char _0x40[4];
+    muSelCharPlayerArea* m_selCharPlayerAreas[4];
+    char _0x54[0x600];
+
+    virtual void processDefault();
+    virtual ~muSelCharTask();
+
+    void dispHighScore(int, int, int);
+};
+
+static_assert(sizeof(muSelCharTask) == 0x654, "Wrong size for class!");

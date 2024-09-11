@@ -220,6 +220,6 @@ namespace muMenu {
     static int exchangeGmCharacterKind2Something(int id);
     static void startRumbleController(int controller, int rumbleStrength, int rumbleSetting);
     static int exchangeMuSelchkind2MuStockchkind(int id);
-    static char* exchangeMuStockchkind2MuCharName(int id);
+    static const char* exchangeMuStockchkind2MuCharName(int id);
     static int getStockFrameID(int id);
 };
