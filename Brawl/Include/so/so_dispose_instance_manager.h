@@ -6,7 +6,7 @@
 
 class soDisposeInstanceEventObserver : public soEventObserver<soDisposeInstanceEventObserver> {
 public:
-    virtual void addObserver(int param1, int param2);
+    virtual void addObserver(short param1, s8 param2);
     virtual bool isObserv(); // TODO
     virtual void notifyDisposeInstance(bool, int, int taskId);
     virtual void notifyDrawDone(); // TODO

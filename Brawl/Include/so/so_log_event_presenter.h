@@ -4,7 +4,7 @@
 
 class soLogEventObserver : public soEventObserver<soDisposeInstanceEventObserver> {
 public:
-    virtual void addObserver(int param1, int param2);
+    virtual void addObserver(short param1, s8 param2);
     virtual void notifyLogEventCollisionHit(float, int taskId1, int taskId2, int);
     virtual void notifyLogEventGroundDamage(); // TODO
     virtual void notifyLogEventDead(int entryId1, int entryId2, int, int);

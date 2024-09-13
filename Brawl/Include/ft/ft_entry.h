@@ -90,7 +90,7 @@ enum ftKind {
 
 class ftEntryEventObserver : public soEventObserver<ftEntryEventObserver> {
 public:
-    virtual void addObserver(int param1, int param2);
+    virtual void addObserver(short param1, s8 param2);
     virtual void notifyEventSetDamage(float);
     virtual void notifyEventBeat();
     virtual void notifyEventDeadPartner(int index);

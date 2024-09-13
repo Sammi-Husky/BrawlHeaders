@@ -951,17 +951,17 @@ CC008000:WGPIPE
 
 // soStatusEventObserver
 27,5,00000F98:__vt__21soStatusEventObserver
-27,1,000133C8:addObserver__21soStatusEventObserverFii
+27,1,000133C8:addObserver__21soStatusEventObserverFsSc
 27,1,00013628:notifyEventChangeStatus__21soStatusEventObserverFiiP12soStatusDataP16soModuleAccesser
-27,1,000136E4:addObserver__40soEventObserver<21soStatusEventObserver>Fii
+27,1,000136E4:addObserver__40soEventObserver<21soStatusEventObserver>FsSc
 
 // soCollisionReflectorEventObserver
-27,1,00129818:addObserver__33soCollisionReflectorEventObserverFii
+27,1,00129818:addObserver__33soCollisionReflectorEventObserverFsSc
 27,1,0004838C:notifyEventCollisionReflectorCheck__33soCollisionReflectorEventObserverFv
-27,1,000D5460:addObserver__52soEventObserver<33soCollisionReflectorEventObserver>Fii
+27,1,000D5460:addObserver__52soEventObserver<33soCollisionReflectorEventObserver>FsSc
 
 // ftOutsideEventObserver
-27,1,00108BD0:addObserver__22ftOutsideEventObserverFii
+27,1,00108BD0:addObserver__22ftOutsideEventObserverFsSc
 27,1,0010DBFC:notifyEventOnDamage__22ftOutsideEventObserverFiUlP8soDamage
 27,1,0010DBF8:notifyEventSetDamage__22ftOutsideEventObserverFifibb
 27,1,0010DBF4:notifyEventRecover__22ftOutsideEventObserverFii
@@ -1002,7 +1002,7 @@ CC008000:WGPIPE
 27,1,0010DB78:notifyEventKnockout__22ftOutsideEventObserverFi
 27,1,0010DB74:notifyEventHeartSwapStart__22ftOutsideEventObserverFii
 27,1,0010DB70:notifyEventHeartSwapEnd__22ftOutsideEventObserverFv
-27,1,0010E030:addObserver__41soEventObserver<22ftOutsideEventObserver>Fii
+27,1,0010E030:addObserver__41soEventObserver<22ftOutsideEventObserver>FsSc
 27,5,26540:__vt__22ftOutsideEventObserver
 
 // soColorBlendModuleImpl

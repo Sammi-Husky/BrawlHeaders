@@ -7,7 +7,7 @@
 
 class soArticleEventObserver : public soEventObserver<soArticleEventObserver> {
 public:
-    virtual void addObserver(int param1, int param2);
+    virtual void addObserver(short param1, s8 param2);
     char _spacer1[2];
 };
 static_assert(sizeof(soArticleEventObserver) == 12, "Class is wrong size!");
