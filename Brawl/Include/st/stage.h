@@ -14,7 +14,6 @@
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>
 #include <snd/snd_3d_generator.h>
-#include <snd/snd_id.h>
 #include <st/st_collision_attr_param.h>
 #include <st/st_positions.h>
 #include <st/st_trigger.h>

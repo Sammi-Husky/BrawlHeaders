@@ -141,26 +141,31 @@ public:
     static_assert(sizeof(AttackDetails) == 16, "Class is wrong size!");
 
     struct SimpleEffectData {
-        unsigned int m_id;
-        short m_0x4;
+        int m_id;
+        short m_repeatFrames;
         short m_nodeIndex;
-        short m_0x8;
+        short m_endFrames;
         short m_0xc;
     };
 
     struct Effect_Info {
-        short m_0x0;
+        enum State {
+            State_Inactive = 0x0,
+            State_Start = 0x1,
+            State_Active = 0x2,
+        };
+
+        State m_state : 16;
         short m_0x2;
-        float m_0x4;
-        int m_0x8;
+        float m_framesActive;
+        int m_activeIndex;
         int m_id;
-        int m_0x10;
-        int m_0x14;
+        u32 m_repeatFrames;
+        u32 m_endFrames;
         short m_nodeIndex;
         short m_0x1a;
-        float m_0x1c;
-        float m_0x20;
-        float m_0x24;
+        Vec2f m_offsetPos;
+        float m_scale;
     };
 
     // 5C
