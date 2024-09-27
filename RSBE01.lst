@@ -653,14 +653,21 @@ CC008000:WGPIPE
 27,1,002398C8:getPlayerPosition__7stMeleeFiP5Vec3f
 27,1,00238EB0:setGravityHalf__7stMeleeFv
 27,1,00238E90:setGravityNormal__7stMeleeFv
+27,1,00238ED0:createCollisionSelf__7stMeleeFP15stCollisionWorkP6GroundPCcPCcUs
 
 // stUtility
 27,1,00227BEC:stRayCheck__FP5Vec3fP5Vec3fbP11grCollisionbUc
 27,1,00227CC4:stRayCheck__FP5Vec3fP5Vec3fP5Vec3fP5Vec3fbP11grCollisionbUc
 27,1,00227DD8:stRayCheck__FP5Vec3fP5Vec3fPiP5Vec3fP5Vec3fbbUc
 
-// grCollisionJoint
+// grCollision
 80111958:getJoint__11grCollisionFUs
+
+// grCollisionJoint
+80112ea0:getLine__16grCollisionJointFUl
+
+// stCollision
+27,1,00239F50:initialize__15stCollisionWorkFv
 
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv

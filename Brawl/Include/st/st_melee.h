@@ -3,6 +3,19 @@
 #include <st/st_common_gimmick.h>
 #include <types.h>
 
+class stCollisionWork {
+    grCollData::VtxData* m_vtxDatas;
+    grCollData::LineData* m_lineDatas;
+    grCollData::JointData* m_jointDatas;
+public:
+    u16 m_vtxLen;
+    bool m_isClosed;
+    char _0xf;
+
+    void initialize();
+};
+static_assert(sizeof(stCollisionWork) == 0x10, "Class is wrong size!");
+
 class stMelee : public stCommonGimmick {
 protected:
     // 0
@@ -41,6 +54,7 @@ public:
     void stopSeBasic(int index, float);
     void setGravityHalf();
     void setGravityNormal();
+    grCollision* createCollisionSelf(stCollisionWork* collisionWork, Ground* ground, const char*, const char*, u16);
 
     static bool getPlayerPosition(int playerNo, Vec3f* pos);
 };

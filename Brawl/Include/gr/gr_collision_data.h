@@ -1,12 +1,12 @@
 #pragma once
 
-#include <StaticAssert.h>
+#include <mt/mt_vector.h>
 #include <types.h>
 
 class grCollData {
 public:
     struct VtxData {
-        char _spacer[8];
+        Vec2f m_pos;
     };
 
     struct JointData {
