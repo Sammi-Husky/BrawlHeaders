@@ -26,3 +26,9 @@ public:
     Vec2f m_rightPos;
     clAABBox2D m_aabBox;
 };
+
+class clSegment2D {
+public:
+    Vec2f m_p0Pos;
+    Vec2f m_p1Pos;
+};

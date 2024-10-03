@@ -41,6 +41,8 @@ public:
     ~grCollision();
 
     grCollisionJoint* getJoint(u16 nodeIndex);
+    grCollisionLine* getLine(u16 index);
+    void getSegment(clSegment2D* outSegment, grCollisionLine* line);
 
 
 };

@@ -121,6 +121,6 @@ public:
     // 92
     Matrix* m_matrix;
 
-    grCollisionLine* getLine(u32 index);
+    grCollisionLine* getLine(u16 index);
 };
 static_assert(sizeof(grCollisionJoint) == 96, "Class is wrong size!");
