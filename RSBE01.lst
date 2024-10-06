@@ -584,7 +584,7 @@ CC008000:WGPIPE
 27,1,002249D8:notifyEventInfoReady__5StageFv
 27,1,002249DC:notifyEventInfoGo__5StageFv
 27,1,00224B08:getDestroyBossParamCommon__5StageFv
-27,1,00224B3C:stAdventureEventGetItem__5StageFiiiii
+27,1,00224B3C:stAdventureEventGetItem__5StageFi6itKindiii
 27,1,00224D88:setStageOutEffectInit__5StageFv
 27,1,00224D98:setStageInEffectInit__5StageFv
 27,1,002256E4:helperStarWarp__5StageFv
@@ -710,7 +710,7 @@ CC008000:WGPIPE
 27,1,0025fd7c:setMatAlphaMul__6GroundFUlUl
 27,1,0025feec:setMatAlpha__6GroundFUlUl
 27,1,0025ffe0:updateG3dProcCalcWorld__6GroundFv
-27,1,00231b70:adventureEventGetItem__6GroundFiPi
+27,1,00231b70:adventureEventGetItem__6GroundFiP13stTriggerData
 27,1,00231BBC:getStageData__6GroundFv
 27,1,00231BB8:initStageData__6GroundFv
 27,1,00231BB0:getMdlIndex__6GroundFv

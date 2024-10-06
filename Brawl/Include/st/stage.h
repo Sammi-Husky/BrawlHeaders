@@ -282,7 +282,7 @@ public:
     virtual void notifyEventInfoReady();                           // TODO
     virtual void notifyEventInfoGo();                              // TODO
     virtual void getDestroyBossParamCommon();                      // TODO
-    virtual void stAdventureEventGetItem(int, int, int, int, int); // TODO
+    virtual void stAdventureEventGetItem(int entryId, itKind kind, int itVariation, int genParamId, int instanceId);
     virtual void setStageOutEffectInit();                          // TODO
     virtual void setStageInEffectInit();                           // TODO
     virtual int helperStarWarp() { return 0; }
