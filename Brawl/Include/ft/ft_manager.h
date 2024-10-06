@@ -12,7 +12,7 @@
 #include <ft/ft_slot_manager.h>
 #include <it/item.h>
 #include <so/so_null.h>
-#include <so/so_ground_util.h>
+#include <so/ground/so_ground_util.h>
 #include <types.h>
 
 class ftOutsideEventObserver : public soEventObserver<ftOutsideEventObserver> {
@@ -46,7 +46,7 @@ public:
     virtual void notifyEventRemoveEntry(int entryId);
     virtual void notifyEventFinalSlow(int entryId, float, int);
     virtual void notifyEventFinalSlowCancel(int entryId);
-    virtual void notifyEventFinalStop(int entryId;
+    virtual void notifyEventFinalStop(int entryId);
     virtual void notifyEventFinalStopCancel(int entryId);
     virtual void notifyEventEntryEnd(int entryId);
     virtual void notifyEventResultEnd(int entryId);
