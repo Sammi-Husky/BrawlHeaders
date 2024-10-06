@@ -14,10 +14,10 @@ public:
     virtual void renderDebug();
     virtual ~aiMgr();
 
-    virtual void notifyEventOnDamage(int entryId, bool, void*);
-    virtual void notifyEventDead(int entryId, int, int, u32);
-    virtual void notifyEventChangeStart(int, int playerNo);
-    virtual void notifyEventChangeEnd(int entryId, u32 index, int, int);
+    virtual void notifyEventOnDamage(int entryId, u32 hp, soDamage* damage);
+    virtual void notifyEventDead(int entryId, int deadCount, int, int);
+    virtual void notifyEventChangeStart(int entryId, int playerNo, int activeInstanceIndex, ftKind);
+    virtual void notifyEventChangeEnd(int entryId, int playerNo, int activeInstanceIndex, ftKind);
 
     int setDangerZone(Vec2f* p1, Vec2f* p2, int index, bool, bool);
 };

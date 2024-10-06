@@ -10,7 +10,9 @@
 #include <so/so_log_event_presenter.h>
 #include <ft/ft_entry_manager.h>
 #include <ft/ft_slot_manager.h>
+#include <it/item.h>
 #include <so/so_null.h>
+#include <so/so_ground_util.h>
 #include <types.h>
 
 class ftOutsideEventObserver : public soEventObserver<ftOutsideEventObserver> {
@@ -21,15 +23,15 @@ public:
     virtual void addObserver(short param1, s8 param2);
     // TODO: Verify params
     virtual void notifyEventOnDamage(int entryId, u32 hp, soDamage* damage);
-    virtual void notifyEventSetDamage(int entryId, float, int, bool, bool);
+    virtual void notifyEventSetDamage(int entryId, float, u32 percent, bool, bool);
     virtual void notifyEventRecover(int entryId, int);
-    virtual void notifyEventOutsideDeadArea(int entryId, int, bool*);
+    virtual void notifyEventOutsideDeadArea(int entryId, DeadType, bool*);
     virtual void notifyEventAppeal(int entryId, int);
     virtual void notifyEventDead(int entryId, int deadCount, int, int);
     virtual void notifyEventBeat(int entryId1, int entryId2);
     virtual void notifyEventSuicide(int entryId);
-    virtual void notifyEventChangeStart(int, int playerNo);
-    virtual void notifyEventChangeEnd(int entryId, u32 index, int, int);
+    virtual void notifyEventChangeStart(int entryId, int playerNo, int activeInstanceIndex, ftKind);
+    virtual void notifyEventChangeEnd(int entryId, int playerNo, int activeInstanceIndex, ftKind);
     virtual void notifyEventChangeAppear();
     virtual void notifyEventAddDragoonParts(int entryId, int);
     virtual void notifyEventCompDragoonParts(int entryId);
@@ -39,27 +41,27 @@ public:
     virtual void notifyEventSetCursor(int entryId, u32 index);
     virtual void notifyEventSetNameCursor(int entryId, u32 index);
     virtual void notifyEventSetLoupe(int entryId, u32 index);
-    virtual void notifyEventStartFinal();
-    virtual void notifyEventEndFinal();
+    virtual void notifyEventStartFinal(int entryId);
+    virtual void notifyEventEndFinal(int entryId);
     virtual void notifyEventRemoveEntry(int entryId);
-    virtual void notifyEventFinalSlow(float, int, u32);
-    virtual void notifyEventFinalSlowCancel();
-    virtual void notifyEventFinalStop();
-    virtual void notifyEventFinalStopCancel();
+    virtual void notifyEventFinalSlow(int entryId, float, int);
+    virtual void notifyEventFinalSlowCancel(int entryId);
+    virtual void notifyEventFinalStop(int entryId;
+    virtual void notifyEventFinalStopCancel(int entryId);
     virtual void notifyEventEntryEnd(int entryId);
     virtual void notifyEventResultEnd(int entryId);
-    virtual void notifyEventGetItem(int, int, int, int, int);
+    virtual void notifyEventGetItem(int entryId, itKind kind, int itVariation, int genParamId, int instanceId);
     virtual void notifyEventSucceedHit(int entryId, u32 consecutiveHits, float totalDamage);
     virtual void notifyEventResultWin(int entryId, int);
     virtual void notifyEventYoshiEggStart(int entryId);
     virtual void notifyEventYoshiEggEnd(int entryId);
     virtual void notifyEventOnInput(int entryId);
-    virtual void notifyEventPikminMakeBloomAll();
+    virtual void notifyEventPikminMakeBloomAll(int entryId);
     virtual void notifyEventKirbyCopySetup(int entryId, int);
     virtual void notifyEventKirbyCopyCancel(int entryId, int);
     virtual void notifyEventKnockout(int entryId);
     virtual void notifyEventHeartSwapStart(int entryId1, int entryId2);
-    virtual void notifyEventHeartSwapEnd();
+    virtual void notifyEventHeartSwapEnd(int, int);
 
     char _spacer1[2];
 };
