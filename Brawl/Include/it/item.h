@@ -409,7 +409,7 @@ public:
     virtual soLogAttackInfo getLogAttackInfo();
     virtual void updateLogAttackInfo();
     virtual void deactivate();
-    virtual void have(int, int, int);
+    virtual void have(int taskId, int, int);
     virtual void action(int);
     virtual void setGlowAttack(int glowAttack);
     virtual int getGlowAttack();
@@ -437,6 +437,7 @@ public:
     float getParam(int param);
     float getParamFloat(unsigned int param);
     bool isHaved();
+    int getTeamOwnerTaskId();
 
     void setSafePos(Vec2f* pos);
     void warp(Vec3f* pos);

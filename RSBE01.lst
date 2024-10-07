@@ -1091,6 +1091,7 @@ CC008000:WGPIPE
 27,1,0028C7E8:setVanishMode__8BaseItemFb
 27,1,0028FF6C:setSafePos__8BaseItemFP5Vec2f
 27,1,0028DBA4:isHaved__8BaseItemFv
+27,1,0028F518:getTeamOwnerTaskId__8BaseItemFv
 
 // Yakumono
 27,1,0026383C:setReactionFrame__8YakumonoFi
