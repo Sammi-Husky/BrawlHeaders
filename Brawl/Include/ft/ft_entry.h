@@ -41,7 +41,7 @@ enum ftKind {
     Fighter_ZeroSuitSamus = 0x18,
     Fighter_SZeroSuit = 0x18,
     Fighter_Olimar = 0x19,
-    Fighter_Pimin = 0x19,
+    Fighter_Pikmin = 0x19,
     Fighter_Lucas = 0x1a,
     Fighter_DiddyKong = 0x1b,
     Fighter_Diddy = 0x1b,

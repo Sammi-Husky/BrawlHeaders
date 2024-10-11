@@ -9,6 +9,8 @@
 
 #define NUM_IT_KINDS 178
 
+#define ITEM_INSTANCE_WORK_INT_LIFE_TIME 0x10000009
+
 enum itKind {
     Item_Common = -0x3,
     Item_AssistTrophy = 0x00,
@@ -433,9 +435,9 @@ public:
     virtual bool isUseSpeedDamage();
     virtual bool isUseShake();
 
-    int getParam(unsigned int param);
-    float getParam(int param);
-    float getParamFloat(unsigned int param);
+    float getParam(s32 param);
+    int getParam(u32 param);
+    float getParamFloat(u32 param);
     bool isHaved();
     int getTeamOwnerTaskId();
 
