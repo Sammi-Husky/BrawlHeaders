@@ -5,8 +5,6 @@
 #include <so/collision/so_collision.h>
 #include <so/so_array.h>
 
-
-
 struct soCollisionAttackAbsoluteData {
     int m_power;
     int m_vector;

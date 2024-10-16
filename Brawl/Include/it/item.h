@@ -6,6 +6,7 @@
 #include <so/stageobject.h>
 #include <types.h>
 #include <ut/ut_uncopyable.h>
+#include <it/it_value_accesser.h>
 
 #define NUM_IT_KINDS 178
 
@@ -435,8 +436,8 @@ public:
     virtual bool isUseSpeedDamage();
     virtual bool isUseShake();
 
-    float getParam(s32 param);
-    int getParam(u32 param);
+    float getParam(itValueAccesser::ParamFloat param);
+    int getParam(itValueAccesser::ParamInt param);
     float getParamFloat(u32 param);
     bool isHaved();
     int getTeamOwnerTaskId();

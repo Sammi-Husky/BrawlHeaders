@@ -1085,8 +1085,8 @@ CC008000:WGPIPE
 
 // BaseItem
 27,1,0027F564:__ct__8BaseItemFP8itCreate
-27,1,0028C834:getParam__8BaseItemFl
-27,1,0028C85C:getParam__8BaseItemFUl
+27,1,0028C834:getParam__8BaseItemFQ215itValueAccesser10ParamFloat
+27,1,0028C85C:getParam__8BaseItemFQ215itValueAccesser8ParamInt
 27,1,0028C884:getParamFloat__8BaseItemFUi
 27,1,0028DE00:warp__8BaseItemFP5Vec3f
 27,1,0028C7E8:setVanishMode__8BaseItemFb
