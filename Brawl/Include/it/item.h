@@ -351,7 +351,7 @@ public:
     };
 
     enum WorkId {
-        Instance_Work_Int_Lift_Time = 0x10000009,
+        Instance_Work_Int_Life_Time = 0x10000009,
         Instance_Work_Int_Hit_Kind = 0x10000016,
 
         Instance_Work_Float_Hp = 0x11000006,
