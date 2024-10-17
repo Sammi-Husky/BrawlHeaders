@@ -271,9 +271,14 @@ public:
         Status_Captain_Final_End = 0xFF,
         Status_Kirby_Final_Damage_Fly = 0x100,
         Status_Kirby_Final_Damage_Wait = 0x101,
-
+        Status_Capture_Gokulin = 0x102,
+        Status_Capture_Cut_Gokulin = 0x103,
+        Status_Capture_Taboo = 0x104,
         Status_Capture_Bucyulus = 0x105,
-        Status_Capture_Bucyulus_End = 0x106,
+        Status_Capture_Cut_Bucyulus = 0x106,
+        Status_Capture_Pulled_Yoshi = 0x107,
+        Status_Capture_Wait_Yoshi = 0x108,
+        Status_Capture_Damage_Yoshi = 0x109
 
         Status_Standby = 0x10B,
         Status_Appeal  = 0x10C,
