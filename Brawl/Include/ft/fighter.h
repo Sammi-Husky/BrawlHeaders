@@ -34,7 +34,7 @@ public:
         Status_Squat_Wait = 0x12,
         Status_Squat_F = 0x13,
         Status_Squat_B = 0x14,
-        Status_Squat_RV = 0x15,
+        Status_Squat_Rv = 0x15,
         Status_Landing = 0x16,
         Status_Landing_Light = 0x17,
         Status_Landing_Attack_Air = 0x18,
