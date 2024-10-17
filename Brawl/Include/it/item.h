@@ -10,8 +10,6 @@
 
 #define NUM_IT_KINDS 178
 
-#define ITEM_INSTANCE_WORK_INT_LIFE_TIME 0x10000009
-
 enum itKind {
     Item_Common = -0x3,
     Item_AssistTrophy = 0x00,
@@ -341,6 +339,25 @@ protected:
     char _428[1808];
 
 public:
+    enum StatusKind {
+        Status_Standby = 0x0,
+        Status_Initialize = 0x1,
+        Status_Have = 0x2,
+        Status_Fall = 0x3,
+        Status_Landing = 0x4,
+        Status_Throw = 0x5,
+        Status_Lost = 0x6,
+        Status_Born = 0x7,
+    };
+
+    enum WorkId {
+        Instance_Work_Int_Lift_Time = 0x10000009,
+        Instance_Work_Int_Hit_Kind = 0x10000016,
+
+        Instance_Work_Float_Hp = 0x11000006,
+        Instance_Work_Float_Base_Scale = 0x1100000c,
+    };
+
     int m_instanceId;
     union {
         struct {
