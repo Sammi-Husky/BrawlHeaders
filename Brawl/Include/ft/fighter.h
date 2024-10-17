@@ -278,7 +278,7 @@ public:
         Status_Capture_Cut_Bucyulus = 0x106,
         Status_Capture_Pulled_Yoshi = 0x107,
         Status_Capture_Wait_Yoshi = 0x108,
-        Status_Capture_Damage_Yoshi = 0x109
+        Status_Capture_Damage_Yoshi = 0x109,
 
         Status_Standby = 0x10B,
         Status_Appeal  = 0x10C,
