@@ -1,6 +1,7 @@
 #pragma once
 
 #include <so/camera/so_camera_module_simple.h>
+#include <so/anim/so_anim_cmd_event_observer.h>
 #include <so/so_array.h>
 
 class soCameraModuleImpl : public soCameraModuleSimple {

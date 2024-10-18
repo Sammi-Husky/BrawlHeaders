@@ -2,6 +2,8 @@
 #include <so/anim/so_anim_cmd.h>
 #include <so/event/so_event_presenter.h>
 #include <so/event/so_event_observer.h>
+#include <so/anim/so_anim_cmd_event_observer.h>
+#include <so/status/so_status_event_observer.h>
 #include <so/so_instance_manager.h>
 
 /*

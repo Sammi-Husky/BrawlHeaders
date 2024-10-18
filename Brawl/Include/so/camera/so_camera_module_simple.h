@@ -2,6 +2,7 @@
 
 #include <types.h>
 #include <so/camera/so_camera_subject.h>
+#include <so/anim/so_anim_cmd_event_observer.h>
 
 class soModuleAccesser;
 

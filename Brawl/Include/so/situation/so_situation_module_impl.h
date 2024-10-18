@@ -3,6 +3,9 @@
 #include <StaticAssert.h>
 #include <so/event/so_event_observer.h>
 #include <so/event/so_event_presenter.h>
+#include <so/situation/so_situation_event_observer.h>
+#include <so/status/so_status_event_observer.h>
+#include <so/anim/so_anim_cmd_event_observer.h>
 #include <types.h>
 
 class soModuleAccesser;
@@ -12,10 +15,10 @@ public:
     virtual ~soSituationModule();
     virtual void activate();
     virtual void deactivate();
-    virtual int getKind();
-    virtual int getPrevKind();
+    virtual SituationKind getKind();
+    virtual SituationKind getPrevKind();
     virtual bool isSituationChanged();
-    virtual void setKind(int kind, bool);
+    virtual void setKind(SituationKind kind, bool);
     virtual void setKeepAir(bool);
     virtual void update();
 };
@@ -31,10 +34,10 @@ public:
     virtual ~soSituationModuleImpl();
     virtual void activate();
     virtual void deactivate();
-    virtual int getKind();
-    virtual int getPrevKind();
+    virtual SituationKind getKind();
+    virtual SituationKind getPrevKind();
     virtual bool isSituationChanged();
-    virtual void setKind(int kind, bool);
+    virtual void setKind(SituationKind kind, bool);
     virtual void setKeepAir(bool);
     virtual void update();
 

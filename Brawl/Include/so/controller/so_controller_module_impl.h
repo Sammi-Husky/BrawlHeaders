@@ -3,6 +3,7 @@
 #include <StaticAssert.h>
 #include <so/controller/so_controller_impl.h>
 #include <so/event/so_event_observer.h>
+#include <so/anim/so_anim_cmd_event_observer.h>
 #include <ip/Input.h>
 #include <types.h>
 

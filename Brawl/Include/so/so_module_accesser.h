@@ -5,6 +5,7 @@
 #include <so/collision/so_collision_attack_module_impl.h>
 #include <so/collision/so_collision_hit_module_impl.h>
 #include <so/collision/so_collision_search_module_impl.h>
+#include <so/collision/so_collision_shield_module_impl.h>
 #include <so/color/so_color_blend_module_impl.h>
 #include <so/controller/so_controller_module_impl.h>
 #include <so/damage/so_damage_module_impl.h>
@@ -24,6 +25,10 @@
 #include <so/work/so_work_manage_module_impl.h>
 #include <so/param/so_param_customize_module_impl.h>
 #include <so/camera/so_camera_module_impl.h>
+#include <so/link/so_link_module_impl.h>
+#include <so/capture/so_capture_module_impl.h>
+#include <so/item/so_item_manage_module_impl.h>
+#include <so/turn/so_turn_module_impl.h>
 #include <types.h>
 
 class StageObject;

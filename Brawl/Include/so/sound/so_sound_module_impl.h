@@ -5,6 +5,10 @@
 #include <so/event/so_event_observer.h>
 #include <so/so_null.h>
 #include <so/sound/so_sound_3d_generator_accesser_impl.h>
+#include <so/situation/so_situation_event_observer.h>
+#include <so/status/so_status_event_observer.h>
+#include <so/collision/so_collision_hit_event_observer.h>
+#include <so/anim/so_anim_cmd_event_observer.h>
 #include <types.h>
 
 class soModuleAccesser;
@@ -113,6 +117,6 @@ public:
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void notifyEventCollisionHit(float power, soCollisionAttackData*, u32 index, int, soModuleAccesser* moduleAccesser, soCollisionLog*);
-    virtual void notifyEventChangeSituation(int unk1, int unk2, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventChangeSituation(SituationKind kind, SituationKind prevKind, soModuleAccesser* moduleAccesser);
 };
 static_assert(sizeof(soSoundModuleImpl) == 92, "Class is wrong size!");
