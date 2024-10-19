@@ -187,9 +187,9 @@ CC008000:WGPIPE
 // ecMgr
 8005f774:setDrawPrio__5ecMgrFi
 80060d8c:killEffect__5ecMgrFUlUlUl
-8005f7a4:setEffect__5ecMgrFUl
-8005f7b8:setEffect__5ecMgrFUlP5Vec3f
-8005f7e0:setEffect__5ecMgrFUlP5Vec3fP5Vec3fP5Vec3f
+8005f7a4:setEffect__5ecMgrF4EfID
+8005f7b8:setEffect__5ecMgrF4EfIDP5Vec3f
+8005f7e0:setEffect__5ecMgrF4EfIDP5Vec3fP5Vec3fP5Vec3f
 80060c54:endEffect__5ecMgrFUl
 8005fc5c:setParent__5ecMgrFUlPQ34nw4r3g3d6ScnMdlPCci
 800606a8:preSetAnmIdx__5ecMgrFiiiiii
