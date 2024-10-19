@@ -267,7 +267,7 @@ public:
     void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, stTriggerData* triggerData, const char* nodeName);
     void createEffectWork(int numEffects);
     void createIsValidTrigger(stTriggerData* triggerData);
-    void createSimpleEffectData(SimpleEffectData* simpleEffectData, EfID effectId, const char* nodeName);
+    void createSimpleEffectData(SimpleEffectData* simpleEffectData, int effectId, const char* nodeName);
     void createSoundWork(u32 unk1, u32 unk2);
     u32 getMaterialColor(int* unk1, const char* unk2, u32* sceneModelIndex);
     u32 getMaterialTevColor(int* unk1, const char* unk2, u32* sceneModelIndex);
