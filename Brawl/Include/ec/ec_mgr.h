@@ -4,6 +4,7 @@
 #include <mt/mt_vector.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
 #include <so/ground/so_ground_module_impl.h>
+#include <ef/ef_id.h>
 #include <types.h>
 
 class ecMgr : public gfTask {

@@ -8,7 +8,6 @@
 
 class soModuleAccesser;
 class StageObject;
-class BaseItem;
 
 template <class T>
 class soEventObserver {
