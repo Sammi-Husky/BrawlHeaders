@@ -4,6 +4,7 @@
 #include <gr/gr_calc_world_callback.h>
 #include <gr/ground.h>
 #include <snd/snd_3d_generator.h>
+#include <ec/ec_mgr.h>
 #include <st/st_trigger.h>
 
 struct grGimmickMotionPathData {
@@ -266,7 +267,7 @@ public:
     void createAttachMotionPath(grGimmickMotionPathInfo* motionPathInfo, stTriggerData* triggerData, const char* nodeName);
     void createEffectWork(int numEffects);
     void createIsValidTrigger(stTriggerData* triggerData);
-    void createSimpleEffectData(SimpleEffectData* simpleEffectData, u32 unk2, const char* nodeName);
+    void createSimpleEffectData(SimpleEffectData* simpleEffectData, EfID effectId, const char* nodeName);
     void createSoundWork(u32 unk1, u32 unk2);
     u32 getMaterialColor(int* unk1, const char* unk2, u32* sceneModelIndex);
     u32 getMaterialTevColor(int* unk1, const char* unk2, u32* sceneModelIndex);
