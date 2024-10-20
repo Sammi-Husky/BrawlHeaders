@@ -829,7 +829,18 @@ public:
         Instance_Work_Float_Flower_Total_Damage = 0x11000006,
         Instance_Work_Float_Gekikara_Angle = 0x11000007,
         Instance_Work_Float_Gekikara_Angle_Speed = 0x11000008,
+        Instance_Work_Float_Scaling_Start_Scale = 0x11000009,
+        Instance_Work_Float_Scaling_End_Scale = 0x1100000A,
+        Instance_Work_Float_Scaling_Init_Scale = 0x1100000B,
+        Instance_Work_Float_Metal_Power = 0x1100000C,
+        Instance_Work_Float_Succeed_Hit_Damage = 0x1100000D,
+        Instance_Work_Float_Reaction_Cheer = 0x1100000E,
+        Instance_Work_Float_Damage_Speed_Reserved_X = 0x1100000F,   // TODO: Verify (set in ftKineticTransactor::changeKinetic)
+        Instance_Work_Float_Damage_Speed_Reserved_Y = 0x11000010,   // TODO: Verify
+        Instance_Work_Float_Init_Pitch = 0x11000011,
+        Instance_Work_Float_Cursor_Offset_Y = 0x11000012,
 
+        
 
         Instance_Work_Flag_Dead_End = 0x12000000,
         Instance_Work_Flag_No_Dead = 0x12000001,
@@ -840,8 +851,13 @@ public:
         Instance_Work_Flag_Screw = 0x12000013,
         Instance_Work_Flag_KnockOut = 0x12000018,
         Instance_Work_Flag_Name_Cursor = 0x1200001B,
+        // cursor related? 0x1200001c
         Instance_Work_Flag_Disable_Cliff_Catch = 0x12000022,
-        Instance_Work_Flag_Disable_Ottotoo = 0x12000024,
+        Instance_Work_Flag_Disable_Ottotto = 0x12000024,
+        // cursor related? 0x12000038
+        // cursor related? 0x1200003c
+
+
     };
 
     enum DeadReason {
@@ -858,6 +874,22 @@ public:
         Dead_Mode_Normal = 0x0,
         Dead_Mode_DeadUp_Star = 0x1,
         Dead_Mode_DeadUp_Fall = 0x2
+    };
+
+    enum ScalingStatus {
+        Scaling_Status_None = 0x0,
+        Scaling_Status_End_Small = 0x1,
+        Scaling_Status_End_Big = 0x2,
+        Scaling_Status_Big = 0x3,
+        Scaling_Status_To_Big = 0x4,
+        Scaling_Status_Small = 0x5,
+        Scaling_Status_To_Small = 0x6,
+    };
+
+    enum ScalingKind {
+        Scaling_Kind_Status = 0x0,
+        Scaling_Kind_Kinoko = 0x1,
+        Scaling_Kind_Thunder = 0x2
     };
 
     int m_entryId;

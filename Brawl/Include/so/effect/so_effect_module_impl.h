@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <mt/mt_vector.h>
+#include <ec/ec_mgr.h>
 #include <so/event/so_event_observer.h>
 #include <so/status/so_status_event_observer.h>
 #include <so/collision/so_collision_attack_event_observer.h>
@@ -19,26 +20,26 @@ public:
     virtual void deactivate();
     virtual void begin();
     virtual void update(bool);
-    virtual bool req(float scale, u32 effectID, Vec3f* pos, Vec3f* rot, u32, int);
-    virtual bool req2D(float scale, u32 effectID, Vec3f* pos, Vec3f* rot, u32);
-    virtual bool req(float scale, u32 effectID, int, Vec3f* pos, Vec3f* rot, Vec3f* posRange, Vec3f* rotRange, bool, u32);
-    virtual bool req(float scale, u32 effectID, int, int*, Vec3f* pos, Vec3f* rot, Vec3f* posRange, Vec3f* rotRange, bool, u32);
-    virtual bool reqAttachGround(float scale, u32 effectID, int*, Vec3f* pos, Vec3f* rot, Vec3f* rotRange, u32);
-    virtual bool reqFollow(float scale, u32 effectID, int, Vec3f*, Vec3f*, bool, u32, u32 effectIDAdd, int);
-    virtual bool reqContinual(float, u32 effectID, int, bool, u32 index);
+    virtual bool req(EfID effectID, Vec3f* pos, Vec3f* rot, float scale, u32, int);
+    virtual bool req2D(EfID effectID, Vec3f* pos, Vec3f* rot, float scale, u32);
+    virtual bool req(EfID effectID, int, Vec3f* pos, Vec3f* rot, float scale, Vec3f* posRange, Vec3f* rotRange, bool, u32);
+    virtual bool req(EfID effectID, int, int*, Vec3f* pos, Vec3f* rot, float scale, Vec3f* posRange, Vec3f* rotRange, bool, u32);
+    virtual bool reqAttachGround(EfID effectID, int*, Vec3f* pos, Vec3f* rot, float scale, Vec3f* rotRange, u32);
+    virtual bool reqFollow(EfID effectID, int, Vec3f*, Vec3f*, float scale, bool, u32, u32 effectIDAdd, int);
+    virtual bool reqContinual(EfID effectID, float, int, bool, u32 index);
     virtual void removeContinual(u32 index);
     virtual void removeAllContinual();
-    virtual void reqTime(float scale, u32 effectID, int, Vec3f* pos, Vec3f* rot, u32);
-    virtual void reqTimeFollow(float scale, u32 effectID, int, int, Vec3f*, Vec3f*, u32);
+    virtual void reqTime(EfID effectID, int, Vec3f* pos, Vec3f* rot, float scale, u32);
+    virtual void reqTimeFollow(EfID effectID, int, int, Vec3f*, Vec3f*, float scale, u32);
     virtual void removeTime(int);
     virtual void removeAllTime();
-    virtual void reqEmit(u32 effectID, u32);
+    virtual void reqEmit(EfID effectID, u32);
     virtual void remove(int);
     virtual void removeAll(u32);
     virtual void kill(int, bool, bool);
     virtual void killKind(bool, bool, int);
     virtual void killAll(u32, bool, bool);
-    virtual bool reqAfterImage(float scale, float, int nodeID1, int nodeID2, int, short, Vec3f*, Vec3f*, u32, u32 effectId, int, Vec3f* pos, Vec3f*, u8, u8);
+    virtual bool reqAfterImage(int nodeID1, int nodeID2, int, short, Vec3f*, Vec3f*, u32, EfID effectId, int, Vec3f* pos, Vec3f*, float scale, u8, u8, float);
     virtual bool removeAfterImage(int, int);
     virtual void removeAllAfterImage(u32, int);
     virtual void setPos(int, Vec3f* pos);
@@ -77,26 +78,26 @@ public:
     virtual void deactivate();
     virtual void begin();
     virtual void update(bool);
-    virtual bool req(float scale, u32 effectID, Vec3f* pos, Vec3f* rot, u32, int);
-    virtual bool req2D(float scale, u32 effectID, Vec3f* pos, Vec3f* rot, u32);
-    virtual bool req(float scale, u32 effectID, int, Vec3f* pos, Vec3f* rot, Vec3f* posRange, Vec3f* rotRange, bool, u32);
-    virtual bool req(float scale, u32 effectID, int, int*, Vec3f* pos, Vec3f* rot, Vec3f* posRange, Vec3f* rotRange, bool, u32);
-    virtual bool reqAttachGround(float scale, u32 effectID, int*, Vec3f* pos, Vec3f* rot, Vec3f* rotRange, u32);
-    virtual bool reqFollow(float scale, u32 effectID, int, Vec3f*, Vec3f*, bool, u32, u32 effectIDAdd, int);
-    virtual bool reqContinual(float, u32 effectID, int, bool, u32 index);
+    virtual bool req(EfID effectID, Vec3f* pos, Vec3f* rot, float scale, u32, int);
+    virtual bool req2D(EfID effectID, Vec3f* pos, Vec3f* rot, float scale, u32);
+    virtual bool req(EfID effectID, int, Vec3f* pos, Vec3f* rot, float scale, Vec3f* posRange, Vec3f* rotRange, bool, u32);
+    virtual bool req(EfID effectID, int, int*, Vec3f* pos, Vec3f* rot, float scale, Vec3f* posRange, Vec3f* rotRange, bool, u32);
+    virtual bool reqAttachGround(EfID effectID, int*, Vec3f* pos, Vec3f* rot, float scale, Vec3f* rotRange, u32);
+    virtual bool reqFollow(EfID effectID, int, Vec3f*, Vec3f*, float scale, bool, u32, u32 effectIDAdd, int);
+    virtual bool reqContinual(EfID effectID, float, int, bool, u32 index);
     virtual void removeContinual(u32 index);
     virtual void removeAllContinual();
-    virtual void reqTime(float scale, u32 effectID, int, Vec3f* pos, Vec3f* rot, u32);
-    virtual void reqTimeFollow(float scale, u32 effectID, int, int, Vec3f*, Vec3f*, u32);
+    virtual void reqTime(EfID effectID, int, Vec3f* pos, Vec3f* rot, float scale, u32);
+    virtual void reqTimeFollow(EfID effectID, int, int, Vec3f*, Vec3f*, float scale, u32);
     virtual void removeTime(int);
     virtual void removeAllTime();
-    virtual void reqEmit(u32 effectID, u32);
+    virtual void reqEmit(EfID effectID, u32);
     virtual void remove(int);
     virtual void removeAll(u32);
     virtual void kill(int, bool, bool);
     virtual void killKind(bool, bool, int);
     virtual void killAll(u32, bool, bool);
-    virtual bool reqAfterImage(float scale, float, int nodeID1, int nodeID2, int, short, Vec3f*, Vec3f*, u32, u32 effectId, int, Vec3f* pos, Vec3f*, u8, u8);
+    virtual bool reqAfterImage(int nodeID1, int nodeID2, int, short, Vec3f*, Vec3f*, u32, EfID effectId, int, Vec3f* pos, Vec3f*, float scale, u8, u8, float);
     virtual bool removeAfterImage(int, int);
     virtual void removeAllAfterImage(u32, int);
     virtual void setPos(int, Vec3f* pos);
