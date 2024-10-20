@@ -754,34 +754,78 @@ public:
     };
 
     enum WorkId {
+        Instance_Work_Int_Entry_Id = 0x10000000,
         Instance_Work_Int_Jump_Count = 0x10000001,
+        Instance_Work_Int_Cliff_No_Catch_Frame = 0x10000002,
         Instance_Work_Int_Wall_Jump_Count = 0x10000003,
         Instance_Work_Int_Wall_Jump_Past_Frame = 0x10000004,
         Instance_Work_Int_Tread_Jump_Count = 0x10000005,
+        Instance_Work_Int_No_Tread_Frame = 0x10000006,
+        Instance_Work_Int_Tread_Target_Id = 0x10000007,
+        Instance_Work_Int_Tread_Target_Category = 0x10000008,
+        Instance_Work_Int_No_Slip_Frame = 0x10000009,
+        Instance_Work_Int_No_Damage_Slip_Frame = 0x1000000A,
+        Instance_Work_Int_No_Attack_Wall_Frame = 0x1000000B,
+        Instance_Work_Int_Attach_Wall_Count = 0x1000000C,
+        Instance_Work_Int_Speed_Y_Stable_Frame = 0x1000000D,
+        Instance_Work_Int_No_Barrel_Frame = 0x1000000E,
+        Instance_Work_Int_No_Catapult_Frame = 0x1000000F,
+        Instance_Work_Int_No_Ground_Damage_Frame = 0x10000010,
+        Instance_Work_Int_No_Ladder_Frame = 0x10000011,
+        Instance_Work_Int_No_Spring_Frame = 0x10000012,
+        Instance_Work_Int_Water_Jump_Count = 0x10000013,
         Instance_Work_Int_Water_Into_Frame = 0x10000014,
+        Instance_Work_Int_Gimmick_Id = 0x10000015,
+        Instance_Work_Int_Gimmick_Event_Manage_Id = 0x10000016,
+        Instance_Work_Int_Gimmick_Kind = 0x10000017,
         Instance_Work_Int_Flower_Counter = 0x10000018,
         Instance_Work_Int_Gekikara_Counter = 0x10000019,
         Instance_Work_Int_Gekikara_Shoot_Counter = 0x1000001A,
-        Instance_Work_Int_Superstar_Counter = 0x1000001E,
+        Instance_Work_Int_Hammer_Counter = 0x1000001B,
+        Instance_Work_Int_Hammer_Throw_Counter = 0x1000001C,
+        Instance_Work_Int_Hammer_SE_Handle = 0x1000001D,
+        Instance_Work_Int_SuperStar_Counter = 0x1000001E,
+        Instance_Work_Int_SuperStar_SE_Handle = 0x1000001F,
+        Instance_Work_Int_Cursor_Frame = 0x10000020,
         Instance_Work_Int_Kinoko_Frame = 0x10000021,
         Instance_Work_Int_Thunder_Frame = 0x10000022,
-        //Instance_Work_Int_Scaling_Status = 0x10000023,
+        Instance_Work_Int_Scaling_Status = 0x10000023,
+        Instance_Work_Int_Scaling_Kind = 0x10000024,
         Instance_Work_Int_Metal_Frame = 0x10000025,
+        Instance_Work_Int_No_Heal_Frame = 0x10000026,
+        Instance_Work_Int_No_Water_InOut_Frame = 0x10000027,
+        Instance_Work_Int_Dead_Reason = 0x10000028,
+        Instance_Work_Int_Dead_Mode = 0x10000029,
+        Instance_Work_Int_Dead_Rebirth_Wait_Frame = 0x1000002A,
+        Instance_Work_Int_Auto_Heal_Count = 0x1000002B, // TODO: Verify
         Instance_Work_Int_Succeed_Hit_Count = 0x1000002C,
-        //Instance_Work_Int_Loupe_Frame = 0x1000002D,
+        Instance_Work_Int_Loupe_Frame = 0x1000002D,
+        Instance_Work_Int_Curry_SE_Handle = 0x1000002E,
+        Instance_Work_Int_Heart_Swap_Target_Entry_Id = 0x1000002F,
+        Instance_Work_Int_Heart_Swap_Item_Id = 0x10000030,
+        Instance_Work_Int_No_Final_Frame = 0x10000031, // TODO: Verify
+        Instance_Work_Int_Heal_Eff_Id = 0x10000032,
+        Instance_Work_Int_Catch_Motion_Offset = 0x10000033, // TODO: Verify
+        Instance_Work_Int_Thrown_Motion_Offset = 0x10000034, // TODO: Verify
         Instance_Work_Int_Attack_Serial = 0x10000035,
         Instance_Work_Int_Color = 0x10000036,
+
         Instance_Work_Int_Status_Start_Turn_Frame = 0x10000038,
         Instance_Work_Int_Meteor_Counter_Frame = 0x10000039,
+        Instance_Work_Int_Badge_Stop_Frame = 0x1000003A, // TODO: Verify
         Instance_Work_Int_Screw_Jump_Count = 0x1000003B,
+        Instance_Work_Int_No_Pickup_Item_Frame = 0x1000003C, // TODO: Verify
         Instance_Work_Int_Fly_Reflect_Count = 0x1000003D,
         Instance_Work_Int_Air_Lasso_Count = 0x1000003E,
+        Instance_Work_Int_Damage_Entry_Id = 0x1000003F,
+
 
         Instance_Work_Float_Landing_Frame = 0x11000000,
         Instance_Work_Float_Fall_X_Accel_Mul = 0x11000001,
         Instance_Work_Float_Guard_Shield = 0x11000003,
         Instance_Work_Float_Gekikara_Angle = 0x11000007,
         Instance_Work_Float_Gekikara_Angle_Speed = 0x11000008,
+
 
         Instance_Work_Flag_Dead_End = 0x12000000,
         Instance_Work_Flag_No_Dead = 0x12000001,
@@ -794,6 +838,22 @@ public:
         Instance_Work_Flag_Name_Cursor = 0x1200001B,
         Instance_Work_Flag_Disable_Cliff_Catch = 0x12000022,
         Instance_Work_Flag_Disable_Ottotoo = 0x12000024,
+    };
+
+    enum DeadReason {
+        Dead_Reason_Outside_Up = 0x0,
+        Dead_Reason_Outside_Down = 0x1,
+        Dead_Reason_Outside_Left = 0x2,
+        Dead_Reason_Outside_Right = 0x3,
+        Dead_Reason_Ground_Crush = 0x4,
+        Dead_Reason_KnockOut = 0x5,
+        Dead_Reason_Instant_Death = 0x6
+    };
+
+    enum DeadMode {
+        Dead_Mode_Normal = 0x0,
+        Dead_Mode_DeadUp_Star = 0x1,
+        Dead_Mode_DeadUp_Fall = 0x2
     };
 
     int m_entryId;

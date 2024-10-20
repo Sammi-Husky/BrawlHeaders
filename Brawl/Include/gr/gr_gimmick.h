@@ -159,7 +159,7 @@ public:
         State m_state : 16;
         short m_0x2;
         float m_framesActive;
-        int m_activeIndex;
+        int m_handleId;
         int m_id;
         u32 m_repeatFrames;
         u32 m_endFrames;
