@@ -765,7 +765,7 @@ public:
         Instance_Work_Int_Tread_Target_Category = 0x10000008,
         Instance_Work_Int_No_Slip_Frame = 0x10000009,
         Instance_Work_Int_No_Damage_Slip_Frame = 0x1000000A,
-        Instance_Work_Int_No_Attack_Wall_Frame = 0x1000000B,
+        Instance_Work_Int_No_Attach_Wall_Frame = 0x1000000B,
         Instance_Work_Int_Attach_Wall_Count = 0x1000000C,
         Instance_Work_Int_Speed_Y_Stable_Frame = 0x1000000D,
         Instance_Work_Int_No_Barrel_Frame = 0x1000000E,
@@ -822,7 +822,11 @@ public:
 
         Instance_Work_Float_Landing_Frame = 0x11000000,
         Instance_Work_Float_Fall_X_Accel_Mul = 0x11000001,
+        Instance_Work_Float_Wall_Jump_Dir = 0x11000002,
         Instance_Work_Float_Guard_Shield = 0x11000003,
+        Instance_Work_Float_Guard_Shield_Min = 0x11000004, // TODO: Verify
+        Instance_Work_Float_Guard_Shield_Max = 0x11000005, // TODO: Verify
+        Instance_Work_Float_Flower_Total_Damage = 0x11000006,
         Instance_Work_Float_Gekikara_Angle = 0x11000007,
         Instance_Work_Float_Gekikara_Angle_Speed = 0x11000008,
 
