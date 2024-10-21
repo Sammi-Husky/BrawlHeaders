@@ -841,23 +841,64 @@ public:
         Instance_Work_Float_Cursor_Offset_Y = 0x11000012,
 
 
-
         Instance_Work_Flag_Dead_End = 0x12000000,
         Instance_Work_Flag_No_Dead = 0x12000001,
+        Instance_Work_Flag_Catch_Cliff = 0x12000002,
+        Instance_Work_Flag_Disable_Landing_Cancel = 0x12000003,
+        Instance_Work_Flag_Disable_Landing_Turn = 0x12000004,
         Instance_Work_Flag_Tread_No_Trigger = 0x12000005,
+        Instance_Work_Flag_Final = 0x12000006,
+        Instance_Work_Flag_Final_Status = 0x12000007,
+        Instance_Work_Flag_Final_Available = 0x12000008,
+        Instance_Work_Flag_Flower = 0x12000009,
         Instance_Work_Flag_Gekikara = 0x1200000A,
         Instance_Work_Flag_Hammer = 0x1200000B,
+        Instance_Work_Flag_Hammer_No_Attack = 0x1200000C,
+        Instance_Work_Flag_Hammer_No_Drift = 0x1200000D,
+        Instance_Work_Flag_Star = 0x1200000E,
+        Instance_Work_Flag_Screw = 0x1200000F,
+        Instance_Work_Flag_Pikmin_Final_No_Reaction = 0x12000010, // TODO: Verify
         Instance_Work_Flag_Paralyze_Damage = 0x12000011,
-        Instance_Work_Flag_Screw = 0x12000013,
+        Instance_Work_Flag_Metal = 0x12000012,
+        Instance_Work_Flag_Rabbit_Cap = 0x12000013,
+        Instance_Work_Flag_Kinoko = 0x12000014,
+        Instance_Work_Flag_Thunder = 0x12000015,
+        Instance_Work_Flag_No_Glide = 0x12000016, // TODO: Verify
+        Instance_Work_Flag_Dead_Area_Out = 0x12000017,
         Instance_Work_Flag_KnockOut = 0x12000018,
-        Instance_Work_Flag_Name_Cursor = 0x1200001B,
-        // cursor related? 0x1200001c
+        Instance_Work_Flag_Loupe = 0x12000019,
+        Instance_Work_Flag_Loupe_Damage = 0x1200001A,
+        Instance_Work_Flag_Cursor = 0x1200001B,
+        Instance_Work_Flag_Name_Cursor = 0x1200001C,
+        Instance_Work_Flag_Rebirth_No_Move = 0x1200001D,
+
+        Instance_Work_Flag_Kirby_Copy_Dedede = 0x1200001F,
+        Instance_Work_Flag_Speed_Damage = 0x12000020,
+        Instance_Work_Flag_Disable_Scaling = 0x12000021,
         Instance_Work_Flag_Disable_Cliff_Catch = 0x12000022,
+
         Instance_Work_Flag_Disable_Ottotto = 0x12000024,
-        // cursor related? 0x12000038
-        // cursor related? 0x1200003c
-
-
+        Instance_Work_Flag_Disable_Slip = 0x12000025,
+        Instance_Work_Flag_Slow = 0x12000026,
+        Instance_Work_Flag_Slow_Cause_Timer = 0x12000027,
+        Instance_Work_Flag_No_Dead_Up = 0x12000028,
+        Instance_Work_Flag_No_Dead_Down = 0x12000029,
+        Instance_Work_Flag_Item_Throw_4 = 0x1200002A,
+        Instance_Work_Flag_Assist = 0x1200002B,
+        Instance_Work_Flag_Check_Catch = 0x1200002C,
+        Instance_Work_Flag_GenesisSet = 0x1200002D, // TODO: Verify
+        Instance_Work_Flag_Sub_Fighter = 0x1200002E, // TODO: Verify
+        Instance_Work_Flag_No_Swim = 0x1200002F,
+        Instance_Work_Flag_Disable_Curry_Shot = 0x12000030,
+        Instance_Work_Flag_Disable_Interrupt_Swim = 0x12000031,
+        Instance_Work_Flag_Disable_Interrupt_Scaling = 0x12000032,
+        Instance_Work_Flag_Voice_Mute = 0x12000033,
+        Instance_Work_Flag_Paralyze_Stop = 0x12000037,
+        Instance_Work_Flag_Calc_Cursor_Pos_Force = 0x12000038,
+        Instance_Work_Flag_No_Speed_Operation_Chk = 0x12000039, // TODO: Verify
+        Instance_Work_Flag_Force_Loupe = 0x1200003A, // TODO: Verify
+        Instance_Work_Flag_Capture_Yoshi = 0x1200003B,
+        Instance_Work_Flag_Cursor_On_Posture = 0x1200003C
     };
 
     enum DeadReason {
