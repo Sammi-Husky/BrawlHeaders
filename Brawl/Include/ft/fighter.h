@@ -809,8 +809,8 @@ public:
         Instance_Work_Int_Thrown_Motion_Offset = 0x10000034, // TODO: Verify
         Instance_Work_Int_Attack_Serial = 0x10000035,
         Instance_Work_Int_Color = 0x10000036,
-
-        Instance_Work_Int_Status_Start_Turn_Frame = 0x10000038,
+        Instance_Work_Int_Status_Start_Turn_Frame = 0x10000037,
+        Instance_Work_Int_Damage_Reaction_Frame = 0x10000038,
         Instance_Work_Int_Meteor_Counter_Frame = 0x10000039,
         Instance_Work_Int_Badge_Stop_Frame = 0x1000003A, // TODO: Verify
         Instance_Work_Int_Screw_Jump_Count = 0x1000003B,
@@ -840,7 +840,7 @@ public:
         Instance_Work_Float_Init_Pitch = 0x11000011,
         Instance_Work_Float_Cursor_Offset_Y = 0x11000012,
 
-        
+
 
         Instance_Work_Flag_Dead_End = 0x12000000,
         Instance_Work_Flag_No_Dead = 0x12000001,
