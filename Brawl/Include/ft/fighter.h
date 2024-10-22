@@ -3,6 +3,7 @@
 #include <ft/ft_entry.h>
 #include <ft/ft_outside_event_presenter.h>
 #include <ft/ft_owner.h>
+#include <ft/ft_value_accesser.h>
 #include <mt/mt_vector.h>
 #include <so/stageobject.h>
 #include <types.h>
