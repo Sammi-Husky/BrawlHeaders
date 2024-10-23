@@ -227,9 +227,81 @@ public:
         Common_Param_Float_Diddy_Clung_Recovery_Clatter = 0xD63,
         Common_Param_Float_Diddy_Clung_Stop_Speed_X = 0xD64,
 
+        Common_Param_Float_Item_Lift_Walk_Stick_X = 0xD77,
+        Common_Param_Float_Item_Turn_Stick_X = 0xD78,
+
+        Common_Param_Float_Damage_Drop_Dragoon_Angle = 0xD80,
+        Common_Param_Float_Damage_Drop_Dragoon_Speed = 0xD81,
+        Common_Param_Float_Flower_Recovery = 0xD82,
+        Common_Param_Float_Flower_Recovery_Clatter = 0xD83,
+        Common_Param_Float_Flower_Frame_Max = 0xD84,
+        Common_Param_Float_Flower_Damage_Add_Frame_Rate = 0xD85,
+        Common_Param_Float_Flower_Scale_Min = 0xD86,
+        Common_Param_Float_Flower_Scale_Max = 0xD87,
+        Common_Param_Float_Flower_Damage_Add_Scale_Rate = 0xD88,
+
+        Common_Param_Float_Gekikara_Motion_Rate = 0xD8A,
+        Common_Param_Float_Gekikara_Fire_Shoot_Angle = 0xD8B,
+        Common_Param_Float_Gekikara_Fire_Shoot_Angle_Speed = 0xD8C,
+        Common_Param_Float_Gekikara_Fire_Shoot_Angle_Min = 0xD8D,
+        Common_Param_Float_Gekikara_Fire_Shoot_Angle_Max = 0xD8E,
+
+        Common_Param_Float_Kinoko_Giant_Scale = 0xD91,
+
+        Common_Param_Float_Kinoko_Small_Scale = 0xD93,
+        Common_Param_Float_Kinoko_Pitch_Big = 0xD94,
+        Common_Param_Float_Kinoko_Pitch_Small = 0xD95,
+        Common_Param_Float_Kinoko_Bonus_Damage - 0xD96,
+
+        Common_Param_Float_Thunder_Giant_Scale = 0xD98,
+
+        Common_Param_Float_Thunder_Small_Scale = 0xD9A,
+        Common_Param_Float_Thunder_Pitch_Big = 0xD9B,
+        Common_Param_Float_Thunder_Pitch_Small = 0xD9C,
+        Common_Param_Float_Metal_Cancel_Damage = 0xD9D,
+        Common_Param_Float_Metal_Damage_Reaction_Sub = 0xD9E,
+
+
     };
 
     enum ParamInt {
+
+        Common_Int_Dash_Flick_X = 0x59F7,
+        Common_Int_Dash_Speed_Keep_Frame = 0x59F8,
+        Common_Int_Re_Dash_Frame = 0x59F9,
+        Common_Int_Turn_Dash_Frame = 0x59FA, // TODO: verify
+        Common_Int_Jump_Initial_Frame = 0x59FB,
+        Common_Int_Jump_Flick_Y = 0x59FC,
+        Common_Int_Escape_Flick_Y = 0x59FD,
+        Common_Int_Escape_Fb_Flick_X + 0x59FE,
+        Common_Int_Dive_Flick_Frame = 0x59FF,
+
+        Common_Int_Hit_Stop_Delay_Flick_Frame = 0x5A01,
+        Common_Int_Damage_Turn_Reverse_Cont_Frame = 0x5A02,
+        Common_Int_Status_Start_Turn_Frame = 0x5A03,
+        Common_Int_Special_Smash_Flick_X = 0x5A04,  // TODO: Verify
+        Common_Int_Special_Air_N_Turn_Frame = 0x5A05,
+        Common_Int_Pass_Flick_Y = 0x5A06,
+        Common_Int_Cliff_Catch_Move_Frame = 0x5A07,
+        Common_Int_Cliff_Catch_Time_Quick = 0x5A08,
+        Common_Int_Cliff_Wait_Air_Xlu_Max_Air_Frame = 0x5A09,
+        Common_Int_Cliff_No_Catch_Frame = 0x5A0A,
+        Common_Int_Cliff_Wait_Xlu_Frame = 0x5A0B,
+        Common_Int_Passive_Trigger_Frame = 0x5A0C,
+        Common_Int_No_Rapid_Frame_Value = 0x5A0D,
+        Common_Int_Passive_Wall_Stop_Frame = 0x5A0E,
+
+        Common_Int_Air_Escape_Passive_Trigger_Frame = 0x5A10,
+
+        Common_Int_Slip_Damage_Disable_Frame = 0x5A11,
+        Common_Int_Slip_Wait_Frame = 0x5A12,
+        Common_Int_Slip_Disable_Frame = 0x5A13,
+        
+
+
+
+
+
 
 
     };
