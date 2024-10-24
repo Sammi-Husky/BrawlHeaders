@@ -261,7 +261,6 @@ public:
         Common_Param_Float_Metal_Cancel_Damage = 0xD9D,
         Common_Param_Float_Metal_Damage_Reaction_Sub = 0xD9E,
 
-
     };
 
     enum ParamInt {
@@ -365,19 +364,13 @@ public:
         Common_Int_Super_Star_Frame = 0x5A77,
         Common_Int_Super_Star_SE_Frame = 0x5A78,
         Common_Int_Kinoko_Frame = 0x5A79,
+        Common_Int_Kinoko_Bonus_Max = 0x5A7A,
+        Common_Int_Thunder_Frame = 0x5A7B,
 
+        Common_Int_Timer_Slow_Mag = 0x5A7E,
+        Common_Int_Timer_Frame = 0x5A7F,
 
-
-
-
-
-
-
-
-
-
-
-
+        Common_Int_Timer_Beat_Dec_Frame = 0x5A81,
     };
 
     virtual soParamAccesser* getExtendParamAccesser();
