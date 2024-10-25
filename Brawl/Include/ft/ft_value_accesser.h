@@ -74,7 +74,7 @@ public:
 
         Common_Param_Float_Wall_Jump_Stick_X = 0xC97,
         Common_Param_Float_Wall_Jump_Speed_Dec = 0xC98,
-        Common_Param_Float_Wall_Jump_X_Speed_Dec = 0xC99,
+        Common_Param_Float_Wall_Jump_Speed_X_Dec = 0xC99,
         Common_Param_Float_Tread_Jump_Speed_Dec = 0xC9A,
         Common_Param_Float_Tread_Jump_Speed_Limit = 0xC9B,
         Common_Param_Float_Attach_Wall_Slant_Max = 0xC9C,
@@ -153,7 +153,7 @@ public:
         Common_Param_Float_Damage_Bury_Frame_Bonus_Damage = 0xD03,
         Common_Param_Float_Damage_Bury_Recovery = 0xD04,
         Common_Param_Float_Damage_Bury_Recovery_Clatter = 0xD05,
-        Common_Param_Float_Damage_Bury_Jump_Y_Speed_Mul = 0xD06,
+        Common_Param_Float_Damage_Bury_Jump_Speed_Y_Mul = 0xD06,
         Common_Param_Float_Damage_Bury_Jump_No_Attack_Frame_Value = 0xD07,
         Common_Param_Float_Damage_Bury_Damage_Reaction_Sub = 0xD08,
         Common_Param_Float_Damage_Ice_Fall_Y_Mul = 0xD09,
@@ -260,7 +260,6 @@ public:
         Common_Param_Float_Thunder_Pitch_Small = 0xD9C,
         Common_Param_Float_Metal_Cancel_Damage = 0xD9D,
         Common_Param_Float_Metal_Damage_Reaction_Sub = 0xD9E,
-
     };
 
     enum ParamInt {
@@ -301,7 +300,7 @@ public:
 
         Common_Param_Int_Discretion_Final_Point_Diff = 0x5A1B,
         Common_Param_Int_No_Discretion_Final_Beat_Count = 0x5A1C,
-        Common_Param_Int_Wall_Jump_interval_Frame = 0x5A1D,
+        Common_Param_Int_Wall_Jump_Interval_Frame = 0x5A1D,
         Common_Param_Int_Wall_Jump_Flick_X = 0x5A1E,
         Common_Param_Int_Wall_Jump_Stop_Frame = 0x5A1F,
         Common_Param_Int_Wall_Jump_Disable_Cont_Frame = 0x5A20,

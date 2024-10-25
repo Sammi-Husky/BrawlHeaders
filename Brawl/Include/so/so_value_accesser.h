@@ -28,7 +28,7 @@ public:
         Common_Param_Float_Damage_Speed_Limit = 0x7DB,
         Common_Param_Float_Damage_Sync_Speed_Mul = 0x7DC,
         Common_Param_Float_Damage_Down_On_Ground_Angle = 0x7DD,
-        Common_Param_Float_Damage_Down_On_Ground_Y_Speed_Mul = 0x7DE,
+        Common_Param_Float_Damage_Down_On_Ground_Speed_Y_Mul = 0x7DE,
         Common_Param_Float_Fly_Top_Angle_Lw = 0x7DF,
         Common_Param_Float_Fly_Top_Angle_Hi = 0x7E0,
         Common_Param_Float_Fly_Roll_Rate = 0x7E1,
