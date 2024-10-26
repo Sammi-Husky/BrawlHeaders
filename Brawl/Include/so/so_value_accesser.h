@@ -65,6 +65,10 @@ public:
         Common_Param_Int_Reflect_Count_Max = 0x55F5,
     };
 
+    enum ParamIndefinite {
+
+    };
+
     virtual soParamAccesser* getExtendParamAccesser();
     virtual ~soValueAccesser();
     virtual float getVariableFloatCore(soModuleAccesser* moduleAccesser, u32, u32);

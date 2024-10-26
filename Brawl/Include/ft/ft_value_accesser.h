@@ -2,6 +2,8 @@
 
 #include <types.h>
 #include <so/so_value_accesser.h>
+#include <ft/ft_common_data_accesser.h>
+#include <ft/ft_info.h>
 
 class ftValueAccesser : public soValueAccesser {
 public:
@@ -367,9 +369,36 @@ public:
         Common_Param_Float_Thunder_Pitch_Small = 0xD9C,
         Common_Param_Float_Metal_Cancel_Damage = 0xD9D,
         Common_Param_Float_Metal_Damage_Reaction_Sub = 0xD9E,
+
+
+        Owner_Param_Float_Damage_Ratio = 0xDAE,
+        Owner_Param_Float_Attack_Reaction_Mul = 0xDAF,
+        Owner_Param_Float_Damage_Reaction_Mul = 0xDB0,
+        Owner_Param_Float_Special_Glow_Attack = 0xDB1,
+        Owner_Param_Float_Auto_Handi = 0xDB2,
+        Owner_Param_Float_Slip_Mul = 0xDB3,
+        Owner_Param_Float_Result_Win_Rot_Y = 0xDB4,
     };
 
     enum ParamInt {
+        Customize_Param_Int_Run_Brake_Attack_Dash_Frame = 0x59D9,
+        Customize_Param_Int_Jump_Squat_Frame = 0x59DA,
+        Customize_Param_Int_Jump_Count_Max = 0x59DB,
+        Customize_Param_Int_Jump_Glide_Frame = 0x59DC,
+
+        Customize_Param_Int_Landing_Heavy_Frame = 0x59DF,
+
+        Customize_Param_Int_No_Ladder_Frame = 0x59E1,
+        Customize_Param_Int_Ladder_Hand_Node_Index_1 = 0x59E2,
+        Customize_Param_Int_Ladder_Hand_Node_Index_2 = 0x59E3,
+        Customize_Param_Int_Star_Attack_Power = 0x59E4,
+
+        Customize_Param_Int_Ice_Node_Index = 0x59E6,
+
+        Customize_Param_Int_Dead_Rare_SE_Rate = 0x59E9,
+
+        // 0x59F3
+
 
         Common_Param_Int_Dash_Flick_X = 0x59F7,
         Common_Param_Int_Dash_Speed_Keep_Frame = 0x59F8,
@@ -477,16 +506,42 @@ public:
         Common_Param_Int_Timer_Frame = 0x5A7F,
 
         Common_Param_Int_Timer_Beat_Dec_Frame = 0x5A81,
+
+
+        Owner_Param_Int_Shield_Break_Frame_Add = 0x5A86,
+        Owner_Param_Int_Swim_Drown_Frame_Add = 0x5A87,
+        Entry_Param_Int_Rank = 0x5A88,
+        Owner_Param_Int_Stock_Count = 0x5A89,
+
+
+        Info_Param_Int_Attack_Combo_Type = 0x5A8C,
+        Info_Param_Int_Attack_Combo_Max = 0x5A8D,
+        Info_Param_Int_Attack_100_Type = 0x5A8E,
+        Info_Param_Int_S3_Combo_Max = 0x5A8F,
+        Info_Param_Int_S4_Combo_Max = 0x5A90,
+        Info_Param_Int_Jump_Aerial_Type = 0x5A91,
+        Info_Param_Int_Glide_Type = 0x5A92,
+        Info_Param_Int_Squat_Walk_Type = 0x5A93,
+        Info_Param_Int_Attack_Dash_Type = 0x5A94,
+        Info_Param_Int_Wall_Jump_Type = 0x5A95,
+        Info_Param_Int_Attach_Wall_Type = 0x5A96,
+        Info_Param_Int_Air_Lasso_Type = 0x5A97,
+        Info_Param_Int_Motion_Share_Type = 0x5A98,
+        Info_Param_Int_Capture_Motion_Height = 0x5A99,
+    };
+
+    enum ParamIndefinite {
+
     };
 
     virtual soParamAccesser* getExtendParamAccesser();
     virtual ~ftValueAccesser();
-    virtual float getConstantFloatCore(soModuleAccesser* moduleAccesser, u32);
-    virtual int getConstantIntCore(soModuleAccesser* moduleAccesser, u32);
-    virtual void* getConstantIndefiniteCore(soModuleAccesser* moduleAccesser, u32);
+    virtual float getConstantFloatCore(soModuleAccesser* moduleAccesser, u32, u32);
+    virtual int getConstantIntCore(soModuleAccesser* moduleAccesser, u32, u32);
+    virtual void* getConstantIndefiniteCore(soModuleAccesser* moduleAccesser, u32, u32);
 
-    virtual float getVariableFloatCore(soModuleAccesser* moduleAccesser, u32);
-    virtual int getVariableIntCore(soModuleAccesser* moduleAccesser, u32);
+    virtual float getVariableFloatCore(soModuleAccesser* moduleAccesser, u32, u32);
+    virtual int getVariableIntCore(soModuleAccesser* moduleAccesser, u32, u32);
 
     virtual bool isControllerValueCore(soModuleAccesser* moduleAccesser, u32, u32);
     virtual bool isEnableSpeedOperationCore(soModuleAccesser* moduleAccesser);

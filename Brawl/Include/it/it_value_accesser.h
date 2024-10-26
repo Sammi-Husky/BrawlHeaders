@@ -69,6 +69,10 @@ public:
         Specialized_Param_Int_Attack_HitStop_Kind = 0x5b75,
     };
 
+    enum ParamIndefinite {
+
+    };
+
     enum SizeKind {
         Size_Small = 0x0,
         Size_Large = 0x1
@@ -143,12 +147,12 @@ public:
 
     virtual soParamAccesser* getExtendParamAccesser();
     virtual ~itValueAccesser();
-    virtual float getConstantFloatCore(soModuleAccesser* moduleAccesser, u32);
-    virtual int getConstantIntCore(soModuleAccesser* moduleAccesser, u32);
-    virtual void* getConstantIndefiniteCore(soModuleAccesser* moduleAccesser, u32);
+    virtual float getConstantFloatCore(soModuleAccesser* moduleAccesser, u32, u32);
+    virtual int getConstantIntCore(soModuleAccesser* moduleAccesser, u32, u32);
+    virtual void* getConstantIndefiniteCore(soModuleAccesser* moduleAccesser, u32, u32);
 
-    virtual float getVariableFloatCore(soModuleAccesser* moduleAccesser, u32);
-    virtual int getVariableIntCore(soModuleAccesser* moduleAccesser, u32);
+    virtual float getVariableFloatCore(soModuleAccesser* moduleAccesser, u32, u32);
+    virtual int getVariableIntCore(soModuleAccesser* moduleAccesser, u32, u32);
 
 };
 
