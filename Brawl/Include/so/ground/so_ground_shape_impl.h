@@ -19,7 +19,7 @@ class soGroundShapeImpl {
     float m_rhombusWidth;
     int m_rhombusFollowNode;
     float m_downFriction;
-    u8 m_materialType;
+    grCollisionLine::MaterialType m_collMaterialType : 8;
     char _53[3];
     u8 m_correct;
     u8 m_cliffCheck;

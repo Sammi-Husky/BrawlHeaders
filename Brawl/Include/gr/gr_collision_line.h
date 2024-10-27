@@ -5,7 +5,7 @@
 struct grCollisionLine {
 
     enum MaterialType {
-        Material_Basic = 0x0,
+        Material_None = 0x0,
         Material_Rock = 0x1,
         Material_Grass = 0x2,
         Material_Soil = 0x3,
@@ -28,20 +28,23 @@ struct grCollisionLine {
         Material_Oil = 0x10,
         Material_Danbouru = 0x11,
         Material_Cardboard = 0x11,
-        Material_Attack1 = 0x12,
-        Material_Attack2 = 0x13,
-        Material_Attack3 = 0x14,
-        Material_Electroplankton = 0x15,
+        Material_Damage1 = 0x12,
+        Material_Damage2 = 0x13,
+        Material_Damage3 = 0x14,
+        Material_Plankton = 0x15,
         Material_Cloud = 0x16,
         Material_Akuukan = 0x17,
         Material_Subspace = 0x17,
         Material_Brick = 0x18,
-        Material_Dustless = 0x19,
+        Material_NoAttr = 0x19,
         Material_Famicom = 0x1A,
+        Material_Mario = 0x1A,
         Material_Fence = 0x1B,
+        Material_WireNetting = 0x1B,
         Material_Sand = 0x1C,
-
-        Material_Wet = 0x1E,
+        Material_HomeRun = 0x1D,
+        Material_Asase_Earth = 0x1E,
+        Material_Water_Earth = 0x1E,
     };
 
     // 0

@@ -85,7 +85,7 @@ public:
     virtual Vec2f getAttachMovementSpeed(u32 index);
     virtual Vec2f getAttachNormal(u32 index);
     virtual u8 getTouchFlag(u32 index);
-    virtual u8 getTouchMaterialType(u8, u32 index);
+    virtual grCollisionLine::MaterialType getTouchMaterialType(u8, u32 index);
     virtual Vec2f getTouchPos(u8, u32 index);
     virtual bool getTouchAttackData(soCollisionAttackData* outAttackData, int* out2, int* out3, u32 index);
     virtual float getTouchLength(u8, u32 index);
@@ -256,7 +256,7 @@ public:
     virtual Vec2f getAttachMovementSpeed(u32 index);
     virtual Vec2f getAttachNormal(u32 index);
     virtual u8 getTouchFlag(u32 index);
-    virtual u8 getTouchMaterialType(u8, u32 index);
+    virtual grCollisionLine::MaterialType getTouchMaterialType(u8, u32 index);
     virtual Vec2f getTouchPos(u8, u32 index);
     virtual bool getTouchAttackData(soCollisionAttackData* outAttackData, int* out2, int* out3, u32 index);
     virtual float getTouchLength(u8, u32 index);
