@@ -904,7 +904,6 @@ public:
 
         Status_Work_Float_Reserve_Rebound_Frame = 0x21000001,
         Status_Work_Float_Reserve_Rebound_Lr = 0x21000002,
-        //Status_Work_Float_Reserve_Kinetic_Motion_Speed_Mul = 0x21000004,
 
 
         Status_Work_Flag_Reserve_Dive = 0x22000002,
@@ -920,6 +919,7 @@ public:
 
 
         Status_Tread_Work_Float_Jump_Speed_Mul = 0x21000004,
+        Status_Item_Throw_Work_Float_Lr = 0x21000004,
         Status_Gimmick_Spring_Work_Float_Shoot_Speed_Y = 0x21000004,
         Status_Gimmick_Spring_Work_Float_Shoot_Angle = 0x21000005,
 

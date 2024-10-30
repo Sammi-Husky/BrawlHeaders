@@ -363,7 +363,7 @@ public:
         Common_Param_Float_Item_Turn_Stick_X = 0xD78,
 
         Common_Param_Float_Shoot_Jump_Speed_Y_Mul = 0xD7E,
-
+        Common_Param_Float_Item_Pickup_Light_Walk_Mul = 0xD7F,
         Common_Param_Float_Damage_Drop_Dragoon_Angle = 0xD80,
         Common_Param_Float_Damage_Drop_Dragoon_Speed = 0xD81,
         Common_Param_Float_Flower_Recovery = 0xD82,
@@ -567,31 +567,53 @@ public:
     };
 
     enum VariableFloat {
-        Kinetic_Variable_Float_Sum_Speed = 0x3E8,
-        Kinetic_Variable_Float_Sum_Speed_X = 0x3E9,
-        Kinetic_Variable_Float_Sum_Speed_Y = 0x3EA,
-        Motion_Variable_Float_Trans_Move_Speed_X = 0x3EB,
-        Motion_Variable_Float_Trans_Move_Speed_Y = 0x3EC,
-        Kinetic_Variable_Float_Energy_Damage_Speed = 0x3ED,
-        Kinetic_Variable_Float_Energy_Damage_Speed_X = 0x3EE,
-        Kinetic_Variable_Float_Energy_Damage_Speed_X_Rv = 0x3EF,
-        Kinetic_Variable_Float_Energy_Damage_Speed_Y = 0x3F0,
-        Kinetic_Variable_Float_Energy_Damage_Speed_Y_Rv = 0x3F1,
-        Controller_Variable_Float_Stick_X = 0x3F2,
-        Controller_Variable_Float_Stick_X_Lr = 0x3F3,
-        Controller_Variable_Float_Stick_X_Lr_Rv = 0x3F4,
-        Controller_Variable_Float_Stick_X_Abs = 0x3F5,
-        Controller_Variable_Float_Stick_X_Rv = 0x3F6,
+        Variable_Float_Kinetic_Sum_Speed = 0x3E8,
+        Variable_Float_Kinetic_Sum_Speed_X = 0x3E9,
+        Variable_Float_Kinetic_Sum_Speed_Y = 0x3EA,
+        Variable_Float_Motion_Trans_Move_Speed_X = 0x3EB,
+        Variable_Float_Motion_Trans_Move_Speed_Y = 0x3EC,
+        Variable_Float_Kinetic_Energy_Damage_Speed = 0x3ED,
+        Variable_Float_Kinetic_Energy_Damage_Speed_X = 0x3EE,
+        Variable_Float_Kinetic_Energy_Damage_Speed_X_Rv = 0x3EF,
+        Variable_Float_Kinetic_Energy_Damage_Speed_Y = 0x3F0,
+        Variable_Float_Kinetic_Energy_Damage_Speed_Y_Rv = 0x3F1,
+        Variable_Float_Controller_Stick_X = 0x3F2,
+        Variable_Float_Controller_Stick_X_Lr = 0x3F3,
+        Variable_Float_Controller_Stick_X_Lr_Rv = 0x3F4,
+        Variable_Float_Controller_Stick_X_Abs = 0x3F5,
+        Variable_Float_Controller_Stick_X_Rv = 0x3F6,
 
-
-
-
-
-
+        Variable_Float_Controller_Stick_X_Kinetic_Sum_Speed_Dir = 0x3F9,
+        Variable_Float_Controller_Stick_Y = 0x3FA,
+        Variable_Float_Controller_Stick_Y_Abs = 0x3FB,
+        Variable_Float_Controller_Stick_Y_Rv = 0x3FC,
+        Variable_Float_Controller_Stick_Dir = 0x3FD,
+        Variable_Float_Controller_Stick_Prev_X = 0x3FE,
+        Variable_Float_Controller_Stick_Prev_X_Lr = 0x3FF,
+        Variable_Float_Controller_Stick_Prev_X_Lr_Rv = 0x400,
+        Variable_Float_Controller_Stick_Prev_X_Abs = 0x401,
+        Variable_Float_Controller_Stick_Prev_Y = 0x402,
+        Variable_Float_Controller_Stick_Prev_Y_Abs = 0x403,
+        Variable_Float_Controller_Stick_Prev_Y_Rv = 0x404,
+        Variable_Float_Throw_Item_Speed = 0x405,
+        Variable_Float_Throw_Item_Angle = 0x406,
+        Variable_Float_Throw_Item_Power = 0x407,
+        Variable_Float_Item_Pickup_Light_Range = 0x408,
+        Variable_Float_Item_Swing_Motion_Rate = 0x409,
+        Variable_Float_Tread_Jump_Speed_Y = 0x40A,
+        Variable_Float_Motion_Frame = 0x40B,
+        Variable_Float_Motion_Rate = 0x40C,
     };
 
     enum VariableInt {
-
+        Variable_Int_Combo_Count = 0x5208,
+        Variable_Int_Controller_Flick_X = 0x5209,
+        Variable_Int_Controller_Flick_Y = 0x520A,
+        Variable_Int_Controller_Flick_No_Reset_X = 0x520B,
+        Variable_Int_Controller_Flick_No_Reset_Y = 0x520C,
+        Variable_Int_Controller_Flick_After_X = 0x520D,
+        Variable_Int_Controller_Flick_After_Y = 0x520E,
+        Variable_Int_Controller_Flick_X_Dir = 0x520F,
     };
 
     virtual soParamAccesser* getExtendParamAccesser();
