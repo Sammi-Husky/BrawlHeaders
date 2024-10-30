@@ -138,7 +138,7 @@ public:
         Common_Param_Float_Jump_Neutral_X = 0xC43,
         Common_Param_Float_Jump_Neutral_Y = 0xC44, // TODO: Verify
         Common_Param_Float_Jump_Run_Stick_Y = 0xC45,
-        Common_Param_Float_Jump_Speed_Y_Mul = 0xC46, // TODO: Verify
+        Common_Param_Float_Jump_Speed_Y_Mul = 0xC46,
 
         Common_Param_Float_Escape_Stick_Y = 0xC4C,
         Common_Param_Float_Escape_Fb_Stick_X = 0xC4D,
@@ -174,13 +174,29 @@ public:
 
         Common_Param_Float_Cliff_Catch_Cancel_Stick_Y = 0xC78,
 
-        Common_Param_Float_Passive_Fb_Cont_Value = 0xC73,
-
+        Common_Param_Float_Spring_Jump_Mul = 0xC7D,
+        Common_Param_Float_Passive_Fb_Cont_Value = 0xC7E,
+        Common_Param_Float_Passive_Ground_Damage_Speed_Mul = 0xC7F,
         Common_Param_Float_FuraFura_Frame = 0xC80,
 
         Common_Param_Float_FuraFura_Recovery = 0xC82,
         Common_Param_Float_FuraFura_Recovery_Clatter = 0xC83,
 
+        Common_Param_Float_Slip_Damage_Rate_Max = 0xC86,
+        Common_Param_Float_Slip_Damage_Rate_Min = 0xC87,
+        Common_Param_Float_Slip_Mul = 0xC88,
+        Common_Param_Float_Slip_Dash_Rate_Max = 0xC89,
+        Common_Param_Float_Slip_Dash_Rate_Min = 0xC8A,
+        Common_Param_Float_Slip_Turn_Rate_Max = 0xC8B,
+        Common_Param_Float_Slip_Turn_Rate_Min = 0xC8C,
+        Common_Param_Float_Loupe_Damage_Limit = 0xC8D,
+        Common_Param_Float_Loupe_Damage = 0xC8E,
+        Common_Param_Float_Cursor_Fly_Speed = 0xC8F,
+        Common_Param_Float_Cursor_Disp_Camera_Distance = 0xC90,
+
+        Common_Param_Float_Stop_Ceil_Speed_X_Mul = 0xC94,
+        Common_Param_Float_Stop_Ceil_Speed_Y_Mul = 0xC95,
+        Common_Param_Float_Stop_Ceil_Speed_X_Stable_Mul = 0xC96,
         Common_Param_Float_Wall_Jump_Stick_X = 0xC97,
         Common_Param_Float_Wall_Jump_Speed_Dec = 0xC98,
         Common_Param_Float_Wall_Jump_Speed_X_Dec = 0xC99,
@@ -224,6 +240,9 @@ public:
         Common_Param_Float_Capture_Cut_Ground_Speed = 0xCC5,
         Common_Param_Float_Capture_Cut_Speed_X = 0xCC6,
         Common_Param_Float_Capture_Cut_Speed_Y = 0xCC7,
+
+        Common_Param_Float_Damage_Fly_Reflect_Speed = 0xCD4,
+        Common_Param_Float_Damage_Fly_Reflect_Speed_Mul = 0xCD5,
 
         Common_Param_Float_Damage_Fly_Speed_Y_Mul_Base_Accel = 0xCD8,
         Common_Param_Float_Damage_Fly_Speed_Y_Mul = 0xCD9,
@@ -280,7 +299,11 @@ public:
         Common_Param_Float_Damage_Ice_Effect_Radius = 0xD15,
         Common_Param_Float_Ladder_Stick_Y = 0xD16,
         Common_Param_Float_Ladder_Cancel_Frame = 0xD17,
+        Common_Param_Float_Ladder_Jump_Y_Mul = 0xD18,
 
+        Common_Param_Float_Swim_Dive_Speed_X_Mul = 0xD1B,
+        Common_Param_Float_Swim_Jump_Charge_Accel_Y = 0xD1C,
+        Common_Param_Float_Swim_Jump_Speed_Y_Mul = 0xD1D,
         Common_Param_Float_Swim_Drown_Frame_Dec_Damage_Rate = 0xD1E,
         Common_Param_Float_Swim_Drown_Speed_X_Mul = 0xD1F,
 
@@ -339,6 +362,8 @@ public:
         Common_Param_Float_Item_Lift_Walk_Stick_X = 0xD77,
         Common_Param_Float_Item_Turn_Stick_X = 0xD78,
 
+        Common_Param_Float_Shoot_Jump_Speed_Y_Mul = 0xD7E,
+
         Common_Param_Float_Damage_Drop_Dragoon_Angle = 0xD80,
         Common_Param_Float_Damage_Drop_Dragoon_Speed = 0xD81,
         Common_Param_Float_Flower_Recovery = 0xD82,
@@ -354,6 +379,7 @@ public:
         Common_Param_Float_Gekikara_Fire_Shoot_Angle_Speed = 0xD8C,
         Common_Param_Float_Gekikara_Fire_Shoot_Angle_Min = 0xD8D,
         Common_Param_Float_Gekikara_Fire_Shoot_Angle_Max = 0xD8E,
+        Common_Param_Float_Screw_Jump_Speed_Y_Mul = 0xD8F,
 
         Common_Param_Float_Kinoko_Giant_Scale = 0xD91,
 
@@ -369,6 +395,12 @@ public:
         Common_Param_Float_Thunder_Pitch_Small = 0xD9C,
         Common_Param_Float_Metal_Cancel_Damage = 0xD9D,
         Common_Param_Float_Metal_Damage_Reaction_Sub = 0xD9E,
+        Common_Param_Float_Team_Healing_Heal_Team_Mul = 0xD9F,
+        Common_Param_Float_Team_Healing_Heal_Opponent_Rate = 0xDA0,
+        Common_Param_Float_Team_Healing_Heal_Opponent_Mul = 0xDA1,
+        Common_Param_Float_Pit_Fall_Speed = 0xDA2,
+        Common_Param_Float_Pit_Fall_Accel = 0xDA3,
+        Common_Param_Float_Pit_Fall_Speed_Max = 0xDA4,
 
 
         Owner_Param_Float_Damage_Ratio = 0xDAE,
@@ -531,6 +563,34 @@ public:
     };
 
     enum ParamIndefinite {
+
+    };
+
+    enum VariableFloat {
+        Kinetic_Variable_Float_Sum_Speed = 0x3E8,
+        Kinetic_Variable_Float_Sum_Speed_X = 0x3E9,
+        Kinetic_Variable_Float_Sum_Speed_Y = 0x3EA,
+        Motion_Variable_Float_Trans_Move_Speed_X = 0x3EB,
+        Motion_Variable_Float_Trans_Move_Speed_Y = 0x3EC,
+        Kinetic_Variable_Float_Energy_Damage_Speed = 0x3ED,
+        Kinetic_Variable_Float_Energy_Damage_Speed_X = 0x3EE,
+        Kinetic_Variable_Float_Energy_Damage_Speed_X_Rv = 0x3EF,
+        Kinetic_Variable_Float_Energy_Damage_Speed_Y = 0x3F0,
+        Kinetic_Variable_Float_Energy_Damage_Speed_Y_Rv = 0x3F1,
+        Controller_Variable_Float_Stick_X = 0x3F2,
+        Controller_Variable_Float_Stick_X_Lr = 0x3F3,
+        Controller_Variable_Float_Stick_X_Lr_Rv = 0x3F4,
+        Controller_Variable_Float_Stick_X_Abs = 0x3F5,
+        Controller_Variable_Float_Stick_X_Rv = 0x3F6,
+
+
+
+
+
+
+    };
+
+    enum VariableInt {
 
     };
 

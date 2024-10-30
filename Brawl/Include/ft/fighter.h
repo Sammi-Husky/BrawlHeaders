@@ -899,7 +899,30 @@ public:
         Instance_Work_Flag_No_Speed_Operation_Chk = 0x12000039, // TODO: Verify
         Instance_Work_Flag_Force_Loupe = 0x1200003A, // TODO: Verify
         Instance_Work_Flag_Capture_Yoshi = 0x1200003B,
-        Instance_Work_Flag_Cursor_On_Posture = 0x1200003C
+        Instance_Work_Flag_Cursor_On_Posture = 0x1200003C,
+
+
+        Status_Work_Float_Reserve_Rebound_Frame = 0x21000001,
+        Status_Work_Float_Reserve_Rebound_Lr = 0x21000002,
+        //Status_Work_Float_Reserve_Kinetic_Motion_Speed_Mul = 0x21000004,
+
+
+        Status_Work_Flag_Reserve_Dive = 0x22000002,
+
+        Status_Work_Flag_Reserve_Jump_Mini = 0x22000006,
+        Status_Work_Flag_Reserve_Jump_From_Tread = 0x22000007,
+        Status_Work_Flag_Reserve_Gimmick_Ladder = 0x22000008,
+
+        Status_Work_Flag_Reserve_Jump_From_Shoot = 0x2200000A,
+        Status_Work_Flag_Reserve_Jump_From_Water = 0x2200000B,
+        Status_Work_Flag_Reserve_Jump_From_Spring = 0x2200000C,
+        Status_Work_Flag_Reserve_Disable_Outside_Energy = 0x2200000D,
+
+
+        Status_Tread_Work_Float_Jump_Speed_Mul = 0x21000004,
+        Status_Gimmick_Spring_Work_Float_Shoot_Speed_Y = 0x21000004,
+        Status_Gimmick_Spring_Work_Float_Shoot_Angle = 0x21000005,
+
     };
 
     enum DeadReason {
