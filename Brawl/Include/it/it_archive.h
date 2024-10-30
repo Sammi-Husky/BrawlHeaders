@@ -29,7 +29,7 @@ public:
         Slope_None = 0x0,
         Slope_Slant = 0x1,
         Slope_Slant_Keep_Y_Rot = 0x2,
-        Slope_KeepAngle = 0x3,
+        Slope_Keep_Angle = 0x3,
         Slope_Up = 0x4,
         Slope_Slant_Smooth = 0x5,
     };
