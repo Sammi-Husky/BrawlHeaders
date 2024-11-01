@@ -48,7 +48,7 @@ public:
         Specialized_Param_Float_Throw_Power_Speed_Add = 3439,
         Specialized_Param_Float_Throw_Power_Speed_Mul = 3440,
         Specialized_Param_Float_Scale = 3441,
-        Specialized_Param_Float_HP = 3442,
+        Specialized_Param_Float_Hp = 3442,
     };
 
     enum ParamInt {
