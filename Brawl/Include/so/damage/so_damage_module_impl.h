@@ -51,7 +51,7 @@ public:
     virtual bool isNoReactionModePerfect();
     virtual void toTurnDamage();
     virtual void leaveTurnDamage();
-    virtual void* getDamageLog();
+    virtual soDamageLog* getDamageLog();
     virtual void clearDamageLog();
     virtual void getAttackerInfo(soDamageAttackerInfo* attackerInfo);
     virtual soDamageAttackerInfo* getAttackerInfo();
@@ -120,7 +120,7 @@ public:
     virtual bool isNoReactionModePerfect();
     virtual void toTurnDamage();
     virtual void leaveTurnDamage();
-    virtual void* getDamageLog();
+    virtual soDamageLog* getDamageLog();
     virtual void clearDamageLog();
     virtual void getAttackerInfo(soDamageAttackerInfo* attackerInfo);
     virtual soDamageAttackerInfo* getAttackerInfo();

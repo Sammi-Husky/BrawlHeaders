@@ -29,11 +29,18 @@ public:
     };
 
     enum WorkId {
+
+        Instance_Work_Int_Have_Node_Index = 0x10000007,
         Instance_Work_Int_Life_Time = 0x10000009,
+        Instance_Work_Int_Target_Task_Id = 0x10000013,
         Instance_Work_Int_Hit_Kind = 0x10000016,
 
         Instance_Work_Float_Hp = 0x11000006,
+        Instance_Work_Float_Target_Pos_X = 0x11000007,
+        Instance_Work_Float_Target_Pos_Y = 0x11000008,
         Instance_Work_Float_Base_Scale = 0x1100000c,
+
+        Instance_Work_Flag_Target_Found = 0x12000007,
     };
 
     int m_instanceId;

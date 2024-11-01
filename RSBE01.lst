@@ -459,7 +459,7 @@ CC008000:WGPIPE
 27,1,00037B04:__dt__16soCollisionGroupFv
 
 // soCollisionAttackModuleImpl
-27,1,00039590:__ct__27soCollisionAttackModuleImplFP16soModuleAccesseriUcP32soArray<21soCollisionAttackPart>P27soArray<16soCollisionGroup>P36soArray<25soCollisionAttackAbsolute>P31soEventObserverRegistrationDescb
+27,1,00039590:__ct__27soCollisionAttackModuleImplFP16soModuleAccesseriQ26gfTask8CategoryP32soArray<21soCollisionAttackPart>P27soArray<16soCollisionGroup>P36soArray<25soCollisionAttackAbsolute>P31soEventObserverRegistrationDescb
 27,1,00039968:__dt__27soCollisionAttackModuleImplFv
 
 // soCollisionAttackAbsolute
@@ -467,7 +467,7 @@ CC008000:WGPIPE
 27,1,00086D0C:__dt__25soCollisionAttackAbsoluteFv
 
 // soCollisionAttackPart
-27,1,00038550:__ct__21soCollisionAttackPartFUcb
+27,1,00038550:__ct__21soCollisionAttackPartFQ211soCollision8Categoryb
 27,1,000CCDA8:__ct__21soCollisionAttackPartFv
 27,1,000386B4:__dt__21soCollisionAttackPartFv
 
@@ -477,12 +477,12 @@ CC008000:WGPIPE
 
 // soCollisionHitPart
 27,1,000415E4:__dt__18soCollisionHitPartFv
-27,1,0004148C:__ct__18soCollisionHitPartFUcUl
+27,1,0004148C:__ct__18soCollisionHitPartFQ211soCollision8CategoryUl
 27,1,000CC22C:__ct__18soCollisionHitPartFv
 
 // soCollisionHitModule
 27,1,00042E4C:__dt__24soCollisionHitModuleImplFv
-27,1,00042AA4:__ct__24soCollisionHitModuleImplFP16soModuleAccesseriUcP29soArray<18soCollisionHitPart>P27soArray<16soCollisionGroup>P30soArray<19soCollisionHitGroup>P31soEventObserverRegistrationDescb
+27,1,00042AA4:__ct__24soCollisionHitModuleImplFP16soModuleAccesseriQ26gfTask8CategoryP29soArray<18soCollisionHitPart>P27soArray<16soCollisionGroup>P30soArray<19soCollisionHitGroup>P31soEventObserverRegistrationDescb
 
 // Stage
 27,1,002225A8:createObj__5StageFv

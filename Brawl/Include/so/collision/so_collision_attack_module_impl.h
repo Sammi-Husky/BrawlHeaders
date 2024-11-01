@@ -194,13 +194,13 @@ public:
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
 
-    soCollisionAttackModuleImpl(soModuleAccesser* moduleAccesser, int taskId, u8 category,
+    soCollisionAttackModuleImpl(soModuleAccesser* moduleAccesser, int taskId, gfTask::Category taskCategory,
                                 soArray<soCollisionAttackPart>*, soArray<soCollisionGroup>*,
                                         soArray<soCollisionAttackAbsolute>*, soEventObserverRegistrationDesc*, bool);
 };
 static_assert(sizeof(soCollisionAttackModuleImpl) == 160, "Class is wrong size!");
 
-template <u32 TCategory, u32 TNumParts, u32 TNumAbsolutes, class TCollisionAttackModule, u32 TNumGroups, bool TBool1, bool TBool2>
+template <soCollision::Category TCategory, u32 TNumParts, u32 TNumAbsolutes, class TCollisionAttackModule, u32 TNumGroups, bool TBool1, bool TBool2>
 class soCollisionAttackModuleBuildConfig {
     soArrayVector<soCollisionAttackPart, TNumParts> m_attackPartArrayVector;
     soArrayVector<soCollisionGroup, TNumGroups> m_collisionGroupArrayVector;
@@ -209,12 +209,12 @@ class soCollisionAttackModuleBuildConfig {
 public:
     soCollisionAttackModuleBuildConfig(soModuleAccesser* moduleAccesser,
                                        int taskId,
-                                       u8 category,
+                                       gfTask::Category taskCategory,
                                        soEventObserverRegistrationDesc* registrationDesc) :
                                        m_attackPartArrayVector(TNumParts, soCollisionAttackPart(TCategory, TBool1), 0),
                                        m_collisionGroupArrayVector(TNumGroups, 0),
                                        m_attackAbsoluteArrayVector(TNumAbsolutes, 0),
-                                       m_attackModule(moduleAccesser, taskId, category, &m_attackPartArrayVector, &m_collisionGroupArrayVector, &m_attackAbsoluteArrayVector, registrationDesc, TBool2) {};
+                                       m_attackModule(moduleAccesser, taskId, taskCategory, &m_attackPartArrayVector, &m_collisionGroupArrayVector, &m_attackAbsoluteArrayVector, registrationDesc, TBool2) {};
 
 };
 
@@ -229,7 +229,7 @@ public:
 
     soCollisionAttackModuleBuilder(soModuleAccesser* moduleAccesser,
                                    int taskId,
-                                   u8 category,
+                                   gfTask::Category taskCategory,
                                    soEventObserverRegistrationDesc* registrationDesc) :
-                                   m_buildConfig(moduleAccesser, taskId, category, registrationDesc) { } ;
+                                   m_buildConfig(moduleAccesser, taskId, taskCategory, registrationDesc) { } ;
 };

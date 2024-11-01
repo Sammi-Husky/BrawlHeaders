@@ -30,7 +30,7 @@ class soCollisionHitPart {
 
 public:
     soCollisionHitPart();
-    soCollisionHitPart(u8, u32);
+    soCollisionHitPart(soCollision::Category, u32);
     ~soCollisionHitPart();
 };
 static_assert(sizeof(soCollisionHitPart) == 0x68, "Class is wrong size!");

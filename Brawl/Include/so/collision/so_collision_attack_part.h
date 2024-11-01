@@ -271,7 +271,7 @@ class soCollisionAttackPart {
 
 public:
     soCollisionAttackPart();
-    soCollisionAttackPart(u8, bool);
+    soCollisionAttackPart(soCollision::Category, bool);
     ~soCollisionAttackPart();
 };
 static_assert(sizeof(soCollisionAttackPart) == 0x90, "Class is wrong size!");

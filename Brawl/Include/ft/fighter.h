@@ -887,7 +887,7 @@ public:
         Instance_Work_Flag_Item_Throw_4 = 0x1200002A,
         Instance_Work_Flag_Assist = 0x1200002B,
         Instance_Work_Flag_Check_Catch = 0x1200002C,
-        Instance_Work_Flag_GenesisSet = 0x1200002D, // TODO: Verify
+
         Instance_Work_Flag_Sub_Fighter = 0x1200002E, // TODO: Verify
         Instance_Work_Flag_No_Swim = 0x1200002F,
         Instance_Work_Flag_Disable_Curry_Shot = 0x12000030,

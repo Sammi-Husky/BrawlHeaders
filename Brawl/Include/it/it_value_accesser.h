@@ -48,7 +48,7 @@ public:
         Specialized_Param_Float_Throw_Power_Speed_Add = 0xD6F,
         Specialized_Param_Float_Throw_Power_Speed_Mul = 0xD70,
         Specialized_Param_Float_Scale = 0xD71,
-        Specialized_Param_Float_HP = 0xD72
+        Specialized_Param_Float_HP = 0xD72,
     };
 
     enum ParamInt {
@@ -67,11 +67,65 @@ public:
         Specialized_Param_Int_Reflect_Kind = 0x5b72,
         Specialized_Param_Int_Shield_Kind = 0x5b73,
         Specialized_Param_Int_DeadArea_Kind = 0x5b74,
-        Specialized_Param_Int_Attack_Hit_Stop_Kind = 0x5b75,
+        Specialized_Param_Int_Attack_HitStop_Kind = 0x5b75,
     };
 
     enum ParamIndefinite {
 
+    };
+
+    enum VariableFloat {
+        Variable_Float_Damage_Log_Speed_Lr = 0x3E8,
+        Variable_Float_Damage_Log_Reaction = 0x3E9,
+        Variable_Float_Damage_Log_Angle = 0x3EA,
+        Variable_Float_Damage_Log_Frame = 0x3EB,
+        Variable_Float_Damage_Log_Speed_X = 0x3EC,
+        Variable_Float_Damage_Log_Speed_Y = 0x3ED,
+        Variable_Float_Kinetic_Sum_Speed = 0x3EE,
+        Variable_Float_Kinetic_Sum_Speed_X = 0x3EF,
+        Variable_Float_Kinetic_Sum_Speed_Y = 0x3F0,
+        Variable_Float_Kinetic_Energy_Control_Speed_X = 0x3F1,
+        Variable_Float_Kinetic_Energy_Control_Speed_Y = 0x3F2,
+        Variable_Float_Kinetic_Energy_Control_Rot_X = 0x3F3,
+        Variable_Float_Kinetic_Energy_Control_Rot_Y = 0x3F4,
+        Variable_Float_Kinetic_Energy_Control_Rot_Z = 0x3F5,
+        Variable_Float_Motion_Trans_Move_Speed_X = 0x3F6,
+        Variable_Float_Motion_Trans_Move_Speed_Y = 0x3F7,
+        Variable_Float_Target_Dist = 0x3F8,
+        Variable_Float_Target_Dist_X_Abs = 0x3F9,
+        Variable_Float_Target_Dist_Y_Abs = 0x3FA,
+        Variable_Float_Target_Dist_X = 0x3FB,
+        Variable_Float_Target_Dist_Y = 0x3FC,
+        Variable_Float_Target_Dist_X_Norm = 0x3FD,
+        Variable_Float_Target_Dist_Y_Norm = 0x3FE,
+        Variable_Float_Target_Dist_Z_Norm = 0x3FF,
+        Variable_Float_Kinetic_Slope_Angle = 0x400,
+        Variable_Float_Damage_Log_Damage_Add = 0x401,
+        Variable_Float_Damage_Log_Lr = 0x402,
+        Variable_Float_World_Scale_Pos_Z = 0x403,
+    };
+
+    enum VariableInt {
+        Variable_Int_Damage_Log_Level = 0x5208,
+        Variable_Int_Damage_Log_Height = 0x5209,
+
+        Variable_Int_Damage_Log_Hit_Stop_Frame = 0x520B,
+        Variable_Int_Damage_Log_Attribute = 0x520C,
+        Variable_Int_Damage_Log_Attacker_Task_Id = 0x520D,
+        Variable_Int_Damage_Log_Attacker_Team_No = 0x520E,
+        Variable_Int_Creator_Item_Kind = 0x520F,
+
+        Variable_Int_Target_Situation_Kind = 0x5212,
+        Variable_Int_Item_Variation = 0x5213,
+        Variable_Int_Link_Owner_Task_Id = 0x5214,
+        Variable_Int_Item_Kind = 0x5215,
+        Variable_Int_Damage_Log_Attacker_Task_Category = 0x5216,
+        Variable_Int_Damage_Log_Is_Attack_Direct = 0x5217,
+        Variable_Int_Creator_Task_Id = 0x5218,
+        Variable_Int_Link_Owner_Hit_Target_1_No = 0x5219,
+        Variable_Int_Link_Owner_Hit_Target_2_No = 0x521A,
+        Variable_Int_Link_Owner_Hit_Target_3_No = 0x521B,
+        Variable_Int_Damage_Log_Attacker_Team_Owner_Id = 0x521C,
     };
 
     virtual soParamAccesser* getExtendParamAccesser();

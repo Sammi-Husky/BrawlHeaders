@@ -534,6 +534,7 @@ public:
         Common_Param_Int_Kinoko_Bonus_Max = 0x5A7A,
         Common_Param_Int_Thunder_Frame = 0x5A7B,
 
+        Common_Param_Int_Metal_Frame = 0x5A7D,
         Common_Param_Int_Timer_Slow_Mag = 0x5A7E,
         Common_Param_Int_Timer_Frame = 0x5A7F,
 
@@ -583,7 +584,7 @@ public:
         Variable_Float_Controller_Stick_X_Abs = 0x3F5,
         Variable_Float_Controller_Stick_X_Rv = 0x3F6,
 
-        Variable_Float_Controller_Stick_X_Kinetic_Sum_Speed_Dir = 0x3F9,
+        Variable_Float_Controller_Stick_X_Kinetic_Sum_Speed_Lr = 0x3F9,
         Variable_Float_Controller_Stick_Y = 0x3FA,
         Variable_Float_Controller_Stick_Y_Abs = 0x3FB,
         Variable_Float_Controller_Stick_Y_Rv = 0x3FC,
