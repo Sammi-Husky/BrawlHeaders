@@ -16,7 +16,7 @@ public:
         Specialized_Param_Float_Rot_Appear_Mul = 3407,
         Specialized_Param_Float_Gravity_Accel = 3408,
         Specialized_Param_Float_Gravity_Accel_Max = 3409,
-        Specialized_Param_Float_9 = 3410,
+        Specialized_Param_Float_Appear_Up_Speed_Y = 3410,
         Specialized_Param_Float_Nururi_Size_Up = 3411,
         Specialized_Param_Float_Nururi_Size_Down = 3412,
         Specialized_Param_Float_Nururi_Size_Left = 3413,
@@ -53,6 +53,10 @@ public:
 
     enum ParamInt {
         Game_Param_Int_Remove_Flash_Frame = 23001,
+        Game_Param_Int_Remove_Bound_Count = 23002,
+        Game_Param_Int_Remove_Bound_Per = 23003,
+        Game_Param_Int_Appear_No_Damage_Frame = 23004,
+        Game_Param_Int_Appear_No_Pickup_Frame = 23005,
 
         Specialized_Param_Int_AI_Pri = 23400,
         Specialized_Param_Int_Size_Kind = 23401,
