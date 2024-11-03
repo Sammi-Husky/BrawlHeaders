@@ -808,7 +808,7 @@ public:
         Instance_Work_Int_Heal_Eff_Id = 0x10000032,
         Instance_Work_Int_Catch_Motion_Offset = 0x10000033, // TODO: Verify
         Instance_Work_Int_Thrown_Motion_Offset = 0x10000034, // TODO: Verify
-        Instance_Work_Int_Attack_Serial = 0x10000035,
+        Instance_Work_Int_Attack_Serial_Id = 0x10000035,
         Instance_Work_Int_Color = 0x10000036,
         Instance_Work_Int_Status_Start_Turn_Frame = 0x10000037,
         Instance_Work_Int_Damage_Reaction_Frame = 0x10000038,

@@ -38,7 +38,7 @@ public:
     int m_numPokemon;
     int m_numPokeballs;
     int m_preloadPokemonTimer;
-    soArrayList<itGenArchive*, 3> m_itGenArchiveArrayList;
+    soArrayList<itGenArchive*, 3> m_genArchiveArrayList;
     ItemSwitch m_itemSwitch;
     float m_itemLotRates[NUM_IT_KINDS];
     int m_crateVariation;
@@ -47,7 +47,7 @@ public:
     int m_smashBallDropFrame1;
     int m_smashBallDropFrame2;
     char _5268[28];
-    int m_itemGenLevel;
+    itGenParam::Level m_genLevel;
     bool m_needsToProcess;
     char _5301[3];
     void* m_figureManager;
@@ -66,8 +66,8 @@ public:
 
     bool isCompItemKindArchive(itKind kind, u32 variation, bool);
     itArchive* preloadItemKindArchive(itKind kind, u32 variation, itArchive::Type archiveType, bool);
-    itGenSheetKind getRandBasicItemSheet(itGenKind genKind = Item_Gen_Basic); // custom parameter
-    ItemKind getLotOneItemKind(itGenSheetKind* sheetKind, itGenKind genKind, ItemSwitch* itemSwitch = NULL, bool unk = false);
+    itGenSheetKind getRandBasicItemSheet(itGenId genKind = Item_Gen_Basic); // custom parameter
+    ItemKind getLotOneItemKind(itGenSheetKind* sheetKind, itGenId genKind, ItemSwitch* itemSwitch = NULL, bool unk = false);
     BaseItem* createItem(Vec3f* safePos, Vec3f* pos, float lr, itKind kind, u32 variation = 0, int creatorTaskId = -1,
                          soResourceModule* resourceModule = NULL, u8 groupNo = 0, int brresId = 0xffff,
                          int texResIndex = 0, int texResId = 0xffff);

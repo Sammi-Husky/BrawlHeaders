@@ -7,6 +7,7 @@
 #include <types.h>
 #include <ut/ut_uncopyable.h>
 #include <it/it_value_accesser.h>
+#include <it/it_gen_archive.h>
 #include <it/it_create.h>
 
 class itCustomizerInterface;
@@ -29,18 +30,96 @@ public:
     };
 
     enum WorkId {
-
+        Instance_Work_Int_Value_1 = 0x10000000,
+        Instance_Work_Int_Value_2 = 0x10000001,
+        Instance_Work_Int_Value_3 = 0x10000002,
+        Instance_Work_Int_Value_4 = 0x10000003,
+        Instance_Work_Int_Value_5 = 0x10000004,
+        Instance_Work_Int_Value_6 = 0x10000005,
+        Instance_Work_Int_Life_Time_Max = 0x10000006,
         Instance_Work_Int_Have_Node_Index = 0x10000007,
+        Instance_Work_Int_Trait_Flag = 0x10000008,
         Instance_Work_Int_Life_Time = 0x10000009,
+        Instance_Work_Int_No_Damage_Frame = 0x1000000A,
+        Instance_Work_Int_Counter = 0x1000000B,
+        Instance_Work_Int_Counter_2 = 0x1000000C,
+        Instance_Work_Int_Message = 0x1000000E,
+        Instance_Work_Int_Scale_Anim_Type = 0x1000000F,
+        Instance_Work_Int_Scale_Anim_Counter = 0x10000010,
+        Instance_Work_Int_Scale_Anim_Node_Index = 0x10000011,
+        Instance_Work_Int_Scale_Anim_Counter_Limit = 0x10000012,
         Instance_Work_Int_Target_Task_Id = 0x10000013,
+        Instance_Work_Int_Child_Task_Id = 0x10000014,
         Instance_Work_Int_Hit_Kind = 0x10000016,
+        Instance_Work_Int_Bound_Count = 0x10000017,
+        Instance_Work_Int_SE_Water_Id = 0x10000019,
+        Instance_Work_Int_Throw_Frame = 0x1000001C,
+        Instance_Work_Int_Attack_Serial_Id = 0x1000001d,
+        Instance_Work_Int_Attack_Kind = 0x1000001e,
 
         Instance_Work_Float_Hp = 0x11000006,
         Instance_Work_Float_Target_Pos_X = 0x11000007,
         Instance_Work_Float_Target_Pos_Y = 0x11000008,
+        Instance_Work_Float_Scale_Anim_Min = 0x11000009,
+        Instance_Work_Float_Scale_Anim_Max = 0x1100000a,
+        Instance_Work_Float_Scale_Anim_Now = 0x1100000b,
         Instance_Work_Float_Base_Scale = 0x1100000c,
+        Instance_Work_Float_Inhaled_Count = 0x1100000d,
 
+        Instance_Work_Flag_Reflect_Ground = 0x12000005,
+        Instance_Work_Flag_Vanish = 0x12000006,
         Instance_Work_Flag_Target_Found = 0x12000007,
+        Instance_Work_Flag_Water = 0x1200000d,
+        Instance_Work_Flag_Eatable = 0x1200000f,
+
+        Status_Work_Flag_Reserve_Use_Speed_Power = 0x22000000,
+        Status_Work_Flag_Lot_Create_Bomb = 0x22000006,
+    };
+
+    enum AnimCmdType {
+        AnimCmd_Remove = 0x0,
+        AnimCmd_Lot_Create = 0x1,
+
+        AnimCmd_Set_Rot = 0x3,
+        AnimCmd_Set_Life_Time = 0x4,
+        AnimCmd_Set_Counter = 0x5,
+        AnimCmd_Set_Scale_Anim = 0x6,
+        AnimCmd_Search_Target = 0x7,
+
+    };
+
+    enum LinkNo {
+        Link_Have = 0x3,
+        Link_Target = 0x4,
+    };
+
+    enum LotState {
+        Lot_State_Error = 0x0,
+        Lot_State_Miss = 0x1,
+        Lot_State_Bomb = 0x2,
+        Lot_State_Hit = 0x3,
+    };
+
+    enum TargetType {
+        Target_Target = 0x0,
+        Target_Myself = 0x1,
+        Target_Near_Fighter = 0x2,
+        Target_Random_Fighter = 0x3,
+        Target_Random_Out_Of_Camera = 0x4,
+        Target_Camera_Target = 0x5,
+        Target_Creator = 0x6,
+        Target_Creator_Target = 0x7,
+        Target_Target_Infield = 0x9,
+        Target_Many_Side = 0xA,
+        Target_Under_Ground = 0xB,
+        Target_Under_Ground_2 = 0xC, // TODO: Figure out difference
+        Target_Near_Food = 0xD,
+        Target_Random_Out_Of_Camera_Lr = 0xE,
+        Target_None = 0xF,
+        Target_Ike_Final = 0x10,
+        Target_Random_Item_Drop_Pos = 0x11,
+        Target_Near_Fighter_All = 0x12,
+        Target_Many_Side_Fix = 0x13,
     };
 
     int m_instanceId;
@@ -64,7 +143,7 @@ public:
     char _2280[13368];
     int m_articleId;
     char _15652[4];
-    int m_genParamId;
+    itGenId m_genId;
     char _15660[4];
     int m_attackHitTaskId;
     int m_searchHitTaskId;

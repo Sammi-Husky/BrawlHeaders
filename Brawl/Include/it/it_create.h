@@ -286,11 +286,11 @@ enum itKind {
     Item_Assist_Wright = 0xB0,
     Item_Assist_DrWright_Building = 0xB1,
     Item_Assist_Wright_Buil = 0xB1,
-    Item_Group_Food = 0x7D1,
-    Item_Unknown2 = 0x7D2,
-    Item_Unknown3 = 0x7D3,
-    Item_Unknown4 = 0x7D4,
-    Item_Unknown5 = 0x7D5
+    Item_Lot_Food = 0x7D1,
+    Item_Lot_Basic = 0x7D2,
+    Item_Lot_Unk3 = 0x7D3,
+    Item_Lot_Bomb = 0x7D4,
+    Item_Lot_Empty = 0x7D5
 };
 
 struct ItemKind {

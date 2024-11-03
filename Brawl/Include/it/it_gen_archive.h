@@ -5,7 +5,7 @@
 #include <it/it_archive.h>
 #include <types.h>
 
-enum itGenKind {
+enum itGenId {
     Item_Gen_Assist = 0,
     Item_Gen_AssistTrophy = 0,
     Item_Gen_Barrel = 3,
@@ -38,6 +38,56 @@ struct itGenSheetKind {
     Stages::srStageKind m_stageKind;
     int m_levelId;
 };
+
+struct itGenParam {
+    enum Level {
+        Level_VeryEasy = 0x0,
+        Level_Easy = 0x1,
+        Level_Normal = 0x2,
+        Level_Hard = 0x3,
+        Level_VeryHard = 0x4
+    };
+
+    enum LifeType {
+        Life_Normal = 0x0,
+        Life_Infinity = 0x1,
+    };
+
+    enum AppearKind {
+        Appear_None = 0x0,
+        Appear_Up = 0x1,
+        Appear_Down = 0x2,
+        Appear_Fall = 0x3
+    };
+
+    struct Entry {
+        union {
+            struct {
+                ItemKind m_itemKind;
+            };
+            struct {
+                itKind m_kind;
+                u32 m_variation;
+            };
+        };
+        float m_rate;
+        u16 m_minSpawn;
+        u16 m_maxSpawn;
+    };
+
+    itGenId m_id;
+    LifeType m_lifeType;
+    AppearKind m_appearKind;
+    Entry* m_entries;
+    u32 m_numEntries;
+
+    struct Set {
+        itGenParam* m_genParams;
+        u32 m_numGenParams;
+    };
+};
+static_assert(sizeof(itGenParam) == 0x14, "Class is wrong size!");
+
 
 class itGenArchive {
 public:
