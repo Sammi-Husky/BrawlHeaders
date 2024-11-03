@@ -72,7 +72,7 @@ public:
         Instance_Work_Flag_Water = 0x1200000d,
         Instance_Work_Flag_Eatable = 0x1200000f,
 
-        Status_Work_Flag_Reserve_Use_Speed_Power = 0x22000000,
+        Status_Work_Flag_Use_Speed_Power = 0x22000000,
         Status_Work_Flag_Lot_Create_Bomb = 0x22000006,
     };
 
