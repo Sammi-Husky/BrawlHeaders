@@ -43,6 +43,8 @@ public:
         Camera_None = 0x0,
         Camera_Normal = 0x1,
         Camera_Center = 0x2,
+        Camera_3 = 0x3,
+        Camera_4 = 0x4,
     };
 
     enum HitKind {
@@ -54,7 +56,8 @@ public:
 
     enum ReflectKind {
         Reflect_None = 0x0,
-        Reflect_Normal = 0x1
+        Reflect_Normal = 0x1,
+        Reflect_Born = 0x2,
     };
 
     enum ShieldKind {

@@ -9,6 +9,7 @@
 #include <it/it_value_accesser.h>
 #include <it/it_gen_archive.h>
 #include <it/it_create.h>
+#include <it/kinetic/it_kinetic_module_impl.h>
 
 class itCustomizerInterface;
 
@@ -34,7 +35,7 @@ public:
         Instance_Work_Int_Value_2 = 0x10000001,
         Instance_Work_Int_Value_3 = 0x10000002,
         Instance_Work_Int_Value_4 = 0x10000003,
-        Instance_Work_Int_Value_5 = 0x10000004,
+        Instance_Work_Int_Value_5 = 0x10000004, // writes 0x10 in itKineticModuleImpl::characterBound, writes on soKineticModuleImpl::updateNormal/updateRolling depending on bounce type,  writes 0x1/0x2 depending on which counter is finished
         Instance_Work_Int_Value_6 = 0x10000005,
         Instance_Work_Int_Life_Time_Max = 0x10000006,
         Instance_Work_Int_Have_Node_Index = 0x10000007,
@@ -43,20 +44,30 @@ public:
         Instance_Work_Int_No_Damage_Frame = 0x1000000A,
         Instance_Work_Int_Counter = 0x1000000B,
         Instance_Work_Int_Counter_2 = 0x1000000C,
-        Instance_Work_Int_Message = 0x1000000E,
+        Instance_Work_Int_Message = 0x1000000E, // used in SmashPlate
         Instance_Work_Int_Scale_Anim_Type = 0x1000000F,
         Instance_Work_Int_Scale_Anim_Counter = 0x10000010,
         Instance_Work_Int_Scale_Anim_Node_Index = 0x10000011,
         Instance_Work_Int_Scale_Anim_Counter_Limit = 0x10000012,
         Instance_Work_Int_Target_Task_Id = 0x10000013,
         Instance_Work_Int_Child_Task_Id = 0x10000014,
+        Instance_Work_Int_Rotate_Node_Index = 0x10000015,
         Instance_Work_Int_Hit_Kind = 0x10000016,
         Instance_Work_Int_Bound_Count = 0x10000017,
+        Instance_Work_Int_SE_Bound_Id = 0x10000018,
         Instance_Work_Int_SE_Water_Id = 0x10000019,
+        Instance_Work_Int_SE_Reflect_Id = 0x1000001A,
+        Instance_Work_Int_SE_Lost_Id = 0x1000001B,
         Instance_Work_Int_Throw_Frame = 0x1000001C,
         Instance_Work_Int_Attack_Serial_Id = 0x1000001d,
         Instance_Work_Int_Attack_Kind = 0x1000001e,
 
+        Instance_Work_Float_Value_1 = 0x11000000,
+        Instance_Work_Float_Value_2 = 0x11000001,
+        Instance_Work_Float_Value_3 = 0x11000002,
+        Instance_Work_Float_Value_4 = 0x11000003,
+        Instance_Work_Float_Value_5 = 0x11000004,
+        Instance_Work_Float_Value_6 = 0x11000005,
         Instance_Work_Float_Hp = 0x11000006,
         Instance_Work_Float_Target_Pos_X = 0x11000007,
         Instance_Work_Float_Target_Pos_Y = 0x11000008,
@@ -66,13 +77,27 @@ public:
         Instance_Work_Float_Base_Scale = 0x1100000c,
         Instance_Work_Float_Inhaled_Count = 0x1100000d,
 
+        Instance_Work_Flag_Value_1 = 0x12000000,
+        Instance_Work_Flag_Value_2 = 0x12000001,
+        Instance_Work_Flag_Value_3 = 0x12000002,
+        Instance_Work_Flag_Value_4 = 0x12000003,
+        Instance_Work_Flag_Reaction = 0x12000004,
         Instance_Work_Flag_Reflect_Ground = 0x12000005,
         Instance_Work_Flag_Vanish = 0x12000006,
         Instance_Work_Flag_Target_Found = 0x12000007,
+        Instance_Work_Flag_Disable_Jostle = 0x12000008,
+        Instance_Work_Flag_Auto_Play_Lost_Effect = 0x1200000A,
+        Instance_Work_Flag_Ground_Lost = 0x1200000c,
         Instance_Work_Flag_Water = 0x1200000d,
+        Instance_Work_Flag_Apply_World_Move = 0x1200000E,
         Instance_Work_Flag_Eatable = 0x1200000f,
 
         Status_Work_Flag_Use_Speed_Power = 0x22000000,
+        Status_Work_Flag_Damage = 0x22000001,
+        Status_Work_Flag_Dead = 0x22000002,
+        Status_Work_Flag_Hit = 0x22000003,
+        Status_Work_Flag_Near_Target = 0x22000004,
+        Status_Work_Flag_Found = 0x22000005,
         Status_Work_Flag_Lot_Create_Bomb = 0x22000006,
     };
 
@@ -85,12 +110,45 @@ public:
         AnimCmd_Set_Counter = 0x5,
         AnimCmd_Set_Scale_Anim = 0x6,
         AnimCmd_Search_Target = 0x7,
+        AnimCmd_Set_Notify_Article_Event_Eject = 0x8,
+        AnimCmd_Create_Item = 0x9,
+        AnimCmd_Warp_Pos_Target = 0xA,
+        AnimCmd_Subtract_Hp = 0xB,
+        AnimCmd_Set_Scale = 0xC,
+        AnimCmd_Create_Item_Angle = 0xD,
+        AnimCmd_Get_Node_Global_Pos = 0xE,
+        AnimCmd_Get_Dist_Vector = 0xF,
+        AnimCmd_Shoot = 0x10,
 
+        AnimCmd_Get_Target_Pos = 0x14,
+        AnimCmd_Remove_Eatable_Target_Item = 0x15,
+
+        AnimCmd_Get_Node_Global_Rot = 0x1A,
+        AnimCmd_Request_Slow = 0x1B,
+        AnimCmd_Remove_Slow = 0x1C,
+        AnimCmd_Set_Team = 0x1D,
+        AnimCmd_Enable_Pickup = 0x1E,
+        AnimCmd_Disable_Pickup = 0x1F,
+        AnimCmd_Disable_Eatable_Target_Item_Pickup = 0x20,
+        AnimCmd_Set_Pos_Target = 0x21,
+    };
+
+    enum AnimEventKind {
+        Anim_Event_Damage = 0x0,
+        Anim_Event_Info_Window = 0x1,
+        Anim_Event_Counter = 0x2,
+        Anim_Event_Bound = 0x3,
     };
 
     enum LinkNo {
         Link_Have = 0x3,
         Link_Target = 0x4,
+        Link_TeamOwner = 0x6,
+        Link_CreateOwner = 0x7,
+    };
+
+    enum AreaKind {
+        Area_Pickup = 0x2,
     };
 
     enum LotState {
@@ -122,6 +180,15 @@ public:
         Target_Many_Side_Fix = 0x13,
     };
 
+    enum ScaleAnimType {
+        Scale_Anim_None = -0x1,
+        Scale_Anim_Normal = 0x0,
+        Scale_Anim_Loop = 0x1,
+        Scale_Anim_Small_To_Normal = 0x2,
+        Scale_Anim_Interpolate = 0x3,
+        Scale_Anim_Keep = 0x4,
+    };
+
     int m_instanceId;
     union {
         struct {
@@ -132,7 +199,7 @@ public:
             u32 m_variation;
         };
     };
-    int m_creatorTaskId;
+    int m_createOwnerTaskId;
     itKind m_lotCreateKind;
     itCustomizerInterface* m_customizer;
     u8 m_2260;
@@ -212,7 +279,7 @@ public:
     virtual void notifyEventInfoWindow(int);
     virtual void notifyEventGimmick(soGimmickEventInfo* eventInfo, int* taskId);
     virtual void presentEventGimmick(soGimmickEventInfo* eventInfo, int sendID);
-    virtual void onDamage(int, void*);
+    virtual void onDamage(int damageStatusKind, soDamageLog*);
     virtual bool isUseTurnDamage();
     virtual bool isUseSpeedDamage();
     virtual bool isUseShake();
@@ -261,8 +328,8 @@ public:
     virtual void onAction(BaseItem* item, int, float rate);
     virtual int onResult(BaseItem* item);
     virtual bool onHave(BaseItem* item, int);
-    virtual bool onPreDamageCheck(BaseItem* item, int, void*);
-    virtual bool onDamage(BaseItem* item, int, void*);
+    virtual bool onPreDamageCheck(BaseItem* item, int damageStatusKind, soDamageLog*);
+    virtual bool onDamage(BaseItem* item, int damageStatusKind, soDamageLog*);
     virtual bool onReflect(BaseItem* item);
     virtual void onPreBound(BaseItem* item, float*, u32);
     virtual bool onRemoveModelConstraint(BaseItem* item, int);

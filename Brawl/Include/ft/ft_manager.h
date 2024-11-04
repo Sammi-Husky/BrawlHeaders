@@ -25,7 +25,7 @@ public:
     virtual void notifyEventOnDamage(int entryId, u32 hp, soDamage* damage);
     virtual void notifyEventSetDamage(int entryId, float, u32 percent, bool, bool);
     virtual void notifyEventRecover(int entryId, int);
-    virtual void notifyEventOutsideDeadArea(int entryId, DeadType, bool*);
+    virtual void notifyEventOutsideDeadArea(int entryId, soGroundUtil::DeadAreaCheckResult, bool*);
     virtual void notifyEventAppeal(int entryId, int);
     virtual void notifyEventDead(int entryId, int deadCount, int, int);
     virtual void notifyEventBeat(int entryId1, int entryId2);

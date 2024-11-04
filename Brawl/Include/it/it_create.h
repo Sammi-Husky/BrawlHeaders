@@ -300,8 +300,8 @@ struct ItemKind {
 
 struct itCreate {
     int m_index;
-    int m_creatorTaskId;
-    int m_ownerTaskId;
+    int m_createOwnerTaskId;
+    int m_teamOwnerTaskId;
     union {
         struct {
             ItemKind m_itemKind;

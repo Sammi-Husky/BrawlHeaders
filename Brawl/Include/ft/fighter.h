@@ -210,7 +210,7 @@ public:
         Status_Gimmick_Truck = 0xC2,
         Status_Gimmick_Spring = 0xC3,
         Status_Gimmick_Spring_Jump = 0xC4,
-
+        Status_Gimmick_Spring_Back = 0xC5,
         Status_Gimmick_Eaten = 0xC6,
         Status_Bury = 0xC7,
         Status_Bury_Wait = 0xC8,

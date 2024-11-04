@@ -3,14 +3,14 @@
 #include <types.h>
 #include <mt/mt_vector.h>
 
-enum DeadType {
-    Dead_None = -1,
-    Dead_Top = 0,
-    Dead_Bottom = 1,
-    Dead_Left = 2,
-    Dead_Right = 3,
-};
-
 namespace soGroundUtil {
-    DeadType checkDeadArea(Vec3f* pos, float, float);
+    enum DeadAreaCheckResult {
+        Dead_Area_Check_Result_None = -1,
+        Dead_Area_Check_Result_Outside_Up = 0,
+        Dead_Area_Check_Result_Outside_Down = 1,
+        Dead_Area_Check_Result_Outside_Left = 2,
+        Dead_Area_Check_Result_Outside_Right = 3,
+    };
+
+    DeadAreaCheckResult checkDeadArea(Vec3f* pos, float, float);
 }

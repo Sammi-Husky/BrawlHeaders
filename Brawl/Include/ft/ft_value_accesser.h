@@ -418,6 +418,7 @@ public:
         Customize_Param_Int_Jump_Count_Max = 23003,
         Customize_Param_Int_Jump_Glide_Frame = 23004,
 
+        // 23006 Something to do with team healer damage opponent rate? used in Fighter::touchItem
         Customize_Param_Int_Landing_Heavy_Frame = 23007,
 
         Customize_Param_Int_No_Ladder_Frame = 23009,

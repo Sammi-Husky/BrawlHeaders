@@ -162,7 +162,7 @@ static_assert(sizeof(itTuchCustomizer) == 12, "Class is wrong size!");
 
 class itMetalBlockCustomizer : public itCustomizer<itMetalBlockCustomizer> {
     virtual ~itMetalBlockCustomizer();
-    virtual bool onDamage(BaseItem* item, int, void*);
+    virtual bool onDamage(BaseItem* item, int, soDamageLog*);
 };
 static_assert(sizeof(itMetalBlockCustomizer) == 12, "Class is wrong size!");
 
@@ -208,7 +208,7 @@ class itSandbagCustomizer : public itCustomizer<itSandbagCustomizer> {
     virtual void onProcessFixPosition(BaseItem* item);
     virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onNotifyEventCaptureStatus(BaseItem* item); // TODO
-    virtual bool onDamage(BaseItem* item, int, void*);
+    virtual bool onDamage(BaseItem* item, int, soDamageLog*);
     virtual void onPreBound(BaseItem* item, float*, u32);
     virtual bool isUseTurnDamage(BaseItem* item);
     virtual bool isUseSpeedDamage(BaseItem* item);
@@ -233,7 +233,7 @@ class itSmashBallCustomizer : public itCustomizer<itSmashBallCustomizer> {
     virtual void onNotifyEventAnimCmd(BaseItem* item, acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void onUpdateAiDir(BaseItem* item, Vec2f*, Vec2f*, Vec2f*, Vec2f*);
     virtual void onUpdateAiMove(BaseItem* item, Vec2f*, Vec2f*, Vec2f*);
-    virtual bool onPreDamageCheck(BaseItem* item, int, void*);
+    virtual bool onPreDamageCheck(BaseItem* item, int, soDamageLog*);
     virtual bool isUseSpeedDamage(BaseItem* item);
     virtual u32 getKineticFlags(BaseItem* item);
 };
@@ -383,7 +383,7 @@ class itSonansCustomizer : public itCustomizer<itSonansCustomizer> {
     virtual ~itSonansCustomizer();
     virtual void onProcessFixPosition(BaseItem* item);
     virtual void onNotifyEventCollisionAttackCheck(BaseItem* item, int hitTaskId);
-    virtual bool onDamage(BaseItem* item, int, void*);
+    virtual bool onDamage(BaseItem* item, int, soDamageLog*);
     virtual bool isUseSpeedDamage(BaseItem* item);
     virtual u32 getKineticFlags(BaseItem* item);
 };

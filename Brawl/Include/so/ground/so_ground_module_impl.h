@@ -42,7 +42,7 @@ public:
     virtual void pause(bool);
     virtual void apply();
     virtual bool isReferenceModelNode();
-    virtual void setCorrect(u8 correct, u32 index);
+    virtual void setCorrect(soGroundShapeImpl::CorrectKind correct, u32 index);
     virtual u8 getCorrect(u32 index);
     virtual void setCalcLineMove(bool calcLineMove, u32 index);
     virtual void setTargetLineCategory(u8 targetLineCategory, u32 index);
@@ -53,7 +53,7 @@ public:
     virtual bool isCloudThrough(u32 index);
     virtual bool isCloudThroughOut(Vec2f* out, u32 index);
     virtual void setCorrectIgnoreSlope(u8 correctIgnoreSlope, u32 index);
-    virtual void setCliffCheck(u8 cliffCheck, u32 index);
+    virtual void setCliffCheck(soGroundShapeImpl::CliffCheckKind, u32 index);
     virtual void setCliffHangData(void*);
     virtual void selectCliffHangData(u32 i, u32 index);
     virtual void setCliffBackRangeXMul(float cliffBackRangeXMul);
@@ -213,7 +213,7 @@ public:
     virtual void pause(bool);
     virtual void apply();
     virtual bool isReferenceModelNode();
-    virtual void setCorrect(u8 correct, u32 index);
+    virtual void setCorrect(soGroundShapeImpl::CorrectKind correct, u32 index);
     virtual u8 getCorrect(u32 index);
     virtual void setCalcLineMove(bool calcLineMove, u32 index);
     virtual void setTargetLineCategory(u8 targetLineCategory, u32 index);
@@ -224,7 +224,7 @@ public:
     virtual bool isCloudThrough(u32 index);
     virtual bool isCloudThroughOut(Vec2f* out, u32 index);
     virtual void setCorrectIgnoreSlope(u8 correctIgnoreSlope, u32 index);
-    virtual void setCliffCheck(u8 cliffCheck, u32 index);
+    virtual void setCliffCheck(soGroundShapeImpl::CliffCheckKind cliffCheck, u32 index);
     virtual void setCliffHangData(void*);
     virtual void selectCliffHangData(u32 i, u32 index);
     virtual void setCliffBackRangeXMul(float cliffBackRangeXMul);

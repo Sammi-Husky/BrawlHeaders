@@ -68,15 +68,15 @@ public:
     itArchive* preloadItemKindArchive(itKind kind, u32 variation, itArchive::Type archiveType, bool);
     itGenSheetKind getRandBasicItemSheet(itGenId genKind = Item_Gen_Basic); // custom parameter
     ItemKind getLotOneItemKind(itGenSheetKind* sheetKind, itGenId genKind, ItemSwitch* itemSwitch = NULL, bool unk = false);
-    BaseItem* createItem(Vec3f* safePos, Vec3f* pos, float lr, itKind kind, u32 variation = 0, int creatorTaskId = -1,
+    BaseItem* createItem(Vec3f* safePos, Vec3f* pos, float lr, itKind kind, u32 variation = 0, int createOwnerTaskId = -1,
                          soResourceModule* resourceModule = NULL, u8 groupNo = 0, int brresId = 0xffff,
                          int texResIndex = 0, int texResId = 0xffff);
-    BaseItem* createItem(Vec3f* pos, float lr, itKind kind, u32 variation = 0, int creatorTaskId = -1,
+    BaseItem* createItem(Vec3f* pos, float lr, itKind kind, u32 variation = 0, int createOwnerTaskId = -1,
                          soResourceModule* resourceModule = NULL, u8 groupNo = 0, int brresId = 0xffff,
                          int texResIndex = 0, int texResId = 0xffff);
-    BaseItem* createItem(itKind kind, u32 variation = 0, int creatorTaskId = -1, soResourceModule* resourceModule = NULL,
+    BaseItem* createItem(itKind kind, u32 variation = 0, int createOwnerTaskId = -1, soResourceModule* resourceModule = NULL,
                          u8 groupNo = 0, int brresId = 0xffff, int texResIndex = 0, int texResId = 0xffff);
-    BaseItem* createBaseItem(Vec3f* safePos, Vec3f pos, float lr, itKind kind, u32 variation, int creatorTaskId, int ownerTaskId, soResourceModule*, u8 groupNo, int brresId, int texResIndex, int texResId, int teamNo);
+    BaseItem* createBaseItem(Vec3f* safePos, Vec3f pos, float lr, itKind kind, u32 variation, int createOwnerTaskId, int ownerTaskId, soResourceModule*, u8 groupNo, int brresId, int texResIndex, int texResId, int teamNo);
     BaseItem* createItemInstance(itCreate* create);
     u32 getItemNum(itKind kind);
     u32 getItemNum(itKind kind, int variation, int taskId, int);
