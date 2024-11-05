@@ -137,7 +137,7 @@ public:
         Variable_Int_Camera_Quake_Kind = 20020,
         Variable_Int_Team_No = 20021,
         Variable_Int_Task_Id = 20022,
-        Variable_Int_Ground_Correct = 20023,
+        Variable_Int_Ground_Correct_Kind = 20023,
         Variable_Int_Kinetic_Type = 20024,
         Variable_Int_Situation_Kind = 20025,
         Variable_Int_Stage_Default_Light_Set_Index = 20026,

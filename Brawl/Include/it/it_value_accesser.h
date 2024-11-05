@@ -92,11 +92,11 @@ public:
         Variable_Float_Kinetic_Sum_Speed = 1006,
         Variable_Float_Kinetic_Sum_Speed_X = 1007,
         Variable_Float_Kinetic_Sum_Speed_Y = 1008,
-        Variable_Float_Kinetic_Energy_Control_Speed_X = 1009,
-        Variable_Float_Kinetic_Energy_Control_Speed_Y = 1010,
-        Variable_Float_Kinetic_Energy_Control_Rot_X = 1011,
-        Variable_Float_Kinetic_Energy_Control_Rot_Y = 1012,
-        Variable_Float_Kinetic_Energy_Control_Rot_Z = 1013,
+        Variable_Float_Kinetic_Energy_AI_Move_Speed_X = 1009,
+        Variable_Float_Kinetic_Energy_AI_Move_Speed_Y = 1010,
+        Variable_Float_Kinetic_Energy_AI_Rot_X = 1011,
+        Variable_Float_Kinetic_Energy_AI_Rot_Y = 1012,
+        Variable_Float_Kinetic_Energy_AI_Rot_Z = 1013,
         Variable_Float_Motion_Trans_Move_Speed_X = 1014,
         Variable_Float_Motion_Trans_Move_Speed_Y = 1015,
         Variable_Float_Target_Dist = 1016,
@@ -111,6 +111,13 @@ public:
         Variable_Float_Damage_Log_Damage_Add = 1025,
         Variable_Float_Damage_Log_Lr = 1026,
         Variable_Float_World_Scale_Pos_Z = 1027,
+
+        // alternate names
+        Variable_Float_Kinetic_Energy_Control_Speed_X = 1009,
+        Variable_Float_Kinetic_Energy_Control_Speed_Y = 1010,
+        Variable_Float_Kinetic_Energy_Control_Rot_X = 1011,
+        Variable_Float_Kinetic_Energy_Control_Rot_Y = 1012,
+        Variable_Float_Kinetic_Energy_Control_Rot_Z = 1013,
     };
 
     enum VariableInt {
