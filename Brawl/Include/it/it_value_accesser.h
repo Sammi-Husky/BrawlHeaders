@@ -131,7 +131,7 @@ public:
         Variable_Int_Damage_Log_Attribute = 21004,
         Variable_Int_Damage_Log_Attacker_Task_Id = 21005,
         Variable_Int_Damage_Log_Attacker_Team_No = 21006,
-        Variable_Int_Creator_Item_Kind = 21007,
+        Variable_Int_Create_Owner_Item_Kind = 21007,
 
         Variable_Int_Target_Situation_Kind = 21010,
         Variable_Int_Item_Variation = 21011,
@@ -139,7 +139,7 @@ public:
         Variable_Int_Item_Kind = 21013,
         Variable_Int_Damage_Log_Attacker_Task_Category = 21014,
         Variable_Int_Damage_Log_Is_Attack_Direct = 21015,
-        Variable_Int_Creator_Task_Id = 21016,
+        Variable_Int_Create_Owner_Task_Id = 21016,
         Variable_Int_Link_Owner_Hit_Target_1_No = 21017,
         Variable_Int_Link_Owner_Hit_Target_2_No = 21018,
         Variable_Int_Link_Owner_Hit_Target_3_No = 21019,
