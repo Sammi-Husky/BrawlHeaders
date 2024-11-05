@@ -135,7 +135,7 @@ public:
 
         Variable_Int_Target_Situation_Kind = 21010,
         Variable_Int_Item_Variation = 21011,
-        Variable_Int_Link_Owner_Task_Id = 21012,
+        Variable_Int_Link_Have_Parent_Task_Id = 21012,
         Variable_Int_Item_Kind = 21013,
         Variable_Int_Damage_Log_Attacker_Task_Category = 21014,
         Variable_Int_Damage_Log_Is_Attack_Direct = 21015,
