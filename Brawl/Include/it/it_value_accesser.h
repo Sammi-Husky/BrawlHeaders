@@ -65,7 +65,7 @@ public:
         Specialized_Param_Int_AI_Pri = 23400,
         Specialized_Param_Int_Size_Kind = 23401,
         Specialized_Param_Int_Have_Kind = 23402,
-        Specialized_Param_Int_Trait_Flag = 23403,
+        Specialized_Param_Int_Trait_Original = 23403,
         Specialized_Param_Int_Bound_Flag = 23404,
         Specialized_Param_Int_Scale_Type = 23405,
         Specialized_Param_Int_Slope_Type = 23406,
@@ -76,6 +76,9 @@ public:
         Specialized_Param_Int_Shield_Kind = 23411,
         Specialized_Param_Int_DeadArea_Kind = 23412,
         Specialized_Param_Int_Attack_HitStop_Kind = 23413,
+
+        Anim_Param_Int_Status_Num = 23416,
+
     };
 
     enum ParamIndefinite {
