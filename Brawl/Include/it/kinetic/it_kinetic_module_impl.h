@@ -3,3 +3,8 @@
 #include <types.h>
 
 #define ITEM_KINETIC_FLAG_SANDBAG 0x2
+
+class itKineticModuleImpl {
+public:
+    // TODO
+};

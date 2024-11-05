@@ -153,6 +153,23 @@ public:
         Anim_Event_Bound = 0x3,
     };
 
+    enum KineticEnergyType {
+        Kinetic_Energy_Rot = 0x0,
+        Kinetic_Energy_Outer = 0x1,
+        Kinetic_Energy_Gravity = 0x2,
+        Kinetic_Energy_Ground = 0x3,
+        Kinetic_Energy_AI_Move = 0x4,
+        Kinetic_Energy_AI_Rot = 0x5,
+        Kinetic_Energy_Motion = 0x6,
+        Kinetic_Energy_Stop = 0x7,
+        Kinetic_Energy_Jostle = 0x8,
+        Kinetic_Energy_Ground_Movement = 0x9,
+        Kinetic_Energy_Wind = 0xA,
+
+        Kinetic_Energy_Control = 0x4,
+        Kinetic_Energy_Control_Rot = 0x5,
+    };
+
     enum LinkNo {
         Link_Have = 0x3,
         Link_Target = 0x4,

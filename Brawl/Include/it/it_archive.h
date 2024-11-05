@@ -6,73 +6,85 @@
 struct itParam {
 public:
     struct TraitFlag {
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool m_speedRot : 1; // TODO: Verify
-        bool m_noInhaled : 1;
-        bool m_noBoundRemove : 1;
-        bool m_noThrow : 1;
-        bool m_noCount : 1; // TODO: verify, spawned by character?
-        bool m_hammer : 1;
-        bool m_noEat : 1;
-        bool m_equip2 : 1;
-        bool m_stage : 1;
-        bool m_enemy : 1;
-        bool m_bomb : 1;
-        bool m_weapon : 1;
-        bool m_food : 1;
-        bool m_fighter : 1;
-        bool m_pokemon : 1;
-        bool m_assist : 1;
-        bool m_special : 1;
-        bool m_ball : 1;
-        bool m_recover : 1;
-        bool m_equip : 1;
-        bool m_quick : 1;
-        bool m_touch : 1;
-        bool m_throw : 1;
-        bool m_swing : 1;
-        bool m_shoot : 1;
-        bool m_carrier : 1;
+        struct {
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool m_speedRot : 1; // TODO: Verify
+            bool m_noInhaled : 1;
+            bool m_noBoundRemove : 1;
+            bool m_noThrow : 1;
+            bool m_noCount : 1; // TODO: verify, spawned by character?
+            bool m_hammer : 1;
+            bool m_noEat : 1;
+            bool m_equip2 : 1;
+            bool m_stage : 1;
+            bool m_enemy : 1;
+            bool m_bomb : 1;
+            bool m_weapon : 1;
+            bool m_food : 1;
+            bool m_fighter : 1;
+            bool m_pokemon : 1;
+            bool m_assist : 1;
+            bool m_special : 1;
+            bool m_ball : 1;
+            bool m_recover : 1;
+            bool m_equip : 1;
+            bool m_quick : 1;
+            bool m_touch : 1;
+            bool m_throw : 1;
+            bool m_swing : 1;
+            bool m_shoot : 1;
+            bool m_carrier : 1;
+        };
+        u32 m_bits;
+
+        inline TraitFlag(u32 bits) : m_bits(bits) {}
     };
 
     struct BoundFlag {
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool : 1;
-        bool m_throw : 1;
-        bool m_ceiling : 1;
-        bool m_dummy : 1;
-        bool m_floor : 1;
+
+        union {
+            struct {
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool m_throw : 1;
+                bool m_ceiling : 1;
+                bool m_dummy : 1;
+                bool m_floor : 1;
+            };
+            u32 m_bits;
+        };
+        inline BoundFlag(u32 bits) : m_bits(bits) {}
     };
 
     enum SizeKind {
