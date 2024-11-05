@@ -19,10 +19,10 @@ class StageObject : public gfTask, public soActivatable, public soAnimCmdEventOb
 public:
 
     enum AnimCmdType {
-        AnimCmd_Update_Node_SRT = 0x1,
-        AnimCmd_Set_Inactive = 0x2,
-        AnimCmd_Set_Active = 0x3,
-        AnimCmd_Set_Air = 0x4,
+        Anim_Cmd_Update_Node_SRT = 0x1,
+        Anim_Cmd_Set_Inactive = 0x2,
+        Anim_Cmd_Set_Active = 0x3,
+        Anim_Cmd_Set_Air = 0x4,
     };
 
     soModuleAccesser* m_moduleAccesser;
