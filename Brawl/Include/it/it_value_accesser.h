@@ -77,11 +77,30 @@ public:
         Specialized_Param_Int_DeadArea_Kind = 23412,
         Specialized_Param_Int_Attack_HitStop_Kind = 23413,
 
+        Anim_Param_Int_Motion_Num = 23415,
         Anim_Param_Int_Status_Num = 23416,
+
+        Sub_Param_Int_Rotate_Node_Index = 23418,
+        Anim_Param_Int_Model_Flag = 23419,
 
     };
 
     enum ParamIndefinite {
+        Common_Param_Indefinite_Effect_Anim_Cmd = 43000,
+        Anim_Param_Indefinite_Motion_Data = 43001,
+        Anim_Param_Indefinite_Status_Data = 43002,
+        Anim_Param_Indefinite_Collision_Hit_Data = 43003,
+        Anim_Param_Indefinite_Collision_Shield_Data = 43004,
+        Anim_Param_Indefinite_Ground_Shape_Data = 43005,
+        Anim_Param_Indefinite_Visibility_Data = 43006,
+        Anim_Param_Indefinite_Physics_IK_Data = 43007,
+        Anim_Param_Indefinite_Effect_Node_Data = 43008,
+        Anim_Param_Indefinite_Motion_Anim_Cmd_Game = 43009,
+        Anim_Param_Indefinite_Motion_Anim_Cmd_Effect = 43010,
+        Anim_Param_Indefinite_Motion_Anim_Cmd_Sound = 43011,
+        Anim_Param_Indefinite_Status_Anim_Cmd = 43012,
+        Anim_Param_Indefinite_Event_Anim_Cmd = 43013,
+        Sub_Param_Indefinite = 43014,
 
     };
 

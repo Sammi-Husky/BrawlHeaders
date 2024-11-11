@@ -13,7 +13,7 @@ public:
             bool : 1;
             bool : 1;
             bool : 1;
-            bool m_speedRot : 1; // TODO: Verify
+            bool m_enemyAttack : 1;
             bool m_noInhaled : 1;
             bool m_noBoundRemove : 1;
             bool m_noThrow : 1;
