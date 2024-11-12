@@ -233,7 +233,7 @@ struct soCollisionAttackData {
             bool m_noEffect : 1; // disable gfx on hit
             bool m_noTransaction : 1; // flinchless
             Region m_region : 5; // up to 0x1f;
-            bool m_isCapsule : 1;
+            soCollision::ShapeType m_shapeType : 1;
             bool m_isDeath100 : 1; // custom
             unsigned int field_0x3c_2 : 30; // ~up to 0x3fffffff
         };

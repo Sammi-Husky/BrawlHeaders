@@ -69,6 +69,11 @@ public:
         Part_Leg = 0x3
     };
 
+    enum ShapeType {
+        Shape_Sphere = 0x0,
+        Shape_Capsule = 0x1,
+    };
+
     int m_kind;
     int m_indirectTeam;
     soArray<soCollisionGroup>* m_collisionGroupArray;
