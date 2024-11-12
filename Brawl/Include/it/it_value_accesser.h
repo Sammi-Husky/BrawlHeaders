@@ -151,7 +151,8 @@ public:
         Variable_Int_Damage_Log_Attacker_Task_Id = 21005,
         Variable_Int_Damage_Log_Attacker_Team_No = 21006,
         Variable_Int_Create_Owner_Item_Kind = 21007,
-
+        Variable_Int_Create_Owner_Message = 21008,
+        Variable_Int_Child_Message = 21009,
         Variable_Int_Target_Situation_Kind = 21010,
         Variable_Int_Item_Variation = 21011,
         Variable_Int_Link_Have_Parent_Task_Id = 21012,
@@ -159,10 +160,10 @@ public:
         Variable_Int_Damage_Log_Attacker_Task_Category = 21014,
         Variable_Int_Damage_Log_Is_Attack_Direct = 21015,
         Variable_Int_Create_Owner_Task_Id = 21016,
-        Variable_Int_Link_Owner_Hit_Target_1_No = 21017,
-        Variable_Int_Link_Owner_Hit_Target_2_No = 21018,
-        Variable_Int_Link_Owner_Hit_Target_3_No = 21019,
-        Variable_Int_Damage_Log_Attacker_Team_Owner_Id = 21020,
+        Variable_Int_Link_Have_Parent_Hit_Target_High_No = 21017,
+        Variable_Int_Link_Have_Parent_Hit_Target_Medium_No = 21018,
+        Variable_Int_Link_Have_Parent_Hit_Target_Low_No = 21019,
+        Variable_Int_Damage_Log_Attacker_Team_Owner_Task_Id = 21020,
     };
 
     virtual soParamAccesser* getExtendParamAccesser();
