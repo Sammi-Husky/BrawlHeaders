@@ -6,8 +6,8 @@
 #include <mt/mt_vector.h>
 #include <so/damage/so_damage_attacker_info.h>
 #include <so/so_dispose_instance_manager.h>
-#include <so/event/so_event_observer.h>
-#include <so/so_log_event_presenter.h>
+#include <so/event/so_event_presenter.h>
+#include <so/event/so_log_event_presenter.h>
 #include <ft/ft_entry_manager.h>
 #include <ft/ft_slot_manager.h>
 #include <it/item.h>

@@ -4,8 +4,8 @@
 #include <so/so_lock.h>
 #include <so/so_null.h>
 #include <so/work/so_general_work_simple.h>
-#include <so/event/so_event_observer.h>
-#include <so/anim/so_anim_cmd_event_observer.h>
+#include <so/event/so_event_presenter.h>
+#include <so/anim/so_anim_cmd_event_presenter.h>
 #include <types.h>
 
 class soWorkManageModule : public soNullable {

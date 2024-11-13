@@ -1,10 +1,10 @@
 #pragma once
 #include <so/so_null.h>
 #include <so/anim/so_anim_chr.h>
-#include <so/event/so_event_observer.h>
-#include <so/status/so_status_event_observer.h>
-#include <so/model/so_model_event_observer.h>
-#include <so/anim/so_anim_cmd_event_observer.h>
+#include <so/event/so_event_presenter.h>
+#include <so/status/so_status_event_presenter.h>
+#include <so/model/so_model_event_presenter.h>
+#include <so/anim/so_anim_cmd_event_presenter.h>
 #include <GX/GXTypes.h>
 
 class soColorBlendModule: public soNullable {

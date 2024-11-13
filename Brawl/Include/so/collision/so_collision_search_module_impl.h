@@ -6,9 +6,9 @@
 #include <so/collision/so_collision.h>
 #include <so/collision/so_collision_log.h>
 #include <so/collision/so_collision_group.h>
-#include <so/event/so_event_observer.h>
 #include <so/event/so_event_presenter.h>
-#include <so/collision/so_collision_search_event_observer.h>
+#include <so/event/so_event_presenter.h>
+#include <so/collision/so_collision_search_event_presenter.h>
 #include <so/so_array.h>
 
 class soModuleAccesser;

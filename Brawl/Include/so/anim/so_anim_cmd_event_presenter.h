@@ -1,7 +1,7 @@
 #pragma once
 
 #include <types.h>
-#include <so/event/so_event_observer.h>
+#include <so/event/so_event_presenter.h>
 #include <ac/ac_anim_cmd_impl.h>
 
 class soModuleAccesser;

@@ -2,9 +2,9 @@
 
 #include <so/so_null.h>
 #include <so/so_instance_manager.h>
-#include <so/event/so_event_observer.h>
+#include <so/event/so_event_presenter.h>
 #include <so/kinetic/so_kinetic_energy.h>
-#include <so/anim/so_anim_cmd_event_observer.h>
+#include <so/anim/so_anim_cmd_event_presenter.h>
 
 class soKineticModule : public soNullable {
 public:

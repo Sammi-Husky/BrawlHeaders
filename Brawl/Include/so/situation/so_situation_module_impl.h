@@ -1,11 +1,11 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <so/event/so_event_observer.h>
 #include <so/event/so_event_presenter.h>
-#include <so/situation/so_situation_event_observer.h>
-#include <so/status/so_status_event_observer.h>
-#include <so/anim/so_anim_cmd_event_observer.h>
+#include <so/event/so_event_presenter.h>
+#include <so/situation/so_situation_event_presenter.h>
+#include <so/status/so_status_event_presenter.h>
+#include <so/anim/so_anim_cmd_event_presenter.h>
 #include <types.h>
 
 class soModuleAccesser;

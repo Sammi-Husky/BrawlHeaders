@@ -3,10 +3,10 @@
 #include <StaticAssert.h>
 #include <memory.h>
 #include <so/model/so_model_module_simple.h>
-#include <so/event/so_event_observer.h>
 #include <so/event/so_event_presenter.h>
-#include <so/model/so_model_event_observer.h>
-#include <so/anim/so_anim_cmd_event_observer.h>
+#include <so/event/so_event_presenter.h>
+#include <so/model/so_model_event_presenter.h>
+#include <so/anim/so_anim_cmd_event_presenter.h>
 #include <types.h>
 
 class soModuleAccesser;
