@@ -45,8 +45,8 @@ struct grGimmickSpringEventInfo : soGimmickEventInfo {
 };
 
 struct grGimmickLadderEventInfo : soGimmickEventInfo {
-    Vec3f m_upperNode;
-    Vec3f m_underNode;
+    Vec3f m_upperNodePos;
+    Vec3f m_underNodePos;
     bool m_restrictUpExit;
     bool m_33;
 };

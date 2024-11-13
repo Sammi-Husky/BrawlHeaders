@@ -9,7 +9,7 @@ struct grGimmickCatapultData {
     char _8[24];
     Vec2f m_areaOffsetPos;
     Vec2f m_areaRange;
-    float m_framesBeforeStartMove;
+    float m_startMoveFrame;
     float m_52;
     float m_56;
     float m_vector;
