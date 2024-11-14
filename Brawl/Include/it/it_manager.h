@@ -12,7 +12,7 @@
 class itManager : public gfTask, public soDisposeInstanceEventObserver {
 public:
     struct ItemSwitch {
-        bitset<NUM_IT_KINDS> m_itemSwitch;
+        std::bitset<NUM_IT_KINDS> m_itemSwitch;
 
         ItemSwitch() : m_itemSwitch(0) { }
         ItemSwitch(bool val) : m_itemSwitch(val) { }

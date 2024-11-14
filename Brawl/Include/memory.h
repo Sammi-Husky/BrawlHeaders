@@ -2,6 +2,9 @@
 
 #include <stddef.h>
 #include <types.h>
+#include <MEM.h>
+
+#define MEMINIT( p) __memfill( p, 0, sizeof( *p ) )
 
 namespace Heaps {
     enum HeapType {
@@ -81,6 +84,5 @@ void* operator new[](size_t size, HeapType heap);
 void* operator new[](size_t size);
 void* free(void* ptr);
 
-void* __memfill(void* dest, u8 value, size_t count);
-void* memset(void* dest, u8 value, size_t count);
-void memcpy(void* dest, void* src, size_t count);
+
+

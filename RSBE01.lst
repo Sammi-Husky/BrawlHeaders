@@ -140,7 +140,7 @@ CC008000:WGPIPE
 // __mem
 803f0640:strlen__FPc 
 803f0640:strlen
-8000443c:__memfill__FPvUcUl
+8000443c:__memfill
 8000443c:memset__FPvUcUl
 8000443c:memset
 80004338:memcpy__FPvPvUl
@@ -1122,6 +1122,9 @@ CC008000:WGPIPE
 // stTrigger
 27,1,00233640:setObserveYakumono__9stTriggerFP8Yakumono
 27,1,00233778:setBeltConveyorTrigger__9stTriggerFP25grGimmickBeltConveyorData
+27,1,002339B8:setHitPointEffectTrigger__9stTriggerFP27grGimmickHitPointEffectData
+27,1,00233928:setWaterTrigger__9stTriggerFP18grGimmickWaterData
+27,1,00233658:setWindTrigger__9stTriggerFP17grGimmickWindData
 27,1,00234040:setAreaSleep__9stTriggerFUl
 27,1,00233A48:setWindParam__9stTriggerFP20grGimmickWindData2ndl
 

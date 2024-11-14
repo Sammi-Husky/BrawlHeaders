@@ -55,13 +55,21 @@ class stTrigger : public utListNode {
     Yakumono* m_yakumono;
     char _spacer2[12];
     bool m_isValid;
-    char _spacer3[7];
+    char _spacer3[3];
 
 public:
+    virtual ~stTrigger();
+
     void setObserveYakumono(Yakumono* yakumono);
     stObsTriggerSquareBeltConveyorCB* setBeltConveyorTrigger(grGimmickBeltConveyorData* gimmickAreaData);
+    stObsTriggerSquareHitPointEffectCB* setHitPointEffectTrigger(grGimmickHitPointEffectData* gimmickAreaData);
+    stObsTriggerSquareWaterCB* setWaterTrigger(grGimmickWaterData* gimmickAreaData);
+    stObsTriggerSquareWindCB* setWindTrigger(grGimmickWindData* gimmickAreaData);
+
     void setAreaSleep(u32 p1);
     void setWindParam(grGimmickWindData2nd* wnd, s32 p2);
+
+
 };
 static_assert(sizeof(stTrigger) == 52, "Class is wrong size!");
 
