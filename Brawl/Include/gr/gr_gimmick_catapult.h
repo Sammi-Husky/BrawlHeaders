@@ -6,9 +6,7 @@
 
 struct grGimmickCatapultData {
     grGimmickMotionPathData m_motionPathData;
-    char _8[24];
-    Vec2f m_areaOffsetPos;
-    Vec2f m_areaRange;
+    stGimmickAreaData m_areaData;
     float m_startMoveFrame;
     float m_52;
     float m_56;
@@ -18,6 +16,33 @@ struct grGimmickCatapultData {
     bool m_isFaceLeft;
     bool m_useNoHelperWarp;
     char _82[1];
+
+    inline grGimmickCatapultData() {
+
+    };
+
+    inline grGimmickCatapultData(float startMoveFrame, float unk1, float unk2, float vector, u8 mdlIndex, bool isFaceLeft, bool useNoHelperWarp,
+                               float motionRatio, u8 motionPathIndex, u8 motionPathMdlIndex, u8 motionPathUnk,
+                               Vec2f* areaPos, Vec2f* areaRange) {
+        initialize(startMoveFrame, unk1, unk2, vector, mdlIndex, isFaceLeft, useNoHelperWarp,
+                   motionRatio, motionPathIndex, motionPathMdlIndex, motionPathUnk,
+                   areaPos, areaRange);
+    };
+
+    inline void initialize(float startMoveFrame, float unk1, float unk2, float vector, u8 mdlIndex, bool isFaceLeft, bool useNoHelperWarp,
+                           float motionRatio, u8 motionPathIndex, u8 motionPathMdlIndex, u8 motionPathUnk,
+                           Vec2f* areaPos, Vec2f* areaRange) {
+        MEMINIT(this);
+        m_startMoveFrame = startMoveFrame;
+        m_52 = unk1;
+        m_56 = unk2;
+        m_vector = vector;
+        m_mdlIndex = mdlIndex;
+        m_isFaceLeft = isFaceLeft;
+        m_useNoHelperWarp = useNoHelperWarp;
+        m_motionPathData.set(motionRatio, motionPathIndex, motionPathMdlIndex, motionPathUnk);
+        m_areaData.set(areaPos, areaRange);
+    };
 };
 static_assert(sizeof(grGimmickCatapultData) == 84, "Class is wrong size!");
 

@@ -1,9 +1,9 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <gr/gr_collision.h>
-#include <gr/gr_collision_shape_circle.h>
-#include <gr/gr_collision_shape_rhombus.h>
+#include <gr/collision/gr_collision.h>
+#include <gr/collision/gr_collision_shape_circle.h>
+#include <gr/collision/gr_collision_shape_rhombus.h>
 #include <types.h>
 
 class grCollStatus {

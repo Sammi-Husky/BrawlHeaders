@@ -19,6 +19,13 @@ struct grGimmickMotionPathData {
     PathMode m_pathMode : 8;
     char m_mdlIndex;
     char m_7;
+
+    inline void set(float motionRatio, u8 index, u8 mdlIndex, u8 unk) {
+        m_motionRatio = motionRatio;
+        m_index = index;
+        m_mdlIndex = mdlIndex;
+        m_7 = unk;
+    }
 };
 static_assert(sizeof(grGimmickMotionPathData) == 8, "Class is wrong size!");
 

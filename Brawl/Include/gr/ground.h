@@ -4,7 +4,7 @@
 #include <gf/gf_archive.h>
 #include <gf/gf_model.h>
 #include <gf/gf_task.h>
-#include <gr/gr_collision_status.h>
+#include <gr/collision/gr_collision_status.h>
 #include <memory.h>
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>

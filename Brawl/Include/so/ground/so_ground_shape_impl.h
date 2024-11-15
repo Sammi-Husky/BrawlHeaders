@@ -1,7 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <gr/gr_collision_status.h>
+#include <gr/collision/gr_collision_status.h>
 #include <mt/mt_vector.h>
 #include <types.h>
 

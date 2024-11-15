@@ -1,7 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <gr/gr_collision_linework.h>
+#include <gr/collision/gr_collision_linework.h>
 #include <types.h>
 
 class Stage;

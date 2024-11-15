@@ -1,7 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <gr/gr_collision_shape.h>
+#include <gr/collision/gr_collision_shape.h>
 #include <types.h>
 
 class grCollShapeCircle : public grCollShape {

@@ -7,9 +7,7 @@
 struct grGimmickSpringData {
 public:
     grGimmickMotionPathData m_motionPathData;
-    char _8[24];
-    Vec2f m_areaOffsetPos;
-    Vec2f m_areaRange;
+    stGimmickAreaData m_areaData;
     Vec2f m_pos;
     float m_rot;
     float m_bounce;
@@ -18,6 +16,35 @@ public:
     u8 m_collIndex;
     char _74[2];
     stTriggerData m_triggerData;
+
+    inline grGimmickSpringData() {
+
+    };
+
+    inline grGimmickSpringData(Vec2f* pos, float bounce, u8 mdlIndex, Vec2f* areaPos, Vec2f* areaRange) {
+        initialize(pos, bounce, mdlIndex, areaPos, areaRange);
+    };
+
+    inline grGimmickSpringData(Vec2f* pos, float rot, float bounce, u8 mdlIndex, Vec2f* areaPos, Vec2f* areaRange) {
+        initialize(pos, rot, bounce, mdlIndex, areaPos, areaRange);
+    };
+
+    inline void initialize(Vec2f* pos, float bounce, u8 mdlIndex, Vec2f* areaPos, Vec2f* areaRange) {
+        MEMINIT(this);
+        m_pos = *pos;
+        m_bounce = bounce;
+        m_mdlIndex = mdlIndex;
+        m_areaData.set(areaPos, areaRange);
+    };
+
+    inline void initialize(Vec2f* pos, float rot, float bounce, u8 mdlIndex, Vec2f* areaPos, Vec2f* areaRange) {
+        MEMINIT(this);
+        m_pos = *pos;
+        m_rot = rot;
+        m_bounce = bounce;
+        m_mdlIndex = mdlIndex;
+        m_areaData.set(areaPos, areaRange);
+    };
 };
 static_assert(sizeof(grGimmickSpringData) == 80, "Class is wrong size!");
 

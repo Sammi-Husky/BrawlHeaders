@@ -1,8 +1,8 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <gr/gr_collision_joint.h>
-#include <gr/gr_collision_line.h>
+#include <gr/collision/gr_collision_joint.h>
+#include <gr/collision/gr_collision_line.h>
 #include <types.h>
 
 class grCollision;

@@ -4,6 +4,7 @@
 #include <gr/gr_gimmick_motion_path.h>
 #include <gr/gr_yakumono.h>
 #include <st/st_trigger.h>
+#include <cstring>
 
 struct grGimmickPunchSliderData {
     grGimmickMotionPathData m_motionPathData;
@@ -25,6 +26,39 @@ struct grGimmickPunchSliderData {
     char _249[3];
     char m_ballNodeName[32];
     char _284[4];
+
+    inline grGimmickPunchSliderData() {
+
+    };
+
+    inline grGimmickPunchSliderData(float unk1, float unk2, float unk3, float unk4, float unk5, float unk6,
+                                    grGimmick::AttackData* attackData, float hitSize, const char* nodeName,
+                                    float motionRatio, u8 motionPathIndex, grGimmickMotionPathData::PathMode pathMode, u8 motionPathMdlIndex, u8 motionPathUnk,
+                                    float sliderRatio, u8 sliderPathIndex, u8 sliderPathMdlIndex, u8 sliderPathUnk) {
+        initialize(unk1, unk2, unk3, unk4, unk5, unk6,
+                   attackData, hitSize, nodeName,
+                   motionRatio, motionPathIndex, pathMode, motionPathMdlIndex, motionPathUnk,
+                   sliderRatio, sliderPathIndex, sliderPathMdlIndex, sliderPathUnk);
+    };
+
+    inline void initialize(float unk1, float unk2, float unk3, float unk4, float unk5, float unk6,
+                           grGimmick::AttackData* attackData, float hitSize, const char* nodeName,
+                           float motionRatio, u8 motionPathIndex, grGimmickMotionPathData::PathMode pathMode, u8 motionPathMdlIndex, u8 motionPathUnk,
+                           float sliderRatio, u8 sliderPathIndex, u8 sliderPathMdlIndex, u8 sliderPathUnk) {
+
+        MEMINIT(this);
+        m_148 = unk1;
+        m_152 = unk2;
+        m_156 = unk3;
+        m_160 = unk4;
+        m_164 = unk5;
+        m_168 = unk6;
+        m_attackData = *attackData;
+        m_hitData.m_size = hitSize;
+        strcpy(m_ballNodeName, nodeName);
+        m_motionPathData = (grGimmickMotionPathData){motionRatio, motionPathIndex, pathMode, motionPathMdlIndex, motionPathUnk};
+        m_sliderPathData = (grGimmickMotionPathData){sliderRatio, sliderPathIndex, grGimmickMotionPathData::Path_Return, sliderPathMdlIndex, sliderPathUnk};
+    };
 };
 static_assert(sizeof(grGimmickPunchSliderData) == 288, "Class is wrong size!");
 

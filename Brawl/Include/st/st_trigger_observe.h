@@ -40,13 +40,24 @@ struct stGimmickAreaData {
     short m_16;
     short m_18;
     char _20[4];
-    Vec2f m_pos;
+    Vec2f m_offsetPos;
     Vec2f m_range;
 
+    inline void set(Vec2f* areaPos, Vec2f* areaRange) {
+        m_offsetPos = *areaPos;
+        m_range = *areaRange;
+    }
+
+    inline void set(Vec2f* areaPos, Vec2f* areaRange, gfArea::ShapeType shapeType) {
+        m_offsetPos = *areaPos;
+        m_range = *areaRange;
+        m_shapeType = shapeType;
+    }
 };
 
-struct grGimmickBeltConveyorData : stGimmickAreaData {
-    Vec3f m_conveyorPos;
+struct grGimmickBeltConveyorData {
+    stGimmickAreaData m_areaData;
+    Vec3f m_pos;
     float m_speed;
     bool m_isRight;
     char _spacer[3];
@@ -57,18 +68,21 @@ struct grGimmickBeltConveyorData : stGimmickAreaData {
     };
 
     inline grGimmickBeltConveyorData(Vec3f* pos, float speed, bool isRight, Vec2f* areaPos, Vec2f* areaRange, gfArea::ShapeType shapeType) {
+        initialize(pos, speed, isRight, areaPos, areaRange, shapeType);
+    };
+
+    inline void initialize(Vec3f* pos, float speed, bool isRight, Vec2f* areaPos, Vec2f* areaRange, gfArea::ShapeType shapeType) {
         MEMINIT(this);
-        m_conveyorPos = *pos;
+        m_pos = *pos;
         m_speed = speed;
         m_isRight = isRight;
-        m_pos = *areaPos;
-        m_range = *areaRange;
-        m_shapeType = shapeType;
+        m_areaData.set(areaPos, areaRange, shapeType);
     };
 };
 static_assert(sizeof(grGimmickBeltConveyorData) == 64, "Class is wrong size!");
 
-struct grGimmickWaterData : stGimmickAreaData {
+struct grGimmickWaterData {
+    stGimmickAreaData m_areaData;
     float m_swimHeight;
     bool m_canDrown;
     char _45[3];
@@ -80,18 +94,23 @@ struct grGimmickWaterData : stGimmickAreaData {
     };
 
     inline grGimmickWaterData(float swimHeight, bool canDrown, float currentSpeed, Vec2f* areaPos, Vec2f* areaRange) {
+        initialize(swimHeight, canDrown, currentSpeed, areaPos, areaRange);
+    };
+
+    inline void initialize(float swimHeight, bool canDrown, float currentSpeed, Vec2f* areaPos, Vec2f* areaRange) {
         MEMINIT(this);
         m_swimHeight = swimHeight;
         m_canDrown = canDrown;
         m_speed = currentSpeed;
-        m_pos = *areaPos;
-        m_range = *areaRange;
+        m_areaData.set(areaPos, areaRange);
     };
+
 };
 static_assert(sizeof(grGimmickWaterData) == 56, "Class is wrong size!");
 
-struct grGimmickWindData : stGimmickAreaData {
-    Vec3f m_windPos;
+struct grGimmickWindData {
+    stGimmickAreaData m_areaData;
+    Vec3f m_pos;
     float m_speed;
     float m_vector;
     stTriggerData m_isValidTriggerData;
@@ -101,18 +120,22 @@ struct grGimmickWindData : stGimmickAreaData {
     };
 
     inline grGimmickWindData(Vec3f* pos, float speed, float vector, Vec2f* areaPos, Vec2f* areaRange) {
+        initialize(pos, speed, vector, areaPos, areaRange);
+    };
+
+    inline void initialize(Vec3f* pos, float speed, float vector, Vec2f* areaPos, Vec2f* areaRange) {
         MEMINIT(this);
-        m_windPos = *pos;
+        m_pos = *pos;
         m_speed = speed;
         m_vector = vector;
-        m_pos = *areaPos;
-        m_range = *areaRange;
+        m_areaData.set(areaPos, areaRange);
     };
 };
 static_assert(sizeof(grGimmickWindData) == 64, "Class is wrong size!");
 
-struct grGimmickWindData2nd : stGimmickAreaData {
-    Vec3f m_windPos;
+struct grGimmickWindData2nd {
+    stGimmickAreaData m_areaData;
+    Vec3f m_pos;
     float m_speed;
     float m_vector;
     float m_60;
@@ -122,7 +145,8 @@ struct grGimmickWindData2nd : stGimmickAreaData {
 };
 static_assert(sizeof(grGimmickWindData2nd) == 76, "Class is wrong size!");
 
-struct grGimmickHitPointEffectData : stGimmickAreaData {
+struct grGimmickHitPointEffectData {
+    stGimmickAreaData m_areaData;
     u8 m_damage;
     bool m_isHeal;
     short m_serialHitFrame;
@@ -132,13 +156,16 @@ struct grGimmickHitPointEffectData : stGimmickAreaData {
 
     };
 
-    inline grGimmickHitPointEffectData(float damage, float isHeal, bool serialHitFrame, Vec2f* areaPos, Vec2f* areaRange) {
+    inline grGimmickHitPointEffectData(float damage, float isHeal, bool serialHitFrame, Vec2f *areaPos, Vec2f *areaRange) {
+        initialize(damage, isHeal, serialHitFrame, areaPos, areaRange);
+    };
+
+    inline void initialize(float damage, float isHeal, bool serialHitFrame, Vec2f *areaPos, Vec2f *areaRange) {
         MEMINIT(this);
         m_damage = damage;
         m_isHeal = isHeal;
         m_serialHitFrame = serialHitFrame;
-        m_pos = *areaPos;
-        m_range = *areaRange;
+        m_areaData.set(areaPos, areaRange);
     };
 };
 static_assert(sizeof(grGimmickHitPointEffectData) == 48, "Class is wrong size!");

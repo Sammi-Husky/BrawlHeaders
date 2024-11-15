@@ -8,9 +8,7 @@
 
 struct grGimmickWarpData {
     grGimmickMotionPathData m_motionPathData;
-    char _8[24];
-    Vec2f m_areaOffsetPos;
-    Vec2f m_areaRange;
+    stGimmickAreaData m_areaData;
     char _48[32];
     u8 m_mdlIndex;
     char _81[3];
@@ -20,6 +18,26 @@ struct grGimmickWarpData {
     stTriggerData m_warpTriggerData;
     char _112[12];
     stTriggerData m_isValidTriggerData;
+
+    inline grGimmickWarpData() {
+
+    };
+
+    inline grGimmickWarpData(Vec2f* pos, u8 mdlIndex, SndID sndIn, SndID sndOut,
+            Vec2f* areaPos, Vec2f* areaRange) {
+        initialize(pos, mdlIndex, sndIn, sndOut,
+                   areaPos, areaRange);
+    };
+
+    inline void initialize(Vec2f* pos, u8 mdlIndex, SndID sndIn, SndID sndOut,
+                           Vec2f* areaPos, Vec2f* areaRange) {
+        MEMINIT(this);
+        m_pos = *pos;
+        m_mdlIndex = mdlIndex;
+        m_sndIDs[0] = sndIn,
+        m_sndIDs[1] = sndOut,
+        m_areaData.set(areaPos, areaRange);
+    };
 };
 static_assert(sizeof(grGimmickWarpData) == 128, "Class is wrong size!");
 

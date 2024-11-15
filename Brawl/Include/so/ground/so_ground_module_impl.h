@@ -1,7 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <gr/gr_collision_status.h>
+#include <gr/collision/gr_collision_status.h>
 #include <memory.h>
 #include <mt/mt_coll2d.h>
 #include <so/collision/so_collision_attack_part.h>
