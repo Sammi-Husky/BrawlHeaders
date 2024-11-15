@@ -11,6 +11,7 @@
 #include <so/motion/so_motion_event_presenter.h>
 #include <so/model/so_model_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
+#include <so/transition/so_transition_module_impl.h>
 #include <types.h>
 
 class soModuleAccesser;
@@ -177,7 +178,7 @@ public:
     char _spacer3[100];
 
     // 240
-    void* m_transitionModuleEntity;
+    soTransitionModule* m_transitionModule;
 
     // 244
     soArrayVector<soMotionChangeParam, 4> m_motionChangeParamArray;
