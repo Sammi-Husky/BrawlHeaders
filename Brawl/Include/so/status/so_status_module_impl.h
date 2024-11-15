@@ -6,6 +6,7 @@
 #include <so/status/so_status_event_presenter.h>
 #include <so/collision/so_collision_attack_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
+#include <so/transition/so_transition_module_impl.h>
 #include <so/so_null.h>
 #include <types.h>
 
@@ -74,8 +75,10 @@ static_assert(sizeof(soStatusModule) == 8, "Class is wrong size!");
 
 class soStatusModuleImpl : public soStatusModule, public soEventPresenter<soStatusEventObserver>, public soAnimCmdEventObserver, public soCollisionAttackEventObserver {
 
-    char _spacer[120];
-
+public:
+    soTransitionModule* m_transitionModule;
+private:
+    char _spacer[0x74];
 public:
     virtual void activate(soModuleAccesser* moduleAccesser);
     virtual void deactivate(soModuleAccesser* moduleAccesser);
