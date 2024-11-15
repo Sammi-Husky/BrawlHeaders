@@ -6,6 +6,7 @@
 #include <ft/ft_owner.h>
 #include <ft/ft_input.h>
 #include <gm/gm_lib.h>
+#include <mt/mt_vector.h>
 
 class Fighter;
 enum ftKind {
