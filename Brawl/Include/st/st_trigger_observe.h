@@ -156,11 +156,11 @@ struct grGimmickHitPointEffectData {
 
     };
 
-    inline grGimmickHitPointEffectData(float damage, float isHeal, bool serialHitFrame, Vec2f *areaPos, Vec2f *areaRange) {
+    inline grGimmickHitPointEffectData(float damage, bool isHeal, short serialHitFrame, Vec2f *areaPos, Vec2f *areaRange) {
         initialize(damage, isHeal, serialHitFrame, areaPos, areaRange);
     };
 
-    inline void initialize(float damage, float isHeal, bool serialHitFrame, Vec2f *areaPos, Vec2f *areaRange) {
+    inline void initialize(float damage, bool isHeal, short serialHitFrame, Vec2f *areaPos, Vec2f *areaRange) {
         MEMINIT(this);
         m_damage = damage;
         m_isHeal = isHeal;
