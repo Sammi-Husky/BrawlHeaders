@@ -904,6 +904,7 @@ public:
     };
 
     enum TransitionTermGroupId {
+        // 0x0
         Status_Transition_Term_Group_Chk_Ground_Special = 0x1,
         Status_Transition_Term_Group_Chk_Ground_Item = 0x2,
         Status_Transition_Term_Group_Chk_Ground_Catch = 0x3,
@@ -922,6 +923,7 @@ public:
         Status_Transition_Term_Group_Chk_Air_Tread_Jump = 0x10,
         Status_Transition_Term_Group_Chk_Air_Wall_Jump = 0x11,
         Status_Transition_Term_Group_Chk_Air_Jump_Aerial = 0x12,
+        // 0x13
     };
 
     enum WorkId {
