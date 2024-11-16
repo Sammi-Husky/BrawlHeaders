@@ -900,7 +900,28 @@ public:
         Status_Transition_Term_Throw_Kirby_Ground = 10142,
         Status_Transition_Term_Final = 10143,
         Status_Transition_Term_Throw_Enemy = 10144,
-        Status_Transition_Term_Smash_Appeal = 10145 // TODO: Verify
+        Status_Transition_Term_Smash_Appeal = 10145, // TODO: Verify
+    };
+
+    enum TransitionTermGroupId {
+        Status_Transition_Term_Group_Chk_Ground_Special = 0x1,
+        Status_Transition_Term_Group_Chk_Ground_Item = 0x2,
+        Status_Transition_Term_Group_Chk_Ground_Catch = 0x3,
+        Status_Transition_Term_Group_Chk_Ground_Attack = 0x4,
+        Status_Transition_Term_Group_Chk_Ground_Escape = 0x5,
+        Status_Transition_Term_Group_Chk_Ground_Guard = 0x6,
+        Status_Transition_Term_Group_Chk_Ground_Jump = 0x7,
+        Status_Transition_Term_Group_Chk_Ground = 0x8,
+        Status_Transition_Term_Group_Chk_Air_Landing = 0x9,
+        Status_Transition_Term_Group_Chk_Air_Cliff = 0xA,
+        Status_Transition_Term_Group_Chk_Air_Special = 0xB,
+        Status_Transition_Term_Group_Chk_Air_Item_Throw = 0xC,
+        Status_Transition_Term_Group_Chk_Air_Lasso = 0xD,
+        Status_Transition_Term_Group_Chk_Air_Escape = 0xE,
+        Status_Transition_Term_Group_Chk_Air_Attack = 0xF,
+        Status_Transition_Term_Group_Chk_Air_Tread_Jump = 0x10,
+        Status_Transition_Term_Group_Chk_Air_Wall_Jump = 0x11,
+        Status_Transition_Term_Group_Chk_Air_Jump_Aerial = 0x12,
     };
 
     enum WorkId {
