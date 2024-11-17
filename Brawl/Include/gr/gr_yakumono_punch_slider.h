@@ -73,7 +73,7 @@ protected:
     int m_292;
     char _296[32];
     soCollisionHitData m_hitData;
-    soCollisionHitPartsInfo m_hitPartsInfo;
+    soSet<soCollisionHitData> m_hitDataSet;
     ykHitGroupInfo m_hitGroupsInfo;
     ykData m_ykData;
 

@@ -11,7 +11,7 @@ class grYakumono;
 
 struct ykHitGroupInfo {
     char _0[8];
-    soCollisionHitPartsInfo* m_hitPartsInfo;
+    soSet<soCollisionHitData>* m_hitDataSet;
 };
 
 struct ykData {
@@ -20,7 +20,7 @@ struct ykData {
 };
 
 struct ykAreaData : ykData {
-    soAreaInit* m_areaInit;
+    soSet<soAreaData>* m_areaDataSet;
 };
 
 class Yakumono : public StageObject, public soCollisionAttackEventObserver {

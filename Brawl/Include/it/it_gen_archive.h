@@ -81,10 +81,6 @@ struct itGenParam {
     Entry* m_entries;
     u32 m_numEntries;
 
-    struct Set {
-        itGenParam* m_genParams;
-        u32 m_numGenParams;
-    };
 };
 static_assert(sizeof(itGenParam) == 0x14, "Class is wrong size!");
 

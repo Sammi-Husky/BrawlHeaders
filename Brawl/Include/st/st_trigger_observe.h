@@ -7,6 +7,46 @@
 #include <memory.h>
 #include <types.h>
 
+namespace Gimmick {
+    enum AreaKind {
+        Area_None = 0x0,
+        Area_RebirthPoint = 0x5,
+        Area_Reactor = 0x6,
+        Area_Camera = 0x7,
+        Area_Sound = 0xb,
+        Area_Wind = 0xc,
+        Area_Wind_2nd = 0xd,
+        Area_BeltConveyor = 0xe,
+        Area_Yuka = 0xf,
+        Area_Pow = 0x10,
+        Area_Water = 0x11,
+        Area_HitPoint_Effect = 0x12,
+        Area_ScrollLock = 0x15,
+        Area_Common = 0x1e,
+        Area_Barrel_Natural = 0x1f,
+        Area_Barrel_Path = 0x20,
+        Area_Barrel_Natural_Auto  = 0x21,
+        Area_Barrel_Path_Auto = 0x22,
+        Area_Spring = 0x23,
+        Area_Catapult = 0x24,
+        Area_Ladder = 0x25,
+        Area_Door = 0x28,
+        Area_Door_Air = 0x29,
+        Area_Door_Auto = 0x2a,
+        Area_Block = 0x2b,
+        Area_Warp = 0x2c,
+        Area_SavePoint = 0x2d,
+        Area_Peripheral_Lock = 0x2f,
+        Area_MotionPath = 0x32,
+        Area_Elevator = 0x35,
+        Area_Truck = 0x3a,
+
+        // alternate names
+        Area_Barrel_Static = 0x1f,
+        Area_Barrel_Static_Auto  = 0x21,
+    };
+}
+
 struct stTriggerData {
     enum KeepKind {
         Keep_None = 0x0,
@@ -35,8 +75,9 @@ static_assert(sizeof(grAdventureTruckReactorData) == 24, "Class is wrong size!")
 
 struct stGimmickAreaData {
     gfArea::ShapeType m_shapeType;
-    int m_4;
-    char _8[8];
+    gfArea::Group m_group;
+    int m_checkTargetGroup;
+    int m_checkTargetLocalGroup;
     short m_16;
     short m_18;
     char _20[4];

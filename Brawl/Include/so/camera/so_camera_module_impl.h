@@ -6,14 +6,14 @@
 
 class soCameraModuleImpl : public soCameraModuleSimple {
     soArray<soCameraSubject>* m_cameraSubjectArray;
-    soCameraRange::Set* m_cameraRangeSet;
-    soCameraClipSphere::Set* m_cameraClipSphereSet;
+    soSet<soCameraRange>* m_cameraRangeSet;
+    soSet<soCameraClipSphere>* m_cameraClipSphereSet;
 
 public:
     virtual ~soCameraModuleImpl();
     virtual u32 getSubjectsSize();
     virtual void setup();
-    virtual void setup(soCameraRange::Set* cameraRangeSet);
+    virtual void setup(soSet<soCameraRange>* cameraRangeSet);
     virtual void setTrainingRangeData(soCameraRange*, u32 index);
     virtual void setZoomParam(soCameraZoom*, u32 index);
     virtual void activate();

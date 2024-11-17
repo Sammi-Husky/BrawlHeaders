@@ -58,7 +58,7 @@ protected:
     int m_360;
     int m_364;
     soAreaData m_areaData;
-    soAreaInit m_areaInit;
+    soSet<soAreaData> m_areaDataSet;
     ykAreaData m_ykData;
 
 public:

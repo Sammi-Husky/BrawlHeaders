@@ -65,7 +65,7 @@ protected:
     u32 m_animOnLength;
     u32 m_animOffLength;
     soAreaData m_areaData;
-    soAreaInit m_areaInit;
+    soSet<soAreaData> m_areaDataSet;
     ykAreaData m_ykData;
 
 public:

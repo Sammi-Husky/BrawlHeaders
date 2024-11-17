@@ -6,6 +6,21 @@
 #include <bitset>
 
 template <class T>
+class soSet {
+    T* m_elements;
+    size_t m_size;
+
+public:
+    T* elements() {
+        return m_elements;
+    }
+
+    u32 size() {
+        return m_size;
+    }
+};
+
+template <class T>
 class soArrayFixed : public soNullableInterface {
 public:
 

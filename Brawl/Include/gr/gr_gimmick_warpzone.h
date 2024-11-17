@@ -52,7 +52,7 @@ protected:
     bool m_isNotAuto;
     char m_298[2];
     soAreaData m_areaData;
-    soAreaInit m_areaInit;
+    soSet<soAreaData> m_areaDataSet;
     ykAreaData m_ykData;
 
 public:
