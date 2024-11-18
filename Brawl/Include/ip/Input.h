@@ -26,5 +26,26 @@ union ipButton {
         bool m_special : 1;
         bool m_attack : 1;
     };
+
+    enum buttonBits
+    {
+        _FLICK_JUMP = 0x8000,
+        _APPEAL_SR = 0x4000,
+        _APPEAL_SL = 0x2000,
+        _APPEAL_LW = 0x1000,
+        _APPEAL_S = 0x0800,
+        _APPEAL_HI = 0x0400,
+        __6 = 0x0200,
+        _C_STICK = 0x0100,
+        __8 = 0x0080,
+        __9 = 0x0040,
+        __10 = 0x0020,
+        __11 = 0x0010,
+        _GUARD = 0x0008,
+        _JUMP = 0x0004,
+        _SPECIAL = 0x0002,
+        _ATTACK = 0x0001,
+    };
+
 };
 static_assert(sizeof(ipButton) == 4, "Class is wrong size!");

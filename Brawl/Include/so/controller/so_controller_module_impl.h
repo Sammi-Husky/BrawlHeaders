@@ -47,11 +47,11 @@ public:
     virtual float getSubStickPrevY();
     virtual float getSubStickDir();
     virtual bool isSubStickSide();
-    virtual int getTrigger();
+    virtual ipButton getTrigger();
     virtual u8 getTriggerCount(u8 index);
     virtual u8 getTriggerCountPrev(u8 index);
     virtual ipButton getButton();
-    virtual int getRelease();
+    virtual ipButton getRelease();
     virtual void setOff(bool);
     virtual void setPrev(int);
     virtual void clearLog();
