@@ -74,7 +74,7 @@ protected:
     char _296[32];
     soCollisionHitData m_hitData;
     soSet<soCollisionHitData> m_hitDataSet;
-    ykHitGroupInfo m_hitGroupsInfo;
+    ykDataGroup m_ykDataGroup;
     ykData m_ykData;
 
 public:

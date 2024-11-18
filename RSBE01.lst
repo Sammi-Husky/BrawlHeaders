@@ -1099,6 +1099,9 @@ CC008000:WGPIPE
 27,1,0028DBA4:isHaved__8BaseItemFv
 27,1,0028F518:getTeamOwnerTaskId__8BaseItemFv
 
+// ykData
+27,1,00275FDC:__ct__6ykDataFv
+
 // Yakumono
 27,1,0026383C:setReactionFrame__8YakumonoFi
 27,1,002638DC:setCollisionHitSelfCatagory__8YakumonoFi

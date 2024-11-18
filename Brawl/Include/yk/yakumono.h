@@ -9,14 +9,20 @@
 
 class grYakumono;
 
-struct ykHitGroupInfo {
+struct ykDataGroup {
     char _0[8];
     soSet<soCollisionHitData>* m_hitDataSet;
 };
 
 struct ykData {
-    int m_numHitGroups;
-    ykHitGroupInfo* m_hitGroupsInfo;
+    int m_numDataGroups;
+    ykDataGroup* m_dataGroups;
+
+    ykData();
+    inline ykData(int numDataGroups, ykDataGroup* dataGroups) {
+        m_numDataGroups = numDataGroups;
+        m_dataGroups = dataGroups;
+    }
 };
 
 struct ykAreaData : ykData {
