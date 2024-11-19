@@ -116,7 +116,7 @@ public:
     enum VariableInt {
         Variable_Int_Motion_Kind = 20000,
         Variable_Int_Status_Kind = 20001,
-        Variable_Int_Status_Ground_Correct = 20002,
+        Variable_Int_Status_Ground_Correct_Kind = 20002,
         Variable_Int_Status_Prev_Kind = 20003,
         Variable_Int_Status_Last_Transition_Group_Id = 20004,
         Variable_Int_Status_Last_Transition_Unit_Id = 20005,
