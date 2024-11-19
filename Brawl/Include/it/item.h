@@ -179,6 +179,8 @@ public:
     };
 
     enum AreaKind {
+        Area_Body = 0x0,
+        Area_Wind = 0x1,
         Area_Pickup = 0x2,
     };
 

@@ -39,7 +39,7 @@ public:
     virtual bool setTeamYakumono(u32 teamId, u32 teamOwnerId);
     virtual bool getTeamYakumono(u32 unk1);
     virtual bool setOffsetAttack(Vec3f* offsetPos, int index);
-    virtual void setAreaGimmick(soAreaData* areaData, soAreaInit* areaInit, ykAreaData* data, bool unk4);
+    virtual void setAreaGimmick(soAreaData* areaData, soSet<soAreaData>* areaInit, ykAreaData* data, bool unk4);
     virtual void setAttackGimmick(int index, int groupIndex, u32 nodeIndex, AttackData* grAttackData,
                                   AttackDetails* grAttackDetails);
     virtual void setSoCollisionAttackData(soCollisionAttackData* attackData, AttackData* grAttackData,

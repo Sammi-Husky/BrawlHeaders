@@ -15,12 +15,6 @@ struct soCollisionHitData {
 };
 static_assert(sizeof(soCollisionHitData) == 32, "Class is wrong size!");
 
-struct soCollisionHitPartsInfo {
-    soCollisionHitData* m_partsHitData;
-    u32 m_numHitParts;
-};
-static_assert(sizeof(soCollisionHitPartsInfo) == 8, "Class is wrong size!");
-
 class soCollisionHitPart {
     int m_status;
     char _0x4[4];

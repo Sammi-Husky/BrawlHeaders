@@ -8,21 +8,11 @@
 struct soCameraRange {
     char _[0x4];
     Rect2D m_range;
-
-    struct Set {
-        soCameraRange* m_cameraRanges;
-        u32 m_numCameraRanges;
-    };
 };
 static_assert(sizeof(soCameraRange) == 0x14, "Class is wrong size!");
 
 struct soCameraClipSphere {
     char _[0x14];
-
-    struct Set {
-        soCameraClipSphere* m_cameraClipSpheres;
-        u32 m_numCameraClipSpheres;
-    };
 };
 static_assert(sizeof(soCameraClipSphere) == 0x14, "Class is wrong size!");
 

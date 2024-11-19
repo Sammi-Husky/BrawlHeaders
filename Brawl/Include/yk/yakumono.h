@@ -9,18 +9,24 @@
 
 class grYakumono;
 
-struct ykHitGroupInfo {
+struct ykDataGroup {
     char _0[8];
-    soCollisionHitPartsInfo* m_hitPartsInfo;
+    soSet<soCollisionHitData>* m_hitDataSet;
 };
 
 struct ykData {
-    int m_numHitGroups;
-    ykHitGroupInfo* m_hitGroupsInfo;
+    int m_numDataGroups;
+    ykDataGroup* m_dataGroups;
+
+    ykData();
+    inline ykData(int numDataGroups, ykDataGroup* dataGroups) {
+        m_numDataGroups = numDataGroups;
+        m_dataGroups = dataGroups;
+    }
 };
 
 struct ykAreaData : ykData {
-    soAreaInit* m_areaInit;
+    soSet<soAreaData>* m_areaDataSet;
 };
 
 class Yakumono : public StageObject, public soCollisionAttackEventObserver {

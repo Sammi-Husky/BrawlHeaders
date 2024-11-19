@@ -1128,6 +1128,16 @@ public:
         Scaling_Kind_Thunder = 0x2
     };
 
+    enum AreaKind {
+        Area_Body = 0x0,
+
+        Area_Tread_Jump_Check = 0x2,
+
+        Area_Item_Pickup = 0x6,
+        Area_Item_Pickup_Air = 0x7,
+        Area_Wind = 0x8
+    };
+
     int m_entryId;
     char _272[44];
     ftOutsideEventPresenter m_outsideEventPresenter;

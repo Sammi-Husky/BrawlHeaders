@@ -43,7 +43,7 @@ class grGimmickLadder : public grYakumono {
 protected:
     grGimmickLadderData* m_ladderData;
     soAreaData m_areaData;
-    soAreaInit m_areaInit;
+    soSet<soAreaData> m_areaDataSet;
     ykAreaData m_ykData;
     Vec3f m_upperOffsetPos;
     Vec3f m_underOffsetPos;

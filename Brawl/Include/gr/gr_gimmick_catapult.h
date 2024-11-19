@@ -58,17 +58,15 @@ protected:
     int m_360;
     int m_364;
     soAreaData m_areaData;
-    soAreaInit m_areaInit;
+    soSet<soAreaData> m_areaDataSet;
     ykAreaData m_ykData;
 
 public:
-    grGimmickCatapult(const char* taskName) : grYakumono(taskName)
+    inline grGimmickCatapult(const char* taskName) : grYakumono(taskName)
     {
         m_motionPath = NULL;
         m_state = 0;
         m_frameCount = 0.0;
-        m_ykData.m_numHitGroups = 0;
-        m_ykData.m_hitGroupsInfo = NULL;
         m_360 = -1;
         m_364 = -1;
     };
