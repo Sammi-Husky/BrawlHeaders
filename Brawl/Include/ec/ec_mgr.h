@@ -33,6 +33,7 @@ public:
     void setMdlAnmIdx(u32, u32, s8);
     void setMdlEnableUpdate(u32, bool, s8);
     void setMdlFrame(u32, float, s8);
+    void setSlowRate(u32 effectHandleID, u32 slowMagnitude);
 
     virtual ~ecMgr();
 };
