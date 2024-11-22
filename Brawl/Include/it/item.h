@@ -141,8 +141,8 @@ public:
         Anim_Cmd_Request_Slow = 0x1B,
         Anim_Cmd_Remove_Slow = 0x1C,
         Anim_Cmd_Set_Team = 0x1D,
-        Anim_Cmd_Enable_Pickup = 0x1E,
-        Anim_Cmd_Disable_Pickup = 0x1F,
+        Anim_Cmd_Enable_Area = 0x1E,
+        Anim_Cmd_Disable_Area = 0x1F,
         Anim_Cmd_Disable_Eatable_Target_Item_Pickup = 0x20,
         Anim_Cmd_Set_Pos_Target = 0x21,
     };
@@ -282,7 +282,7 @@ public:
     virtual void setVisibilityWhole(u8);
     virtual void setVisibilityWholeForce(u8);
     virtual u8 getVisibilityWhole();
-    virtual void setSituationKind(int);
+    virtual void setSituationKind(SituationKind);
     virtual bool isConstraint();
     virtual void setConstraintTargetNode(int);
     virtual bool isSyncOwnerStatus();

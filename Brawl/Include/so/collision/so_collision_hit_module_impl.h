@@ -24,12 +24,12 @@ public:
     virtual void begin();
     virtual void clean();
     virtual void sleep(bool);
-    virtual void add(void*, u32 collisionHitGroupIndex);
-    virtual void add(int*, u32 collisionHitGroupIndex);
+    virtual void add(soSet<soCollisionHitData>*, u32 collisionHitGroupIndex);
+    virtual void add(soSet<soCollisionHitData::Simple>*, u32 collisionHitGroupIndex);
     virtual void resetStatusAll(u32 collisionHitGroupIndex);
     virtual void set(u32 collisionHitPartIndex, soCollisionHitData* hitData, u32 collisionHitGroupIndex);
-    virtual void set(void*, u32 collisionHitGroupIndex);
-    virtual void set(int*, u32 collisionHitGroupIndex);
+    virtual void set(soSet<soCollisionHitData>*, u32 collisionHitGroupIndex);
+    virtual void set(soSet<soCollisionHitData::Simple>*, u32 collisionHitGroupIndex);
     virtual void setStatus(u32 collisionHitPartIndex, int status, u32 collisionHitGroupIndex);
     virtual void setStatusNode(int, int status, u32 collisionHitGroupIndex);
     virtual void setStatusNodeDefault(int, int status, u32 collisionHitGroupIndex);
@@ -57,8 +57,8 @@ public:
     virtual void setGlobalOffset(u8, u32 collisionHitGroupIndex);
     virtual void setMultiSituation(u32 situationIndex, u32 collisionHitGroupIndex);
     virtual void initMultiSituation(u32 collisionHitGroupIndex);
-    virtual void setOpponentCategory(u32 category, bool, u32 collisionHitGroupIndex);
-    virtual void setSelfCategory(u32 category, u32 collisionHitGroupIndex);
+    virtual void setOpponentCategory(u32 categoryMask, bool, u32 collisionHitGroupIndex);
+    virtual void setSelfCategory(soCollision::Category, u32 collisionHitGroupIndex);
     virtual void checkLog();
     virtual u32 getGroupNum();
     virtual bool isReactionFrame();
@@ -91,12 +91,12 @@ public:
     virtual void begin();
     virtual void clean();
     virtual void sleep(bool);
-    virtual void add(void*, u32 collisionHitGroupIndex);
-    virtual void add(int*, u32 collisionHitGroupIndex);
+    virtual void add(soSet<soCollisionHitData>*, u32 collisionHitGroupIndex);
+    virtual void add(soSet<soCollisionHitData::Simple>*, u32 collisionHitGroupIndex);
     virtual void resetStatusAll(u32 collisionHitGroupIndex);
     virtual void set(u32 collisionHitPartIndex, soCollisionHitData* hitData, u32 collisionHitGroupIndex);
-    virtual void set(void*, u32 collisionHitGroupIndex);
-    virtual void set(int*, u32 collisionHitGroupIndex);
+    virtual void set(soSet<soCollisionHitData>*, u32 collisionHitGroupIndex);
+    virtual void set(soSet<soCollisionHitData::Simple>*, u32 collisionHitGroupIndex);
     virtual void setStatus(u32 collisionHitPartIndex, int status, u32 collisionHitGroupIndex);
     virtual void setStatusNode(int, int status, u32 collisionHitGroupIndex);
     virtual void setStatusNodeDefault(int, int status, u32 collisionHitGroupIndex);
@@ -124,8 +124,8 @@ public:
     virtual void setGlobalOffset(u8, u32 collisionHitGroupIndex);
     virtual void setMultiSituation(u32 situationIndex, u32 collisionHitGroupIndex);
     virtual void initMultiSituation(u32 collisionHitGroupIndex);
-    virtual void setOpponentCategory(u32 category, bool, u32 collisionHitGroupIndex);
-    virtual void setSelfCategory(u32 category, u32 collisionHitGroupIndex);
+    virtual void setOpponentCategory(u32 categoryMask, bool, u32 collisionHitGroupIndex);
+    virtual void setSelfCategory(soCollision::Category, u32 collisionHitGroupIndex);
     virtual void checkLog();
     virtual u32 getGroupNum();
     virtual bool isReactionFrame();
@@ -145,7 +145,7 @@ public:
 };
 static_assert(sizeof(soCollisionHitModuleImpl) == 104, "Class is wrong size!");
 
-template <soCollision::Category TCategory, u32 TNumParts, u32 TNumGroups, class TCollisionHitModule, u32 TCategoryMask, bool TBool1>
+template <soCollision::Category TSelfCategory, u32 TNumParts, u32 TNumGroups, class TCollisionHitModule, u32 TOpponentCategoryMask, bool TBool1>
 class soCollisionHitModuleBuildConfig {
     soArrayVector<soCollisionHitPart, TNumParts> m_hitPartArrayVector;
     soArrayVector<soCollisionGroup, TNumGroups> m_collisionGroupArrayVector;
@@ -156,7 +156,7 @@ public:
                                     int taskId,
                                     gfTask::Category taskCategory,
                                     soEventObserverRegistrationDesc* registrationDesc) :
-                                    m_hitPartArrayVector(TNumParts, soCollisionHitPart(TCategory, TBool1), 0),
+                                    m_hitPartArrayVector(TNumParts, soCollisionHitPart(TSelfCategory, TOpponentCategoryMask), 0),
                                     m_collisionGroupArrayVector(TNumGroups, 0),
                                     m_hitGroupArrayVector(TNumGroups, 0),
                                     m_hitModule(moduleAccesser, taskId, taskCategory, &m_hitPartArrayVector, &m_collisionGroupArrayVector, &m_hitGroupArrayVector, registrationDesc, TBool1) {};

@@ -62,24 +62,24 @@ struct grCollisionLine {
     bool : 1;
     bool m_isEdit : 1;
     bool m_isCrush : 1;
-    bool m_isDiveDown : 1; // for Bucculus
-    bool m_isTargetPokeTrainer : 1;
+    bool m_isDive : 1; // for Bucculus
+    bool m_isTargetOther : 1;
     bool m_isTargetItem : 1;
     bool m_isTargetAll : 1;
     bool m_isRight : 1;
     bool m_isLeft: 1;
-    bool m_isTop : 1;
-    bool m_isGround : 1;
+    bool m_isUpper : 1;
+    bool m_isUnder : 1;
 
     // 16
-    bool m_noWallJump : 1;
-    bool m_isRightCliff : 1;
-    bool m_isLeftCliff : 1;
+    bool m_noAttach : 1;
+    bool m_isHangL : 1;
+    bool m_isHangR : 1;
     bool : 1;
-    bool m_isCloudThrough : 1;
+    bool m_isCloud : 1;
     bool m_isRotating : 1;
     bool : 1;
-    bool m_isPassable : 1;
+    bool m_isThroughable : 1;
 
     // 17
     MaterialType m_materialType : 8;

@@ -3,6 +3,7 @@
 #include <StaticAssert.h>
 #include <so/event/so_event_presenter.h>
 #include <so/so_null.h>
+#include <so/so_module_accesser.h>
 #include <types.h>
 
 class soArticleEventObserver : public soEventObserver<soArticleEventObserver> {
@@ -28,12 +29,12 @@ class soArticle : public soNullable, public soEventPresenter<soArticleEventObser
     virtual void changeMotion(int, int);
     virtual void setFrame(float frame);
     virtual void setRate(float rate);
-    virtual void changeStatus(int actionID);
+    virtual void changeStatus(int statusKind);
     virtual void setVisibilityWhole(u8);
     virtual void setVisibility(int, u8);
     virtual void set2nd(u8);
     virtual void action(int);
-    virtual void setSituationKind(int);
+    virtual void setSituationKind(SituationKind);
     virtual bool isConstraint();
     virtual void deactivateDescendantForce();
     virtual bool isActiveArticle();
