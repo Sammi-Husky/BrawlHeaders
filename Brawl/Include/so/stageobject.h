@@ -10,6 +10,12 @@
 #include <so/so_null.h>
 #include <types.h>
 
+#define KINETIC_ENERGY_ATTRIBUTE_MASK_NONE 0x0
+#define KINETIC_ENERGY_ATTRIBUTE_MASK_MAIN 0x1
+#define KINETIC_ENERGY_ATTRIBUTE_MASK_DAMAGE 0x2
+#define KINETIC_ENERGY_ATTRIBUTE_MASK_EXTERN 0x4
+#define KINETIC_ENERGY_ATTRIBUTE_MASK_GROUND 0x8
+
 class soActivatable {
     virtual ~soActivatable();
     bool m_isActive;
@@ -24,6 +30,14 @@ public:
         Anim_Cmd_Set_Inactive = 0x2,
         Anim_Cmd_Set_Active = 0x3,
         Anim_Cmd_Set_Air = 0x4,
+    };
+
+    enum KineticEnergyAttributeId {
+        Kinetic_Energy_Attribute_None = 0x0,
+        Kinetic_Energy_Attribute_Main = 0x1,
+        Kinetic_Energy_Attribute_Damage = 0x2,
+        Kinetic_Energy_Attribute_Extern = 0x3,
+        Kinetic_Energy_Attribute_Ground = 0x4,
     };
 
     soModuleAccesser* m_moduleAccesser;

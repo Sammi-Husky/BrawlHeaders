@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <so/collision/so_collision_hit_part.h>
+#include <so/situation/so_situation_module_impl.h>
 #include <types.h>
 
 class soCollisionHitGroup {
@@ -9,16 +10,24 @@ public:
     int m_index;
     char _4[2];
     short m_partSize;
-    float m_8;
-    float m_12;
-    char _16[4];
-    float m_20;
+    float m_posX;
+    float m_scale;
+    SituationKind m_situationKind;
+    float m_lr;
     char _24[4];
     int m_whole;
     int m_global;
     int m_xluFrameGlobal;
     int m_invincibleFrameGlobal;
-    u32 m_situation;
+    union {
+        struct {
+            u32 _ : 29;
+            bool m_isSituationODD : 1;
+            bool m_isSituationAir : 1;
+            bool m_isSituationGround : 1;
+        };
+        u32 m_multiSituation;
+    };
     char _48[1];
     bool m_49;
     bool m_50;

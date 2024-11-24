@@ -6,6 +6,7 @@
 class soModuleAccesser;
 
 enum SituationKind {
+    Situation_None = -0x1,
     Situation_Ground = 0x0,
     Situation_Cliff = 0x1,
     Situation_Air = 0x2,

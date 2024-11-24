@@ -5,7 +5,7 @@
 #include <so/collision/so_collision_attack_part.h>
 #include <so/collision/so_collision.h>
 #include <so/collision/so_collision_log.h>
-#include <so/event/so_event_presenter.h>
+#include <so/situation/so_situation_module_impl.h>
 #include <so/event/so_event_presenter.h>
 #include <so/collision/so_collision_attack_event_presenter.h>
 #include <so/status/so_status_event_presenter.h>
@@ -73,7 +73,7 @@ public:
     virtual void setReactionMul(float reactionMul);
     virtual float getLr();
     virtual u32 getPartSize();
-    virtual void update(float, float lr, int taskId, Vec2f* pos, u32 index, Vec2f* speed);
+    virtual void update(Vec2f* pos, float scale, float lr, SituationKind kind, Vec2f* speed);
     virtual void checkLog();
     virtual bool check();
     virtual void refLogGroup(u32 groupIndex, u32 logGroupIndex);
@@ -110,7 +110,7 @@ public:
     void* m_collisionGroupArray;
     soCollision m_collision;
     char _128[8];
-    int m_situation;
+    soCollision::Situation m_situation;
     float m_lr;
     int m_isInflict;
     int m_isInflictStatus;
@@ -173,7 +173,7 @@ public:
     virtual void setReactionMul(float reactionMul);
     virtual float getLr();
     virtual u32 getPartSize();
-    virtual void update(float, float lr, int taskId, Vec2f* pos, u32 index, Vec2f* speed);
+    virtual void update(Vec2f* pos, float scale, float lr, SituationKind kind, Vec2f* speed);
     virtual void checkLog();
     virtual bool check();
     virtual void refLogGroup(u32 groupIndex, u32 logGroupIndex);

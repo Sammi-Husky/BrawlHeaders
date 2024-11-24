@@ -5,7 +5,6 @@
 #include <so/collision/so_collision_hit_group.h>
 #include <so/so_array.h>
 #include <so/event/so_event_presenter.h>
-#include <so/event/so_event_presenter.h>
 #include <so/status/so_status_event_presenter.h>
 #include <so/collision/so_collision_hit_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
@@ -18,7 +17,7 @@ class soCollisionHitModule : public soNullable {
 public:
     virtual ~soCollisionHitModule();
     virtual void activate(float, float, float, u32 collisionIndex, u32 collisionHitGroupIndex);
-    virtual void activate(float, float, float, void*, u32 collisionIndex);
+    virtual void activate(float, float, float, int taskId, u32 collisionIndex);
     virtual void reset(float, float, float, u32 collisionIndex, u32 collisionHitGroupIndex);
     virtual void deactivate();
     virtual void begin();
@@ -37,8 +36,8 @@ public:
     virtual void setWhole(int, u32 collisionHitGroupIndex);
     virtual int getWhole(u32 collisionHitGroupIndex);
     virtual void setCheckCatch(bool, u32 collisionHitGroupIndex);
-    virtual void update(float, float, float, int, u32 collisionHitGroupIndex);
-    virtual void update(float, float, float, int);
+    virtual void update(float posX, float scale, float lr, SituationKind, u32 collisionHitGroupIndex);
+    virtual void update(float posX, float scale, float lr, SituationKind);
     virtual void resetStatusGlobal(u32 collisionHitGroupIndex);
     virtual void setXluGlobal(u32 collisionHitGroupIndex);
     virtual void cancelXluGlobal(u32 collisionHitGroupIndex);
@@ -55,7 +54,7 @@ public:
     virtual u32 getPartHeight(u32 collisionHitPartIndex, u32 collisionHitGroupIndex);
     virtual void setNoTeam(bool);
     virtual void setGlobalOffset(u8, u32 collisionHitGroupIndex);
-    virtual void setMultiSituation(u32 situationIndex, u32 collisionHitGroupIndex);
+    virtual void setMultiSituation(SituationKind situationKind, u32 collisionHitGroupIndex);
     virtual void initMultiSituation(u32 collisionHitGroupIndex);
     virtual void setOpponentCategory(u32 categoryMask, bool, u32 collisionHitGroupIndex);
     virtual void setSelfCategory(soCollision::Category, u32 collisionHitGroupIndex);
@@ -85,7 +84,7 @@ public:
 
     virtual ~soCollisionHitModuleImpl();
     virtual void activate(float, float, float, u32 collisionIndex, u32 collisionHitGroupIndex);
-    virtual void activate(float, float, float, void*, u32 collisionIndex);
+    virtual void activate(float, float, float, int taskId, u32 collisionIndex);
     virtual void reset(float, float, float, u32 collisionIndex, u32 collisionHitGroupIndex);
     virtual void deactivate();
     virtual void begin();
@@ -104,8 +103,8 @@ public:
     virtual void setWhole(int, u32 collisionHitGroupIndex);
     virtual int getWhole(u32 collisionHitGroupIndex);
     virtual void setCheckCatch(bool, u32 collisionHitGroupIndex);
-    virtual void update(float, float, float, int, u32 collisionHitGroupIndex);
-    virtual void update(float, float, float, int);
+    virtual void update(float posX, float scale, float lr, SituationKind, u32 collisionHitGroupIndex);
+    virtual void update(float posX, float scale, float lr, SituationKind);
     virtual void resetStatusGlobal(u32 collisionHitGroupIndex);
     virtual void setXluGlobal(u32 collisionHitGroupIndex);
     virtual void cancelXluGlobal(u32 collisionHitGroupIndex);
@@ -122,7 +121,7 @@ public:
     virtual u32 getPartHeight(u32 collisionHitPartIndex, u32 collisionHitGroupIndex);
     virtual void setNoTeam(bool);
     virtual void setGlobalOffset(u8, u32 collisionHitGroupIndex);
-    virtual void setMultiSituation(u32 situationIndex, u32 collisionHitGroupIndex);
+    virtual void setMultiSituation(SituationKind situationKind, u32 collisionHitGroupIndex);
     virtual void initMultiSituation(u32 collisionHitGroupIndex);
     virtual void setOpponentCategory(u32 categoryMask, bool, u32 collisionHitGroupIndex);
     virtual void setSelfCategory(soCollision::Category, u32 collisionHitGroupIndex);

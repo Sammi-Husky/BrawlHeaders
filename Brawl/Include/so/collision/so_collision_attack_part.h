@@ -263,7 +263,13 @@ struct soCollisionAttackAbsolute {
 };
 
 class soCollisionAttackPart {
-    int m_0x0;
+    enum Status {
+        Status_Inactive = 0x0,
+        Status_Set = 0x1,
+        Status_Active = 0x2
+    };
+
+    Status m_status;
     soCollisionAttackData m_attackData;
     soArrayVector<clTarget, 7> m_clTargetArrayVector;
     int m_groupIndex;

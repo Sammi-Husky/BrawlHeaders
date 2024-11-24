@@ -27,7 +27,7 @@ public:
     virtual void setSize(u32 partIndex, float size);
     virtual void setPos(int nodeIndex, Vec3f* startOffsetPos, Vec3f* endOffsetPos);
     virtual soCollisionSearchData* getData(u32 partIndex);
-    virtual void update(float posX, float);
+    virtual void update(float posX, float scale);
     virtual void checkLog();
     virtual bool check();
     virtual int isInflict();
@@ -63,7 +63,7 @@ public:
     virtual void setSize(u32 partIndex, float size);
     virtual void setPos(int nodeIndex, Vec3f* startOffsetPos, Vec3f* endOffsetPos);
     virtual soCollisionSearchData* getData(u32 partIndex);
-    virtual void update(float posX, float);
+    virtual void update(float posX, float scale);
     virtual void checkLog();
     virtual bool check();
     virtual int isInflict();

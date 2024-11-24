@@ -1053,7 +1053,7 @@ CC008000:WGPIPE
 27,1,0010B8F8:setBeat__9ftManagerFii
 27,1,0010BCF4:setSUlcide__9ftManagerFi
 27,1,0010BF4C:pickupCoin__9ftManagerFii
-27,1,00109E14:setWarpFighter__9ftManagerFiP5Vec3ffb
+27,1,00109E14:setWarpFighter__9ftManagerFiP5Vec3ffUl
 27,1,0010ADE8:getFighterCenterPos__9ftManagerFii
 27,1,0010AF34:getFighterLr__9ftManagerFii
 27,1,0010a164:getFighterOperationStatus__9ftManagerFi
@@ -1061,7 +1061,7 @@ CC008000:WGPIPE
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi
-27,1,0013C860:warp__7FighterFP5Vec3ffb
+27,1,0013C860:warp__7FighterFP5Vec3ffUl
 27,1,0012B4F0:start__7FighterFP5Vec3fffib
 
 // ftOwner
