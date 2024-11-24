@@ -1128,6 +1128,17 @@ public:
         Scaling_Kind_Thunder = 0x2
     };
 
+    enun KineticEnergyType {
+        Kinetic_Energy_Motion = 0x0,
+        Kinetic_Energy_Gravity = 0x1,
+        Kinetic_Energy_Control = 0x2,
+        Kinetic_Energy_Stop = 0x3,
+        Kinetic_Energy_Damage = 0x4,
+        Kinetic_Energy_Env_Wind = 0x5,
+        Kinetic_Energy_Ground_Movement = 0x6,
+        Kinetic_Energy_Jostle = 0x7,
+    };
+
     enum AreaKind {
         Area_Body = 0x0,
 
