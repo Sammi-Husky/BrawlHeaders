@@ -1078,16 +1078,16 @@ public:
         Status_Work_Float_Rebound_Lr = 0x21000002,
 
 
-        Status_Work_Flag_Reserve_Dive = 0x22000002,
+        Status_Work_Flag_Dive = 0x22000002,
 
-        Status_Work_Flag_Reserve_Jump_Mini = 0x22000006,
-        Status_Work_Flag_Reserve_Jump_From_Tread = 0x22000007,
-        Status_Work_Flag_Reserve_Jump_From_Ladder = 0x22000008,
+        Status_Work_Flag_Jump_Mini = 0x22000006,
+        Status_Work_Flag_Jump_From_Tread = 0x22000007,
+        Status_Work_Flag_Jump_From_Ladder = 0x22000008,
 
-        Status_Work_Flag_Reserve_Jump_From_Shoot = 0x2200000A,
-        Status_Work_Flag_Reserve_Jump_From_Water = 0x2200000B,
-        Status_Work_Flag_Reserve_Jump_From_Spring = 0x2200000C,
-        Status_Work_Flag_Reserve_Disable_Outside_Energy = 0x2200000D,
+        Status_Work_Flag_Jump_From_Shoot = 0x2200000A,
+        Status_Work_Flag_Jump_From_Water = 0x2200000B,
+        Status_Work_Flag_Jump_From_Spring = 0x2200000C,
+        Status_Work_Flag_Disable_Outside_Energy = 0x2200000D,
 
 
         Status_Tread_Work_Float_Jump_Speed_Mul = 0x21000004,
@@ -1128,7 +1128,7 @@ public:
         Scaling_Kind_Thunder = 0x2
     };
 
-    enun KineticEnergyType {
+    enum KineticEnergyType {
         Kinetic_Energy_Motion = 0x0,
         Kinetic_Energy_Gravity = 0x1,
         Kinetic_Energy_Control = 0x2,
@@ -1254,6 +1254,6 @@ public:
     void setSlow(bool setStatus, int slowStrength, int duration, bool useTimerEffect);
     void setHeartSwap(int givingPlayerEntryID, int givingPlayerEntryId, bool setStatus);
     void startScaling(bool setStatus, bool isPoison);
-    void warp(Vec3f* pos, float lr, bool showEffect);
+    void warp(Vec3f* pos, float lr, u32 showEffect);
 };
 static_assert(sizeof(Fighter) == 404, "Class is wrong size!");

@@ -133,7 +133,7 @@ public:
     void setScaling(int entryId, int unk1, int unk2);
     void setInfiniteScaling(int entryId, int unk1, int unk2);
     void setThunder(int inflictingEntryId, int unk2);
-    void setWarpFighter(int entryId, Vec3f* pos, float lr, bool showEffect);
+    void setWarpFighter(int entryId, Vec3f* pos, float lr, u32 flags);
     void setFighterOperationStatus(int entryId, int fighterOperationStatus);
 
     void pickupCoin(int entryId, int amount);
