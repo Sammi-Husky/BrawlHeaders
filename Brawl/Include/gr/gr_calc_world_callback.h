@@ -51,7 +51,19 @@ public:
     inline void setup(u32 numNodes, u32 flags, HeapType heapType = Heaps::StageInstance) {
         m_numNodeCallbackData = numNodes;
         this->initialize(0, heapType);
-        m_nodeCallbackDatas[numNodes - 1].m_flags |= flags;
+        for (u32 i = 0; i < numNodes; i++) {
+            m_nodeCallbackDatas[i].m_flags |= flags;
+
+        }
+    }
+
+    inline void setup(u32 numNodes, const u32* flags, HeapType heapType = Heaps::StageInstance) {
+        m_numNodeCallbackData = numNodes;
+        this->initialize(0, heapType);
+        for (u32 i = 0; i < numNodes; i++) {
+            m_nodeCallbackDatas[i].m_flags |= flags[i];
+
+        }
     }
 };
 static_assert(sizeof(grCalcWorldCallBack) == 16, "Class is wrong size!");
