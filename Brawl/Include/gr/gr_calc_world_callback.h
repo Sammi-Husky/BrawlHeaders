@@ -47,6 +47,12 @@ public:
     virtual void ExecCallbackC();                               // TODO
     virtual int initialize(bool unk1, HeapType heapType);
     virtual int clearAll();
+
+    inline void setup(u32 numNodes, u32 flags, HeapType heapType = Heaps::StageInstance) {
+        m_numNodeCallbackData = numNodes;
+        this->initialize(0, heapType);
+        m_nodeCallbackDatas[numNodes - 1].m_flags |= flags;
+    }
 };
 static_assert(sizeof(grCalcWorldCallBack) == 16, "Class is wrong size!");
 
