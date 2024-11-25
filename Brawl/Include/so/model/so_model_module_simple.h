@@ -36,7 +36,7 @@ public:
     virtual void setNodeRotate();
     virtual void getNodeTranslate();
     virtual void setNodeTranslate();
-    virtual void getNodeId();
+    virtual u32 getNodeId(char* nodeName);
     virtual void getCorrectNodeId();
     virtual void getRealNodeId();
     virtual void getNodeName();
@@ -126,7 +126,7 @@ public:
     virtual void setNodeRotate();
     virtual void getNodeTranslate();
     virtual void setNodeTranslate();
-    virtual void getNodeId();
+    virtual u32 getNodeId(char* nodeName);
     virtual void getCorrectNodeId();
     virtual void getRealNodeId();
     virtual void getNodeName();

@@ -209,6 +209,7 @@ CC008000:WGPIPE
 800604f0:setMdlAnmIdx__5ecMgrFUlUlSc
 80060584:setMdlEnableUpdate__5ecMgrFUlbSc
 80060618:setMdlFrame__5ecMgrFUlfSc
+8006102C:setSlowRate__5ecMgrFUlUl
 
 // efScreen
 8005e0fc:requestFill__8efScreenFfiiP8_GXColor
