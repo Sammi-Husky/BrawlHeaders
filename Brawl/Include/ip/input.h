@@ -51,6 +51,9 @@ struct ipPadButton {
             bool m_attack : 1;
         };
     };
+
+    inline ipPadButton() { };
+    inline ipPadButton(u32 mask) : m_mask(mask) {};
 };
 static_assert(sizeof(ipPadButton) == 4, "Class is wrong size!");
 
