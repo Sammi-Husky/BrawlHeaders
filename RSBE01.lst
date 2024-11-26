@@ -1026,6 +1026,9 @@ CC008000:WGPIPE
 27,1,000c0ee8:isEnableSubColor__soColorBlendModuleImplFv
 27,1,000c0ee0:getSubColor__soColorBlendModuleImplFv
 
+// soController
+27,1,0005AA38:getButtonMask__12soControllerFQ212soController9PadButton
+
 // ftEntryManager
 27,1,00119110:getEntity__14ftEntryManagerFUl
 

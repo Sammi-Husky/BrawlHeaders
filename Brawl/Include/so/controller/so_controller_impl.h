@@ -1,11 +1,31 @@
 #pragma once
 
-#include <StaticAssert.h>
 #include <so/so_null.h>
+#include <ip/input.h>
 #include <types.h>
 
 class soController : public soNullable {
 public:
+    enum PadButton {
+        Pad_Button_Attack = 0x0,
+        Pad_Button_Special = 0x1,
+        Pad_Button_Jump = 0x2,
+        Pad_Button_Guard = 0x3,
+        Pad_Button_Guard_2 = 0x4,
+        Pad_Button_Smash = 0x5,
+        Pad_Button_Appeal_Hi = 0x6,
+        Pad_Button_Appeal_Lw = 0x7,
+        Pad_Button_Appeal_S = 0x8,
+        Pad_Button_Appeal_S_L = 0x9,
+        Pad_Button_Appeal_S_R = 0xA,
+        Pad_Button_Dir_L = 0xB,
+        Pad_Button_Dir_Hi = 0xC,
+        Pad_Button_Dir_R = 0xD,
+        Pad_Button_Stock_Share = 0xE,
+        Pad_Button_CStick = 0xF,
+        Pad_Button_Flick_Jump = 0x10,
+    };
+
     virtual void resetFlick();
     virtual void resetButton();
     virtual void resetTrigger();
@@ -18,7 +38,7 @@ public:
     virtual void resetSubStickY();
     virtual void resetSubStick();
     virtual void reset();
-    virtual void update(void*, bool);
+    virtual void update(Input*, bool);
     virtual void resetFlickX();
     virtual void resetFlickY();
     virtual void setOff(bool);
@@ -50,6 +70,8 @@ public:
     virtual void resetFlickBonus();
     virtual void resetFlickBonusLr();
     virtual ~soController();
+
+    static u32 getButtonMask(PadButton);
 };
 static_assert(sizeof(soController) == 8, "Class is wrong size!");
 
@@ -109,7 +131,7 @@ public:
     virtual void resetSubStickY();
     virtual void resetSubStick();
     virtual void reset();
-    virtual void update(void*, bool);
+    virtual void update(Input*, bool);
     virtual void resetFlickX();
     virtual void resetFlickY();
     virtual void setOff(bool);
