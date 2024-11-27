@@ -150,9 +150,9 @@ public:
 
     struct SimpleEffectData {
         int m_id;
-        short m_repeatFrames;
+        short m_repeatFrame;
         short m_nodeIndex;
-        short m_endFrames;
+        short m_endFrame;
         short m_0xc;
     };
 
@@ -168,8 +168,8 @@ public:
         float m_framesActive;
         int m_handleId;
         int m_id;
-        u32 m_repeatFrames;
-        u32 m_endFrames;
+        u32 m_repeatFrame;
+        u32 m_endFrame;
         short m_nodeIndex;
         short m_0x1a;
         Vec2f m_offsetPos;
