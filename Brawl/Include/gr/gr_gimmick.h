@@ -177,15 +177,15 @@ public:
     };
 
     // 5C
-    int m_numSoundGenerators;
+    int m_soundGeneratorNum;
     // 60
     snd3DGenerator* m_soundGenerators;
     // 64
-    int m_numSoundEffects;
+    int m_soundEffectNum;
     // 68
     Effect_Info* m_soundEffects;
     // 6C
-    int m_numEffects;
+    int m_effectNum;
     // 70
     Effect_Info* m_effects;
     // 74
