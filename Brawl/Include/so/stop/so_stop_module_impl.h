@@ -39,15 +39,15 @@ private:
 public:
 	soModuleAccesser* m_moduleAccesser;
 
-	virtual void setSpecialStop(u32);
+	virtual void setSpecialStop(u32 duration);
 	virtual ~soStopModuleImpl();
 	virtual void activate();
 	virtual void end(int);
 	virtual void setHitStop();
 	virtual void cancelHitStop();
-	virtual void setOtherStop(int);
+	virtual void setOtherStop(u32 duration);
 	virtual void cancelOtherStop();
-	virtual void setLinkStop(u32);
+	virtual void setLinkStop(u32 duration);
 	virtual u32 isStop();
 	virtual u32 isSpecialStop();
 	virtual u32 isHit();
@@ -55,7 +55,7 @@ public:
 	virtual void update();
 	virtual int getHitStopFrame();
 	virtual int getHitStopRealFrame();
-	virtual void setHitStopFrame(u32, int);
+	virtual void setHitStopFrame(u32 duration, bool allowSDI);
 	virtual void setHitStopFrameFix(int);
 }; 
 static_assert(sizeof(soStopModuleImpl) == 0x24, "Class is wrong size!");
