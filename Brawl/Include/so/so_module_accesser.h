@@ -29,6 +29,7 @@
 #include <so/capture/so_capture_module_impl.h>
 #include <so/item/so_item_manage_module_impl.h>
 #include <so/turn/so_turn_module_impl.h>
+#include <so/stop/so_stop_module_impl.h>
 #include <types.h>
 
 class StageObject;
@@ -52,7 +53,7 @@ public:
     soDamageModule* m_damageModule;
     void* m_catchModule;
     void* m_captureModule;
-    void* m_stopModule;
+    soStopModule* m_stopModule;
     void* m_turnModule;
     void* m_shakeModule;
     soSoundModule* m_soundModule;
