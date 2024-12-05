@@ -96,7 +96,8 @@ public:
     float m_lr;
     char _60[8];
     int m_button;
-    char _72[8];
+    int m_buttonPrev;
+    char _76[4];
     int m_trigger;
     int m_release;
     soControllerTriggerData m_triggerData[2];
