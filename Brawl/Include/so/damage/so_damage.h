@@ -38,7 +38,7 @@ struct soDamageLog {
     float m_angle;
     float m_lr;
     float m_frame;
-    float m_hitStopFrame;
+    u32 m_hitStopFrame;
     soCollisionAttackData::Attribute m_attribute;
     float m_damageAdd;
     int m_attackerTeamNo;
