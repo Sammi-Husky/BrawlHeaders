@@ -1398,6 +1398,7 @@ CC008000:WGPIPE
 80069a30:setCursorY__7MessageFf
 80069d40:printf__7MessageFPCce
 8006b134:getPrintIndexData__7MessageFPvUlPPcPUl
+8006bc10:utf8to16__7MessageFPwPCc
 
 // grTenganEvent
 27,1,0027BBD8:__ct__13grTenganEventFv

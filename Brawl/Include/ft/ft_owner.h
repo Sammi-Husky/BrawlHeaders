@@ -33,5 +33,6 @@ public:
     virtual void addAttackPattern(void*);
 
     int getStockCount();
+    void setMetal(bool);
 };
 static_assert(sizeof(ftOwner) == 16, "Class is wrong size!");
