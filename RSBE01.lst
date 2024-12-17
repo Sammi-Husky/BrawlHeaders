@@ -19,7 +19,6 @@
 8059FF80:g_gfSceneRoot
 8049ebe0:g_Network
 805a02a4:g_muWifiInterfaceTask
-80406920:MOD_PATCH_DIR
 
 // Hardware
 CC008000:WGPIPE
@@ -509,7 +508,6 @@ CC008000:WGPIPE
 27,1,00225794:isAdventureStage__5StageFv
 27,1,002225ac:initPosPokeTrainer__5StageFii
 27,1,00224AF4:getItemPac__5StageFPP9gfArchivePP9gfArchive6itKindi
-27,1,00224AF4:getItemPac__5StageFPP9gfArchivePP9gfArchive6itKindiPP9gfArchivePP21itCustomizerInterface
 27,1,00224AF8:getItemGenPac__5StageFPP9gfArchive
 27,1,00224AFC:getItemPacEnemyFigure__5StageFPP9gfArchive
 27,1,00224B00:getEnemyPac__5StageFPP9gfArchivePP9gfArchivePP9gfArchivePP9gfArchive9EnemyKind
@@ -1063,14 +1061,25 @@ CC008000:WGPIPE
 27,1,0010AF34:getFighterLr__9ftManagerFii
 27,1,0010a164:getFighterOperationStatus__9ftManagerFi
 27,1,0010a248:getFighterOperationType__9ftManagerFi
+27,1,0010D034:setInfiniteScaling__9ftManagerFiQ27Fighter11ScalingKindQ27Fighter11ScalingType
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi
+27,1,00138F64:setSuperStar__7FighterFbib
 27,1,0013C860:warp__7FighterFP5Vec3ffUl
 27,1,0012B4F0:start__7FighterFP5Vec3fffib
+27,1,001370C0:startScaling__7FighterFQ27Fighter11ScalingKindQ27Fighter11ScalingType
+27,1,0012CD58:setupEquipment__7FighterFv
 
 // ftOwner
 27,1,00111B2C:getStockCount__7ftOwnerFv
+27,1,00111DEC:setMetal__7ftOwnerFb
+27,1,00111EDC:setFinal__7ftOwnerFbb
+27,1,0011204C:setInfiniteScaling__7ftOwnerFQ27Fighter11ScalingKindQ27Fighter11ScalingType
+27,1,00111DBC:setRabbitCap__7ftOwnerFb
+27,1,00111E7C:setReflector__7ftOwnerFb
+27,1,00111EAC:setFlower__7ftOwnerFb
+27,1,00111E4C:setCurry__7ftOwnerFb
 
 // ftOutsideEventPresenter
 27,1,0015B0C8:notifyOutsideEventKnockout__23ftOutsideEventPresenterFv
@@ -1092,6 +1101,7 @@ CC008000:WGPIPE
 27,1,002A8640:getItemNum__9itManagerF6itKind
 27,1,002A7BA0:removeItem__9itManagerFP8BaseItem
 27,1,002A8828:getItemFromInstanceId__9itManagerFi
+27,1,0010D878:setFinal__9ftManagerFib
 
 // BaseItem
 27,1,0027F564:__ct__8BaseItemFP8itCreate
@@ -1164,16 +1174,6 @@ CC008000:WGPIPE
 41,1,0000CF8C:getEnemyCountFromKind__9emManagerF9EnemyKind
 41,1,0000D42C:isCompArchiveAll__9emManagerFv
 41,1,0000CE84:getEnemyPtrFromId__9emManagerFi
-
-// emWeaponManager (Note: addresses are based on abridged sora_enemy_vs)
-41,1,0002A7A4:create__15emWeaponManagerFv
-41,1,0002A798:getInstance__15emWeaponManagerFv
-41,1,0002A744:remove__15emWeaponManagerFv
-
-// wnemSimple (Note: addresses are based on abridged sora_enemy_vs)
-41,1,0002BE50:__ct__10wnemSimpleFv
-41,1,0002EEAC:__dt__10wnemSimpleFv
-
 
 //gfFileIO
 8001bf0c:readFile__8gfFileIOFP15gfFileIORequest
@@ -1508,10 +1508,6 @@ CC008000:WGPIPE
 10,1,00015238:isTeamBattle__19muSelCharPlayerAreaFv
 10,1,0000FEDC:dispHighScore__13muSelCharTaskFiii
 
-// CUSTOM
-27,5,73648:g_commonSndGroupOverrideName
-27,5,736B0:g_commonSndGroupHeapLevels
-
 // gfMemoryPool
 80025c58:alloc__12gfMemoryPoolFPvUli
 800259a4:create__12gfMemoryPoolFPvUlPCc
@@ -1572,3 +1568,19 @@ CC008000:WGPIPE
 8006fc78:GetScaleH__Q22ms10CharWriterCFv
 8006fc80:GetScaleV__Q22ms10CharWriterCFv
 8006fc3c:GetTextColor__Q22ms10CharWriterCFv
+
+// CUSTOM
+27,5,73648:g_commonSndGroupOverrideName
+27,5,736B0:g_commonSndGroupHeapLevels
+80406920:MOD_PATCH_DIR
+27,1,00224AF4:getItemPac__5StageFPP9gfArchivePP9gfArchive6itKindiPP9gfArchivePP21itCustomizerInterface
+
+// emWeaponManager (Note: addresses are based on abridged sora_enemy_vs)
+41,1,0002A7A4:create__15emWeaponManagerFv
+41,1,0002A798:getInstance__15emWeaponManagerFv
+41,1,0002A744:remove__15emWeaponManagerFv
+
+// wnemSimple (Note: addresses are based on abridged sora_enemy_vs)
+41,1,0002BE50:__ct__10wnemSimpleFv
+41,1,0002EEAC:__dt__10wnemSimpleFv
+
