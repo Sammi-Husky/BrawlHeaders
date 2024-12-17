@@ -1,5 +1,8 @@
 #pragma once
 
+#include <MEM.h>
+#include <nw4r/g3d/g3d_obj.h>
+#include <nw4r/g3d/g3d_resmdl.h>
 #include <types.h>
 
 namespace nw4r {
