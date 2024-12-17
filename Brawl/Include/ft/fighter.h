@@ -2,13 +2,13 @@
 
 #include <ft/ft_entry.h>
 #include <ft/ft_outside_event_presenter.h>
-#include <ft/ft_owner.h>
 #include <ft/ft_value_accesser.h>
 #include <mt/mt_vector.h>
 #include <so/stageobject.h>
 #include <types.h>
 
 class itCustomizerInterface;
+class ftOwner;
 
 class Fighter : public StageObject, public soStatusEventObserver, public soSituationEventObserver, public soCollisionAttackEventObserver, public soCollisionHitEventObserver, public soCollisionShieldEventObserver, public soCollisionReflectorEventObserver, public soCollisionAbsorberEventObserver, public soCollisionSearchEventObserver, public soCaptureEventObserver, public soItemManageEventObserver, public soMotionEventObserver, public soDamageEventObserver, public ftEntryEventObserver, public soTurnEventObserver {
 public:
@@ -1044,7 +1044,7 @@ public:
         Instance_Work_Flag_Cursor = 0x1200001B,
         Instance_Work_Flag_Name_Cursor = 0x1200001C,
         Instance_Work_Flag_Rebirth_No_Move = 0x1200001D,
-
+        Instance_Work_Flag_Final_Discretion = 0x1200001E,
         Instance_Work_Flag_Kirby_Copy_Dedede = 0x1200001F,
         Instance_Work_Flag_Speed_Damage = 0x12000020,
         Instance_Work_Flag_Disable_Scaling = 0x12000021,
@@ -1123,9 +1123,16 @@ public:
     };
 
     enum ScalingKind {
+        Scaling_Kind_None = -0x1,
         Scaling_Kind_Status = 0x0,
         Scaling_Kind_Kinoko = 0x1,
-        Scaling_Kind_Thunder = 0x2
+        Scaling_Kind_Thunder = 0x2,
+    };
+
+    enum ScalingType {
+        Scaling_Type_None = -0x1,
+        Scaling_Type_Big = 0x0,
+        Scaling_Type_Small = 0x1,
     };
 
     enum KineticEnergyType {
@@ -1221,15 +1228,15 @@ public:
     virtual void setVisibility(int);
     virtual void notifyEventTurn(float, float, soModuleAccesser* moduleAccesser);
     virtual bool notifyHaveItemPreCheck(BaseItem* item, bool*);
-    virtual void notifyHaveItem(int, BaseItem* item, int, int, int);
-    virtual void notifyAttachItem(BaseItem* item, int, int, int, int);
-    virtual void notifyUseItem(BaseItem* item, int, int*);
-    virtual void notifyThrowItem(BaseItem* item, int, int*);
-    virtual void notifyDropItem();
+    virtual void notifyHaveItem(itParam::SizeKind, BaseItem* item, u32 nodeIndex, u32 index, bool);
+    virtual void notifyAttachItem(BaseItem* item, u32 nodeIndex, u32 attachNodeIndex, bool, bool);
+    virtual void notifyUseItem(BaseItem* item, u32 nodeIndex, int*);
+    virtual void notifyThrowItem(BaseItem* item, u32 nodeIndex, int*);
+    virtual void notifyDropItem(BaseItem*);
     virtual void notifyShootBulletItem(BaseItem* item);
-    virtual void notifyEjectItem(BaseItem* item, int);
-    virtual void notifyEjectAttachItem(BaseItem* item, int, int);
-    virtual void notifyVisibilityItem(BaseItem* item, int, int, int);
+    virtual void notifyEjectItem(BaseItem* item, u32 index, bool);
+    virtual void notifyEjectAttachItem(BaseItem* item, u32 index, bool);
+    virtual void notifyVisibilityItem(BaseItem* item, int, bool, u8);
     virtual void notifyEventSetDamage(float);
     virtual void notifyEventChangeAdvUnit();
     virtual void notifyEventBeat();
@@ -1249,11 +1256,12 @@ public:
     void start(Vec3f* pos, float lr, float damage, int, bool);
     void setCurry(bool setStatus, int unk2);
     void setHammer(bool setStatus, int unk2);
-    void setSuperStar(bool setStatus, int unk2, bool unk3);
+    void setSuperStar(bool setStatus, int duration, bool);
     void setFlower(bool setStatus, float rate, float size, int unk4, bool unk5);
     void setSlow(bool setStatus, int slowStrength, int duration, bool useTimerEffect);
     void setHeartSwap(int givingPlayerEntryID, int givingPlayerEntryId, bool setStatus);
-    void startScaling(bool setStatus, bool isPoison);
+    void startScaling(ScalingKind, ScalingType);
     void warp(Vec3f* pos, float lr, u32 showEffect);
+    void setupEquipment();
 };
 static_assert(sizeof(Fighter) == 404, "Class is wrong size!");

@@ -294,7 +294,7 @@ public:
     virtual void updateLogAttackInfo();
     virtual void deactivate();
     virtual void have(int taskId, int, int);
-    virtual void action(int);
+    virtual void action(u32, float);
     virtual void setGlowAttack(int glowAttack);
     virtual int getGlowAttack();
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
@@ -354,11 +354,11 @@ public:
     virtual void onUpdateAiDir(BaseItem* item, Vec2f*, Vec2f*, Vec2f*, Vec2f*);
     virtual void onUpdateAiMove(BaseItem* item, Vec2f*, Vec2f*, Vec2f*);
     virtual bool onSearchTarget(BaseItem* item, int* taskId, Vec3f pos, int);
-    virtual int onShoot(BaseItem* item, float lr, float, int);
-    virtual int onShootBlanks(BaseItem* item, int);
+    virtual u32 onShoot(BaseItem* item, u32, float lr, float);
+    virtual u32 onShootBlanks(BaseItem* item, u32);
     virtual int onGetBullet(BaseItem* item);
     virtual void onThrowAttack(BaseItem* item, float, float* lr, Vec3f*, Vec3f*, float* powerMulStatus, bool*);
-    virtual void onAction(BaseItem* item, int, float rate);
+    virtual void onAction(BaseItem* item, u32, float rate);
     virtual int onResult(BaseItem* item);
     virtual bool onHave(BaseItem* item, int);
     virtual bool onPreDamageCheck(BaseItem* item, int damageStatusKind, soDamageLog*);
@@ -377,7 +377,7 @@ public:
     virtual bool isSafe(BaseItem* item);
     virtual bool isConstraintHave(BaseItem* item);
     virtual bool isReferenceControlerHave(BaseItem* item);
-    virtual u32 getKineticFlags(BaseItem* item);
+    virtual itParam::KineticFlag getKineticFlags(BaseItem* item);
     virtual bool isUsePhysics(BaseItem* item);
 };
 static_assert(sizeof(itCustomizerInterface) == 12, "Class is wrong size!");

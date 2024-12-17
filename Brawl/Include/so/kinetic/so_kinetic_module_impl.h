@@ -66,7 +66,7 @@ public:
     virtual int getKineticType();
 
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
 
 };
 static_assert(sizeof(soKineticModuleImpl) == 32, "Class is wrong size!");

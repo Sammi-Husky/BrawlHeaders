@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <ft/fighter.h>
+#include <ft/ft_owner.h>
 #include <gm/gm_result_info.h>
 #include <mt/mt_vector.h>
 #include <so/damage/so_damage_attacker_info.h>
@@ -78,7 +79,11 @@ public:
     GameRule m_gameRule : 8;
     char _107[2];
     bool m_isStamina;
-    char _110[35];
+    char _110[2];
+    int m_finalStatus;
+    int m_finalEntryId;
+    int m_noDiscretionFinalCount;
+    char _122[21];
     s8 m_parasitePlayerNo;    // custom
     char _146[34];
     soEventManageModuleImpl m_eventManageModule;
@@ -130,11 +135,12 @@ public:
     void setSuperStar(int entryId);
     void setSlow(int inflictingTeam, bool setStatus, int slowStrength, int slowDuration);
     void setTimerSlow(int inflictingEntryId, bool setStatus, int slowStrength, int slowDuration);
-    void setScaling(int entryId, int unk1, int unk2);
-    void setInfiniteScaling(int entryId, int unk1, int unk2);
+    void setScaling(int entryId, Fighter::ScalingKind, Fighter::ScalingType);
+    void setInfiniteScaling(int entryId, Fighter::ScalingKind, Fighter::ScalingType);
     void setThunder(int inflictingEntryId, int unk2);
     void setWarpFighter(int entryId, Vec3f* pos, float lr, u32 flags);
     void setFighterOperationStatus(int entryId, int fighterOperationStatus);
+    void setFinal(int entryId, bool isDiscretion);
 
     void pickupCoin(int entryId, int amount);
     void setDead(int entryId, int unk1, int unk2);

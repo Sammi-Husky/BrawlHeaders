@@ -47,7 +47,7 @@ public:
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
 
     // animCmdEventObserver
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
 
     // modelEventObserver

@@ -67,7 +67,7 @@ public:
     virtual void clearAll(u32 index);
     virtual void* getParamAccesser();
 
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
 };
 static_assert(sizeof(soWorkManageModuleImpl) == 48, "Class is wrong size!");

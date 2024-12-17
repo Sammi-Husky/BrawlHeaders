@@ -120,7 +120,7 @@ public:
     virtual void changeStatus(int status, soModuleAccesser* moduleAccesser);
 
     virtual bool notifyEventCollisionAttackCheck(u32 flags);
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventCollisionAttack(float power, soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);;
 };

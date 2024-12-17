@@ -33,7 +33,7 @@ public:
     virtual void setWholeFrame(int wholeFrame);
     virtual int getWholeFrame();
 
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
 };
 static_assert(sizeof(soSlowModuleImpl) == 56, "Class is wrong size!");

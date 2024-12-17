@@ -135,7 +135,7 @@ public:
     virtual Vec3f getCenterPos(u16 index, u32 collisionHitGroupIndex);
     virtual void renderDebug();
 
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
 

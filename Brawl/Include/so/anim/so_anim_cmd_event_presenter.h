@@ -11,7 +11,7 @@ public:
     soAnimCmdEventObserver(short unitID) : soEventObserver<soAnimCmdEventObserver>(unitID) {};
 
     virtual void addObserver(short param1, s8 param2);
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
 };
 static_assert(sizeof(soAnimCmdEventObserver) == 12, "Class is wrong size!");

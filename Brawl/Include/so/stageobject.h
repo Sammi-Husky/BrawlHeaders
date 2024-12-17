@@ -73,7 +73,7 @@ public:
     virtual u32 isTreadPassive(int unk1);
     virtual void notifyLostGround(int* unk1); // TODO
 
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
 

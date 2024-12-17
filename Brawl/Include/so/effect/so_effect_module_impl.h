@@ -131,6 +131,6 @@ public:
     virtual void notifyEventCollisionAttack(float power, soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
     virtual void notifyEventCollisionShield(soCollisionAttackModule* attackModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser, float power, float posX, float);
     virtual void notifyEventCollisionShieldSearch(soCollisionSearchModule* searchModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser);
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
 };
 static_assert(sizeof(soEffectModuleImpl) == 312, "Class is wrong size!");

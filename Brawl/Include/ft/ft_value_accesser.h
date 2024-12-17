@@ -373,7 +373,7 @@ public:
         Common_Param_Float_Flower_Scale_Min = 3462,
         Common_Param_Float_Flower_Scale_Max = 3463,
         Common_Param_Float_Flower_Damage_Add_Scale_Rate = 3464,
-
+        Common_Param_Float_Flower_Static_Scale = 3465,
         Common_Param_Float_Gekikara_Motion_Rate = 3466,
         Common_Param_Float_Gekikara_Fire_Shoot_Angle = 3467,
         Common_Param_Float_Gekikara_Fire_Shoot_Angle_Speed = 3468,

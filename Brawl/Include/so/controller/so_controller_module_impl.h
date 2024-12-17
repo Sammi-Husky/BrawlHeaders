@@ -110,7 +110,7 @@ public:
     virtual void resetFlickBonus();
     virtual void resetFlickBonusLr();
 
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
 };
 static_assert(sizeof(soControllerModuleImpl) == 20, "Class is wrong size!");

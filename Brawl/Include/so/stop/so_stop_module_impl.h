@@ -58,7 +58,7 @@ public:
 	virtual void setHitStopFrame(u32 duration, bool allowSDI);
 	virtual void setHitStopFrameFix(int);
 
-	virtual u32 isObserv(char unk1);
+	virtual bool isObserv(char unk1);
 	virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
 }; 
 static_assert(sizeof(soStopModuleImpl) == 0x24, "Class is wrong size!");

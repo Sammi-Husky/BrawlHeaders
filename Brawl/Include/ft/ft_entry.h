@@ -3,12 +3,13 @@
 #include <StaticAssert.h>
 #include <so/event/so_event_presenter.h>
 #include <types.h>
-#include <ft/ft_owner.h>
 #include <ft/ft_input.h>
 #include <gm/gm_lib.h>
 #include <mt/mt_vector.h>
 
 class Fighter;
+class ftOwner;
+
 enum ftKind {
     Fighter_Mario = 0x0,
     Fighter_DonkeyKong = 0x1,

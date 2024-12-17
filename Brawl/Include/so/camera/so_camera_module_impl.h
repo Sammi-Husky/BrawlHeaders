@@ -58,7 +58,7 @@ public:
     virtual void setCameraRangeGlobalRect(Rect2D* range, soModuleAccesser* moduleAccesser, u32 index);
     virtual void setOffsetGlobalRectCenter(Rect2D* range, soModuleAccesser* moduleAccesser, u32 index);
 
-    virtual u32 isObserv(char unk1);
+    virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
 };
 static_assert(sizeof(soCameraModuleImpl) == 0x24, "Class is wrong size!");

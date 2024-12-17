@@ -83,6 +83,9 @@ public:
         Sub_Param_Int_Rotate_Node_Index = 23418,
         Anim_Param_Int_Model_Flag = 23419,
 
+        Work_Param_Int_Have_Node_Index = 23501,
+        Work_Param_Int_Trait = 23502,
+
     };
 
     enum ParamIndefinite {

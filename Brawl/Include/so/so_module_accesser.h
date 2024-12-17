@@ -78,7 +78,7 @@ public:
     void* m_physicsModule;
     void* m_slopeModule;
     soShadowModule* m_shadowModule;
-    void* m_itemManageModule;
+    soItemManageModule* m_itemManageModule;
     soColorBlendModule* m_colorBlendModule;
     void* m_jostleModule;
     void* m_abnormalModule;
@@ -197,6 +197,11 @@ public:
     inline soSlowModule* getSlowModule() const
     {
         return this->m_enumerationStart->m_slowModule;
+    }
+
+    inline soItemManageModule* getItemManageModule() const
+    {
+        return this->m_enumerationStart->m_itemManageModule;
     }
 
     inline soColorBlendModule* getColorBlendModule() const
