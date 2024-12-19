@@ -82,6 +82,9 @@ public:
     u32 getItemNum(itKind kind, int variation, int taskId, int);
     BaseItem* getItemFromInstanceId(int instanceId);
     void removeItem(BaseItem*);
+    bool preloadAssist(itKind, int variation = 0); // custom parameter
+
+
     static itManager* getInstance();
 };
 static_assert(sizeof(itManager) == 0x14c0, "Class is wrong size!");

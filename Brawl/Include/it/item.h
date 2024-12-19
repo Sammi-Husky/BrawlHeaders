@@ -30,6 +30,15 @@ public:
         Status_Born = 0x7,
     };
 
+    enum MotionKind {
+        Motion_Appear = 0x0,
+        Motion_Have = 0x1,
+        Motion_Fall = 0x2,
+        Motion_Throw = 0x3,
+        Motion_Born = 0x4,
+        Motion_Lost = 0x5,
+    };
+
     enum WorkId {
         Instance_Work_Int_Value_1 = 0x10000000,
         Instance_Work_Int_Value_2 = 0x10000001,
@@ -277,8 +286,8 @@ public:
     virtual void unlinkOwner(int);
     virtual bool isActiveArticle();
     virtual void deactivateArticle();
-    virtual void changeMotion(int, int);
-    virtual void changeStatus(int actionID);
+    virtual void changeMotion(int motionKind, bool);
+    virtual void changeStatus(int statusKind);
     virtual void setVisibilityWhole(u8);
     virtual void setVisibilityWholeForce(u8);
     virtual u8 getVisibilityWhole();
@@ -326,6 +335,7 @@ public:
     void setSafePos(Vec2f* pos);
     void warp(Vec3f* pos);
     void setVanishMode(bool);
+    bool sendTouchMessage(int taskId, Vec3f* pos, float);
 };
 static_assert(sizeof(BaseItem) == 0x3d60, "Class is wrong size!");
 

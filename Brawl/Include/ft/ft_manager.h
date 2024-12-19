@@ -141,6 +141,7 @@ public:
     void setWarpFighter(int entryId, Vec3f* pos, float lr, u32 flags);
     void setFighterOperationStatus(int entryId, int fighterOperationStatus);
     void setFinal(int entryId, bool isDiscretion);
+    bool addDragoon(int entryId, u32 variation);
 
     void pickupCoin(int entryId, int amount);
     void setDead(int entryId, int unk1, int unk2);
@@ -148,6 +149,8 @@ public:
     void setSuicide(int entryId);
     bool isProcessHeartSwap(int entryId);
     void toKnockOutHeartSwapOpposite(int entryId, soDamageAttackerInfo* attackerInfo);
+
+
 };
 static_assert(sizeof(ftManager) == 0x160, "Class is wrong size!");
 

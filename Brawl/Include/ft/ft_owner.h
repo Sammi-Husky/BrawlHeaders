@@ -41,5 +41,8 @@ public:
     void setFlower(bool);
     void setCurry(bool);
     void setInfiniteScaling(Fighter::ScalingKind, Fighter::ScalingType);
+    void setHitPointMax(float);
+    void setSlipMul(float);
+    void setSlipInterval(bool);
 };
 static_assert(sizeof(ftOwner) == 16, "Class is wrong size!");

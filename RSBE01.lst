@@ -19,6 +19,7 @@
 8059FF80:g_gfSceneRoot
 8049ebe0:g_Network
 805a02a4:g_muWifiInterfaceTask
+27,6,5910: g_stLoaderManager
 
 // Hardware
 CC008000:WGPIPE
@@ -1062,6 +1063,7 @@ CC008000:WGPIPE
 27,1,0010a164:getFighterOperationStatus__9ftManagerFi
 27,1,0010a248:getFighterOperationType__9ftManagerFi
 27,1,0010D034:setInfiniteScaling__9ftManagerFiQ27Fighter11ScalingKindQ27Fighter11ScalingType
+27,1,0010C2B8:addDragoon__9ftManagerFiUl
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi
@@ -1080,6 +1082,9 @@ CC008000:WGPIPE
 27,1,00111E7C:setReflector__7ftOwnerFb
 27,1,00111EAC:setFlower__7ftOwnerFb
 27,1,00111E4C:setCurry__7ftOwnerFb
+27,1,00111994:setHitPointMax__7ftOwnerFf
+27,1,00112108:setSlipMul__7ftOwnerFf
+27,1,00112128:setSlipInterval__7ftOwnerFb
 
 // ftOutsideEventPresenter
 27,1,0015B0C8:notifyOutsideEventKnockout__23ftOutsideEventPresenterFv
@@ -1091,7 +1096,6 @@ CC008000:WGPIPE
 27,1,002A1718:getInstance__9itManagerFv
 27,1,002A55CC:isCompItemKindArchive__9itManagerF6itKindUlb
 27,1,002A3F4C:preloadItemKindArchive__9itManagerF6itKindUlQ29itArchive4Typeb
-27,1,002A904C:getRandBasicItemSheet__9itManagerF7itGenId
 27,1,002A9E50:getLotOneItemKind__9itManagerFP14itGenSheetKind7itGenIdPQ29itManager10ItemSwitchb
 27,1,002A6FB8:createItem__9itManagerFP5Vec3fP5Vec3ff6itKindUliP16soResourceModuleUciii
 27,1,002A7004:createItem__9itManagerFP5Vec3ff6itKindUliP16soResourceModuleUciii
@@ -1102,6 +1106,7 @@ CC008000:WGPIPE
 27,1,002A7BA0:removeItem__9itManagerFP8BaseItem
 27,1,002A8828:getItemFromInstanceId__9itManagerFi
 27,1,0010D878:setFinal__9ftManagerFib
+27,1,002A4FF8:preloadAssist__9itManagerF6itKind
 
 // BaseItem
 27,1,0027F564:__ct__8BaseItemFP8itCreate
@@ -1113,6 +1118,7 @@ CC008000:WGPIPE
 27,1,0028FF6C:setSafePos__8BaseItemFP5Vec2f
 27,1,0028DBA4:isHaved__8BaseItemFv
 27,1,0028F518:getTeamOwnerTaskId__8BaseItemFv
+27,1,0028FE5C:sendTouchMessage__8BaseItemFiP5Vec3ff
 
 // ykData
 27,1,00275FDC:__ct__6ykDataFv
@@ -1574,6 +1580,8 @@ CC008000:WGPIPE
 27,5,736B0:g_commonSndGroupHeapLevels
 80406920:MOD_PATCH_DIR
 27,1,00224AF4:getItemPac__5StageFPP9gfArchivePP9gfArchive6itKindiPP9gfArchivePP21itCustomizerInterface
+27,1,002A904C:getRandBasicItemSheet__9itManagerF7itGenId
+27,1,002A4FF8:preloadAssist__9itManagerF6itKindi
 
 // emWeaponManager (Note: addresses are based on abridged sora_enemy_vs)
 41,1,0002A7A4:create__15emWeaponManagerFv

@@ -331,31 +331,40 @@ public:
     s8 m_stockCount;                     // 0x04
     s8 m_colorFileIdx;                   // 0x05
     s8 m_costumeID;                      // 0x06
-    char _1;                             // 0x07
+    char _0x07;                             // 0x07
     s8 m_startPointIdx;                  // 0x08
-    char _2[0x02];                       // 0x09
+    char _0x9[0x02];                       // 0x09
     s8 m_teamNo;                         // 0x0B
     wchar_t m_name[5];                   // 0x0c
-    char _3[4];                          // 0x16
+    char _0x16[4];                          // 0x16
     bool m_isNoVoice;                    // 0x1A
-    char _4[0x03];                       // 0x1B
+    char _0x1B[1];                       // 0x1B
+    bool m_isStamina : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    char _0x1D[1];
     u8 m_cpuType;                        // 0x1E
     u8 m_cpuRank;                        // 0x1F
-    char _5[0x02];                       // 0x20
+    char _0x20[0x02];                       // 0x20
     short m_startDamage;                 // 0x22
     short m_hitPointMax;                 // 0x24
-    char _6[0x02];                       // 0x26
+    char _0x26[0x02];                       // 0x26
     short m_glowAttack;                  // 0x28
     short m_glowDefense;                 // 0x2A
     float m_attackRatio;                 // 0x2C
     float m_damageRatio;                 // 0x30
     float m_attackReactionMul;           // 0x34
     float m_damageReactionMul;           // 0x38
-    char _7[0x04];                       // 0x3C
+    char _0x3C[0x04];                       // 0x3C
     float m_scale;                       // 0x40
     float m_visibilityScale;             // 0x44
     float m_gravity;                     // 0x48
-    char _8[0x10];                       // 0x4C
+    char _0x4C[0x10];                       // 0x4C
 };
 static_assert(sizeof(gmPlayerInitData) == 0x5C, "Class is wrong size!");
 
