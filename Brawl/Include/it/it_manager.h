@@ -18,6 +18,11 @@ public:
         ItemSwitch(bool val) : m_itemSwitch(val) { }
     };
 
+    struct ItemInfo {
+        u16 m_variation;
+        itKind m_kind : 16;
+    };
+
     char _76[116];
     u32 m_frameCount;
     int m_numItems;
@@ -30,10 +35,10 @@ public:
     char _4080[25];
     u8 m_itemNums[NUM_IT_KINDS];
     char _4283[1];
-    itKind m_nextAssistKind;
+    ItemInfo m_nextAssistInfo; // Note: Just uses itKind in vanilla
     int m_numAssists;
     int m_preloadAssistTimer;
-    soArrayList<itKind, 12> m_pokemonKindArrayList;
+    soArrayList<ItemInfo, 12> m_pokemonInfoArrayList; // Note: Just uses itKind in vanilla
     u32 m_nextPokemonIndex;
     int m_numPokemon;
     int m_numPokeballs;

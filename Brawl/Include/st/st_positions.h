@@ -22,6 +22,7 @@ public:
     float* getDeadRange(Rect2D* range);
     float* getCameraRange(Rect2D* range);
     float* getKirifudaPos(u32, Vec3f* pos);
+    void getCameraCenter(Vec3f* pos);
     void loadPositionData(nw4r::g3d::ResFile* resFile);
 
 
