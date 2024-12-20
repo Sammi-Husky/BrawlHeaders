@@ -204,4 +204,4 @@ public:
 };
 static_assert(sizeof(gfPadSystem) == 0xb78, "gfPadSystem is the wrong size!");
 
-extern gfPadSystem g_gfPadSystem;
+extern gfPadSystem* g_gfPadSystem;

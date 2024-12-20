@@ -13,7 +13,7 @@
 27,6,2EB4: g_ftInstanceManager
 27,6,2E70: g_ftAudienceManager
 27,6,5518: g_aiMgr
-805BACC0: g_gfPadSystem
+805A0040: g_gfPadSystem
 27,6,E8: g_soWorld
 80494958:g_HeapInfos
 8059FF80:g_gfSceneRoot
