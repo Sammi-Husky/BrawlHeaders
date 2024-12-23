@@ -85,7 +85,8 @@ CC008000:WGPIPE
 803f11f8:__cvt_fp2unsigned
 803f0a1c:__construct_new_array
 8002632c:free__FPv
-80403664:__flush_cache
+80004304:__flush_cache
+80403664:TRK_flush_cache
 801e892c:VIWaitForRetrace
 801d76e8:DCFlushRange
 801d77cc:ICInvalidateRange
@@ -152,7 +153,7 @@ CC008000:WGPIPE
 802a0bcc:fabsf
 
 // crc
-8038ed54:NETCalcCRC16
+8038ed50:NETCalcCRC16
 8038ee84:NETCalcCRC32
 
 
@@ -1112,7 +1113,7 @@ CC008000:WGPIPE
 27,1,0027F564:__ct__8BaseItemFP8itCreate
 27,1,0028C834:getParam__8BaseItemFQ215itValueAccesser10ParamFloat
 27,1,0028C85C:getParam__8BaseItemFQ215itValueAccesser8ParamInt
-27,1,0028C884:getParamFloat__8BaseItemFUi
+27,1,0028C884:getParamFloat__8BaseItemFUl
 27,1,0028DE00:warp__8BaseItemFP5Vec3f
 27,1,0028C7E8:setVanishMode__8BaseItemFb
 27,1,0028FF6C:setSafePos__8BaseItemFP5Vec2f
@@ -1535,7 +1536,7 @@ CC008000:WGPIPE
 // gf/gf_draw
 8001abbc:gfDrawSetupCoord2D__Fv
 8001a5c0:gfDrawSetVtxPosColorPrimEnvironment__Fv
-8001a7b0:gfDrawSetVtxPosColorTexPrimEnvironment__Fv
+8001a7ac:gfDrawSetVtxPosColorTexPrimEnvironment__Fv
 8001a980:gfDrawResetLight__Fv
 
 
@@ -1592,4 +1593,3 @@ CC008000:WGPIPE
 // wnemSimple (Note: addresses are based on abridged sora_enemy_vs)
 41,1,0002BE50:__ct__10wnemSimpleFv
 41,1,0002EEAC:__dt__10wnemSimpleFv
-

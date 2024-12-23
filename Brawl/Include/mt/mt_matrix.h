@@ -43,8 +43,10 @@ public:
         return outMatrix;
     }
 
-    inline Matrix() {
-        this->setIdentity();
+    inline Matrix(bool noInit = false) {
+        if (!noInit) {
+            this->setIdentity();
+        }
     }
     inline Matrix(Matrix* matrix) {
         *this = *matrix;
