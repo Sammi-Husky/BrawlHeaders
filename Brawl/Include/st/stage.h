@@ -185,7 +185,11 @@ public:
     virtual float getPokeTrainerPositionZ() { return 0.0f; }
     virtual int getPokeTrainerDrawLayer() { return 0; }
     virtual bool isAdventureStage() { return false; }
+#ifdef MATCHING
+    virtual void getItemPac(gfArchive** brres, gfArchive** param, itKind itemID, int variantID);
+#else
     virtual void getItemPac(gfArchive** brres, gfArchive** param, itKind itemID, int variantID, gfArchive** commonParam = NULL, itCustomizerInterface** customizer = NULL); // Note: Optional parameters for modding purposes to use custom itmParams and customizers
+#endif
     virtual void getItemGenPac(gfArchive** archive);
     virtual void getItemPacEnemyFigure(gfArchive** archive);
     virtual void getEnemyPac(gfArchive** brres, gfArchive** param, gfArchive** enmCommon, gfArchive** primFaceBrres, EnemyKind enemyKind);
