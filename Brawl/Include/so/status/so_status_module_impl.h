@@ -53,9 +53,9 @@ public:
     virtual void startWatchChange();
     virtual bool isChanged();
     virtual bool checkTransition(soModuleAccesser* moduleAccesser);
-    virtual void enableTransitionTermGroup(int);
-    virtual void unableTransitionTermGroup(int);
-    virtual void isEnableTransitionTermGroup(int);
+    virtual void enableTransitionTermGroup(int groupID);
+    virtual void unableTransitionTermGroup(int groupID);
+    virtual bool isEnableTransitionTermGroup(int groupID);
     virtual void enableTransitionTermAll(int);
     virtual void clearTransitionTermAll(int);
     virtual void* getLastStatusTransitionInfo();
@@ -101,9 +101,9 @@ public:
     virtual void startWatchChange();
     virtual bool isChanged();
     virtual bool checkTransition(soModuleAccesser* moduleAccesser);
-    virtual void enableTransitionTermGroup(int);
-    virtual void unableTransitionTermGroup(int);
-    virtual void isEnableTransitionTermGroup(int);
+    virtual void enableTransitionTermGroup(int groupID);
+    virtual void unableTransitionTermGroup(int groupID);
+    virtual bool isEnableTransitionTermGroup(int groupID);
     virtual void enableTransitionTermAll(int);
     virtual void clearTransitionTermAll(int);
     virtual void* getLastStatusTransitionInfo();
