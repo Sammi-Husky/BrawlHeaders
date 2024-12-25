@@ -1,6 +1,7 @@
 #pragma once
 
 #include <types.h>
+#include <gf/gf_archive.h>
 #include <gf/gf_task.h>
 
 // TODO: determine class size
@@ -21,4 +22,14 @@ public:
     virtual bool onEndMessage();
     virtual void onDead();
     virtual void onChangeFace();
+};
+
+class IfFoxSmashAppearTask : public IfSmashAppearTask {
+public:
+    virtual void processDefault();
+    virtual ~IfFoxSmashAppearTask();
+    virtual void start(s32 p1);
+    virtual void onClose();
+    virtual void onChangeFace();
+    static IfFoxSmashAppearTask* create(gfArchive *);
 };
