@@ -171,7 +171,7 @@ public:
         u32 m_repeatFrame;
         u32 m_endFrame;
         short m_nodeIndex;
-        short m_0x1a;
+        short m_generatorIndex;
         Vec2f m_offsetPos;
         float m_scale;
     };
