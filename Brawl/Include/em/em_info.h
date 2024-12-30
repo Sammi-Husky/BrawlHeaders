@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <em/em_create.h>
+#include <em/em_resource_module_impl.h>
 #include <em/enemy.h>
 #include <so/so_info.h>
 #include <types.h>
@@ -11,7 +12,7 @@ public:
     typedef Enemy* (*CreateEnemyFunc_t)(u32, emCreate*);
     typedef void (*ModifyExParamFunc_t)(emResourceModuleImpl* p1, emCreate const* p2);
     typedef void (*DeleteExParamFunc_t)();
-    static const u32 NumEnemies = 61;
+    static const s32 NumEnemies = 61;
 private:
     static const u32 NodeNumTable[NumEnemies];
     static const u32 MotionNumTable[NumEnemies];
