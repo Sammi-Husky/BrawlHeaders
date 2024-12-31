@@ -11,7 +11,7 @@ class emInfo : public soInfo {
 public:
     typedef Enemy* (*CreateEnemyFunc_t)(u32, emCreate*);
     typedef void (*ModifyExParamFunc_t)(emResourceModuleImpl* p1, emCreate const* p2);
-    typedef void (*DeleteExParamFunc_t)();
+    typedef void (*DeleteExParamFunc_t)(emResourceModuleImpl* p1);
     static const s32 NumEnemies = 61;
 private:
     static const u32 NodeNumTable[NumEnemies];
@@ -35,26 +35,24 @@ public:
 
     emInfo();
     virtual ~emInfo();
-    virtual u32 isInvalidKind(s32 index);
-    virtual s32 getInvalidKind();
+    virtual u32 isInvalidKind(EnemyKind kind);
+    virtual EnemyKind getInvalidKind();
     virtual const char* getNamePtr();
-    virtual u32 getMotionNum(u32 index);
-    virtual u32 getStatusNum(u32 index);
-    u32 isPrimKind(s32 index);
-    u32 getNodeNum(u32 index);
-    u32 getKineticEnergyNum(u32 index);
-    u32 getKineticEnergyParamAryPtrGetId(u32 index);
-    u32 getAreaNum(u32 index);
-    u32 getAreaParamAryPtrGetId(u32 index);
-    u32 getTargetSearchNum(u32 index);
-    u32 getTargetSearchParamAryPtrGetId(u32 index);
-    u32 getAINum(u32 index);
-    CreateEnemyFunc_t getCreateFuncPtr(s32 index);
-    ModifyExParamFunc_t getExParamModifyFuncPtr(s32 index);
-    DeleteExParamFunc_t getExParamDeleteFuncPtr(s32 index);
-    u32 getSEId(u32 index);
-    u32 StandByStatusKind(u32 index);
+    virtual u32 getMotionNum(EnemyKind kind);
+    virtual u32 getStatusNum(EnemyKind kind);
+    u32 isPrimKind(EnemyKind kind);
+    u32 getNodeNum(EnemyKind kind);
+    u32 getKineticEnergyNum(EnemyKind kind);
+    u32 getKineticEnergyParamAryPtrGetId(EnemyKind kind);
+    u32 getAreaNum(EnemyKind kind);
+    u32 getAreaParamAryPtrGetId(EnemyKind kind);
+    u32 getTargetSearchNum(EnemyKind kind);
+    u32 getTargetSearchParamAryPtrGetId(EnemyKind kind);
+    u32 getAINum(EnemyKind kind);
+    CreateEnemyFunc_t getCreateFuncPtr(EnemyKind kind);
+    ModifyExParamFunc_t getExParamModifyFuncPtr(EnemyKind kind);
+    DeleteExParamFunc_t getExParamDeleteFuncPtr(EnemyKind kind);
+    u32 getSEId(EnemyKind kind);
+    u32 StandByStatusKind(EnemyKind kind);
 };
 static_assert(sizeof(emInfo) == 0x4, "Class has the wrong size!");
-
-extern emInfo g_emInfo;

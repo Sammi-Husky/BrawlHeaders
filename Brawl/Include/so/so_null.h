@@ -3,6 +3,9 @@
 #include <StaticAssert.h>
 #include <types.h>
 
+// Note: The name of this class is hypothesized and does not appear in the
+// compiled code files. Its existence is inferred from the use of multiple
+// inheritance in its derived classes.
 class soNull {
 // fix for bug in Clang fork not producing empty vtable.
 // This is technically incorrect as it will make soNull
