@@ -2,7 +2,12 @@
 
 #include <StaticAssert.h>
 #include <nw4r/g3d/g3d_anmchr.h>
+#include <nw4r/g3d/g3d_anmclr.h>
 #include <nw4r/g3d/g3d_anmscn.h>
+#include <nw4r/g3d/g3d_anmshp.h>
+#include <nw4r/g3d/g3d_anmtexpat.h>
+#include <nw4r/g3d/g3d_anmtexsrt.h>
+#include <nw4r/g3d/g3d_anmvis.h>
 #include <nw4r/g3d/g3d_rescommon.h>
 #include <nw4r/g3d/g3d_resdict.h>
 #include <nw4r/g3d/g3d_resfile.h>
@@ -60,4 +65,4 @@ namespace nw4r {
             ResAnmScn GetResAnmScn(int index);
         };
     } // namespace g3d
-} // namespace nw4
+} // namespace nw4r
