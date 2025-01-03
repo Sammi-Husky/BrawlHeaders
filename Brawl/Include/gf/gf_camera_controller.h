@@ -9,5 +9,6 @@ class gfCameraController {
 public:
     virtual void update(float);
     virtual void draw();
+    virtual ~gfCameraController();
 };
 static_assert(sizeof(gfCameraController) == 8, "Class is wrong size!");

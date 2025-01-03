@@ -57,6 +57,7 @@ public:
     virtual ~CameraController();
 
     void changeInput(Kind cameraControllerKind);
+    gfCameraController* getCameraController(Kind kind);
     static CameraController* getInstance();
 };
 static_assert(sizeof(CameraController) == 420, "Class is wrong size!");
