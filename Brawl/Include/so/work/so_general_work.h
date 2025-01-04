@@ -1,13 +1,21 @@
 #pragma once
 
-#include <types.h>
-#include <so/so_null.h>
 #include <StaticAssert.h>
+#include <so/so_array.h>
+#include <so/so_general_flag.h>
+#include <types.h>
 
-class soGeneralWorkAbstract : private soNull, public soNullable {
+class soGeneralWork : public soGeneralWorkAbstract {
+    soArray<s32>* m_ints;
+    soArray<float>* m_floats;
+    soArray<soGeneralFlag<s32> >* m_flags;
 public:
-    soGeneralWorkAbstract();
-    ~soGeneralWorkAbstract() { }
+    soGeneralWork(
+        soArray<s32>* p1,
+        soArray<float>* p2,
+        soArray<soGeneralFlag<s32> >* p3
+    ) : m_ints(p1), m_floats(p2), m_flags(p3) { }
+    ~soGeneralWork() { }
     virtual s32 getIntWork(u32 index) const;
     virtual void setIntWork(s32 value, u32 index);
     virtual void addIntWork(s32 value, u32 index);
@@ -32,4 +40,6 @@ public:
     virtual u32 getFlagWorkSize();
     virtual void clearWorkAll();
 };
-static_assert(sizeof(soGeneralWorkAbstract) == 12, "Class is wrong size!");
+static_assert(sizeof(soGeneralWork) == 0x18, "Class is wrong size!");
+
+extern soGeneralWork g_soGeneralWork;

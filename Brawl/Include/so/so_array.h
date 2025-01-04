@@ -1,5 +1,6 @@
 #pragma once
 
+#include <so/so_general_flag.h>
 #include <so/so_null.h>
 #include <types.h>
 #include <so/so_array_vector_calculator.h>
@@ -267,4 +268,6 @@ public:
     inline soArrayVector(u32 size, const T& element, u32 unk) : soArrayNull<T>(size, element, unk) { };
 };
 
-
+extern soArrayNull<s32> g_s32ArrayNull;
+extern soArrayNull<float> g_floatArrayNull;
+extern soArrayNull<soGeneralFlag<s32> > g_s32GeneralFlagArrayNull;
