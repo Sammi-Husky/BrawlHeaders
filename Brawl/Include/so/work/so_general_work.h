@@ -3,6 +3,7 @@
 #include <StaticAssert.h>
 #include <so/so_array.h>
 #include <so/so_general_flag.h>
+#include <so/work/so_general_work_abstract.h>
 #include <types.h>
 
 class soGeneralWork : public soGeneralWorkAbstract {

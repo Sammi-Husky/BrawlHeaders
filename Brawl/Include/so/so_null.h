@@ -24,6 +24,7 @@ class soNullableInterface {
 class soNullable {
 public:
     soNullable() { m_isNull = false; }
+    soNullable(bool isNull) { m_isNull = isNull; }
     virtual bool isNull();
 
     bool m_isNull;
