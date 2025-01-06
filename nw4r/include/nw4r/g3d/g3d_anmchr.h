@@ -15,6 +15,8 @@ namespace nw4r {
         };
         class ResAnmChr : public ResCommon<ResAnmChrData> {
         public:
+            u8 m_4[0x18];
+            u16 m_1C;
             inline ResAnmChr() : ResCommon() {}
             inline ResAnmChr(void* data) : ResCommon(data) {}
         };
@@ -41,12 +43,13 @@ namespace nw4r {
             virtual float GetWeight(int unk1);             // TODO
             virtual int Bind(int* unk1, u32 unk2, int unk3);
             virtual void Release(int* unk1, u32 unk2, int unk3);
+            void DisableID(u32 id);
 
             static AnmObjChrRes* Construct(MEMAllocator* allocator, int* size, ResAnmChr anim, ResMdl mdl, bool hasCache);
 
             char _spacer[40];
 
-            ResAnmChr m_anmChrFile;
+            ResAnmChr* m_anmChrFile;
 
             char _spacer2[4];
         };
