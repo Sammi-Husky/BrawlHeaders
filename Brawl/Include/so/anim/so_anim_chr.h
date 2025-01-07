@@ -7,12 +7,12 @@
 class soAnimChr {
     nw4r::g3d::AnmObjChrRes* m_anmChrRes;
     float m_animFrame;
-    float m_frame_;
-    float m_frameSpeedModifier;
+    float m_startFrame;
+    float m_saveFrame;
     float m_rate;
-    float m_frame;
+    float m_frameAhead;
     u8 m_loopFlag: 1;
-    u8 m_unkFlag: 1;
+    u8 m_reverseFlag: 1;
 
     void reinit(bool destroy);
 public:
