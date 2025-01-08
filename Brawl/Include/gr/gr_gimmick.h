@@ -98,19 +98,150 @@ public:
         soCollisionAttackData::Attribute m_attribute;
         bool m_isSetOffOn;
         bool m_noSetOffThru;
+#ifdef MATCHING
         bool m_targetSituationAir;
+#else
+        u32 : 6;
+        bool m_targetSituationODD : 1;
+        bool m_targetSituationAir : 1;
+#endif
         bool m_targetSituationGround;
-        char _spacer2[0xC];
+        float m_slipChance;    // custom
+        float m_hitStopFrame;  // custom
+        float m_hitStopDelay;  // custom
+#ifdef MATCHING
         unsigned int m_serialHitFrame;
+#else
+        bool m_isDirect : 1;
+        bool m_isInvalidInvincible : 1;
+        bool m_isInvalidXlu : 1;
+        soCollisionAttackData::LrCheck m_lrCheck : 3;
+        bool m_isCatch : 1;
+        bool m_noTeam : 1;
+        bool m_noHitStop : 1;
+        bool m_noEffect : 1;
+        bool m_noTransaction : 1;
+        soCollisionAttackData::Region m_region : 5;
+        unsigned int m_serialHitFrame : 16;
+#endif
         soCollisionAttackData::SoundLevel m_soundLevel;
         soCollisionAttackData::SoundAttribute m_soundAttribute;
-        bool m_unk5;
+        bool m_noScale;
+#ifdef MATCHING
+        soCollision::ShapeType m_shapeType : 8;
+#else
         u8 : 6;
         bool m_isDeath100 : 1; // custom
         soCollision::ShapeType m_shapeType : 1;
-        char _spacer3[6];
+#endif
+        char _spacer3[2];
+        union { // custom
+            struct {
+                u16 m_noTargetCategory;
+                u16 m_noTargetPart;
+            };
+            struct {
+                unsigned int _pad2 : 6;
+                bool m_noTargetCategoryFloor : 1;
+                bool m_noTargetCategoryItemE : 1; // Soccer Ball, Blast Box etc.
+                bool m_noTargetCategoryWall : 1;
+                bool m_noTargetCategoryGimmick : 1;
+                bool m_noTargetCategory5 : 1;
+                bool m_noTargetCategory4 : 1;
+                bool m_noTargetCategoryItem : 1; // Barrel, Crate etc.
+                bool m_noTargetCategory2 : 1;
+                bool m_noTargetCategoryEnemy : 1;
+                bool m_noTargetCategoryFighter : 1;
+                unsigned int _pad1 : 12;
+                bool m_noTargetPartLeg : 1;
+                bool m_noTargetPartKnee : 1;
+                bool m_noTargetPartArm : 1;
+                bool m_noTargetPartBody : 1;
+            };
+        };
+
         unsigned int m_nodeIndex;
         int m_power;
+
+        inline AttackData() {};
+
+        inline AttackData(Vec3f* offsetPos, float size, int vector,
+                          int reactionEffect, int reactionFix, int reactionAdd,
+                          soCollisionAttackData::Attribute attribute, bool isSetOffOn, bool noSetOffThru,
+                          bool targetSituationAir, bool targetSituationGround, unsigned int serialHitFrame,
+                          soCollisionAttackData::SoundLevel soundLevel,
+                          soCollisionAttackData::SoundAttribute soundAttribute, bool noScale,
+                          soCollision::ShapeType shapeType, unsigned int nodeIndex, int power) {
+            initialize(offsetPos, size, vector, reactionEffect, reactionFix, reactionAdd, attribute, isSetOffOn,
+                       noSetOffThru, targetSituationAir, targetSituationGround, serialHitFrame, soundLevel,
+                       soundAttribute, noScale, shapeType, nodeIndex, power);
+
+        };
+
+        inline AttackData(float damage,
+                          int reactionEffect, int reactionFix, int reactionAdd,
+                          soCollisionAttackData::Attribute attribute, bool isSetOffOn, bool noSetOffThru,
+                          bool targetSituationAir, unsigned int serialHitFrame,
+                          soCollisionAttackData::SoundLevel soundLevel,
+                          soCollisionAttackData::SoundAttribute soundAttribute, bool noScale,
+                          bool targetSituationGround = true, int vector = 361) {
+            initialize(damage, reactionEffect, reactionFix, reactionAdd, attribute, isSetOffOn, noSetOffThru,
+                       targetSituationAir, serialHitFrame, soundLevel, soundAttribute, noScale, targetSituationGround,
+                       vector);
+        };
+
+        inline void initialize(Vec3f* offsetPos, float size, int vector,
+                               int reactionEffect, int reactionFix, int reactionAdd,
+                               soCollisionAttackData::Attribute attribute, bool isSetOffOn, bool noSetOffThru,
+                               bool targetSituationAir, bool targetSituationGround, unsigned int serialHitFrame,
+                               soCollisionAttackData::SoundLevel soundLevel,
+                               soCollisionAttackData::SoundAttribute soundAttribute, bool noScale,
+                               soCollision::ShapeType shapeType, unsigned int nodeIndex, int power) {
+            MEMINIT(this);
+            m_offsetPos = *offsetPos;
+            m_size = size;
+            m_vector = vector;
+            m_reactionEffect = reactionEffect;
+            m_reactionFix = reactionFix;
+            m_reactionAdd = reactionAdd;
+            m_attribute = attribute;
+            m_isSetOffOn = isSetOffOn;
+            m_noSetOffThru = noSetOffThru;
+            m_targetSituationAir = targetSituationAir;
+            m_targetSituationGround = targetSituationGround;
+            m_serialHitFrame = serialHitFrame;
+            m_soundLevel = soundLevel;
+            m_soundAttribute = soundAttribute;
+            m_noScale = noScale;
+            m_shapeType = shapeType;
+            m_nodeIndex = nodeIndex;
+            m_power = power;
+        };
+
+        inline void initialize(float damage,
+                               int reactionEffect, int reactionFix, int reactionAdd,
+                               soCollisionAttackData::Attribute attribute, bool isSetOffOn, bool noSetOffThru,
+                               bool targetSituationAir, unsigned int serialHitFrame,
+                               soCollisionAttackData::SoundLevel soundLevel,
+                               soCollisionAttackData::SoundAttribute soundAttribute, bool noScale,
+                               bool targetSituationGround = true, int vector = 361) {
+            MEMINIT(this);
+            m_damage = damage;
+            m_reactionEffect = reactionEffect;
+            m_reactionFix = reactionFix;
+            m_reactionAdd = reactionAdd;
+            m_attribute = attribute;
+            m_isSetOffOn = isSetOffOn;
+            m_noSetOffThru = noSetOffThru;
+            m_targetSituationAir = targetSituationAir;
+            m_serialHitFrame = serialHitFrame;
+            m_soundLevel = soundLevel;
+            m_soundAttribute = soundAttribute;
+            m_noScale = noScale;
+
+            m_targetSituationGround = targetSituationGround;
+            m_vector = vector;
+        };
     };
     static_assert(sizeof(AttackData) == 88, "Class is wrong size!");
 
