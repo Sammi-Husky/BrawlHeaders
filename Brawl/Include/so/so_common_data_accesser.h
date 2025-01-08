@@ -1,12 +1,12 @@
 #pragma once
 
+#include <GX/GXTypes.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <types.h>
 
 // TODO: Define and move to other headers
 class ftShakeData { };
 class ftJostleData { };
-class GxColor { };
 class ftEffectCommonData { };
 class ftEffectScreenData { };
 class ftIkData { };
@@ -660,7 +660,7 @@ class ftDataCommon {
     u8 unk20[0x8];
     ftJostleData* jostleData;
     u8 unk2C[0x1C];
-    GxColor subColors;
+    GXColor subColors;
     ftEffectCommonData* effectCommonData;
     ftEffectScreenData* effectScreenData;
     ftIkData* ikData;

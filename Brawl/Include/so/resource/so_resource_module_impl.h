@@ -3,6 +3,7 @@
 #include <StaticAssert.h>
 #include <so/so_null.h>
 #include <so/resource/so_resource_id_accesser.h>
+#include <nw4r/g3d/g3d_resfile.h>
 #include <types.h>
 
 class soResourceModule : private soNull, public soNullable {
