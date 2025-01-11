@@ -28,7 +28,7 @@ public:
 	virtual void unableTermAll(int groupID);
 	virtual void enableTermGroup(int groupID);
 	virtual void unableTermGroup(int groupID);
-	virtual u32 isEnableTermGroup(int groupID);
+	virtual bool isEnableTermGroup(int groupID);
 	virtual void addTerm(int groupID, int, int unitID, int, u16* option);
 	virtual void addGeneralTerm(int groupID, int unitID, soGeneralTerm* term);
 	virtual void addGeneralTermLastTerm(int groupID, soGeneralTerm* term);
@@ -52,7 +52,7 @@ public:
 	virtual void unableTermAll(int groupID);
 	virtual void enableTermGroup(int groupID);
 	virtual void unableTermGroup(int groupID);
-	virtual u32 isEnableTermGroup(int groupID);
+	virtual bool isEnableTermGroup(int groupID);
 	virtual void addTerm(int groupID, int, int unitID, int, u16* option);
 	virtual void addGeneralTerm(int groupID, int unitID, soGeneralTerm* term);
 	virtual void addGeneralTermLastTerm(int groupID, soGeneralTerm* term);
