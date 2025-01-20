@@ -34,7 +34,7 @@ public:
     void setMdlEnableUpdate(u32, bool, s8);
     void setMdlFrame(u32, float, s8);
     void setSlowRate(u32 effectHandleID, u32 slowMagnitude);
-
+    u32 searchResourceID(char* resourceName);
     virtual ~ecMgr();
 };
 static_assert(sizeof(ecMgr) == 0xa8, "Class is wrong size!");
