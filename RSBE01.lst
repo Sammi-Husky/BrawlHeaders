@@ -406,7 +406,7 @@ CC008000:WGPIPE
 8003fea4:mtSinCosf__FfPfPf
 
 // mtprng
-8003fc7c:randi__FUl
+8003fc7c:randi__Fl
 8003fb64:randf__Fv
 
 // rand
