@@ -12,7 +12,7 @@
 class soColorBlendModule: public soNullable {
 public:
     // TODO: Fill out params for most of these.
-    virtual bool isNull() = 0;                                 // 0x8
+    virtual bool isNull() const = 0;                           // 0x8
     virtual ~soColorBlendModule();                             // 0xc
     virtual void activate() = 0;                               // 0x10
     virtual void deactivate() = 0;                             // 0x14
@@ -46,7 +46,7 @@ public:
     // 0x2C
     char _unk[0x154 - 0x2C];
 
-    virtual bool isNull();
+    virtual bool isNull() const;
     virtual ~soColorBlendModuleImpl();
     virtual void activate();
     virtual void deactivate();

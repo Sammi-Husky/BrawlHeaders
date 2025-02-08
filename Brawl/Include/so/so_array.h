@@ -43,6 +43,11 @@ public:
     virtual void clear() = 0;
 };
 
+template<typename T>
+class soArrayContractibleTable {
+    // TODO
+};
+
 template <class T>
 class soArray : public soArrayContractible<T> {
 public:

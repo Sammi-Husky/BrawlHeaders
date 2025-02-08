@@ -25,7 +25,8 @@ class soNullable {
 public:
     soNullable() { m_isNull = false; }
     soNullable(bool isNull) { m_isNull = isNull; }
-    virtual bool isNull();
+    virtual bool isNull() const { return m_isNull; }
+    void setNull(bool is_null) { m_isNull = is_null; }
 
     bool m_isNull;
 };
