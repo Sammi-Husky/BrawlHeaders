@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <st/loader/st_loader.h>
 #include <types.h>
 

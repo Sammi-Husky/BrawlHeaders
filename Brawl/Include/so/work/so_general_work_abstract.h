@@ -1,8 +1,8 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <types.h>
 #include <so/so_null.h>
-#include <StaticAssert.h>
 
 class soGeneralWorkAbstract : private soNull, public soNullable {
 public:

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <types.h>
 #include <gm/gm_lib.h>
 #include <memory.h>

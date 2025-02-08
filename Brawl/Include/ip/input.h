@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <types.h>
 
 #define INPUT_PAD_BUTTON_MASK_ATTACK 0x1

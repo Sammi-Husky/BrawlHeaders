@@ -1,4 +1,6 @@
 #pragma once
+
+#include <StaticAssert.h>
 #include <so/anim/so_anim_cmd.h>
 #include <so/event/so_event_presenter.h>
 #include <so/event/so_event_presenter.h>

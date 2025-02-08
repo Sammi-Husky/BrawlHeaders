@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <MEM/mem_allocator.h>
 #include <memory.h>
 #include <types.h>

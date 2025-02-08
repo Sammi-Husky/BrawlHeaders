@@ -417,6 +417,7 @@ CC008000:WGPIPE
 
 // hkMath
 802a0bcc:fabs__6hkMathFf
+802a0bcc:__fabs__6hkMathFf
 80291dd8:max2f__6hkMathFff
 802a0bf8:sqrt__6hkMathFf
 8032ca40:acos__6hkMathFf

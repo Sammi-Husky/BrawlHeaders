@@ -1,5 +1,7 @@
 #pragma once
 
+#include <StaticAssert.h>
+
 namespace nw4r {
     namespace g3d {
 

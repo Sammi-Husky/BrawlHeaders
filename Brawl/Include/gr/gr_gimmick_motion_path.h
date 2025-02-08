@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_gimmick.h>
 
 class grGimmickMotionPath : public grGimmick {

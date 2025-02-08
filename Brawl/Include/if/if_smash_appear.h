@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <types.h>
 #include <gf/gf_archive.h>
 #include <gf/gf_task.h>

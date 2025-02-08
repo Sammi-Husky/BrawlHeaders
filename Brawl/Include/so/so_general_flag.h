@@ -1,5 +1,7 @@
 #pragma once
 
+#include <StaticAssert.h>
+
 template <typename T>
 struct soGeneralFlag {
     T flag;

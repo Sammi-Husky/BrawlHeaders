@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <nw4r/g3d/g3d_resmat.h>
 #include <nw4r/g3d/g3d_scnmdlsmpl.h>
 

@@ -1,4 +1,6 @@
 #pragma once
+
+#include <StaticAssert.h>
 #include <gf/gf_model.h>
 #include <memory.h>
 #include <nw4r/g3d/g3d_resmdl.h>

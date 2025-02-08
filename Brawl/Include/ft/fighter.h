@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <ft/ft_entry.h>
 #include <ft/ft_outside_event_presenter.h>
 #include <ft/ft_value_accesser.h>

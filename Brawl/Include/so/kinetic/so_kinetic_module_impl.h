@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <so/so_null.h>
 #include <so/so_instance_manager.h>
 #include <so/event/so_event_presenter.h>

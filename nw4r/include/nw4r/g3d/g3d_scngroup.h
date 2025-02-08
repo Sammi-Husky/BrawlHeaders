@@ -1,5 +1,7 @@
 #pragma once
 
+#include <StaticAssert.h>
+
 class ScnGroup {
 
 public:

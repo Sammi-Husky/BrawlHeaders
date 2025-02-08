@@ -1,5 +1,7 @@
 #pragma once
 
+#include <StaticAssert.h>
+
 enum GameMode {
     Game_Mode_Melee = 0x0,
     Game_Mode_Tournament = 0x1,

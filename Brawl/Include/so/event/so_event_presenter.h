@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gf/gf_task.h>
 #include <so/event/so_event_system.h>
 #include <so/so_null.h>

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <types.h>
 #include <so/so_value_accesser.h>
 #include <ft/ft_common_data_accesser.h>

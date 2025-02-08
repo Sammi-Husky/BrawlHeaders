@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <GX.h>
 #include <mt/mt_vector.h>
 #include <nw4r/g3d/g3d_rescommon.h>

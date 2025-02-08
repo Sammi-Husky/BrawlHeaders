@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <types.h>
 #include <mt/mt_vector.h>
 #include <so/resource/so_resource_module_impl.h>

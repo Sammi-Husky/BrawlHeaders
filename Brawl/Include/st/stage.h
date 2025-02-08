@@ -1,7 +1,7 @@
 #pragma once
 
-#include <GX.h>
 #include <StaticAssert.h>
+#include <GX.h>
 #include <cm/cm_camera_controller.h>
 #include <em/em_create.h>
 #include <gf/gf_archive.h>

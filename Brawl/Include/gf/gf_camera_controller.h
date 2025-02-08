@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gf/gf_camera.h>
 #include <types.h>
 

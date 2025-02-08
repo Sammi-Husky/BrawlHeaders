@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <ms/ms_message.h>
 
 class MuMsg {

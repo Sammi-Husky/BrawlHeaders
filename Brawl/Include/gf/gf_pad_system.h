@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gf/gf_pad_status.h>
 
 #define GF_PAD_SYSTEM_GET_ALL_PADS 0xF0

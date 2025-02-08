@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <ut/ut_archive_manager.h>
 
 // TODO: class size

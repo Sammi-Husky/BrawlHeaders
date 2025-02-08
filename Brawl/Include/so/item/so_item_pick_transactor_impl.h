@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <so/so_null.h>
 #include <it/it_archive.h>
 #include <so/item/so_item_search_impl.h>

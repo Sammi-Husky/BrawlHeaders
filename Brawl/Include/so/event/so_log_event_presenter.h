@@ -1,3 +1,5 @@
+#pragma once
+
 #include <StaticAssert.h>
 #include <so/event/so_event_presenter.h>
 #include <types.h>

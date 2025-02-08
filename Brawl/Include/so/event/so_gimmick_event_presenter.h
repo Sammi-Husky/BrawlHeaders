@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <so/collision/so_collision_attack_part.h>
 #include <st/st_trigger_observe.h>
 #include <types.h>

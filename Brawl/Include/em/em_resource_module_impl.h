@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <em/enemy.h>
 #include <em/em_create.h>
 #include <so/resource/so_resource_id_accesser.h>

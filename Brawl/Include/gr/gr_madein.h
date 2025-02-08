@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_seq_yakumono.h>
 #include <mt/mt_vector.h>
 #include <so/collision/so_collision_log.h>

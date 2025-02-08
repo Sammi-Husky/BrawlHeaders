@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <GX.h>
 #include <types.h>
 

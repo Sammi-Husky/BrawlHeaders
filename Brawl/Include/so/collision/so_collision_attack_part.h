@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <mt/mt_vector.h>
 #include <types.h>
 #include <so/collision/so_collision.h>

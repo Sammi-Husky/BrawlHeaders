@@ -1,5 +1,7 @@
 #pragma once
 
+#include <StaticAssert.h>
+
 enum MuSelchkind { /* CSS */
     MuSelch_Mario=0,
     MuSelch_Donkey=1,

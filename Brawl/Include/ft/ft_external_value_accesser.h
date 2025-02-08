@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <ft/fighter.h>
 #include <types.h>
 

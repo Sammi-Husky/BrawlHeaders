@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <cm/cm_controller_anm.h>
 #include <cm/cm_quake.h>
 #include <cm/cm_stage_param.h>

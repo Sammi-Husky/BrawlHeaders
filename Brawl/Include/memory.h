@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <stddef.h>
 #include <types.h>
 #include <MEM.h>

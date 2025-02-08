@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <types.h>
 
 // These are stored in field 0x18 in bits 20-21.

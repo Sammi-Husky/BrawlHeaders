@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <memory.h>
 #include <types.h>
 #include <snd/snd_id.h>

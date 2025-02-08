@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <MEM.h>
 #include <nw4r/g3d/g3d_obj.h>
 #include <nw4r/g3d/g3d_resmdl.h>

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <types.h>
 #include <so/so_array.h>
 #include <so/so_instance_unit.h>

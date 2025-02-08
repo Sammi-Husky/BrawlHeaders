@@ -37,8 +37,7 @@ public:
     gmGlobalRecord::MenuData* getGlobalRecordMenuDatap();
 
     static int getLanguage();
-
-    STATIC_CHECK(sizeof(GameGlobal) == 0x50);
 };
+static_assert(sizeof(GameGlobal) == 0x50, "Class is wrong size!");
 
 extern GameGlobal* g_GameGlobal;

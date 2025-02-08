@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gf/gf_task.h>
 #include <mu/selchar/mu_selchar_coin.h>
 #include <types.h>

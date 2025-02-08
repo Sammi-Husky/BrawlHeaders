@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <so/so_null.h>
 
 class soParamCustomizeModule : soNullable {

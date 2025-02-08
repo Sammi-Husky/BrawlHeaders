@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <ut/ut_list.h>
 
 class cmPhotoCallBack : public utListNode {

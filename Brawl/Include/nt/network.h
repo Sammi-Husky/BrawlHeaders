@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <nt/d_net_connect.h>
 #include <nt/etc/nt_etc_dwc.h>
 #include <DWC.h>

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <SO.h>
 #include <DWC/nonport.h>
 

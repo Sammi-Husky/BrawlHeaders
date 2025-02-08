@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gr/gr_gimmick_catapult.h>
 #include <gr/gr_gimmick_ladder.h>
 #include <gr/gr_gimmick_spring.h>

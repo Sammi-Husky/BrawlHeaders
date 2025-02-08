@@ -150,7 +150,6 @@ public:
     bool isProcessHeartSwap(int entryId);
     void toKnockOutHeartSwapOpposite(int entryId, soDamageAttackerInfo* attackerInfo);
 
-
 };
 static_assert(sizeof(ftManager) == 0x160, "Class is wrong size!");
 

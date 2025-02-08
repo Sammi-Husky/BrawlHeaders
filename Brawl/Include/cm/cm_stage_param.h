@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <mt/mt_vector.h>
 #include <st/st_positions.h>
 #include <types.h>

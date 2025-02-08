@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <nw4r/snd/snd_Sound3DActor.h>
 #include <snd/snd_id.h>
 #include <types.h>

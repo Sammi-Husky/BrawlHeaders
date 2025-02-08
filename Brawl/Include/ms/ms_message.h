@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <types.h>
 #include <ms/ms_text_writer_base.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
