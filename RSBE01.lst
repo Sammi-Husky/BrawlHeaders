@@ -20,6 +20,10 @@
 8049ebe0:g_Network
 805a02a4:g_muWifiInterfaceTask
 27,6,5910: g_stLoaderManager
+8059ff68:__float_nan
+8059ff6c:__float_huge
+8059ff70:__double_huge
+
 
 // Hardware
 CC008000:WGPIPE
