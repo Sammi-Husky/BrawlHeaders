@@ -13,12 +13,14 @@ struct acCmdArgConv {
 };
 
 class acCmdArg {
-    const acCmdArgConv *m_dataPtr;
+    const acCmdArgConv* m_dataPtr;
     u8 m_isNull;
 public:
     acCmdArg() : m_dataPtr(0), m_isNull(false) { }
 
     bool isNull() const { return m_isNull; }
+    void setNull(bool val) { m_isNull = val; }
+    void setDataPtr(const acCmdArgConv* ptr) { m_dataPtr = ptr; }
 
     // 0: getIntData
     // 1: getFloatData
@@ -62,51 +64,76 @@ struct acAnimCmdConv
     s8 type;  // when group == 0, selects one of the 25 systemCmds to interpret
     s8 argNum;
     u8 option;
-    const acCmdArgConv *args;
+    const acCmdArgConv* args;
+};
+
+// Currently, no real functions use this wrapper class.
+// TODO: Confirm that this is really acCmdArgList, and
+// use it in a legitimate way
+struct acCmdArgList {
+    soArrayContractibleTable<const acCmdArgConv> argList;
+
+    acCmdArgList() : argList() { }
+    acCmdArgList(const acCmdArgConv* p1, s32 p2) : argList(p1, p2) { }
+
+    ~acCmdArgList() { }
+    bool isEmpty() const { return argList.isEmpty(); }
 };
 
 class acAnimCmd : public soNullable {
 public:
+    acAnimCmd() : soNullable(false) { }
+    acAnimCmd(bool isNull) : soNullable(isNull) { }
+
     virtual s8 getGroup() const = 0;
-    virtual s8 getType() const;
-    virtual s32 getArgNum() const;
-    virtual u8 getOption() const;
-    virtual soArrayContractibleTable<const acCmdArgConv> getArgList();
-    virtual bool getArg(acCmdArg *arg, s32 index) const;
-    virtual const acAnimCmdConv *getCmdAddress() const;
-    virtual bool isArgEmpty() const;
-    virtual bool isValid() const;
+    virtual s8 getType() const = 0;
+    virtual s32 getArgNum() const = 0;
+    virtual u8 getOption() const = 0;
+    virtual soArrayContractibleTable<const acCmdArgConv> getArgList() = 0;
+    virtual bool getArg(acCmdArg* arg, s32 index) const = 0;
+    virtual const acAnimCmdConv* getCmdAddress() const = 0;
+    virtual bool isArgEmpty() const = 0;
+    virtual bool isValid() const = 0;
+    virtual ~acAnimCmd() { }
 };
 
 class acAnimCmdImpl : public acAnimCmd {
 public:
     const acAnimCmdConv* cmdAddr;
 
-    acAnimCmdImpl() : cmdAddr(0) { }
+    acAnimCmdImpl() : acAnimCmd(false), cmdAddr(0) { }
     virtual s8 getGroup() const;
     virtual s8 getType() const;
     virtual s32 getArgNum() const;
     virtual u8 getOption() const;
     virtual soArrayContractibleTable<const acCmdArgConv> getArgList();
-    virtual bool getArg(acCmdArg *arg, s32 index) const;
-    virtual const acAnimCmdConv *getCmdAddress() const { return cmdAddr; }
+    virtual bool getArg(acCmdArg* arg, s32 index) const;
+    virtual const acAnimCmdConv* getCmdAddress() const { return cmdAddr; }
     virtual bool isArgEmpty() const;
     virtual bool isValid() const;
     virtual ~acAnimCmdImpl() { }
+
+    // TODO: made up deadstripped function to make soArrayFixed::isEmpty
+    // get emitted earlier
+    acCmdArgList getEmptyArgList();
 };
 static_assert(sizeof(acAnimCmdImpl) == 0xC, "Class is the wrong size!");
 
 class acAnimCmdNull : public acAnimCmd {
+public:
+    acAnimCmdNull() : acAnimCmd(true) { }
+
     virtual s8 getGroup() const;
     virtual s8 getType() const;
     virtual s32 getArgNum() const;
     virtual u8 getOption() const;
     virtual soArrayContractibleTable<const acCmdArgConv> getArgList();
-    virtual bool getArg(acCmdArg *arg, s32 index) const;
-    virtual const acAnimCmdConv *getCmdAddress() const;
+    virtual bool getArg(acCmdArg* arg, s32 index) const;
+    virtual const acAnimCmdConv* getCmdAddress() const;
     virtual bool isArgEmpty() const;
     virtual bool isValid() const;
     virtual ~acAnimCmdNull();
 };
 
-extern "C" acAnimCmdNull g_acAnimCmdNull;
+extern acCmdArg g_acCmdArg;
+extern acAnimCmdNull g_acAnimCmdNull;
