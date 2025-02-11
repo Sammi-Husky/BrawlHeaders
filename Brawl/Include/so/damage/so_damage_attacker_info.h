@@ -8,16 +8,16 @@ class soDamageAttackerInfo {
 public:
     char _spacer[4];
 
-    int m_directAttackerTaskId;
-    soKind m_directAttackerSoKind;
-    int m_directAttackerSoSubKind;
+    int m_directTaskId;
+    soKind m_directSoKind;
+    int m_directSoSubKind;
 
     char _spacer2[4];
 
-    int m_indirectAttackerTaskId;
-    soKind m_indirectAttackerSoKind;
-    int m_indirectAttackerSoSubKind;
-    int m_indirectAttackerEntryId;
+    int m_indirectTaskId;
+    soKind m_indirectSoKind;
+    int m_indirectSoSubKind;
+    int m_indirectEntryId;
 
     char _spacer3[4];
 };
