@@ -19,6 +19,7 @@
 8059FF80:g_gfSceneRoot
 8049ebe0:g_Network
 805a02a4:g_muWifiInterfaceTask
+805a00b8:g_mtRand
 27,6,5910: g_stLoaderManager
 8059ff68:__float_nan
 8059ff6c:__float_huge
@@ -410,6 +411,7 @@ CC008000:WGPIPE
 8003fea4:mtSinCosf__FfPfPf
 
 // mtprng
+8003fb4c:srandi__Fl
 8003fc7c:randi__Fl
 8003fb64:randf__Fv
 

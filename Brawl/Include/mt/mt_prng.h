@@ -36,3 +36,5 @@ struct mtPrngLogManager {
     u8 unk0[0xC];
     void addLog(mtPrngLog*);
 };
+
+extern mtRand g_mtRand;
