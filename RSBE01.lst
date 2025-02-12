@@ -734,7 +734,7 @@ CC008000:WGPIPE
 27,1,00231B84:disableCalcCollision__6GroundFv
 27,1,00261EA8:setInitializeFlag__6GroundFv
 27,1,002618c0:setEnableCollisionStatus__6GroundFb
-27,1,00261a90:isCollisionStatusOwnerTask__6GroundFP12grCollStatusPi
+27,1,00261a90:isCollisionStatusOwnerTask__6GroundFP12grCollStatusPQ26Ground12CategoryFlag
 27,1,0026022C:setVisibility__6GroundFUl
 27,1,00261950:setValid__6GroundFUl
 27,1,002619F0:setValidAttachedEffect__6GroundFUl

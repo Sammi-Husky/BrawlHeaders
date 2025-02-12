@@ -14,10 +14,28 @@
 #include <st/st_trigger.h>
 #include <types.h>
 
+#define GROUND_COLL_STATUS_OWNER_TASK_CATEGORY_MASK_ITEM 0x4
+#define GROUND_COLL_STATUS_OWNER_TASK_CATEGORY_MASK_ENEMY 0x2
+#define GROUND_COLL_STATUS_OWNER_TASK_CATEGORY_MASK_FIGHTER 0x1
+#define GROUND_COLL_STATUS_OWNER_TASK_CATEGORY_MASK_ALL 0x7
+
 class Stage;
 
 class Ground : public gfTask {
 public:
+    struct CategoryFlag {
+        union {
+            struct {
+                u32 : 29;
+                bool m_item : 1;
+                bool m_enemy : 1;
+                bool m_fighter : 1;
+            };
+            u32 m_mask;
+        };
+        inline CategoryFlag(u32 bits) : m_mask(bits) {}
+    };
+
     // 0
     nw4r::g3d::ResFile m_resFile;
     // 4
@@ -125,7 +143,7 @@ public:
 
     bool getNodeIndex(u32* nodeIndex, u32 sceneModelIndex, const char* nodeName);
     void addSceneRoot(nw4r::g3d::ScnMdl* sceneModel, int unk2);
-    bool isCollisionStatusOwnerTask(grCollStatus* collStatus, int* unk2);
+    bool isCollisionStatusOwnerTask(grCollStatus* collStatus, CategoryFlag* unk2);
     bool searchNode(const char* unk1, const char* nodeName, int* unk3, u32* nodeIndex);
     void setBlendColorDisable();
     void setBlendColorEnable();
