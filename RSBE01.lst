@@ -163,7 +163,7 @@ CC008000:WGPIPE
 
 
 // nw4r::g3d::ResFile
-8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileFv
+8018d2a4:GetResMdlNumEntries__Q34nw4r3g3d7ResFileCFv
 8018d770:GetResAnmChrNumEntries__Q34nw4r3g3d7ResFileFv
 8018d978:GetResAnmVisNumEntries__Q34nw4r3g3d7ResFileFv
 8018dd88:GetResAnmTexPatNumEntries__Q34nw4r3g3d7ResFileFv

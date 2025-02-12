@@ -10,7 +10,6 @@
 #include <nw4r/g3d/g3d_anmvis.h>
 #include <nw4r/g3d/g3d_rescommon.h>
 #include <nw4r/g3d/g3d_resdict.h>
-#include <nw4r/g3d/g3d_resfile.h>
 #include <types.h>
 
 namespace nw4r {
@@ -47,7 +46,7 @@ namespace nw4r {
 
             static void Init(void* arg);
 
-            u32 GetResMdlNumEntries();
+            u32 GetResMdlNumEntries() const;
             u32 GetResAnmChrNumEntries();
             u32 GetResAnmClrNumEntries();
             u32 GetResAnmVisNumEntries();
