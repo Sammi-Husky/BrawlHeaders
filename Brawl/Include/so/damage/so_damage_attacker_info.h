@@ -20,6 +20,6 @@ public:
     int m_indirectSoSubKind;
     int m_indirectEntryId;
 
-    char _spacer3[4];
+    int m_clearFrame;
 };
 static_assert(sizeof(soDamageAttackerInfo) == 40, "Class is wrong size!");
