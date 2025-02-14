@@ -1,7 +1,7 @@
 // global variables
 805a00d0:g_ipSwitch
 805a0148: g_ecMgr
-8059FFAC: g_gfGameApplication
+8059FFAC: g_gfApplication
 805A01D0: g_sndSystem
 805a0140: g_efScreen
 805A02D0: g_IfMngr
@@ -1237,6 +1237,9 @@ CC008000:WGPIPE
 80021fac:release__14gfFileIOHandleFv
 8002239c:setReadParam__15gfFileIORequestFP15gfFileIORequestPCcPvii
 8001be00:gfFACreateDir__8gfFileIOFPCc
+
+// gfSlowManager
+80033360:requestSlow__13gfSlowManagerFUc
 
 // gameGlobal
 8004D9DC:getLanguage__10GameGlobalFv

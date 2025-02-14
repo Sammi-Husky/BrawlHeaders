@@ -4,6 +4,7 @@
 #include <gf/gf_scene.h>
 #include <st/operator/st_operator_rule_melee.h>
 #include <st/operator/st_operator_drop_item.h>
+#include <st/operator/st_operator_info.h>
 
 #include <types.h>
 
@@ -24,7 +25,7 @@ public:
     void* m_operatorNoContest;
     void* m_operatorNetwork;
     void* m_operatorController;
-    void* m_operatorInfoMelee;
+    stOperatorInfo* m_operatorInfo;
     void* m_operatorFighterRebirths[7];
     void* m_operatorFighterChange;
     void* m_operatorDefeatBoss;

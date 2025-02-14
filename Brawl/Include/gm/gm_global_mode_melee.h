@@ -330,7 +330,7 @@ public:
     u8 m_playerNo;                       // 0x03
     s8 m_stockCount;                     // 0x04
     s8 m_colorFileIdx;                   // 0x05
-    s8 m_costumeID;                      // 0x06
+    s8 m_costumeId;                      // 0x06
     char _0x07;                             // 0x07
     s8 m_startPointIdx;                  // 0x08
     char _0x9[0x02];                       // 0x09
@@ -338,15 +338,22 @@ public:
     wchar_t m_name[5];                   // 0x0c
     char _0x16[4];                          // 0x16
     bool m_isNoVoice;                    // 0x1A
-    char _0x1B[1];                       // 0x1B
-    bool m_isStamina : 1;
+    bool : 1;                           // 0x1B
     bool : 1;
     bool : 1;
+    bool m_isMetal : 1;
+    bool : 1;
+    bool m_isSpycloak : 1;
     bool : 1;
     bool : 1;
+    bool m_isStamina : 1;                // 0x1C
     bool : 1;
     bool : 1;
-    bool : 1;
+    bool m_isRebirthXlu : 1;
+    bool m_isRabbitCap : 1;
+    bool m_isFlower : 1;
+    bool m_isCurry : 1;
+    bool m_isReflector : 1;
     char _0x1D[1];
     u8 m_cpuType;                        // 0x1E
     u8 m_cpuRank;                        // 0x1F

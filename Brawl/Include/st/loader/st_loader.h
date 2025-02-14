@@ -6,11 +6,11 @@
 #include <types.h>
 
 class stLoader : public gfTask {
+public:
     gmGlobalModeMelee* m_globalModeMelee;
     u8 m_state;
     char _0x45[3];
 
-public:
     virtual void processBegin();
     virtual ~stLoader();
     virtual void entryEntity();
