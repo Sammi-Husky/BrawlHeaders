@@ -386,8 +386,8 @@ public:
     virtual void fixedPosition(float unk1);
     virtual void setTgtNode(const char* unk1);
     virtual u32 getTgtNode();
-    virtual void setGimmickData(void* gimmickData);
-    virtual void* getGimmickData();
+    virtual void setGimmickData(void* gimmickData) { m_gimmickData = gimmickData; }
+    virtual void* getGimmickData() { return m_gimmickData; }
     virtual void changeNodeAnim(u32 chrIndex, u32 modelAnimIndex);
     virtual void createFadeVisibleProduction(float unk);
     virtual void createSoundEffectVisibleProductionForExcel(u32 unk1, u32 unk2, u32 unk3);
@@ -395,7 +395,7 @@ public:
     virtual void setSimpleEffectVisibleProduction();        // TODO
     virtual void dbDispInvalidatedByCameraClippingSphere(); // TODO
     virtual void setTransparency(u32 unk1, u32 unk2);
-    virtual char getTransparencyFlag();
+    virtual u8 getTransparencyFlag() { return m_transparencyFlag; }
 
     void changeMatColAnim(u32 clrIndex, u32 modelAnimIndex);
     void changeShapeAnim(u32 shpIndex, u32 modelAnimIndex);

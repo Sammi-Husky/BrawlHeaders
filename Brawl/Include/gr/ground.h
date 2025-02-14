@@ -100,17 +100,22 @@ public:
     virtual void receiveCollMsg_Wall(grCollStatus* collStatus, grCollisionJoint* collisionJoint);
     virtual void receiveCollMsg_Attack(grCollStatus* collStatus, grCollisionJoint* collisionJoint);
     virtual void unloadData();
-    virtual int getModelCount();
+    virtual int getModelCount() {
+        if (m_resFile.ptr()) {
+            return m_resFile.GetResMdlNumEntries();
+        }
+        return 0;
+    };
     virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
     virtual bool setNode();
     virtual void setStageData(void* stageData) { m_stageData = stageData; }
-    virtual void* getStageData();
-    virtual void initStageData();
-    virtual void setMdlIndex(int mdlIndex);
-    virtual short getMdlIndex();
-    virtual bool isEnableCalcCollision();
-    virtual void enableCalcCollision();
-    virtual void disableCalcCollision();
+    virtual void* getStageData() { return m_stageData; }
+    virtual void initStageData() { }
+    virtual void setMdlIndex(int mdlIndex) { m_mdlIndex = mdlIndex; }
+    virtual short getMdlIndex() { return m_mdlIndex; }
+    virtual bool isEnableCalcCollision() { return m_visibilityFlag3; }
+    virtual void enableCalcCollision() { m_visibilityFlag3 = 1; }
+    virtual void disableCalcCollision() { m_visibilityFlag3 = 0; }
     virtual u32 getNodeIndex(u32 sceneModelIndex, const char* nodeName);
     virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, u32 nodeIndex);
     virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, const char* nodeName);
@@ -126,9 +131,9 @@ public:
     virtual bool getNodeScale(Vec3f* nodeScale, u32 sceneModelIndex, const char* nodeName);
     virtual void setValid(u32 unk1);
     virtual void setValidAttachedEffect(u32 unk1);
-    virtual void setInitializeFlag();
-    virtual void setInitializeInfo(int initializeInfo);
-    virtual bool getInitializeInfo(int initializeInfo);
+    virtual void setInitializeFlag() { }
+    virtual void setInitializeInfo(int initializeInfo) { }
+    virtual bool getInitializeInfo(int initializeInfo) { return false; }
     virtual void setMotionRatio(float ratio);
     virtual void setMotionFrame(float frame, u32 animIndex);
     virtual float getMotionFrame(u32 anim);
@@ -137,7 +142,7 @@ public:
     virtual void setMatAlpha(u32 unk1, u32 sceneModelIndex);    // TODO
     virtual void updateG3dProcCalcWorld();
     virtual void preExit();
-    virtual bool adventureEventGetItem(int genParamId, stTriggerData* triggerData);
+    virtual bool adventureEventGetItem(int genParamId, stTriggerData* triggerData) { return false; }
     virtual void invalidatedByCameraClipping();
     virtual void setTransparencyFlag(char flag);
 
