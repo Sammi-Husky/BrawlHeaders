@@ -216,6 +216,11 @@ public:
 };
 static_assert(sizeof(soModuleAccesser) == 224, "Class is wrong size!");
 
+class soModuleAccesserNull : public soModuleAccesser {
+
+};
+
+extern soModuleAccesserNull g_soModuleAccesserNull;
 
 template <class T>
 class soModuleAccesserBuilder {

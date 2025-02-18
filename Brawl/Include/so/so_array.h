@@ -28,8 +28,8 @@ class soArrayFixed : public soNullableInterface {
 public:
 
     virtual bool isNull() const { return false; }
-    virtual T* at(u32) = 0;
-    virtual T* at(int) = 0;
+    virtual T& at(s32 index) = 0;
+    virtual const T& at(s32 index) const = 0;
     virtual u32 size() const = 0;
     virtual bool isEmpty() const { return this->size() == 0; }
     virtual ~soArrayFixed() { };
@@ -73,8 +73,8 @@ public:
         return *this;
     }
 
-    virtual T* at(u32 index) { return atSub(index); }
-    virtual T* at(int index) { return atSub(index); }
+    virtual T& at(s32 index) { return atSub(index); }
+    virtual const T& at(s32 index) const { return atSub(index); }
 
     virtual void shift() {
         if (!isEmpty()) {
@@ -119,11 +119,11 @@ public:
 
     bool isNull() const { return false; }
 
-    virtual T* atSub(s32 index) {
+    virtual T& atSub(s32 index) const {
         if (index >= m_size && m_link) {
-            return m_link->at(static_cast<u32>(index - m_size));
+            return m_link->at(index - m_size);
         }
-        return &m_elements[index];
+        return m_elements[index];
     }
 };
 
@@ -146,13 +146,13 @@ class soArrayNull : public soArray<T> {
 
 public:
     virtual bool isNull() const { return true; }
-    virtual T* at(u32) {
+    virtual T& at(s32 index) {
         static T m_nullElement;
-        return &m_nullElement;
+        return m_nullElement;
     };
-    virtual T* at(int) {
+    virtual const T& at(s32 index) const {
         static T m_nullElement;
-        return &m_nullElement;
+        return m_nullElement;
     };
     virtual u32 size() const { return 0; }
     virtual ~soArrayNull() { }
@@ -190,8 +190,8 @@ class soArrayList : public soArray<T> {
 
 public:
     virtual bool isNull() const;
-    virtual T* at(u32);
-    virtual T* at(int);
+    virtual T& at(s32 index);
+    virtual const T& at(s32 index) const;
     virtual u32 size() const { return m_size; }
     virtual ~soArrayList() { }
     virtual void shift();
@@ -222,10 +222,10 @@ public:
     virtual bool isNull() const {
         return false;
     }
-    virtual T* at(u32 index) {
+    virtual T& at(s32 index) {
         return this->atFastAbstractSub(index);
     }
-    virtual T* at(int index) {
+    virtual const T& at(s32 index) const {
         return this->atFastAbstractSub(index);
     }
     virtual ~soArrayVectorAbstract() { }
@@ -269,12 +269,12 @@ public:
             numIndicesToSet = this->size() - startingIndex;
         }
         for (u32 i = 0; i < numIndicesToSet; i++) {
-            T* element = this->at(i + startingIndex);
-            *element = elementToCopy;
+            T& element = this->at(i + startingIndex);
+            element = elementToCopy;
         }
     }
 
-    virtual T* atFastAbstractSub(u32 index) = 0;
+    virtual T& atFastAbstractSub(s32 index) const = 0;
     virtual void substitution(u32 subIndex, u32 targetIndex) {
         T* subElement = this->getArrayValueConst(subIndex);
         T* targetElement = this->getArrayValueConst(targetIndex);
@@ -301,12 +301,12 @@ public:
     virtual u32 capacity() { return C; }
     virtual bool isFull() { return m_isFull; }
 
-    virtual T* atFastAbstractSub(u32 index) {
+    virtual T& atFastAbstractSub(s32 index) const {
         int iVar1 = this->m_topIndex + index;
         if (C - 1 < iVar1) {
             iVar1 -= C;
         }
-        return &this->m_elements[iVar1];
+        return this->m_elements[iVar1];
 
     }
     virtual T* getArrayValueConst(u32 index) {
