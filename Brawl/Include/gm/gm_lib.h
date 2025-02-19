@@ -1,6 +1,9 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <types.h>
+
+bool gmCheckExistFigure(u16 id);
 
 enum GameMode {
     Game_Mode_Melee = 0x0,
