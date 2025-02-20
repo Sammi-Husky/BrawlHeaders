@@ -386,7 +386,7 @@ CC008000:WGPIPE
 800448f8:addTail__6utListFP10utListNode
 
 // cmQuake
-8009db90:cmReqQuake__FiP5Vec3f
+8009db90:cmReqQuake__FQ27cmQuake4KindP5Vec3f
 8009dd40:cmRemoveQuake__Fi
 
 // Vec3f

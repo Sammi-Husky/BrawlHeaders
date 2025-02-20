@@ -269,7 +269,22 @@ public:
     GameRule m_gameRule : 3;
     u8 m_numPlayers : 3;
     u8 m_0x1_0 : 2;
-    char m_0x2[2];
+    bool m_0x2_7 : 1; // 0x02
+    bool m_0x2_6 : 1;
+    bool m_0x2_5 : 1;
+    bool m_0x2_4 : 1;
+    bool m_0x2_3 : 1;
+    bool m_0x2_2 : 1;
+    bool m_0x2_1 : 1;
+    bool m_isTeamAttack : 1;
+    bool m_0x3_7 : 1; // 0x03
+    bool m_0x3_6 : 1;
+    bool m_isStamina : 1;
+    bool m_0x3_4 : 1;
+    bool m_allowPause : 1;
+    bool m_0x3_2 : 1;
+    bool m_showDamageGauge : 1;
+    bool m_0x3_0 : 1;
     bool m_0x4_7 : 1; // 0x04
     bool m_0x4_6 : 1;
     bool m_0x4_5 : 1;

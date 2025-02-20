@@ -26,7 +26,7 @@ public:
     gmGlobalRecord* m_record;         // 0x24
     gmGlobalRecord::NameData* m_nameRecords;         // 0x28
     gmTournamentData* m_tournamentData; // 0x2C
-    gmAdventure* m_adventure;           // 0x30
+    gmAdvData* m_advData;           // 0x30
     nteGlobalData* m_nteData;           // 0x34
     char _4[0x04];                      // 0x38
     gmGlobalCorps* m_corps;             // 0x3C

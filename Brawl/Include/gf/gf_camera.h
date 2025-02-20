@@ -21,12 +21,38 @@ public:
     char _spacer[96];
     Vec3f m_targetPos;
     Vec3f m_centerPos;
-    char _spacer1[100];
+    char _0x78[24];
+    Vec3f m_0x90;
+    char _0x9C[36];
+    Vec3f m_rot;
+    char _0xCC[16];
     float m_near;
     float m_far;
     char _spacer2[4];
     OrthoParam m_orthoParam;
-    char _spacer3[8];
+    union TransformFlag {
+        u16 m_mask;
+        struct {
+            bool m_flag15 : 1;      // 0x8000
+            bool m_flag14 : 1;      // 0x4000
+            bool m_flag13 : 1;      // 0x2000
+            bool m_flag12 : 1;      // 0x1000
+            bool m_flag11 : 1;      // 0x800
+            bool m_flag10 : 1;      // 0x400
+            bool m_flag9 : 1;       // 0x200
+            bool m_flag8 : 1;       // 0x100
+            bool m_flag7 : 1;       // 0x80
+            bool m_rotate : 1;       // 0x40
+            bool m_flag5 : 1;       // 0x20
+            bool m_flag4 : 1;       // 0x10
+            bool m_flag3 : 1;       // 0x8
+            bool m_flag2 : 1;       // 0x4
+            bool m_flag1 : 1;       // 0x2
+            bool m_flag0 : 1;       // 0x1
+        };
+    } m_transformFlag;
+
+    char _spacer3[6];
     ProjectionType m_projectionType;
     char _spacer4[48];
 
@@ -39,6 +65,9 @@ class gfCameraManager {
 public:
     gfCamera m_cameras[6];
     char _spacer[8];
+
+    inline gfCamera* getCamera(u32 index) { return &m_cameras[index]; }
+
     static gfCameraManager* getManager();
 };
 static_assert(sizeof(gfCameraManager) == 0x740, "Class is wrong size!");

@@ -79,7 +79,15 @@ public:
     GameRule m_gameRule : 8;
     char _107[2];
     bool m_isStamina;
-    char _110[2];
+    bool m_isTeams : 1;
+    bool m_isTeamAttack : 1;
+    bool : 1;
+    bool : 1;
+    bool m_isHomerun : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    char _111[1];
     int m_finalStatus;
     int m_finalEntryId;
     int m_noDiscretionFinalCount;

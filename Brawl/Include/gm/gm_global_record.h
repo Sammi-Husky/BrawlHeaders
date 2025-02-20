@@ -256,9 +256,9 @@ struct nteGlobalData {
 static_assert(sizeof(nteGlobalData) == 0x88, "Class is wrong size!");
 
 
-struct gmAdventure {
+struct gmAdvData {
 
-    struct SaveData {
+    struct Record {
         struct LevelClear {
             u32 m_state;           // 0x00
             s32 m_difficulty;      // 0x04
@@ -272,9 +272,9 @@ struct gmAdventure {
         LevelClear m_levelClears[34]; // 0x04
         char _684[18052];
     };
-    static_assert(sizeof(SaveData) == 0x4930, "Class is wrong size!");
+    static_assert(sizeof(Record) == 0x4930, "Class is wrong size!");
 
-    SaveData m_saveData;
+    Record m_record;
     char _18704[40];
 };
-static_assert(sizeof(gmAdventure) == 0x4958, "Class is wrong size!");
+static_assert(sizeof(gmAdvData) == 0x4958, "Class is wrong size!");
