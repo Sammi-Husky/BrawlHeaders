@@ -10,7 +10,17 @@ class soModuleAccesser;
 class soCameraModule {
 public:
     enum QuakeKind {
-
+        Quake_None = -1,
+        Quake_S = 0,
+        Quake_Small = 0,
+        Quake_L = 1,
+        Quake_Large = 1,
+        Quake_XL = 2,
+        Quake_More_Large = 2,
+        Quake_M = 3,
+        Quake_Middle = 3,
+        Quake_S_Half = 4,
+        Quake_Small_Hf = 4,
     };
 
     virtual ~soCameraModule();
