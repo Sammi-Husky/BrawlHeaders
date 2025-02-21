@@ -13,6 +13,6 @@ public:
 
     virtual void addObserver(short param1, s8 param2);
     virtual bool isObserv(char unk1);
-    virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
+    virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, s32 unk3);
 };
 static_assert(sizeof(soAnimCmdEventObserver) == 12, "Class is wrong size!");

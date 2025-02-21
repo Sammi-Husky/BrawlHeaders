@@ -47,22 +47,22 @@ public:
     virtual float getStickPrevX();
     virtual float getStickY();
     virtual float getStickPrevY();
-    virtual float getFlickX();
-    virtual float getFlickXDir();
-    virtual float getFlickY();
-    virtual float getFlickYDir();
-    virtual float getFlickNoResetX();
-    virtual float getFlickNoResetY();
-    virtual float getFlickAfterX();
-    virtual float getFlickAfterXDir();
-    virtual float getFlickAfterY();
+    virtual u8 getFlickX();
+    virtual s8 getFlickXDir();
+    virtual u8 getFlickY();
+    virtual s8 getFlickYDir();
+    virtual u8 getFlickNoResetX();
+    virtual u8 getFlickNoResetY();
+    virtual u8 getFlickAfterX();
+    virtual s8 getFlickAfterXDir();
+    virtual u8 getFlickAfterY();
     virtual float getSubStickX();
     virtual float getSubStickPrevX();
     virtual float getSubStickY();
     virtual float getSubStickPrevY();
     virtual int getTrigger();
-    virtual u8 getTriggerCount();
-    virtual u8 getTriggerCountPrev();
+    virtual u8 getTriggerCount(u8 index);
+    virtual u8 getTriggerCountPrev(u8 index);
     virtual int getButton();
     virtual int getRelease();
     virtual float getLr();
@@ -141,15 +141,15 @@ public:
     virtual float getStickPrevX();
     virtual float getStickY();
     virtual float getStickPrevY();
-    virtual float getFlickX();
-    virtual float getFlickXDir();
-    virtual float getFlickY();
-    virtual float getFlickYDir();
-    virtual float getFlickNoResetX();
-    virtual float getFlickNoResetY();
-    virtual float getFlickAfterX();
-    virtual float getFlickAfterXDir();
-    virtual float getFlickAfterY();
+    virtual u8 getFlickX();
+    virtual s8 getFlickXDir();
+    virtual u8 getFlickY();
+    virtual s8 getFlickYDir();
+    virtual u8 getFlickNoResetX();
+    virtual u8 getFlickNoResetY();
+    virtual u8 getFlickAfterX();
+    virtual s8 getFlickAfterXDir();
+    virtual u8 getFlickAfterY();
     virtual float getSubStickX();
     virtual float getSubStickPrevX();
     virtual float getSubStickY();
@@ -167,3 +167,9 @@ public:
     virtual ~soControllerImpl();
 };
 static_assert(sizeof(soControllerImpl) == 140, "Class is wrong size!");
+
+class soControllerNull : public soController {
+
+};
+
+extern soControllerNull g_soControllerNull;

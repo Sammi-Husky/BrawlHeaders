@@ -57,7 +57,7 @@ public:
     void* m_turnModule;
     void* m_shakeModule;
     soSoundModule* m_soundModule;
-    void* m_linkModule;
+    soLinkModule* m_linkModule; // +0x54
     void* m_visibilityModule;
     soControllerModule* m_controllerModule;
     soCameraModule* m_cameraModule;
@@ -96,7 +96,7 @@ public:
     char _4[4];
     StageObject* m_stageObject;
     soModuleEnumeration m_moduleEnumeration;
-    soModuleEnumeration* m_enumerationStart;
+    soModuleEnumeration* m_enumerationStart; // +0xD8
     void* vtable1;
 
     inline soModelModule* getModelModule() const

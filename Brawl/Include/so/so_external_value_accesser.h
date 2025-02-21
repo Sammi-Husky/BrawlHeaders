@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <mt/mt_vector.h>
+#include <so/controller/so_controller_module_impl.h>
 #include <so/stageobject.h>
 #include <types.h>
 
@@ -15,5 +16,5 @@ namespace soExternalValueAccesser {
     int getWorkInt(StageObject* stageObject, u32);
     soModuleAccesser* getModuleAccesser(StageObject* stageObject);
     soCollisionHitModule* getCollisionHitModule(StageObject* stageObject);
-
+    soControllerModule* getControllerModule(StageObject* stageObject);
 }

@@ -7,6 +7,7 @@
 #include <so/so_kind.h>
 #include <so/so_module_accesser.h>
 #include <so/event/so_gimmick_event_presenter.h>
+#include <so/link/so_link_event_presenter.h>
 #include <so/so_null.h>
 #include <types.h>
 
