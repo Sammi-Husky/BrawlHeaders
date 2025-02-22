@@ -10,6 +10,7 @@ class soModuleAccesser;
 class soAnimCmdEventObserver : public soEventObserver<soAnimCmdEventObserver> {
 public:
     soAnimCmdEventObserver(short unitID) : soEventObserver<soAnimCmdEventObserver>(unitID) {};
+    soAnimCmdEventObserver();
 
     virtual void addObserver(short param1, s8 param2);
     virtual bool isObserv(char unk1);
