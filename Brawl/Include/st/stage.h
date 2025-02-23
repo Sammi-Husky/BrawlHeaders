@@ -18,6 +18,7 @@
 #include <st/st_positions.h>
 #include <st/st_trigger.h>
 #include <types.h>
+#include <st/se_util.h>
 
 class StageParam { // STPM
 public:

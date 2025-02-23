@@ -68,3 +68,10 @@ public:
     virtual bool testIncludePos(Vec2f* pos);
 };
 static_assert(sizeof(gfArea) == 0x48, "Class is wrong size!");
+
+class gfAreaEventReciver {
+public:
+    virtual void reciveEvent(gfArea*, gfArea*);
+};
+
+typedef gfAreaEventReciver gfAreaEventReceiver;

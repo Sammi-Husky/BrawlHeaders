@@ -10,6 +10,7 @@
 #include <so/controller/so_controller_module_impl.h>
 #include <so/damage/so_damage_module_impl.h>
 #include <so/effect/so_effect_module_impl.h>
+#include <so/area/so_area_module_impl.h>
 #include <so/ground/so_ground_module_impl.h>
 #include <so/model/so_model_module_impl.h>
 #include <so/motion/so_motion_module_impl.h>
@@ -73,7 +74,7 @@ public:
     void* m_generateArticleManageModule;
     soEffectModule* m_effectModule;
     void* m_comboModule;
-    void* m_areaModule;
+    soAreaModule* m_areaModule;
     void* m_territoryModule;
     void* m_targetSearchModule;
     void* m_physicsModule;
@@ -203,6 +204,11 @@ public:
     inline soEffectModule* getEffectModule() const
     {
         return this->m_enumerationStart->m_effectModule;
+    }
+
+    inline soAreaModule* getAreaModule() const
+    {
+        return this->m_enumerationStart->m_areaModule;
     }
 
     inline soSlowModule* getSlowModule() const
