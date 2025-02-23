@@ -352,7 +352,18 @@ public:
     s8 m_teamNo;                         // 0x0B
     wchar_t m_name[5];                   // 0x0c
     char _0x16[4];                          // 0x16
+#ifdef MATCHING
     bool m_isNoVoice;                    // 0x1A
+#else
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool m_isNoVoice : 1;
+#endif
     bool : 1;                           // 0x1B
     bool : 1;
     bool : 1;

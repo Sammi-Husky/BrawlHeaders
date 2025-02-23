@@ -5,14 +5,23 @@
 #include <types.h>
 
 class stLoaderPlayer : public stLoader {
+public:
+    enum Mode {
+        Mode_Entry = 0x1,
+        Mode_Appear = 0x2,
+        Mode_Result = 0x6,
+    };
+
     u32 m_playerId;
     int m_entryId;
     int m_slotId;
-    char _0x54[6];
+    char _0x54[2];
+    u8 m_56;
+    Mode m_mode : 8;
+    char _0x58[2];
     gmCharacterKind m_characterKind : 8;
     char _0x5b[5];
 
-public:
     virtual void processBegin();
     virtual ~stLoaderPlayer();
     virtual void entryEntity();

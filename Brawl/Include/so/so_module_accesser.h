@@ -26,6 +26,7 @@
 #include <so/param/so_param_customize_module_impl.h>
 #include <so/camera/so_camera_module_impl.h>
 #include <so/link/so_link_module_impl.h>
+#include <so/visibility/so_visibility_module_impl.h>
 #include <so/capture/so_capture_module_impl.h>
 #include <so/item/so_item_manage_module_impl.h>
 #include <so/turn/so_turn_module_impl.h>
@@ -58,7 +59,7 @@ public:
     void* m_shakeModule;
     soSoundModule* m_soundModule;
     soLinkModule* m_linkModule; // +0x54
-    void* m_visibilityModule;
+    soVisibilityModule* m_visibilityModule;
     soControllerModule* m_controllerModule;
     soCameraModule* m_cameraModule;
     soWorkManageModule* m_workManageModule;
@@ -152,6 +153,16 @@ public:
     inline soSoundModule* getSoundModule() const
     {
         return this->m_enumerationStart->m_soundModule;
+    }
+
+    inline soLinkModule* getLinkModule() const
+    {
+        return this->m_enumerationStart->m_linkModule;
+    }
+
+    inline soVisibilityModule* getVisibilityModule() const
+    {
+        return this->m_enumerationStart->m_visibilityModule;
     }
 
     inline soControllerModule* getControllerModule() const

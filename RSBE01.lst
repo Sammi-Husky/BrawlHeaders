@@ -1432,6 +1432,9 @@ CC008000:WGPIPE
 27,1,0027BDA8:getPhase__13grTenganEventCFv
 27,1,0027BDB0:setPhase__13grTenganEventFl
 
+// IfPlayer
+800e1384:disappear__8IfPlayerFv
+
 // IfFoxSmashAppearTask
 800F6374:create__20IfFoxSmashAppearTaskFP9gfArchive
 
