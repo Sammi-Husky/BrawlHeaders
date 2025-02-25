@@ -20,7 +20,7 @@ public:
     virtual void update();
     virtual void hideAll();
     virtual void setWhole(u8);
-    virtual void getWhole(u8);
+    virtual u8 getWhole();
     virtual bool isVisible();
     virtual int get(u32);
 };
@@ -39,7 +39,7 @@ public:
     virtual void update();
     virtual void hideAll();
     virtual void setWhole(u8);
-    virtual void getWhole(u8);
+    virtual u8 getWhole();
     virtual bool isVisible();
     virtual int get(u32);
 

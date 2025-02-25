@@ -106,7 +106,10 @@ public:
         Customize_Param_Float_Egg_Collision_Offset_2_Y = 3101,
         Customize_Param_Float_Egg_Collision_Offset_2_Z = 3102,
         Customize_Param_Float_Egg_Collision_Size = 3103,
-
+        Customize_Param_Float_Barrel_Attack_Offset_X = 3104,
+        Customize_Param_Float_Barrel_Attack_Offset_Y = 3105,
+        Customize_Param_Float_Barrel_Attack_Offset_Z = 3106,
+        Customize_Param_Float_Barrel_Attack_Size = 3107,
         Customize_Param_Float_Ice_Offset_Y = 3108,
         Customize_Param_Float_Ice_Offset_Z = 3109,
         Customize_Param_Float_Ice_Radius = 3110,
@@ -241,6 +244,9 @@ public:
         Common_Param_Float_Capture_Cut_Ground_Speed = 3269,
         Common_Param_Float_Capture_Cut_Speed_X = 3270,
         Common_Param_Float_Capture_Cut_Speed_Y = 3271,
+
+        //Common_Param_Float_Damage_Fly_Smoke = 3281,
+        //Common_Param_Float_Damage_Fly_Smoke = 3282, // TODO: Figure out exactly what it does
 
         Common_Param_Float_Damage_Fly_Reflect_Speed = 3284,
         Common_Param_Float_Damage_Fly_Reflect_Speed_Mul = 3285,
@@ -421,12 +427,12 @@ public:
 
         // 23006 Something to do with team healer damage opponent rate? used in Fighter::touchItem
         Customize_Param_Int_Landing_Heavy_Frame = 23007,
-
+        Customize_Param_Int_Damage_Fly_Smoke_Node_Index = 23008,
         Customize_Param_Int_No_Ladder_Frame = 23009,
         Customize_Param_Int_Ladder_Hand_Node_Index_1 = 23010,
         Customize_Param_Int_Ladder_Hand_Node_Index_2 = 23011,
         Customize_Param_Int_Star_Attack_Power = 23012,
-
+        Customize_Param_Int_Barrel_Attack_Node_Index = 23013,
         Customize_Param_Int_Ice_Node_Index = 23014,
 
         Customize_Param_Int_Dead_Rare_SE_Rate = 23017,

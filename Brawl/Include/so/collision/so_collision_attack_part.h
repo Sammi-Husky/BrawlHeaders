@@ -5,6 +5,7 @@
 #include <types.h>
 #include <so/collision/so_collision.h>
 #include <so/so_array.h>
+#include <memory.h>
 
 struct soCollisionAttackAbsoluteData {
     int m_power;
@@ -245,6 +246,55 @@ struct soCollisionAttackData {
         m_hitStopFrame = 1.0;
         m_hitStopDelay = 1.0;
         m_region = Region_None;
+    }
+
+    inline soCollisionAttackData(int power, Vec3f* offsetPos, float size, int vector,
+                                 int reactionEffect, int reactionFix, int reactionAdd,
+                                 float slipChance, float hitStopFrame, float hitStopDelay,
+                                 u32 nodeIndex, u32 targetCategory, u32 targetSituation, u32 targetLr, u32 targetPart,
+                                 Attribute attribute, SoundLevel soundLevel, SoundAttribute soundAttribute,
+                                 SetOffKind setOffKind, bool noScale,
+                                 bool isShieldable, bool isReflectable, bool isAbsorbable, u32 subShield,
+                                 u16 serialHitFrame, bool isDirect, bool isInvalidInvincible, bool isInvalidXlu,
+                                 LrCheck lrCheck, bool isCatch, bool noTeam, bool noHitStop, bool noEffect,
+                                 bool noTransaction, Region region, soCollision::ShapeType shapeType) {
+        MEMINIT(this);
+        m_power = power;
+        m_offsetPos = *offsetPos;
+        m_size = size;
+        m_vector = vector;
+        m_reactionEffect = reactionEffect;
+        m_reactionFix = reactionFix;
+        m_reactionAdd = reactionAdd;
+        m_slipChance = slipChance;
+        m_hitStopFrame = hitStopFrame;
+        m_hitStopDelay = hitStopDelay;
+        m_nodeIndex = nodeIndex;
+        m_targetCategory = targetCategory;
+        m_targetSituation = targetSituation;
+        m_targetLr = targetLr;
+        m_targetPart = targetPart;
+        m_attribute = attribute;
+        m_soundLevel = soundLevel;
+        m_soundAttribute = soundAttribute;
+        m_setOffKind = setOffKind;
+        m_noScale = noScale;
+        m_isShieldable = isShieldable;
+        m_isReflectable = isReflectable;
+        m_isAbsorbable = isAbsorbable;
+        m_subShield = subShield;
+        m_serialHitFrame = serialHitFrame;
+        m_isDirect = isDirect;
+        m_isInvalidInvincible = isInvalidInvincible;
+        m_isInvalidXlu = isInvalidXlu;
+        m_lrCheck = lrCheck;
+        m_isCatch = isCatch;
+        m_noTeam = noTeam;
+        m_noHitStop = noHitStop;
+        m_noEffect = noEffect;
+        m_noTransaction = noTransaction;
+        m_region = region;
+        m_shapeType = shapeType;
     }
 };
 static_assert(sizeof(soCollisionAttackData) == 64, "Class is wrong size!");

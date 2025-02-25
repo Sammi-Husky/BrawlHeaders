@@ -1157,6 +1157,16 @@ public:
         Area_Wind = 0x8
     };
 
+    enum NodeId {
+        Node_Metroid = 201,
+
+        Node_Correct_Throw = 300,
+        Node_Correct_Hip = 301,
+        Node_Correct_XRot = 302,
+        Node_Correct_YRot = 303,
+        Node_Correct_Trans = 304,
+    };
+
     int m_entryId;
     char _272[44];
     ftOutsideEventPresenter m_outsideEventPresenter;
