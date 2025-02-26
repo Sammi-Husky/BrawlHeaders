@@ -18,15 +18,15 @@ public:
     virtual void deactivate() = 0;                             // 0x14
     virtual void update() = 0;                                 // 0x18
     virtual void updateMaterial() = 0;                         // 0x1C
-    virtual void offAll() = 0;                                 // 0x20
+    virtual void offAll(bool) = 0;                                 // 0x20
     virtual void setFlash() = 0;                               // 0x24
     virtual void setFlashColorFrame() = 0;                     // 0x28
-    virtual void offFlash() = 0;                               // 0x2C
+    virtual void offFlash(bool) = 0;                               // 0x2C
     virtual void setLight() = 0;                               // 0x30
     virtual void setLightColor() = 0;                          // 0x34
     virtual void setLightColorFrame() = 0;                     // 0x38
     virtual void setLightDir() = 0;                            // 0x3C
-    virtual void offLight() = 0;                               // 0x40
+    virtual void offLight(bool) = 0;                               // 0x40
     virtual void setPri() = 0;                                 // 0x44
     virtual void setSubColor(GXColor color, char enabled) = 0; // 0x48
     virtual char isEnableSubColor() = 0;                       // 0x4C
@@ -52,15 +52,15 @@ public:
     virtual void deactivate();
     virtual void update();
     virtual void updateMaterial();
-    virtual void offAll();
+    virtual void offAll(bool);
     virtual void setFlash();
     virtual void setFlashColorFrame();
-    virtual void offFlash();
+    virtual void offFlash(bool);
     virtual void setLight();
     virtual void setLightColor();
     virtual void setLightColorFrame();
     virtual void setLightDir();
-    virtual void offLight();
+    virtual void offLight(bool);
     virtual void setPri();
     virtual void setSubColor(GXColor color, char enabled);
     virtual char isEnableSubColor();
@@ -81,15 +81,15 @@ class soColorBlendModuleNull: public soColorBlendModule {
     virtual void deactivate();
     virtual void update();
     virtual void updateMaterial();
-    virtual void offAll();
+    virtual void offAll(bool);
     virtual void setFlash();
     virtual void setFlashColorFrame();
-    virtual void offFlash();
+    virtual void offFlash(bool);
     virtual void setLight();
     virtual void setLightColor();
     virtual void setLightColorFrame();
     virtual void setLightDir();
-    virtual void offLight();
+    virtual void offLight(bool);
     virtual void setPri();
     virtual void setSubColor(GXColor color, char enabled);
     virtual char isEnableSubColor();
