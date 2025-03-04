@@ -14,7 +14,11 @@ public:
     u32 m_remainingFrameTime;
     u32 m_time;
     u32 m_frameCounter;
-    char _172[368];
+    char _0xAC[0x18];
+    int m_numPlayers;
+    char _0xC8[0x14C];
+    DecisionKind m_decisionKind;
+    char _0x218[4];
 
     virtual void processBegin();
     virtual ~stOperatorRuleMelee();

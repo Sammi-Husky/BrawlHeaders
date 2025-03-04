@@ -6,6 +6,14 @@
 
 class stOperatorRule : public stOperator {
 public:
+    enum DecisionKind {
+        Decision_Timeup = 0x0,
+        Decision_Gameset = 0x1,
+        Decision_Complete = 0x2,
+        Decision_Failure = 0x3,
+        Decision_Success = 0x4
+    };
+
     void* m_operatorBgm;
     void* m_operatorNetwork;
     void* m_operatorController;

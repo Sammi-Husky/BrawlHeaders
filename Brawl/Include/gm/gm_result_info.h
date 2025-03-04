@@ -4,14 +4,6 @@
 #include <types.h>
 #include <gm/gm_lib.h>
 
-enum GameDecision {
-    Game_Decision_Timeup = 0x0,
-    Game_Decision_Gameset = 0x1,
-    Game_Decision_Complete = 0x2,
-    Game_Decision_Failure = 0x3,
-    Game_Decision_Success = 0x4
-};
-
 struct gmPlayerResultInfo {
     gmCharacterKind m_characterKind : 8;
     u8 m_state;
@@ -38,6 +30,18 @@ static_assert(sizeof(gmPlayerResultInfo) == 684, "Class is wrong size!");
 
 class gmResultInfo {
 public:
+    enum DecisionKind {
+        Decision_Timeup = 0x1,
+        Decision_Win = 0x2,
+        Decision_Team_Win = 0x3,
+        Decision_Failure = 0x4,
+        Decision_Complete = 0x5,
+        Decision_Success = 0x6,
+        Decision_Event_Success = 0x7,
+        Decision_Event_Failure = 0x8,
+        Decision_NoContest = 0x9,
+    };
+
     char _0[1];
     GameRule m_gameRule : 8;
     char _3[0xd];
@@ -46,7 +50,9 @@ public:
     s8 m_winningPlayer;
     char _32[4];
     gmPlayerResultInfo m_playersResultInfo[7];
-    char _4824[172];
+    char _4824[0xa0];
+    DecisionKind m_decisionKind : 8;
+    char _0x1379[11];
     int m_time;
 };
 static_assert(sizeof(gmResultInfo) == 0x1388, "Class is wrong size!");

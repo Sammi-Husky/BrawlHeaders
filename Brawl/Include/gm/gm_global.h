@@ -15,7 +15,8 @@
 class GameGlobal {
 public:
     /* data */
-    char _0[0x8];                       // 0x00
+    gmAppData* m_appData;               // 0x00
+    char _0[0x4];                       // 0x04
     gmGlobalModeMelee* m_modeMelee;     // 0x08
     char _1[0x04];                      // 0x0C
     gmSelCharData* m_selCharData;       // 0x10

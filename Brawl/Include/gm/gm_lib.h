@@ -3,6 +3,11 @@
 #include <StaticAssert.h>
 #include <types.h>
 
+struct gmAppData {
+    char _0x0[0x30];
+};
+static_assert(sizeof(gmAppData) == 0x30, "Class is wrong size!");
+
 bool gmCheckExistFigure(u16 id);
 
 enum GameMode {
@@ -44,6 +49,18 @@ enum GameRule {
     Game_Rule_Time = 0x0,
     Game_Rule_Stock = 0x1,
     Game_Rule_Coin = 0x2
+};
+
+enum gmCorpsKind {
+    Corps_None = 0x0,
+    Corps_Target = 0x3,
+    Corps_Simple = 0x4,
+    Corps_Kumite_Man_10 = 0x5,
+    Corps_Kumite_Man_100 = 0x6,
+    Corps_Kumite_Minute_3 = 0x7,
+    Corps_Kumite_Minute_15 = 0x8,
+    Corps_Kumite_Endless = 0x9,
+    Corps_Kumite_Cruel = 0xA,
 };
 
 enum gmCharacterKind {
