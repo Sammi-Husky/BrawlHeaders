@@ -26,6 +26,7 @@ namespace nw4r {
             char _spacer4[20];
 
             void EnableScnMdlCallbackTiming(u32 flags);
+            void UpdateFrame();
         };
     }
 }
