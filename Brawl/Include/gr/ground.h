@@ -47,7 +47,9 @@ public:
     // 10
     Ground* m_nextGround;
     // 14
-    char _spacer2[0x8];
+    char _spacer2[0x4];
+    // 18
+    u32 m_modelAnimNum;
     // 1C
     u16 m_mdlIndex;
     // 1E
