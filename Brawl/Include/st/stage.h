@@ -21,7 +21,15 @@
 #include <types.h>
 #include <st/se_util.h>
 
-class StageParam { // STPM
+struct stGameFrame {
+    float m_frameDelta;
+    bool m_isJust;
+    char _[3];
+};
+
+extern stGameFrame g_stGameFrame;
+
+class stParam { // STPM
 public:
     u8 m_echo;
     u8 m_id1;
@@ -95,7 +103,7 @@ public:
     u16 m_delayTime;
     char _244[16];
 };
-static_assert(sizeof(StageParam) == 260, "Class is wrong size!");
+static_assert(sizeof(stParam) == 260, "Class is wrong size!");
 
 class Stage : public gfTask {
 public:
@@ -126,7 +134,7 @@ public:
     // 54
     char _spacer3[4];
     // 58
-    StageParam* m_stageParam;
+    stParam* m_stageParam;
     // 5C
     void* m_stageData;
     // 60
