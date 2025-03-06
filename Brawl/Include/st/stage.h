@@ -17,6 +17,7 @@
 #include <st/st_collision_attr_param.h>
 #include <st/st_positions.h>
 #include <st/st_trigger.h>
+#include <st/st_shadow.h>
 #include <types.h>
 #include <st/se_util.h>
 
@@ -133,13 +134,29 @@ public:
     // 64
     char _spacer4[0x18];
     // 7C
-    u32 m_unk;
+    Vec3f* m_pokeTrainerPos;
     // 80
-    char _spacer5[0x38];
+    char _0x80[1];
+    // 81
+    u8 m_pokeTrainerPosCount;
+    // 82
+    u8 m_pokeTrainerPosType;
+    // 83
+    char _0x83[1];
+    // 84
+    stShadow* m_shadow;
+    // 88
+    float _0x88[6];
+    // A0
+    char _0xA0[11];
+    // AB
+    bool m_isDevil;
+    // AC
+    char _0xAC[12];
     // B8
     char collisionAttrs[0xC];
     // C4
-    gfArchive m_archive;
+    gfArchive m_itemSheetArchive;
     // 144
     bool m_unk2;
     // 145
@@ -180,7 +197,7 @@ public:
     virtual ~Stage();
 
     virtual void createObj();
-    virtual void createObjPokeTrainer(gfArchive* filedata, int fileindex, const char* name, int unk1, int unk2);
+    virtual void createObjPokeTrainer(gfArchive* filedata, int fileindex, const char* name, Vec3f* pokeTrainerPos, int unk2);
     virtual int getPokeTrainerPointNum() { return 0; }
     virtual void getPokeTrainerPointData(int* unk1, int unk2) {}
     virtual float getPokeTrainerPositionZ() { return 0.0f; }

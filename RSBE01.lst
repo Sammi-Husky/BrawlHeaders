@@ -502,7 +502,7 @@ CC008000:WGPIPE
 
 // Stage
 27,1,002225A8:createObj__5StageFv
-27,1,0022269C:createObjPokeTrainer__5StageFiiiii
+27,1,0022269C:createObjPokeTrainer__5StageFP9gfArchiveiPCcP5Vec3fi
 27,1,002227b0:addGround__5StageFP6Ground
 27,1,00222850:getGround__5StageFi
 27,1,00222830:getGroundNum__5StageFv
