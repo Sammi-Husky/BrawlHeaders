@@ -117,9 +117,9 @@ public:
     virtual void initStageData() { }
     virtual void setMdlIndex(int mdlIndex) { m_mdlIndex = mdlIndex; }
     virtual short getMdlIndex() { return m_mdlIndex; }
-    virtual bool isEnableCalcCollision() { return m_visibilityFlag3; }
-    virtual void enableCalcCollision() { m_visibilityFlag3 = 1; }
-    virtual void disableCalcCollision() { m_visibilityFlag3 = 0; }
+    virtual bool isEnableCalcCollision() { return m_isEnableCalcCollision; }
+    virtual void enableCalcCollision() { m_isEnableCalcCollision = 1; }
+    virtual void disableCalcCollision() { m_isEnableCalcCollision = 0; }
     virtual u32 getNodeIndex(u32 sceneModelIndex, const char* nodeName);
     virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, u32 nodeIndex);
     virtual bool getNodePosition(Vec3f* nodePos, u32 sceneModelIndex, const char* nodeName);
