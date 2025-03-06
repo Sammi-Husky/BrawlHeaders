@@ -59,21 +59,25 @@ public:
     // 28
     char _align[4];
     // 2c
-    union {
-        struct {
-            bool m_visibilityFlag7 : 1;
-            bool m_visibilityFlag6 : 1;
-            bool m_visibilityFlag5 : 1;
-            bool m_visibilityFlag4 : 1;
-            bool m_visibilityFlag3 : 1;
-            bool m_visibilityFlag2 : 1;
-            bool m_visibilityFlag1 : 1;
-            bool m_visibilityFlag0 : 1;
-        };
-        u8 m_visibilityFlags;
-    };
+    bool m_isVisible : 1;
+    bool m_isVisibleByClipping : 1;
+    bool m_isEnableCollisionStatus : 1;
+    bool m_isEnableCollisionStatusByClipping : 1;
+    bool m_isEnableCalcCollision : 1;
+    bool m_hasBindedData : 1;
+    bool m_hasUpdatedG3dCalcWorld : 1;
+    bool m_isUseMdlNameForStartAnim : 1;
     // 2d
-    char _spacer[3];
+    bool m_isCopyVisibility : 1;
+    bool m_isValid : 1;
+    bool m_noUpdateAnim : 1;
+    bool m_isPauseAnim : 1;
+    bool m_isUpdateG3dCalcWorld : 1;
+    bool m_isGr2 : 1;
+    bool m_isEnableBlendColor : 1;
+    bool m_isSetup : 1;
+    // 2e
+    char _spacer[2];
     // 30
     HeapType m_heapType;
     // 34
