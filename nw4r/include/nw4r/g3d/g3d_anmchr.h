@@ -16,8 +16,6 @@ namespace nw4r {
         };
         class ResAnmChr : public ResCommon<ResAnmChrData> {
         public:
-            u8 m_4[0x18];
-            u16 m_1C;
             inline ResAnmChr() : ResCommon() {}
             inline ResAnmChr(void* data) : ResCommon(data) {}
         };
