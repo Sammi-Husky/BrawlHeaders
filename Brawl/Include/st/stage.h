@@ -325,7 +325,7 @@ public:
     virtual u8 getIteamDropStatus();
     virtual bool createWind2ndOnly();
     virtual grGimmickWindData2nd* getWind2ndOnlyData(); // TODO
-    virtual void updateWind2ndOnly();                   // TODO
+    virtual void updateWind2ndOnly();
     virtual void setVision(u8);
 };
 
