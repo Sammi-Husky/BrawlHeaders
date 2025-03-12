@@ -1050,7 +1050,7 @@ public:
         Instance_Work_Flag_Speed_Damage = 0x12000020,
         Instance_Work_Flag_Disable_Scaling = 0x12000021,
         Instance_Work_Flag_Disable_Cliff_Catch = 0x12000022,
-
+        Instance_Work_Flag_Rebirth_Adventure = 0x12000023,
         Instance_Work_Flag_Disable_Ottotto = 0x12000024,
         Instance_Work_Flag_Disable_Slip = 0x12000025,
         Instance_Work_Flag_Slow = 0x12000026,

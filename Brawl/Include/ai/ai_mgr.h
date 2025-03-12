@@ -20,6 +20,7 @@ public:
     virtual void notifyEventChangeEnd(int entryId, int playerNo, int activeInstanceIndex, ftKind);
 
     int setDangerZone(Vec2f* p1, Vec2f* p2, int index, bool, bool);
+    void delDangerZone(int);
 };
 static_assert(sizeof(aiMgr) == 0x388, "Class is wrong size!");
 

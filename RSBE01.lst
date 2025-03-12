@@ -1103,6 +1103,7 @@ CC008000:WGPIPE
 
 // aiMgr
 27,1,001F27DC:setDangerZone__5aiMgrFP5Vec2fP5Vec2fibb
+27,1,001F299C:delDangerZone__5aiMgrFi
 
 // itManager
 27,1,002A1718:getInstance__9itManagerFv

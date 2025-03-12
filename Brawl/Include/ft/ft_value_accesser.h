@@ -197,7 +197,9 @@ public:
         Common_Param_Float_Loupe_Damage = 3214,
         Common_Param_Float_Cursor_Fly_Speed = 3215,
         Common_Param_Float_Cursor_Disp_Camera_Distance = 3216,
-
+        Common_Param_Float_Discretion_Final_Rate = 3217,
+        Common_Param_Float_Discretion_Final_Rate_Add = 3218,
+        Common_Param_Float_Discretion_Final_Rate_Max = 3219,
         Common_Param_Float_Stop_Ceil_Speed_X_Mul = 3220,
         Common_Param_Float_Stop_Ceil_Speed_Y_Mul = 3221,
         Common_Param_Float_Stop_Ceil_Speed_X_Stable_Mul = 3222,
@@ -498,6 +500,7 @@ public:
         Common_Param_Int_Damage_Fly_Attack_Frame = 23088,
         Common_Param_Int_Damage_Fly_Escape_Frame = 23089,
 
+        Common_Param_Int_Rebirth_Move_Frame = 23100,
         Common_Param_Int_Rebirth_Wait_Frame = 23101,
         Common_Param_Int_Rebirth_Invincible_Frame = 23102,
 
