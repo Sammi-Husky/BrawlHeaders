@@ -345,8 +345,8 @@ public:
     u8 m_playerId;                       // 0x02
     u8 m_playerNo;                       // 0x03
     s8 m_stockCount;                     // 0x04
-    s8 m_colorFileIdx;                   // 0x05
-    s8 m_costumeId;                      // 0x06
+    s8 m_colorFileNo;                   // 0x05
+    s8 m_colorNo;                      // 0x06
     char _0x07;                             // 0x07
     s8 m_startPointIdx;                  // 0x08
     char _0x9[0x02];                       // 0x09
