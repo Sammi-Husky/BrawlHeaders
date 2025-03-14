@@ -21,6 +21,8 @@ namespace nw4r {
 
             inline T& ref() const { return *m_dataPtr; }
             inline T* ptr() const { return m_dataPtr; }
+            T& operator*() const { return *m_dataPtr; }
+            T* operator->() const { return m_dataPtr; }
             inline bool IsValid() const { return m_dataPtr != NULL; }
         };
 

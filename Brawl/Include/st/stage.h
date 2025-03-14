@@ -19,7 +19,6 @@
 #include <st/st_trigger.h>
 #include <st/st_shadow.h>
 #include <types.h>
-#include <st/se_util.h>
 
 struct stGameFrame {
     float m_frameDelta;

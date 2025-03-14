@@ -9,16 +9,17 @@
 namespace nw4r {
     namespace g3d {
         struct ResAnmChrData {
-            char _spacer[0x14];
-            unsigned int m_stringOffset;
-            char _spacer2[0x1C - 0x14 - 4];
-            unsigned short m_animLength;
+            u8 _spacer[0x14];
+            u32 m_stringOffset;
+            u8 _spacer2[0x4];
+            u16 m_animLength;
         };
         class ResAnmChr : public ResCommon<ResAnmChrData> {
         public:
             inline ResAnmChr() : ResCommon() {}
             inline ResAnmChr(void* data) : ResCommon(data) {}
         };
+        static_assert(sizeof(ResAnmChr) == 4, "Class is wrong size!");
 
         class AnmObjChrRes : public G3dObj {
         public:
@@ -48,7 +49,7 @@ namespace nw4r {
 
             char _spacer[40];
 
-            ResAnmChr* m_anmChrFile;
+            ResAnmChr m_anmChrFile;
 
             char _spacer2[4];
         };
