@@ -301,7 +301,7 @@ public:
         Common_Param_Float_Damage_Ice_Damage_Air_Brake = 3342,
         Common_Param_Float_Damage_Ice_Rot_Speed_Min = 3343,
         Common_Param_Float_Damage_Ice_Rot_Speed_Max = 3344,
-        Common_Param_Float_Damage_Ice_Frame_Damage_Mul = 3347,
+        Common_Param_Float_Damage_Ice_Frame_Damage_Mul = 3345,
         Common_Param_Float_Damage_Ice_Recovery = 3346,
         Common_Param_Float_Damage_Ice_Recovery_Clatter = 3347,
         Common_Param_Float_Damage_Ice_Recovery_Damage = 3348,
