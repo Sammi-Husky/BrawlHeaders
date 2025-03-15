@@ -347,12 +347,14 @@ public:
     s8 m_stockCount;                     // 0x04
     s8 m_colorFileNo;                   // 0x05
     s8 m_colorNo;                      // 0x06
-    char _0x07;                             // 0x07
+    s8 m_controllerNo;                    // 0x07
     s8 m_startPointIdx;                  // 0x08
     char _0x9[0x02];                       // 0x09
     s8 m_teamNo;                         // 0x0B
     wchar_t m_name[5];                   // 0x0c
-    char _0x16[4];                          // 0x16
+    char _0x16[2];                          // 0x16
+    u8 m_nameIndex;                       // 0x18
+    char _0x17;
 #ifdef MATCHING
     bool m_isNoVoice;                    // 0x1A
 #else
