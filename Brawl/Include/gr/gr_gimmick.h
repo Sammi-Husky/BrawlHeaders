@@ -29,33 +29,8 @@ struct grGimmickMotionPathData {
 };
 static_assert(sizeof(grGimmickMotionPathData) == 8, "Class is wrong size!");
 
-struct grGimmickMotionPathInfo {
-    gfArchive* m_archive;
-    grGimmickMotionPathData* m_motionPathData;
-    union {
-        struct {
-            union {
-                struct {
-                    u8 : 6;
-                    bool m_isMotionPathRotate : 1;
-                    bool m_isMotionPathTranslate : 1;
-                    u32 : 24;
-                };
-                struct {
-                    u32 m_motionPathFlags;
-                };
-            };
-        };
-    };
 
-    int m_0xc;
-    int m_0x10;
-    int m_0x14;
-    int m_0x18;
-    int m_0x1c;
-    int m_0x20;
-};
-
+class grGimmickMotionPathInfo;
 class grGimmickMotionPath;
 
 class grVisibleProduction {
@@ -438,3 +413,30 @@ public:
     void updateProduction(float unk1);
 };
 static_assert(sizeof(grGimmick) == 0x14c, "Class is wrong size!");
+
+struct grGimmickMotionPathInfo {
+    gfArchive* m_archive;
+    grGimmickMotionPathData* m_motionPathData;
+    union {
+        struct {
+            union {
+                struct {
+                    u8 : 6;
+                    bool m_isRotate : 1;
+                    bool m_isTranslate : 1;
+                    u32 : 24;
+                };
+                struct {
+                    u32 m_flags;
+                };
+            };
+        };
+    };
+
+    grGimmick::SimpleEffectData* m_0xc;
+    grGimmick::SimpleEffectData* m_0x10;
+    grGimmick::SimpleEffectData* m_0x14;
+    grGimmick::SimpleEffectData* m_0x18;
+    grGimmick::SimpleEffectData* m_0x1c;
+    grGimmick::SimpleEffectData* m_0x20;
+};
