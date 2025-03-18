@@ -55,7 +55,7 @@ namespace nw4r {
 
             char _spacer[40];
 
-            ResAnmTexPat m_anmTexPatFile;
+            ResAnmTexPat* m_anmTexPatFile;
 
             char _spacer2[4];
         };
