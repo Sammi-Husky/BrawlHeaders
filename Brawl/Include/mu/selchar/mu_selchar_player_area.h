@@ -19,9 +19,19 @@ protected:
 public:
     u32 _0;
     muMenuController m_menuController;
-    char _0xAC[0x1C];
-    MuObject* m_muObject;
-    char _0xCC[0x84];
+    char _0xAC[0x4];
+    MuObject* m_muBackplate;
+    MuObject* m_muPlayerNum;
+    MuObject* m_muFranchiseIcon;
+    MuObject* m_muFrag;
+    MuObject* m_muCharPic;
+    MuObject* m_muUnk;
+    MuObject* m_muCharName;
+    MuObject* m_muTagBtn;
+    MuObject* m_muNameplate;
+    MuObject* m_muHandicap;
+    MuObject* m_muComputerLvl;
+    char _0xDC[0x74];
     void* m_objProcTask;
     muSelCharCBCalcWorld m_calcWorldCBs[7];
     muSelCharHand* m_selCharHand;
