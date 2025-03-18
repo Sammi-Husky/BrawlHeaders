@@ -157,6 +157,8 @@ CC008000:WGPIPE
 804004d8:cos
 80400b38:atan2
 802a0bcc:fabsf
+804005ac:floor
+8040036c:ceil
 
 // crc
 8038ed50:NETCalcCRC16
