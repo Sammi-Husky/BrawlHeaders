@@ -1043,6 +1043,13 @@ CC008000:WGPIPE
 // soController
 27,1,0005AA38:getButtonMask__12soControllerFQ212soController9PadButton
 
+// ftKindConversion
+27,1,00149BD8:convertKind__16ftKindConversionF15gmCharacterKindP6ftKind
+
+// ftInfo
+27,1,00143B34:getInstance__6ftInfoFv
+27,1,0014DEC4:getNamePtr__6ftInfoFi
+
 // ftEntryManager
 27,1,00119110:getEntity__14ftEntryManagerFUl
 

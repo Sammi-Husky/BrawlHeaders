@@ -1,9 +1,10 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <so/so_info.h>
 #include <types.h>
 
-class ftInfo {
+class ftInfo : public soInfo {
 public:
     enum AttackComboType {
         Attack_Combo_None = 0x0,
@@ -63,4 +64,15 @@ public:
         Capture_Motion_High = 0x0,
         Capture_Motion_Low = 0x1
     };
+
+public:
+    virtual ~ftInfo() { }
+    virtual bool isInvalidKind(int kind);
+    virtual int getInvalidKind();
+    const char* getNamePtr(int kind);
+    virtual u32 getMotionNum(int kind);
+    virtual u32 getStatusNum(int kind);
+
+    static ftInfo* getInstance();
+
 };
