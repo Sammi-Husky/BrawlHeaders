@@ -4,6 +4,7 @@
 #include <gf/gf_task.h>
 #include <types.h>
 #include <nw4r/g3d/g3d_anmscn.h>
+#include <nw4r/g3d/g3d_light.h>
 
 class gfSceneRoot : public gfTask {
 public:
@@ -65,6 +66,8 @@ public:
 
     void setCurrentFrame(float);
     void removeResAnmScn();
+    nw4r::g3d::LightObj* getLightObj(u8 p1);
+    void updateZoneLightSet(u8 p1, u8 p2);
 };
 static_assert(sizeof(gfSceneRoot) == 1292, "Class is wrong size!");
 
