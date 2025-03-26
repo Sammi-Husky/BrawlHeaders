@@ -33,6 +33,7 @@ struct cmStageParamPausedOffsetRange {
     float m_4;
     float m_8;
     float m_12;
+    cmStageParamPausedOffsetRange();
 };
 static_assert(sizeof(cmStageParamPausedOffsetRange) == 16, "Class is wrong size!");
 
