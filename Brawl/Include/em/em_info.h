@@ -35,11 +35,11 @@ public:
 
     emInfo();
     virtual ~emInfo();
-    virtual u32 isInvalidKind(EnemyKind kind);
-    virtual EnemyKind getInvalidKind();
-    virtual const char* getNamePtr();
-    virtual u32 getMotionNum(EnemyKind kind);
-    virtual u32 getStatusNum(EnemyKind kind);
+    virtual bool isInvalidKind(int kind);
+    virtual int getInvalidKind();
+    virtual const char* getNamePtr(int kind);
+    virtual u32 getMotionNum(int kind);
+    virtual u32 getStatusNum(int kind);
     u32 isPrimKind(EnemyKind kind);
     u32 getNodeNum(EnemyKind kind);
     u32 getKineticEnergyNum(EnemyKind kind);

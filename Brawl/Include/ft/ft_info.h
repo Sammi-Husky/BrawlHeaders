@@ -69,7 +69,7 @@ public:
     virtual ~ftInfo() { }
     virtual bool isInvalidKind(int kind);
     virtual int getInvalidKind();
-    const char* getNamePtr(int kind);
+    virtual const char* getNamePtr(int kind);
     virtual u32 getMotionNum(int kind);
     virtual u32 getStatusNum(int kind);
 
