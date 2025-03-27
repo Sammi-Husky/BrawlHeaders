@@ -17,6 +17,15 @@ enum ARCNodeType {
     Data_Type_Effect = 0x8
 };
 
+class gfArchiveFileHeader {
+    // TODO
+    u8 unk0[0x4];
+    u16 unk4;
+public:
+    void* getDataChunk();
+};
+// TODO size assertion
+
 class gfArchive {
 public:
     // 0

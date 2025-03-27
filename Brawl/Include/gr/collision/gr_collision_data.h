@@ -11,7 +11,8 @@ public:
     };
 
     struct JointData {
-        char _spacer[108];
+        char _spacer[0x4C];
+        const char m_name[0x20]; // +0x4C
     };
 
     struct LineData {
@@ -20,12 +21,14 @@ public:
         char _spacer[12];
     };
 
-    short m_vtxLen;
+    u16 m_vtxLen;
     short m_lineLen;
     short m_jointLen;
     short m_unk1;
     VtxData* m_vtxDatas;
     LineData* m_lineDatas;
     JointData* m_jointDatas;
+
+    const char* getJointNodeName(u32 nodeIndex);
 };
 static_assert(sizeof(grCollData) == 20, "Class is wrong size!");
