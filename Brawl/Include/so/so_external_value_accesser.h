@@ -17,4 +17,5 @@ namespace soExternalValueAccesser {
     soModuleAccesser* getModuleAccesser(StageObject* stageObject);
     soCollisionHitModule* getCollisionHitModule(StageObject* stageObject);
     soControllerModule* getControllerModule(StageObject* stageObject);
+    u32 getTeamOwnerId(StageObject* stageObject);
 }

@@ -969,6 +969,7 @@ CC008000:WGPIPE
 27,1,0008CC4C:getSituationKind__23soExternalValueAccesserFP11StageObject
 27,1,0008CCFC:getWorkFlag__23soExternalValueAccesserFP11StageObjectUl
 27,1,0008CCC4:getWorkInt__23soExternalValueAccesserFP11StageObjectUl
+27,1,0008CB9C:getTeamOwnerId__23soExternalValueAccesserFP11StageObject
 
 // ftExternalValueAccesser
 27,1,0014d4b8:getWeight__23ftExternalValueAccesserFP7Fighter
