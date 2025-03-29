@@ -8,6 +8,7 @@ class gfCameraController {
     gfCameraManager* m_cameraManager;
 
 public:
+    gfCameraController() : m_cameraManager(0) { }
     virtual void update(float) = 0;
     virtual void draw();
 };
