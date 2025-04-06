@@ -1,7 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <memory.h>
+#include <sr/sr_common.h>
 #include <types.h>
 
 struct stDataContainerData {
@@ -11,19 +11,36 @@ struct stDataContainerData {
     u32 m_extParam;
 };
 
-class stDataContainer {
-private:
+class stDataBaseContainer {
+public:
+    virtual ~stDataBaseContainer() { }
+};
+static_assert(sizeof(stDataBaseContainer) == 4, "Class is wrong size!");
+
+class stDataContainer : private stDataBaseContainer {
+protected:
     u32 m_headerSize;
     stDataContainerData* m_filedata;
+    static const u32 HeaderSize = 8;
 
 public:
-    virtual u32 getVersion();
-    virtual u32 getExtParam();
-    virtual stDataContainerData* getData(int index);
+    stDataContainer(stDataContainerData* data);
+    virtual u32 getVersion() { return 0; }
+    virtual u32 getExtParam() { return 0; }
+    virtual stDataContainerData* getData(u32 index);
     virtual void* getDataAddressHead();
     virtual ~stDataContainer();
 };
 static_assert(sizeof(stDataContainer) == 0x0C, "Class is wrong size!");
+
+class stDataSimpleContainer : public stDataContainer {
+    static const u32 SimpleHeaderSize = 16;
+
+public:
+    stDataSimpleContainer(stDataContainerData* data);
+    virtual ~stDataSimpleContainer();
+};
+static_assert(sizeof(stDataSimpleContainer) == 0x0C, "Class is wrong size!");
 
 class stDataMultiContainer : public stDataContainer {
 private:
