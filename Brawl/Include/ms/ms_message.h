@@ -27,7 +27,8 @@ public:
     void setCursorY(float);
     void printf(const char* format, ...);
 
-    static void utf8to16(wchar_t* dst, const char* src);
+    static u32 utf8to16(wchar_t* dst, const char* src);
+    static u32 utf16to8(char* dst, const wchar_t* src);
     static void getPrintIndexData(void* msgbin, u32 index, char** outStr, u32* outLen);
 
 
