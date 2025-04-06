@@ -151,6 +151,7 @@ CC008000:WGPIPE
 8000443c:memset__FPvUcUl
 8000443c:memset
 80004338:memcpy__FPvPvUl
+80004338:memcpy
 
 // math
 804009e0:sin

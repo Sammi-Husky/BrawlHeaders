@@ -1,7 +1,9 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <gr/collision/gr_collision_handle.h>
 #include <gr/collision/gr_collision_linework.h>
+#include <nw4r/ut/ut_LinkList.h>
 #include <types.h>
 
 class Stage;
@@ -47,3 +49,11 @@ public:
 
 };
 static_assert(sizeof(grCollision) == 56, "Class is wrong size!");
+
+// TODO: magic number 52 could be the size of a class
+struct grCollisionList : public nw4r::ut::LinkList<grCollisionHandle, 52> {
+
+};
+// TODO size assertion
+
+extern grCollisionList g_grCollisionList;
