@@ -47,9 +47,9 @@ public:
     void* m_teamModule;
     soCollisionAttackModule* m_collisionAttackModule;
     soCollisionHitModule* m_collisionHitModule;
-    void* m_collisionShieldModule;
-    void* m_collisionReflectorModule;
-    void* m_collisionAbsorberModule;
+    soCollisionShieldModule* m_collisionShieldModule;
+    soCollisionShieldModule* m_collisionReflectorModule;
+    soCollisionShieldModule* m_collisionAbsorberModule;
     void* m_collisionCatchModule;
     soCollisionSearchModule* m_collisionSearchModule;
     soDamageModule* m_damageModule;
