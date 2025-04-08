@@ -19,5 +19,6 @@ public:
 	u8 m_isTurn;
 	u8 m_isNoMBall;
 	u8 m_isNoHop;
+	u8 _b5[0x3];
 };
 static_assert(sizeof(soCollisionShieldGroup) == 0xB8, "Class is wrong size!");
