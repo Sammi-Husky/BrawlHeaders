@@ -7,7 +7,7 @@ class soCollisionShieldGroup {
 public:
 	u8 _00[0x90];
 	float m_posX;
-	u32 _0x94;
+	u32 _94;
 	float m_Lr;
 	float m_hopAngle;
 	float m_attackMul;
