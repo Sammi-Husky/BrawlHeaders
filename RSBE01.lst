@@ -1149,7 +1149,7 @@ CC008000:WGPIPE
 
 // Yakumono
 27,1,0026383C:setReactionFrame__8YakumonoFi
-27,1,002638DC:setCollisionHitSelfCatagory__8YakumonoFi
+27,1,002638DC:setCollisionHitSelfCatagory__8YakumonoFQ211soCollision8Category
 27,1,00263854:setCollisionHitOpponentCategory__8YakumonoFib
 27,1,002639D0:setTeam__8YakumonoFi
 27,1,002639EC:getTeam__8YakumonoFv
