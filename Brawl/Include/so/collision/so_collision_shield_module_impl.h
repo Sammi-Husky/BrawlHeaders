@@ -17,10 +17,10 @@ public:
 	virtual void deactivate();
 	virtual void begin();
 	virtual void clean();
-	virtual void add(u32, u32 collisionShieldGroupIndex);
-	virtual void add1(u32, u32 collisionShieldGroupIndex);
-	virtual void set(u32, u32, u32 collisionShieldGroupIndex);
-	virtual void setReflectorData(u32, u32 collisionShieldGroupIndex);
+	virtual void add(soCollisionShieldGroupData*, u32 collisionShieldGroupIndex);
+	virtual void add(soCollisionReflectorGroupData*, u32 collisionShieldGroupIndex);
+	virtual void set(u32, soCollisionShieldData*, u32 collisionShieldGroupIndex);
+	virtual void setReflectorData(soCollisionReflectorData*, u32 collisionShieldGroupIndex);
 	virtual void update(double, double, double, u32 collisionShieldGroupIndex);
 	virtual void update(double, double, double);
 	virtual u8 isShield(u32, u32 collisionShieldGroupIndex);
@@ -61,7 +61,7 @@ public:
 	u32 _24;
 	soCollision m_collision;
 	u8 _40[0x8];
-	soArrayVector<soCollisionShieldGroup, 1>* m_collisionShieldGroupArray;
+	soArray<soCollisionShieldGroup>* m_collisionShieldGroupArray;
 	u32 _4C;
 	u8 _50;
 	u8 m_collisionOccurred;
@@ -74,10 +74,10 @@ public:
 	virtual void deactivate();
 	virtual void begin();
 	virtual void clean();
-	virtual void add(u32, u32 collisionShieldGroupIndex);
-	virtual void add1(u32, u32 collisionShieldGroupIndex);
-	virtual void set(u32, u32, u32 collisionShieldGroupIndex);
-	virtual void setReflectorData(u32, u32 collisionShieldGroupIndex);
+	virtual void add(soCollisionShieldGroupData*, u32 collisionShieldGroupIndex);
+	virtual void add(soCollisionReflectorGroupData*, u32 collisionShieldGroupIndex);
+	virtual void set(u32, soCollisionShieldData*, u32 collisionShieldGroupIndex);
+	virtual void setReflectorData(soCollisionReflectorData*, u32 collisionShieldGroupIndex);
 	virtual void update(double, double, double, u32 collisionShieldGroupIndex);
 	virtual void update(double, double, double);
 	virtual u8 isShield(u32, u32 collisionShieldGroupIndex);
@@ -108,5 +108,9 @@ public:
 	virtual u32 getGroupNum();
 	virtual double getPosX(u32 collisionShieldGroupIndex);
 	virtual void setTargetProperty(u32, u32 collisionShieldGroupIndex);
+
+    virtual bool isObserv(char unk1);
+    virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
+    virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
 };
 static_assert(sizeof(soCollisionShieldModuleImpl) == 0x54, "Class is wrong size!");

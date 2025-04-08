@@ -1,7 +1,32 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <so/so_array.h>
 #include <types.h>
+
+struct soCollisionShieldData {
+
+};
+static_assert(sizeof(soCollisionShieldData) == 0x20, "Class is wrong size!");
+
+struct soCollisionReflectorData {
+    char _0[0x4];
+    float m_speedMul;
+    float m_attackLimit;
+    float m_lifeMul;
+    char _16[0x4];
+};
+static_assert(sizeof(soCollisionReflectorData) == 0x14, "Class is wrong size!");
+
+struct soCollisionShieldGroupData {
+    soSet<soCollisionShieldData> m_shieldDataSet;
+    u32 _8[4];
+};
+
+struct soCollisionReflectorGroupData {
+    soSet<soCollisionShieldData> m_shieldDataSet;
+    soCollisionReflectorData* m_reflectorData;
+};
 
 class soCollisionShieldGroup {
 public:

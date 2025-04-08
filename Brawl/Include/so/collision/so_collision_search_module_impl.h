@@ -71,6 +71,10 @@ public:
     virtual void invalidLog(soCollisionLog* collisionLog, u32 groupIndex);
     virtual void setCheckInterval(int);
     virtual void renderDebug();
+
+    virtual bool isObserv(char unk1);
+    virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
+    virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
 };
 static_assert(sizeof(soCollisionSearchModuleImpl) == 264, "Class is wrong size!");
 
