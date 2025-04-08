@@ -5,7 +5,7 @@
 #include <types.h>
 
 struct soCollisionShieldData {
-
+    char _[0x20];
 };
 static_assert(sizeof(soCollisionShieldData) == 0x20, "Class is wrong size!");
 
