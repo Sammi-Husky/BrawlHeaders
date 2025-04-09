@@ -1618,11 +1618,3 @@ CC008000:WGPIPE
 27,1,002A904C:getRandBasicItemSheet__9itManagerF7itGenId
 27,1,002A4FF8:preloadAssist__9itManagerF6itKindi
 
-// emWeaponManager (Note: addresses are based on abridged sora_enemy_vs)
-41,1,0002A7A4:create__15emWeaponManagerFv
-41,1,0002A798:getInstance__15emWeaponManagerFv
-41,1,0002A744:remove__15emWeaponManagerFv
-
-// wnemSimple (Note: addresses are based on abridged sora_enemy_vs)
-41,1,0002BE50:__ct__10wnemSimpleFv
-41,1,0002EEAC:__dt__10wnemSimpleFv
