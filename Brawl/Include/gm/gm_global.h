@@ -36,6 +36,7 @@ public:
     char _6[0x8];                       // 0x48
 
     gmGlobalRecord::MenuData* getGlobalRecordMenuDatap();
+    float getGameFrame() const;
 
     static int getLanguage();
 };
