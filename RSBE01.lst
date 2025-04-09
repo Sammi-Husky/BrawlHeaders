@@ -1097,6 +1097,7 @@ CC008000:WGPIPE
 27,1,0012CD58:setupEquipment__7FighterFv
 
 // ftOwner
+27,1,001119A0:getHitPointMax__7ftOwnerFv
 27,1,00111B2C:getStockCount__7ftOwnerFv
 27,1,00111DEC:setMetal__7ftOwnerFb
 27,1,00111EDC:setFinal__7ftOwnerFbb

@@ -34,6 +34,7 @@ public:
     virtual void addAttackPattern(void*);
 
     int getStockCount();
+    float getHitPointMax();
     void setMetal(bool);
     void setFinal(bool, bool);
     void setRabbitCap(bool);
