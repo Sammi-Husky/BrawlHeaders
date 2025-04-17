@@ -1211,6 +1211,7 @@ CC008000:WGPIPE
 8001bf0c:readFile__8gfFileIOFP15gfFileIORequest
 8001cbf4:readSDFile__8gfFileIOFP15gfFileIORequest
 8001f5a0:checkFileSD__8gfFileIOFP15gfFileIORequest
+8001ce40:writeFile__8gfFileIOFP15gfFileIORequest
 
 // gfFileIORequest
 8002241c:setWriteParam__15gfFileIORequestFPCcPvii

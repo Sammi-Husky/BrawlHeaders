@@ -234,7 +234,7 @@ public:
         Status_Shouldered_Donkey_Start = 0xD9,
         Status_Shouldered_Donkey = 0xDA,
         Status_Shouldered_Donkey_Thrown = 0xDB,
-        Status_Warptar = 0xDC,
+        Status_Warpstar = 0xDC,
         Status_Warpstar_Jump = 0xDD,
         Status_Dragoon_Ride = 0xDE,
         Status_Hammer_Wait = 0xDF,
