@@ -46,7 +46,7 @@ public:
             };
             u32 m_mask;
         };
-
+        inline KineticFlag() {}
         inline KineticFlag(u32 bits) : m_mask(bits) {}
 
     };
@@ -89,7 +89,7 @@ public:
             };
             u32 m_mask;
         };
-
+        inline TraitFlag() {}
         inline TraitFlag(u32 bits) : m_mask(bits) {}
     };
 
@@ -132,6 +132,7 @@ public:
             };
             u32 m_mask;
         };
+        inline BoundFlag() {}
         inline BoundFlag(u32 bits) : m_mask(bits) {}
     };
 

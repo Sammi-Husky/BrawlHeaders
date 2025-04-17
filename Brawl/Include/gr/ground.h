@@ -33,6 +33,7 @@ public:
             };
             u32 m_mask;
         };
+        inline CategoryFlag() {}
         inline CategoryFlag(u32 bits) : m_mask(bits) {}
     };
 
