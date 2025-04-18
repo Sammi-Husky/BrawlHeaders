@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <gf/gf_scene.h>
+#include <st/operator/st_operator_rule_targetbreak.h>
 #include <st/operator/st_operator_rule_melee.h>
 #include <st/operator/st_operator_drop_item.h>
 #include <st/operator/st_operator_info.h>
