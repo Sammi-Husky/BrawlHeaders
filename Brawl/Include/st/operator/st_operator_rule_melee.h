@@ -13,7 +13,7 @@ public:
     char _147[12];
     bool m_isStart;
     u32 m_remainingFrameTime;
-    u32 m_time;
+    u32 m_framesElapsed;
     u32 m_frameCounter;
     char _0xAC[0x18];
     int m_numPlayers;
