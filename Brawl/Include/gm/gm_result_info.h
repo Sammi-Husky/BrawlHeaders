@@ -53,7 +53,7 @@ public:
     char _4824[0xa0];
     DecisionKind m_decisionKind : 8;
     char _0x1379[11];
-    int m_time;
+    int m_framesElapsed;
 };
 static_assert(sizeof(gmResultInfo) == 0x1388, "Class is wrong size!");
 
