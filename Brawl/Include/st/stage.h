@@ -104,6 +104,11 @@ public:
 };
 static_assert(sizeof(stParam) == 260, "Class is wrong size!");
 
+struct stDestroyBossParamCommon {
+    char _[0x18];
+};
+static_assert(sizeof(stDestroyBossParamCommon) == 0x18, "Class is wrong size!");
+
 class Stage : public gfTask {
 public:
     // 0
@@ -310,7 +315,7 @@ public:
     virtual void getBamperVector(int unk1);
     virtual void notifyEventInfoReady();                           // TODO
     virtual void notifyEventInfoGo();                              // TODO
-    virtual void getDestroyBossParamCommon();                      // TODO
+    virtual stDestroyBossParamCommon getDestroyBossParamCommon(u32);
     virtual void stAdventureEventGetItem(int entryId, itKind kind, int itVariation, int genParamId, int instanceId);
     virtual void setStageOutEffectInit();                          // TODO
     virtual void setStageInEffectInit();                           // TODO
