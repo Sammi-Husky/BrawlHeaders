@@ -315,7 +315,11 @@ public:
     virtual void getBamperVector(int unk1);
     virtual void notifyEventInfoReady();                           // TODO
     virtual void notifyEventInfoGo();                              // TODO
+#ifdef MATCHING
     virtual stDestroyBossParamCommon getDestroyBossParamCommon(u32);
+#else
+    virtual stDestroyBossParamCommon getDestroyBossParamCommon(u32, int enemyCreateId = -1, int enemyMessageKind = -1);
+#endif
     virtual void stAdventureEventGetItem(int entryId, itKind kind, int itVariation, int genParamId, int instanceId);
     virtual void setStageOutEffectInit();                          // TODO
     virtual void setStageInEffectInit();                           // TODO

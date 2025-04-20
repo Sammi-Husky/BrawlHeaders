@@ -22,6 +22,13 @@ class Enemy : public StageObject, public soStatusEventObserver, public soCollisi
 
     // TODO: virtual functions
 public:
+    enum MessageKind {
+        Message_None = -1,
+        Message_Damage = 1,
+        Message_Destruct = 3,
+        Message_Remove = 4,
+    };
+
     template<typename T>
     static Enemy* createInstance(u32 p1, emCreate* create) {
         return new (Heaps::EnemyInstance) T(p1, create);

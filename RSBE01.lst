@@ -1619,4 +1619,6 @@ CC008000:WGPIPE
 27,1,00224AF4:getItemPac__5StageFPP9gfArchivePP9gfArchive6itKindiPP9gfArchivePP21itCustomizerInterface
 27,1,002A904C:getRandBasicItemSheet__9itManagerF7itGenId
 27,1,002A4FF8:preloadAssist__9itManagerF6itKindi
+27,1,00224B08:getDestroyBossParamCommon__5StageFUlii
+
 
