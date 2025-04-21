@@ -298,7 +298,7 @@ public:
     virtual void endAppear();                                // TODO
     virtual IfSmashAppearTask* getAppearTask();              // TODO
     virtual void forceStopAppear();                          // TODO
-    virtual int getFinalTechniqColor();                      // TODO
+    virtual GXColor getFinalTechniqColor();
     virtual void setMotionRatio(float unk1, float unk2);     // TODO
     virtual void saveMotionRatio(int unk1);                  // TODO
     virtual void restoreMotionRatio(int unk1);               // TODO
@@ -309,10 +309,10 @@ public:
     virtual bool isBossBattleMode() { return false; }
     virtual bool isSimpleBossBattleMode() { return false; }
     virtual bool isAppear();             // TODO
-    virtual s32 isStartAppearTimming();  // TODO
-    virtual void getMadeinAiData();      // TODO
+    virtual bool isStartAppearTimming();  // TODO
+    virtual void* getMadeinAiData();      // TODO
     virtual bool isBamperVector();       // TODO
-    virtual void getBamperVector(int unk1);
+    virtual void getBamperVector(Vec3f*);
     virtual void notifyEventInfoReady();                           // TODO
     virtual void notifyEventInfoGo();                              // TODO
 #ifdef MATCHING

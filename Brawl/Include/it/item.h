@@ -276,6 +276,15 @@ public:
     virtual void renderDebug();
     virtual ~BaseItem();
 
+    virtual void updatePosture(bool);
+    virtual soKind soGetKind();
+    virtual int soGetSubKind();
+    virtual void updateNodeSRT();
+    virtual bool isTreadPassive();
+    virtual bool isObserv(char unk1);
+    virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
+    virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
+
     // TODO: Verify parameters
     virtual void reset(Vec3f* pos, float lr, float);
     virtual void remove();

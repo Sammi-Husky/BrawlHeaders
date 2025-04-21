@@ -63,16 +63,16 @@ public:
     // TODO: Verify params?
     virtual void updatePosture(bool);
     virtual void processFixPositionPreAnimCmd();
-    virtual int* getInput();
-    virtual double getCollisionLr(int* unk1);
+    virtual Input* getInput();
+    virtual float getCollisionLr(soModuleAccesser*);
     virtual soKind soGetKind();
     virtual int soGetSubKind();
     virtual bool isActive();
-    virtual bool checkTransitionStatus(int unk1);
+    virtual bool checkTransitionStatus(u32);
     virtual void updateNodeSRT();
     virtual void adjustParentGroundCollision(int unk1, float* unk2);
-    virtual u32 isTreadPassive(int unk1);
-    virtual void notifyLostGround(int* unk1); // TODO
+    virtual bool isTreadPassive();
+    virtual void notifyLostGround(soModuleAccesser*);
 
     virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
@@ -82,6 +82,6 @@ public:
     virtual void notifyArticleEventEject(int unk1, int unk2, int* unk3, int* unk4);
     virtual void updateRoughPos();
 
-    void activate(float lr, float, Vec3f* pos, bool);
+    void activate(Vec3f* pos, float lr, float, bool);
 };
 static_assert(sizeof(StageObject) == 100, "Class is wrong size!");

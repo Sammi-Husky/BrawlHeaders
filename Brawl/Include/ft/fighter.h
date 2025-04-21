@@ -1179,13 +1179,27 @@ public:
     virtual void processEnd();
     virtual ~Fighter();
 
+    virtual Input* getInput();
+    virtual soKind soGetKind();
+    virtual int soGetSubKind();
+    virtual bool checkTransitionStatus(u32);
+    virtual bool isTreadPassive();
+    virtual bool isObserv(char unk1);
+    virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
+    virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
+    virtual void updateRoughPos();
+
     // TODO: Verify parameters
     virtual void postCreate();
     virtual Fighter* getPartner();
     virtual void attachInstance();
     virtual void detachInstance();
     virtual void standbyAdvFollow();
+#ifdef MATCHING
+    virtual void onStartFinal();
+#else
     virtual void onStartFinal(int variantID = -1, itCustomizerInterface** customizer = NULL); // Note: Optional parameters for modding purposes to use custom customizers
+#endif
     virtual void onEndFinal();
     virtual void toDead(int);
     virtual int checkDead();

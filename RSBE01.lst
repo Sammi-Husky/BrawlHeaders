@@ -600,10 +600,10 @@ CC008000:WGPIPE
 27,1,00224B50:isStartAppearTimming__5StageFv
 27,1,00224B60:getMadeinAiData__5StageFv
 27,1,00224B68:isBamperVector__5StageFv
-27,1,00224B70:getBamperVector__5StageFi
+27,1,00224B70:getBamperVector__5StageFP5Vec3f
 27,1,002249D8:notifyEventInfoReady__5StageFv
 27,1,002249DC:notifyEventInfoGo__5StageFv
-27,1,00224B08:getDestroyBossParamCommon__5StageFv
+27,1,00224B08:getDestroyBossParamCommon__5StageFUl
 27,1,00224B3C:stAdventureEventGetItem__5StageFi6itKindiii
 27,1,00224D88:setStageOutEffectInit__5StageFv
 27,1,00224D98:setStageInEffectInit__5StageFv

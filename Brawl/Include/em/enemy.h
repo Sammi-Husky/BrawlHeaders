@@ -29,6 +29,47 @@ public:
         Message_Remove = 4,
     };
 
+    virtual void processUpdate();
+    virtual void processFixPosition();
+    virtual void processHit();
+    virtual void processGameProc();
+    virtual void init();
+    virtual ~Enemy();
+
+    virtual void updatePosture(bool);
+    virtual void processFixPositionPreAnimCmd();
+    virtual soKind soGetKind();
+    virtual int soGetSubKind();
+    virtual void updateNodeSRT();
+    virtual bool isTreadPassive();
+    virtual bool isObserv(char unk1);
+    virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
+    virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
+
+    virtual float getScore();
+    virtual void activate(Vec3f* spawnPos, float lr, float, int statusKind);
+    virtual void deactivate();
+    virtual bool isSetableNode(int);
+    virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
+    virtual void notifyEventCollisionAttack(float power, soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
+    virtual bool notifyEventCollisionAttackCheck(u32 flags);
+    virtual void notifyEventCollisionSearch(soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
+    virtual bool notifyEventCollisionSearchCheck();
+    virtual void notifyEventCollisionAbsorber(soCollisionAttackModule* attackModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser, float power, float posX, float);
+    virtual bool notifyEventCollisionAbsorberCheck();
+    virtual void notifyEventCollisionReflector(soCollisionAttackModule* attackModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser, float power, float posX, float);
+    virtual void notifyEventCollisionReflectorSearch(soCollisionSearchModule* searchModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser);
+    virtual bool notifyEventCollisionReflectorCheck();
+    virtual bool notifyEventCaptureStatus(soModuleAccesser* moduleAccesser, int taskId, int, int);
+    virtual bool emCreateFigure(int variation);
+    virtual bool emShootItem(itKind, int variation, void*, float);
+    virtual bool emItemInformationReturnEnemy(int instanceId);
+    virtual bool shoot(int, int, int); // TODO: Verify parameters
+    virtual bool addParts(int, int);
+
+
+
+
     template<typename T>
     static Enemy* createInstance(u32 p1, emCreate* create) {
         return new (Heaps::EnemyInstance) T(p1, create);
