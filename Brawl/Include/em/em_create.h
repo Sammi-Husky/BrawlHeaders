@@ -5,7 +5,7 @@
 #include <mt/mt_vector.h>
 #include <types.h>
 
-enum EnemyKind {
+enum emKind {
     Enemy_Invalid = -0x1,
     Enemy_Goomba = 0x0,
     Enemy_Kuribo = 0x0,
@@ -117,6 +117,7 @@ enum EnemyKind {
     Enemy_Boss_CrazyHand = 0x3C,
     Enemy_Boss_Crazyhand = 0x3C
 };
+typedef emKind EnemyKind;
 
 class emCreate {
 public:

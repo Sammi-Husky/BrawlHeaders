@@ -525,7 +525,7 @@ CC008000:WGPIPE
 27,1,00224AF4:getItemPac__5StageFPP9gfArchivePP9gfArchive6itKindi
 27,1,00224AF8:getItemGenPac__5StageFPP9gfArchive
 27,1,00224AFC:getItemPacEnemyFigure__5StageFPP9gfArchive
-27,1,00224B00:getEnemyPac__5StageFPP9gfArchivePP9gfArchivePP9gfArchivePP9gfArchive9EnemyKind
+27,1,00224B00:getEnemyPac__5StageFPP9gfArchivePP9gfArchivePP9gfArchivePP9gfArchive6emKind
 27,1,00224B04:getAdvRadarData__5StageFPP9gfArchivePP9gfArchive
 27,1,00221B68:initializeStage__5StageFv
 27,1,00221F80:closeStage__5StageFv
@@ -1196,14 +1196,14 @@ CC008000:WGPIPE
 // emManager
 41,1,0000C6B0:create__9emManagerFUlUlUc
 41,1,0000C804:getInstance__9emManagerFv
-41,1,0000D20C:preloadArchive__9emManagerFP9gfArchiveP9gfArchiveP9gfArchiveP9gfArchive9EnemyKindb
+41,1,0000D20C:preloadArchive__9emManagerFP9gfArchiveP9gfArchiveP9gfArchiveP9gfArchive6emKindb
 41,1,0000C9D4:createEnemy__9emManagerFP8emCreate
-41,1,0000D6B8:getPreloadArchiveCountFromKind__9emManagerF9EnemyKind
+41,1,0000D6B8:getPreloadArchiveCountFromKind__9emManagerF6emKind
 41,1,0000CCE4:removeEnemyAll__9emManagerFv
 41,1,0000D528:removeArchiveAll__9emManagerFv
 41,1,0000C7B4:remove__9emManagerFv
 41,1,0000CF18:getEnemyCount__9emManagerFv
-41,1,0000CF8C:getEnemyCountFromKind__9emManagerF9EnemyKind
+41,1,0000CF8C:getEnemyCountFromKind__9emManagerF6emKind
 41,1,0000D42C:isCompArchiveAll__9emManagerFv
 41,1,0000CE84:getEnemyPtrFromId__9emManagerFi
 

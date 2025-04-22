@@ -89,6 +89,7 @@ enum ftKind {
     Fighter_Zako_Ball = 0x35,
     Fighter_MarioD = 0x36,
 };
+typedef ftKind FighterKind;
 
 class ftEntryEventObserver : public soEventObserver<ftEntryEventObserver> {
 public:
