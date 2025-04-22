@@ -304,7 +304,7 @@ public:
     virtual bool isConstraint();
     virtual void setConstraintTargetNode(int);
     virtual bool isSyncOwnerStatus();
-    virtual void setSyncOwnerStatus(int);
+    virtual void setSyncOwnerStatus(bool);
     virtual void setAttackPowerMulPattern(float);
     virtual void setArticleId(int articleId);
     virtual void setLogAttackInfo(soLogAttackInfo* logAttackInfo);

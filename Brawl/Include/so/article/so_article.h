@@ -26,7 +26,7 @@ class soArticle : public soNullable, public soEventPresenter<soArticleEventObser
     virtual int getArticleId();
     virtual int getArticleEventManageId();
     virtual int getTaskId();
-    virtual void changeMotion(int, int);
+    virtual void changeMotion(int motionKind, bool);
     virtual void setFrame(float frame);
     virtual void setRate(float rate);
     virtual void changeStatus(int statusKind);
@@ -45,12 +45,13 @@ class soArticle : public soNullable, public soEventPresenter<soArticleEventObser
     virtual void linkOwner(int, int);
     virtual void unlinkOwner(int);
     virtual bool isSyncOwnerStatus();
-    virtual void setSyncOwnerStatus(int);
+    virtual void setSyncOwnerStatus(bool);
     virtual void setLogAttackInfo(soLogAttackInfo* logAttackInfo);
     virtual soLogAttackInfo getLogAttackInfo();
     virtual void updateLogAttackInfo();
     virtual void intrudeLogAttackInfo();
     virtual float getActiveGlobalFrame();
     virtual void setAttackPowerMulPattern(float);
+    virtual void setPosForce();
 };
 static_assert(sizeof(soArticle) == 20, "Class is wrong size!");
