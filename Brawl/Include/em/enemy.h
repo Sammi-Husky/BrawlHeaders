@@ -29,6 +29,11 @@ public:
         Message_Remove = 4,
     };
 
+    enum KineticEnergyType {
+        Kinetic_Energy_Jostle = 0x8,
+        Kinetic_Energy_Ground_Movement = 0x9,
+    };
+
     virtual void processUpdate();
     virtual void processFixPosition();
     virtual void processHit();

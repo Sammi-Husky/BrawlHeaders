@@ -54,7 +54,7 @@ public:
         Instance_Work_Int_Counter = 0x1000000B,
         Instance_Work_Int_Counter_2 = 0x1000000C,
         Instance_Work_Int_Message = 0x1000000D,
-        Instance_Work_Int_Message_2 = 0x1000000E, // used in SmashPlate
+        Instance_Work_Int_Message_Enemy = 0x1000000E, // used in SmashPlate and getCommunicationItemPortData
         Instance_Work_Int_Scale_Anim_Type = 0x1000000F,
         Instance_Work_Int_Scale_Anim_Counter = 0x10000010,
         Instance_Work_Int_Scale_Anim_Node_Index = 0x10000011,
