@@ -20,6 +20,7 @@
 8059FF80:g_gfSceneRoot
 8049ebe0:g_Network
 805a02a4:g_muWifiInterfaceTask
+8059fff4:g_gfFileIOManager
 805a00b8:g_mtRand
 27,6,5910: g_stLoaderManager
 8059ff68:__float_nan

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <ut/ut_queue.h>
 #include <types.h>
 
 // These are stored in field 0x18 in bits 20-21.
@@ -59,3 +60,11 @@ public:
     void setReadParam(const char* filepath, void* addr, int length, int offset);
     void setWriteParam(const char* filepath, void* addr, int len, int offset);
 };
+
+class gfFileIORequestQueue {
+    char _[0x18];
+    utQueueInterface<gfFileIORequest*>* m_queue;
+public:
+    inline u32 getSize() { return m_queue->size(); };
+};
+static_assert(sizeof(gfFileIORequestQueue) == 0x1c, "Wrong size for class!");
