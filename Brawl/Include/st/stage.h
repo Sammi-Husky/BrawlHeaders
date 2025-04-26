@@ -298,7 +298,7 @@ public:
     virtual void endAppear();                                // TODO
     virtual IfSmashAppearTask* getAppearTask();              // TODO
     virtual void forceStopAppear();                          // TODO
-    virtual GXColor getFinalTechniqColor();
+    virtual u32 getFinalTechniqColor();
     virtual void setMotionRatio(float unk1, float unk2);     // TODO
     virtual void saveMotionRatio(int unk1);                  // TODO
     virtual void restoreMotionRatio(int unk1);               // TODO

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <enemy.h>
+#include <em/enemy.h>
 #include <types.h>
 
 class emMite : public Enemy {

@@ -2,7 +2,7 @@
 
 #include <StaticAssert.h>
 #include <em/em_create.h>
-#include <em/em_resource_module_impl.h>
+#include <em/resource/em_resource_module_impl.h>
 #include <em/enemy.h>
 #include <so/so_info.h>
 #include <types.h>

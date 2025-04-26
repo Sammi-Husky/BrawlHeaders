@@ -2,7 +2,7 @@
 
 #include <StaticAssert.h>
 #include <types.h>
-#include <nw4r/ut/color.h>
+#include <nw4r/ut/ut_Color.h>
 
 namespace ms {
     class CharWriter {
