@@ -37,7 +37,9 @@ public:
     gfTask* m_attachedTask;
     gfTask* m_nextTask;
     int m_taskId;
-    u32 _1 : 9;
+    u8 _0 : 6;
+    bool unk2C_b1 : 1;
+    u32 _1 : 2;
     u32 _2 : 8;
     Category m_taskCategory : 8;
     u32 _3 : 7;
