@@ -26,24 +26,48 @@ public:
         Category_SoCollision = 0x27,
     };
 
+    enum Render {
+        Render_Pre,
+        Render_Opa,
+        Render_Xlu,
+    };
+
+    enum TaskType {
+        Type_0,
+        Type_1,
+    };
+
     char* m_taskName;
-    gfTask* m_next;
-    gfTask* m_prev;
-    int m_0xC;
-    int m_0x10;
-    int m_0x14;
-    int m_0x18;
+    gfTask* m_prev;     // TODO: suspend list and priority list prev?
+    gfTask* m_next;     // TODO: suspend list and priority list next?
+    gfTask* m_0xC;      // TODO: category list prev?
+    gfTask* m_0x10;     // TODO: category list next?
+    gfTask* m_0x14;     // TODO: unk31 list prev?
+    gfTask* m_0x18;     // TODO: unk31 list next?
     gfTask* m_connectedTask;
     gfTask* m_attachedTask;
     gfTask* m_nextTask;
-    int m_taskId;
-    u8 _0 : 6;
+    u32 m_taskId;
+    u8 _0 : 1;
+    bool unk2C_b6 : 1;
+    bool unk2C_b5 : 1;
+    u8 _1: 2;
+    bool unk2C_b2 : 1;
     bool unk2C_b1 : 1;
-    u32 _1 : 2;
-    u32 _2 : 8;
+    bool unk2C_b0 : 1;
+    u32 _2 : 1;
+    s32 m_status : 8; // TODO: Task state?
     Category m_taskCategory : 8;
-    u32 _3 : 7;
-    char _unk[0xC];
+    u32 _4 : 7;
+    u8 unk30;
+    u8 unk31;
+    u8 unk32[0x2];
+    u16 unk34;
+    char _unk[0x4];
+
+    bool getFlag1() const { return unk2C_b1; }
+    s32 getStatus() const { return m_status; }
+    void setStatus(s32 st) { m_status = st; }
 
     gfTask(const char* name, Category category, int unk2, int unk3, int unk4);
     virtual void processDefault();
@@ -70,11 +94,13 @@ public:
     virtual void init();
     virtual ~gfTask();
 
+    void process(TaskType taskType);
+    void render(Render kind);
+    void setPaused(bool paused);
+    void unlink();
     void exit();
     int getId();
     Category getCategory();
     static gfTask* getTask(int taskId);
-
-
 };
 static_assert(sizeof(gfTask) == 0x40, "Class is wrong size!");
