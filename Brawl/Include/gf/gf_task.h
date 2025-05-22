@@ -33,11 +33,30 @@ public:
     };
 
     enum TaskType {
-        Type_0,
-        Type_1,
+        Task_Default,
+        Task_Begin,
+        Task_Anim,
+        Task_Update,
+        Task_PreMapCorrection,
+        Task_MapCorrection,
+        Task_FixPosition,
+        Task_PreCollision,
+        Task_Collision,
+        Task_Catch,
+        Task_Hit,
+        Task_Camera,
+        Task_FixCamera,
+        Task_Effect,
+        Task_GameProc,
+        Task_End,
     };
 
-    char* m_taskName;
+    struct UnkClass {
+        UnkClass* m_next;
+        virtual void func();
+    };
+
+    const char* m_taskName;
     gfTask* m_prev;     // TODO: suspend list and priority list prev?
     gfTask* m_next;     // TODO: suspend list and priority list next?
     gfTask* m_0xC;      // TODO: category list prev?
@@ -51,25 +70,26 @@ public:
     u8 _0 : 1;
     bool unk2C_b6 : 1;
     bool unk2C_b5 : 1;
-    u8 _1: 2;
+    u8 _1: 1;
+    bool unk2C_b3 : 1;
     bool unk2C_b2 : 1;
     bool unk2C_b1 : 1;
     bool unk2C_b0 : 1;
     u32 _2 : 1;
-    s32 m_status : 8; // TODO: Task state?
+    s32 m_status : 8;
     Category m_taskCategory : 8;
     u32 _4 : 7;
     u8 unk30;
     u8 unk31;
-    u8 unk32[0x2];
-    u16 unk34;
-    char _unk[0x4];
+    u16 unk32;
+    u16 unk34; // Note: MSBit is 'isPaused'
+    UnkClass* unk38;
 
     bool getFlag1() const { return unk2C_b1; }
     s32 getStatus() const { return m_status; }
     void setStatus(s32 st) { m_status = st; }
 
-    gfTask(const char* name, Category category, int unk2, int unk3, int unk4);
+    gfTask(const char* name, Category category, int unk2, int unk3, bool unk4);
     virtual void processDefault();
     virtual void processBegin();
     virtual void processAnim();
@@ -94,9 +114,11 @@ public:
     virtual void init();
     virtual ~gfTask();
 
+    void updateId();
     void process(TaskType taskType);
     void render(Render kind);
     void setPaused(bool paused);
+    void link(bool p1);
     void unlink();
     void exit();
     int getId();

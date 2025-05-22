@@ -77,6 +77,14 @@ public:
         m_numPendingPrioUpdates = 0;
         clear();
     }
+
+    void unregistTask(gfTask* task) {
+        (void)task;
+        m_numRegisteredTasks--;
+    }
+
+    s32 getUnk0_1() const { return unk0_1; }
+    void setUnk2_7() { unk2_b7 = true; }
 };
 static_assert(sizeof(gfTaskScheduler) == 0x178, "Class is the wrong size!");
 
