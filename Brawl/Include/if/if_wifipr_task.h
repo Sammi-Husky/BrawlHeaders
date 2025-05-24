@@ -5,7 +5,7 @@
 
 class ifWifiprTask : public gfTask {
 public:
-    ifWifiprTask() : gfTask(TaskName, Category_Info, 14, 6, 1) { }
+    ifWifiprTask() : gfTask(TaskName, Category_Info, 14, 6, true) { }
     virtual void processDefault();
     virtual ~ifWifiprTask();
 

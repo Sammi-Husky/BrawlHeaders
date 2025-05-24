@@ -6,7 +6,7 @@
 class ifAdvTask : public gfTask {
     u32 m_state;
 public:
-    ifAdvTask() : gfTask(TaskName, Category_Info, 14, 6, 1), m_state(0) { }
+    ifAdvTask() : gfTask(TaskName, Category_Info, 14, 6, true), m_state(0) { }
     virtual void processDefault();
     virtual void renderPre();
     virtual ~ifAdvTask();
