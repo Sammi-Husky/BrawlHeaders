@@ -14,9 +14,10 @@ public:
 static_assert(sizeof(gfCallBack) == 0x8, "Class is wrong size!");
 
 class gfCallBackList {
+public:
     gfCallBack* m_head;
 
-public:
+    gfCallBackList() : m_head(nullptr) { }
     void add(gfCallBack* cb);
     bool remove(gfCallBack* cb);
     void process();

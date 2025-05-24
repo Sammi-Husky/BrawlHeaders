@@ -1,6 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <gf/gf_callback.h>
 #include <types.h>
 
 class gfTask {
@@ -32,28 +33,23 @@ public:
         Render_Xlu,
     };
 
-    enum TaskType {
-        Task_Default,
-        Task_Begin,
-        Task_Anim,
-        Task_Update,
-        Task_PreMapCorrection,
-        Task_MapCorrection,
-        Task_FixPosition,
-        Task_PreCollision,
-        Task_Collision,
-        Task_Catch,
-        Task_Hit,
-        Task_Camera,
-        Task_FixCamera,
-        Task_Effect,
-        Task_GameProc,
-        Task_End,
-    };
-
-    struct UnkClass {
-        UnkClass* m_next;
-        virtual void func();
+    enum ProcessType {
+        Process_Default,
+        Process_Begin,
+        Process_Anim,
+        Process_Update,
+        Process_PreMapCorrection,
+        Process_MapCorrection,
+        Process_FixPosition,
+        Process_PreCollision,
+        Process_Collision,
+        Process_Catch,
+        Process_Hit,
+        Process_Camera,
+        Process_FixCamera,
+        Process_Effect,
+        Process_GameProc,
+        Process_End,
     };
 
     const char* m_taskName;
@@ -68,7 +64,7 @@ public:
     gfTask* m_nextTask;
     u32 m_taskId;
     u8 _0 : 1;
-    bool unk2C_b6 : 1;
+    bool m_alive : 1;
     bool unk2C_b5 : 1;
     u8 _1: 1;
     bool unk2C_b3 : 1;
@@ -83,9 +79,12 @@ public:
     u8 unk31;
     u16 unk32;
     u16 unk34; // Note: MSBit is 'isPaused'
-    UnkClass* unk38;
+    gfCallBackList unk38;
 
     bool getFlag1() const { return unk2C_b1; }
+    bool getFlag2() const { return unk2C_b2; }
+    bool getFlag5() const { return unk2C_b5; }
+    bool isAlive() const { return m_alive; }
     s32 getStatus() const { return m_status; }
     void setStatus(s32 st) { m_status = st; }
 
@@ -115,7 +114,7 @@ public:
     virtual ~gfTask();
 
     void updateId();
-    void process(TaskType taskType);
+    void process(ProcessType taskType);
     void render(Render kind);
     void setPaused(bool paused);
     void link(bool p1);
