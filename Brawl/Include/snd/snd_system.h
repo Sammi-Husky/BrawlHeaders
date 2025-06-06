@@ -11,6 +11,9 @@ private:
 public:
     int loadSoundGroup(SndGroupID sndGroupId, int, bool isRequest);
     void freeGroup(int heapLevel, int);
+    bool loadArchiveHeader();
+    bool setupBuffers();
+    void loadCommon();
 
     void playSE(SndID sndID, int unk, int unk2, int unk3, int unk4);
     void stopSE(s32 p1, s32 p2);

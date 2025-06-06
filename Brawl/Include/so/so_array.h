@@ -50,7 +50,7 @@ class soArrayContractibleTable : public soArrayContractible<T>,
     T* m_elements;
     s32 m_size;
 public:
-    soArrayContractibleTable() : m_elements(0), m_size(0) { }
+    soArrayContractibleTable() : m_elements(nullptr), m_size(0) { }
     soArrayContractibleTable(T* elmnts, s32 size) : m_elements(elmnts), m_size(size) {
         if (!elmnts) {
             this->m_size = 0;
@@ -64,10 +64,10 @@ public:
             return *this;
         }
 
-        m_link = other.m_link;
+        this->m_link = other.m_link;
         m_elements = other.m_elements;
         m_size = other.m_size;
-        if (other.m_elements == 0){
+        if (other.m_elements == nullptr){
             m_size = 0;
         }
         return *this;
@@ -77,32 +77,32 @@ public:
     virtual const T& at(s32 index) const { return atSub(index); }
 
     virtual void shift() {
-        if (!isEmpty()) {
+        if (!this->isEmpty()) {
             if (m_size > 0) {
                 if (--m_size <= 0) {
-                    m_elements = 0;
+                    m_elements = nullptr;
                 } else {
                     m_elements++;
                 }
-            } else if (m_link) {
-                m_link->shift();
+            } else if (this->m_link) {
+                this->m_link->shift();
             }
         }
     }
 
     virtual void pop() {
-        if (m_link && !m_link->isEmpty()) {
-            m_link->pop();
+        if (this->m_link && !this->m_link->isEmpty()) {
+            this->m_link->pop();
         } else if (m_size > 0) {
             m_size--;
         }
     }
 
     virtual void clear() {
-        if (m_link) {
-            m_link->clear();
+        if (this->m_link) {
+            this->m_link->clear();
         }
-        m_elements = 0;
+        m_elements = nullptr;
         m_size = 0;
     }
 
@@ -111,8 +111,8 @@ public:
         if (!m_elements) {
             res = 0;
         }
-        if (m_link) {
-            return res + m_link->size();
+        if (this->m_link) {
+            return res + this->m_link->size();
         }
         return res;
     }
@@ -120,8 +120,8 @@ public:
     bool isNull() const { return false; }
 
     virtual T& atSub(s32 index) const {
-        if (index >= m_size && m_link) {
-            return m_link->at(index - m_size);
+        if (index >= m_size && this->m_link) {
+            return this->m_link->at(index - m_size);
         }
         return m_elements[index];
     }
