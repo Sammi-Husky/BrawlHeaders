@@ -20,8 +20,10 @@ public:
 
 class muSelCharTask : public gfTask {
 public:
+    const static u8 num_player_areas = 4;
+
     char _0x40[4];
-    muSelCharPlayerArea* m_selCharPlayerAreas[4];
+    muSelCharPlayerArea* m_selCharPlayerAreas[num_player_areas];
     char _0x54[0x600];
 
     virtual void processDefault();
