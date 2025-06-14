@@ -1,6 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <types.h>
 
 class soAnimCmdArgument;
 class soAnimCmd;
