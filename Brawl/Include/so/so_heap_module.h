@@ -7,7 +7,7 @@
 
 class soHeapModule : public soNullable {
 public:
-    soHeapModule();
+    soHeapModule() { }
     virtual ~soHeapModule() { }
     virtual HeapType getInstanceHeap() const;
     virtual void setInstanceHeap(HeapType heap) { }
@@ -16,5 +16,3 @@ public:
     virtual u32 getSlotNo() const;
 };
 static_assert(sizeof(soHeapModule) == 8, "Class is wrong size!");
-
-__inline soHeapModule::soHeapModule()  { }

@@ -5,12 +5,12 @@
 #include <so/so_module_accesser.h>
 #include <types.h>
 
-class soParamAccesser : public soNull, public soNullable {
+class soParamAccesser : private soNull, public soNullable {
 public:
-    virtual ~soParamAccesser();
-    float getParamFloat(soModuleAccesser* moduleAccesser, u32, u32);
-    int getParamInt(soModuleAccesser* moduleAccesser, u32, u32);
-    void* getParamIndefinite(soModuleAccesser* moduleAccesser, u32, u32);
+    virtual ~soParamAccesser() { }
+    virtual float getParamFloat(soModuleAccesser* moduleAccesser, u32, u32) = 0;
+    virtual int getParamInt(soModuleAccesser* moduleAccesser, u32, u32) = 0;
+    virtual void* getParamIndefinite(soModuleAccesser* moduleAccesser, u32, u32) = 0;
 };
 
 class soValueAccesser {
