@@ -63,5 +63,7 @@ public:
     void setCharPic(int charKind, int playerKind, int curCostume, bool isTeamBattle, int teamColor, int unk);
     nw4r::g3d::ResFile* getCharPicTexResFile(int charKind);
     bool isTeamBattle();
+    u8 exchangeCharKindDetail(MuSelchkind selCharKind);
+    void dispMarkKind(MuSelchkind charKind);
 };
 static_assert(sizeof(muSelCharPlayerArea) == 0x448, "Wrong size for class!");
