@@ -8,9 +8,9 @@
 class soParamAccesser : private soNull, public soNullable {
 public:
     virtual ~soParamAccesser() { }
-    virtual float getParamFloat(soModuleAccesser* moduleAccesser, u32, u32) = 0;
-    virtual int getParamInt(soModuleAccesser* moduleAccesser, u32, u32) = 0;
-    virtual void* getParamIndefinite(soModuleAccesser* moduleAccesser, u32, u32) = 0;
+    virtual float getParamFloat(soModuleAccesser* moduleAccesser, s32 p2) = 0;
+    virtual s32 getParamInt(soModuleAccesser* moduleAccesser, s32 p2) = 0;
+    virtual void* getParamIndefinite(soModuleAccesser* moduleAccesser, s32 p2) = 0;
 };
 
 class soValueAccesser {

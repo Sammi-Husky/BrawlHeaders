@@ -9,16 +9,17 @@
 
 // TODO: Determine size
 class emResourceModuleImpl : public soResourceModuleImpl {
+public:
     void* unk18;
     void* unk1C;
     void* unk20;
     void* unk24;
     void* unk28;
-    void* unk2C;
+    UnkParamAccesser* unk2C;
     void* unk30;
-    void* unk34;
+    UnkParamAccesser* unk34;
     EnemyKind m_kind;
-public:
+
     emResourceModuleImpl(
         u32 paramArchiveId,
         soResourceIdAccesserImpl* resourceIdAccessor,

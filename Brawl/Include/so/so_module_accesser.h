@@ -101,6 +101,10 @@ public:
     soModuleEnumeration* m_enumerationStart; // +0xD8
     void* vtable1;
 
+    soResourceModule& getResourceModule() const {
+        return *m_enumerationStart->m_resourceModule;
+    }
+
     inline soModelModule* getModelModule() const
     {
         return this->m_enumerationStart->m_modelModule;
@@ -231,7 +235,7 @@ public:
         return this->m_enumerationStart->m_paramCustomizeModule;
     }
 };
-static_assert(sizeof(soModuleAccesser) == 224, "Class is wrong size!");
+static_assert(sizeof(soModuleAccesser) == 0xE0, "Class is wrong size!");
 
 class soModuleAccesserNull : public soModuleAccesser {
 

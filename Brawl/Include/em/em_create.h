@@ -119,6 +119,24 @@ enum emKind {
 };
 typedef emKind EnemyKind;
 
+// TODO: is this emValueAccesser?
+struct UnkParamAccesser {
+    u8 unk0[0x240];
+    s32 unk240;
+    u8 unk244[0x3C];
+    u32 unk280; // TODO type
+    u8 unk284[0x28];
+    s32 unk2AC;
+    u8 unk2B0[0x3C];
+    u8 unk2EC; // TODO type
+    s32 unk2F0;
+    float unk2F4;
+    float unk2F8;
+    u8 unk2FC[0x30];
+    s32 unk32C;
+    float unk330;
+};
+
 class emCreate {
 public:
     u8 m_difficulty;
@@ -134,7 +152,7 @@ public:
     Rect2D m_territoryRange;
     int m_connectedTriggerId;
     void* m_epbm;
-    void* m_epsp;
+    UnkParamAccesser* m_epsp;
     grGimmickMotionPath* m_motionPath;
     int m_parentCreateId;
     virtual ~emCreate(){
