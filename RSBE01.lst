@@ -1551,6 +1551,8 @@ CC008000:WGPIPE
 10,1,00014b68:setCharPic__19muSelCharPlayerAreaFiiibii
 10,1,00015238:isTeamBattle__19muSelCharPlayerAreaFv
 10,1,0000FEDC:dispHighScore__13muSelCharTaskFiii
+10,1,00014858:dispMarkKind__19muSelCharPlayerAreaF11MuSelchkind
+10,1,00012010:exchangeCharKindDetail__19muSelCharPlayerAreaF11MuSelchkind
 
 // gfMemoryPool
 80025c58:alloc__12gfMemoryPoolFPvUli
