@@ -121,20 +121,86 @@ typedef emKind EnemyKind;
 
 // TODO: is this emValueAccesser?
 struct UnkParamAccesser {
-    u8 unk0[0x240];
-    s32 unk240;
-    u8 unk244[0x3C];
+    u8 unk0[0x140];
+    u32 unk140; // TODO type
+    u8 unk144[0x3C];
+    u32 unk180; // TODO type
+    u8 unk184[0x4];
+    u32 unk188; // TODO type
+    u8 unk18C[0x18];
+    u32 unk1A4; // TODO type
+    u32 unk1A8; // TODO type
+    u8 unk1AC[0x4];
+    s32 unk1B0;
+    s32 unk1B4;
+    u32 unk1B8; // TODO type
+    u8 unk1BC[0x4];
+    u32 unk1C0; // TODO type
+    float unk1C4;
+    float unk1C8;
+    u32 unk1CC; // TODO type
+    u8 unk1D0[0x38];
+    u32 unk208; // TODO type
+    u8 unk20C[0x28];
+    u32 unk234; // TODO type
+    u8 unk238[0x8];
+    u32 unk240; // TODO type
+    u8 unk244[0x4];
+    u32 unk248; // TODO type
+    u8 unk24C[0xC];
+    u32 unk258; // TODO type
+    u8 unk25C[0x8];
+    u32 unk264; // TODO type
+    u32 unk268; // TODO type
+    u8 unk26C[0xC];
+    float unk278;
+    s32 unk27C;
     u32 unk280; // TODO type
-    u8 unk284[0x28];
+    u32 unk284; // TODO type
+    u8 unk288[0x4];
+    float unk28C;
+    float unk290;
+    u8 unk294;
+    u8 unk295;
+    u8 unk296[0x2];
+    float unk298;
+    u8 unk29C[0x10];
     s32 unk2AC;
-    u8 unk2B0[0x3C];
+    u32 unk2B0; // TODO type
+    u8 unk2B4[0x38];
     u8 unk2EC; // TODO type
     s32 unk2F0;
     float unk2F4;
     float unk2F8;
-    u8 unk2FC[0x30];
+    u8 unk2FC[0x4];
+    u32 unk300; // TODO type
+    u8 unk304[0x20];
+    u32 unk324; // TODO type
+    u8 unk328[0x4];
     s32 unk32C;
     float unk330;
+    u8 unk334[0x10];
+    s32 unk344;
+    u32 unk348; // TODO type
+    u8 unk34C[0x34];
+    u32 unk380; // TODO type
+    u8 unk384[0xB0];
+    u32 unk434; // TODO type
+    u8 unk438[0x44];
+    u32 unk47C; // TODO type
+    u8 unk480[0x34];
+    u32 unk4B4; // TODO type
+    u8 unk4B8[0x4];
+    u32 unk4BC; // TODO type
+    u8 unk4C0[0x20];
+    u32 unk4E0; // TODO type
+    u8 unk4E4[0xC];
+    u32 unk4F0; // TODO type
+    u8 unk4F4[0x8];
+    u8 unk4FC;
+    s32 unk500;
+    s32 unk504;
+    u32 unk508; // TODO type
 };
 
 class emCreate {
