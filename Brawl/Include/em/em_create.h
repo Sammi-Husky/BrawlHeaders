@@ -121,7 +121,20 @@ typedef emKind EnemyKind;
 
 // TODO: is this emValueAccesser?
 struct UnkParamAccesser {
-    u8 unk0[0x140];
+    u8 unk0[0xC0];
+    u32 unkC0; // TODO type
+    u8 unkC4[0x20];
+    u32 unkE4; // TODO type
+    u8 unkE8[0x1C];
+    float unk104;
+    float unk108;
+    float unk10C;
+    u32 unk110; // TODO type
+    u8 unk114[0xC];
+    u32 unk120; // TODO type
+    u8 unk124[0xC];
+    u32 unk130; // TODO type
+    u8 unk134[0xC];
     u32 unk140; // TODO type
     u8 unk144[0x3C];
     u32 unk180; // TODO type
@@ -130,7 +143,7 @@ struct UnkParamAccesser {
     u8 unk18C[0x18];
     u32 unk1A4; // TODO type
     u32 unk1A8; // TODO type
-    u8 unk1AC[0x4];
+    u32 unk1AC; // TODO type
     s32 unk1B0;
     s32 unk1B4;
     u32 unk1B8; // TODO type
@@ -201,6 +214,22 @@ struct UnkParamAccesser {
     s32 unk500;
     s32 unk504;
     u32 unk508; // TODO type
+    u8 unk50C[0x74];
+    u32 unk580; // TODO type
+    u8 unk584[0x68];
+    u32 unk5EC; // TODO type
+    u8 unk5F0[0x5C];
+    s32 unk64C;
+    u8 unk650;
+    u32 unk654; // TODO type
+    u8 unk658[0x4];
+    s32 unk65C;
+    s32 unk660;
+    u32 unk664; // TODO type
+    u8 unk668[0x4];
+    u32 unk66C; // TODO type
+    u8 unk670[0x4];
+    u32 unk674; // TODO type
 };
 
 class emCreate {
