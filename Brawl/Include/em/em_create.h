@@ -17,6 +17,7 @@ enum emKind {
     Enemy_Jyakeel = 0x3,
     Enemy_Auroros = 0x4,
     Enemy_Aroaros = 0x4,
+    Enemy_Cymul = 0x5,
     Enemy_Cymal = 0x5,
     Enemy_Roturret = 0x6,
     Enemy_Deathpod = 0x6,
@@ -122,54 +123,54 @@ typedef emKind EnemyKind;
 // TODO: is this emValueAccesser?
 struct UnkParamAccesser {
     u8 unk0[0xC0];
-    u32 unkC0; // TODO type
+    u32 unkC0;
     u8 unkC4[0x20];
-    u32 unkE4; // TODO type
+    u32 unkE4;
     u8 unkE8[0x1C];
     float unk104;
     float unk108;
     float unk10C;
-    u32 unk110; // TODO type
+    u32 unk110;
     u8 unk114[0xC];
-    u32 unk120; // TODO type
+    u32 unk120;
     u8 unk124[0xC];
-    u32 unk130; // TODO type
+    u32 unk130;
     u8 unk134[0xC];
-    u32 unk140; // TODO type
+    u32 unk140;
     u8 unk144[0x3C];
-    u32 unk180; // TODO type
+    u32 unk180;
     u8 unk184[0x4];
-    u32 unk188; // TODO type
+    u32 unk188;
     u8 unk18C[0x18];
-    u32 unk1A4; // TODO type
-    u32 unk1A8; // TODO type
-    u32 unk1AC; // TODO type
+    u32 unk1A4;
+    u32 unk1A8;
+    u32 unk1AC;
     s32 unk1B0;
     s32 unk1B4;
-    u32 unk1B8; // TODO type
+    u32 unk1B8;
     u8 unk1BC[0x4];
-    u32 unk1C0; // TODO type
+    u32 unk1C0;
     float unk1C4;
     float unk1C8;
-    u32 unk1CC; // TODO type
+    u32 unk1CC;
     u8 unk1D0[0x38];
-    u32 unk208; // TODO type
+    u32 unk208;
     u8 unk20C[0x28];
-    u32 unk234; // TODO type
+    u32 unk234;
     u8 unk238[0x8];
-    u32 unk240; // TODO type
+    u32 unk240;
     u8 unk244[0x4];
-    u32 unk248; // TODO type
+    u32 unk248;
     u8 unk24C[0xC];
-    u32 unk258; // TODO type
+    u32 unk258;
     u8 unk25C[0x8];
-    u32 unk264; // TODO type
-    u32 unk268; // TODO type
+    u32 unk264;
+    u32 unk268;
     u8 unk26C[0xC];
     float unk278;
     s32 unk27C;
-    u32 unk280; // TODO type
-    u32 unk284; // TODO type
+    u32 unk280;
+    u32 unk284;
     u8 unk288[0x4];
     float unk28C;
     float unk290;
@@ -179,57 +180,97 @@ struct UnkParamAccesser {
     float unk298;
     u8 unk29C[0x10];
     s32 unk2AC;
-    u32 unk2B0; // TODO type
-    u8 unk2B4[0x38];
-    u8 unk2EC; // TODO type
+    u32 unk2B0;
+    u8 unk2B4[0xC];
+    u32 unk2C0;
+    u8 unk2C4[0x4];
+    u32 unk2C8;
+    u8 unk2CC[0x1C];
+    u32 unk2E8;
+    u8 unk2EC;
     s32 unk2F0;
     float unk2F4;
     float unk2F8;
     u8 unk2FC[0x4];
-    u32 unk300; // TODO type
+    u32 unk300;
     u8 unk304[0x20];
-    u32 unk324; // TODO type
+    u32 unk324;
     u8 unk328[0x4];
     s32 unk32C;
     float unk330;
     u8 unk334[0x10];
     s32 unk344;
-    u32 unk348; // TODO type
+    u32 unk348;
     u8 unk34C[0x34];
-    u32 unk380; // TODO type
-    u8 unk384[0xB0];
-    u32 unk434; // TODO type
-    u8 unk438[0x44];
-    u32 unk47C; // TODO type
-    u8 unk480[0x34];
-    u32 unk4B4; // TODO type
+    u32 unk380;
+    u8 unk384[0x8];
+    float unk38C;
+    float unk390;
+    float unk394;
+    s32 unk398;
+    u32 unk39C;
+    u8 unk3A0[0x78];
+    u32 unk418;
+    u8 unk41C[0x18];
+    u32 unk434;
+    u8 unk438[0x8];
+    u32 unk440;
+    u8 unk444[0x38];
+    u32 unk47C;
+    u8 unk480[0x14];
+    u32 unk494;
+    u8 unk498[0x14];
+    u32 unk4AC;
+    u8 unk4B0[0x4];
+    u32 unk4B4;
     u8 unk4B8[0x4];
-    u32 unk4BC; // TODO type
+    u32 unk4BC;
     u8 unk4C0[0x20];
-    u32 unk4E0; // TODO type
+    u32 unk4E0;
     u8 unk4E4[0xC];
-    u32 unk4F0; // TODO type
+    u32 unk4F0;
     u8 unk4F4[0x8];
     u8 unk4FC;
     s32 unk500;
     s32 unk504;
-    u32 unk508; // TODO type
-    u8 unk50C[0x74];
-    u32 unk580; // TODO type
+    u32 unk508;
+    u32 unk50C;
+    u32 unk510;
+    u8 unk514[0x8];
+    u32 unk51C;
+    u8 unk520[0xC];
+    s32 unk52C;
+    u8 unk530[0x50];
+    u32 unk580;
     u8 unk584[0x68];
-    u32 unk5EC; // TODO type
-    u8 unk5F0[0x5C];
+    u32 unk5EC;
+    u8 unk5F0[0x44];
+    u32 unk634;
+    u8 unk638[0x14];
     s32 unk64C;
     u8 unk650;
-    u32 unk654; // TODO type
+    u32 unk654;
     u8 unk658[0x4];
     s32 unk65C;
     s32 unk660;
-    u32 unk664; // TODO type
+    u32 unk664;
     u8 unk668[0x4];
-    u32 unk66C; // TODO type
+    u32 unk66C;
     u8 unk670[0x4];
-    u32 unk674; // TODO type
+    u32 unk674;
+    u8 unk678[0x1C];
+    float unk694;
+    float unk698;
+    float unk69C;
+    u32 unk6A0;
+    u8 unk6A4[0x4];
+    u32 unk6A8;
+    u8 unk6AC[0x4];
+    float unk6B0;
+    float unk6B4;
+    u32 unk6B8;
+    u8 unk6BC[0x24];
+    u32 unk6E0;
 };
 
 class emCreate {
