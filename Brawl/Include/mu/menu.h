@@ -224,4 +224,5 @@ namespace muMenu {
     static int exchangeMuSelchkind2MuStockchkind(int id);
     static const char* exchangeMuStockchkind2MuCharName(int id);
     static int getStockFrameID(int id);
+    static int getFighterColorFileNo(int charKind, int costumeID);
 };

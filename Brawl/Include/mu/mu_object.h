@@ -33,5 +33,7 @@ public:
     void setFrameMatCol(float frame);
     void setFrameTex(float frame);
     virtual ~MuObject();
+    void changeMaterialTex(int matNode, int texNode, nw4r::g3d::ResFile** textureSource = nullptr);
+    void changeMaterialTex(int matNode, const char* textureName, nw4r::g3d::ResFile** textureSource = nullptr);
 };
 static_assert(sizeof(MuObject) == 0x60, "Class is wrong size!");
