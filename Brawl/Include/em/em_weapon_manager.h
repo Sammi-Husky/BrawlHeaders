@@ -15,6 +15,7 @@ public:
     virtual void deactivateObject(wnemSimple* wnem);
     virtual void resetProcFncList();
     virtual void resetManageWeaponList();
+    wnemSimple* GetManagedWeapon(u32 taskId, u32 p2, u32 p3);
 
     static void create();
     static void remove();
