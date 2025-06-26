@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <em/em_create.h>
+#include <em/em_ai_module_impl.h>
 #include <gr/gr_gimmick_motion_path.h>
 #include <memory.h>
 #include <so/stageobject.h>
@@ -9,16 +10,18 @@
 
 class Enemy : public StageObject, public soStatusEventObserver, public soCollisionAttackEventObserver, public soCollisionSearchEventObserver, public soCaptureEventObserver, public soCollisionAbsorberEventObserver, public soCollisionReflectorEventObserver {
 
-    EnemyKind m_enemyKind;
-    char _176[4];
+    EnemyKind m_enemyKind; // 0xAC
+    u8 unkB0[0x4];
     int m_connectedTriggerId;
     u32 m_difficulty;
     u32 m_level;
-    char _192[8];
+    u8 unkC0[0x8];
     grGimmickMotionPath* m_motionPath;
-    char _204[16];
+    u8 unkCC[0x10];
     soModuleAccesser moduleAccesser;
-    char _444[20820];
+    u8 unk1BC[0xF4C];
+    emAIModuleImpl m_aiModule; // 0x1108
+    u8 unk110C[0x5310 - 0x1108 - sizeof(emAIModuleImpl)];
 
     // TODO: virtual functions
 public:
@@ -33,6 +36,8 @@ public:
         Kinetic_Energy_Jostle = 0x8,
         Kinetic_Energy_Ground_Movement = 0x9,
     };
+
+    emAIModuleImpl& getAIModule() { return m_aiModule; }
 
     virtual void processUpdate();
     virtual void processFixPosition();

@@ -101,6 +101,10 @@ public:
     soModuleEnumeration* m_enumerationStart; // +0xD8
     void* vtable1;
 
+    StageObject& getStageObject() const {
+        return *m_stageObject;
+    }
+
     soResourceModule& getResourceModule() const {
         return *m_enumerationStart->m_resourceModule;
     }
