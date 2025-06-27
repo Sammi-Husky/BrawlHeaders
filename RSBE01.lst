@@ -109,6 +109,8 @@ CC008000:WGPIPE
 801dec90:OSUnlockMutex
 801deb7c:OSInitMutex
 801e1a80:OSSleepTicks__FUlUl
+801e1b34:OSGetTime
+801e1b4c:OSGetTick
 
 // string
 803fa3fc:strcmp__FPCcPCc
