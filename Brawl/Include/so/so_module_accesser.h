@@ -214,9 +214,8 @@ public:
         return this->m_enumerationStart->m_effectModule;
     }
 
-    inline soAreaModule* getAreaModule() const
-    {
-        return this->m_enumerationStart->m_areaModule;
+    soAreaModule& getAreaModule() const {
+        return *m_enumerationStart->m_areaModule;
     }
 
     inline soSlowModule* getSlowModule() const
