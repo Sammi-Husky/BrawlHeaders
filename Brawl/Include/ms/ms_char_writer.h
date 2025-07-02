@@ -1,7 +1,6 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <nw4r/ut/Color.h>
 #include <nw4r/ut/ut_Color.h>
 #include <types.h>
 
