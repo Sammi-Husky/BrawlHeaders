@@ -84,4 +84,4 @@ public:
 
     void activate(Vec3f* pos, float lr, float, bool);
 };
-static_assert(sizeof(StageObject) == 100, "Class is wrong size!");
+static_assert(sizeof(StageObject) == 0x64, "Class is wrong size!");

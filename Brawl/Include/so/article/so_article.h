@@ -22,10 +22,10 @@ struct soLogAttackInfo {
 class soArticle : public soNullable, public soEventPresenter<soArticleEventObserver> {
     // TODO
     virtual ~soArticle();
-    virtual void remove();
-    virtual int getArticleId();
-    virtual int getArticleEventManageId();
-    virtual int getTaskId();
+    virtual void remove() = 0;
+    virtual int getArticleId() = 0;
+    virtual int getArticleEventManageId() = 0;
+    virtual int getTaskId() = 0;
     virtual void changeMotion(int motionKind, bool);
     virtual void setFrame(float frame);
     virtual void setRate(float rate);
@@ -37,21 +37,20 @@ class soArticle : public soNullable, public soEventPresenter<soArticleEventObser
     virtual void setSituationKind(SituationKind);
     virtual bool isConstraint();
     virtual void deactivateDescendantForce();
-    virtual bool isActiveArticle();
-    virtual void deactivateArticle();
+    virtual bool isActiveArticle() = 0;
+    virtual void deactivateArticle() = 0;
     virtual int getOwnerDeactiveTreatType();
     virtual int getFounderTaskId();
-    virtual void have(int, int, int);
-    virtual void linkOwner(int, int);
-    virtual void unlinkOwner(int);
-    virtual bool isSyncOwnerStatus();
-    virtual void setSyncOwnerStatus(bool);
+    virtual void have(int, int, int) = 0;
+    virtual void linkOwner(int, int) = 0;
+    virtual void unlinkOwner(int) = 0;
+    virtual bool isSyncOwnerStatus() = 0;
+    virtual void setSyncOwnerStatus(bool) = 0;
     virtual void setLogAttackInfo(soLogAttackInfo* logAttackInfo);
     virtual soLogAttackInfo getLogAttackInfo();
     virtual void updateLogAttackInfo();
     virtual void intrudeLogAttackInfo();
     virtual float getActiveGlobalFrame();
     virtual void setAttackPowerMulPattern(float);
-    virtual void setPosForce();
 };
 static_assert(sizeof(soArticle) == 20, "Class is wrong size!");

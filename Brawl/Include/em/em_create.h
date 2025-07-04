@@ -761,14 +761,12 @@ struct UnkParamAccesser {
 class emCreate {
 public:
     u8 m_difficulty;
-    char _1[3];
     EnemyKind m_enemyKind;
     int m_teamNo;
     float m_startLr;
     Vec3f m_startPos;
     u32 m_startStatusKind;
     u8 m_level;
-    char _33[3];
     float m_36;
     Rect2D m_territoryRange;
     int m_connectedTriggerId;
@@ -776,8 +774,8 @@ public:
     UnkParamAccesser* m_epsp;
     grGimmickMotionPath* m_motionPath;
     int m_parentCreateId;
-    virtual ~emCreate(){
 
-    };
+    emCreate();
+    virtual ~emCreate();
 };
 static_assert(sizeof(emCreate) == 80, "Class is wrong size!");

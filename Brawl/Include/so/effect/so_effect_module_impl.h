@@ -4,6 +4,7 @@
 #include <mt/mt_vector.h>
 #include <ec/ec_mgr.h>
 #include <so/event/so_event_presenter.h>
+#include <so/model/so_model_event_presenter.h>
 #include <so/status/so_status_event_presenter.h>
 #include <so/collision/so_collision_attack_event_presenter.h>
 #include <so/collision/so_collision_shield_event_presenter_shield.h>
@@ -69,10 +70,12 @@ public:
 static_assert(sizeof(soEffectModule) == 8, "Class is wrong size!");
 
 class soEffectModuleImpl : public soEffectModule, public soAnimCmdEventObserver, public soStatusEventObserver, public soModelEventObserver, public soCollisionAttackEventObserver, public soCollisionShieldEventObserver {
-    soModuleAccesser* m_moduleAccesser;
-    char _72[240];
-
 public:
+    soModuleAccesser* m_moduleAccesser;
+    u8 unk48[0x8];
+    s32 unk50;
+    u8 unk54[0xE4];
+
     virtual ~soEffectModuleImpl();
     virtual void activate();
     virtual void deactivate();
@@ -133,4 +136,4 @@ public:
     virtual void notifyEventCollisionShieldSearch(soCollisionSearchModule* searchModule, soCollisionLog* collisionLog, u32 groupIndex, soModuleAccesser* moduleAccesser);
     virtual bool isObserv(char unk1);
 };
-static_assert(sizeof(soEffectModuleImpl) == 312, "Class is wrong size!");
+static_assert(sizeof(soEffectModuleImpl) == 0x138, "Class is wrong size!");
