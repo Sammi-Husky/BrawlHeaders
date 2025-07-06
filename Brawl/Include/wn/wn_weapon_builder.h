@@ -6,7 +6,8 @@
 
 template <typename T>
 class wnWeaponBuilder : public Weapon {
-    char _spacer[8336];
+public:
+    char unkD0[0x2090];
     // TODO: virtual functions
 };
-static_assert(sizeof(wnWeaponBuilder<void>) == 8544, "Class is wrong size!");
+static_assert(sizeof(wnWeaponBuilder<void>) == 0x2160, "Class is wrong size!");

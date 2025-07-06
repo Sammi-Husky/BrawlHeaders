@@ -5,6 +5,7 @@
 #include <em/em_ai_module_impl.h>
 #include <gr/gr_gimmick_motion_path.h>
 #include <memory.h>
+#include <mt/mt_vector.h>
 #include <so/stageobject.h>
 #include <types.h>
 
@@ -38,6 +39,12 @@ public:
     };
 
     emAIModuleImpl& getAIModule() { return m_aiModule; }
+    Vec3f getCenterPos();
+    s32 getNameMsgId();
+    nw4r::g3d::ResFileData* getFaceTexPtr(u32 p1);
+    nw4r::g3d::ResFileData* getFaceTexPtr();
+    bool isCanAutoRemove();
+    bool isCanCreateItem();
 
     virtual void processUpdate();
     virtual void processFixPosition();

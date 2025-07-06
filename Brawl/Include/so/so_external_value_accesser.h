@@ -6,16 +6,18 @@
 #include <so/stageobject.h>
 #include <types.h>
 
-namespace soExternalValueAccesser {
-    int getTeamNo(StageObject* stageObject);
-    Vec3f getPos(StageObject* stageObject);
-    float getLr(StageObject* stageObject);
-    SituationKind getSituationKind(StageObject* stageObject);
-    int getStatusKind(StageObject* stageObject);
-    bool getWorkFlag(StageObject* stageObject, u32);
-    int getWorkInt(StageObject* stageObject, u32);
-    soModuleAccesser* getModuleAccesser(StageObject* stageObject);
-    soCollisionHitModule* getCollisionHitModule(StageObject* stageObject);
-    soControllerModule* getControllerModule(StageObject* stageObject);
-    u32 getTeamOwnerId(StageObject* stageObject);
-}
+class soExternalValueAccesser {
+public:
+    static int getTeamNo(StageObject* stageObject);
+    static Vec3f getPos(StageObject* stageObject);
+    static float getLr(StageObject* stageObject);
+    static SituationKind getSituationKind(StageObject* stageObject);
+    static int getStatusKind(StageObject* stageObject);
+    static bool getWorkFlag(StageObject* stageObject, u32);
+    static int getWorkInt(StageObject* stageObject, u32);
+    static soModuleAccesser* getModuleAccesser(StageObject* stageObject);
+    static soCollisionHitModule* getCollisionHitModule(StageObject* stageObject);
+    static soControllerModule* getControllerModule(StageObject* stageObject);
+    static u32 getTeamOwnerId(StageObject* stageObject);
+};
+// TODO size assertion

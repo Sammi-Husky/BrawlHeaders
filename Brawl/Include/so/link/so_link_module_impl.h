@@ -9,6 +9,14 @@
 #include <so/link/so_link_connection_server.h>
 #include <so/so_null.h>
 
+struct UnkLinkEvent {
+    u32 unk0;
+    u8 unk4;
+    u32 unk8;
+
+    UnkLinkEvent(u32 p1, u8 p2, u32 p3) : unk0(p1), unk4(p2), unk8(p3) { }
+};
+
 class soLinkModule : public soNullable {
 public:
     soLinkModule() { }
@@ -26,7 +34,7 @@ public:
     virtual void searchParent() = 0;
     virtual StageObject* searchParentAttr(u32 p1) = 0;
     virtual void searchNode() = 0;
-    virtual void sendEventParents() = 0;
+    virtual void sendEventParents(s32 p1, UnkLinkEvent& p2) = 0;
     virtual void sendEventNodes() = 0;
     virtual void sendEventNodes(u32 overload_fixme) = 0;
     virtual void getNode() = 0;
@@ -142,7 +150,7 @@ public:
     virtual void searchParent();
     virtual StageObject* searchParentAttr(u32 p1);
     virtual void searchNode();
-    virtual void sendEventParents();
+    virtual void sendEventParents(s32 p1, UnkLinkEvent& p2);
     virtual void sendEventNodes();
     virtual void sendEventNodes(u32 overload_fixme);
     virtual void getNode();

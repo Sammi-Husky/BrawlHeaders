@@ -114,9 +114,8 @@ public:
         return this->m_enumerationStart->m_modelModule;
     }
 
-    inline soMotionModule* getMotionModule() const
-    {
-        return this->m_enumerationStart->m_motionModule;
+    soMotionModule& getMotionModule() const {
+        return *m_enumerationStart->m_motionModule;
     }
 
     inline soPostureModule* getPostureModule() const
@@ -159,14 +158,17 @@ public:
         return this->m_enumerationStart->m_damageModule;
     }
 
+    soStopModule& getStopModule() const {
+        return *m_enumerationStart->m_stopModule;
+    }
+
     inline soSoundModule* getSoundModule() const
     {
         return this->m_enumerationStart->m_soundModule;
     }
 
-    inline soLinkModule* getLinkModule() const
-    {
-        return this->m_enumerationStart->m_linkModule;
+    soLinkModule& getLinkModule() const {
+        return *m_enumerationStart->m_linkModule;
     }
 
     inline soVisibilityModule* getVisibilityModule() const
@@ -179,14 +181,12 @@ public:
         return this->m_enumerationStart->m_controllerModule;
     }
 
-    inline soCameraModule* getCameraModule() const
-    {
-        return this->m_enumerationStart->m_cameraModule;
+    soCameraModule& getCameraModule() const {
+        return *m_enumerationStart->m_cameraModule;
     }
 
-    inline soWorkManageModule* getWorkManageModule() const
-    {
-        return this->m_enumerationStart->m_workManageModule;
+    soWorkManageModule& getWorkManageModule() const {
+        return *m_enumerationStart->m_workManageModule;
     }
 
     inline soAnimCmdModule* getAnimCmdModule()  const
@@ -209,9 +209,8 @@ public:
         return this->m_enumerationStart->m_eventManageModule;
     }
 
-    inline soEffectModule* getEffectModule() const
-    {
-        return this->m_enumerationStart->m_effectModule;
+    soEffectModule& getEffectModule() const {
+        return *m_enumerationStart->m_effectModule;
     }
 
     soAreaModule& getAreaModule() const {

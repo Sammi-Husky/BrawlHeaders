@@ -4,11 +4,12 @@
 #include <so/article/so_article.h>
 #include <so/event/so_event_presenter.h>
 #include <so/stageobject.h>
+#include <so/status/so_status_event_presenter.h>
 #include <types.h>
 
 class Weapon : public StageObject, public soStatusEventObserver, public soCollisionAttackEventObserver, public soCollisionHitEventObserver, public soArticle {
 
-    char _spacer[52];
+    char unk9C[0x34];
 
 public:
     virtual void processUpdate();
@@ -72,4 +73,4 @@ public:
     virtual int getInhaledCount();
     virtual bool isCanEat();
 };
-static_assert(sizeof(Weapon) == 208, "Class is wrong size!");
+static_assert(sizeof(Weapon) == 0xD0, "Class is wrong size!");

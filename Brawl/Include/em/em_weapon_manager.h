@@ -16,6 +16,7 @@ public:
     virtual void resetProcFncList();
     virtual void resetManageWeaponList();
     wnemSimple* GetManagedWeapon(u32 taskId, u32 p2, u32 p3);
+    wnemSimple* GetManagedWeaponFromTaskID(u32 taskId);
 
     static void create();
     static void remove();
