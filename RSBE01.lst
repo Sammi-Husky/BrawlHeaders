@@ -1113,6 +1113,8 @@ CC008000:WGPIPE
 27,1,00112108:setSlipMul__7ftOwnerFf
 27,1,00112128:setSlipInterval__7ftOwnerFb
 27,1,00111A68:getBeatCount__7ftOwnerFi
+27,1,00111A08:getDeadCount__7ftOwnerFv
+27,1,001119E0:setDeadCount__7ftOwnerFi
 
 // ftOutsideEventPresenter
 27,1,0015B0C8:notifyOutsideEventKnockout__23ftOutsideEventPresenterFv
