@@ -61,6 +61,7 @@ namespace Heaps {
         OverlayFighter4 = 0x38,
         OverlayEnemy = 0x39,
         Thread = 0x3a,
+        Invalid = 0xff,
 
         // NON-STANDARD
         BrawlEx = 0x3b,

@@ -68,7 +68,7 @@ public:
     static const DVDDiskID* getDVDDiskId();
     static int getFileNumSD(gfFileIORequest* request);
     static int getFileNumVF(gfFileIORequest* request);
-    static int getFileSize(gfFileIORequest* request);
+    static int getFileSize(const char* path);
     static int getFindFirstFileSD(gfFileIORequest* request);
     static int getFindFirstFileVF(gfFileIORequest* request);
     static int gfFACreateDir(const char* filepath);

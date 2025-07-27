@@ -54,8 +54,10 @@ public:
     u32 read(const char* filepath, HeapType heap, int offset);
     u32 read(const char* filepath, void* addr, int offset);
     bool readRequest(const char* filename, HeapType heap, int length, int offset);
+    bool readRequest(char* filepath, void* addr, int length, int offset);
     bool readRequest(const char* filepath, void* addr, int length, int offset);
     bool readRequestCached(const char* filepath, HeapType heap, int length, int offset);
+    bool readRequestCached(char* filepath, void* addr, int length, int offset);
     bool readRequestCached(const char* filepath, void* addr, int length, int offset);
     bool readRequestNoSync(const char* filepath, HeapType heap, int length, int offset); 
     bool readRequestNoSync(const char* filepath, void* addr, int length, int offset);
