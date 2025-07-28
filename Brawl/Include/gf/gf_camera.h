@@ -18,18 +18,6 @@ public:
         Projection_Perspective = 0x1,
     };
 
-    char _spacer[96];
-    Vec3f m_targetPos;
-    Vec3f m_centerPos;
-    char _0x78[24];
-    Vec3f m_0x90;
-    char _0x9C[36];
-    Vec3f m_rot;
-    char _0xCC[16];
-    float m_near;
-    float m_far;
-    char _spacer2[4];
-    OrthoParam m_orthoParam;
     union TransformFlag {
         u16 m_mask;
         struct {
@@ -50,9 +38,26 @@ public:
             bool m_flag1 : 1;       // 0x2
             bool m_flag0 : 1;       // 0x1
         };
-    } m_transformFlag;
+    };
 
-    char _spacer3[6];
+    char _spacer[96];
+    Vec3f m_targetPos;
+    Vec3f m_centerPos;
+    char _0x78[24];
+    Vec3f m_0x90;
+    char _0x9C[36];
+    Vec3f m_rot;
+    float unkCC;
+    float unkD0;
+    char _0xD4[8];
+    float m_near;
+    float m_far;
+    char _spacer2[4];
+    OrthoParam m_orthoParam;
+    TransformFlag m_transformFlag;
+    TransformFlag unkFA;
+
+    char _spacer3[4];
     ProjectionType m_projectionType;
     char _spacer4[48];
 

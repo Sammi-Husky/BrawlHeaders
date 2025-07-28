@@ -18,20 +18,7 @@ class gfResourceLoader : public gfFileIOHandle {
     bool m_isLoaded : 1;
     bool m_doCachedRead : 1;
 
-    void* load(HeapType heapTy, const char* path, gfArchive* archive, u32 size) {
-        m_allocSize = size;
-        m_rsrcPtr = gfHeapManager::alloc(heapTy, m_allocSize);
-        m_compressedRsrcPtr = static_cast<char*>(m_rsrcPtr) + m_allocSize - gfFileIO::getFileSize(path);
-        if (m_doCachedRead) {
-            readRequestCached(path, m_compressedRsrcPtr, 0, 0);
-        } else {
-            readRequest(path, m_compressedRsrcPtr, 0, 0);
-        }
-        m_heapTy = heapTy;
-        m_isLoaded = false;
-        m_archive = archive;
-        return m_rsrcPtr;
-    }
+    void* load(HeapType heapTy, const char* path, gfArchive* archive, u32 size);
 
 public:
     void* loadResource(HeapType heapTy, const char* path, gfArchive* archive, u32 freeSpaceToLeave);

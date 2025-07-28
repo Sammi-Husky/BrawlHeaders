@@ -5,10 +5,11 @@
 #include <types.h>
 
 class gfCameraController {
+protected:
     gfCameraManager* m_cameraManager;
 
 public:
-    gfCameraController() : m_cameraManager(0) { }
+    gfCameraController() : m_cameraManager(nullptr) { }
     virtual void update(float) = 0;
     virtual void draw();
 };
