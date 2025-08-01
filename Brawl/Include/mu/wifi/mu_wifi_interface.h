@@ -17,4 +17,7 @@ public:
 };
 static_assert(sizeof(muWifiInterfaceTask) == 0x1058, "Class is wrong size!");
 
+void netReport(const char* fmt, ...);
+void netReport0(const char* fmt, ...);
+
 extern muWifiInterfaceTask* g_muWifiInterfaceTask;
