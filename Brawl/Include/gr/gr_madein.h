@@ -58,7 +58,7 @@ protected:
     bool m_useLandCheck : 1;          // | 0x1
     char _301[11];
     int m_landerTaskId;
-    char _316[50];
+    char _316[38];
 
 public:
     void createAttackPoint();
@@ -96,3 +96,4 @@ public:
 
     static grMadein* create(int mdlIndex, const char* tgtNodeName, const char* taskName, HeapType heapType);
 };
+static_assert(sizeof(grMadein) == 0x1a4, "Class is wrong size!");
