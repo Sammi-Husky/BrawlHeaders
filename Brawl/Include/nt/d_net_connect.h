@@ -3,6 +3,7 @@
 #include <StaticAssert.h>
 #include <SO.h>
 #include <DWC/nonport.h>
+#include <types.h>
 
 #define AF_INET 0x2
 
@@ -25,4 +26,5 @@ struct sockaddr_in {
     struct in_addr sin_addr; // see struct in_addr, below
 };
 
-int dNetConnect_Start();
+s32 dNetConnect_Start();
+void dNetConnect_Finish();

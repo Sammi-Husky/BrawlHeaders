@@ -1,13 +1,14 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <gf/gf_callback.h>
 #include <gf/gf_file_io_request.h>
+#include <revolution/DVD/dvd.h>
 #include <stddef.h>
 #include <types.h>
 
 class gfFileIO {
 public:
-    typedef void (*FatalErrorCB)(); // TODO
     typedef void (*MountStatusCB)();
     enum FS_TYPE {
         MCS,
@@ -16,6 +17,9 @@ public:
         SD,
         VF
     };
+
+    class ErrorCallback : public gfCallBack { };
+
     static int readFile(gfFileIORequest* request);
     static int readDVDFile(gfFileIORequest* request);
     static int readSDFile(gfFileIORequest* request);
@@ -61,10 +65,10 @@ public:
     static bool checkSDWriteProtected();
     static void FAInsertCallback();
     static void FAEjectCallback();
-    static char* getDVDDiskId(gfFileIORequest* request);
+    static const DVDDiskID* getDVDDiskId();
     static int getFileNumSD(gfFileIORequest* request);
     static int getFileNumVF(gfFileIORequest* request);
-    static int getFileSize(gfFileIORequest* request);
+    static int getFileSize(const char* path);
     static int getFindFirstFileSD(gfFileIORequest* request);
     static int getFindFirstFileVF(gfFileIORequest* request);
     static int gfFACreateDir(const char* filepath);
@@ -75,6 +79,6 @@ public:
     static void initialize();
     static void server();
     static void setPermissionNANDFile(const char* request, unsigned int perms);
-    static void setFatalErrorCallback(FatalErrorCB cb);
+    static void setFatalErrorCallback(ErrorCallback* cb);
     static void setSDMountStatusCallback(MountStatusCB cb);
 };

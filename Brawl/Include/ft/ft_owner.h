@@ -33,6 +33,8 @@ public:
     virtual void addAttackInfo(void*);
     virtual void addAttackPattern(void*);
 
+    int setDeadCount(int deadCount);
+    int getDeadCount();
     int getBeatCount(int playerIndex);
     int getStockCount();
     float getHitPointMax();

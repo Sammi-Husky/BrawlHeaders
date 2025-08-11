@@ -3,11 +3,12 @@
 #include <StaticAssert.h>
 #include <MEM/mem_allocator.h>
 #include <memory.h>
+#include <sr/sr_common.h>
 #include <types.h>
 
 class gfHeapManager {
 public:
-    static int getMaxFreeSize(u32);
+    static int getMaxFreeSize(Heaps::HeapType heapType);
     static void dumpAll();
     static void dumpList();
     static void createHeap(int heapId, const char* heapName, int memArena, int heapSize);
