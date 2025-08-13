@@ -15,7 +15,7 @@ public:
     bool setupBuffers();
     void loadCommon();
 
-    void playSE(SndID sndID, int unk, int unk2, int unk3, int unk4);
+    s32 playSE(SndID sndID, int unk, int unk2, int unk3, int unk4);
     void stopSE(s32 p1, s32 p2);
     void setBGMVol(bool setImmediately, float volume);
     s32 prepareSE(SndID p1, s32 p2, s32 p3);
