@@ -1,7 +1,8 @@
 #pragma once
 
-#include <StaticAssert.h>
 #include <gf/gf_pad_status.h>
+#include <revolution/OS/OSAlarm.h>
+#include <StaticAssert.h>
 
 #define GF_PAD_SYSTEM_GET_ALL_PADS 0xF0
 
@@ -96,19 +97,9 @@ public:
     void wpadSimpleSyncCallback();
     // Clears 0x35 bit 8, params are passed to WPADWriteGameData()
     u32 writeGameDataRequest(int, int, int, int);
+    static void _alarmCallback(OSAlarm* alarm, OSContext* ctx);
 
-    void (*m_alarmCallback)();
-    int _0x4[3];
-
-    // These two might be pointers to vtables or some other structure, but they
-    // are at least pointers to function pointers.
-    void *(*m_sleepAlarmHandler)();
-    void *(*m_remoteSpkrAlarmProc)();
-    int _0x18[3];
-    u16 *_0x24; // Cursory testing went to an unaligned pointer.
-    int _0x28[2]; // Undefined 0xCCCCCCCC
-
-    // 0x30
+    OSAlarm m_alarm;
 
     // mask stuff in here
     // observed with 0x00000289
