@@ -15,6 +15,8 @@ These headers are specifically designed to be used with MetroWerks TRK compilers
    - Repository for brawl module reimplementations and decomps
  - [BrawlStageModules](https://github.com/ilazoja/BrawlStageModule)
    - Custom stage modules built with C++ for completely custom functionality
+ - [Brawl Decompilation](https://github.com/doldecomp/brawl)
+   - A work-in-progress matching decompilation of Super Smash Bros. Brawl
 
 ## Special Thanks
 This project would not be possible without the gracious contributions of many wonderful people in the Brawl Modding scene. While i can't list everyone, i've listed the contributors who have had the greatest impact on this specific repo. If you believe your name to be missing please contact me or submit a PR!
