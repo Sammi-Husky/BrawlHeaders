@@ -1090,6 +1090,9 @@ CC008000:WGPIPE
 27,1,0010a248:getFighterOperationType__9ftManagerFi
 27,1,0010D034:setInfiniteScaling__9ftManagerFiQ27Fighter11ScalingKindQ27Fighter11ScalingType
 27,1,0010C2B8:addDragoon__9ftManagerFiUl
+27,1,001095ac:removeSlot__9ftManagerFi
+27,1,00109490:isReadySlot__9ftManagerFi
+27,1,001094EC:isReadyRemoveSlot__9ftManagerFi
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi
