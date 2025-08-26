@@ -10,6 +10,7 @@
 #include <nw4r/g3d/g3d_anmvis.h>
 #include <nw4r/g3d/g3d_rescommon.h>
 #include <nw4r/g3d/g3d_resdict.h>
+#include <nw4r/g3d/g3d_restex.h>
 #include <types.h>
 
 namespace nw4r {
@@ -62,6 +63,9 @@ namespace nw4r {
             ResAnmTexSrt GetResAnmTexSrt(int index);
             ResAnmShp GetResAnmShp(int index);
             ResAnmScn GetResAnmScn(int index);
+
+            ResTex GetResTex(int index);
+            ResTex GetResTex(const char* name);
         };
     } // namespace g3d
 } // namespace nw4r

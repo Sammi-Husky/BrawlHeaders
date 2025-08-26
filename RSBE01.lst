@@ -183,6 +183,8 @@ CC008000:WGPIPE
 8018de60:GetResAnmTexSrt__Q34nw4r3g3d7ResFileFi
 8018da50:GetResAnmClr__Q34nw4r3g3d7ResFileFi
 8018e270:GetResAnmScn__Q34nw4r3g3d7ResFileFi
+8018d3f0:GetResTex__Q34nw4r3g3d7ResFileFPCc
+8018d4d0:GetResTex__Q34nw4r3g3d7ResFileFi
 
 // NW4R
 8018ee4c:GetResNodeNumEntries__Q34nw4r3g3d6ResMdlFv
