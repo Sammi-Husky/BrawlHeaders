@@ -31,5 +31,11 @@ public:
 
     /// If node is not present, return -1, else return its position in the list
     s32 isExistNode(utListNode* node) const;
+
+    inline void clear() {
+        m_head = NULL;
+        m_tail = NULL;
+        m_length = 0;
+    }
 };
 static_assert(sizeof(utList) == 0xC, "Class is the wrong size!");

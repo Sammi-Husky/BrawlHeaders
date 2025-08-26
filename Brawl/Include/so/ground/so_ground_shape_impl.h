@@ -9,6 +9,12 @@ class soModuleAccesser;
 
 class soGroundShapeImpl {
 public:
+    enum ShapeKind {
+        Shape_Rhombus_Modify = 0x0,
+        Shape_Rhombus = 0x1,
+        Shape_Rhombus_Follow_Node = 0x2,
+    };
+
     enum CorrectKind {
         Correct_None = 0x0,
         Correct_Ground = 0x1,
@@ -44,7 +50,21 @@ public:
     char _53[3];
     CorrectKind m_correctKind : 8;
     CliffCheckKind m_cliffCheck : 8;
-    char _58[6];
+    ShapeKind m_shapeKind : 4;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool m_testPreMap : 1;
+    bool m_testDynamicCollision : 1;
+    bool m_testCollStop : 1;
+
+    char _60[4];
 
     virtual ~soGroundShapeImpl();
 

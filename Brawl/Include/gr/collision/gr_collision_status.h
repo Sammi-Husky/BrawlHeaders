@@ -8,6 +8,10 @@
 
 class grCollStatus {
 public:
+    enum TracerType {
+
+    };
+
     enum Setting {
         Setting_None = 0x0,
         Setting_Ground = 0x1,
@@ -25,7 +29,14 @@ public:
 
     char _spacer[2];
     // 14
-    short m_exclusiveLineAttr;
+    union {
+        struct {
+            u16 : 7;
+            bool m_noPassableCheck : 1;
+            u16 : 8;
+        };
+        u16 m_exclusiveLineAttr;
+    };
     // 16
     int m_taskId;
     // 20
@@ -43,7 +54,37 @@ public:
     // 110
     char m_targetLineCategory;
     // 111
-    char _spacer5[6];
+    char _spacer5[2];
+    // 113
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool m_isCalcLineMove : 1;
+    // 114
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+    bool m_isCloudThrough : 1;
+    // 115
+    bool m_isCloudThroughOut : 1;
+    bool : 1;
+    bool m_isCorrectIgnoreSlope : 1;
+    TracerType m_tracerType : 1;
+    bool m_isEventToGround : 1;
+    bool : 1;
+    bool : 1;
+    bool : 1;
+
+    char _116[1];
+
     // 117
     union {
         struct {

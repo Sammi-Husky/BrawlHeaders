@@ -12,7 +12,7 @@ enum emKind {
     Enemy_Poppant = 0x1,
     Enemy_Popperam = 0x1,
     Enemy_Feyesh = 0x2,
-    Enemy_Pochi = 0x2,
+    Enemy_Pacci = 0x2,
     Enemy_Jyk = 0x3,
     Enemy_Jyakeel = 0x3,
     Enemy_Auroros = 0x4,
