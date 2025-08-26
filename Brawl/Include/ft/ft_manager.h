@@ -158,6 +158,10 @@ public:
     bool isProcessHeartSwap(int entryId);
     void toKnockOutHeartSwapOpposite(int entryId, soDamageAttackerInfo* attackerInfo);
 
+    bool isReadySlot(int slotIndex);
+    bool isReadyRemoveSlot(int slotIndex);
+    void removeSlot(int slotIndex);
+
 };
 static_assert(sizeof(ftManager) == 0x160, "Class is wrong size!");
 
