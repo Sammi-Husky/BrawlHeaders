@@ -31,11 +31,28 @@ public:
         delete[] arr;
     }
 
+    /**
+     * Clears the vector.
+     */
     void clear()
     {
         delete[] arr;
         arr = new T[1];
         current = 0;
+    }
+
+    /**
+     * Removes an element at a specific index.
+     *
+     * @param index The index of the element to remove.
+     */
+    void removeAt(int index)
+    {
+        if (index < 0 || index >= current)
+            return;
+
+        arr[index] = arr[current - 1];
+        pop();
     }
 
     // Function to add an element at the last
@@ -87,17 +104,18 @@ public:
     // function to extract element at any index
     T get(int index)
     {
-
         // if index is within the range
         if (index < current)
             return arr[index];
+
+        return NULL;
     }
 
     // function to delete last element
     void pop() { current--; }
 
     // function to get size of the vector
-    int size() { return current; }
+    int size() const { return current; }
 
     // function to get capacity of the vector
     int getcapacity() { return capacity; }
