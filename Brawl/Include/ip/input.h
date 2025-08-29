@@ -1,5 +1,6 @@
 #pragma once
 
+#include <mt/mt_vector.h>
 #include <StaticAssert.h>
 #include <types.h>
 
@@ -65,19 +66,20 @@ struct ipPadTrigger {
 static_assert(sizeof(ipPadTrigger) == 8, "Class is wrong size!");
 
 class Input {
-    char _0[4];
+    bool unk0;
 public:
-    virtual ~Input();
+    Input() : unk0(false) { }
+    virtual ~Input() { }
     virtual void update();
-    virtual float getStickMain();
-    virtual float getStickSub();
-    virtual ipPadButton getButton();
-    virtual ipPadTrigger getTrigger();
-    virtual int getContNo();
-    virtual void setRumble(u32, u32, int, u8);   // TODO:: Verify parameters
+    virtual Vec2f getStickMain() const;
+    virtual Vec2f getStickSub() const;
+    virtual ipPadButton getButton() const;
+    virtual ipPadTrigger getTrigger() const;
+    virtual s32 getContNo() const;
+    virtual void setRumble(u32, u32, s32, u8);   // TODO:: Verify parameters
     virtual void stopRumble();
     virtual void removeRumble();
-    virtual void removeRumbleId(int, int); // TODO:: Verify parameters
+    virtual void removeRumbleId(s32, s32); // TODO:: Verify parameters
     virtual void removeRumbleMask(u32);
 };
 static_assert(sizeof(Input) == 8, "Class is wrong size!");
