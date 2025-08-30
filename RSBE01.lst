@@ -1304,6 +1304,7 @@ CC008000:WGPIPE
 80024430:getMEMAllocator__13gfHeapManagerFQ25Heaps8HeapType
 800249cc:getHeap__13gfHeapManagerFQ25Heaps8HeapType
 800249e4:alloc__13gfHeapManagerFQ25Heaps8HeapTypeUl
+80024a4c:free__13gfHeapManagerFPv
 
 // gfKeepFrameBuffer
 80024d6c:update__17gfKeepFrameBufferFv
