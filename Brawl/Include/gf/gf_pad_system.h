@@ -1,6 +1,7 @@
 #pragma once
 
 #include <gf/gf_pad_status.h>
+#include <gf/gf_rumble.h>
 #include <revolution/OS/OSAlarm.h>
 #include <StaticAssert.h>
 
@@ -187,8 +188,8 @@ public:
     // set by startMotor() and stopMotor() per player.
     u16 m_padMotorMasks[8];
 
-    // 0xb68, is a *gfRumble
-    void* m_gfRumble;
+    // 0xb68
+    gfRumble* m_gfRumble;
 
     // 0xb6c, set by wpadGameDataCallback
     int m_gameData;
