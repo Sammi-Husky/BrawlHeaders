@@ -45,8 +45,20 @@ public:
     };
 };
 
-int strcmp(const char* str1, const char* str2);
-int strncmp(const char* str1, const char* str2, size_t num);
-char* strcpy(char* destination, const char* source);
-char* strncpy(char* destination, const char* source, size_t num);
+#ifdef __cplusplus
+extern "C" {
+#endif
 char* strcat(char* output, const char* append);
+char* strchr(char* str, int character);
+char* strcpy(char* destination, const char* source);
+int strcmp(const char* str1, const char* str2);
+size_t strcspn(const char* str1, const char* str2);
+char* strncat(char* output, const char* append, size_t num);
+int strncmp(const char* str1, const char* str2, size_t num);
+char* strncpy(char* destination, const char* source, size_t num);
+char* strrchr(const char* str, int character);
+char* strstr(const char* haystack, const char* needle);
+char* strtok(char* str, const char* delimiters);
+#ifdef __cplusplus
+}
+#endif
