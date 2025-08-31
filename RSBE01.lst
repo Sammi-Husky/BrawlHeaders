@@ -585,7 +585,7 @@ CC008000:WGPIPE
 27,1,002247B8:disableDevil__5StageFv
 27,1,002247D8:isDevil__5StageFv
 27,1,002247E0:setDevilScrool__5StageFff
-27,1,0022485C:getLucarioFinalTechniquePosition__5StageFi
+27,1,0022485C:getLucarioFinalTechniquePosition__5StageFP5Vec3f
 27,1,00224B40:startAppear__5StageFv
 27,1,00224B5C:setAppearKind__5StageFUc
 27,1,00224B58:endAppear__5StageFv
