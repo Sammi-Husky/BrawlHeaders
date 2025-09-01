@@ -84,6 +84,12 @@ public:
         };
     };
 
+    Vec3f() { }
+    Vec3f(float x, float y, float z) : m_x(x), m_y(y), m_z(z) { }
+
+    inline Vec2f* xy() const {
+        return (Vec2f*)this;
+    }
 
     Vec3f operator+(const Vec3f& v);
     Vec3f operator-(const Vec3f& v);
