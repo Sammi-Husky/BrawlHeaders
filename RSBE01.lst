@@ -585,7 +585,7 @@ CC008000:WGPIPE
 27,1,002247B8:disableDevil__5StageFv
 27,1,002247D8:isDevil__5StageFv
 27,1,002247E0:setDevilScrool__5StageFff
-27,1,0022485C:getLucarioFinalTechniquePosition__5StageFi
+27,1,0022485C:getLucarioFinalTechniquePosition__5StageFP5Vec3f
 27,1,00224B40:startAppear__5StageFv
 27,1,00224B5C:setAppearKind__5StageFUc
 27,1,00224B58:endAppear__5StageFv
@@ -1304,6 +1304,7 @@ CC008000:WGPIPE
 80024430:getMEMAllocator__13gfHeapManagerFQ25Heaps8HeapType
 800249cc:getHeap__13gfHeapManagerFQ25Heaps8HeapType
 800249e4:alloc__13gfHeapManagerFQ25Heaps8HeapTypeUl
+80024a4c:free__13gfHeapManagerFPv
 
 // gfKeepFrameBuffer
 80024d6c:update__17gfKeepFrameBufferFv

@@ -164,7 +164,9 @@ public:
     // AB
     bool m_isDevil;
     // AC
-    char _0xAC[12];
+    Vec2f m_devilOffset;
+    // B4
+    char _0xB4[4];
     // B8
     char collisionAttrs[0xC];
     // C4
@@ -291,8 +293,8 @@ public:
     virtual void enableDevil();
     virtual void disableDevil();
     virtual bool isDevil();
-    virtual void setDevilScrool(float unk1, float unk2);     // TODO
-    virtual void getLucarioFinalTechniquePosition(int unk1); // TODO
+    virtual void setDevilScrool(float x, float y);
+    virtual void getLucarioFinalTechniquePosition(Vec3f* pos);
     virtual bool startAppear();                              // TODO
     virtual void setAppearKind(u8 kind);                     // TODO
     virtual void endAppear();                                // TODO

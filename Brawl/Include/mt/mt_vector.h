@@ -10,12 +10,15 @@ public:
     float m_x;
     float m_y;
 
+    Vec2f() { }
+    Vec2f(float x, float y) : m_x(x), m_y(y) { }
+
     inline Vec2f operator+(const Vec2f& v) {
-        return (Vec2f){this->m_x + v.m_x, this->m_y + v.m_y};
+        return Vec2f(this->m_x + v.m_x, this->m_y + v.m_y);
     }
 
     inline Vec2f operator-(const Vec2f& v) {
-        return (Vec2f){this->m_x - v.m_x, this->m_y - v.m_y};
+        return Vec2f(this->m_x - v.m_x, this->m_y - v.m_y);
     }
 
     inline Vec2f operator*(const float c) {
@@ -70,13 +73,8 @@ class Vec3f {
 public:
     union {
         struct {
-            union {
-                struct {
-                    float m_x;
-                    float m_y;
-                };
-                Vec2f m_xy;
-            };
+            float m_x;
+            float m_y;
             float m_z;
         };
         struct {
@@ -86,6 +84,12 @@ public:
         };
     };
 
+    Vec3f() { }
+    Vec3f(float x, float y, float z) : m_x(x), m_y(y), m_z(z) { }
+
+    inline Vec2f* xy() const {
+        return (Vec2f*)this;
+    }
 
     Vec3f operator+(const Vec3f& v);
     Vec3f operator-(const Vec3f& v);
