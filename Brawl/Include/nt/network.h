@@ -7,6 +7,17 @@
 #include <NHTTP.h>
 #include <types.h>
 
+class NtShared {
+public:
+    typedef void (*ntConsumedDataCallback_t)(const u16*);
+    static void ntSetConsumedDataCallback(ntConsumedDataCallback_t cb) {
+        NtConsumedDataCallback = cb;
+    }
+private:
+    static ntConsumedDataCallback_t NtConsumedDataCallback;
+};
+// TODO size
+
 class ntResetCallback {
     virtual void userProc();
     virtual ~ntResetCallback();
