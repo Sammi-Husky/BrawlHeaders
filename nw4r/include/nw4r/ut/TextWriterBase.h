@@ -8,6 +8,7 @@
 #include <nw4r/math.h>
 
 #include <cstdio>
+#include <cstring>
 #include <cwchar>
 
 namespace nw4r {
@@ -110,6 +111,10 @@ namespace nw4r {
             {
                 mTagProcessor = &mDefaultTagProcessor;
             }
+            static int _strlen(const char* pStr)
+            {
+                return static_cast<int>(std::strlen(pStr));
+            }
 
             f32 GetLineHeight() const;
 
@@ -122,7 +127,7 @@ namespace nw4r {
             f32 Print(const T* pStr, int len);
             f32 Print(const T* pStr)
             {
-                return Print(pStr, static_cast<int>(strlen(pStr)));
+                return Print(pStr, _strlen(pStr));
             }
 
             static T* GetBuffer()
