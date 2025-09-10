@@ -775,7 +775,6 @@ public:
     grGimmickMotionPath* m_motionPath;
     int m_parentCreateId;
 
-    emCreate();
-    virtual ~emCreate();
+    virtual ~emCreate(){};
 };
 static_assert(sizeof(emCreate) == 80, "Class is wrong size!");

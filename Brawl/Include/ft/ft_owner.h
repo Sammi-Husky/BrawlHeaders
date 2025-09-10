@@ -35,6 +35,9 @@ public:
 
     int setDeadCount(int deadCount);
     int getDeadCount();
+    void addLostCoin(int numCoinsToAdd);
+    int getCoin();
+    void addCoin(int numCoinsToAdd);
     int getBeatCount(int playerIndex);
     int getStockCount();
     float getHitPointMax();
