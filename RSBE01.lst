@@ -164,6 +164,9 @@ CC008000:WGPIPE
 804005ac:floor
 8040036c:ceil
 
+// arith.h
+803f5060:abs
+
 // crc
 8038ed50:NETCalcCRC16
 8038ee84:NETCalcCRC32
