@@ -253,7 +253,7 @@ public:
         Status_Yoshi_Egg = 0xEC,
         Status_Link_Final = 0xED,
         Status_Koopa_Dived = 0xEE,
-
+        Status_Metaknight_Final = 0xEF,
         Status_Pit_Fall = 0xF0,
         Status_Throw_Kirby = 0xF1,
         Status_Big = 0xF2,
@@ -280,7 +280,7 @@ public:
         Status_Capture_Pulled_Yoshi = 0x107,
         Status_Capture_Wait_Yoshi = 0x108,
         Status_Capture_Damage_Yoshi = 0x109,
-
+        Status_Capture_Cut_Yoshi = 0x10A,
         Status_Standby = 0x10B,
         Status_Appeal  = 0x10C,
         Status_Smash_Appeal = 0x10D,
