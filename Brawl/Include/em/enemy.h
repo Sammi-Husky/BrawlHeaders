@@ -33,9 +33,9 @@ public:
         Message_Remove = 4,
     };
 
-    enum KineticEnergyType {
-        Kinetic_Energy_Jostle = 0x8,
-        Kinetic_Energy_Ground_Movement = 0x9,
+    enum KineticEnergyId {
+        Kinetic_Energy_Id_Jostle = 0x8,
+        Kinetic_Energy_Id_Ground_Movement = 0x9,
     };
 
     emAIModuleImpl& getAIModule() { return m_aiModule; }

@@ -906,24 +906,24 @@ public:
 
     enum TransitionTermGroupId {
         // 0x0
-        Status_Transition_Term_Group_Chk_Ground_Special = 0x1,
-        Status_Transition_Term_Group_Chk_Ground_Item = 0x2,
-        Status_Transition_Term_Group_Chk_Ground_Catch = 0x3,
-        Status_Transition_Term_Group_Chk_Ground_Attack = 0x4,
-        Status_Transition_Term_Group_Chk_Ground_Escape = 0x5,
-        Status_Transition_Term_Group_Chk_Ground_Guard = 0x6,
-        Status_Transition_Term_Group_Chk_Ground_Jump = 0x7,
-        Status_Transition_Term_Group_Chk_Ground = 0x8,
-        Status_Transition_Term_Group_Chk_Air_Landing = 0x9,
-        Status_Transition_Term_Group_Chk_Air_Cliff = 0xA,
-        Status_Transition_Term_Group_Chk_Air_Special = 0xB,
-        Status_Transition_Term_Group_Chk_Air_Item_Throw = 0xC,
-        Status_Transition_Term_Group_Chk_Air_Lasso = 0xD,
-        Status_Transition_Term_Group_Chk_Air_Escape = 0xE,
-        Status_Transition_Term_Group_Chk_Air_Attack = 0xF,
-        Status_Transition_Term_Group_Chk_Air_Tread_Jump = 0x10,
-        Status_Transition_Term_Group_Chk_Air_Wall_Jump = 0x11,
-        Status_Transition_Term_Group_Chk_Air_Jump_Aerial = 0x12,
+        Status_Transition_Group_Chk_Ground_Special = 0x1,
+        Status_Transition_Group_Chk_Ground_Item = 0x2,
+        Status_Transition_Group_Chk_Ground_Catch = 0x3,
+        Status_Transition_Group_Chk_Ground_Attack = 0x4,
+        Status_Transition_Group_Chk_Ground_Escape = 0x5,
+        Status_Transition_Group_Chk_Ground_Guard = 0x6,
+        Status_Transition_Group_Chk_Ground_Jump = 0x7,
+        Status_Transition_Group_Chk_Ground = 0x8,
+        Status_Transition_Group_Chk_Air_Landing = 0x9,
+        Status_Transition_Group_Chk_Air_Cliff = 0xA,
+        Status_Transition_Group_Chk_Air_Special = 0xB,
+        Status_Transition_Group_Chk_Air_Item_Throw = 0xC,
+        Status_Transition_Group_Chk_Air_Lasso = 0xD,
+        Status_Transition_Group_Chk_Air_Escape = 0xE,
+        Status_Transition_Group_Chk_Air_Attack = 0xF,
+        Status_Transition_Group_Chk_Air_Tread_Jump = 0x10,
+        Status_Transition_Group_Chk_Air_Wall_Jump = 0x11,
+        Status_Transition_Group_Chk_Air_Jump_Aerial = 0x12,
         // 0x13
     };
 
@@ -1097,6 +1097,14 @@ public:
         Status_Gimmick_Spring_Work_Float_Shoot_Angle = 0x21000005,
     };
 
+    enum LinkNo {
+
+    };
+
+    enum LinkEventKind {
+
+    };
+
     enum DeadReason {
         Dead_Reason_Outside_Up = 0x0,
         Dead_Reason_Outside_Down = 0x1,
@@ -1136,15 +1144,15 @@ public:
         Scaling_Type_Small = 0x1,
     };
 
-    enum KineticEnergyType {
-        Kinetic_Energy_Motion = 0x0,
-        Kinetic_Energy_Gravity = 0x1,
-        Kinetic_Energy_Control = 0x2,
-        Kinetic_Energy_Stop = 0x3,
-        Kinetic_Energy_Damage = 0x4,
-        Kinetic_Energy_Env_Wind = 0x5,
-        Kinetic_Energy_Ground_Movement = 0x6,
-        Kinetic_Energy_Jostle = 0x7,
+    enum KineticEnergyId {
+        Kinetic_Energy_Id_Motion = 0x0,
+        Kinetic_Energy_Id_Gravity = 0x1,
+        Kinetic_Energy_Id_Control = 0x2,
+        Kinetic_Energy_Id_Stop = 0x3,
+        Kinetic_Energy_Id_Damage = 0x4,
+        Kinetic_Energy_Id_Env_Wind = 0x5,
+        Kinetic_Energy_Id_Ground_Movement = 0x6,
+        Kinetic_Energy_Id_Jostle = 0x7,
     };
 
     enum AreaKind {
