@@ -12,6 +12,25 @@ public:
 };
 static_assert(sizeof(soTransitionInfo) == 0xC, "Class is wrong size!");
 
+class soTransitionTerm {
+public:
+	u8 _unk00[2];
+	u16 m_targetKind;
+	u16 m_generalTermIndex;
+	u8 _unk06[2];
+};
+static_assert(sizeof(soTransitionTerm) == 0x8, "Class is wrong size!");
+
+class soTransitionTermGroup {
+public:
+	typedef soInstanceManagerFullPropertyEccentric<soTransitionTerm> tdef_InstanceMgr;
+
+	u8 _unk00[4];
+	tdef_InstanceMgr m_transitionTermInstanceManager;
+	u32 m_unitID;
+};
+static_assert(sizeof(soTransitionTermGroup) == 0x14, "Class is wrong size!");
+
 class soGeneralTerm {
 public:
 	// soArrayConstractibleTable<T>, not literally a char array.
@@ -39,12 +58,11 @@ public:
 };
 
 class soTransitionModuleImpl : public soTransitionModule {
-private:
-	// soArrayVector<soTransitionTermGroup, C>, not literally a char array.
-	u8 m_transitionTermGroupArray[0x4];
+public:
+	typedef soArrayVector<soTransitionTermGroup, 0x14>* tdef_GroupArray;
+	tdef_GroupArray m_transitionTermGroupArray;
 	int m_groupID;
 	soTransitionInfo m_transitionInfo;
-public:
 	virtual int checkEstablish(soModuleAccesser* accesser, int*, int groupID, u16*, int);
 	virtual void enableTerm(int unitID, int groupID);
 	virtual void unableTerm(int unitID, int groupID);
