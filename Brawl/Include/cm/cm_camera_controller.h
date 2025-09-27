@@ -63,6 +63,7 @@ public:
     virtual ~CameraController();
 
     void changeInput(Kind cameraControllerKind);
+    void setRangeOffset(Vec2f* offset);
     gfCameraController* getCameraController(Kind kind);
     static CameraController* getInstance();
 };
