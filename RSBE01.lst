@@ -445,6 +445,8 @@ CC008000:WGPIPE
 // CameraController
 8009c69c:changeInput__16CameraControllerFQ216CameraController4Kind
 8009be74:getInstance__16CameraControllerFv
+8009cf60:setRangeOffset__16CameraControllerFP5Vec2f
+8009ca00:getCameraController__16CameraControllerFQ216CameraController4Kind
 
 // cmAnimationController
 800a624c:setScnAnmRes__21cmAnimationControllerFQ34nw4r3g3d9ResAnmScnUl
@@ -1124,6 +1126,9 @@ CC008000:WGPIPE
 27,1,00111A68:getBeatCount__7ftOwnerFi
 27,1,00111A08:getDeadCount__7ftOwnerFv
 27,1,001119E0:setDeadCount__7ftOwnerFi
+27,1,00112c4c:getCoin__7ftOwnerFv
+27,1,00112cc4:addLostCoin__7ftOwnerFi
+27,1,00112c10:addCoin__7ftOwnerFi
 
 // ftOutsideEventPresenter
 27,1,0015B0C8:notifyOutsideEventKnockout__23ftOutsideEventPresenterFv
@@ -1216,11 +1221,16 @@ CC008000:WGPIPE
 41,1,0000D6B8:getPreloadArchiveCountFromKind__9emManagerF6emKind
 41,1,0000CCE4:removeEnemyAll__9emManagerFv
 41,1,0000D528:removeArchiveAll__9emManagerFv
+41,1,0000cbd4:removeEnemy__9emManagerFi
+41,1,0000d0a8:isEnemyExist__9emManagerFi
 41,1,0000C7B4:remove__9emManagerFv
 41,1,0000CF18:getEnemyCount__9emManagerFv
 41,1,0000CF8C:getEnemyCountFromKind__9emManagerF6emKind
+41,1,0000d380:isCompArchive__9emManagerFi
 41,1,0000D42C:isCompArchiveAll__9emManagerFv
 41,1,0000CE84:getEnemyPtrFromId__9emManagerFi
+41,1,0000d4b8:removeArchive__9emManagerFi
+41,1,0000d828:getPreloadArchiveCreateIdFromKind__9emManagerF6emKind
 
 //gfFileIO
 8001bf0c:readFile__8gfFileIOFP15gfFileIORequest
@@ -1309,6 +1319,7 @@ CC008000:WGPIPE
 800249cc:getHeap__13gfHeapManagerFQ25Heaps8HeapType
 800249e4:alloc__13gfHeapManagerFQ25Heaps8HeapTypeUl
 80024a4c:free__13gfHeapManagerFPv
+80024a34:getMaxFreeSize__13gfHeapManagerFUl
 
 // gfKeepFrameBuffer
 80024d6c:update__17gfKeepFrameBufferFv
