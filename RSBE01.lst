@@ -278,6 +278,9 @@ CC008000:WGPIPE
 8002dc40:getTask__6gfTaskFi
 8002df34:exit__6gfTaskFv
 
+// gfTaskScheduler
+805a0068:g_taskScheduler
+
 
 // gfArchive
 8001370c:__ct__9gfArchiveFv
@@ -1551,6 +1554,8 @@ CC008000:WGPIPE
 8035c41c:accept
 8035c510:send
 8035c5c4:getsockname
+8035cd7c:SetReceiveBufferSize
+8035cdd8:SetSendBufferSize
 
 // FA.h
 803ebf6c:FAFstat
