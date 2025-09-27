@@ -306,7 +306,7 @@ class itSpringCustomizer : public itCustomizer<itSpringCustomizer> {
     virtual void onProcessFixPosition(BaseItem* item);
     virtual void onNotifyEventChangeStatus(BaseItem* item, int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
-    virtual void onNotifyEventGimmick(BaseItem* item, soGimmickEventInfo* eventInfo, int* taskId);
+    virtual void onNotifyEventGimmick(BaseItem* item, soGimmickEventArgs* eventInfo, int* taskId);
     virtual bool onHave(BaseItem* item, int);
 };
 static_assert(sizeof(itSpringCustomizer) == 12, "Class is wrong size!");

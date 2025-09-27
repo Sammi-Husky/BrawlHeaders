@@ -283,7 +283,7 @@ public:
     virtual bool isTreadPassive();
     virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-    virtual void notifyEventLink(soLinkEventInfo *eventInfo, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
+    virtual void notifyEventLink(soLinkEventArgs *eventInfo, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
 
     // TODO: Verify parameters
     virtual void reset(Vec3f* pos, float lr, float);
@@ -328,8 +328,8 @@ public:
     virtual void notifyEventCollisionSearch(soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionSearchCheck();
     virtual void notifyEventInfoWindow(int);
-    virtual void notifyEventGimmick(soGimmickEventInfo* eventInfo, int* taskId);
-    virtual void presentEventGimmick(soGimmickEventInfo* eventInfo, int sendID);
+    virtual void notifyEventGimmick(soGimmickEventArgs* eventInfo, int* taskId);
+    virtual void presentEventGimmick(soGimmickEventArgs* eventInfo, int sendID);
     virtual void onDamage(int damageStatusKind, soDamageLog*);
     virtual bool isUseTurnDamage();
     virtual bool isUseSpeedDamage();
@@ -368,7 +368,7 @@ public:
     virtual bool onNotifyEventCollisionSearchCheck(BaseItem* item, int searchHitTaskId, u8 searchHitCollisionIndex, Vec3f* searchHitPos);
     virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onNotifyEventCaptureStatus(BaseItem* item); // TODO
-    virtual void onNotifyEventGimmick(BaseItem* item, soGimmickEventInfo* eventInfo, int* taskId);
+    virtual void onNotifyEventGimmick(BaseItem* item, soGimmickEventArgs* eventInfo, int* taskId);
     virtual void onUpdateKinetic(BaseItem* item);
     virtual void onUpdateAiDir(BaseItem* item, Vec2f*, Vec2f*, Vec2f*, Vec2f*);
     virtual void onUpdateAiMove(BaseItem* item, Vec2f*, Vec2f*, Vec2f*);

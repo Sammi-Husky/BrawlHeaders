@@ -61,7 +61,7 @@ public:
     virtual void update(float deltaFrame);
     virtual void startup(gfArchive* archive, u32 unk1, u32 unk2);
     virtual void setInitializeFlag();
-    virtual void onGimmickEvent(soGimmickEventInfo* eventInfo, int* taskId);
+    virtual void onGimmickEvent(soGimmickEventArgs* eventInfo, int* taskId);
     virtual void setWarpAttrData(Vec3f* warpDest, u8 warpType, bool isNotAuto);
 };
 static_assert(sizeof(grGimmickWarpZone) == 416, "Class is wrong size!");

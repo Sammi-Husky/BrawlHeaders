@@ -53,7 +53,7 @@ public:
     virtual float getHitPosX(int index);
     virtual void initAttackPosXWork(int unk1, int unk2);
     virtual void initHitPosXWork(int unk1, int unk2);
-    virtual void presentEventGimmick(soGimmickEventInfo* eventInfo, int sendID);
+    virtual void presentEventGimmick(soGimmickEventArgs* eventInfo, int sendID);
 
     virtual void notifyEventCollisionAttack(float power, soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionAttackCheck(u32 flags);

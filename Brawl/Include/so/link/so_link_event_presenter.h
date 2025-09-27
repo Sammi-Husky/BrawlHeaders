@@ -7,7 +7,7 @@
 class StageObject;
 class soModuleAccesser;
 
-struct soLinkEventInfo {
+struct soLinkEventArgs {
     int m_eventKind;
     int _0x4;
 };
@@ -17,6 +17,6 @@ public:
     soLinkEventObserver(short unitID) : soEventObserver<soLinkEventObserver>(unitID) {};
 
     virtual void addObserver(short param1, s8 param2);
-    virtual void notifyEventLink(soLinkEventInfo *eventInfo, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
+    virtual void notifyEventLink(soLinkEventArgs *eventInfo, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
 };
 static_assert(sizeof(soLinkEventObserver) == 12, "Class is wrong size!");

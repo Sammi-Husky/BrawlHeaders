@@ -72,7 +72,7 @@ public:
     grGimmickSpring(const char* taskName);
     virtual void update(float deltaFrame);
     virtual void startup(gfArchive* archive, u32 unk1, u32 unk2);
-    virtual void onGimmickEvent(soGimmickEventInfo* eventInfo, int* taskId);
+    virtual void onGimmickEvent(soGimmickEventArgs* eventInfo, int* taskId);
     virtual ~grGimmickSpring();
     virtual void setInitializeFlag();
     virtual bool setSleepArea(bool);

@@ -38,25 +38,25 @@ namespace Gimmick {
 }
 
 
-struct soGimmickEventInfo {
+struct soGimmickEventArgs {
     Gimmick::EventKind m_kind;
     int m_sendID;
 };
 
-struct soGimmickSpringEventInfo : soGimmickEventInfo {
+struct soGimmickSpringEventArgs : soGimmickEventArgs {
     Vec3f m_topPos;
     float m_bounce;
     float m_rot;
 };
 
-struct soGimmickLadderEventInfo : soGimmickEventInfo {
+struct soGimmickLadderEventArgs : soGimmickEventArgs {
     Vec3f m_upperNodePos;
     Vec3f m_underNodePos;
     bool m_restrictUpExit;
     bool m_33;
 };
 
-struct soGimmickCatapultEventInfo : soGimmickEventInfo {
+struct soGimmickCatapultEventArgs : soGimmickEventArgs {
     float m_8;
     float m_12;
     float m_lr;
@@ -64,12 +64,12 @@ struct soGimmickCatapultEventInfo : soGimmickEventInfo {
     float m_vector;
 };
 
-struct soGimmickDoorEventInfo : soGimmickEventInfo {
+struct soGimmickDoorEventArgs : soGimmickEventArgs {
     Vec3f m_pos;
     bool m_unk2;
 };
 
-struct soGimmickBarrelEventInfo : soGimmickEventInfo {
+struct soGimmickBarrelEventArgs : soGimmickEventArgs {
     Vec3f m_pos;
     unsigned int m_20;
     soCollisionAttackData* m_attackData;
@@ -80,7 +80,7 @@ struct soGimmickBarrelEventInfo : soGimmickEventInfo {
     float m_shootStunTimerSpeed;
 };
 
-struct soGimmickElevatorEventInfo : soGimmickEventInfo {
+struct soGimmickElevatorEventArgs : soGimmickEventArgs {
     bool m_canGoUp;
     bool m_canGoDown;
 };
@@ -92,7 +92,7 @@ public:
     soGimmickEventObserver(short param1, s8 param2);
 
     virtual void addObserver(short param1, s8 param2);
-    virtual void notifyEventGimmick(soGimmickEventInfo* eventInfo, int* taskId);
+    virtual void notifyEventGimmick(soGimmickEventArgs* eventInfo, int* taskId);
 };
 static_assert(sizeof(soGimmickEventObserver) == 12, "Class is wrong size!");
 

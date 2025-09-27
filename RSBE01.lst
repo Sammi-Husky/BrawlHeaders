@@ -822,7 +822,7 @@ CC008000:WGPIPE
 27,1,00264dd4:onDamage__10grYakumonoFiP8soDamageP20soDamageAttackerInfo
 27,1,00264DE4:onInflict__10grYakumonoFP14soCollisionLogUlf
 27,1,00264DE8:onInflictEach__10grYakumonoFP14soCollisionLogf
-27,1,00264DEC:onGimmickEvent__10grYakumonoFP18soGimmickEventInfoPi
+27,1,00264DEC:onGimmickEvent__10grYakumonoFP18soGimmickEventArgsPi
 27,1,002650DC:enableYakumono__10grYakumonoFUl
 27,1,00265160:disableYakumono__10grYakumonoFUlUl
 27,1,002651D4:enableHit__10grYakumonoFUlUl
