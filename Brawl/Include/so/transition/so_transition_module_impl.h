@@ -23,10 +23,8 @@ static_assert(sizeof(soTransitionTerm) == 0x8, "Class is wrong size!");
 
 class soTransitionTermGroup {
 public:
-	typedef soInstanceManagerFullPropertyEccentric<soTransitionTerm> tdef_InstanceMgr;
-
 	u8 _unk00[4];
-	tdef_InstanceMgr m_transitionTermInstanceManager;
+	soInstanceManagerFullPropertyEccentric<soTransitionTerm> m_transitionTermInstanceManager;
 	u32 m_unitID;
 };
 static_assert(sizeof(soTransitionTermGroup) == 0x14, "Class is wrong size!");
@@ -59,8 +57,7 @@ public:
 
 class soTransitionModuleImpl : public soTransitionModule {
 public:
-	typedef soArrayVector<soTransitionTermGroup, 0x14>* tdef_GroupArray;
-	tdef_GroupArray m_transitionTermGroupArray;
+	soArray<soTransitionTermGroup>* m_transitionTermGroupArray;
 	int m_groupID;
 	soTransitionInfo m_transitionInfo;
 	virtual int checkEstablish(soModuleAccesser* accesser, int*, int groupID, u16*, int);

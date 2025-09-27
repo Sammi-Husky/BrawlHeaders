@@ -118,7 +118,6 @@ class soInstanceManagerFullPropertyVector:
 template <class T>
 class soInstanceManagerFullPropertyEccentric : public soInstanceManagerAttributePolicy<T>, public soInstanceManagerPriorityPolicy<T> {
 public:
-    typedef soArrayVector<soInstanceUnitFullProperty<T>, 1>* tdef_ArrayVec;
     // Starts at 0x8, because there are 2 vtables.
-    tdef_ArrayVec m_arrayVector;
+    soArray<soInstanceUnitFullProperty<T> >* m_array;
 };
