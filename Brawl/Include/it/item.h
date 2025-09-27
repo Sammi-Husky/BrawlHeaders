@@ -163,28 +163,28 @@ public:
         Anim_Event_Bound = 0x3,
     };
 
-    enum KineticEnergyType {
-        Kinetic_Energy_Rot = 0x0,
-        Kinetic_Energy_Outer = 0x1,
-        Kinetic_Energy_Gravity = 0x2,
-        Kinetic_Energy_Ground = 0x3,
-        Kinetic_Energy_AI_Move = 0x4,
-        Kinetic_Energy_AI_Rot = 0x5,
-        Kinetic_Energy_Motion = 0x6,
-        Kinetic_Energy_Stop = 0x7,
-        Kinetic_Energy_Jostle = 0x8,
-        Kinetic_Energy_Ground_Movement = 0x9,
-        Kinetic_Energy_Wind = 0xA,
+    enum KineticEnergyId {
+        Kinetic_Energy_Id_Rot = 0x0,
+        Kinetic_Energy_Id_Outer = 0x1,
+        Kinetic_Energy_Id_Gravity = 0x2,
+        Kinetic_Energy_Id_Ground = 0x3,
+        Kinetic_Energy_Id_AI_Move = 0x4,
+        Kinetic_Energy_Id_AI_Rot = 0x5,
+        Kinetic_Energy_Id_Motion = 0x6,
+        Kinetic_Energy_Id_Stop = 0x7,
+        Kinetic_Energy_Id_Jostle = 0x8,
+        Kinetic_Energy_Id_Ground_Movement = 0x9,
+        Kinetic_Energy_Id_Wind = 0xA,
 
-        Kinetic_Energy_Control = 0x4,
-        Kinetic_Energy_Control_Rot = 0x5,
+        Kinetic_Energy_Id_Control = 0x4,
+        Kinetic_Energy_ID_Control_Rot = 0x5,
     };
 
     enum LinkNo {
-        Link_Have = 0x3,
-        Link_Target = 0x4,
-        Link_TeamOwner = 0x6,
-        Link_CreateOwner = 0x7,
+        Link_No_Have = 0x3,
+        Link_No_Target = 0x4,
+        Link_No_TeamOwner = 0x6,
+        Link_No_CreateOwner = 0x7,
     };
 
     enum AreaKind {
@@ -283,7 +283,7 @@ public:
     virtual bool isTreadPassive();
     virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-    virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
+    virtual void notifyEventLink(soLinkEventInfo *eventInfo, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
 
     // TODO: Verify parameters
     virtual void reset(Vec3f* pos, float lr, float);

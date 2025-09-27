@@ -33,9 +33,9 @@ public:
         Message_Remove = 4,
     };
 
-    enum KineticEnergyType {
-        Kinetic_Energy_Jostle = 0x8,
-        Kinetic_Energy_Ground_Movement = 0x9,
+    enum KineticEnergyId {
+        Kinetic_Energy_Id_Jostle = 0x8,
+        Kinetic_Energy_Id_Ground_Movement = 0x9,
     };
 
     emAIModuleImpl& getAIModule() { return m_aiModule; }
@@ -61,7 +61,7 @@ public:
     virtual bool isTreadPassive();
     virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-    virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
+    virtual void notifyEventLink(soLinkEventInfo *eventInfo, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
 
     virtual float getScore();
     virtual void activate(Vec3f* spawnPos, float lr, float, int statusKind);

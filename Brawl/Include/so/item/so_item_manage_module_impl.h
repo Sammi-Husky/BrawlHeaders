@@ -170,7 +170,7 @@ public:
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual bool isObserv(char unk1);
-    virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
+    virtual void notifyEventLink(soLinkEventInfo *eventInfo, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
 };
 static_assert(sizeof(soItemManageModuleImpl) == 0x6c, "Class is wrong size!");
 

@@ -253,7 +253,7 @@ public:
         Status_Yoshi_Egg = 0xEC,
         Status_Link_Final = 0xED,
         Status_Koopa_Dived = 0xEE,
-
+        Status_Metaknight_Final = 0xEF,
         Status_Pit_Fall = 0xF0,
         Status_Throw_Kirby = 0xF1,
         Status_Big = 0xF2,
@@ -280,7 +280,7 @@ public:
         Status_Capture_Pulled_Yoshi = 0x107,
         Status_Capture_Wait_Yoshi = 0x108,
         Status_Capture_Damage_Yoshi = 0x109,
-
+        Status_Capture_Cut_Yoshi = 0x10A,
         Status_Standby = 0x10B,
         Status_Appeal  = 0x10C,
         Status_Smash_Appeal = 0x10D,
@@ -906,24 +906,24 @@ public:
 
     enum TransitionTermGroupId {
         // 0x0
-        Status_Transition_Term_Group_Chk_Ground_Special = 0x1,
-        Status_Transition_Term_Group_Chk_Ground_Item = 0x2,
-        Status_Transition_Term_Group_Chk_Ground_Catch = 0x3,
-        Status_Transition_Term_Group_Chk_Ground_Attack = 0x4,
-        Status_Transition_Term_Group_Chk_Ground_Escape = 0x5,
-        Status_Transition_Term_Group_Chk_Ground_Guard = 0x6,
-        Status_Transition_Term_Group_Chk_Ground_Jump = 0x7,
-        Status_Transition_Term_Group_Chk_Ground = 0x8,
-        Status_Transition_Term_Group_Chk_Air_Landing = 0x9,
-        Status_Transition_Term_Group_Chk_Air_Cliff = 0xA,
-        Status_Transition_Term_Group_Chk_Air_Special = 0xB,
-        Status_Transition_Term_Group_Chk_Air_Item_Throw = 0xC,
-        Status_Transition_Term_Group_Chk_Air_Lasso = 0xD,
-        Status_Transition_Term_Group_Chk_Air_Escape = 0xE,
-        Status_Transition_Term_Group_Chk_Air_Attack = 0xF,
-        Status_Transition_Term_Group_Chk_Air_Tread_Jump = 0x10,
-        Status_Transition_Term_Group_Chk_Air_Wall_Jump = 0x11,
-        Status_Transition_Term_Group_Chk_Air_Jump_Aerial = 0x12,
+        Status_Transition_Group_Chk_Ground_Special = 0x1,
+        Status_Transition_Group_Chk_Ground_Item = 0x2,
+        Status_Transition_Group_Chk_Ground_Catch = 0x3,
+        Status_Transition_Group_Chk_Ground_Attack = 0x4,
+        Status_Transition_Group_Chk_Ground_Escape = 0x5,
+        Status_Transition_Group_Chk_Ground_Guard = 0x6,
+        Status_Transition_Group_Chk_Ground_Jump = 0x7,
+        Status_Transition_Group_Chk_Ground = 0x8,
+        Status_Transition_Group_Chk_Air_Landing = 0x9,
+        Status_Transition_Group_Chk_Air_Cliff = 0xA,
+        Status_Transition_Group_Chk_Air_Special = 0xB,
+        Status_Transition_Group_Chk_Air_Item_Throw = 0xC,
+        Status_Transition_Group_Chk_Air_Lasso = 0xD,
+        Status_Transition_Group_Chk_Air_Escape = 0xE,
+        Status_Transition_Group_Chk_Air_Attack = 0xF,
+        Status_Transition_Group_Chk_Air_Tread_Jump = 0x10,
+        Status_Transition_Group_Chk_Air_Wall_Jump = 0x11,
+        Status_Transition_Group_Chk_Air_Jump_Aerial = 0x12,
         // 0x13
     };
 
@@ -1097,6 +1097,14 @@ public:
         Status_Gimmick_Spring_Work_Float_Shoot_Angle = 0x21000005,
     };
 
+    enum LinkNo {
+
+    };
+
+    enum LinkEventKind {
+        Link_Event_Metaknight_Final = 1101,
+    };
+
     enum DeadReason {
         Dead_Reason_Outside_Up = 0x0,
         Dead_Reason_Outside_Down = 0x1,
@@ -1136,15 +1144,15 @@ public:
         Scaling_Type_Small = 0x1,
     };
 
-    enum KineticEnergyType {
-        Kinetic_Energy_Motion = 0x0,
-        Kinetic_Energy_Gravity = 0x1,
-        Kinetic_Energy_Control = 0x2,
-        Kinetic_Energy_Stop = 0x3,
-        Kinetic_Energy_Damage = 0x4,
-        Kinetic_Energy_Env_Wind = 0x5,
-        Kinetic_Energy_Ground_Movement = 0x6,
-        Kinetic_Energy_Jostle = 0x7,
+    enum KineticEnergyId {
+        Kinetic_Energy_Id_Motion = 0x0,
+        Kinetic_Energy_Id_Gravity = 0x1,
+        Kinetic_Energy_Id_Control = 0x2,
+        Kinetic_Energy_Id_Stop = 0x3,
+        Kinetic_Energy_Id_Damage = 0x4,
+        Kinetic_Energy_Id_Env_Wind = 0x5,
+        Kinetic_Energy_Id_Ground_Movement = 0x6,
+        Kinetic_Energy_Id_Jostle = 0x7,
     };
 
     enum AreaKind {
@@ -1186,7 +1194,7 @@ public:
     virtual bool isTreadPassive();
     virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-    virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
+    virtual void notifyEventLink(soLinkEventInfo *eventInfo, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual void updateRoughPos();
 
     // TODO: Verify parameters

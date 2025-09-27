@@ -26,6 +26,11 @@ class soActivatable {
 class StageObject : public gfTask, public soActivatable, public soAnimCmdEventObserver, public soLinkEventObserver {
 public:
 
+    enum LinkEventKind {
+        Link_Event_Yoshi_Special_N_Catch = 29,
+        Link_Event_Yoshi_Special_N_Swallow = 30,
+    };
+
     enum AnimCmdType {
         Anim_Cmd_Update_Node_SRT = 0x1,
         Anim_Cmd_Set_Inactive = 0x2,
@@ -33,12 +38,12 @@ public:
         Anim_Cmd_Set_Air = 0x4,
     };
 
-    enum KineticEnergyAttributeId {
-        Kinetic_Energy_Attribute_None = 0x0,
-        Kinetic_Energy_Attribute_Main = 0x1,
-        Kinetic_Energy_Attribute_Damage = 0x2,
-        Kinetic_Energy_Attribute_Extern = 0x3,
-        Kinetic_Energy_Attribute_Ground = 0x4,
+    enum KineticEnergyReserveAttribute {
+        Kinetic_Energy_Reserve_None = 0x0,
+        Kinetic_Energy_Reserve_Main = 0x1,
+        Kinetic_Energy_Reserve_Damage = 0x2,
+        Kinetic_Energy_Reserve_Extern = 0x3,
+        Kinetic_Energy_Reserve_Ground = 0x4,
     };
 
     soModuleAccesser* m_moduleAccesser;
@@ -76,7 +81,7 @@ public:
 
     virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
-    virtual void notifyEventLink(void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
+    virtual void notifyEventLink(soLinkEventInfo *eventInfo, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
 
     virtual void notifyArticleEventRemove(int unk1, int* unk2);
     virtual void notifyArticleEventEject(int unk1, int unk2, int* unk3, int* unk4);
