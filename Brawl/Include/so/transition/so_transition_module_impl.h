@@ -1,14 +1,34 @@
 #pragma once
 
+#include <ac/ac_anim_cmd_impl.h>
 #include <StaticAssert.h>
-//#include <so/so_array.h>
 #include <types.h>
+
+class soGeneralTerm {
+public:
+	soArrayContractibleTable<acCmdArgConv> m_animCmdTable;
+};
+static_assert(sizeof(soGeneralTerm) == 0x10, "Class is wrong size!");
+
+class soGeneralTermManager
+{
+public:
+	soGeneralTerm* m_generalTerms;
+	s16* m_indices;
+	u16 _unk08;
+	u16 m_numGeneralTerms;
+	// Same as m_generalTerms?
+	soGeneralTerm* m_generalTerms2;
+	// Same as m_indices?
+	s16* m_indices2;
+};
+extern soGeneralTermManager g_soGeneralTermManager;
 
 class soTransitionInfo {
 public:
 	int m_groupId;
 	int m_unitId;
-	u32 m_unknown1;
+	u32 _unk08;
 };
 static_assert(sizeof(soTransitionInfo) == 0xC, "Class is wrong size!");
 
@@ -16,8 +36,10 @@ class soTransitionTerm {
 public:
 	u8 _unk00[2];
 	u16 m_targetKind;
-	u16 m_generalTermIndex;
+	s16 m_generalTermIndex;
 	u8 _unk06[2];
+
+	void addGeneralTerm(soGeneralTerm* termIn);
 };
 static_assert(sizeof(soTransitionTerm) == 0x8, "Class is wrong size!");
 
@@ -26,19 +48,18 @@ public:
 	u8 _unk00[4];
 	soInstanceManagerFullPropertyEccentric<soTransitionTerm> m_transitionTermInstanceManager;
 	u32 m_unitID;
+
+	// Creates/locates the entry corresponding to the specified UnitID, and 
+	void addTerm(u32 unitId, u32, soTransitionTerm* termIn, u16*);
+	// Calls addGeneralTerm on registered transitionTerm whose UnitID matches the supplied value (or the last registered, if -1 is supplied).
+	void addGeneralTerm(soTransitionTermGroup* param_1, u32 unitID, soGeneralTerm* termIn);
 };
 static_assert(sizeof(soTransitionTermGroup) == 0x14, "Class is wrong size!");
 
-class soGeneralTerm {
-public:
-	// soArrayConstractibleTable<T>, not literally a char array.
-	u8 m_animCmdTable[0x10];
-};
-static_assert(sizeof(soGeneralTerm) == 0x10, "Class is wrong size!");
 
 class soTransitionModule {
 public:
-	virtual int checkEstablish(soModuleAccesser* accesser, int*, int groupID, u16*, int);
+	virtual int checkEstablish(soModuleAccesser* accesser, int*, int groupID, u16*, void* generalTermCachePtr);
 	virtual void enableTerm(int unitID, int groupID);
 	virtual void unableTerm(int unitID, int groupID);
 	virtual void enableTermAll(int groupID);
@@ -60,7 +81,7 @@ public:
 	soArray<soTransitionTermGroup>* m_transitionTermGroupArray;
 	int m_groupID;
 	soTransitionInfo m_transitionInfo;
-	virtual int checkEstablish(soModuleAccesser* accesser, int*, int groupID, u16*, int);
+	virtual int checkEstablish(soModuleAccesser* accesser, int*, int groupID, u16*, void* generalTermCachePtr);
 	virtual void enableTerm(int unitID, int groupID);
 	virtual void unableTerm(int unitID, int groupID);
 	virtual void enableTermAll(int groupID);
