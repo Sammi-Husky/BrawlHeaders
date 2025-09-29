@@ -306,7 +306,7 @@ public:
         if (C - 1 < iVar1) {
             iVar1 -= C;
         }
-        return this->m_elements[iVar1];
+        return const_cast<T&>(this->m_elements[iVar1]);
 
     }
     virtual T* getArrayValueConst(u32 index) {
