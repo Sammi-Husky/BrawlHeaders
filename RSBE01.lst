@@ -861,7 +861,7 @@ CC008000:WGPIPE
 27,1,0027020C:setInitializeFlag__15grGimmickSpringFv
 27,1,002702A8:disableArea__15grGimmickSpringFv
 27,1,00270310:setSleepArea__15grGimmickSpringFb
-27,1,00270384:onGimmickEvent__15grGimmickSpringFP18soGimmickEventInfoPi
+27,1,00270384:onGimmickEvent__15grGimmickSpringFP18soGimmickEventArgsPi
 27,1,0026FFB4:getTopNode__15grGimmickSpringFP5Vec3f
 27,1,00270464:presentPosEvent__15grGimmickSpringFv
 27,1,0026FF18:setMotionOff__15grGimmickSpringFv
@@ -882,7 +882,7 @@ CC008000:WGPIPE
 27,1,00274824:processFixPosition__17grGimmickCatapultFv
 27,1,00274760:update__17grGimmickCatapultFf
 27,1,002749CC:startup__17grGimmickCatapultFP9gfArchiveUlUl
-27,1,00274DF4:onGimmickEvent__17grGimmickCatapultFP18soGimmickEventInfoPi
+27,1,00274DF4:onGimmickEvent__17grGimmickCatapultFP18soGimmickEventArgsPi
 27,5,58B78:__vt__17grGimmickCatapult
 
 // grGimmickWarpZone
@@ -891,7 +891,7 @@ CC008000:WGPIPE
 27,1,0027455C:update__17grGimmickWarpZoneFf
 27,1,00274168:startup__17grGimmickWarpZoneFP9gfArchiveUlUl
 27,1,002744C0:setInitializeFlag__17grGimmickWarpZoneFv
-27,1,00274594:onGimmickEvent__17grGimmickWarpZoneFP18soGimmickEventInfoPi
+27,1,00274594:onGimmickEvent__17grGimmickWarpZoneFP18soGimmickEventArgsPi
 27,1,00274144:setWarpAttrData__17grGimmickWarpZoneFP5Vec3fUcb
 
 // grYakumonoPunchSlider
