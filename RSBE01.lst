@@ -1322,7 +1322,7 @@ CC008000:WGPIPE
 800249cc:getHeap__13gfHeapManagerFQ25Heaps8HeapType
 800249e4:alloc__13gfHeapManagerFQ25Heaps8HeapTypeUl
 80024a4c:free__13gfHeapManagerFPv
-80024a34:getMaxFreeSize__13gfHeapManagerFUl
+80024a34:getMaxFreeSize__13gfHeapManagerFQ25Heaps8HeapType
 
 // gfKeepFrameBuffer
 80024d6c:update__17gfKeepFrameBufferFv
