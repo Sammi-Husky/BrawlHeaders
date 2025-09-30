@@ -22,7 +22,30 @@ public:
 	// Same as m_indices?
 	s16* m_indices2;
 };
+static_assert(sizeof(soGeneralTermManager) == 0x14, "Class is wrong size!");
 extern soGeneralTermManager g_soGeneralTermManager;
+
+class soGeneralTermCache
+{
+public:
+	u32 m_flags;
+	u32 m_flags2;
+	u32 m_buttonOnMask;
+	u32 m_buttonOnMask2;
+	u32 m_buttonTriggerMask;
+	u32 m_buttonTriggerMask2;
+
+	void clearAll();
+	void clearController();
+	bool isFlag(u32 flagID, u8* resultOut);
+	bool isButtonOn(u32 buttonID, u8* resultOut);
+	bool isButtonTrigger(u32 buttonID, u8* resultOut);
+	void setFlag(u32 flagID, bool saveToMask2);
+	void setButtonOn(u32 buttonID, bool saveToMask2);
+	void setButtonTrigger(u32 buttonID, bool saveToMask2);
+};
+static_assert(sizeof(soGeneralTermCache) == 0x18, "Class is wrong size!");
+extern soGeneralTermCache g_soGeneralTermCache;
 
 class soTransitionInfo {
 public:
@@ -34,12 +57,16 @@ static_assert(sizeof(soTransitionInfo) == 0xC, "Class is wrong size!");
 
 class soTransitionTerm {
 public:
-	u8 _unk00[2];
+	u8 m_flags;
+	u8 _pad01;
 	u16 m_targetKind;
 	s16 m_generalTermIndex;
-	u8 _unk06[2];
+	u8 _pad06[2];
 
+	// Checks if term currently has all of its soGeneralTerms satisfied.
+	int checkEstablish(soModuleAccesser* accesserIn, u32* returnWord, soGeneralTermCache* generalTermCache);
 	void addGeneralTerm(soGeneralTerm* termIn);
+	void clearGeneralTerm();
 };
 static_assert(sizeof(soTransitionTerm) == 0x8, "Class is wrong size!");
 
@@ -47,19 +74,28 @@ class soTransitionTermGroup {
 public:
 	u8 _unk00[4];
 	soInstanceManagerFullPropertyEccentric<soTransitionTerm> m_transitionTermInstanceManager;
-	u32 m_unitID;
+	int m_unitID;
 
-	// Creates/locates the entry corresponding to the specified UnitID, and 
-	void addTerm(u32 unitId, u32, soTransitionTerm* termIn, u16*);
+	// Checks if any of the terms within this group currently have all of their soGeneralTerms satisfied.
+	int checkEstablish(soModuleAccesser* moduleAccesser, u32* targetKindOut, int* termIDOut, u32* returnWord, u16* attrMask, soGeneralTermCache* generalTermCache);
+	// Creates a new empty term with the specified Unit ID, resetting any existing term if necessary.
+	int addTerm(int unitId, u32, soTransitionTerm* termIn, u16*);
 	// Calls addGeneralTerm on registered transitionTerm whose UnitID matches the supplied value (or the last registered, if -1 is supplied).
-	void addGeneralTerm(soTransitionTermGroup* param_1, u32 unitID, soGeneralTerm* termIn);
+	void addGeneralTerm(int unitID, soGeneralTerm* termIn);
+	// Calls addGeneralTerm on registered transitionTerm whoes ID matches m_unitID (or the last, if that value is -1);
+	void addGeneralTermLastTerm(soGeneralTerm* termIn);
+	void enableTerm(int unitId);
+	void unableTerm(int unitId);
+	void clearTransitionTermAll();
+	void enableTermAll();
+	void unableTermAll();
 };
 static_assert(sizeof(soTransitionTermGroup) == 0x14, "Class is wrong size!");
 
 
 class soTransitionModule {
 public:
-	virtual int checkEstablish(soModuleAccesser* accesser, int*, int groupID, u16*, void* generalTermCachePtr);
+	virtual int checkEstablish(soModuleAccesser* accesser, u32* targetKindOut, int groupID, u16* attrMask, soGeneralTermCache* generalTermCache);
 	virtual void enableTerm(int unitID, int groupID);
 	virtual void unableTerm(int unitID, int groupID);
 	virtual void enableTermAll(int groupID);
@@ -81,7 +117,7 @@ public:
 	soArray<soTransitionTermGroup>* m_transitionTermGroupArray;
 	int m_groupID;
 	soTransitionInfo m_transitionInfo;
-	virtual int checkEstablish(soModuleAccesser* accesser, int*, int groupID, u16*, void* generalTermCachePtr);
+	virtual int checkEstablish(soModuleAccesser* accesser, u32* targetKindOut, int groupID, u16* attrMask, soGeneralTermCache* generalTermCache);
 	virtual void enableTerm(int unitID, int groupID);
 	virtual void unableTerm(int unitID, int groupID);
 	virtual void enableTermAll(int groupID);

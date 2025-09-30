@@ -26,6 +26,7 @@
 8059ff68:__float_nan
 8059ff6c:__float_huge
 8059ff70:__double_huge
+80B84F08:g_soGeneralTermCache
 80B879AC:g_soGeneralTermManager
 
 
@@ -514,6 +515,32 @@ CC008000:WGPIPE
 // soCollisionHitModule
 27,1,00042E4C:__dt__24soCollisionHitModuleImplFv
 27,1,00042AA4:__ct__24soCollisionHitModuleImplFP16soModuleAccesseriQ26gfTask8CategoryP29soArray<18soCollisionHitPart>P27soArray<16soCollisionGroup>P30soArray<19soCollisionHitGroup>P31soEventObserverRegistrationDescb
+
+// soTransitionTerm
+27,1,000775AC:checkEstablish__16soTransitionTermFP16soModuleAccesserPUlPv
+27,1,00077668:addGeneralTerm__16soTransitionTermFP13soGeneralTerm
+27,1,0007773C:clearGeneralTerm__16soTransitionTermFv
+
+// soTransitionTermGroup
+27,1,000AB2F4:checkEstablish__21soTransitionTermGroupFP16soModuleAccesserPUlPiPUlPUsPv
+27,1,000AB428:enableTerm__21soTransitionTermGroupFi
+27,1,000AB550:unableTerm__21soTransitionTermGroupFi
+27,1,000AB638:enableTermAll__21soTransitionTermGroupFv
+27,1,000AB6C8:unableTermAll__21soTransitionTermGroupFv
+27,1,000AB758:addTerm__21soTransitionTermGroupFiUlP16soTransitionTermPUs
+27,1,000ABBDC:addGeneralTerm__21soTransitionTermGroupFiP13soGeneralTerm
+27,1,000ABD14:addGeneralTermLastTerm__21soTransitionTermGroupFP13soGeneralTerm
+27,1,000ABE4C:clearTransitionTermAll__21soTransitionTermGroupFv
+
+// soGeneralTermManager
+27,1,0007B38C:clearAll__18soGeneralTermCacheFv
+27,1,0007B3AC:clearController__18soGeneralTermCacheFv
+27,1,0007B3C4:isFlag__18soGeneralTermCacheFUlPUc
+27,1,0007B418:setFlag__18soGeneralTermCacheFUlb
+27,1,0007B468:isButtonOn__18soGeneralTermCacheFUlPUc
+27,1,0007B4BC:setButtonOn__18soGeneralTermCacheFUlb
+27,1,0007B50C:isButtonTrigger__18soGeneralTermCacheFUlPUc
+27,1,0007B560:setButtonTrigger__18soGeneralTermCacheFUlb
 
 // Stage
 27,1,002225A8:createObj__5StageFv
