@@ -114,3 +114,10 @@ class soInstanceManagerFullPropertyVector:
         // Starts at 0x10, because there are 4 vtables.
         soArrayVector<soInstanceUnitFullProperty<T>, C> m_arrayVector;
 };
+
+template <class T>
+class soInstanceManagerFullPropertyEccentric : public soInstanceManagerAttributePolicy<T>, public soInstanceManagerPriorityPolicy<T> {
+public:
+    // Starts at 0x8, because there are 2 vtables.
+    soArray<soInstanceUnitFullProperty<T> >* m_array;
+};
