@@ -26,9 +26,8 @@
 8059ff68:__float_nan
 8059ff6c:__float_huge
 8059ff70:__double_huge
-80B84F08:g_soGeneralTermCache
-80B879AC:g_soGeneralTermManager
-
+27,5,A6068:g_soGeneralTermCache
+27,5,A8B0C:g_soGeneralTermManager
 
 // Hardware
 CC008000:WGPIPE
@@ -532,7 +531,7 @@ CC008000:WGPIPE
 27,1,000ABD14:addGeneralTermLastTerm__21soTransitionTermGroupFP13soGeneralTerm
 27,1,000ABE4C:clearTransitionTermAll__21soTransitionTermGroupFv
 
-// soGeneralTermManager
+// soGeneralTermCache
 27,1,0007B38C:clearAll__18soGeneralTermCacheFv
 27,1,0007B3AC:clearController__18soGeneralTermCacheFv
 27,1,0007B3C4:isFlag__18soGeneralTermCacheFUlPUc
