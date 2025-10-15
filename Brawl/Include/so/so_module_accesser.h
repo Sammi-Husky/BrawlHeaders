@@ -148,6 +148,21 @@ public:
         return *m_enumerationStart->m_collisionHitModule;
     }
 
+    soCollisionShieldModule& getCollisionShieldModule() const
+    {
+        return *m_enumerationStart->m_collisionShieldModule;
+    }
+
+    soCollisionShieldModule& getCollisionReflectorModule() const
+    {
+        return *m_enumerationStart->m_collisionReflectorModule;
+    }
+
+    soCollisionShieldModule& getCollisionAbsorberModule() const
+    {
+        return *m_enumerationStart->m_collisionAbsorberModule;
+    }
+
     soCollisionSearchModule& getCollisionSearchModule() const
     {
         return *m_enumerationStart->m_collisionSearchModule;
