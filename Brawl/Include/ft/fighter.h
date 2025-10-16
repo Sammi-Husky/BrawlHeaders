@@ -1018,8 +1018,8 @@ public:
         Instance_Work_Flag_Dead_End = 0x12000000,
         Instance_Work_Flag_No_Dead = 0x12000001,
         Instance_Work_Flag_Catch_Cliff = 0x12000002,
-        Instance_Work_Flag_Disable_Landing_Cancel = 0x12000003,
-        Instance_Work_Flag_Disable_Landing_Turn = 0x12000004,
+        Instance_Work_Flag_Disable_Landing_Cancel = 0x12000003, // TODO: Verify
+        Instance_Work_Flag_No_Pickup_Item = 0x12000004,
         Instance_Work_Flag_Tread_No_Trigger = 0x12000005,
         Instance_Work_Flag_Final = 0x12000006,
         Instance_Work_Flag_Final_Status = 0x12000007,
@@ -1055,18 +1055,21 @@ public:
         Instance_Work_Flag_Disable_Slip = 0x12000025,
         Instance_Work_Flag_Slow = 0x12000026,
         Instance_Work_Flag_Slow_Cause_Timer = 0x12000027,
-        Instance_Work_Flag_No_Dead_Up = 0x12000028,
-        Instance_Work_Flag_No_Dead_Down = 0x12000029,
+        Instance_Work_Flag_Whole_Slow = 0x12000028,
+        Instance_Work_Flag_No_Dead_Up = 0x12000029,
         Instance_Work_Flag_Item_Throw_4 = 0x1200002A,
         Instance_Work_Flag_Assist = 0x1200002B,
         Instance_Work_Flag_Check_Catch = 0x1200002C,
-
+        Instance_Work_Flag_Cracker_Launcher = 0x1200002D,
         Instance_Work_Flag_Sub_Fighter = 0x1200002E, // TODO: Verify
         Instance_Work_Flag_No_Swim = 0x1200002F,
         Instance_Work_Flag_Disable_Curry_Shot = 0x12000030,
         Instance_Work_Flag_Disable_Interrupt_Swim = 0x12000031,
         Instance_Work_Flag_Disable_Interrupt_Scaling = 0x12000032,
         Instance_Work_Flag_Voice_Mute = 0x12000033,
+        Instance_Work_Flag_Enable_Warp_On_Damage = 0x12000034,
+
+        Instance_Work_Flag_Inhaled = 0x12000036,
         Instance_Work_Flag_Paralyze_Stop = 0x12000037,
         Instance_Work_Flag_Calc_Cursor_Pos_Force = 0x12000038,
         Instance_Work_Flag_No_Speed_Operation_Chk = 0x12000039, // TODO: Verify
@@ -1079,20 +1082,25 @@ public:
         Status_Work_Float_Rebound_Lr = 0x21000002,
 
 
-        Status_Work_Flag_Dive = 0x22000002,
+        Status_Work_Flag_Reserve_Dive = 0x22000002,
+        Status_Work_Flag_Reserve_Check_Dead_Area_Force = 0x22000004,
+        Status_Work_Flag_Reserve_Jump_Mini = 0x22000006,
+        Status_Work_Flag_Reserve_Jump_From_Tread = 0x22000007,
+        Status_Work_Flag_Reserve_Jump_From_Ladder = 0x22000008,
 
-        Status_Work_Flag_Jump_Mini = 0x22000006,
-        Status_Work_Flag_Jump_From_Tread = 0x22000007,
-        Status_Work_Flag_Jump_From_Ladder = 0x22000008,
+        Status_Work_Flag_Reserve_Jump_From_Shoot = 0x2200000A,
+        Status_Work_Flag_Reserve_Jump_From_Water = 0x2200000B,
+        Status_Work_Flag_Reserve_Jump_From_Spring = 0x2200000C,
+        Status_Work_Flag_Reserve_Disable_Outside_Energy = 0x2200000D,
 
-        Status_Work_Flag_Jump_From_Shoot = 0x2200000A,
-        Status_Work_Flag_Jump_From_Water = 0x2200000B,
-        Status_Work_Flag_Jump_From_Spring = 0x2200000C,
-        Status_Work_Flag_Disable_Outside_Energy = 0x2200000D,
+
+        Status_Attack_Air_Work_Int_Motion_Kind = 0x20000000,
 
 
         Status_Tread_Work_Float_Jump_Speed_Mul = 0x21000004,
         Status_Item_Throw_Work_Float_Lr = 0x21000004,
+        Status_Ladder_Work_Float_End_X = 0x21000004,
+        Status_Ladder_Work_Float_End_Y = 0x21000005,
         Status_Gimmick_Spring_Work_Float_Shoot_Speed_Y = 0x21000004,
         Status_Gimmick_Spring_Work_Float_Shoot_Angle = 0x21000005,
     };
