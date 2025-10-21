@@ -9,8 +9,12 @@ class soModuleAccesser;
 
 struct soLinkEventArgs {
     int m_eventKind;
-    int _0x4;
+    bool _0x4;
+protected:
+    inline soLinkEventArgs(int eventKind) : m_eventKind(eventKind), _0x4(false) {}
 };
+static_assert(sizeof(soLinkEventArgs) == 8, "Class is wrong size!");
+
 
 class soLinkEventObserver : public soEventObserver<soLinkEventObserver> {
 public:

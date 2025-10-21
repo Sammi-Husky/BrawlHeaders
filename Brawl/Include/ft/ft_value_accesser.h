@@ -247,8 +247,8 @@ public:
         Common_Param_Float_Capture_Cut_Speed_X = 3270,
         Common_Param_Float_Capture_Cut_Speed_Y = 3271,
 
-        //Common_Param_Float_Damage_Fly_Smoke = 3281,
-        //Common_Param_Float_Damage_Fly_Smoke = 3282, // TODO: Figure out exactly what it does
+        Common_Param_Float_Fly_Effect_Smoke_Speed_Threshold = 3281,
+        Common_Param_Float_Fly_Effect_Smoke_Rate = 3282,
 
         Common_Param_Float_Damage_Fly_Reflect_Speed = 3284,
         Common_Param_Float_Damage_Fly_Reflect_Speed_Mul = 3285,
@@ -315,6 +315,9 @@ public:
         Common_Param_Float_Swim_Jump_Speed_Y_Mul = 3357,
         Common_Param_Float_Swim_Drown_Frame_Dec_Damage_Rate = 3358,
         Common_Param_Float_Swim_Drown_Speed_X_Mul = 3359,
+
+        Common_Param_Float_Barrel_Cursor_Offset_Y = 3373,
+        Common_Param_Float_Truck_Cursor_Offset_Y = 3374,
 
         Common_Param_Float_Bitten_Frame_Add = 3375,
         Common_Param_Float_Bitten_Frame_Damage_Mul = 3376,

@@ -40,6 +40,7 @@ namespace Gimmick {
         Area_MotionPath = 0x32,
         Area_Elevator = 0x35,
         Area_Truck = 0x3a,
+        Area_Truck_Running = 0x3b,
 
         // alternate names
         Area_Barrel_Static = 0x1f,

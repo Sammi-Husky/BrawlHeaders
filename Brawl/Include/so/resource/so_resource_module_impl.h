@@ -3,6 +3,7 @@
 #include <StaticAssert.h>
 #include <so/so_null.h>
 #include <so/resource/so_resource_id_accesser.h>
+#include <gf/gf_archive.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <types.h>
 
@@ -12,11 +13,11 @@ public:
     virtual soResourceIdAccesser* getResourceIdAccesser() = 0;
     virtual u32 getGroupNo(int unk1) = 0;
     virtual void setGroupNo(u8 unk1, u16 index) = 0;
-    virtual nw4r::g3d::ResFileData* getTexFile(u32 unk1, u32 unk2) = 0;
-    virtual nw4r::g3d::ResFileData* getMdlFile(u32 unk1, u32 unk2) = 0;
-    virtual nw4r::g3d::ResFileData* getAnmFile(u32 p1, u32 p2, u32 p3) = 0;
-    virtual nw4r::g3d::ResFileData* getBinFile(u32 p1, u32 p2, u32 p3) = 0;
-    virtual nw4r::g3d::ResFileData* getFile(u32 p1, u32 p2, u32 p3) = 0;
+    virtual nw4r::g3d::ResFile getTexFile(u16 fileIndex, s16 texResId) = 0;
+    virtual nw4r::g3d::ResFile getMdlFile(u16 fileIndex, s16 mdlResId) = 0;
+    virtual nw4r::g3d::ResFile getAnmFile(u16 fileIndex, s16 anmResId, bool p3) = 0;
+    virtual nw4r::g3d::ResFile getBinFile(s16 binResId, u16 fileIndex, int archiveId) = 0;
+    virtual nw4r::g3d::ResFile getFile(s16 resId, ARCNodeType nodeType, u16 fileIndex) = 0;
 };
 
 class soResourceModuleImpl : public soResourceModule {
@@ -43,10 +44,10 @@ public:
         return ptr[0x14];
     }
     virtual void setGroupNo(u8 unk1, u16 index);
-    virtual nw4r::g3d::ResFileData* getTexFile(u32 unk1, u32 unk2);
-    virtual nw4r::g3d::ResFileData* getMdlFile(u32 unk1, u32 unk2);
-    virtual nw4r::g3d::ResFileData* getAnmFile(u32 p1, u32 p2, u32 p3);
-    virtual nw4r::g3d::ResFileData* getBinFile(u32 p1, u32 p2, u32 p3);
-    virtual nw4r::g3d::ResFileData* getFile(u32 p1, u32 p2, u32 p3);
+    virtual nw4r::g3d::ResFile getTexFile(u16 fileIndex, s16 texResId);
+    virtual nw4r::g3d::ResFile getMdlFile(u16 fileIndex, s16 mdlResId);
+    virtual nw4r::g3d::ResFile getAnmFile(u16 fileIndex, s16 anmResId, bool p3);
+    virtual nw4r::g3d::ResFile getBinFile(s16 binResId, u16 fileIndex, int archiveId);
+    virtual nw4r::g3d::ResFile getFile(s16 resId, ARCNodeType nodeType, u16 fileIndex);
 };
 static_assert(sizeof(soResourceModuleImpl) == 24, "Class is wrong size!");

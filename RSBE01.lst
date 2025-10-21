@@ -288,9 +288,9 @@ CC008000:WGPIPE
 
 // gfArchive
 8001370c:__ct__9gfArchiveFv
-80015e34:getData__9gfArchiveFi11ARCNodeTypeiPiUl
+80015e34:getData__9gfArchiveFi11ARCNodeTypeiPiUs
 80015ddc:getData__9gfArchiveF11ARCNodeTypeiUs
-80015e14:getData__9gfArchiveF11ARCNodeTypeiPiUl
+80015e14:getData__9gfArchiveF11ARCNodeTypeiPiUs
 80013b1c:__dt__9gfArchiveFv
 
 //NMWException

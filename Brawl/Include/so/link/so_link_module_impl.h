@@ -3,19 +3,17 @@
 #include <so/stageobject.h>
 #include <StaticAssert.h>
 #include <types.h>
+#include <mt/mt_matrix.h>
+#include <mt/mt_vector.h>
+#include <nw4r/g3d/g3d_resfile.h>
+#include <so/article/so_article.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
 #include <so/controller/so_controller_impl.h>
 #include <so/link/so_link_event_presenter.h>
 #include <so/link/so_link_connection_server.h>
 #include <so/so_null.h>
 
-struct UnkLinkEvent {
-    u32 unk0;
-    u8 unk4;
-    u32 unk8;
-
-    UnkLinkEvent(u32 p1, u8 p2, u32 p3) : unk0(p1), unk4(p2), unk8(p3) { }
-};
+class soModuleAccesser;
 
 class soLinkModule : public soNullable {
 public:
@@ -34,7 +32,7 @@ public:
     virtual void searchParent() = 0;
     virtual StageObject* searchParentAttr(u32 p1) = 0;
     virtual void searchNode() = 0;
-    virtual void sendEventParents(s32 p1, UnkLinkEvent& p2) = 0;
+    virtual void sendEventParents(s32 p1, soLinkEventArgs& p2) = 0;
     virtual void sendEventNodes() = 0;
     virtual void sendEventNodes(u32 overload_fixme) = 0;
     virtual void getNode() = 0;
@@ -42,18 +40,18 @@ public:
     virtual void isNodeDamageReaction() = 0;
     virtual void isNodeDamageCaptureCut() = 0;
     virtual void getParentModelLoupeNo() = 0;
-    virtual void chkLinkStop() = 0;
+    virtual bool chkLinkStop() = 0;
     virtual void toLinkStop() = 0;
     virtual void leaveLinkStop() = 0;
     virtual void isValidLinkStop() = 0;
-    virtual void chkLinkShake() = 0;
+    virtual bool chkLinkShake(Vec2f*) = 0;
     virtual void getLinkColorBlend() = 0;
     virtual void getLinkLightSet() = 0;
-    virtual void chkLinkVisibility() = 0;
+    virtual bool chkLinkVisibility() = 0;
     virtual soController* getLinkController() = 0;
     virtual void getLinkScale() = 0;
     virtual void getParentScale() = 0;
-    virtual void adjustLinkGroundCollision() = 0;
+    virtual void adjustLinkGroundCollision(int, float*) = 0;
     virtual void setConstraint2ndWind() = 0;
     virtual void getParentModelNodeGlobalPosition() = 0;
     virtual void getParentModelNodeGlobalPosition(u32 overload_fixme) = 0;
@@ -93,7 +91,7 @@ public:
     virtual void getParentAttachItemVisibility() = 0;
     virtual void isParentEnableSubColor() = 0;
     virtual void getParentSubColor() = 0;
-    virtual void correctParent2ndBoth() = 0;
+    virtual bool correctParent2ndBoth(u32 index, Vec3f*, float) = 0;
     virtual void setModelConstraintPosOrt() = 0;
     virtual void setModelConstraintPosOrt(u32 overload_fixme) = 0;
     virtual void setModelConstraintAttribute() = 0;
@@ -104,8 +102,8 @@ public:
     virtual void setModelConstraintNode() = 0;
     virtual void setModelConstraintTargetNode() = 0;
     virtual void getModelConstraintNo() = 0;
-    virtual void adjustModelConstraintPosture() = 0;
-    virtual void adjustModelConstraintPosture(u32 overload_fixme) = 0;
+    virtual void adjustModelConstraintPosture(Matrix*, Vec3f*) = 0;
+    virtual void adjustModelConstraintPosture(u16, Matrix*, Vec3f*) = 0;
     virtual void removeModelConstraint() = 0;
     virtual void isModelConstraint() = 0;
     virtual void isModelConstraintMutual() = 0;
@@ -117,15 +115,15 @@ public:
     virtual void getNodeRotation() = 0;
     virtual void getConstraintModelScale() = 0;
     virtual void setUpModelConstraintTargetMtx() = 0;
-    virtual void calcModelConstraintNodeMtx() = 0;
+    virtual void calcModelConstraintNodeMtx(Matrix*) = 0;
     virtual void setAttribute() = 0;
-    virtual void chkAttribute() = 0;
-    virtual void chkLinkedAttribute() = 0;
-    virtual void getAnmFile() = 0;
+    virtual bool chkAttribute(int index, soLinkConnection::Attribute) = 0;
+    virtual bool chkLinkedAttribute(soLinkConnection::Attribute) = 0;
+    virtual nw4r::g3d::ResFile getAnmFile(u16 fileIndex) = 0;
     virtual void setAnmFileTransactorLinkNo() = 0;
     virtual void getLinkSlopeStatus() = 0;
     virtual void getLinkSlopeRotation() = 0;
-    virtual void generateArticleLinkParents() = 0;
+    virtual soArticle *generateArticleLinkParents(u32 connectionIndex, int id, soModuleAccesser*) = 0;
     virtual void kParents() = 0;
     virtual void isLinkParentSlow() = 0;
     virtual void getLinkParentSlowInfo() = 0;
@@ -150,7 +148,7 @@ public:
     virtual void searchParent();
     virtual StageObject* searchParentAttr(u32 p1);
     virtual void searchNode();
-    virtual void sendEventParents(s32 p1, UnkLinkEvent& p2);
+    virtual void sendEventParents(s32 p1, soLinkEventArgs& p2);
     virtual void sendEventNodes();
     virtual void sendEventNodes(u32 overload_fixme);
     virtual void getNode();
@@ -158,18 +156,18 @@ public:
     virtual void isNodeDamageReaction();
     virtual void isNodeDamageCaptureCut();
     virtual void getParentModelLoupeNo();
-    virtual void chkLinkStop();
+    virtual bool chkLinkStop();
     virtual void toLinkStop();
     virtual void leaveLinkStop();
     virtual void isValidLinkStop();
-    virtual void chkLinkShake();
+    virtual bool chkLinkShake(Vec2f*);
     virtual void getLinkColorBlend();
     virtual void getLinkLightSet();
-    virtual void chkLinkVisibility();
+    virtual bool chkLinkVisibility();
     virtual soController* getLinkController();
     virtual void getLinkScale();
     virtual void getParentScale();
-    virtual void adjustLinkGroundCollision();
+    virtual void adjustLinkGroundCollision(int, float*);
     virtual void setConstraint2ndWind();
     virtual void getParentModelNodeGlobalPosition();
     virtual void getParentModelNodeGlobalPosition(u32 overload_fixme);
@@ -209,7 +207,7 @@ public:
     virtual void getParentAttachItemVisibility();
     virtual void isParentEnableSubColor();
     virtual void getParentSubColor();
-    virtual void correctParent2ndBoth();
+    virtual bool correctParent2ndBoth(u32 index, Vec3f*, float);
     virtual void setModelConstraintPosOrt();
     virtual void setModelConstraintPosOrt(u32 overload_fixme);
     virtual void setModelConstraintAttribute();
@@ -220,8 +218,8 @@ public:
     virtual void setModelConstraintNode();
     virtual void setModelConstraintTargetNode();
     virtual void getModelConstraintNo();
-    virtual void adjustModelConstraintPosture();
-    virtual void adjustModelConstraintPosture(u32 overload_fixme);
+    virtual void adjustModelConstraintPosture(Matrix*, Vec3f*);
+    virtual void adjustModelConstraintPosture(u16, Matrix*, Vec3f*);
     virtual void removeModelConstraint();
     virtual void isModelConstraint();
     virtual void isModelConstraintMutual();
@@ -233,15 +231,15 @@ public:
     virtual void getNodeRotation();
     virtual void getConstraintModelScale();
     virtual void setUpModelConstraintTargetMtx();
-    virtual void calcModelConstraintNodeMtx();
+    virtual void calcModelConstraintNodeMtx(Matrix*);
     virtual void setAttribute();
-    virtual void chkAttribute();
-    virtual void chkLinkedAttribute();
-    virtual void getAnmFile();
+    virtual bool chkAttribute(int index, soLinkConnection::Attribute);
+    virtual bool chkLinkedAttribute(soLinkConnection::Attribute);
+    virtual nw4r::g3d::ResFile getAnmFile(u16 fileIndex);
     virtual void setAnmFileTransactorLinkNo();
     virtual void getLinkSlopeStatus();
     virtual void getLinkSlopeRotation();
-    virtual void generateArticleLinkParents();
+    virtual soArticle *generateArticleLinkParents(u32 connectionIndex, int id, soModuleAccesser*);
     virtual void kParents();
     virtual void isLinkParentSlow();
     virtual void getLinkParentSlowInfo();

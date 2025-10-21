@@ -1061,7 +1061,7 @@ public:
         Instance_Work_Flag_Assist = 0x1200002B,
         Instance_Work_Flag_Check_Catch = 0x1200002C,
         Instance_Work_Flag_Cracker_Launcher = 0x1200002D,
-        Instance_Work_Flag_Sub_Fighter = 0x1200002E, // TODO: Verify
+        Instance_Work_Flag_Sub_Fighter = 0x1200002E,
         Instance_Work_Flag_No_Swim = 0x1200002F,
         Instance_Work_Flag_Disable_Curry_Shot = 0x12000030,
         Instance_Work_Flag_Disable_Interrupt_Swim = 0x12000031,
@@ -1095,14 +1095,33 @@ public:
 
 
         Status_Attack_Air_Work_Int_Motion_Kind = 0x20000000,
+        Status_Gimmick_Door_Work_Int_Step = 0x20000000,
+        Status_Gimmick_Barrel_Work_Int_Step = 0x20000000,
+        Status_Gimmick_Barrel_Work_Int_Break_Hitstop_Frame = 0x20000002,
 
 
         Status_Tread_Work_Float_Jump_Speed_Mul = 0x21000004,
         Status_Item_Throw_Work_Float_Lr = 0x21000004,
-        Status_Ladder_Work_Float_End_X = 0x21000004,
-        Status_Ladder_Work_Float_End_Y = 0x21000005,
+        Status_Ladder_Work_Float_Ladder_Upper_X = 0x21000004,
+        Status_Ladder_Work_Float_Ladder_Upper_Y = 0x21000005,
+        Status_Ladder_Work_Float_Ladder_End_X = 0x21000005,
+        Status_Ladder_Work_Float_Ladder_End_Y = 0x21000006,
+        Status_Ladder_Work_Float_Ladder_End_Start_X = 0x21000007,
+        Status_Ladder_Work_Float_Ladder_End_Start_Y = 0x21000008,
+        Status_Gimmick_Door_Work_Float_Center_X = 0x21000004,
+        Status_Gimmick_Door_Work_Float_Center_Y = 0x21000005,
         Status_Gimmick_Spring_Work_Float_Shoot_Speed_Y = 0x21000004,
         Status_Gimmick_Spring_Work_Float_Shoot_Angle = 0x21000005,
+        Status_Gimmick_Barrel_Work_Float_Fall_Speed = 0x21000004,
+        Status_Gimmick_Barrel_Work_Float_Shoot_Offset_X = 0x21000005,
+        Status_Gimmick_Barrel_Work_Float_Shoot_Offset_Y = 0x21000006,
+        Status_Gimmick_Truck_Work_Float_Speed_X = 0x21000004,
+        Status_Gimmick_Truck_Work_Float_Speed_Y = 0x21000005,
+
+        Status_Ladder_Work_Flag_Fall = 0x22000010,
+        Status_Gimmick_Door_Work_Flag_No_Into = 0x22000010,
+        Status_Gimmick_Barrel_Work_Flag_End_Speed = 0x22000010,
+        Status_Gimmick_Truck_Work_Flag_Run = 0x22000010,
     };
 
     enum LinkNo {
@@ -1183,6 +1202,19 @@ public:
         Node_Correct_Trans = 304,
     };
 
+    enum GimmickDoorStep {
+        Gimmick_Door_Step_Turn = 0x0,
+        Gimmick_Door_Step_Walk_To_Center = 0x1,
+        Gimmick_Door_Step_Walk_Through = 0x2,
+        Gimmick_Door_Step_Wait = 0x3,
+    };
+
+    enum GimmickBarrelStep {
+        Gimmick_Barrel_Step_In = 0x0,
+        Gimmick_Barrel_Step_Shoot_Wait = 0x1,
+        Gimmick_Barrel_Step_Shoot = 0x2,
+    };
+
     int m_entryId;
     char _272[44];
     ftOutsideEventPresenter m_outsideEventPresenter;
@@ -1235,11 +1267,11 @@ public:
     virtual void setupChangeSucceedWork(void*);
     virtual bool setupChangeSucceedEffect();
     virtual void change(void*, int);
-    virtual void touchItem(void*);
+    virtual void touchItem(soLinkTouchItemEventArgs*);
     virtual bool setMetal(bool setStatus, float health, int unk3);
     virtual void onSetMetal(bool);
     virtual void onHitReflector(soModuleAccesser* moduleAccesser, bool);
-    virtual void dropItemCheck(void*, bool);
+    virtual void dropItemCheck(soDamage *, bool);
     virtual bool isHeartSwapEnableCondition();
     virtual void analyzeSeal(void*);
     virtual void notifyEventCollisionAttack(float power, soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);
@@ -1247,7 +1279,7 @@ public:
     virtual ftOwner* getOwner();
     virtual ftKind getFtKind();
     virtual bool isInclude(float* rect, Vec3f* out);
-    virtual void eatItem(void*);
+    virtual void eatItem(soLinkTouchItemEventArgs *);
     virtual void notifyEventChangeStatus(int statusKind, int prevStatusKind, soStatusData* statusData, soModuleAccesser* moduleAccesser);
     virtual void notifyEventChangeSituation(SituationKind kind, SituationKind prevKind, soModuleAccesser* moduleAccesser);
     virtual bool notifyEventCollisionAttackCheck(u32 flags);

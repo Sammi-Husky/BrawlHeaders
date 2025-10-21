@@ -26,9 +26,18 @@ class soActivatable {
 class StageObject : public gfTask, public soActivatable, public soAnimCmdEventObserver, public soLinkEventObserver {
 public:
 
+    enum LinkNo {
+        Link_No_Capture = 0x0,
+    };
+
     enum LinkEventKind {
+        Link_Event_Deactivate_Parent = 0,
+        Link_Event_Deactivate_Node = 4,
+
         Link_Event_Yoshi_Special_N_Catch = 29,
         Link_Event_Yoshi_Special_N_Swallow = 30,
+
+        Link_Event_Touch_Item = 62,
     };
 
     enum AnimCmdType {
@@ -90,3 +99,21 @@ public:
     void activate(Vec3f* pos, float lr, float, bool);
 };
 static_assert(sizeof(StageObject) == 0x64, "Class is wrong size!");
+
+class BaseItem;
+struct soLinkTouchItemEventArgs : public soLinkEventArgs {
+    BaseItem* m_item;
+    Vec3f m_pos;
+    float m_0x18;
+    bool m_0x1C;
+
+    inline soLinkTouchItemEventArgs(BaseItem* item, Vec3f& pos, float arg3, bool arg4) : soLinkEventArgs(StageObject::Link_Event_Touch_Item), m_item(item), m_pos(pos), m_0x18(arg3), m_0x1C(arg4) {}
+};
+static_assert(sizeof(soLinkTouchItemEventArgs) == 0x20, "Class is wrong size!");
+
+struct UnkLinkEvent : public soLinkEventArgs {
+
+    u32 unk8;
+
+    inline UnkLinkEvent(u32 p1, u32 p3) : soLinkEventArgs(p1), unk8(p3) { }
+};

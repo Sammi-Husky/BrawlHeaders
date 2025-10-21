@@ -53,10 +53,10 @@ public:
     gfArchive();
     gfArchive(HeapType heap, int* unk1);
     virtual void notify(int unk1, gfFileIORequest* unk2);
-    void* getData(ARCNodeType nodeType, int fileIndex, u16 endian);
-    void* getData(int groupID, ARCNodeType nodeType, int fileIndex, u32 endian);
-    void* getData(ARCNodeType nodeType, int fileIndex, int* nodeSize, u32 endian);
-    void* getData(int groupID, ARCNodeType nodeType, int fileIndex, int* nodeSize, u32 endian);
+    void* getData(ARCNodeType nodeType, int fileIndex, u16 archiveId);
+    void* getData(int groupID, ARCNodeType nodeType, int fileIndex, u16 archiveId);
+    void* getData(ARCNodeType nodeType, int fileIndex, int* nodeSize, u16 archiveId);
+    void* getData(int groupID, ARCNodeType nodeType, int fileIndex, int* nodeSize, u16 archiveId);
     void setFileImage(void* data, int nodeSize, HeapType heapType);
     ~gfArchive();
 

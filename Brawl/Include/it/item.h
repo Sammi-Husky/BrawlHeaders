@@ -177,7 +177,7 @@ public:
         Kinetic_Energy_Id_Wind = 0xA,
 
         Kinetic_Energy_Id_Control = 0x4,
-        Kinetic_Energy_ID_Control_Rot = 0x5,
+        Kinetic_Energy_Id_Control_Rot = 0x5,
     };
 
     enum LinkNo {
