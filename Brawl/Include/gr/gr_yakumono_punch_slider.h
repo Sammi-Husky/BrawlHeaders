@@ -56,8 +56,8 @@ struct grGimmickPunchSliderData {
         m_attackData = *attackData;
         m_hitData.m_size = hitSize;
         strcpy(m_ballNodeName, nodeName);
-        m_motionPathData = (grGimmickMotionPathData){motionRatio, motionPathIndex, pathMode, motionPathMdlIndex, motionPathUnk};
-        m_sliderPathData = (grGimmickMotionPathData){sliderRatio, sliderPathIndex, grGimmickMotionPathData::Path_Return, sliderPathMdlIndex, sliderPathUnk};
+        m_motionPathData.set(motionRatio, motionPathIndex, pathMode, motionPathMdlIndex, motionPathUnk);
+        m_sliderPathData.set(sliderRatio, sliderPathIndex, grGimmickMotionPathData::Path_Return, sliderPathMdlIndex, sliderPathUnk);
     };
 };
 static_assert(sizeof(grGimmickPunchSliderData) == 288, "Class is wrong size!");

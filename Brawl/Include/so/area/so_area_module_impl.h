@@ -61,6 +61,8 @@ struct soAreaData {
             bool m_fixed : 1;  // 0x2
             bool m_followNode : 1;     // 0x1
         };
+        inline ShapeFlag() {}
+        inline ShapeFlag(u16 mask) : m_mask(mask) {}
     } m_shapeFlag;
 
     int m_0x4;
@@ -68,6 +70,20 @@ struct soAreaData {
     int m_nodeIndex;
     Vec2f m_offsetPos;
     Vec2f m_range;
+
+    inline soAreaData() {}
+    inline soAreaData(gfArea::ShapeType shapeType, gfArea::Group group, u16 mask, int unk1, int unk2, int nodeIndex, Vec2f offsetPos, Vec2f range) : m_shapeType(shapeType), m_group(group), m_shapeFlag(mask), m_0x4(unk1), m_0x8(unk2), m_nodeIndex(nodeIndex), m_offsetPos(offsetPos), m_range(range) {}
+
+    void set(gfArea::ShapeType shapeType, gfArea::Group group, u16 mask, int unk1, int unk2, int nodeIndex, Vec2f offsetPos, Vec2f range) {
+        m_shapeType = shapeType;
+        m_group = group;
+        m_shapeFlag.m_mask = mask;
+        m_0x4 = unk1;
+        m_0x8 = unk2;
+        m_nodeIndex = nodeIndex;
+        m_offsetPos = offsetPos;
+        m_range = range;
+    }
 };
 static_assert(sizeof(soAreaData) == 0x20, "Class is wrong size!");
 

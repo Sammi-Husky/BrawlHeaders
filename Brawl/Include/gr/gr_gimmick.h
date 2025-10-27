@@ -20,9 +20,21 @@ struct grGimmickMotionPathData {
     char m_mdlIndex;
     char m_7;
 
+    inline grGimmickMotionPathData() {}
+    inline grGimmickMotionPathData(float motionRatio, u8 index, PathMode pathMode, u8 mdlIndex, u8 unk) : m_motionRatio(motionRatio), m_index(index), m_pathMode(pathMode), m_mdlIndex(mdlIndex), m_7(unk) {}
+    inline grGimmickMotionPathData(float motionRatio, u8 index, u8 mdlIndex, u8 unk) : m_motionRatio(motionRatio), m_index(index), m_pathMode(Path_Return), m_mdlIndex(mdlIndex), m_7(unk) {}
+
     inline void set(float motionRatio, u8 index, u8 mdlIndex, u8 unk) {
         m_motionRatio = motionRatio;
         m_index = index;
+        m_mdlIndex = mdlIndex;
+        m_7 = unk;
+    }
+
+    inline void set(float motionRatio, u8 index, PathMode pathMode, u8 mdlIndex, u8 unk) {
+        m_motionRatio = motionRatio;
+        m_index = index;
+        m_pathMode = pathMode;
         m_mdlIndex = mdlIndex;
         m_7 = unk;
     }
@@ -280,6 +292,23 @@ public:
         short m_generatorIndex;
         Vec2f m_offsetPos;
         float m_scale;
+
+        inline void set(SndID sndId, u32 repeatFrame, short nodeIndex, u32 endFrame, Vec2f offsetPos) {
+            m_id = sndId;
+            m_repeatFrame = repeatFrame;
+            m_nodeIndex = nodeIndex;
+            m_endFrame = endFrame;
+            m_offsetPos = offsetPos;
+        }
+
+        inline void set(EfID efId, u32 repeatFrame, short nodeIndex, u32 endFrame, Vec2f offsetPos, float scale) {
+            m_id = efId;
+            m_repeatFrame = repeatFrame;
+            m_nodeIndex = nodeIndex;
+            m_endFrame = endFrame;
+            m_offsetPos = offsetPos;
+            m_scale = scale;
+        }
     };
 
     // 5C
@@ -439,4 +468,7 @@ struct grGimmickMotionPathInfo {
     grGimmick::SimpleEffectData* m_0x18;
     grGimmick::SimpleEffectData* m_0x1c;
     grGimmick::SimpleEffectData* m_0x20;
+
+    inline grGimmickMotionPathInfo(gfArchive* archive, grGimmickMotionPathData* motionPathData, bool isRotate, bool isTranslate) : m_archive(archive), m_motionPathData(motionPathData), m_isRotate(isRotate), m_isTranslate(isTranslate), m_0xc(NULL), m_0x10(NULL), m_0x14(NULL), m_0x18(NULL), m_0x1c(NULL), m_0x20(NULL) {}
+    inline grGimmickMotionPathInfo(gfArchive* archive, grGimmickMotionPathData* motionPathData, u32 flags) : m_archive(archive), m_motionPathData(motionPathData), m_flags(flags), m_0xc(NULL), m_0x10(NULL), m_0x14(NULL), m_0x18(NULL), m_0x1c(NULL), m_0x20(NULL) {}
 };
