@@ -61,6 +61,7 @@ struct stTriggerData {
     KeepKind m_keepKind : 8;
 
     inline stTriggerData() {}
+    inline stTriggerData(KeepKind keepKind) : m_keepKind(keepKind) {}
     inline stTriggerData(u16 triggerId, bool isValid, KeepKind keepKind) : m_triggerId(triggerId), _padding(0), m_isValid(isValid), m_keepKind(keepKind) {}
 
     inline void set(u16 triggerId, bool isValid, KeepKind keepKind) {
