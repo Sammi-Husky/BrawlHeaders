@@ -22,6 +22,7 @@ struct grGimmickMotionPathData {
 
     inline grGimmickMotionPathData() {}
     inline grGimmickMotionPathData(float motionRatio, u8 index, PathMode pathMode, u8 mdlIndex, u8 unk) : m_motionRatio(motionRatio), m_index(index), m_pathMode(pathMode), m_mdlIndex(mdlIndex), m_7(unk) {}
+    inline grGimmickMotionPathData(float motionRatio, u8 index, PathMode pathMode, u8 mdlIndex) : m_motionRatio(motionRatio), m_index(index), m_pathMode(pathMode), m_mdlIndex(mdlIndex), m_7(0) {}
     inline grGimmickMotionPathData(float motionRatio, u8 index, u8 mdlIndex, u8 unk) : m_motionRatio(motionRatio), m_index(index), m_pathMode(Path_Return), m_mdlIndex(mdlIndex), m_7(unk) {}
 
     inline void set(float motionRatio, u8 index, u8 mdlIndex, u8 unk) {
