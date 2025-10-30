@@ -245,6 +245,19 @@ CC008000:WGPIPE
 80073fe8:getBGMId__9sndSystemFv
 80073db0:playBGM__9sndSystemFiUlb
 
+// FrameHeap
+801BFA5C:Clear__9FrameHeapFv
+801BFB88:Alloc__9FrameHeapFUlPvi
+801BFC2C:SaveState__9FrameHeapFv
+801BFCF8:LoadState__9FrameHeapFi
+801BFF1C:GetCurrentLevel__9FrameHeapFv
+801BFF28:GetFreeSize__9FrameHeapFv
+
+// SoundHeap
+801CA970:Clear__9SoundHeapFv
+801CA9D4:SaveState__9SoundHeapFv
+801CAA28:LoadState__9SoundHeapFi
+
 // snd3DGenerator
 80079550:__ct__14snd3DGeneratorFv
 800795d4:__dt__14snd3DGeneratorFv
