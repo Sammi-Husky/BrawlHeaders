@@ -3,6 +3,7 @@
 #include <StaticAssert.h>
 #include <snd/snd_id.h>
 #include <types.h>
+#include <nw4r/ut/ut_LinkList.h>
 
 class FrameHeap
 {
@@ -11,6 +12,13 @@ public:
     u32* m_currLevel;
     u8* _unk08;
     u8* _unk0C;
+    
+    void Clear();
+    nw4r::ut::LinkListNode* Alloc(u32 size, void* disposeFuncPtr, int);
+    int SaveState();
+    void LoadState(int clearToLevel);
+    int GetFreeSize();
+    int GetCurrentLevel();
 };
 static_assert(sizeof(FrameHeap) == 0x10, "Class is wrong size!");
 
@@ -18,13 +26,16 @@ class SoundHeap
 {
 public:
     virtual ~SoundHeap();
-    virtual u32 Alloc(u32);
+    virtual u32 Alloc(u32 size);
 
     u32 m_mutex;
     u8 _unk08[0x14];
     FrameHeap m_frameHeap;
+
+    void Clear();
+    int SaveState();
+    void LoadState(int clearToLevel);
 };
-const u32 offset = offsetof(SoundHeap, SoundHeap::m_frameHeap);
 static_assert(sizeof(SoundHeap) == 0x2C, "Class is wrong size!");
 
 class sndHeapSys
