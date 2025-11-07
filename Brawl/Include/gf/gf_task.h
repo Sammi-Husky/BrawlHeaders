@@ -53,12 +53,12 @@ public:
     };
 
     const char* m_taskName;
-    gfTask* m_next; // TODO: suspend list and priority list prev?
-    gfTask* m_prev; // TODO: suspend list and priority list next?
-    gfTask* m_0xC;  // TODO: category list prev?
-    gfTask* m_0x10; // TODO: category list next?
-    gfTask* m_0x14; // TODO: unk31 list prev?
-    gfTask* m_0x18; // TODO: unk31 list next?
+    gfTask* m_prev;     // TODO: suspend list and priority list prev?
+    gfTask* m_next;     // TODO: suspend list and priority list next?
+    gfTask* m_0xC;      // TODO: category list prev?
+    gfTask* m_0x10;     // TODO: category list next?
+    gfTask* m_0x14;     // TODO: unk31 list prev?
+    gfTask* m_0x18;     // TODO: unk31 list next?
     gfTask* m_connectedTask;
     gfTask* m_attachedTask;
     gfTask* m_nextTask;
@@ -66,7 +66,7 @@ public:
     u8 _0 : 1;
     bool m_alive : 1;
     bool unk2C_b5 : 1;
-    u8 _1 : 1;
+    u8 _1: 1;
     bool unk2C_b3 : 1;
     bool unk2C_b2 : 1;
     bool unk2C_b1 : 1;
