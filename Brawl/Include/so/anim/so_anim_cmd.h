@@ -42,3 +42,8 @@ public:
     soAnimCmdArgument *m_args; // ptr to array
 };
 static_assert(sizeof(soAnimCmd) == 0x8, "Class is the wrong size!");
+
+struct soAnimCmdAddressPack {
+    char _0x0[0xc];
+};
+static_assert(sizeof(soAnimCmdAddressPack) == 0xc, "Class is the wrong size!");

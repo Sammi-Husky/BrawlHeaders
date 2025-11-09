@@ -48,7 +48,7 @@ public:
     virtual void getNodeLocalMtxFromNode(u32 p1, u32 p2, Matrix* p3, bool p4);
     virtual void getNodeGlobalMtx(u32 p1, Matrix* p2, bool p3);
     virtual void setNodeGlobalMtx(u32 p1, Matrix* p2, bool p3);
-    virtual Vec3f getNodeGlobalRotation(u32 p1, bool p2);
+    virtual Vec3f getNodeGlobalRotation(u32 nodeIndex, bool p2);
     virtual bool isNode(u32 p1);
     virtual void getNodeNum();
     virtual void getNodeNum_overload();
@@ -68,8 +68,8 @@ public:
     virtual void removeAnmObj();
     virtual void setOption();
     virtual void getResMdl();
-    virtual void getLoupeNo();
-    virtual void setLoupeNo();
+    virtual s8 getLoupeNo();
+    virtual void setLoupeNo(s8);
     virtual void setVisibility(int unk1);
     virtual void setVisibility(int unk1, int unk2);
     virtual void setNodeVisibility(int unk1, int unk2);
@@ -138,7 +138,7 @@ public:
     virtual void getNodeLocalMtxFromNode(u32 p1, u32 p2, Matrix* p3, bool p4);
     virtual void getNodeGlobalMtx(u32 p1, Matrix* p2, bool p3);
     virtual void setNodeGlobalMtx(u32 p1, Matrix* p2, bool p3);
-    virtual Vec3f getNodeGlobalRotation(u32 p1, bool p2);
+    virtual Vec3f getNodeGlobalRotation(u32 nodeIndex, bool p2);
     virtual bool isNode(u32 p1);
     virtual void getNodeNum();
     virtual void getNodeNum_overload();
@@ -158,8 +158,8 @@ public:
     virtual void removeAnmObj();
     virtual void setOption();
     virtual void getResMdl();
-    virtual void getLoupeNo();
-    virtual void setLoupeNo();
+    virtual s8 getLoupeNo();
+    virtual void setLoupeNo(s8);
     virtual void setVisibility(int unk1);
     virtual void setVisibility(int unk1, int unk2);
     virtual void setNodeVisibility(int unk1, int unk2);

@@ -3,7 +3,6 @@
 #include <StaticAssert.h>
 #include <so/anim/so_anim_cmd.h>
 #include <so/event/so_event_presenter.h>
-#include <so/event/so_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
 #include <so/status/so_status_event_presenter.h>
 #include <so/so_instance_manager.h>

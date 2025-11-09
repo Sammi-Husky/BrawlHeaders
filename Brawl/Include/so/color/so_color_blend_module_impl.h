@@ -7,6 +7,7 @@
 #include <so/status/so_status_event_presenter.h>
 #include <so/model/so_model_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
+#include <so/color/so_color_blend.h>
 #include <GX/GXTypes.h>
 
 class soColorBlendModule: public soNullable {
@@ -31,8 +32,8 @@ public:
     virtual void setSubColor(GXColor color, char enabled) = 0;           // 0x48
     virtual char isEnableSubColor() = 0;                                 // 0x4C
     virtual GXColor getSubColor() = 0;                                   // 0x50
-    virtual void getColorBlend() = 0;                                    // 0x54
-    virtual void getLightSet() = 0;                                      // 0x58
+    virtual soColorBlend *getColorBlend() = 0;                                    // 0x54
+    virtual s8 getLightSet() = 0;                                      // 0x58
 };
 
 class soColorBlendModuleImpl: 
@@ -42,9 +43,15 @@ class soColorBlendModuleImpl:
     public soModelEventObserver
 {
 public:
-    // char _vtables[4];
     // 0x2C
-    char _unk[0x154 - 0x2C];
+    soModuleAccesser* m_moduleAccesser;
+    soColorBlend m_colorBlend1;
+    soColorBlend m_colorBlend2;
+    char _0x140[10];
+    GXColor m_subColor;
+    char _0x14e[1];
+    bool m_useSubColor;
+    char _0x150[4];
 
     virtual bool isNull() const;
     virtual ~soColorBlendModuleImpl();
@@ -65,8 +72,8 @@ public:
     virtual void setSubColor(GXColor color, char enabled);
     virtual char isEnableSubColor();
     virtual GXColor getSubColor();
-    virtual void getColorBlend();
-    virtual void getLightSet();
+    virtual soColorBlend *getColorBlend();
+    virtual s8 getLightSet();
 
     virtual bool isObserv(char unk1);
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
@@ -94,8 +101,8 @@ class soColorBlendModuleNull: public soColorBlendModule {
     virtual void setSubColor(GXColor color, char enabled);
     virtual char isEnableSubColor();
     virtual GXColor getSubColor();
-    virtual void getColorBlend();
-    virtual void getLightSet();
+    virtual soColorBlend *getColorBlend();
+    virtual s8 getLightSet();
 
     soColorBlendModuleNull* getNullInstance();
 };

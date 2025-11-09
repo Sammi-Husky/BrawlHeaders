@@ -9,7 +9,6 @@
 #include <so/damage/so_damage_transactor_actor.h>
 #include <so/so_array.h>
 #include <so/event/so_event_presenter.h>
-#include <so/event/so_event_presenter.h>
 #include <so/damage/so_damage_event_presenter.h>
 #include <so/status/so_status_event_presenter.h>
 #include <so/collision/so_collision_hit_event_presenter.h>

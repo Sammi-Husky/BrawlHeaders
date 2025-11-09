@@ -37,6 +37,8 @@ public:
         Link_Event_Yoshi_Special_N_Catch = 29,
         Link_Event_Yoshi_Special_N_Swallow = 30,
 
+        Link_Event_Disconnect_Parent = 60,
+        Link_Event_Disconnect_Node = 61,
         Link_Event_Touch_Item = 62,
     };
 

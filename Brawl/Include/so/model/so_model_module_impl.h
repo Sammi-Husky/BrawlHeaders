@@ -6,7 +6,6 @@
 #include <mt/mt_vector.h>
 #include <so/model/so_model_module_simple.h>
 #include <so/event/so_event_presenter.h>
-#include <so/event/so_event_presenter.h>
 #include <so/model/so_model_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
 #include <types.h>
@@ -54,7 +53,7 @@ public:
     virtual void getNodeLocalMtxFromNode(u32 p1, u32 p2, Matrix* p3, bool p4);
     virtual void getNodeGlobalMtx(u32 p1, Matrix* p2, bool p3);
     virtual void setNodeGlobalMtx(u32 p1, Matrix* p2, bool p3);
-    virtual Vec3f getNodeGlobalRotation(u32 p1, bool p2);
+    virtual Vec3f getNodeGlobalRotation(u32 nodeIndex, bool p2);
     virtual bool isNode(u32 p1);
     virtual void getNodeNum_overload();
     virtual void setTransNNodeId();
@@ -67,8 +66,8 @@ public:
     virtual void setScale();
     virtual void setScaleZ();
     virtual void getLayerType();
-    virtual void getLoupeNo();
-    virtual void setLoupeNo();
+    virtual s8 getLoupeNo();
+    virtual void setLoupeNo(s8);
     virtual void setVisibility(int unk1, int unk2);
     virtual void setNodeVisibility(u32 p1, bool p2, bool p3);
     virtual void setNodeVisibility(s32 p1, u32* p2, bool p3, bool p4);
@@ -117,7 +116,7 @@ public:
     virtual void getNodeLocalMtxFromNode(u32 p1, u32 p2, Matrix* p3, bool p4);
     virtual void getNodeGlobalMtx(u32 p1, Matrix* p2, bool p3);
     virtual void setNodeGlobalMtx(u32 p1, Matrix* p2, bool p3);
-    virtual Vec3f getNodeGlobalRotation(u32 p1, bool p2);
+    virtual Vec3f getNodeGlobalRotation(u32 nodeIndex, bool p2);
     virtual bool isNode(u32 p1);
     virtual Vec3f getResFileNodeTranslate(u32 p1);
     virtual Vec3f getResFileNodeRotation(u32 p1);

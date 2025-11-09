@@ -4,7 +4,6 @@
 #include <so/posture/so_posture_module_simple.h>
 #include <so/so_array.h>
 #include <so/event/so_event_presenter.h>
-#include <so/event/so_event_presenter.h>
 #include <so/status/so_status_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
 #include <types.h>

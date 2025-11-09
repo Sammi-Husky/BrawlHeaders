@@ -2,7 +2,6 @@
 
 #include <StaticAssert.h>
 #include <so/slow/so_slow_module_simple.h>
-#include <so/event/so_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
 #include <so/so_null.h>
 #include <types.h>

@@ -6,7 +6,6 @@
 #include <so/anim/so_anim_chr.h>
 #include <so/so_array.h>
 #include <so/event/so_event_presenter.h>
-#include <so/event/so_event_presenter.h>
 #include <so/status/so_status_event_presenter.h>
 #include <so/motion/so_motion_event_presenter.h>
 #include <so/model/so_model_event_presenter.h>
