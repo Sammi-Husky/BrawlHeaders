@@ -59,7 +59,7 @@ public:
     grGimmickWarpZone(const char* taskName);
     virtual ~grGimmickWarpZone();
     virtual void update(float deltaFrame);
-    virtual void startup(gfArchive* archive, u32 unk1, u32 unk2);
+    virtual void startup(gfArchive* archive, u32 unk1, gfSceneRoot::LayerType layerType);
     virtual void setInitializeFlag();
     virtual void onGimmickEvent(soGimmickEventArgs* eventInfo, int* taskId);
     virtual void setWarpAttrData(Vec3f* warpDest, u8 warpType, bool isNotAuto);

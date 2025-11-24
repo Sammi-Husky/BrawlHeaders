@@ -19,216 +19,247 @@ protected:
     char _428[1808];
 
 public:
-    enum StatusKind {
-        Status_Standby = 0x0,
-        Status_Initialize = 0x1,
-        Status_Have = 0x2,
-        Status_Fall = 0x3,
-        Status_Landing = 0x4,
-        Status_Throw = 0x5,
-        Status_Lost = 0x6,
-        Status_Born = 0x7,
+    struct Status {
+        enum Kind {
+            Standby = 0x0,
+            Initialize = 0x1,
+            Have = 0x2,
+            Fall = 0x3,
+            Landing = 0x4,
+            Throw = 0x5,
+            Lost = 0x6,
+            Born = 0x7,
+        };
+        struct Work {
+            enum Int {
+                Int_Value_1 = 0x20000000,
+                Int_Value_2 = 0x20000001,
+                Int_Value_3 = 0x20000002,
+                Int_Value_4 = 0x20000003,
+                Int_Value_5 = 0x20000004,
+            };
+            enum Float {
+                Float_Value_1 = 0x21000000,
+                Float_Value_2 = 0x21000001,
+                Float_Value_3 = 0x21000002,
+                Float_Value_4 = 0x21000003,
+                Float_Value_5 = 0x21000004,
+                Float_Value_6 = 0x21000005,
+            };
+            enum Flag {
+                Flag_Use_Speed_Power = 0x22000000,
+                Flag_Damage = 0x22000001,
+                Flag_Dead = 0x22000002,
+                Flag_Hit = 0x22000003,
+                Flag_Near_Target = 0x22000004,
+                Flag_Found = 0x22000005,
+                Flag_Lot_Create_Bomb = 0x22000006,
+            };
+        };
     };
 
-    enum MotionKind {
-        Motion_Appear = 0x0,
-        Motion_Have = 0x1,
-        Motion_Fall = 0x2,
-        Motion_Throw = 0x3,
-        Motion_Born = 0x4,
-        Motion_Lost = 0x5,
+    struct Motion {
+        enum Kind {
+            Appear = 0x0,
+            Have = 0x1,
+            Fall = 0x2,
+            Throw = 0x3,
+            Born = 0x4,
+            Lost = 0x5,
+        };
     };
 
-    enum WorkId {
-        Instance_Work_Int_Value_1 = 0x10000000,
-        Instance_Work_Int_Value_2 = 0x10000001,
-        Instance_Work_Int_Value_3 = 0x10000002,
-        Instance_Work_Int_Value_4 = 0x10000003,
-        Instance_Work_Int_Bound_Flag = 0x10000004, // writes 0x10 in itKineticModuleImpl::characterBound, writes on soKineticModuleImpl::updateNormal/updateRolling depending on bounce type,  writes 0x1/0x2 depending on which counter is finished
-        Instance_Work_Int_Value_6 = 0x10000005,
-        Instance_Work_Int_Life_Time_Max = 0x10000006,
-        Instance_Work_Int_Have_Node_Index = 0x10000007,
-        Instance_Work_Int_Trait_Flag = 0x10000008,
-        Instance_Work_Int_Life_Time = 0x10000009,
-        Instance_Work_Int_No_Damage_Frame = 0x1000000A,
-        Instance_Work_Int_Counter = 0x1000000B,
-        Instance_Work_Int_Counter_2 = 0x1000000C,
-        Instance_Work_Int_Message = 0x1000000D,
-        Instance_Work_Int_Message_Enemy = 0x1000000E, // used in SmashPlate and getCommunicationItemPortData
-        Instance_Work_Int_Scale_Anim_Type = 0x1000000F,
-        Instance_Work_Int_Scale_Anim_Counter = 0x10000010,
-        Instance_Work_Int_Scale_Anim_Node_Index = 0x10000011,
-        Instance_Work_Int_Scale_Anim_Counter_Limit = 0x10000012,
-        Instance_Work_Int_Target_Task_Id = 0x10000013,
-        Instance_Work_Int_Child_Task_Id = 0x10000014,
-        Instance_Work_Int_Rotate_Node_Index = 0x10000015,
-        Instance_Work_Int_Hit_Kind = 0x10000016,
-        Instance_Work_Int_Bound_Count = 0x10000017,
-        Instance_Work_Int_SE_Bound_Id = 0x10000018,
-        Instance_Work_Int_SE_Water_Id = 0x10000019,
-        Instance_Work_Int_SE_Reflect_Id = 0x1000001A,
-        Instance_Work_Int_SE_Lost_Id = 0x1000001B,
-        Instance_Work_Int_Throw_Frame = 0x1000001C,
-        Instance_Work_Int_Attack_Serial_Id = 0x1000001d,
-        Instance_Work_Int_Attack_Kind = 0x1000001e,
-
-        Instance_Work_Float_Value_1 = 0x11000000,
-        Instance_Work_Float_Value_2 = 0x11000001,
-        Instance_Work_Float_Value_3 = 0x11000002,
-        Instance_Work_Float_Value_4 = 0x11000003,
-        Instance_Work_Float_Value_5 = 0x11000004,
-        Instance_Work_Float_Value_6 = 0x11000005,
-        Instance_Work_Float_Hp = 0x11000006,
-        Instance_Work_Float_Target_Pos_X = 0x11000007,
-        Instance_Work_Float_Target_Pos_Y = 0x11000008,
-        Instance_Work_Float_Scale_Anim_Min = 0x11000009,
-        Instance_Work_Float_Scale_Anim_Max = 0x1100000a,
-        Instance_Work_Float_Scale_Anim_Now = 0x1100000b,
-        Instance_Work_Float_Base_Scale = 0x1100000c,
-        Instance_Work_Float_Inhaled_Count = 0x1100000d,
-
-        Instance_Work_Flag_Value_1 = 0x12000000,
-        Instance_Work_Flag_Value_2 = 0x12000001,
-        Instance_Work_Flag_Value_3 = 0x12000002,
-        Instance_Work_Flag_Value_4 = 0x12000003,
-        Instance_Work_Flag_Reaction = 0x12000004,
-        Instance_Work_Flag_Reflect_Ground = 0x12000005,
-        Instance_Work_Flag_Vanish = 0x12000006,
-        Instance_Work_Flag_Target_Found = 0x12000007,
-        Instance_Work_Flag_Disable_Jostle = 0x12000008,
-        Instance_Work_Flag_Auto_Play_Lost_Effect = 0x1200000A,
-        Instance_Work_Flag_Ground_Lost = 0x1200000c,
-        Instance_Work_Flag_Water = 0x1200000d,
-        Instance_Work_Flag_Apply_World_Move = 0x1200000E,
-        Instance_Work_Flag_Eatable = 0x1200000f,
-
-        Status_Work_Int_Value_1 = 0x20000000,
-        Status_Work_Int_Value_2 = 0x20000001,
-        Status_Work_Int_Value_3 = 0x20000002,
-        Status_Work_Int_Value_4 = 0x20000003,
-        Status_Work_Int_Value_5 = 0x20000004,
-
-        Status_Work_Float_Value_1 = 0x21000000,
-        Status_Work_Float_Value_2 = 0x21000001,
-        Status_Work_Float_Value_3 = 0x21000002,
-        Status_Work_Float_Value_4 = 0x21000003,
-        Status_Work_Float_Value_5 = 0x21000004,
-        Status_Work_Float_Value_6 = 0x21000005,
-
-        Status_Work_Flag_Use_Speed_Power = 0x22000000,
-        Status_Work_Flag_Damage = 0x22000001,
-        Status_Work_Flag_Dead = 0x22000002,
-        Status_Work_Flag_Hit = 0x22000003,
-        Status_Work_Flag_Near_Target = 0x22000004,
-        Status_Work_Flag_Found = 0x22000005,
-        Status_Work_Flag_Lot_Create_Bomb = 0x22000006,
+    struct Area {
+        enum Kind {
+            Body = 0x0,
+            Wind = 0x1,
+            Pickup = 0x2,
+        };
     };
 
-    enum AnimCmdType {
-        Anim_Cmd_Remove = 0x0,
-        Anim_Cmd_Lot_Create = 0x1,
+    struct Kinetic {
+        struct Energy {
+            enum Id {
+                Id_Rot = 0x0,
+                Id_Outer = 0x1,
+                Id_Gravity = 0x2,
+                Id_Ground = 0x3,
+                Id_AI_Move = 0x4,
+                Id_AI_Rot = 0x5,
+                Id_Motion = 0x6,
+                Id_Stop = 0x7,
+                Id_Jostle = 0x8,
+                Id_Ground_Movement = 0x9,
+                Id_Wind = 0xA,
 
-        Anim_Cmd_Set_Rot = 0x3,
-        Anim_Cmd_Set_Life_Time = 0x4,
-        Anim_Cmd_Set_Counter = 0x5,
-        Anim_Cmd_Set_Scale_Anim = 0x6,
-        Anim_Cmd_Search_Target = 0x7,
-        Anim_Cmd_Set_Notify_Article_Event_Eject = 0x8,
-        Anim_Cmd_Create_Item = 0x9,
-        Anim_Cmd_Warp_Pos_Target = 0xA,
-        Anim_Cmd_Subtract_Hp = 0xB,
-        Anim_Cmd_Set_Scale = 0xC,
-        Anim_Cmd_Create_Item_Angle = 0xD,
-        Anim_Cmd_Get_Node_Global_Pos = 0xE,
-        Anim_Cmd_Get_Dist_Vector = 0xF,
-        Anim_Cmd_Shoot = 0x10,
-
-        Anim_Cmd_Get_Target_Pos = 0x14,
-        Anim_Cmd_Remove_Eatable_Target_Item = 0x15,
-
-        Anim_Cmd_Get_Node_Global_Rot = 0x1A,
-        Anim_Cmd_Request_Slow = 0x1B,
-        Anim_Cmd_Remove_Slow = 0x1C,
-        Anim_Cmd_Set_Team = 0x1D,
-        Anim_Cmd_Enable_Area = 0x1E,
-        Anim_Cmd_Disable_Area = 0x1F,
-        Anim_Cmd_Disable_Eatable_Target_Item_Pickup = 0x20,
-        Anim_Cmd_Set_Pos_Target = 0x21,
+                Id_Control = 0x4,
+                Id_Control_Rot = 0x5,
+            };
+        };
     };
 
-    enum AnimEventKind {
-        Anim_Event_Damage = 0x0,
-        Anim_Event_Info_Window = 0x1,
-        Anim_Event_Counter = 0x2,
-        Anim_Event_Bound = 0x3,
+    struct Link : StageObject::Link {
+        enum No {
+            No_Have = 0x3,
+            No_Target = 0x4,
+            No_TeamOwner = 0x6,
+            No_CreateOwner = 0x7,
+        };
     };
 
-    enum KineticEnergyId {
-        Kinetic_Energy_Id_Rot = 0x0,
-        Kinetic_Energy_Id_Outer = 0x1,
-        Kinetic_Energy_Id_Gravity = 0x2,
-        Kinetic_Energy_Id_Ground = 0x3,
-        Kinetic_Energy_Id_AI_Move = 0x4,
-        Kinetic_Energy_Id_AI_Rot = 0x5,
-        Kinetic_Energy_Id_Motion = 0x6,
-        Kinetic_Energy_Id_Stop = 0x7,
-        Kinetic_Energy_Id_Jostle = 0x8,
-        Kinetic_Energy_Id_Ground_Movement = 0x9,
-        Kinetic_Energy_Id_Wind = 0xA,
+    struct AnimCmd {
+        enum Type {
+            Type_Remove = 0x0,
+            Type_Lot_Create = 0x1,
 
-        Kinetic_Energy_Id_Control = 0x4,
-        Kinetic_Energy_Id_Control_Rot = 0x5,
+            Type_Set_Rot = 0x3,
+            Type_Set_Life_Time = 0x4,
+            Type_Set_Counter = 0x5,
+            Type_Set_Scale_Anim = 0x6,
+            Type_Search_Target = 0x7,
+            Type_Set_Notify_Article_Event_Eject = 0x8,
+            Type_Create_Item = 0x9,
+            Type_Warp_Pos_Target = 0xA,
+            Type_Subtract_Hp = 0xB,
+            Type_Set_Scale = 0xC,
+            Type_Create_Item_Angle = 0xD,
+            Type_Get_Node_Global_Pos = 0xE,
+            Type_Get_Dist_Vector = 0xF,
+            Type_Shoot = 0x10,
+
+            Type_Get_Target_Pos = 0x14,
+            Type_Remove_Eatable_Target_Item = 0x15,
+
+            Type_Get_Node_Global_Rot = 0x1A,
+            Type_Request_Slow = 0x1B,
+            Type_Remove_Slow = 0x1C,
+            Type_Set_Team = 0x1D,
+            Type_Enable_Area = 0x1E,
+            Type_Disable_Area = 0x1F,
+            Type_Disable_Eatable_Target_Item_Pickup = 0x20,
+            Type_Set_Pos_Target = 0x21,
+        };
+
+        enum EventKind {
+            Event_Damage = 0x0,
+            Event_Info_Window = 0x1,
+            Event_Counter = 0x2,
+            Event_Bound = 0x3,
+        };
     };
 
-    enum LinkNo {
-        Link_No_Have = 0x3,
-        Link_No_Target = 0x4,
-        Link_No_TeamOwner = 0x6,
-        Link_No_CreateOwner = 0x7,
+    struct Instance {
+        struct Work {
+            enum Int {
+                Int_Value_1 = 0x10000000,
+                Int_Value_2 = 0x10000001,
+                Int_Value_3 = 0x10000002,
+                Int_Value_4 = 0x10000003,
+                Int_Bound_Flag = 0x10000004, // writes 0x10 in itKineticModuleImpl::characterBound, writes on soKineticModuleImpl::updateNormal/updateRolling depending on bounce type,  writes 0x1/0x2 depending on which counter is finished
+                Int_Value_6 = 0x10000005,
+                Int_Life_Time_Max = 0x10000006,
+                Int_Have_Node_Index = 0x10000007,
+                Int_Trait_Flag = 0x10000008,
+                Int_Life_Time = 0x10000009,
+                Int_No_Damage_Frame = 0x1000000A,
+                Int_Counter = 0x1000000B,
+                Int_Counter_2 = 0x1000000C,
+                Int_Message = 0x1000000D,
+                Int_Message_Enemy = 0x1000000E, // used in SmashPlate and getCommunicationItemPortData
+                Int_Scale_Anim_Type = 0x1000000F,
+                Int_Scale_Anim_Counter = 0x10000010,
+                Int_Scale_Anim_Node_Index = 0x10000011,
+                Int_Scale_Anim_Counter_Limit = 0x10000012,
+                Int_Target_Task_Id = 0x10000013,
+                Int_Child_Task_Id = 0x10000014,
+                Int_Rotate_Node_Index = 0x10000015,
+                Int_Hit_Kind = 0x10000016,
+                Int_Bound_Count = 0x10000017,
+                Int_SE_Bound_Id = 0x10000018,
+                Int_SE_Water_Id = 0x10000019,
+                Int_SE_Reflect_Id = 0x1000001A,
+                Int_SE_Lost_Id = 0x1000001B,
+                Int_Throw_Frame = 0x1000001C,
+                Int_Attack_Serial_Id = 0x1000001d,
+                Int_Attack_Kind = 0x1000001e,
+            };
+            enum Float {
+                Float_Value_1 = 0x11000000,
+                Float_Value_2 = 0x11000001,
+                Float_Value_3 = 0x11000002,
+                Float_Value_4 = 0x11000003,
+                Float_Value_5 = 0x11000004,
+                Float_Value_6 = 0x11000005,
+                Float_Hp = 0x11000006,
+                Float_Target_Pos_X = 0x11000007,
+                Float_Target_Pos_Y = 0x11000008,
+                Float_Scale_Anim_Min = 0x11000009,
+                Float_Scale_Anim_Max = 0x1100000a,
+                Float_Scale_Anim_Now = 0x1100000b,
+                Float_Base_Scale = 0x1100000c,
+                Float_Inhaled_Count = 0x1100000d,
+            };
+            enum Flag {
+                Flag_Value_1 = 0x12000000,
+                Flag_Value_2 = 0x12000001,
+                Flag_Value_3 = 0x12000002,
+                Flag_Value_4 = 0x12000003,
+                Flag_Reaction = 0x12000004,
+                Flag_Reflect_Ground = 0x12000005,
+                Flag_Vanish = 0x12000006,
+                Flag_Target_Found = 0x12000007,
+                Flag_Disable_Jostle = 0x12000008,
+                Flag_Auto_Play_Lost_Effect = 0x1200000A,
+                Flag_Ground_Lost = 0x1200000c,
+                Flag_Water = 0x1200000d,
+                Flag_Apply_World_Move = 0x1200000E,
+                Flag_Eatable = 0x1200000f,
+            };
+        };
     };
 
-    enum AreaKind {
-        Area_Body = 0x0,
-        Area_Wind = 0x1,
-        Area_Pickup = 0x2,
+    struct Lot {
+        enum State {
+            State_Error = 0x0,
+            State_Miss = 0x1,
+            State_Bomb = 0x2,
+            State_Hit = 0x3,
+        };
     };
 
-    enum LotState {
-        Lot_State_Error = 0x0,
-        Lot_State_Miss = 0x1,
-        Lot_State_Bomb = 0x2,
-        Lot_State_Hit = 0x3,
+    struct Target {
+        enum Type {
+            Current_Target = 0x0,
+            Myself = 0x1,
+            Near_Fighter = 0x2,
+            Random_Fighter = 0x3,
+            Random_Out_Of_Camera = 0x4,
+            Camera_Target = 0x5,
+            Create_Owner = 0x6,
+            Create_Owner_Target = 0x7,
+            Target_Infield = 0x9,
+            Many_Side = 0xA,
+            Under_Ground = 0xB,
+            Under_Ground_2 = 0xC, // TODO: Figure out difference
+            Near_Food = 0xD,
+            Random_Out_Of_Camera_Lr = 0xE,
+            None = 0xF,
+            Ike_Final = 0x10,
+            Random_Item_Drop_Pos = 0x11,
+            Near_Fighter_All = 0x12,
+            Many_Side_Fix = 0x13,
+        };
     };
 
-    enum TargetType {
-        Target_Target = 0x0,
-        Target_Myself = 0x1,
-        Target_Near_Fighter = 0x2,
-        Target_Random_Fighter = 0x3,
-        Target_Random_Out_Of_Camera = 0x4,
-        Target_Camera_Target = 0x5,
-        Target_Create_Owner = 0x6,
-        Target_Create_Owner_Target = 0x7,
-        Target_Target_Infield = 0x9,
-        Target_Many_Side = 0xA,
-        Target_Under_Ground = 0xB,
-        Target_Under_Ground_2 = 0xC, // TODO: Figure out difference
-        Target_Near_Food = 0xD,
-        Target_Random_Out_Of_Camera_Lr = 0xE,
-        Target_None = 0xF,
-        Target_Ike_Final = 0x10,
-        Target_Random_Item_Drop_Pos = 0x11,
-        Target_Near_Fighter_All = 0x12,
-        Target_Many_Side_Fix = 0x13,
-    };
-
-    enum ScaleAnimType {
-        Scale_Anim_None = -0x1,
-        Scale_Anim_Normal = 0x0,
-        Scale_Anim_Loop = 0x1,
-        Scale_Anim_Small_To_Normal = 0x2,
-        Scale_Anim_Interpolate = 0x3,
-        Scale_Anim_Keep = 0x4,
+    struct Scale {
+        enum AnimType {
+            Anim_None = -0x1,
+            Anim_Normal = 0x0,
+            Anim_Loop = 0x1,
+            Anim_Small_To_Normal = 0x2,
+            Anim_Interpolate = 0x3,
+            Anim_Keep = 0x4,
+        };
     };
 
     int m_instanceId;
@@ -348,7 +379,7 @@ public:
 };
 static_assert(sizeof(BaseItem) == 0x3d60, "Class is wrong size!");
 
-class itCustomizerInterface : public utUnCopyable {
+class itCustomizerInterface : public utUnCopyable, public soNullable {
 public:
     virtual ~itCustomizerInterface();
     virtual void onConstruct(BaseItem* item);

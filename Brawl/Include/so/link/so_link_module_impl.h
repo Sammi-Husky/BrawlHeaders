@@ -279,4 +279,7 @@ public:
     virtual bool getLinkParentSlowInfo(float *rate, bool *isSkip, int index);
     virtual void getLinkParentCameraInfo(u32 index, u8* playerNo, u8* pri, u8* advPri);
     virtual bool isNodeGroundCrush(float);
+
+    virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
+    virtual bool isObserv(char unk1);
 };

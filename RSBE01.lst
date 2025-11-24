@@ -747,7 +747,7 @@ CC008000:WGPIPE
 
 // Ground
 27,1,00261b50:setDontMoveGround__6GroundFv
-27,1,0025f64c:loadGroundData__6GroundFUlUlUl
+27,1,0025f64c:loadGroundData__6GroundFQ34nw4r3g3d7ResFileUlQ211gfSceneRoot9LayerType
 27,1,0025fbcc:setupMelee__6GroundFv
 27,1,0025fbe8:processAnim__6GroundFv
 27,1,00260834:processGameProc__6GroundFv
@@ -798,14 +798,14 @@ CC008000:WGPIPE
 27,1,00261950:setValid__6GroundFUl
 27,1,002619F0:setValidAttachedEffect__6GroundFUl
 27,1,00261B3C:preExit__6GroundFv
-27,1,00260924:startup__6GroundFP9gfArchiveUlUl
+27,1,00260924:startup__6GroundFP9gfArchiveUlQ211gfSceneRoot9LayerType
 
 // grGimmick
 27,1,0026A314:__ct__9grGimmickFPCc
 27,1,0026A450:__dt__9grGimmickFv
 27,1,0026A790:processUpdate__9grGimmickFv
 27,1,0026A804:update__9grGimmickFf
-27,1,0026A5E4:startup__9grGimmickFP9gfArchiveUlUl
+27,1,0026A5E4:startup__9grGimmickFP9gfArchiveUlQ211gfSceneRoot9LayerType
 27,1,0026DE2C:renderDebug__9grGimmickFv
 27,1,0026daf4:setTransparency__9grGimmickFUl
 27,1,0026C8C8:bindData__9grGimmickFP9gfArchive
@@ -859,7 +859,7 @@ CC008000:WGPIPE
 27,1,00264c80:__ct__10grYakumonoFPCc
 27,1,00264cc4:__dt__10grYakumonoFv
 27,1,00264d1c:processUpdate__10grYakumonoFv
-27,1,00264f58:startup__10grYakumonoFP9gfArchiveUlUl
+27,1,00264f58:startup__10grYakumonoFP9gfArchiveUlQ211gfSceneRoot9LayerType
 27,1,00264f5c:setValid__10grYakumonoFUl
 27,1,0026501c:setValidAttachedEffect__10grYakumonoFUl
 27,1,00267ab8:preExit__10grYakumonoFv
@@ -897,7 +897,7 @@ CC008000:WGPIPE
 27,1,0026FC6C:__ct__15grGimmickSpringFPCc
 27,1,0026FCC8:__dt__15grGimmickSpringFv
 27,1,0026FD20:update__15grGimmickSpringFf
-27,1,0026FFC4:startup__15grGimmickSpringFP9gfArchiveUlUl
+27,1,0026FFC4:startup__15grGimmickSpringFP9gfArchiveUlQ211gfSceneRoot9LayerType
 27,1,0027020C:setInitializeFlag__15grGimmickSpringFv
 27,1,002702A8:disableArea__15grGimmickSpringFv
 27,1,00270310:setSleepArea__15grGimmickSpringFb
@@ -910,7 +910,7 @@ CC008000:WGPIPE
 27,1,0026F6C4:__ct__15grGimmickLadderFPCc
 27,1,0026F734:__dt__15grGimmickLadderFv
 27,1,0026F940:setInitializeFlag__15grGimmickLadderFv
-27,1,0026F78C:startup__15grGimmickLadderFP9gfArchiveUlUl
+27,1,0026F78C:startup__15grGimmickLadderFP9gfArchiveUlQ211gfSceneRoot9LayerType
 27,1,0026F9DC:update__15grGimmickLadderFf
 27,1,0026FA14:getUpperNode__15grGimmickLadderFP5Vec3f
 27,1,0026FA84:getUnderNode__15grGimmickLadderFP5Vec3f
@@ -921,7 +921,7 @@ CC008000:WGPIPE
 27,1,00274708:__dt__17grGimmickCatapultFv
 27,1,00274824:processFixPosition__17grGimmickCatapultFv
 27,1,00274760:update__17grGimmickCatapultFf
-27,1,002749CC:startup__17grGimmickCatapultFP9gfArchiveUlUl
+27,1,002749CC:startup__17grGimmickCatapultFP9gfArchiveUlQ211gfSceneRoot9LayerType
 27,1,00274DF4:onGimmickEvent__17grGimmickCatapultFP18soGimmickEventArgsPi
 27,5,58B78:__vt__17grGimmickCatapult
 
@@ -929,7 +929,7 @@ CC008000:WGPIPE
 27,1,00274078:__ct__17grGimmickWarpZoneFPCc
 27,1,002740EC:__dt__17grGimmickWarpZoneFv
 27,1,0027455C:update__17grGimmickWarpZoneFf
-27,1,00274168:startup__17grGimmickWarpZoneFP9gfArchiveUlUl
+27,1,00274168:startup__17grGimmickWarpZoneFP9gfArchiveUlQ211gfSceneRoot9LayerType
 27,1,002744C0:setInitializeFlag__17grGimmickWarpZoneFv
 27,1,00274594:onGimmickEvent__17grGimmickWarpZoneFP18soGimmickEventArgsPi
 27,1,00274144:setWarpAttrData__17grGimmickWarpZoneFP5Vec3fUcb
@@ -938,7 +938,7 @@ CC008000:WGPIPE
 27,1,00268B18:__ct__21grYakumonoPunchSliderFPCc
 27,1,00268BCC:__dt__21grYakumonoPunchSliderFv
 27,1,00268C24:update__21grYakumonoPunchSliderFf
-27,1,0026907C:startup__21grYakumonoPunchSliderFP9gfArchiveUlUl
+27,1,0026907C:startup__21grYakumonoPunchSliderFP9gfArchiveUlQ211gfSceneRoot9LayerType
 27,1,002698C0:onDamage__21grYakumonoPunchSliderFiP8soDamageP20soDamageAttackerInfo
 27,1,00269A6C:onInflict__21grYakumonoPunchSliderFP14soCollisionLogUlf
 27,1,00268F5C:updateMove__21grYakumonoPunchSliderFf
@@ -948,7 +948,7 @@ CC008000:WGPIPE
 // grMadein
 27,1,0027583C:__ct__8grMadeinFPCc
 27,1,00275928:__dt__8grMadeinFv
-27,1,00275A98:startup__8grMadeinFP9gfArchiveUlUl
+27,1,00275A98:startup__8grMadeinFP9gfArchiveUlQ211gfSceneRoot9LayerType
 27,1,00279D50:onDamage__8grMadeinFiP8soDamageP20soDamageAttackerInfo
 27,1,00279E04:onInflictEach__8grMadeinFP14soCollisionLogf
 27,1,00278c54:update__8grMadeinFf
@@ -977,9 +977,9 @@ CC008000:WGPIPE
 27,1,0026E90C:update__19grGimmickMotionPathFf
 27,1,0026E2A4:__dt__19grGimmickMotionPathFv
 27,1,0026E43C:processAnim__19grGimmickMotionPathFv
-27,1,0026EE70:loadGroundData__19grGimmickMotionPathFUlUlUl
+27,1,0026EE70:loadGroundData__19grGimmickMotionPathFQ34nw4r3g3d7ResFileUlQ211gfSceneRoot9LayerType
 27,1,0026F064:getModelCount__19grGimmickMotionPathFv
-27,1,0026E2FC:startup__19grGimmickMotionPathFP9gfArchiveUlUl
+27,1,0026E2FC:startup__19grGimmickMotionPathFP9gfArchiveUlQ211gfSceneRoot9LayerType
 27,1,0026EAE4:isMoveEnd__19grGimmickMotionPathFv
 27,1,0026EB00:isReturnEnd__19grGimmickMotionPathFv
 27,1,0026E964:setFrameModelAnim__19grGimmickMotionPathFv
@@ -1139,7 +1139,7 @@ CC008000:WGPIPE
 27,1,0010AF34:getFighterLr__9ftManagerFii
 27,1,0010a164:getFighterOperationStatus__9ftManagerFi
 27,1,0010a248:getFighterOperationType__9ftManagerFi
-27,1,0010D034:setInfiniteScaling__9ftManagerFiQ27Fighter11ScalingKindQ27Fighter11ScalingType
+27,1,0010D034:setInfiniteScaling__9ftManagerFiQ37Fighter7Scaling4KindQ37Fighter7Scaling4Type
 27,1,0010C2B8:addDragoon__9ftManagerFiUl
 27,1,001095ac:removeSlot__9ftManagerFi
 27,1,00109490:isReadySlot__9ftManagerFi
@@ -1158,7 +1158,7 @@ CC008000:WGPIPE
 27,1,00111B2C:getStockCount__7ftOwnerFv
 27,1,00111DEC:setMetal__7ftOwnerFb
 27,1,00111EDC:setFinal__7ftOwnerFbb
-27,1,0011204C:setInfiniteScaling__7ftOwnerFQ27Fighter11ScalingKindQ27Fighter11ScalingType
+27,1,0011204C:setInfiniteScaling__7ftOwnerFQ37Fighter7Scaling4KindQ37Fighter7Scaling4Type
 27,1,00111DBC:setRabbitCap__7ftOwnerFb
 27,1,00111E7C:setReflector__7ftOwnerFb
 27,1,00111EAC:setFlower__7ftOwnerFb

@@ -47,7 +47,7 @@ public:
     void setReflector(bool);
     void setFlower(bool);
     void setCurry(bool);
-    void setInfiniteScaling(Fighter::ScalingKind, Fighter::ScalingType);
+    void setInfiniteScaling(Fighter::Scaling::Kind, Fighter::Scaling::Type);
     void setHitPointMax(float);
     void setSlipMul(float);
     void setSlipInterval(bool);

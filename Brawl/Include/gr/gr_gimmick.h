@@ -382,7 +382,7 @@ public:
     virtual void setVisibilityAttachedEffect(u32 unk1);
     virtual bool setNode();
     virtual void setMotionRatio(float ratio);
-    virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
+    virtual void startup(gfArchive* data, u32 unk1, gfSceneRoot::LayerType layerType);
     virtual ~grGimmick();
 
     virtual void invalidatedByCameraClipping();

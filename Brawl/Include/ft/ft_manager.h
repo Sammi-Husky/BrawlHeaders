@@ -143,8 +143,8 @@ public:
     void setSuperStar(int entryId);
     void setSlow(int inflictingTeam, bool setStatus, int slowStrength, int slowDuration);
     void setTimerSlow(int inflictingEntryId, bool setStatus, int slowStrength, int slowDuration);
-    void setScaling(int entryId, Fighter::ScalingKind, Fighter::ScalingType);
-    void setInfiniteScaling(int entryId, Fighter::ScalingKind, Fighter::ScalingType);
+    void setScaling(int entryId, Fighter::Scaling::Kind, Fighter::Scaling::Type);
+    void setInfiniteScaling(int entryId, Fighter::Scaling::Kind, Fighter::Scaling::Type);
     void setThunder(int inflictingEntryId, int unk2);
     void setWarpFighter(int entryId, Vec3f* pos, float lr, u32 flags);
     void setFighterOperationStatus(int entryId, int fighterOperationStatus);

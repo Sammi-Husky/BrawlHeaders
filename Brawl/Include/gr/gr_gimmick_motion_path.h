@@ -17,9 +17,9 @@ public:
 
     grGimmickMotionPath(const char* taskName, const char* nodeName);
     virtual void processAnim();
-    virtual void loadGroundData(u32 unk1, u32 unk2, u32 unk3);
+    virtual void loadGroundData(nw4r::g3d::ResFile, u32 unk2, gfSceneRoot::LayerType unk3);
     virtual int getModelCount();
-    virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
+    virtual void startup(gfArchive* data, u32 unk1, gfSceneRoot::LayerType layerType);
     virtual void update(float deltaFrame);
     virtual ~grGimmickMotionPath();
 

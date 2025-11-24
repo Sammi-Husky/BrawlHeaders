@@ -90,7 +90,7 @@ public:
     virtual void onDamage(int index, soDamage* damage, soDamageAttackerInfo* attackerInfo);
     virtual void onInflictEach(soCollisionLog* collisionLog, float power);
     virtual void receiveCollMsg_Landing(grCollStatus* collStatus, grCollisionJoint* collisionJoint, bool isFirstContact);
-    virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
+    virtual void startup(gfArchive* data, u32 unk1, gfSceneRoot::LayerType layerType);
     virtual void update(float deltaFrame);
     virtual ~grMadein();
 

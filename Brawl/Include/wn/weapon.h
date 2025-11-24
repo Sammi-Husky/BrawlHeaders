@@ -12,15 +12,20 @@ class Weapon : public StageObject, public soStatusEventObserver, public soCollis
     char unk9C[0x34];
 
 public:
+    struct Instance {
+        struct Work {
+            enum Int {
+                Int_Activate_Founder_Id = 0x10000000,
 
-    enum WorkId {
-        Instance_Work_Int_Activate_Founder_Id = 0x10000000,
-
-        Instance_Work_Int_Init_Life = 0x10000003,
-        Instance_Work_Int_Life = 0x10000004,
-
-
-        Instance_Work_Float_Active_Global_Frame = 0x11000000,
+                Int_Init_Life = 0x10000003,
+                Int_Life = 0x10000004,
+            };
+            enum Float {
+                Float_Active_Global_Frame = 0x11000000,
+            };
+            enum Flag {
+            };
+        };
     };
 
     virtual void processUpdate();

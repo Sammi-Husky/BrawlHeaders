@@ -24,18 +24,21 @@ class Enemy : public StageObject, public soStatusEventObserver, public soCollisi
     emAIModuleImpl m_aiModule; // 0x1108
     u8 unk110C[0x5310 - 0x1108 - sizeof(emAIModuleImpl)];
 
-    // TODO: virtual functions
 public:
+    struct Kinetic {
+        struct Energy {
+            enum Id {
+                Id_Jostle = 0x8,
+                Id_Ground_Movement = 0x9,
+            };
+        };
+    };
+
     enum MessageKind {
         Message_None = -1,
         Message_Damage = 1,
         Message_Destruct = 3,
         Message_Remove = 4,
-    };
-
-    enum KineticEnergyId {
-        Kinetic_Energy_Id_Jostle = 0x8,
-        Kinetic_Energy_Id_Ground_Movement = 0x9,
     };
 
     emAIModuleImpl& getAIModule() { return m_aiModule; }

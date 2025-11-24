@@ -26,35 +26,43 @@ class soActivatable {
 class StageObject : public gfTask, public soActivatable, public soAnimCmdEventObserver, public soLinkEventObserver {
 public:
 
-    enum LinkNo {
-        Link_No_Capture = 0x0,
+    struct Link {
+        enum No {
+            No_Capture = 0x0,
+        };
+
+        enum EventKind {
+            Event_Deactivate_Parent = 0,
+            Event_Deactivate_Node = 4,
+
+            Event_Yoshi_Special_N_Catch = 29,
+            Event_Yoshi_Special_N_Swallow = 30,
+
+            Event_Disconnect_Parent = 60,
+            Event_Disconnect_Node = 61,
+            Event_Touch_Item = 62,
+        };
     };
 
-    enum LinkEventKind {
-        Link_Event_Deactivate_Parent = 0,
-        Link_Event_Deactivate_Node = 4,
-
-        Link_Event_Yoshi_Special_N_Catch = 29,
-        Link_Event_Yoshi_Special_N_Swallow = 30,
-
-        Link_Event_Disconnect_Parent = 60,
-        Link_Event_Disconnect_Node = 61,
-        Link_Event_Touch_Item = 62,
+    struct AnimCmd {
+        enum Type {
+            Type_Update_Node_SRT = 0x1,
+            Type_Set_Inactive = 0x2,
+            Type_Set_Active = 0x3,
+            Type_Set_Air = 0x4,
+        };
     };
 
-    enum AnimCmdType {
-        Anim_Cmd_Update_Node_SRT = 0x1,
-        Anim_Cmd_Set_Inactive = 0x2,
-        Anim_Cmd_Set_Active = 0x3,
-        Anim_Cmd_Set_Air = 0x4,
-    };
-
-    enum KineticEnergyReserveAttribute {
-        Kinetic_Energy_Reserve_None = 0x0,
-        Kinetic_Energy_Reserve_Main = 0x1,
-        Kinetic_Energy_Reserve_Damage = 0x2,
-        Kinetic_Energy_Reserve_Extern = 0x3,
-        Kinetic_Energy_Reserve_Ground = 0x4,
+    struct Kinetic {
+        struct Energy {
+            enum ReserveAttribute {
+                Reserve_None = 0x0,
+                Reserve_Main = 0x1,
+                Reserve_Damage = 0x2,
+                Reserve_Extern = 0x3,
+                Reserve_Ground = 0x4,
+            };
+        };
     };
 
     soModuleAccesser* m_moduleAccesser;
@@ -109,7 +117,7 @@ struct soLinkTouchItemEventArgs : public soLinkEventArgs {
     float m_0x18;
     bool m_0x1C;
 
-    inline soLinkTouchItemEventArgs(BaseItem* item, Vec3f& pos, float arg3, bool arg4) : soLinkEventArgs(StageObject::Link_Event_Touch_Item), m_item(item), m_pos(pos), m_0x18(arg3), m_0x1C(arg4) {}
+    inline soLinkTouchItemEventArgs(BaseItem* item, Vec3f& pos, float arg3, bool arg4) : soLinkEventArgs(StageObject::Link::Event_Touch_Item), m_item(item), m_pos(pos), m_0x18(arg3), m_0x1C(arg4) {}
 };
 static_assert(sizeof(soLinkTouchItemEventArgs) == 0x20, "Class is wrong size!");
 

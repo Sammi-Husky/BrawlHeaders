@@ -55,7 +55,7 @@ public:
     char _415;
 
     grStadiumVision(const char* taskName);
-    virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
+    virtual void startup(gfArchive* data, u32 unk1, gfSceneRoot::LayerType layerType);
     virtual void update(float deltaFrame);
     virtual ~grStadiumVision();
 

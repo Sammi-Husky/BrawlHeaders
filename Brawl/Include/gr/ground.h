@@ -8,6 +8,7 @@
 #include <memory.h>
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>
+#include <gf/gf_3d_scene.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
 #include <so/so_array.h>
@@ -95,7 +96,7 @@ public:
     virtual ~Ground();
 
     virtual void update(float deltaFrame);
-    virtual void loadGroundData(u32 unk1, u32 unk2, u32 unk3);
+    virtual void loadGroundData(nw4r::g3d::ResFile, u32 unk2, gfSceneRoot::LayerType unk3);
     virtual void bindData(gfArchive* data);
     virtual void setupMelee();
     virtual void setVisibility(u32 unk1);
@@ -113,7 +114,7 @@ public:
         }
         return 0;
     };
-    virtual void startup(gfArchive* data, u32 unk1, u32 unk2);
+    virtual void startup(gfArchive* data, u32 unk1, gfSceneRoot::LayerType layerType);
     virtual bool setNode();
     virtual void setStageData(void* stageData) { m_stageData = stageData; }
     virtual void* getStageData() { return m_stageData; }

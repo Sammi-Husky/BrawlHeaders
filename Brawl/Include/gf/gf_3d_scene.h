@@ -8,6 +8,20 @@
 
 class gfSceneRoot : public gfTask {
 public:
+    enum LayerType {
+        Layer_Ground = 0x0,
+        Layer_Ground_And_Chara = 0x1,
+        Layer_Chara = 0x2,
+        Layer_All = 0x3,
+        Layer_Fighter = 0x3,
+        Layer_Stage_Object = 0x3,
+        Layer_Ground2 = 0x3,
+        Layer_Effect = 0x4,
+        Layer_Effect_Fighter = 0x5,
+        Layer_Special_Stage_Object = 0x6,
+        Layer_Effect2D = 0x7,
+        Layer_Info = 0x8,
+    };
 
     char _64[20];
     nw4r::g3d::AnmScnRes* m_anmScnRes;
