@@ -8,7 +8,9 @@ struct gmPlayerResultInfo {
     gmCharacterKind m_characterKind : 8;
     u8 m_state;
     s8 m_colorFileIdx;
-    char _3[5];
+    char _3[3];
+    u8 m_teamNo;
+    char _7[1];
     s16 m_hitPointMax;
     u8 m_startStockCount;
     char _11[1];
