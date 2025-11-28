@@ -28,6 +28,7 @@
 8059ff70:__double_huge
 27,5,A6068:g_soGeneralTermCache
 27,5,A8B0C:g_soGeneralTermManager
+27,6,5B98:g_stEnemyIdManager
 
 // Hardware
 CC008000:WGPIPE
