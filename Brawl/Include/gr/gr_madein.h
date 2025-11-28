@@ -93,6 +93,9 @@ public:
     virtual void startup(gfArchive* data, u32 unk1, gfSceneRoot::LayerType layerType);
     virtual void update(float deltaFrame);
     virtual ~grMadein();
+    inline void setAttackPreset(int preset) {
+        this->m_attackInfo->m_preset = preset;
+    };
 
     static grMadein* create(int mdlIndex, const char* tgtNodeName, const char* taskName, HeapType heapType);
 };
