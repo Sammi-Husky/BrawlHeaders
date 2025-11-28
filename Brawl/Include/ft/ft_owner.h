@@ -33,6 +33,8 @@ public:
     virtual void addAttackInfo(void*);
     virtual void addAttackPattern(void*);
 
+    void setTeam(int team);
+    void setPointTeam(int pointTeam);
     int setDeadCount(int deadCount);
     int getDeadCount();
     void addLostCoin(int numCoinsToAdd);

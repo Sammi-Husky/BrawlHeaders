@@ -1173,6 +1173,8 @@ CC008000:WGPIPE
 27,1,00112c4c:getCoin__7ftOwnerFv
 27,1,00112cc4:addLostCoin__7ftOwnerFi
 27,1,00112c10:addCoin__7ftOwnerFi
+27,1,00111358:setTeam__7ftOwnerFi
+27,1,00111370:setPointTeam__7ftOwnerFi
 
 // ftOutsideEventPresenter
 27,1,0015B0C8:notifyOutsideEventKnockout__23ftOutsideEventPresenterFv
@@ -1576,6 +1578,8 @@ CC008000:WGPIPE
 
 // IfPlayer
 800e1384:disappear__8IfPlayerFv
+800e19ec:updateStockCoin__8IfPlayerFUc
+800e22a0:updateCoinScoreSub__8IfPlayerFUc
 
 // IfFoxSmashAppearTask
 800F6374:create__20IfFoxSmashAppearTaskFP9gfArchive
