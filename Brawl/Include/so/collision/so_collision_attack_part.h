@@ -20,6 +20,17 @@ struct soCollisionAttackAbsoluteData {
 };
 
 struct soCollisionAttackData {
+    enum Vec {
+        Vec_None = 361,
+        Vec_Rad = 362,
+        Vec_Speed = 363,
+        Vec_Random = 364,
+        Vec_Sync = 365,
+        Vec_Pull_Reaction = 366,
+        Vec_Pull = 367,
+        Vec_Target_Pos = 368,
+    };
+
     enum Attribute {
         Attribute_Normal = 0x0,
         Attribute_None = 0x1,

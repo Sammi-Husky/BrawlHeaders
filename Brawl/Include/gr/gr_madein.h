@@ -9,12 +9,20 @@
 
 class grMadein : public grSeqYakumono {
 public:
+    enum AttackPreset {
+        Attack_Default = 0x0,
+        Attack_Up = 0x1,
+        Attack_Left = 0x2,
+        Attack_Right = 0x3,
+        Attack_Overwrite = 0x4,
+    };
+
     class AttackInfo {
     public:
         float m_size;
         Vec3f m_offsetPos;
         char _spacer[0x18];
-        int m_preset;
+        AttackPreset m_preset;
     };
 
     class HitPointInfo {
@@ -68,6 +76,7 @@ public:
     void endEntity();
     float getEntityFrame();
     soCollisionAttackData* getOverwriteAttackData();
+    soCollisionAttackData* getOverwiteAttackData();
     void initializeEntity();
     bool isEndEntity();
     bool isFrameEndOffset(float unk);
@@ -83,6 +92,22 @@ public:
     void startEntityAutoLoop();
     void startEntityLoop(int unk1);
     void switchToMatrix();
+    inline void setAttackPreset(AttackPreset preset) {
+        this->m_attackInfo->m_preset = preset;
+    };
+    inline soCollisionAttackData* setAttackOverwrite() {
+        Vec3f pos(0.0, 0.0, 0.0);
+        this->setAttack(0, &pos);
+        this->m_attackInfo->m_preset = Attack_Overwrite;
+        return this->getOverwriteAttackData();
+    }
+    inline void setAttack(float size, Vec3f* offsetPos, AttackPreset preset) {
+        this->setAttack(size, offsetPos);
+        this->m_attackInfo->m_preset = preset;
+        if (preset == Attack_Overwrite) {
+            this->getOverwriteAttackData();
+        }
+    }
 
     grMadein(const char* taskName);
     virtual void setTgtNode(const char* unk1);
@@ -93,9 +118,6 @@ public:
     virtual void startup(gfArchive* data, u32 unk1, gfSceneRoot::LayerType layerType);
     virtual void update(float deltaFrame);
     virtual ~grMadein();
-    inline void setAttackPreset(int preset) {
-        this->m_attackInfo->m_preset = preset;
-    };
 
     static grMadein* create(int mdlIndex, const char* tgtNodeName, const char* taskName, HeapType heapType);
 };
