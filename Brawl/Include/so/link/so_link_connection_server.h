@@ -41,6 +41,8 @@ public:
         Attribute_Reference_Parent_Shake = 0x1,
         Attribute_Reference_Parent_Scale = 0x2,
 
+        Attribute_Reference_Parent_Unknown_4 = 0x4,
+
         Attribute_Reference_Parent_Visibility = 0x7,
 
         Attribute_Reference_Parent_Power_Up = 0xA, // glow

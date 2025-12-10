@@ -109,7 +109,7 @@ public:
     virtual void setNodeTranslate(u32 , Vec3f* xlate);
     virtual int getNodeId(const char *nodeName);
     virtual int getCorrectNodeId(u32);
-    virtual int getRealNodeId(int);
+    virtual int getRealNodeId(u32);
     virtual const char* getNodeName(u32 p1);
     virtual Vec3f getNodeGlobalPosition(u32 correctNodeId, bool );
     virtual Vec3f getNodeGlobalPosition(u32 correctNodeId, Vec3f* p2, bool, bool );

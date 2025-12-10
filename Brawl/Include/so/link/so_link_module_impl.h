@@ -6,7 +6,6 @@
 #include <mt/mt_vector.h>
 #include <nw4r/g3d/g3d_resfile.h>
 #include <so/so_array.h>
-#include <so/article/so_article.h>
 #include <so/anim/so_anim_cmd.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
 #include <so/color/so_color_blend.h>
@@ -20,6 +19,7 @@
 
 class StageObject;
 class soModuleAccesser;
+class soArticle;
 
 class soLinkModule : public soNullable {
 public:
