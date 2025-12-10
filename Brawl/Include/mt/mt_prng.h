@@ -16,25 +16,38 @@ public:
     virtual float randf();
     virtual s32 getMax();
     virtual s32 randi();
-    s32 getSeed() { return seed; }
-    void setSeed(s32 seed) { this->seed = seed; }
+    s32 getSeed() { return m_seed; }
+    void setSeed(s32 seed) { m_seed = seed; }
 
-    mtRand(s32 v) : seed(v) { }
+    mtRand(s32 v) : m_seed(v) { }
 
 private:
-    s32 seed;
+    s32 m_seed;
     static const s32 MultVal = 0x41C64E6D;
     static const s32 AddVal = 0x3039;
 };
+static_assert(sizeof(mtRand) == 0x8, "Class is the wrong size!");
 
 struct mtPrngLog {
-    u8 unk0[0x10];
-    mtPrngLog(u32, void *);
+    static const u32 BacktraceLength = 2;
+
+    u32 m_randVal;
+    void* m_backtrace[BacktraceLength];
+    float m_gameFrame;
+
+    mtPrngLog(u32 val, void* sp);
 };
+static_assert(sizeof(mtPrngLog) == 0x10, "Class is the wrong size!");
 
 struct mtPrngLogManager {
-    u8 unk0[0xC];
-    void addLog(mtPrngLog*);
-};
+    u32 m_maxLen;
+    u32 m_len;
+    mtPrngLog* m_logs;
 
-extern mtRand g_mtRand;
+    mtPrngLogManager() : m_maxLen(0), m_len(0), m_logs(nullptr) { }
+    ~mtPrngLogManager();
+    bool addLog(const mtPrngLog* log);
+};
+static_assert(sizeof(mtPrngLogManager) == 0xC, "Class is the wrong size!");
+
+extern mtPrngLogManager g_mtPrngLogManager;
