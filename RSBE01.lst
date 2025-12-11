@@ -488,6 +488,20 @@ CC008000:WGPIPE
 27,1,000C2AF0:postInitialize__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfaceUlUl
 27,1,000C2B5C:resize__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfaceUlbbUlUlUl
 
+// soArrayList
+27,1,0021cb30:at__18soArrayList<Ul,32>Fl
+27,1,0025ea94:clear__18soArrayList<Ul,32>Fv
+27,1,0025ebf8:at__18soArrayList<Ul,32>CFl
+27,1,0025ec74:unshift__18soArrayList<Ul,32>FRCUl
+27,1,0025eccc:shift__18soArrayList<Ul,32>Fv
+27,1,0025ed08:push__18soArrayList<Ul,32>FRCUl
+27,1,0025ed78:pop__18soArrayList<Ul,32>Fv
+27,1,0025edcc:insert__18soArrayList<Ul,32>FUlRCUl
+27,1,0025ee24:erase__18soArrayList<Ul,32>FUl
+27,1,0025ee5c:isFull__18soArrayList<Ul,32>Fv
+27,1,0025ee6c:set__18soArrayList<Ul,32>FUlRCUlUl
+27,1,0025ef44:isNull__18soArrayList<Ul,32>CFv
+
 // soEventSystem
 27,1,0008F064:getInstance__13soEventSystemFv
 27,1,0008F1BC:getManager__13soEventSystemFs
@@ -729,6 +743,10 @@ CC008000:WGPIPE
 27,1,00238EB0:setGravityHalf__7stMeleeFv
 27,1,00238E90:setGravityNormal__7stMeleeFv
 27,1,00238ED0:createCollisionSelf__7stMeleeFP15stCollisionWorkP6GroundPCcPCcUs
+
+// stEnemyIdManager
+27,1,0025e71c:create__16stEnemyIdManagerFv
+27,1,0025e7e0:remove__16stEnemyIdManagerFv
 
 // stUtility
 27,1,00227BEC:stRayCheck__FP5Vec3fP5Vec3fbP11grCollisionbUc
