@@ -46,6 +46,7 @@ public:
     void setFrameTex(float frame);
     void setFrameTexSrt(float frame);
     void setFrameFlg(float frame, u8 flagFilter); // 1 CHR, 2 VIS, 4 PAT, 8 SRT, 10 CLR. SHP not supported
+    void setFrameNode(float frame);
     void setUpdateRateFlg(float updateRate, u8 flagFilter);
 
     void changeMaterialTex(int matNode, int texNode, nw4r::g3d::ResFile** textureSource = nullptr);

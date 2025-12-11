@@ -10,6 +10,7 @@
 #include <nw4r/g3d/g3d_resfile.h>
 #include <nw4r/g3d/g3d_resmdl.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
+#include <sr/sr_common.h>
 #include <types.h>
 
 class gfModelAnimation {
