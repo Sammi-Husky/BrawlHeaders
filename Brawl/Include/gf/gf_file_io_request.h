@@ -4,30 +4,26 @@
 #include <ut/ut_queue.h>
 #include <types.h>
 
-// These are stored in field 0x18 in bits 20-21.
-#define GF_FILE_IO_READ_OPERATION 0x000000
-#define GF_FILE_IO_WRITE_OPERATION (1 << 0x14)
-#define GF_FILE_IO_DEL_OPERATION (2 << 0x14)
-#define GF_FILE_IO_CREATE_DIR_OPERATION (3 << 0x14)
-#define GF_FILE_IO_CREATE_VF_SYSTEM_FILE_OPERATION (5 << 0x14)
-#define GF_FILE_IO_MOUNT_VF_OPERATION (6 << 0x14)
-#define GF_FILE_IO_UNMOUNT_VF_OPERATION (7 << 0x14)
-#define GF_FILE_IO_FORMAT_VF_OPERATION (8 << 0x14)
-#define GF_FILE_IO_MOUNT_SD_OPERATION (9 << 0x14)
-#define GF_FILE_IO_UNMOUNT_SD_OPERATION (0xA << 0x14)
-#define GF_FILE_IO_READ_DIR_OPERATION (0xB << 0x14)
-#define GF_FILE_IO_CHECK_FREE_SIZE_OPERATION (0xC << 0x14)
-#define GF_FILE_IO_CHECK_FILE_OPERATION (0xD << 0x14)
-#define GF_FILE_IO_CHECK_DIR_OPERATION (0xE << 0x14)
-#define GF_FILE_IO_FIND_FIRST_OPERATION (0xF << 0x14)
-#define GF_FILE_IO_FIND_FILE_COUNT_OPERATION (0x10 << 0x14)
-#define GF_FILE_IO_COPY_TO_NAND_CACHE_OPERATION (0x12 << 0x14)
-#define GF_FILE_IO_NAND_DELETE_OPERATION (0x13 << 0x14)
-#define GF_FILE_IO_WRITE_NAND_OPERATION (0x14 << 0x14)
-
-
 class gfFileIORequest {
 public:
+    enum Kind {
+        Kind0 = 0,
+        Del = 2,
+        CreateDir = 3,
+        CreateVFSystemFile = 5,
+        MountVF = 6,
+        UnmountVF = 7,
+        FormatVF = 8,
+        MountSD = 9,
+        UnmountSD = 10,
+        CheckFreeSize = 12,
+        CheckFile = 13,
+        CheckDir = 14,
+        FindFirst = 15,
+        FindFileCount = 16,
+        WriteNAND = 20,
+    };
+
     // 0x0
     char* m_pFilepath;
     // 0x4
@@ -39,24 +35,41 @@ public:
     // 0x10
     void* m_heap;
     // 0x14
-    u8 m_returnStatus;
+    s32 m_returnStatus : 8;
     // 0x15 -- seems to be either a format specifier or id used by the VF operations.
-    u8 m_vfUnk;
+    u8 m_vfUnk : 8;
 
-    u8 _unk16;
+    u8 unk16_1 : 1;
+    bool m_isCached : 1;
+    u8 unk16_3 : 6;
     // Bits 3+4 are involved in whether or not handle->release() frees this request.
-    u8 _unkFlags;
+
+    u8 unk17_pad0 : 2;
+    bool unk17_0 : 1;
+    bool m_isCancelRequested : 1;
+    bool m_isCanceled : 1;
+    bool unk17_11 : 1;
+    bool unk17_2 : 1;
+    bool unk17_3 : 1;
+
     // 0x18
-    int m_operationFlags;
+    bool unk18_0 : 1;
+    u8 unk18_pad : 1;
+    bool unk18_1 : 1;
+    u8 unk18_pad2 : 1;
+    Kind m_kind : 8;
+    s32 m_isReady : 8;
+
     // 0x1C
     u16 m_crc16;
-    // 0x20
+    // 0x1E
     u16 m_unk3;
-    // 0x24
+    // 0x20
     void* m_notifyCallback;
     char m_filepath[128];
 
     void setParam(const char* filepath);
+    void setReadParam(const char* filepath, const void* addr, int length, int offset);
     void setReadParam(const char* filepath, void* addr, int length, int offset);
     void setWriteParam(const char* filepath, void* addr, int len, int offset);
 };

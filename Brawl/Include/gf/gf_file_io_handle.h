@@ -1,6 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <gf/gf_file_io_manager.h>
 #include <gf/gf_file_io_request.h>
 #include <memory.h>
 #include <types.h>
@@ -15,18 +16,18 @@
 class gfFileIOHandle {
 public:
     // 0
-    gfFileIORequest* fileToLoad;
+    gfFileIORequest* m_request;
 
     // Stuff to check on the request once it has been started.
-    bool isReady();
-    int getReturnStatus();
-    void* getBuffer();
-    int getSize();
-    HeapType getPool();
+    bool isReady() const;
+    int getReturnStatus() const;
+    void* getBuffer() const;
+    int getSize() const;
+    void* getPool() const;
     void release();
-    int cancelRequest();
-    bool isCanceled();
-    bool isCancelRequested();
+    bool cancelRequest();
+    bool isCanceled() const;
+    bool isCancelRequested() const;
 
     // Asynchronous "request" methods. These will craft the gfFileIORequest for you and
     // submit it to the gfFileIOManager. You are responsible for checking in on them as far as I can tell.
@@ -51,13 +52,14 @@ public:
      * - Using a filepath like "sd:/foo/bar" works.
      * - 
     */
-    u32 read(const char* filepath, HeapType heap, int offset);
-    u32 read(const char* filepath, void* addr, int offset);
+    bool read(const char* filepath, HeapType heap, int offset);
+    bool read(const char* filepath, const void* addr, int offset);
+    bool read(const char* filepath, void* addr, int offset);
     bool readRequest(const char* filename, HeapType heap, int length, int offset);
-    bool readRequest(char* filepath, void* addr, int length, int offset);
+    bool readRequest(const char* filepath, const void* addr, int length, int offset);
     bool readRequest(const char* filepath, void* addr, int length, int offset);
     bool readRequestCached(const char* filepath, HeapType heap, int length, int offset);
-    bool readRequestCached(char* filepath, void* addr, int length, int offset);
+    bool readRequestCached(const char* filepath, const void* addr, int length, int offset);
     bool readRequestCached(const char* filepath, void* addr, int length, int offset);
     bool readRequestNoSync(const char* filepath, HeapType heap, int length, int offset); 
     bool readRequestNoSync(const char* filepath, void* addr, int length, int offset);
@@ -71,10 +73,10 @@ public:
     //
     // It is also worth mentioning that "offset" is the offset of the file to append from, not the 
     // offset in the src buffer.
-    int writeRequest(const char* filepath, void* addr, int length, int offset);
+    bool writeRequest(const char* filepath, void* addr, int length, int offset);
     // filepath for writeNAND seems to be "/my/file/path". It seems to be used internally to load
     // fighter misc data into NAND for some purpose.
-    int writeNAND(void* addr, int length, const char* filepath);
+    bool writeNAND(void* addr, int length, const char* filepath);
 
     bool mountSD();
     bool unmountSD();
@@ -86,14 +88,18 @@ public:
     // another unknown parameter to the request's 0x15
     bool formatVF(int unk);
     bool unmountVF(u8 unk);
-    gfFileIOHandle()
-    {
-        fileToLoad = 0;
-    }
+    gfFileIOHandle() : m_request(nullptr) { }
+
     ~gfFileIOHandle();
 
     // the gfFileIONotify seems to be an abstract class. There is a gfArchiveNotify that seems to be used to tell
     // a gfArchive that the operation is done. It seems like it's acting like a destructor and freeing a bunch of
     // stuff.
     void setNotify(void* gfFileIONotify);
+
+    void ensureLoaded() {
+        if (!m_request) {
+            m_request = g_gfFileIOManager->allocRequest();
+        }
+    }
 };

@@ -12,7 +12,11 @@ class gfFileIOManager {
     gfFileIORequestQueue* m_queue2;
     char _0x10[0x8C];
 public:
-    inline u32 getNumActiveRequests() { return m_queue1->getSize(); };
+    u32 getNumActiveRequests() { return m_queue1->getSize(); };
+
+    gfFileIORequest* allocRequest();
+    bool freeRequest(gfFileIORequest* req);
+    void push(gfFileIORequest* req);
 };
 static_assert(sizeof(gfFileIOManager) == 0x9c, "Wrong size for class!");
 
