@@ -34,6 +34,7 @@ public:
     bool isCompArchiveAll();
     int getPreloadArchiveCountFromKind(EnemyKind enemyKind);
     int getPreloadArchiveCreateIdFromKind(EnemyKind enemyKind);
+    emArchive* getPreloadArchivePtrFromKind(EnemyKind enemyKind);
     int preloadArchive(gfArchive* param, gfArchive* brres, gfArchive* enmCommon, gfArchive* primFaceBrres, EnemyKind enemyKind, bool isSoundRequest);
     int createEnemy(emCreate* create);
     void removeEnemy(int id);
@@ -46,6 +47,7 @@ public:
     u32 getEnemyCount();
     u32 getEnemyCountFromKind(EnemyKind enemyKind);
     Enemy* getEnemyPtrFromId(int createId);
+    Entry<emArchive>* getEntryPreloadArchivePtrFromId(int createId);
     static emManager* getInstance();
 };
 static_assert(sizeof(emManager) == 32, "Class is wrong size!");
