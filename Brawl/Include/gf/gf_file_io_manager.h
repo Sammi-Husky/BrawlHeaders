@@ -6,11 +6,14 @@
 #include <types.h>
 
 class gfFileIOManager {
+public:
     char _0x0[4];
     gfThread* m_thread;
     gfFileIORequestQueue* m_queue1;
     gfFileIORequestQueue* m_queue2;
-    char _0x10[0x8C];
+    char _0x10[0x88];
+    bool unk98 : 1;
+    u8 unk99[0x3];
 public:
     u32 getNumActiveRequests() { return m_queue1->getSize(); };
 

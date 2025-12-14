@@ -23,7 +23,7 @@ public:
     int getReturnStatus() const;
     void* getBuffer() const;
     int getSize() const;
-    void* getPool() const;
+    const void* getPool() const;
     void release();
     bool cancelRequest();
     bool isCanceled() const;

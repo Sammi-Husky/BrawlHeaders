@@ -33,8 +33,8 @@ public:
     s32 isExistNode(utListNode* node) const;
 
     inline void clear() {
-        m_head = NULL;
-        m_tail = NULL;
+        m_head = nullptr;
+        m_tail = nullptr;
         m_length = 0;
     }
 };

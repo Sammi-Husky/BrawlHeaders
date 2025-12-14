@@ -3,16 +3,22 @@
 #include <StaticAssert.h>
 #include <types.h>
 
-template <class T>
-class utQueueInterface {
-    char _0x0[2];
+template <typename T, u32 C>
+class utQueue {
     u16 m_size;
-public:
-    u16 size() { return m_size; };
-};
-
-template <class T, u32 C>
-class utQueue : utQueueInterface<T>{
+    u16 unk2;
 public:
     T m_elements[C];
+
+    utQueue() {
+        m_size = C;
+        unk2 = 0;
+        T* p = m_elements;
+        do {
+            *p = nullptr;
+            p++;
+        } while (p < m_elements + C);
+    }
+
+    u32 size() const { return C; }
 };
