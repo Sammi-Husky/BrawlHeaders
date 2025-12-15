@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <gf/gf_callback.h>
+#include <gf/gf_keep_fb.h>
 #include <types.h>
 
 struct vcBootParam {
@@ -12,7 +13,9 @@ struct vcBootParam {
 
 class gfApplication {
 public:
-    u8 unk0[0xE4];
+    u8 unk0[0xD0];
+    gfKeepFrameBuffer unkD0;
+    u8 unkD1[0x13];
     int m_e4;
     u8 unkE8[0x10];
     u16 m_frameRate;

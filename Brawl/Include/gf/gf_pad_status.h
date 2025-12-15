@@ -39,6 +39,20 @@ namespace gfPadType {
 }
 
 union gfPadButtons {
+    enum Buttons {
+        DLeft = 0x1,
+        DDown = 0x2,
+        DRight = 0x4,
+        DUp = 0x8,
+        Z = 0x10,
+        R = 0x20,
+        L = 0x40,
+        A = 0x100,
+        B = 0x200,
+        X = 0x400,
+        Y = 0x800,
+        Start = 0x1000,
+    };
     u32 bits;
     struct {
         u16 _padding;

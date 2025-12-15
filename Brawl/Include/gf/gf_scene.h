@@ -7,9 +7,13 @@ class gfScene {
 public:
     const char* m_sceneName;
     virtual void start();
-    virtual void process();
-    virtual void exit();
+    virtual s32 process();
+    virtual s32 exit();
     virtual void setModule();
+
+    bool setLoadModule(const char* name, bool p2);
+
+    gfScene(const char* name) : m_sceneName(name) { }
 };
 static_assert(sizeof(gfScene) == 8, "Class is wrong size!");
 
