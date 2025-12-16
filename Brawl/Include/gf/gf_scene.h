@@ -6,10 +6,10 @@
 class gfScene {
 public:
     const char* m_sceneName;
-    virtual void start();
-    virtual s32 process();
-    virtual s32 exit();
-    virtual void setModule();
+    virtual void start() = 0;
+    virtual s32 process() = 0;
+    virtual s32 exit() = 0;
+    virtual void setModule() { }
 
     bool setLoadModule(const char* name, bool p2);
 
