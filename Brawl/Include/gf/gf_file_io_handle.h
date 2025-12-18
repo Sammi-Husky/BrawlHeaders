@@ -103,3 +103,4 @@ public:
         }
     }
 };
+static_assert(sizeof(gfFileIOHandle) == 0x4, "Class is the wrong size!");
