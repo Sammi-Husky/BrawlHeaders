@@ -8,7 +8,8 @@
 #include <sr/sr_common.h>
 #include <types.h>
 
-class gfResourceLoader : public gfFileIOHandle {
+class gfResourceLoader {
+    gfFileIOHandle m_handle;
     void* m_compressedRsrcPtr;
     u32 m_allocSize;
     u32 m_rsrcSize;
@@ -25,5 +26,17 @@ public:
     void* loadResourceMemSizeOrder(HeapType heapTy, const char* path, gfArchive* archive, u32 size);
     bool isLoaded();
     void freeResource();
+
+    gfResourceLoader() {
+        m_compressedRsrcPtr = nullptr;
+        m_allocSize = 0;
+        m_rsrcSize = 0;
+        m_rsrcPtr = nullptr;
+        m_isLoaded = false;
+        m_doCachedRead = true;
+        m_archive = nullptr;
+        m_heapTy = Heaps::Invalid;
+    }
+    ~gfResourceLoader() { freeResource(); }
 };
 static_assert(sizeof(gfResourceLoader) == 0x20, "Class is the wrong size!");
