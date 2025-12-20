@@ -15,7 +15,7 @@ public:
         unk2 = 0;
         T* p = m_elements;
         do {
-            *p = nullptr;
+            *p = 0;
             p++;
         } while (p < m_elements + C);
     }

@@ -270,11 +270,13 @@ struct gmAdvData {
 
         char _0[0x04];                    // 0x00
         LevelClear m_levelClears[34]; // 0x04
-        char _684[18052];
+        char unk2AC[0x467C];
+        u32 unk4928;
+        u32 unk492C;
     };
     static_assert(sizeof(Record) == 0x4930, "Class is wrong size!");
 
     Record m_record;
-    char _18704[40];
+    char unk4930[0x28];
 };
 static_assert(sizeof(gmAdvData) == 0x4958, "Class is wrong size!");
