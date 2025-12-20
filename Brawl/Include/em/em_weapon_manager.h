@@ -17,6 +17,7 @@ public:
     virtual void resetManageWeaponList();
     wnemSimple* GetManagedWeapon(u32 taskId, u32 p2, u32 p3);
     wnemSimple* GetManagedWeaponFromTaskID(u32 taskId);
+    wnemSimple* findWeapon(int taskId, u32 unk1, u32 unk2);
 
     static void create();
     static void remove();

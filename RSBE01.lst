@@ -421,6 +421,9 @@ CC008000:WGPIPE
 8009db90:cmReqQuake__FQ27cmQuake9AmplitudeP5Vec3f
 8009dd40:cmRemoveQuake__Fi
 
+// Vec2f
+8003dc64:rot__5Vec2fFdP5Vec2fP5Vec2f
+
 // Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
 27,1,00000EF8:__pl__5Vec3fFRC5Vec3f
@@ -487,6 +490,20 @@ CC008000:WGPIPE
 27,1,000C28EC:shift__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfacebUlUl
 27,1,000C2AF0:postInitialize__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfaceUlUl
 27,1,000C2B5C:resize__23soArrayVectorCalculatorFP26soArrayVectorCalcInterfaceUlbbUlUlUl
+
+// soArrayList
+27,1,0021cb30:at__18soArrayList<Ul,32>Fl
+27,1,0025ea94:clear__18soArrayList<Ul,32>Fv
+27,1,0025ebf8:at__18soArrayList<Ul,32>CFl
+27,1,0025ec74:unshift__18soArrayList<Ul,32>FRCUl
+27,1,0025eccc:shift__18soArrayList<Ul,32>Fv
+27,1,0025ed08:push__18soArrayList<Ul,32>FRCUl
+27,1,0025ed78:pop__18soArrayList<Ul,32>Fv
+27,1,0025edcc:insert__18soArrayList<Ul,32>FUlRCUl
+27,1,0025ee24:erase__18soArrayList<Ul,32>FUl
+27,1,0025ee5c:isFull__18soArrayList<Ul,32>Fv
+27,1,0025ee6c:set__18soArrayList<Ul,32>FUlRCUlUl
+27,1,0025ef44:isNull__18soArrayList<Ul,32>CFv
 
 // soEventSystem
 27,1,0008F064:getInstance__13soEventSystemFv
@@ -559,6 +576,9 @@ CC008000:WGPIPE
 27,1,0007B4BC:setButtonOn__18soGeneralTermCacheFUlb
 27,1,0007B50C:isButtonTrigger__18soGeneralTermCacheFUlPUc
 27,1,0007B560:setButtonTrigger__18soGeneralTermCacheFUlb
+
+// soDamageUtilActor
+27,1,00063558:getDamageAngle__17soDamageUtilActorFP16soModuleAccesserddiP5Vec2f
 
 // Stage
 27,1,002225A8:createObj__5StageFv
@@ -729,6 +749,10 @@ CC008000:WGPIPE
 27,1,00238EB0:setGravityHalf__7stMeleeFv
 27,1,00238E90:setGravityNormal__7stMeleeFv
 27,1,00238ED0:createCollisionSelf__7stMeleeFP15stCollisionWorkP6GroundPCcPCcUs
+
+// stEnemyIdManager
+27,1,0025e71c:create__16stEnemyIdManagerFv
+27,1,0025e7e0:remove__16stEnemyIdManagerFv
 
 // stUtility
 27,1,00227BEC:stRayCheck__FP5Vec3fP5Vec3fbP11grCollisionbUc
@@ -1175,6 +1199,7 @@ CC008000:WGPIPE
 27,1,00112c10:addCoin__7ftOwnerFi
 27,1,00111358:setTeam__7ftOwnerFi
 27,1,00111370:setPointTeam__7ftOwnerFi
+27,1,00112d18:getCoinDropRate__7ftOwnerFv
 
 // ftOutsideEventPresenter
 27,1,0015B0C8:notifyOutsideEventKnockout__23ftOutsideEventPresenterFv
@@ -1198,6 +1223,7 @@ CC008000:WGPIPE
 27,1,002A8828:getItemFromInstanceId__9itManagerFi
 27,1,0010D878:setFinal__9ftManagerFib
 27,1,002A4FF8:preloadAssist__9itManagerF6itKind
+27,1,002a9928:createMoney__9itManagerFPcP5Vec3fP5Vec2fUlUlUl
 
 // BaseItem
 27,1,0027F564:__ct__8BaseItemFP8itCreate
@@ -1277,6 +1303,8 @@ CC008000:WGPIPE
 41,1,0000CE84:getEnemyPtrFromId__9emManagerFi
 41,1,0000d4b8:removeArchive__9emManagerFi
 41,1,0000d828:getPreloadArchiveCreateIdFromKind__9emManagerF6emKind
+41,1,0000D5C4:getEntryPreloadArchivePtrFromId__9emManagerFi
+41,1,0000D770:getPreloadArchivePtrFromKind__9emManagerF6emKind
 
 //gfFileIO
 8001bf0c:readFile__8gfFileIOFP15gfFileIORequest

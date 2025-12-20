@@ -39,6 +39,7 @@ public:
     int getDeadCount();
     void addLostCoin(int numCoinsToAdd);
     int getCoin();
+    float getCoinDropRate();
     void addCoin(int numCoinsToAdd);
     int getBeatCount(int playerIndex);
     int getStockCount();

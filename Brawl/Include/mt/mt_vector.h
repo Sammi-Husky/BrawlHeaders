@@ -66,6 +66,8 @@ public:
         return disp.length();
     }
 
+    static void rot(double unk1, Vec2f *unk2, Vec2f *unk3);
+
 };
 static_assert(sizeof(Vec2f) == 8, "Class is wrong size!");
 
