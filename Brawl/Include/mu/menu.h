@@ -1,6 +1,9 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <gf/gf_scene.h>
+#include <mu/mu_menu_controller.h>
+#include <types.h>
 
 enum MuSelchkind { /* CSS */
     Selch_Mario=0,
@@ -209,9 +212,15 @@ enum MuStageKind {
     Menu_Stage_Edit = 41
 };
 
-namespace muMenu {
+class muMenu : public gfScene {
     //    int activeRumbleController;
     //    int globalRumbleSetting;
+    muMenuController m_menuControllers[5];
+public:
+    virtual void start();
+    virtual s32 process();
+    virtual s32 exit();
+    virtual void init();
 
     static void loadMenuSound();
     static bool isLoadFinishMenuSound();
@@ -225,4 +234,6 @@ namespace muMenu {
     static const char* exchangeMuStockchkind2MuCharName(int id);
     static int getStockFrameID(int id);
     static int getFighterColorFileNo(int charKind, int costumeID);
+
+    muMenu(const char* name) : gfScene(name) { }
 };

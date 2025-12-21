@@ -39,7 +39,7 @@ public:
     int m_sceneCount;
     int m_sequenceCount;
     char _spacer3[8];
-    int m_memoryLayout;
+    int m_memoryLayout; // 0x280
     int unk1;
     int processStep;
     char _spacer4[148];

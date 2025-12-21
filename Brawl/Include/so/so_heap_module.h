@@ -9,10 +9,10 @@ class soHeapModule : public soNullable {
 public:
     soHeapModule() { }
     virtual ~soHeapModule() { }
-    virtual HeapType getInstanceHeap() const;
+    virtual HeapType getInstanceHeap() const = 0;
     virtual void setInstanceHeap(HeapType heap) { }
-    virtual HeapType getNWModelInstanceHeap() const;
-    virtual HeapType getNWMotionInstanceHeap() const;
-    virtual u32 getSlotNo() const;
+    virtual HeapType getNWModelInstanceHeap() const = 0;
+    virtual HeapType getNWMotionInstanceHeap() const = 0;
+    virtual u32 getSlotNo() const = 0;
 };
 static_assert(sizeof(soHeapModule) == 8, "Class is wrong size!");
