@@ -33,7 +33,9 @@ public:
     // 4
     gfArchive* m_nextArchive;
     // 8
-    char _spacer[0xC];
+    char _spacer[0x2];
+    s16 m_refCount; // 0xA
+    u8 unkC[0x8];
     // 20
     void* m_Heap;
     // 24
