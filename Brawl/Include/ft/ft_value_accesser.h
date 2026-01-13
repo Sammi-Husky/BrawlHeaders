@@ -392,17 +392,17 @@ public:
         Common_Param_Float_Gekikara_Fire_Shoot_Angle_Min = 3469,
         Common_Param_Float_Gekikara_Fire_Shoot_Angle_Max = 3470,
         Common_Param_Float_Screw_Jump_Speed_Y_Mul = 3471,
-
+        Common_Param_Float_Kinoko_More_Giant_Scale = 3472,
         Common_Param_Float_Kinoko_Giant_Scale = 3473,
-
-        Common_Param_Float_Kinoko_Small_Scale = 3475,
+        Common_Param_Float_Kinoko_Small_Scale = 3474,
+        Common_Param_Float_Kinoko_More_Small_Scale = 3475,
         Common_Param_Float_Kinoko_Pitch_Big = 3476,
         Common_Param_Float_Kinoko_Pitch_Small = 3477,
         Common_Param_Float_Kinoko_Bonus_Damage = 3478,
-
+        Common_Param_Float_Thunder_More_Giant_Scale = 3479,
         Common_Param_Float_Thunder_Giant_Scale = 3480,
-
-        Common_Param_Float_Thunder_Small_Scale = 3482,
+        Common_Param_Float_Thunder_Small_Scale = 3481,
+        Common_Param_Float_Thunder_More_Small_Scale = 3482,
         Common_Param_Float_Thunder_Pitch_Big = 3483,
         Common_Param_Float_Thunder_Pitch_Small = 3484,
         Common_Param_Float_Metal_Cancel_Damage = 3485,
