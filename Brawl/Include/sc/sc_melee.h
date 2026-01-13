@@ -44,8 +44,8 @@ public:
     char _232[24];
 
     virtual void start();
-    virtual void process();
-    virtual void exit();
+    virtual s32 process();
+    virtual s32 exit();
     virtual ~scMelee();
     virtual int getEndNum();
 };
