@@ -234,6 +234,7 @@ public:
     static const char* exchangeMuStockchkind2MuCharName(int id);
     static int getStockFrameID(int id);
     static int getFighterColorFileNo(int charKind, int costumeID);
+    static int findCharTeamColorNo(int charKind, int teamColor, int teamSet);
 
     muMenu(const char* name) : gfScene(name) { }
 };
