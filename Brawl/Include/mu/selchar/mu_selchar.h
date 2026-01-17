@@ -24,7 +24,9 @@ public:
 
     char _0x40[4];
     muSelCharPlayerArea* m_selCharPlayerAreas[num_player_areas];
-    char _0x54[0x600];
+    char _0x54[0x577];
+    u8 m_teamBattleType; // custom
+    char _0x5CF[0x88];
 
     virtual void processDefault();
     virtual ~muSelCharTask();
