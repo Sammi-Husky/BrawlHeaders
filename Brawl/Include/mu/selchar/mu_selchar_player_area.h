@@ -51,7 +51,8 @@ public:
     int m_selectedZelda;
     int m_selectedSamus;
     int m_selectedPoke;
-    char _0x1F4[0x8];
+    muSelCharTask* m_selCharTask;
+    char _0x1F8[0x4];
     MuSelctChrList m_chrList;
     char _0x35C[0x14];
     MuSelctChrNameEntry m_nameEntry;
@@ -65,5 +66,6 @@ public:
     bool isTeamBattle();
     u8 exchangeCharKindDetail(MuSelchkind selCharKind);
     void dispMarkKind(MuSelchkind charKind);
+    void setCharKind(MuSelchkind charKind);
 };
 static_assert(sizeof(muSelCharPlayerArea) == 0x448, "Wrong size for class!");
