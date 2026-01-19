@@ -96,6 +96,7 @@ public:
     Vec3f operator+(const Vec3f& v);
     Vec3f operator-(const Vec3f& v);
 
+#ifdef MATCHING
     friend void Vec3fSub(register Vec3f* pOut, register const Vec3f* lhs,
                      register const Vec3f* rhs) {
         register f32 fr3, fr2, fr1, fr0;
@@ -113,6 +114,13 @@ public:
         }
         // clang-format on
     }
+#else
+    friend void Vec3fSub(Vec3f* pOut, const Vec3f* lhs, const Vec3f* rhs) {
+        pOut->m_x = lhs->m_x - rhs->m_x;
+        pOut->m_y = lhs->m_y - rhs->m_y;
+        pOut->m_z = lhs->m_z - rhs->m_z;
+    }
+#endif
 
     Vec3f operator*(const float c);
 
