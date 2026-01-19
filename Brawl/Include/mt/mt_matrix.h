@@ -22,6 +22,7 @@ public:
 
     }
     void mul(const Matrix* mulMatrix, Matrix* outMatrix) const;
+    void mulPos(const Vec3f* pos, Vec3f* outVec);
     void inverse(Matrix* outMatrix) const;
     void getRotate(Vec3f* outRot);
 

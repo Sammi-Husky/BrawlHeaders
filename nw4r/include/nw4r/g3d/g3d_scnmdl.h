@@ -24,6 +24,19 @@ namespace nw4r {
                 ResMatTevColor GetResMatTevColor(bool sync);
             };
 
+            class CopiedVisAccess {
+            public:
+                CopiedVisAccess(ScnMdl* pScnMdl, u32 id);
+
+                bool IsVisible() const;
+                bool SetVisibility(bool visible);
+
+            private:
+                ScnMdl* mpScnMdl; // at 0x0
+                u32 mNodeID;      // at 0x4
+                u8* mpVis;        // at 0x8
+            };
+
             // TODO
             virtual u32 IsDerivedFrom(int* unk1);
             virtual void G3dProc(int unk1, int unk2, int unk3);

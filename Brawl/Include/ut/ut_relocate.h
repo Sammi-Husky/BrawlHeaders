@@ -8,11 +8,11 @@
 struct DATHeader {
     u32 fileSz;      // bytes
     u32 dataSz;      // bytes
-    u32 nRels;       // words
+    u32 nRels;       // 32-bit words
     u32 nSymbols;    // DATSymbols
     u32 nImports;    // DATImports
     u32 unk14;
-    bool isAbsolute; // if false, apply relocations to the data section and set to true
+    u32 isAbsolute; // if false, apply relocations to the data section and set to true
     u32 unk1C;
 };
 
@@ -50,16 +50,23 @@ struct DATImport {
  * 6. A string table containing the names of all of the symbols used by the module.
  */
 class utRelocate {
-    DATHeader hdr;
-    void* dataStart;
-    void* relStart;
-    void* symtabStart;
-    void* importStart;
-    void* strtabStart;
-    void locateExtern(const char* externName, u32 p2);
+    DATHeader m_hdr;
+    u8* m_dataStart;
+    const u32* m_relStart;
+    const DATSymbol* m_symtabStart;
+    const DATImport* m_importStart;
+    const char* m_strtabStart;
+
 public:
-    utRelocate(void* fileBuf, u32 fileSz);
+    const char* getImportName(s32 i, u32 nImports) const {
+        if (i < 0 || nImports <= i)
+            return 0;
+        return m_strtabStart + m_importStart[i].name;
+    }
+
+    utRelocate(u8* fileBuf, u32 fileSz);
     ~utRelocate();
-    void* getPublicAddress(const char* name);
+    void* getPublicAddress(const char* name) const;
     void resolveReference(const utRelocate* p1);
+    void locateExtern(const char* externName, void* addr);
 };
