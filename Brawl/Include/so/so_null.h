@@ -18,6 +18,7 @@ class soNull {
 };
 
 class soNullableInterface {
+public:
     virtual bool isNull() const = 0;
 };
 

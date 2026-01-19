@@ -2,9 +2,10 @@
 
 #include <StaticAssert.h>
 #include <gf/gf_task.h>
-#include <types.h>
 #include <nw4r/g3d/g3d_anmscn.h>
 #include <nw4r/g3d/g3d_light.h>
+#include <nw4r/g3d/g3d_scnmdl.h>
+#include <types.h>
 
 class gfSceneRoot : public gfTask {
 public:
@@ -83,6 +84,9 @@ public:
     nw4r::g3d::LightObj* getLightObj(u8 p1);
     void updateZoneLightSet(u8 p1, u8 p2);
     void setUseCopyFB(u8 p1);
+
+    bool add(gfSceneRoot::LayerType lt, nw4r::g3d::ScnMdl* scnMdl);
+    bool remove(nw4r::g3d::ScnMdl* scnMdl);
 };
 static_assert(sizeof(gfSceneRoot) == 1292, "Class is wrong size!");
 

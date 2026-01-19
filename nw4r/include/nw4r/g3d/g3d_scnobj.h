@@ -8,6 +8,7 @@ namespace nw4r {
 
         class ScnObj {
         public:
+            enum ScnObjMtxType { MTX_LOCAL, MTX_WORLD, MTX_VIEW, MTX_TYPE_MAX };
             // TODO
             virtual u32 IsDerivedFrom(int* unk1);
 
