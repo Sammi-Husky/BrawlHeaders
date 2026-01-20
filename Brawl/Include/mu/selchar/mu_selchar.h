@@ -7,10 +7,10 @@
 class muSelCharPlayerArea;
 
 enum TeamBattleType { // custom
-    None = 0,
-    Team = 1,
-    Team_Glow = 2,
-    Team_Random = 3
+    Team_Battle_None = 0,
+    Team_Battle_Normal = 1,
+    Team_Battle_Glow  = 2,
+    Team_Battle_Random = 3
 };
 
 class muSelCharCBCalcWorld {
