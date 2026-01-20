@@ -6,6 +6,13 @@
 
 class muSelCharPlayerArea;
 
+enum TeamBattleType { // custom
+    Team_Battle_None = 0,
+    Team_Battle_Normal = 1,
+    Team_Battle_Glow  = 2,
+    Team_Battle_Random = 3
+};
+
 class muSelCharCBCalcWorld {
 public:
     virtual ~muSelCharCBCalcWorld();
@@ -24,7 +31,9 @@ public:
 
     char _0x40[4];
     muSelCharPlayerArea* m_selCharPlayerAreas[num_player_areas];
-    char _0x54[0x600];
+    char _0x54[0x577];
+    TeamBattleType m_teamBattleType : 8; // custom
+    char _0x5CF[0x88];
 
     virtual void processDefault();
     virtual ~muSelCharTask();
