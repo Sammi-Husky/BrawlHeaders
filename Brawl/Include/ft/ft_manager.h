@@ -118,6 +118,7 @@ public:
 
     virtual void notifyEventEntryEnd(int entryId);
     virtual void notifyEventResultEnd(int entryId);
+    void notifyReplacePokeTrainer(int param1);
 
     virtual void notifyLogEventCollisionHit(float, int taskId1, int taskId2, int);
     virtual void notifyLogEventDead(int entryId1, int entryId2, int, int);
