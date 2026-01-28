@@ -245,6 +245,7 @@ CC008000:WGPIPE
 80073b68:loadSoundGroup__9sndSystemF10SndGroupIDib
 80073fe8:getBGMId__9sndSystemFv
 80073db0:playBGM__9sndSystemFiUlb
+80073d18:isSoundGroupLoaded__9sndSystemF10SndGroupID
 
 // FrameHeap
 801BFA5C:Clear__9FrameHeapFv
