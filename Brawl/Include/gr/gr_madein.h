@@ -26,6 +26,7 @@ public:
     };
 
     class HitPointInfo {
+    public:
         Vec3f m_startOffsetPos;
         Vec3f m_endOffsetPos;
         char _spacer[12];
@@ -64,7 +65,9 @@ protected:
     Category m_category : 2; // | 0x4, 0x8
     bool m_isLandedOn : 1;            // | 0x2
     bool m_useLandCheck : 1;          // | 0x1
-    char _301[11];
+    char _301[3];
+    float m_304;
+    char _308[4];
     int m_landerTaskId;
     char _316[38];
 
@@ -108,6 +111,17 @@ public:
             this->getOverwriteAttackData();
         }
     }
+    inline int getLanderTaskId() {
+        return this->m_landerTaskId;
+    };
+    
+    inline int isHit() {
+        return this->m_isHit;
+    };
+    
+    inline int getLastDamageTaken() {
+        return this->m_hitPointInfo->m_lastDamageTaken;
+    };
 
     grMadein(const char* taskName);
     virtual void setTgtNode(const char* unk1);
