@@ -54,6 +54,7 @@ public:
     char _2D4[0x8FC];
 
     int loadSoundGroup(SndGroupID sndGroupId, int, bool isRequest);
+    bool isSoundGroupLoaded(SndGroupID sndGroupId);
     void freeGroup(int heapLevel, int);
     bool loadArchiveHeader();
     bool setupBuffers();
