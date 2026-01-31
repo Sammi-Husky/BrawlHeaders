@@ -53,6 +53,7 @@ public:
     void setPlayerPositionIndexSerial();
     int playSeBasic(SndID id, float p2);
     void stopSeBasic(int index, float);
+    void setSePan(int index, float);
     void setGravityHalf();
     void setGravityNormal();
     grCollision* createCollisionSelf(stCollisionWork* collisionWork, Ground* ground, const char*, const char*, u16);

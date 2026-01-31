@@ -148,7 +148,7 @@ public:
     // 7C
     Vec3f* m_pokeTrainerPos;
     // 80
-    char _0x80[1];
+    u8 m_pokeTrainerPosIndex;
     // 81
     u8 m_pokeTrainerPosCount;
     // 82
@@ -186,7 +186,10 @@ public:
     // TOTAL_SIZE == 0x160
 
     void testStageParamInit(gfArchive* archive, int fileIndex);
+    void stageParamChange();
     void testStageDataInit(gfArchive* archive, int fileIndex, int unk2);
+    void initSoundParameters();
+    void setSoundParameters(stParam* stpm);
     void addGround(Ground* Ground);
     Ground* getGround(int index);
     u32 getGroundNum();
@@ -211,7 +214,7 @@ public:
     virtual ~Stage();
 
     virtual void createObj();
-    virtual void createObjPokeTrainer(gfArchive* filedata, int fileindex, const char* name, Vec3f* pokeTrainerPos, int unk2);
+    virtual void createObjPokeTrainer(gfArchive* filedata, int fileindex, const char* name, Vec3f* pokeTrainerPos, Vec3f* unk2);
     virtual int getPokeTrainerPointNum() { return 0; }
     virtual void getPokeTrainerPointData(int* unk1, int unk2) {}
     virtual float getPokeTrainerPositionZ() { return 0.0f; }
@@ -289,7 +292,7 @@ public:
     virtual float getFrameRuleTime() { return m_frameRuleTime; }
     virtual void notifyTimmingGameStart() {}
     virtual bool isEnd();
-    virtual bool isEventEnd();
+    virtual bool isEventEnd(int param1, int* eventState, int* eventDecision);
     virtual void enableDevil();
     virtual void disableDevil();
     virtual bool isDevil();

@@ -302,7 +302,8 @@ public:
     bool m_0x7_2 : 1;
     bool m_0x7_1 : 1;
     bool m_isAmplifySongAttack : 1;
-    s8 m_eventId;                              // 0x08
+    bool m_playeMode : 1;                        // 0x08
+    u8 m_eventId : 7;                          // 0x08
     u8 m_scoreToWin;                           // custom
     char _0xA[0x1];                            // 0x0A
     bool m_isTeams;                            // 0x0B

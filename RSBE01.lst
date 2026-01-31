@@ -206,6 +206,8 @@ CC008000:WGPIPE
 80192f70:SetTranslate__Q34nw4r3g3d7ResNodeFfff
 80190c2c:GetTexObj__Q34nw4r3g3d9ResTexObjF11_GXTexMapID
 80191018:SetMapMode__Q34nw4r3g3d9ResTexSrtFUlUlii
+801AAFF0:SetPriorityDrawOpa__Q34nw4r3g3d6ScnObjFi
+801AB014:SetPriorityDrawXlu__Q34nw4r3g3d6ScnObjFi
 
 // GameGlobal
 8004e5cc:getGlobalRecordMenuDatap__10GameGlobalFv
@@ -240,6 +242,7 @@ CC008000:WGPIPE
 // sndSystem
 800742b0:playSE__9sndSystemF5SndIDiiii
 80077064:setBGMVol__9sndSystemFbf
+80077174:setEffectVol__9sndSystemFbbf
 80073c98:freeGroup__9sndSystemFii
 800742b0:playSE__9sndSystemFiiiii
 80073b68:loadSoundGroup__9sndSystemF10SndGroupIDib
@@ -651,7 +654,7 @@ CC008000:WGPIPE
 27,1,001E9658:getFrameRuleTime__5StageFv
 27,1,002256FC:notifyTimmingGameStart__5StageFv
 27,1,0022487C:isEnd__5StageFv
-27,1,00224884:isEventEnd__5StageFv
+27,1,00224884:isEventEnd__5StageFiPiPi
 27,1,00224798:enableDevil__5StageFv
 27,1,002247B8:disableDevil__5StageFv
 27,1,002247D8:isDevil__5StageFv
@@ -705,7 +708,10 @@ CC008000:WGPIPE
 27,1,00222aa8:renderDebug__5StageFv
 27,1,00221d48:__dt__5StageFv
 27,1,00223140:testStageParamInit__5StageFP9gfArchivei
+27,1,00223320:stageParamChange__5StageF
 27,1,00223398:testStageDataInit__5StageFP9gfArchiveii
+27,1,00223A10:initSoundParameters__5StageFv
+27,1,00223B6C:setSoundParameters__5StageFP7stParam
 27,1,0022269c:createObjPokeTrainer__5StageFP9gfArchiveiPCcii
 27,1,002227E8:removeGround__5StageFP6Ground
 27,1,00223A08:setStageAttackData__5StageFP20grGimmickDamageFloorUl
@@ -746,6 +752,7 @@ CC008000:WGPIPE
 27,1,00238DB4:setPlayerPositionIndexSerial__7stMeleeFv
 27,1,002399FC:playSeBasic__7stMeleeF5SndIDf
 27,1,00239A84:stopSeBasic__7stMeleeFif
+21,1,00239ACC:setSePan__7stMeleeFif
 27,1,002398C8:getPlayerPosition__7stMeleeFiP5Vec3f
 27,1,00238EB0:setGravityHalf__7stMeleeFv
 27,1,00238E90:setGravityNormal__7stMeleeFv
@@ -1171,6 +1178,7 @@ CC008000:WGPIPE
 27,1,001095ac:removeSlot__9ftManagerFi
 27,1,00109490:isReadySlot__9ftManagerFi
 27,1,001094EC:isReadyRemoveSlot__9ftManagerFi
+21,1,0010D4A4:notifyReplacePokeTrainer__9ftManagerFi
 
 // Fighter
 27,1,00138900:setCurry__7FighterFbi

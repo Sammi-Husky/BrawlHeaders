@@ -17,6 +17,11 @@ namespace nw4r {
             virtual ~ScnObj();
 
             char _spacer[216];
+
+            void SetPriorityDrawOpa(int prio);
+
+            void SetPriorityDrawXlu(int prio);
+
         };
     }
 }
