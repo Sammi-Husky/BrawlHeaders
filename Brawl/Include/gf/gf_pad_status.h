@@ -14,8 +14,8 @@
 #define GF_PAD_BUTTON_BIT_Z 0x0010
 #define GF_PAD_BUTTON_BIT_DPAD_UP 0x0008
 #define GF_PAD_BUTTON_BIT_DPAD_DOWN 0x0004
-#define GF_PAD_BUTTON_BIT_DPAD_LEFT 0x0002
-#define GF_PAD_BUTTON_BIT_DPAD_RIGHT 0x0001
+#define GF_PAD_BUTTON_BIT_DPAD_RIGHT 0x0002
+#define GF_PAD_BUTTON_BIT_DPAD_LEFT 0x0001
 
 #pragma push
 #pragma enumsalwaysint off // These are char enums.
@@ -102,7 +102,7 @@ struct gfPadStatus {
     char _0x36;
 
     char _0x37;
-    gfPadError::PadError m_error;
+    gfPadError::PadError m_error : 8;
     char _0x39;
     char _0x3a;
     char _0x3b;
