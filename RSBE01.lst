@@ -249,6 +249,7 @@ CC008000:WGPIPE
 80073fe8:getBGMId__9sndSystemFv
 80073db0:playBGM__9sndSystemFiUlb
 80073d18:isSoundGroupLoaded__9sndSystemF10SndGroupID
+80075f1c:stopSE__9sndSystemFll
 
 // FrameHeap
 801BFA5C:Clear__9FrameHeapFv
@@ -586,7 +587,7 @@ CC008000:WGPIPE
 
 // Stage
 27,1,002225A8:createObj__5StageFv
-27,1,0022269C:createObjPokeTrainer__5StageFP9gfArchiveiPCcP5Vec3fi
+27,1,0022269C:createObjPokeTrainer__5StageFP9gfArchiveiPCcP5Vec3fP5Vec3f
 27,1,002227b0:addGround__5StageFP6Ground
 27,1,00222850:getGround__5StageFi
 27,1,00222830:getGroundNum__5StageFv

@@ -61,7 +61,8 @@ public:
     void loadCommon();
 
     s32 playSE(SndID sndID, int unk, int unk2, int unk3, int unk4);
-    void stopSE(s32 p1, s32 p2);
+    void stopSE(s32 handleId, s32 p2);
+    void stopSE(s8 handleIndex, s32 p2);
     void setBGMVol(bool setImmediately, float volume);
     void setEffectVol(bool unused, bool setImmediately, float volume);
     s32 prepareSE(SndID p1, s32 p2, s32 p3);
