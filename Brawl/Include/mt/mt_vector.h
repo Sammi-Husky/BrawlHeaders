@@ -13,44 +13,48 @@ public:
     Vec2f() { }
     Vec2f(float x, float y) : m_x(x), m_y(y) { }
 
-    inline Vec2f operator+(const Vec2f& v) {
+    Vec2f operator+(const Vec2f& v) {
         return Vec2f(this->m_x + v.m_x, this->m_y + v.m_y);
     }
 
-    inline Vec2f operator-(const Vec2f& v) {
-        return Vec2f(this->m_x - v.m_x, this->m_y - v.m_y);
+    friend Vec2f operator-(const Vec2f& lhs, const Vec2f& rhs) {
+        Vec2f res;
+        res.m_x = lhs.m_x - rhs.m_x;
+        res.m_y = lhs.m_y - rhs.m_y;
+        return res;
     }
 
-    inline Vec2f operator*(const float c) {
+    Vec2f operator*(const float c) {
         Vec2f res;
         res.m_x = m_x * c;
         res.m_y = m_y * c;
         return res;
     }
 
-    inline Vec2f operator/(const float c)
-    {
+    Vec2f operator/(const float c) {
         return *this * (1 / c);
     }
 
-    inline void operator+=(const Vec2f& v)
-    {
+    Vec2f& operator+=(const Vec2f& v) {
         *this = *this + v;
-    }
-    inline void operator-=(const Vec2f& v)
-    {
-        *this = *this - v;
-    }
-    inline void operator*=(const float c)
-    {
-        *this = *this * c;
+        return *this;
     }
 
-    inline float lengthSq() {
+    Vec2f& operator-=(const Vec2f& v) {
+        *this = *this - v;
+        return *this;
+    }
+
+    Vec2f& operator*=(const float c) {
+        *this = *this * c;
+        return *this;
+    }
+
+    float lengthSq() {
         return this->m_x*this->m_x + this->m_y*this->m_y;
     }
 
-    inline float length() {
+    float length() {
         float lengthSquared = this->lengthSq();
         if (1.17549e-38 < fabsf(lengthSquared)) {
             return rsqrtf(lengthSquared)*lengthSquared;
@@ -61,13 +65,21 @@ public:
 
     }
 
-    inline float distance(Vec2f* v) {
+    float distance(Vec2f* v) {
         Vec2f disp = *this - *v;
         return disp.length();
     }
 
     static void rot(double unk1, Vec2f *unk2, Vec2f *unk3);
 
+    static void copy(Vec2f& dest, const Vec2f& src) {
+#ifdef MATCHING
+        __memcpy(&dest, &src, sizeof(Vec2f));
+#else
+        dest.m_x = src.m_x;
+        dest.m_y = src.m_y;
+#endif
+    }
 };
 static_assert(sizeof(Vec2f) == 8, "Class is wrong size!");
 
@@ -89,7 +101,7 @@ public:
     Vec3f() { }
     Vec3f(float x, float y, float z) : m_x(x), m_y(y), m_z(z) { }
 
-    inline Vec2f* xy() const {
+    Vec2f* xy() const {
         return (Vec2f*)this;
     }
 
@@ -124,27 +136,28 @@ public:
 
     Vec3f operator*(const float c);
 
-    inline Vec3f operator/(const float c)
-    {
+    Vec3f operator/(const float c) {
         return *this * (1 / c);
     }
 
-    inline void operator+=(const Vec3f& v)
-    {
+    Vec3f& operator+=(const Vec3f& v) {
         *this = *this + v;
+        return *this;
     }
-    inline void operator-=(const Vec3f& v)
-    {
+
+    Vec3f& operator-=(const Vec3f& v) {
         *this = *this - v;
+        return *this;
     }
-    inline void operator*=(const float c)
-    {
+
+    Vec3f& operator*=(const float c) {
         *this = *this * c;
+        return *this;
     }
 
     float lengthSq();
     float length();
-    inline float distance(Vec3f* v) {
+    float distance(Vec3f* v) {
         Vec3f disp = *this - *v;
         return disp.length();
     }

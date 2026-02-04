@@ -26,6 +26,8 @@ public:
     Vec2f m_leftPos;
     Vec2f m_rightPos;
     clAABBox2D m_aabBox;
+
+    void move(const Vec2f& displacement);
 };
 
 class clSegment2D {
