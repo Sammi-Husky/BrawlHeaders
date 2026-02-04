@@ -102,7 +102,7 @@ struct gfPadStatus {
     char _0x36;
 
     char _0x37;
-    gfPadError::PadError m_error : 8;
+    gfPadError::PadError m_error;
     char _0x39;
     char _0x3a;
     char _0x3b;
