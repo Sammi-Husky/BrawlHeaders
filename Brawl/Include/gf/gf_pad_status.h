@@ -18,7 +18,7 @@
 #define GF_PAD_BUTTON_BIT_DPAD_LEFT 0x0001
 
 namespace gfPadError {
-    ENUM_U8(PadError,
+    ENUM_S8(PadError,
         NONE = 0,
         NO_CONTROLLER = -1,
         NOT_READY =  -2,
