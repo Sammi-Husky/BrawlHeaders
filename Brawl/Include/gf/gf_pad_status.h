@@ -17,17 +17,14 @@
 #define GF_PAD_BUTTON_BIT_DPAD_RIGHT 0x0002
 #define GF_PAD_BUTTON_BIT_DPAD_LEFT 0x0001
 
-#pragma push
-#pragma enumsalwaysint off // These are char enums.
 namespace gfPadError {
-    enum PadError {
+    ENUM_U8(PadError,
         NONE = 0,
         NO_CONTROLLER = -1,
         NOT_READY =  -2,
         TRANSFER = -3
-    };
+    );
 }
-#pragma pop
 
 namespace gfPadType {
     enum PadType {

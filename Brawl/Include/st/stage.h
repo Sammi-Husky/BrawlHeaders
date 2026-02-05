@@ -342,12 +342,12 @@ public:
     virtual void setVision(u8);
 };
 
-enum ArchiveOverrideSetting {
+ENUM_U32(ArchiveOverrideSetting,
     Archive_Override_None = 0x0,
     Archive_Override_Brres = 0x1,
     Archive_Override_Param = 0x2,
     Archive_Override_Both = 0x3,
-};
+);
 
 struct ItemOverride { // Custom Misc Data node
     char _header[4];
