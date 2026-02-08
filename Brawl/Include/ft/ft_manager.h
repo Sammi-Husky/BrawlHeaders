@@ -28,7 +28,7 @@ public:
     virtual void notifyEventRecover(int entryId, int);
     virtual void notifyEventOutsideDeadArea(int entryId, soGroundUtil::DeadAreaCheckResult, bool*);
     virtual void notifyEventAppeal(int entryId, int);
-    virtual void notifyEventDead(int entryId, int deadCount, int, int);
+    virtual void notifyEventDead(int entryId, int deadCount, Fighter::Dead::Reason deadReason, int respawnFrames);
     virtual void notifyEventBeat(int entryId1, int entryId2);
     virtual void notifyEventSuicide(int entryId);
     virtual void notifyEventChangeStart(int entryId, int playerNo, int activeInstanceIndex, ftKind);

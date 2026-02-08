@@ -68,6 +68,8 @@ public:
     s32 prepareSE(SndID p1, s32 p2, s32 p3);
     void setPan(s32 p1, float p2);
     void startSE(s32 p1, s32 p2, s32 p3);
+    bool isPlay(s32 handleId);
+    bool isPlaySEID(SndID sndID);
     bool playBGM(int bgmId, u32 fade, bool);
     int getBGMId();
 };

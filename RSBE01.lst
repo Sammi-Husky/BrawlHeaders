@@ -250,6 +250,8 @@ CC008000:WGPIPE
 80073db0:playBGM__9sndSystemFiUlb
 80073d18:isSoundGroupLoaded__9sndSystemF10SndGroupID
 80075f1c:stopSE__9sndSystemFll
+80077da0:isPlay__9sndSystemFl
+80074dec:isPlaySEID__9sndSystemF5SndID
 
 // FrameHeap
 801BFA5C:Clear__9FrameHeapFv

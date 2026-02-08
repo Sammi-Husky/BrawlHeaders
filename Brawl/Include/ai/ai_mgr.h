@@ -15,7 +15,7 @@ public:
     virtual ~aiMgr();
 
     virtual void notifyEventOnDamage(int entryId, u32 hp, soDamage* damage);
-    virtual void notifyEventDead(int entryId, int deadCount, int, int);
+    virtual void notifyEventDead(int entryId, int deadCount, Fighter::Dead::Reason deadReason, int respawnFrames);
     virtual void notifyEventChangeStart(int entryId, int playerNo, int activeInstanceIndex, ftKind);
     virtual void notifyEventChangeEnd(int entryId, int playerNo, int activeInstanceIndex, ftKind);
 
