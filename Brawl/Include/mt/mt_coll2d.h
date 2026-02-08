@@ -16,6 +16,8 @@ class clCircle2D {
 public:
     Vec2f m_centerPos;
     float m_radius;
+
+    void getAABBox(clAABBox2D& aabBox) const;
 };
 
 class clRhombus2D {

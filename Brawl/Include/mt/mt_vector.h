@@ -13,8 +13,11 @@ public:
     Vec2f() { }
     Vec2f(float x, float y) : m_x(x), m_y(y) { }
 
-    Vec2f operator+(const Vec2f& v) {
-        return Vec2f(this->m_x + v.m_x, this->m_y + v.m_y);
+    friend Vec2f operator+(const Vec2f& lhs, const Vec2f& rhs) {
+        Vec2f res;
+        res.m_x = lhs.m_x + rhs.m_x;
+        res.m_y = lhs.m_y + rhs.m_y;
+        return res;
     }
 
     friend Vec2f operator-(const Vec2f& lhs, const Vec2f& rhs) {
@@ -24,15 +27,15 @@ public:
         return res;
     }
 
-    Vec2f operator*(const float c) {
+    friend Vec2f operator*(const Vec2f& lhs, const float c) {
         Vec2f res;
-        res.m_x = m_x * c;
-        res.m_y = m_y * c;
+        res.m_x = lhs.m_x * c;
+        res.m_y = lhs.m_y * c;
         return res;
     }
 
-    Vec2f operator/(const float c) {
-        return *this * (1 / c);
+    friend Vec2f operator/(const Vec2f& lhs, float c) {
+        return lhs * (1 / c);
     }
 
     Vec2f& operator+=(const Vec2f& v) {
