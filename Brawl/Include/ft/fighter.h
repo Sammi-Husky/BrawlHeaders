@@ -1340,6 +1340,8 @@ public:
             Reason_Outside_Right = 0x3,
             Reason_Ground_Crush = 0x4,
             Reason_KnockOut = 0x5,
+            Reason_KnockOut_SelfDestruct = 0x5,
+            Reason_Knockout_Explode = 0x6,
             Reason_Instant_Death = 0x6
         };
 
@@ -1384,7 +1386,7 @@ public:
     virtual void onStartFinal(int variantID = -1, itCustomizerInterface** customizer = NULL); // Note: Optional parameters for modding purposes to use custom customizers
 #endif
     virtual void onEndFinal();
-    virtual void toDead(int);
+    virtual void toDead(Dead::Reason deadReason);
     virtual int checkDead();
     virtual void onDeadEnd();
     virtual void toKnockOut();
@@ -1473,3 +1475,10 @@ public:
     void setupEquipment();
 };
 static_assert(sizeof(Fighter) == 404, "Class is wrong size!");
+
+struct ftLinkDeadEventArgs : public soLinkEventArgs {
+    Fighter::Dead::Reason m_deadReason;
+
+    inline ftLinkDeadEventArgs(Fighter::Dead::Reason deadReason) : soLinkEventArgs(StageObject::Link::Event_Dead), m_deadReason(deadReason) {}
+};
+static_assert(sizeof(ftLinkDeadEventArgs) == 0xc, "Class is wrong size!");

@@ -20,7 +20,7 @@ struct gmPlayerResultInfo {
     u32 m_koCount;
     u32 m_deadCount;
     u16 m_suicideCount;
-    u16 m_playerBeatCounts[7];
+    u16 m_playerBeatCounts[MAX_PLAYERS];
     u32 m_coins;
     u32 m_pickupCoins;
     u32 m_lostCoins;
@@ -51,7 +51,7 @@ public:
     char _16[15];
     s8 m_winningPlayer;
     char _32[4];
-    gmPlayerResultInfo m_playersResultInfo[7];
+    gmPlayerResultInfo m_playersResultInfo[MAX_PLAYERS];
     char _4824[0xa0];
     DecisionKind m_decisionKind : 8;
     char _0x1379[11];

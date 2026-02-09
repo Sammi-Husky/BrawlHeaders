@@ -2,11 +2,12 @@
 
 #include <StaticAssert.h>
 #include <st/loader/st_loader_player.h>
+#include <gm/gm_lib.h>
 #include <types.h>
 
 class stLoaderManager {
 public:
-    stLoaderPlayer* m_loaderPlayers[7];
+    stLoaderPlayer* m_loaderPlayers[MAX_PLAYERS];
     void* m_loaderStage;
     void* m_loaderStageAlt;
     void* m_loaderStageSe;

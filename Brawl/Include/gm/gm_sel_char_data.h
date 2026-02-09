@@ -6,7 +6,7 @@
 
 struct gmSelCharData {
     char _spacer[0xb8]; // 0x00
-    gmPlayerInitData m_playersInitData[7];
+    gmPlayerInitData m_playersInitData[MAX_PLAYERS];
     char _0x33c[4];
 };
 static_assert(sizeof(gmSelCharData) == 0x340, "Class is wrong size!");

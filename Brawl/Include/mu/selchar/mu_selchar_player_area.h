@@ -10,6 +10,7 @@
 #include <nw4r/g3d/g3d_resfile.h>
 #include <mu/selchar/mu_selchar_hand.h>
 #include <gf/gf_pad_status.h>
+#include <gm/gm_lib.h>
 #include <types.h>
 
 class muSelCharCBCalcWorld;
@@ -33,7 +34,7 @@ public:
     MuObject* m_muComputerLvl;
     char _0xDC[0x74];
     void* m_objProcTask;
-    muSelCharCBCalcWorld m_calcWorldCBs[7];
+    muSelCharCBCalcWorld m_calcWorldCBs[MAX_PLAYERS];
     muSelCharHand* m_selCharHand;
     muSelCharCoin* m_selCharCoin;
     int m_areaIdx;

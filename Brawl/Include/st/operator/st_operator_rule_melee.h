@@ -17,9 +17,15 @@ public:
     u32 m_frameCounter;
     char _0xAC[0x18];
     int m_numPlayers;
-    char _0xC8[0x14C];
+    u32 m_playersLastDeadSleepFrame[MAX_PLAYERS];
+    u32 m_0x124[MAX_PLAYERS];
+    int m_0x140[MAX_PLAYERS];
+    int m_0x15C[MAX_PLAYERS];
+    int m_0x178[MAX_PLAYERS];
+    int m_playersRankPoint[MAX_PLAYERS];
+    char _0x1B0[0xA4];
     DecisionKind m_decisionKind;
-    char _0x218[4];
+    char _0x258[4];
 
     virtual void processBegin();
     virtual ~stOperatorRuleMelee();

@@ -1,6 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <gm/gm_lib.h>
 #include <gf/gf_scene.h>
 #include <st/operator/st_operator_rule_targetbreak.h>
 #include <st/operator/st_operator_rule_melee.h>
@@ -11,7 +12,7 @@
 
 class scMelee : public gfScene {
 public:
-    void* m_loaderPlayers[7];
+    void* m_loaderPlayers[MAX_PLAYERS];
     void* m_loaderStage;
     char _40[12];
     void* m_loaderStageStarFox;
@@ -27,7 +28,7 @@ public:
     void* m_operatorNetwork;
     void* m_operatorController;
     stOperatorInfo* m_operatorInfo;
-    void* m_operatorFighterRebirths[7];
+    void* m_operatorFighterRebirths[MAX_PLAYERS];
     void* m_operatorFighterChange;
     void* m_operatorDefeatBoss;
     void* m_operatorEndProduction;

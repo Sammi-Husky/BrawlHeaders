@@ -3,6 +3,8 @@
 #include <StaticAssert.h>
 #include <types.h>
 
+#define MAX_PLAYERS 7
+
 struct gmAppData {
     char _0x0[0x30];
 };

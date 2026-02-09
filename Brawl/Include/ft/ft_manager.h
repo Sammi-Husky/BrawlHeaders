@@ -128,6 +128,7 @@ public:
     int getEntryId(int playerNo);
     int getEntryIdFromIndex(int index);
     int getEntryIdFromTaskId(int taskId, int* outInstanceIndex);
+    int getScoreEntryId(int entryId);
     int getPlayerNo(int entryId);
     bool isFighterActivate(int entryId, int);
     Fighter* getFighter(int entryId, int instanceIndex);
@@ -162,6 +163,10 @@ public:
     bool isReadySlot(int slotIndex);
     bool isReadyRemoveSlot(int slotIndex);
     void removeSlot(int slotIndex);
+
+    inline bool hasHitPoint(int entryId) {
+        return getOwner(entryId)->getHitPointMax() != 0;
+    };
 
 };
 static_assert(sizeof(ftManager) == 0x160, "Class is wrong size!");

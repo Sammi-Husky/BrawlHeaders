@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <if/if_player.h>
+#include <gm/gm_lib.h>
 #include <types.h>
 
 class IfMngr {
@@ -9,7 +10,7 @@ public:
     char _0x0[0x44];
     void* m_ifCenter;
     char _0x48[4];
-    IfPlayer* m_ifPlayers[7];
+    IfPlayer* m_ifPlayers[MAX_PLAYERS];
     char _0x64[8];
     void* m_ifPhoto;
     void* m_ifMinigameHomerun;

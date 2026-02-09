@@ -33,6 +33,7 @@ public:
 
         enum EventKind {
             Event_Deactivate_Parent = 0,
+            Event_Dead = 2,
             Event_Deactivate_Node = 4,
 
             Event_Yoshi_Special_N_Catch = 29,
