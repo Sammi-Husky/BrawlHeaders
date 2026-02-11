@@ -14,8 +14,8 @@ public:
     char _0x404[0x18];
 
     virtual void start();
-    virtual void process();
-    virtual void exit();
+    virtual s32 process();
+    virtual s32 exit();
     virtual void setModule();
     virtual ~scSelChar();
 };
