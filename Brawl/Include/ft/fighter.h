@@ -1334,6 +1334,7 @@ public:
 
     struct Dead {
         enum Reason {
+            Reason_Invalid = -0x1,
             Reason_Outside_Up = 0x0,
             Reason_Outside_Down = 0x1,
             Reason_Outside_Left = 0x2,
