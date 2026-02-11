@@ -1295,7 +1295,7 @@ public:
                 Flag_Disable_Interrupt_Scaling = 0x12000032,
                 Flag_Voice_Mute = 0x12000033,
                 Flag_Enable_Warp_On_Damage = 0x12000034,
-
+                Flag_Hit_Reflector = 0x12000035,
                 Flag_Inhaled = 0x12000036,
                 Flag_Paralyze_Stop = 0x12000037,
                 Flag_Calc_Cursor_Pos_Force = 0x12000038,
