@@ -17,7 +17,7 @@ public:
     virtual nw4r::g3d::ResFile getMdlFile(u16 fileIndex, u32 mdlResId) = 0;
     virtual nw4r::g3d::ResFile getAnmFile(u16 fileIndex, u32 anmResId, u32 p3) = 0;
     virtual nw4r::g3d::ResFile getBinFile(u32 binResId, u16 fileIndex, s32 archiveId) = 0;
-    virtual nw4r::g3d::ResFile getFile(u32 resId, ARCNodeType nodeType, u16 fileIndex) = 0;
+    virtual void* getFile(u32 resId, ARCNodeType nodeType, u16 fileIndex) = 0;
 };
 
 class soResourceModuleImpl : public soResourceModule {
@@ -48,6 +48,6 @@ public:
     virtual nw4r::g3d::ResFile getMdlFile(u16 fileIndex, u32 mdlResId);
     virtual nw4r::g3d::ResFile getAnmFile(u16 fileIndex, u32 anmResId, u32 p3);
     virtual nw4r::g3d::ResFile getBinFile(u32 binResId, u16 fileIndex, s32 archiveId);
-    virtual nw4r::g3d::ResFile getFile(u32 resId, ARCNodeType nodeType, u16 fileIndex);
+    virtual void* getFile(u32 resId, ARCNodeType nodeType, u16 fileIndex);
 };
 static_assert(sizeof(soResourceModuleImpl) == 24, "Class is wrong size!");
