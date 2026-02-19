@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <so/collision/so_collision_attack_part.h>
+#include <so/event/so_event_presenter.h>
 #include <st/st_trigger_observe.h>
 #include <types.h>
 
