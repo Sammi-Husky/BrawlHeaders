@@ -264,4 +264,8 @@ class soInstanceManagerFullPropertyEccentric : public soInstanceManagerAttribute
 public:
     // Starts at 0x8, because there are 2 vtables.
     soArray<soInstanceUnitFullProperty<T> >* m_array;
+
+    virtual void getPriorityArray(soArray<T*>& arr);
+    virtual void getAttributeArray(const soInstanceAttribute& attr, soArray<T*>& arr);
+    virtual soInstanceAttributeExt<T> getAttribute(s32) const;
 };

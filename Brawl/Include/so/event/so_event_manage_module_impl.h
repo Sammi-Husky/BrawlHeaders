@@ -6,7 +6,7 @@
 
 class soEventManageModule : public soNullable, public soEventManager {
 public:
-    virtual void addUnit(soEventUnit*);
+    virtual s16 addUnit(soEventUnit*);
     virtual void eraseUnit(u32);
     virtual bool isNullUnit(u32);
     virtual void eraseObserver(u32, int);
@@ -24,7 +24,7 @@ public:
     short m_manageId;
     short _pad;
 
-    virtual void addUnit(soEventUnit*);
+    virtual s16 addUnit(soEventUnit*);
     virtual void eraseUnit(u32);
     virtual bool isNullUnit(u32);
     virtual void eraseObserver(u32, int);

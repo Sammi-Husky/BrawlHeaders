@@ -57,40 +57,6 @@ public:
 };
 static_assert(sizeof(soAnimCmdControlUnit) == 0x10, "Class is the wrong size!");
 
-// Type punning a soInstanceManagerFullPropertyVector<soAnimCmdControlUnit, 11> here.
-// The purpose is to name the elements, which are what you want out of this object
-// the vast majority of the time.
-typedef struct {
-    int* m_vtable1;
-    char _unk[4];
-    int* m_vtable2;
-    int* m_vtable3;
-
-    // 0x10
-    void* m_soArrayVecVtable1;
-    void* m_soArrayVecVtable2;
-    u32 m_size; // = 11
-    union {
-        struct {
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_actionMain;
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_subactionMain;
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_subactionGfx;
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_subactionSfx;
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_subactionOther;
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_altSubactionMain;
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_altSubactionGfx;
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_altSubactionSfx;
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_altSubactionOther;
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_infiniteLoop;
-            soInstanceUnitFullProperty<soAnimCmdControlUnit> m_actionHidden;
-        };
-        soInstanceUnitFullProperty<soAnimCmdControlUnit> m_asArray[11];
-    };
-} animCmdControlUnitVectorHelper;
-
-static_assert(sizeof(animCmdControlUnitVectorHelper) 
-    == sizeof(soInstanceManagerFullPropertyVector<soAnimCmdControlUnit, 11>), "Class is the wrong size!");
-
 class soAnimCmdModule: public soNullable {
 public:
     virtual void registInterpreter();
@@ -113,14 +79,30 @@ public:
     virtual void deactivate(soModuleAccesser*);
 };
 
+namespace soAnimCmdControlUnitKind {
+    enum Kind {
+        ActionMain,
+        SubactionMain,
+        SubactionGfx,
+        SubactionSfx,
+        SubactionOther,
+        AltSubactionMain,
+        AltSubactionGfx,
+        AltSubactionSfx,
+        AltSubactionOther,
+        InfiniteLoop,
+        ActionHidden,
+        Count,
+    };
+}
+
 class soAnimCmdModuleImpl:
     public soAnimCmdModule,
     public soStatusEventObserver,
     public soAnimCmdEventObserver
 {
 public:
-    // This is a soInstanceManagerFullPropertyVector<soAnimCmdControlUnit, 11>*
-    animCmdControlUnitVectorHelper* m_animCmdThreads; // 0x20
+    soInstanceManagerFullPropertyVector<soAnimCmdControlUnit, soAnimCmdControlUnitKind::Count>* m_animCmdThreads; // 0x20
 };
 static_assert(sizeof(soAnimCmdModuleImpl) == 0x24, "Class is the wrong size!");
 
