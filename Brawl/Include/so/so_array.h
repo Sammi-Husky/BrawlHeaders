@@ -622,9 +622,10 @@ public:
     virtual s32 capacity() const = 0;
 
     virtual void set(s32 start, const T& elm, s32 count) {
-        s32 sz = this->size();
-        s32 end = ((count + start >= sz) ? this->size() - start : count) + start;
-        for (s32 i = 0; i < end-start; i++)
+        int c = count;
+        if (c + start >= this->size())
+            c = this->size() - start;
+        for (s32 i = 0; i < c; i++)
             this->at(start+i) = elm;
     }
 

@@ -9,37 +9,90 @@
 class soModuleAccesser;
 class StageObject;
 
-template <class T>
+template <typename T>
 class soEventObserver {
-public:
-    virtual void addObserver(short param1, s8 param2);
-    short m_manageID;
-    short m_unitID;
-    short m_sendID;
+    s16 addObserverPrivate(s32 manageId, T* obsvr, s8 p3) {
+        soEventManager* evtMgr = soEventSystem::getInstance()->
+                                                getManager(manageId);
+        if (!evtMgr->getObserverCapacity(obsvr->m_unitID))
+            return -1;
+        soEventUnitWrapper<T>* evt = dynamic_cast<soEventUnitWrapper<T>*>(
+                                     evtMgr->getEventUnit(obsvr->m_unitID));
+        if (!evt)
+            return -1;
+        s16 res = evt->addObserverSub(obsvr, p3);
+        return res;
+    }
 
-    soEventObserver(short unitID) {
+public:
+    virtual void addObserver(s16 param1, s8 param2) { }
+    s16 m_manageID;
+    s16 m_unitID;
+    s16 m_sendID;
+
+    s32 getObserverId() const { return m_sendID; }
+
+    soEventObserver(s16 unitID) {
         m_manageID = -1;
         m_unitID = unitID;
         m_sendID = -1;
     }
 
-    void removeObserver() {
-        if (soEventSystem::getInstance()->m_instanceManager.isContain(m_manageID)) {
-            soEventSystem::getInstance()->getManager(m_manageID)->eraseObserver(m_unitID, m_sendID);
+    void removeObserver(s16 manageId) {
+        const soInstanceManager<soEventManager *> &instMgr =
+            soEventSystem::getInstance()->getInstanceManager();
+        if (instMgr.isContain(manageId) == true) {
+            soEventSystem::getInstance()->getManager(m_manageID)
+                ->eraseObserver(m_unitID, m_sendID);
         }
-        this->m_sendID = -1;
-        this->m_manageID = -1;
+        m_sendID = -1;
+        m_manageID = -1;
     }
 
     ~soEventObserver() {
-        removeObserver();
+        removeObserver(m_manageID);
     }
 
-    void initialize(short param1, u8 param2) {
+    void addObserverSub(s32 manageId, T* obsvr, s8 p3) {
+        bool check4 = false;
+        bool check3 = false;
+        bool check2 = false;
+        bool check1 = false;
+        s32 removeID;
+        s32 checkID = m_manageID;
+
+        if (m_manageID >= 0 && m_unitID >= 0)
+            check1 = true;
+        if (check1 && m_sendID > -1)
+            check2 = true;
+        if (check2 && soEventSystem::getInstance()->getInstanceManager().
+                                                    isContain(checkID) == true)
+            check3 = true;
+        if (check3 && soEventSystem::getInstance()->getManager(m_manageID)->
+                                                    getObserverCapacity(m_unitID) == 1)
+            check4 = true;
+        if (check4 == true) {
+            removeID = m_manageID;
+            removeObserver(removeID);
+        }
+        if (manageId <= -1 || m_unitID <= -1 ||
+                              soEventSystem::getInstance()->getInstanceManager().
+                                                            isContain(manageId) == false)
+            return;
+        soEventManager* eventManager = soEventSystem::getInstance()->
+                                                      getManager(manageId);
+        if (eventManager->isNullUnit(m_unitID) != true) {
+            m_sendID = addObserverPrivate(manageId, obsvr, p3);
+            if (m_sendID > -1 && m_sendID > -1)
+                m_manageID = manageId;
+        }
+    }
+
+    void initialize(s16 param1, s8 param2) {
         addObserver(param1, param2);
     }
 
-    void setupObserver(short manageId) {
+    void setupObserver(s16 manageId) {
         bool bVar5 = false;
         bool bVar4 = false;
         bool bVar3 = false;

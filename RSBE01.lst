@@ -515,7 +515,7 @@ CC008000:WGPIPE
 
 // soEventSystem
 27,1,0008F064:getInstance__13soEventSystemFv
-27,1,0008F1BC:getManager__13soEventSystemFs
+27,1,0008F1BC:getManager__13soEventSystemFl
 
 // soGroundUtil
 27,1,00030EC8:checkDeadArea__12soGroundUtilFP5Vec3fff

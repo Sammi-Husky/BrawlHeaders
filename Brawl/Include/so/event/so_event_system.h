@@ -1,8 +1,11 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <types.h>
+#include <so/so_array.h>
 #include <so/so_instance_manager.h>
+#include <so/so_instance_unit.h>
+#include <so/so_null.h>
+#include <types.h>
 
 class soEventUnit : public soNullableInterface {
 public:
@@ -30,8 +33,9 @@ class soEventSystem {
 public:
     soInstanceManagerSimpleEntity<soEventManager*, soArrayVector<soInstanceUnit<soEventManager*>, 500 > > m_instanceManager;
 
-    soEventManager* getManager(short manageID);
+    soEventManager* getManager(s32 manageID);
     static soEventSystem* getInstance();
+    soInstanceManager<soEventManager*>& getInstanceManager() { return m_instanceManager; }
 
 };
 static_assert(sizeof(soEventSystem) == 4032, "Class is wrong size!");
@@ -85,10 +89,11 @@ public:
 
     virtual ~soEventUnitImpl() { }
 
-    virtual s16 addObserverSub(T* p1, s8 p2) {
-        soInstanceAttributeExt2<T> attr(p1);
+    virtual s16 addObserverSub(T* obsvr, s8 p2) {
+        soInstanceAttributeExt2<T> attr(obsvr);
         return m_observerListPtr->add(attr.unk0, -1, attr.unk4, p2);
     }
+
     virtual soInstanceManagerFullProperty<T*>* getObserverListSub() {
         return m_observerListPtr;
     }

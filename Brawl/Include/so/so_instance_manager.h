@@ -8,26 +8,31 @@
 template <class T>
 class soInstanceManagerFixed : public soNullable {
 public:
-    virtual T& at(s32 index);
-    virtual T& atIndex(s32 index);
-    virtual s32 getId(s32 index);
-    virtual u32 size() const;
+    virtual T& at(s32 index) = 0;
+    virtual T& atIndex(s32 index) = 0;
+    virtual s32 getId(s32 index) = 0;
+    virtual u32 size() const = 0;
     virtual bool isEmpty() const { return size() == 0; }
-    virtual bool isContain(s32) const;
+    virtual bool isContain(s32) const = 0;
 };
 
 template <class T>
 class soInstanceManager : public soInstanceManagerFixed<T> {
 public:
-    virtual s32 add(T&, s32);
-    virtual void erase(s32);
-    virtual void clear();
-    virtual void set(const T&, s32 index);
+    virtual s32 add(T&, s32) = 0;
+    virtual void erase(s32) = 0;
+    virtual void clear() = 0;
+    virtual void set(const T&, s32 index) = 0;
 };
 
 template <class T>
 class soInstanceManagerSimple : public soInstanceManager<T> {
 public:
+    virtual T& at(s32 index);
+    virtual T& atIndex(s32 index);
+    virtual s32 getId(s32 index);
+    virtual u32 size() const;
+    virtual bool isContain(s32) const;
     virtual s32 add(T&, s32);
     virtual void erase(s32);
     virtual void clear();
@@ -74,13 +79,15 @@ class soInstanceManagerFullProperty : public soInstanceManager<T>,
                                       public soInstanceManagerPriorityPolicy<T>,
                                       public soInstanceManagerAttributePolicy<T> {
 public:
+    // UBFIX: There should have been a virtual dtor in the base class
+    ~soInstanceManagerFullProperty() { }
     virtual s32 add(T& p1, s32 p2) {
         return add(p1, p2, soInstanceAttribute(), -1);
     }
 
     virtual s32 add(T&, s32, const soInstanceAttribute&, s16);
     virtual u32 capacity();
-    virtual T& atIndexFast(s32 index);
+    virtual T& atIndexFast(s32 index) { return this->at(index); }
     virtual soInstanceUnit<T>& atUnitIndexFast(s32 index);
     virtual s32 getIndex(s32 index) const;
 };
@@ -128,7 +135,7 @@ class soInstanceManagerFullPropertyVector : public soInstanceManagerFullProperty
         return sz;
     }
 
-    s32 indexOfId(s32 id) const {
+    s32 searchIndex(s32 id) const {
         if (id <= -1)
             return -1;
         s32 sz = size();
@@ -140,11 +147,12 @@ class soInstanceManagerFullPropertyVector : public soInstanceManagerFullProperty
 public:
     soInstanceManagerFullPropertyVector() : m_unk1(false) { }
     soInstanceManagerFullPropertyVector(bool p1) : m_unk1(p1) { }
+    ~soInstanceManagerFullPropertyVector() { }
 
     virtual T& at(s32 id) {
         if (id <= -1)
             return m_arrayVector.at(0).m_element;
-        s32 i = indexOfId(id);
+        s32 i = searchIndex(id);
         return (i < 0) ? m_arrayVector.at(0).m_element : m_arrayVector.at(i).m_element;
     }
 
@@ -161,11 +169,11 @@ public:
     }
 
     virtual bool isContain(s32 id) const {
-        return indexOfId(id) >= 0;
+        return searchIndex(id) >= 0;
     }
 
     virtual void erase(s32 id) {
-        s32 idx = indexOfId(id);
+        s32 idx = searchIndex(id);
         if (idx >= 0)
             m_arrayVector.erase(idx);
     }
@@ -179,22 +187,22 @@ public:
         ref = elm;
     }
 
-    virtual s32 add(T& p1, s32 p2, const soInstanceAttribute& p3, s16 p4) {
+    virtual s32 add(T& elm, s32 id, const soInstanceAttribute& attr, s16 p4) {
         if (m_arrayVector.isFull() == true)
             return -1;
-        if ((!m_unk1 || p2 > -1) && isContain(p2) == true)
+        if ((!m_unk1 || id > -1) && isContain(id) == true)
             return -1;
-        if (!m_unk1 && p2 <= -1) {
-            p2 = getFreeId();
-            if (p2 <= -1)
+        if (!m_unk1 && id <= -1) {
+            id = getFreeId();
+            if (id <= -1)
                 return -1;
         }
-        s32 r31 = (p4 <= -1) ? size() : unkFindIndex(p4);
-        if (r31 < 0)
+        s32 idx = (p4 <= -1) ? size() : unkFindIndex(p4);
+        if (idx < 0)
             return -1;
-        s16 r0 = p3.unk0;
-        m_arrayVector.insert(r31, soInstanceUnitFullProperty<T>(p1, p2, r0, p4));
-        return p2;
+        m_arrayVector.insert(idx,
+            soInstanceUnitFullPropertyWrapper<T>(attr, elm, id, p4).m_prop);
+        return id;
     }
 
     virtual u32 capacity() {
@@ -209,7 +217,7 @@ public:
         return m_arrayVector.atFast(idx);
     }
 
-    virtual s32 getIndex(s32 id) const { return indexOfId(id); }
+    virtual s32 getIndex(s32 id) const { return searchIndex(id); }
 
     virtual void getAttributeArray(const soInstanceAttribute& attr, soArray<T*>& arr) {
         s32 sz = m_arrayVector.size();
@@ -223,7 +231,7 @@ public:
     }
 
     virtual soInstanceAttributeExt<T> getAttribute(s32 id) const {
-        s32 idx = indexOfId(id);
+        s32 idx = searchIndex(id);
         if (idx < 0)
             return soInstanceAttributeExt<T>();
         return m_arrayVector.at(idx).getAttribute();
