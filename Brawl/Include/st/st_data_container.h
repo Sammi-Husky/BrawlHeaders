@@ -27,7 +27,7 @@ public:
     stDataContainer(stDataContainerData* data);
     virtual u32 getVersion() { return 0; }
     virtual u32 getExtParam() { return 0; }
-    virtual stDataContainerData* getData(u32 index);
+    virtual void* getData(u32 index);
     virtual void* getDataAddressHead();
     virtual ~stDataContainer();
 };
