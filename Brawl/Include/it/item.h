@@ -414,7 +414,7 @@ public:
     virtual bool onPreDamageCheck(BaseItem* item, int damageStatusKind, soDamageLog*);
     virtual bool onDamage(BaseItem* item, int damageStatusKind, soDamageLog*);
     virtual bool onReflect(BaseItem* item);
-    virtual void onPreBound(BaseItem* item, float*, u32);
+    virtual void onPreBound(BaseItem* item, Vec2f*, itParam::BoundFlag);
     virtual bool onRemoveModelConstraint(BaseItem* item, int);
     virtual bool onEnumFighter(BaseItem* item, Fighter* fighter);
     virtual int onGetLayerType(BaseItem* item);

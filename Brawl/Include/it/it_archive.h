@@ -124,9 +124,9 @@ public:
                 bool : 1;
                 bool : 1;
                 bool : 1;
-                bool : 1;
                 bool m_throw : 1;
                 bool m_ceiling : 1;
+                bool m_wall : 1;
                 bool m_dummy : 1;
                 bool m_floor : 1;
             };
