@@ -381,7 +381,7 @@ static_assert(sizeof(BaseItem) == 0x3d60, "Class is wrong size!");
 
 class itCustomizerInterface : public utUnCopyable, public soNullable {
 public:
-    virtual ~itCustomizerInterface();
+    virtual ~itCustomizerInterface() {}
     virtual void onConstruct(BaseItem* item);
     virtual void onDestruct(BaseItem* item);
     virtual void onReset(BaseItem* item);
@@ -434,10 +434,12 @@ static_assert(sizeof(itCustomizerInterface) == 12, "Class is wrong size!");
 
 template <class T>
 class itCustomizer : public itCustomizerInterface {
-    virtual ~itCustomizer();
+public:
+    virtual ~itCustomizer() {}
 };
 
 class itNullCustomizer : public itCustomizer<itNullCustomizer> {
+public:
     virtual ~itNullCustomizer();
 
     static itNullCustomizer* getInstance();
