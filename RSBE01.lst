@@ -29,6 +29,7 @@
 27,5,A6068:g_soGeneralTermCache
 27,5,A8B0C:g_soGeneralTermManager
 27,6,5B98:g_stEnemyIdManager
+27,6,5668:g_Stage
 
 // Hardware
 CC008000:WGPIPE

@@ -342,6 +342,8 @@ public:
     virtual void setVision(u8);
 };
 
+extern Stage* g_Stage;
+
 ENUM_U32(ArchiveOverrideSetting,
     Archive_Override_None = 0x0,
     Archive_Override_Brres = 0x1,
