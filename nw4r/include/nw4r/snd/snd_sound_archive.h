@@ -48,30 +48,36 @@ namespace nw4r {
         
         struct SoundArchiveInfoSoundEntry
         {
-            u32 stringID;
-            u32 fileID;
-            u32 playerID;
-            nw4r::snd::detail::dataReferenceImpl<SoundArchiveInfo3DSoundInfo> param3DRefOffset;
-            u8 volume;
-            u8 playerPriority;
-            u8 soundType;
-            u8 remoteFilter;
-            nw4r::snd::detail::dataReferenceImpl<void> soundInfoRef;
+            enum SoundType
+            {
+                _NULL = 0x00,
+                Sequence,
+                Stream,
+                Wave,
+            };
+
+            u32 m_stringID;
+            u32 m_fileID;
+            u32 m_playerID;
+            detail::dataReferenceImpl<SoundArchiveInfo3DSoundInfo> m_param3DRefOffset;
+            u8 m_volume;
+            u8 m_playerPriority;
+            SoundType m_soundType : 8; // Indicates which union element in m_soundInfoRef to use to get the correct info type.
+            u8 m_remoteFilter;
+            union
+            {
+                detail::dataReferenceImpl<SoundArchiveInfoSequenceSoundInfo> seq;
+                detail::dataReferenceImpl<SoundArchiveInfoStreamSoundInfo> stream;
+                detail::dataReferenceImpl<SoundArchiveInfoWaveSoundInfo> wave;
+            } m_soundInfoRef;
             u32 m_userParam1;
             u32 m_userParam2;
             u8 m_panMode;
             u8 m_panCurve;
             u8 m_actorPlayerID;
             u8 _padding;
-        
-            SoundArchiveInfo3DSoundInfo m_sound3DInfo;
-            union
-            {
-                SoundArchiveInfoSequenceSoundInfo m_seqSoundInfo;
-                SoundArchiveInfoWaveSoundInfo m_waveSoundInfo;
-                SoundArchiveInfoStreamSoundInfo m_streamSoundInfo;
-            };
         };
+        static_assert(sizeof(SoundArchiveInfoSoundEntry) == 0x2C, "Class is wrong size!");
         
         struct SoundArchiveInfoBankEntry
         {
