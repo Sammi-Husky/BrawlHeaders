@@ -43,6 +43,7 @@ namespace nw4r
                     return reinterpret_cast<T*>(dataReference::getAddress(reinterpret_cast<u32>(baseAddressIn)));
                 }
             };
+            static_assert(sizeof(dataReferenceImpl<void>) == 0x8, "Class is wrong size!");
         }
     }
 }
