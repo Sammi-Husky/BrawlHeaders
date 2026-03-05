@@ -37,7 +37,6 @@ namespace nw4r
             u32 m_allocTrack;
             u8 m_channelPriority;
             u8 m_releasePriorityFix;
-        private:
             u8 _padding[0x6];
         };
         static_assert(sizeof(SoundArchiveInfoSequenceSoundInfo) == 0x14, "Class is wrong size!");
@@ -47,7 +46,6 @@ namespace nw4r
             u32 m_startPosition;
             u16 m_allocChannelCount;
             u16 m_allocTrackFlag;
-        private:
             u8 _padding[0x4];
         };
         static_assert(sizeof(SoundArchiveInfoStreamSoundInfo) == 0xC, "Class is wrong size!");
@@ -58,7 +56,6 @@ namespace nw4r
             u32 m_allocTrack;
             u8 m_channelPriority;
             u8 m_releasePriorityFix;
-        private:
             u8 _padding[0x6];
         };
         static_assert(sizeof(SoundArchiveInfoWaveSoundInfo) == 0x10, "Class is wrong size!");
@@ -94,7 +91,6 @@ namespace nw4r
         {
             u32 m_stringID;
             u32 m_fileID;
-        private:
             u8 _padding[0x4];
         };
         static_assert(sizeof(SoundArchiveInfoBankEntry) == 0xC, "Class is wrong size!");
@@ -106,7 +102,6 @@ namespace nw4r
             u8 _padding1;
             u16 _padding2;
             u32 m_heapSize;
-        private:
             u8 _padding[0x4];
         };
         static_assert(sizeof(SoundArchiveInfoPlayerEntry) == 0x10, "Class is wrong size!");
@@ -135,7 +130,6 @@ namespace nw4r
             u32 m_headerLength;
             u32 m_dataOffset;
             u32 m_dataLength;
-        private:
             u8 _padding[0x4];
         };
         static_assert(sizeof(SoundArchiveInfoGroupEntry) == 0x18, "Class is wrong size!");
@@ -162,7 +156,6 @@ namespace nw4r
             u16 m_streamChannelsMax;
             u16 m_waveMax;
             u16 m_waveTrackMax;
-        private:
             u8 _padding[0x6];
         };
         static_assert(sizeof(SoundArchiveInfoSectionFooter) == 0x14, "Class is wrong size!");
