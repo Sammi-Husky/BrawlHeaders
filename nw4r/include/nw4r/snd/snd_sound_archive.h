@@ -3,23 +3,9 @@
 
 #include <nw4r/snd/data_reference.h>
 
-namespace nw4r
-{
-    namespace snd
-    {
-        template <typename T, u32 C>
-        struct dataReferenceArr
-        {
-            const u32 m_count;
-            nw4r::snd::detail::dataReferenceImpl<T> m_arr[C];
-        };
-        template <typename T>
-        struct dataReferenceArrFlex
-        {
-            const u32 m_count;
-            nw4r::snd::detail::dataReferenceImpl<T> m_arr[];
-        };
-
+namespace nw4r {
+    namespace snd {
+    
         struct SoundArchiveInfo3DSoundInfo
         {
             u32 m_flags;
@@ -29,7 +15,7 @@ namespace nw4r
             u8 _padding[0x5];
         };
         static_assert(sizeof(SoundArchiveInfo3DSoundInfo) == 0xC, "Class is wrong size!");
-
+        
         struct SoundArchiveInfoSequenceSoundInfo
         {
             u32 m_dataID;
@@ -40,7 +26,7 @@ namespace nw4r
             u8 _padding[0x6];
         };
         static_assert(sizeof(SoundArchiveInfoSequenceSoundInfo) == 0x14, "Class is wrong size!");
-
+        
         struct SoundArchiveInfoStreamSoundInfo
         {
             u32 m_startPosition;
@@ -49,7 +35,7 @@ namespace nw4r
             u8 _padding[0x4];
         };
         static_assert(sizeof(SoundArchiveInfoStreamSoundInfo) == 0xC, "Class is wrong size!");
-
+        
         struct SoundArchiveInfoWaveSoundInfo
         {
             u32 m_soundIndex;
@@ -59,7 +45,7 @@ namespace nw4r
             u8 _padding[0x6];
         };
         static_assert(sizeof(SoundArchiveInfoWaveSoundInfo) == 0x10, "Class is wrong size!");
-
+        
         struct SoundArchiveInfoSoundEntry
         {
             u32 stringID;
@@ -77,7 +63,7 @@ namespace nw4r
             u8 m_panCurve;
             u8 m_actorPlayerID;
             u8 _padding;
-
+        
             SoundArchiveInfo3DSoundInfo m_sound3DInfo;
             union
             {
@@ -86,7 +72,7 @@ namespace nw4r
                 SoundArchiveInfoStreamSoundInfo m_streamSoundInfo;
             };
         };
-
+        
         struct SoundArchiveInfoBankEntry
         {
             u32 m_stringID;
@@ -94,7 +80,7 @@ namespace nw4r
             u8 _padding[0x4];
         };
         static_assert(sizeof(SoundArchiveInfoBankEntry) == 0xC, "Class is wrong size!");
-
+        
         struct SoundArchiveInfoPlayerEntry
         {
             u32 m_stringID;
@@ -105,24 +91,24 @@ namespace nw4r
             u8 _padding[0x4];
         };
         static_assert(sizeof(SoundArchiveInfoPlayerEntry) == 0x10, "Class is wrong size!");
-
+        
         struct SoundArchiveInfoFileEntry
         {
             u32 m_groupID;
             u32 m_index;
         };
         static_assert(sizeof(SoundArchiveInfoFileEntry) == 0x8, "Class is wrong size!");
-
+        
         struct SoundArchiveInfoFileHeader
         {
             u32 m_headerLength;
             u32 m_dataLength;
             u32 m_entryNumber;
-            nw4r::snd::detail::dataReferenceImpl<const char> stringOffset;
-            nw4r::snd::detail::dataReferenceImpl<dataReferenceArrFlex<SoundArchiveInfoFileEntry> > m_entryArr;
+            detail::dataReferenceImpl<const char> stringOffset;
+            detail::dataReferenceImpl<detail::dataReferenceArrFlex<SoundArchiveInfoFileEntry> > m_entryArr;
         };
         static_assert(sizeof(SoundArchiveInfoFileHeader) == 0x1C, "Class is wrong size!");
-
+        
         struct SoundArchiveInfoGroupEntry
         {
             u32 m_fileID;
@@ -133,20 +119,20 @@ namespace nw4r
             u8 _padding[0x4];
         };
         static_assert(sizeof(SoundArchiveInfoGroupEntry) == 0x18, "Class is wrong size!");
-
+        
         struct SoundArchiveInfoGroupHeader
         {
             u32 m_groupID;
             u32 m_entryNum;
-            nw4r::snd::detail::dataReferenceImpl<const char> m_extFilePath;
+            detail::dataReferenceImpl<const char> m_extFilePath;
             u32 m_headerAddress;
             u32 m_headerLength;
             u32 m_dataAddress;
             u32 m_dataLength;
-            nw4r::snd::detail::dataReferenceImpl<dataReferenceArrFlex<SoundArchiveInfoGroupEntry> > m_entryArr;
+            detail::dataReferenceImpl<detail::dataReferenceArrFlex<SoundArchiveInfoGroupEntry> > m_entryArr;
         };
         static_assert(sizeof(SoundArchiveInfoGroupHeader) == 0x28, "Class is wrong size!");
-
+        
         struct SoundArchiveInfoSectionFooter
         {
             u16 m_sequenceMax;
@@ -159,23 +145,23 @@ namespace nw4r
             u8 _padding[0x6];
         };
         static_assert(sizeof(SoundArchiveInfoSectionFooter) == 0x14, "Class is wrong size!");
-
-        typedef dataReferenceArr<SoundArchiveInfoSoundEntry, 0x286C> soundRefArr_t;
-        typedef dataReferenceArr<SoundArchiveInfoBankEntry, 0x0049> bankRefArr_t;
-        typedef dataReferenceArr<SoundArchiveInfoPlayerEntry, 0x0007> playerRefArr_t;
-        typedef dataReferenceArr<SoundArchiveInfoFileHeader, 0x032E> fileRefArr_t;
-        typedef dataReferenceArr<SoundArchiveInfoGroupHeader, 0x0145> groupRefArr_t;
+        
+        typedef detail::dataReferenceArr<SoundArchiveInfoSoundEntry, 0x286C> soundRefArr_t;
+        typedef detail::dataReferenceArr<SoundArchiveInfoBankEntry, 0x0049> bankRefArr_t;
+        typedef detail::dataReferenceArr<SoundArchiveInfoPlayerEntry, 0x0007> playerRefArr_t;
+        typedef detail::dataReferenceArr<SoundArchiveInfoFileHeader, 0x032E> fileRefArr_t;
+        typedef detail::dataReferenceArr<SoundArchiveInfoGroupHeader, 0x0145> groupRefArr_t;
         struct SoundArchiveInfoSectionHeader
         {
-            nw4r::snd::detail::dataReferenceImpl<soundRefArr_t> m_soundsSectionReference;
-            nw4r::snd::detail::dataReferenceImpl<bankRefArr_t> m_banksSectionReference;
-            nw4r::snd::detail::dataReferenceImpl<playerRefArr_t> m_playerSectionReference;
-            nw4r::snd::detail::dataReferenceImpl<fileRefArr_t> m_filesSectionReference;
-            nw4r::snd::detail::dataReferenceImpl<groupRefArr_t> m_groupsSectionReference;
-            nw4r::snd::detail::dataReferenceImpl<SoundArchiveInfoSectionFooter> m_footerReference;
+            detail::dataReferenceImpl<soundRefArr_t> m_soundsSectionReference;
+            detail::dataReferenceImpl<bankRefArr_t> m_banksSectionReference;
+            detail::dataReferenceImpl<playerRefArr_t> m_playerSectionReference;
+            detail::dataReferenceImpl<fileRefArr_t> m_filesSectionReference;
+            detail::dataReferenceImpl<groupRefArr_t> m_groupsSectionReference;
+            detail::dataReferenceImpl<SoundArchiveInfoSectionFooter> m_footerReference;
         };
         static_assert(sizeof(SoundArchiveInfoSectionHeader) == 0x30, "Class is wrong size!");
-
+        
         struct SoundArchiveFileReader
         {
             u32 m_magic; // RSAR
@@ -194,7 +180,7 @@ namespace nw4r
             u8 _unk2C[0x54];
         };
         static_assert(sizeof(SoundArchiveFileReader) == 0x80, "Class is wrong size!");
-
+        
         struct DvdSoundArchive
         {
             u8 _unk00[0x108];
@@ -202,7 +188,8 @@ namespace nw4r
             u32 _unk188;
         };
         static_assert(sizeof(DvdSoundArchive) == 0x18C, "Class is wrong size!");
-    }
-}
+    
+    } // namespace snd
+} // namespace nw4r
 
 #endif
