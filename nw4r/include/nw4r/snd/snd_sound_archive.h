@@ -146,11 +146,11 @@ namespace nw4r {
         };
         static_assert(sizeof(SoundArchiveInfoSectionFooter) == 0x14, "Class is wrong size!");
         
-        typedef detail::dataReferenceArr<SoundArchiveInfoSoundEntry, 0x286C> soundRefArr_t;
-        typedef detail::dataReferenceArr<SoundArchiveInfoBankEntry, 0x0049> bankRefArr_t;
-        typedef detail::dataReferenceArr<SoundArchiveInfoPlayerEntry, 0x0007> playerRefArr_t;
-        typedef detail::dataReferenceArr<SoundArchiveInfoFileHeader, 0x032E> fileRefArr_t;
-        typedef detail::dataReferenceArr<SoundArchiveInfoGroupHeader, 0x0145> groupRefArr_t;
+        typedef detail::dataReferenceArrFlex<SoundArchiveInfoSoundEntry> soundRefArr_t;
+        typedef detail::dataReferenceArrFlex<SoundArchiveInfoBankEntry> bankRefArr_t;
+        typedef detail::dataReferenceArrFlex<SoundArchiveInfoPlayerEntry> playerRefArr_t;
+        typedef detail::dataReferenceArrFlex<SoundArchiveInfoFileHeader> fileRefArr_t;
+        typedef detail::dataReferenceArrFlex<SoundArchiveInfoGroupHeader> groupRefArr_t;
         struct SoundArchiveInfoSectionHeader
         {
             detail::dataReferenceImpl<soundRefArr_t> m_soundsSectionReference;
