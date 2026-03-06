@@ -56,9 +56,9 @@ namespace nw4r {
                 Wave,
             };
 
-            u32 m_stringID;
-            u32 m_fileID;
-            u32 m_playerID;
+            u32 m_stringIndex;
+            u32 m_fileIndex;
+            u32 m_playerIndex;
             detail::dataReferenceImpl<SoundArchiveInfo3DSoundInfo> m_param3DRefOffset;
             u8 m_volume;
             u8 m_playerPriority;
@@ -81,15 +81,15 @@ namespace nw4r {
         
         struct SoundArchiveInfoBankEntry
         {
-            u32 m_stringID;
-            u32 m_fileID;
+            u32 m_stringIndex;
+            u32 m_fileIndex;
             u8 _padding[0x4];
         };
         static_assert(sizeof(SoundArchiveInfoBankEntry) == 0xC, "Class is wrong size!");
         
         struct SoundArchiveInfoPlayerEntry
         {
-            u32 m_stringID;
+            u32 m_stringIndex;
             u8 m_playableSoundCount;
             u8 _padding1;
             u16 _padding2;
@@ -100,8 +100,8 @@ namespace nw4r {
         
         struct SoundArchiveInfoFileEntry
         {
-            u32 m_groupID;
-            u32 m_index;
+            u32 m_groupIndex;
+            u32 m_entryIndex;
         };
         static_assert(sizeof(SoundArchiveInfoFileEntry) == 0x8, "Class is wrong size!");
         
@@ -117,7 +117,7 @@ namespace nw4r {
         
         struct SoundArchiveInfoGroupEntry
         {
-            u32 m_fileID;
+            u32 m_fileIndex;
             u32 m_headerOffset;
             u32 m_headerLength;
             u32 m_dataOffset;
@@ -128,12 +128,12 @@ namespace nw4r {
         
         struct SoundArchiveInfoGroupHeader
         {
-            u32 m_groupID;
+            u32 m_stringIndex;
             u32 m_entryNum;
             detail::dataReferenceImpl<const char> m_extFilePath;
-            u32 m_headerAddress;
+            u32 m_headerOffset;
             u32 m_headerLength;
-            u32 m_dataAddress;
+            u32 m_dataOffset;
             u32 m_dataLength;
             detail::dataReferenceImpl<detail::dataReferenceArrFlex<SoundArchiveInfoGroupEntry> > m_entryArr;
         };
