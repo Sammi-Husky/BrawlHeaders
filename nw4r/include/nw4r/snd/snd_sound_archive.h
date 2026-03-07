@@ -1,0 +1,201 @@
+#ifndef NW4R_SND_DVD_SOUND_ARCHIVE_H
+#define NW4R_SND_DVD_SOUND_ARCHIVE_H
+
+#include <nw4r/snd/data_reference.h>
+
+namespace nw4r {
+    namespace snd {
+    
+        struct SoundArchiveInfo3DSoundInfo
+        {
+            u32 m_flags;
+            u8 m_decayCurve;
+            u8 m_decayRatio;
+            u8 m_dopplerFactor;
+            u8 _padding[0x5];
+        };
+        static_assert(sizeof(SoundArchiveInfo3DSoundInfo) == 0xC, "Class is wrong size!");
+        
+        struct SoundArchiveInfoSequenceSoundInfo
+        {
+            u32 m_dataID;
+            u32 m_bankID;
+            u32 m_allocTrack;
+            u8 m_channelPriority;
+            u8 m_releasePriorityFix;
+            u8 _padding[0x6];
+        };
+        static_assert(sizeof(SoundArchiveInfoSequenceSoundInfo) == 0x14, "Class is wrong size!");
+        
+        struct SoundArchiveInfoStreamSoundInfo
+        {
+            u32 m_startPosition;
+            u16 m_allocChannelCount;
+            u16 m_allocTrackFlag;
+            u8 _padding[0x4];
+        };
+        static_assert(sizeof(SoundArchiveInfoStreamSoundInfo) == 0xC, "Class is wrong size!");
+        
+        struct SoundArchiveInfoWaveSoundInfo
+        {
+            u32 m_soundIndex;
+            u32 m_allocTrack;
+            u8 m_channelPriority;
+            u8 m_releasePriorityFix;
+            u8 _padding[0x6];
+        };
+        static_assert(sizeof(SoundArchiveInfoWaveSoundInfo) == 0x10, "Class is wrong size!");
+        
+        struct SoundArchiveInfoSoundEntry
+        {
+            enum SoundType
+            {
+                _NULL = 0x00,
+                Sequence,
+                Stream,
+                Wave,
+            };
+
+            u32 m_stringIndex;
+            u32 m_fileIndex;
+            u32 m_playerIndex;
+            detail::dataReferenceImpl<SoundArchiveInfo3DSoundInfo> m_param3DRefOffset;
+            u8 m_volume;
+            u8 m_playerPriority;
+            SoundType m_soundType : 8; // Indicates which union element in m_soundInfoRef to use to get the correct info type.
+            u8 m_remoteFilter;
+            union
+            {
+                detail::dataReferenceImpl<SoundArchiveInfoSequenceSoundInfo> seq;
+                detail::dataReferenceImpl<SoundArchiveInfoStreamSoundInfo> stream;
+                detail::dataReferenceImpl<SoundArchiveInfoWaveSoundInfo> wave;
+            } m_soundInfoRef;
+            u32 m_userParam1;
+            u32 m_userParam2;
+            u8 m_panMode;
+            u8 m_panCurve;
+            u8 m_actorPlayerID;
+            u8 _padding;
+        };
+        static_assert(sizeof(SoundArchiveInfoSoundEntry) == 0x2C, "Class is wrong size!");
+        
+        struct SoundArchiveInfoBankEntry
+        {
+            u32 m_stringIndex;
+            u32 m_fileIndex;
+            u8 _padding[0x4];
+        };
+        static_assert(sizeof(SoundArchiveInfoBankEntry) == 0xC, "Class is wrong size!");
+        
+        struct SoundArchiveInfoPlayerEntry
+        {
+            u32 m_stringIndex;
+            u8 m_playableSoundCount;
+            u8 _padding1;
+            u16 _padding2;
+            u32 m_heapSize;
+            u8 _padding[0x4];
+        };
+        static_assert(sizeof(SoundArchiveInfoPlayerEntry) == 0x10, "Class is wrong size!");
+        
+        struct SoundArchiveInfoFileEntry
+        {
+            u32 m_groupIndex;
+            u32 m_entryIndex;
+        };
+        static_assert(sizeof(SoundArchiveInfoFileEntry) == 0x8, "Class is wrong size!");
+        
+        struct SoundArchiveInfoFileHeader
+        {
+            u32 m_headerLength;
+            u32 m_dataLength;
+            u32 m_entryNumber;
+            detail::dataReferenceImpl<const char> stringOffset;
+            detail::dataReferenceImpl<detail::dataReferenceArrFlex<SoundArchiveInfoFileEntry> > m_entryArr;
+        };
+        static_assert(sizeof(SoundArchiveInfoFileHeader) == 0x1C, "Class is wrong size!");
+        
+        struct SoundArchiveInfoGroupEntry
+        {
+            u32 m_fileIndex;
+            u32 m_headerOffset;
+            u32 m_headerLength;
+            u32 m_dataOffset;
+            u32 m_dataLength;
+            u8 _padding[0x4];
+        };
+        static_assert(sizeof(SoundArchiveInfoGroupEntry) == 0x18, "Class is wrong size!");
+        
+        struct SoundArchiveInfoGroupHeader
+        {
+            u32 m_stringIndex;
+            u32 m_entryNum;
+            detail::dataReferenceImpl<const char> m_extFilePath;
+            u32 m_headerOffset;
+            u32 m_headerLength;
+            u32 m_dataOffset;
+            u32 m_dataLength;
+            detail::dataReferenceImpl<detail::dataReferenceArrFlex<SoundArchiveInfoGroupEntry> > m_entryArr;
+        };
+        static_assert(sizeof(SoundArchiveInfoGroupHeader) == 0x28, "Class is wrong size!");
+        
+        struct SoundArchiveInfoSectionFooter
+        {
+            u16 m_sequenceMax;
+            u16 m_sequenceTrackMax;
+            u16 m_streamMax;
+            u16 m_streamTrackMax;
+            u16 m_streamChannelsMax;
+            u16 m_waveMax;
+            u16 m_waveTrackMax;
+            u8 _padding[0x6];
+        };
+        static_assert(sizeof(SoundArchiveInfoSectionFooter) == 0x14, "Class is wrong size!");
+        
+        typedef detail::dataReferenceArrFlex<SoundArchiveInfoSoundEntry> soundRefArr_t;
+        typedef detail::dataReferenceArrFlex<SoundArchiveInfoBankEntry> bankRefArr_t;
+        typedef detail::dataReferenceArrFlex<SoundArchiveInfoPlayerEntry> playerRefArr_t;
+        typedef detail::dataReferenceArrFlex<SoundArchiveInfoFileHeader> fileRefArr_t;
+        typedef detail::dataReferenceArrFlex<SoundArchiveInfoGroupHeader> groupRefArr_t;
+        struct SoundArchiveInfoSectionHeader
+        {
+            detail::dataReferenceImpl<soundRefArr_t> m_soundsSectionReference;
+            detail::dataReferenceImpl<bankRefArr_t> m_banksSectionReference;
+            detail::dataReferenceImpl<playerRefArr_t> m_playerSectionReference;
+            detail::dataReferenceImpl<fileRefArr_t> m_filesSectionReference;
+            detail::dataReferenceImpl<groupRefArr_t> m_groupsSectionReference;
+            detail::dataReferenceImpl<SoundArchiveInfoSectionFooter> m_footerReference;
+        };
+        static_assert(sizeof(SoundArchiveInfoSectionHeader) == 0x30, "Class is wrong size!");
+        
+        struct SoundArchiveFileReader
+        {
+            u32 m_magic; // RSAR
+            u16 m_byteOrderMarker;
+            u16 m_version;
+            u32 m_archiveSize;
+            u16 m_headerLength; // 0x40
+            u16 m_sectionCount; // 0x3
+            u32 m_symbSectionOffset;
+            u32 m_symbSectionSize;
+            u32 m_infoSectionOffset;
+            u32 m_infoSectionSize;
+            u32 m_dataSectionOffset;
+            u32 m_dataSectionSize;
+            SoundArchiveInfoSectionHeader* m_infoSection;
+            u8 _unk2C[0x54];
+        };
+        static_assert(sizeof(SoundArchiveFileReader) == 0x80, "Class is wrong size!");
+        
+        struct DvdSoundArchive
+        {
+            u8 _unk00[0x108];
+            SoundArchiveFileReader m_RSAR;
+            u32 _unk188;
+        };
+        static_assert(sizeof(DvdSoundArchive) == 0x18C, "Class is wrong size!");
+    
+    } // namespace snd
+} // namespace nw4r
+
+#endif
