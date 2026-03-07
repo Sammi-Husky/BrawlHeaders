@@ -10,7 +10,7 @@
 #include <nw4r/g3d/g3d_resfile.h>
 #include <nw4r/g3d/g3d_resmdl.h>
 #include <nw4r/g3d/g3d_scnmdl.h>
-#include <sr/sr_common.h>
+#include <gf/gf_heap_manager.h>
 #include <types.h>
 
 class gfModelAnimation {
@@ -28,7 +28,7 @@ public:
     gfModelAnimation(nw4r::g3d::ResFile* resFile, nw4r::g3d::ResMdl* resMdl, bool doBind, u32 animIndex, HeapType heapType);
     gfModelAnimation(nw4r::g3d::ResFile* resFile, nw4r::g3d::ResMdl* resMdl, bool doBind, const char* animName, HeapType heapType);
 
-    u16 getFrameCount();
+    u32 getFrameCount();
     float getFrame();
     void setFrame(float frame);
     float getUpdateRate();
@@ -58,3 +58,165 @@ public:
 static_assert(sizeof(gfModelAnimation) == 32, "Class is wrong size!");
 
 // Size: 32
+
+//Various inlines used by menu objects effects, and many ground objects
+//TODO: find better names for these functions
+inline void setVisibilityAnim(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
+//    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries())
+        int instanceSize;
+        nw4r::g3d::ResAnmVis anim = modelAnim->m_resFile.GetResAnmVis(animId);
+
+        MEMAllocator* allocator = gfHeapManager::getMEMAllocator(heap);
+        if (anim.IsValid())
+        {
+            nw4r::g3d::AnmObjVisRes* anmObj = nw4r::g3d::AnmObjVisRes::Construct(allocator, &instanceSize, anim, model);
+            if (anmObj != NULL)
+            {
+                anmObj->Bind(model);
+
+                if (modelAnim->m_anmObjVisRes != NULL)
+                {
+                    modelAnim->m_anmObjVisRes->Destroy();
+                }
+
+                modelAnim->m_anmObjVisRes = anmObj;
+            }
+        }
+  //  }
+}
+
+inline void setVisibilityAnim2(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
+    if (animId < modelAnim->m_resFile.GetResAnmVisNumEntries()) {
+ //       int instanceSize;
+        setVisibilityAnim(animId,model, modelAnim, heap);
+    }
+}
+
+
+inline void setChrAnim(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
+//    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries())
+        int instanceSize;
+        nw4r::g3d::ResAnmChr anim = modelAnim->m_resFile.GetResAnmChr(animId);
+
+        MEMAllocator* allocator = gfHeapManager::getMEMAllocator(heap);
+        if (anim.IsValid())
+        {
+            nw4r::g3d::AnmObjChrRes* anmObj = nw4r::g3d::AnmObjChrRes::Construct(allocator, &instanceSize, anim, model, false);
+            if (anmObj != NULL)
+            {
+                anmObj->Bind(model);
+
+                if (modelAnim->m_anmObjChrRes != NULL)
+                {
+                    modelAnim->m_anmObjChrRes->Destroy();
+                }
+
+                modelAnim->m_anmObjChrRes = anmObj;
+            }
+        }
+  //  }
+}
+
+inline void setChrAnim2(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
+    if (animId < modelAnim->m_resFile.GetResAnmChrNumEntries()) {
+ //       int instanceSize;
+        setChrAnim(animId,model, modelAnim,heap);
+    }
+}
+
+
+inline void setTexPatAnim(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
+//    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries())
+        int instanceSize;
+        nw4r::g3d::ResAnmTexPat anim = modelAnim->m_resFile.GetResAnmTexPat(animId);
+
+        if (anim.IsValid())
+        {
+            MEMAllocator* allocator = gfHeapManager::getMEMAllocator(heap);
+            nw4r::g3d::AnmObjTexPatRes* anmObj = nw4r::g3d::AnmObjTexPatRes::Construct(allocator, &instanceSize, anim, model, false);
+            if (anmObj != NULL)
+            {
+                anmObj->Bind(model);
+
+                if (modelAnim->m_anmObjTexPatRes != NULL)
+                {
+                    modelAnim->m_anmObjTexPatRes->Destroy();
+                }
+
+                modelAnim->m_anmObjTexPatRes = anmObj;
+            }
+        }
+  //  }
+}
+
+inline void setTexPatAnim2(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
+    if (animId < modelAnim->m_resFile.GetResAnmTexPatNumEntries()) {
+ //       int instanceSize;
+        setTexPatAnim(animId,model, modelAnim,heap);
+    }
+}
+
+
+inline void setTexSortAnim(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
+//    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries())
+        int instanceSize;
+        nw4r::g3d::ResAnmTexSrt anim = modelAnim->m_resFile.GetResAnmTexSrt(animId);
+
+        if (anim.IsValid())
+        {
+            MEMAllocator* allocator = gfHeapManager::getMEMAllocator(heap);
+            nw4r::g3d::AnmObjTexSrtRes* anmObj = nw4r::g3d::AnmObjTexSrtRes::Construct(allocator, &instanceSize, anim, model, false);
+            if (anmObj != NULL)
+            {
+                anmObj->Bind(model);
+
+                if (modelAnim->m_anmObjTexSrtRes != NULL)
+                {
+                    modelAnim->m_anmObjTexSrtRes->Destroy();
+                }
+
+                modelAnim->m_anmObjTexSrtRes = anmObj;
+            }
+        }
+  //  }
+}
+
+inline void setTexSortAnim2(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
+    if (animId < modelAnim->m_resFile.GetResAnmTexSrtNumEntries()) {
+ //       int instanceSize;
+        setTexSortAnim(animId,model, modelAnim,heap);
+    }
+}
+
+
+inline void setColorAnim(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
+//    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries())
+        int instanceSize;
+        nw4r::g3d::ResAnmClr anim = modelAnim->m_resFile.GetResAnmClr(animId);
+
+        //MEMAllocator* allocator = gfHeapManager::getMEMAllocator(Heaps::StageInstance);
+        if (anim.IsValid())
+        {
+            MEMAllocator* allocator = gfHeapManager::getMEMAllocator(heap);
+            nw4r::g3d::AnmObjMatClrRes* anmObj = nw4r::g3d::AnmObjMatClrRes::Construct(allocator, &instanceSize, anim, model, false);
+            if (anmObj != NULL)
+            {
+                anmObj->Bind(model);
+
+                if (modelAnim->m_anmObjMatClrRes != NULL)
+                {
+                    modelAnim->m_anmObjMatClrRes->Destroy();
+                }
+
+                modelAnim->m_anmObjMatClrRes = anmObj;
+            }
+        }
+  //  }
+}
+
+inline void setColorAnim2(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
+    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries()) {
+ //       int instanceSize;
+        setColorAnim(animId,model, modelAnim,heap);
+    }
+}
