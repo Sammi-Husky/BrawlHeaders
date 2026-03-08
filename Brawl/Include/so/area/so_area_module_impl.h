@@ -14,21 +14,21 @@
 #include <GX/GXTypes.h>
 #include <types.h>
 
-#define AREA_SHAPE_FLAG_FOLLOW_NODE 0x1
-#define AREA_SHAPE_FLAG_FIXED 0x2
-#define AREA_SHAPE_FLAG_LR 0x4
-#define AREA_SHAPE_FLAG_RESET_DISABLE 0x8
-#define AREA_SHAPE_FLAG_STATUS_DISABLE 0x10
-#define AREA_SHAPE_FLAG_STATUS_ENABLE 0x20
-#define AREA_SHAPE_FLAG_IGNORE_SCALE 0x40
-#define AREA_SHAPE_FLAG_ENABLE_SITUATION_GROUND 0x80
-#define AREA_SHAPE_FLAG_ENABLE_SITUATION_AIR 0x100
-#define AREA_SHAPE_FLAG_APPLY_OFFSET_ROT 0x200
-#define AREA_SHAPE_FLAG_CHILD 0x400
-
 class soModuleAccesser;
 
 struct soAreaData {
+    typedef u16 ShapeMask;
+    static const ShapeMask SHAPE_MASK_FOLLOW_NODE = 1 << 0;
+    static const ShapeMask SHAPE_MASK_FIXED = 1 << 1;
+    static const ShapeMask SHAPE_MASK_LR = 1 << 2;
+    static const ShapeMask SHAPE_MASK_RESET_DISABLE = 1 << 3;
+    static const ShapeMask SHAPE_MASK_STATUS_DISABLE = 1 << 4;
+    static const ShapeMask SHAPE_MASK_STATUS_ENABLE = 1 << 5;
+    static const ShapeMask SHAPE_MASK_IGNORE_SCALE = 1 << 6;
+    static const ShapeMask SHAPE_MASK_ENABLE_SITUATION_GROUND= 1 << 7;
+    static const ShapeMask SHAPE_MASK_ENABLE_SITUATION_AIR = 1 << 8;
+    static const ShapeMask SHAPE_MASK_APPLY_OFFSET_ROT = 1 << 9;
+    static const ShapeMask SHAPE_MASK_CHILD = 1 << 10;
 
     enum Category {
         Category_Fighter = 0x0,
@@ -42,7 +42,7 @@ struct soAreaData {
     gfArea::Group m_group : 8;
 
     union ShapeFlag {
-        u16 m_mask;
+        ShapeMask m_mask;
         struct {
             bool m_flag15 : 1;      // 0x8000
             bool m_flag14 : 1;      // 0x4000
@@ -62,7 +62,7 @@ struct soAreaData {
             bool m_followNode : 1;     // 0x1
         };
         inline ShapeFlag() {}
-        inline ShapeFlag(u16 mask) : m_mask(mask) {}
+        inline ShapeFlag(ShapeMask mask) : m_mask(mask) {}
     } m_shapeFlag;
 
     int m_0x4;
@@ -72,9 +72,9 @@ struct soAreaData {
     Vec2f m_range;
 
     inline soAreaData() {}
-    inline soAreaData(gfArea::ShapeType shapeType, gfArea::Group group, u16 mask, int unk1, int unk2, int nodeIndex, Vec2f offsetPos, Vec2f range) : m_shapeType(shapeType), m_group(group), m_shapeFlag(mask), m_0x4(unk1), m_0x8(unk2), m_nodeIndex(nodeIndex), m_offsetPos(offsetPos), m_range(range) {}
+    inline soAreaData(gfArea::ShapeType shapeType, gfArea::Group group, ShapeMask mask, int unk1, int unk2, int nodeIndex, Vec2f offsetPos, Vec2f range) : m_shapeType(shapeType), m_group(group), m_shapeFlag(mask), m_0x4(unk1), m_0x8(unk2), m_nodeIndex(nodeIndex), m_offsetPos(offsetPos), m_range(range) {}
 
-    void set(gfArea::ShapeType shapeType, gfArea::Group group, u16 mask, int unk1, int unk2, int nodeIndex, Vec2f offsetPos, Vec2f range) {
+    void set(gfArea::ShapeType shapeType, gfArea::Group group, ShapeMask mask, int unk1, int unk2, int nodeIndex, Vec2f offsetPos, Vec2f range) {
         m_shapeType = shapeType;
         m_group = group;
         m_shapeFlag.m_mask = mask;

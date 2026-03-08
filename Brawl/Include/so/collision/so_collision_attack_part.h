@@ -221,10 +221,10 @@ struct soCollisionAttackData {
 
         struct {
             unsigned int m_nodeIndex : 9;                     // up to 0x1ff
-            unsigned int m_targetCategory : 10;            // up to 0x3ff;
-            unsigned int m_targetSituation : 3;            // up to 0x7
+            soCollision::CategoryMask m_targetCategory : 10;            // up to 0x3ff;
+            soCollision::SituationMask m_targetSituation : 3;            // up to 0x7
             bool m_targetLr : 1;                          // up to 0x1 // unused in vBrawl?
-            unsigned int m_targetPart : 4;                 // up to 0xf
+            soCollision::PartMask m_targetPart : 4;                 // up to 0xf
             Attribute m_attribute : 5;     // up to 0x1f
             SoundLevel m_soundLevel : 2; // up to 0x3
             SoundAttribute m_soundAttribute : 5;   // up to 0x1f
@@ -262,7 +262,8 @@ struct soCollisionAttackData {
     inline soCollisionAttackData(int power, Vec3f* offsetPos, float size, int vector,
                                  int reactionEffect, int reactionFix, int reactionAdd,
                                  float slipChance, float hitStopFrame, float hitStopDelay,
-                                 u32 nodeIndex, u32 targetCategory, u32 targetSituation, u32 targetLr, u32 targetPart,
+                                 u32 nodeIndex, soCollision::CategoryMask targetCategory, soCollision::SituationMask targetSituation,
+                                 u32 targetLr, soCollision::PartMask targetPart,
                                  Attribute attribute, SoundLevel soundLevel, SoundAttribute soundAttribute,
                                  SetOffKind setOffKind, bool noScale,
                                  bool isShieldable, bool isReflectable, bool isAbsorbable, u32 subShield,

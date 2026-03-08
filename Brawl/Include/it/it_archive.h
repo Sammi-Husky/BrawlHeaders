@@ -4,10 +4,9 @@
 #include <types.h>
 #include <it/it_create.h>
 
-#define ITEM_KINETIC_FLAG_SANDBAG 0x2
-
 struct itParam {
-public:
+    typedef u32 KineticMask;
+    static const KineticMask KINETIC_MASK_SANDBAG = 1 << 1;
     struct KineticFlag {
         union {
             struct {
@@ -47,8 +46,7 @@ public:
             u32 m_mask;
         };
         inline KineticFlag() {}
-        inline KineticFlag(u32 bits) : m_mask(bits) {}
-
+        inline KineticFlag(KineticMask bits) : m_mask(bits) {}
     };
 
     struct TraitFlag {

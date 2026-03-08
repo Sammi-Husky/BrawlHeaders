@@ -15,16 +15,23 @@
 #include <st/st_trigger.h>
 #include <types.h>
 
-#define GROUND_COLL_STATUS_OWNER_TASK_CATEGORY_MASK_ITEM 0x4
-#define GROUND_COLL_STATUS_OWNER_TASK_CATEGORY_MASK_ENEMY 0x2
-#define GROUND_COLL_STATUS_OWNER_TASK_CATEGORY_MASK_FIGHTER 0x1
-#define GROUND_COLL_STATUS_OWNER_TASK_CATEGORY_MASK_ALL 0x7
-
 class Stage;
 
 class Ground : public gfTask {
 public:
-    struct CategoryFlag {
+    enum CollCategory
+    {
+        Coll_Category_Fighter = 0x1,
+        Coll_Category_Enemy = 0x2,
+        Coll_Category_Item = 0x3,
+    };
+    typedef u32 CollCategoryMask;
+    static const CollCategoryMask COLL_CATEGORY_MASK_FIGHTER = 1 << Coll_Category_Fighter;
+    static const CollCategoryMask COLL_CATEGORY_MASK_ENEMY = 1 << Coll_Category_Enemy;
+    static const CollCategoryMask COLL_CATEGORY_MASK_ITEM = 1 << Coll_Category_Item;
+    static const CollCategoryMask COLL_CATEGORY_MASK_ALL = COLL_CATEGORY_MASK_FIGHTER | COLL_CATEGORY_MASK_ENEMY | COLL_CATEGORY_MASK_ITEM;
+
+    struct CollCategoryFlag {
         union {
             struct {
                 u32 : 29;
@@ -32,10 +39,10 @@ public:
                 bool m_enemy : 1;
                 bool m_fighter : 1;
             };
-            u32 m_mask;
+            CollCategoryMask m_mask;
         };
-        inline CategoryFlag() {}
-        inline CategoryFlag(u32 bits) : m_mask(bits) {}
+        inline CollCategoryFlag() {}
+        inline CollCategoryFlag(CollCategoryMask bits) : m_mask(bits) {}
     };
 
     // 0
@@ -156,7 +163,7 @@ public:
 
     bool getNodeIndex(u32* nodeIndex, u32 sceneModelIndex, const char* nodeName);
     void addSceneRoot(nw4r::g3d::ScnMdl* sceneModel, int unk2);
-    bool isCollisionStatusOwnerTask(grCollStatus* collStatus, CategoryFlag* unk2);
+    bool isCollisionStatusOwnerTask(grCollStatus* collStatus, CollCategoryFlag* unk2);
     bool searchNode(const char* unk1, const char* nodeName, int* unk3, u32* nodeIndex);
     void setBlendColorDisable();
     void setBlendColorEnable();

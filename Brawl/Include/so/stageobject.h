@@ -11,12 +11,6 @@
 #include <so/so_null.h>
 #include <types.h>
 
-#define KINETIC_ENERGY_ATTRIBUTE_MASK_NONE 0x0
-#define KINETIC_ENERGY_ATTRIBUTE_MASK_MAIN 0x1
-#define KINETIC_ENERGY_ATTRIBUTE_MASK_DAMAGE 0x2
-#define KINETIC_ENERGY_ATTRIBUTE_MASK_EXTERN 0x4
-#define KINETIC_ENERGY_ATTRIBUTE_MASK_GROUND 0x8
-
 class soActivatable {
     virtual ~soActivatable();
     bool m_isActive;
@@ -57,12 +51,18 @@ public:
     struct Kinetic {
         struct Energy {
             enum ReserveAttribute {
-                Reserve_None = 0x0,
-                Reserve_Main = 0x1,
-                Reserve_Damage = 0x2,
-                Reserve_Extern = 0x3,
-                Reserve_Ground = 0x4,
+                Reserve_Main = 0x0,
+                Reserve_Damage = 0x1,
+                Reserve_Extern = 0x2,
+                Reserve_Ground = 0x3,
             };
+            typedef u32 ReserveAttributeMask;
+            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_NONE = 0;
+            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_MAIN = 1 << Reserve_Main;
+            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_DAMAGE = 1 << Reserve_Damage;
+            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_EXTERN = 1 << Reserve_Extern;
+            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_GROUND = 1 << Reserve_Ground;
+            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_ALL = RESERVE_ATTRIBUTE_MASK_MAIN | RESERVE_ATTRIBUTE_MASK_DAMAGE | RESERVE_ATTRIBUTE_MASK_EXTERN | RESERVE_ATTRIBUTE_MASK_GROUND;
         };
     };
 
