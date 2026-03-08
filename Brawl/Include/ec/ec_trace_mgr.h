@@ -27,7 +27,7 @@ struct ecTraceMgr {
     void endGroup(u32 p1, u32 p2, u32 p3);
     void pauseGroup(bool p1, u32 p2, u32 p3);
     bool setOffset(u32 id, const Vec3f& p2, const Vec3f& p3);
-    void setAttachEffect(u32 id, EfID efId, nw4r::g3d::ScnMdl* scnMdl, u32 nodeName,
+    void setAttachEffect(u32 id, EfID efId, nw4r::g3d::ScnMdl* scnMdl, u32 nodeIndex,
         const Vec3f* pos, const Vec3f* rot, const Vec3f* scale);
 
     ecTrace* getTraceById(u32 id) const {
