@@ -61,12 +61,16 @@ struct grCollisionLine {
     // 2
     short m_point1Index;
     // 4
-    char _spacer[10];
+    char _spacer[8];
 
     union
     {
         struct
         {
+            // 12
+            u8 : 1;
+            u8 : 1;
+
             // 14
             bool : 1;
             bool : 1;
@@ -84,22 +88,13 @@ struct grCollisionLine {
             bool m_isLeft: 1;
             bool m_isUpper : 1;
             bool m_isUnder : 1;
-
-            // 16
-            bool m_noAttach : 1;
-            bool m_isHangL : 1;
-            bool m_isHangR : 1;
-            bool : 1;
-            bool m_isCloud : 1;
-            bool m_isRotating : 1;
-            bool : 1;
-            bool m_isThroughable : 1;
-
-            // 17
-            MaterialType m_materialType : 8;
         };
         struct
         {
+            // 12
+            u8 : 1;
+            u8 : 1;
+
             // 14
             bool : 1;
             bool : 1;
@@ -115,22 +110,21 @@ struct grCollisionLine {
             bool : 1;
             bool : 1;
             bool : 1;
-
-            // 16
-            bool : 1;
-            bool : 1;
-            bool : 1;
-            bool : 1;
-            bool : 1;
-            bool : 1;
-            bool : 1;
-            bool : 1;
-
-            // 17
-            MaterialType : 8;
         };
-
     };
+
+    // 16
+    bool m_noAttach : 1;
+    bool m_isHangL : 1;
+    bool m_isHangR : 1;
+    bool : 1;
+    bool m_isCloud : 1;
+    bool m_isRotating : 1;
+    bool : 1;
+    bool m_isThroughable : 1;
+
+    // 17
+    MaterialType m_materialType : 8;
 
     // 18
     char _pad[2];
