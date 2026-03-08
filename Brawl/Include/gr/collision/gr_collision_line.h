@@ -48,6 +48,7 @@ struct grCollisionLine {
     };
 
     typedef u32 CategoryMask;
+    static const CategoryMask CATEGORY_MASK_NONE = 0;
     static const CategoryMask CATEGORY_MASK_FIGHTER = 1 << 0;
     static const CategoryMask CATEGORY_MASK_ENEMY = CATEGORY_MASK_FIGHTER;
     static const CategoryMask CATEGORY_MASK_DEFAULT = CATEGORY_MASK_FIGHTER;
