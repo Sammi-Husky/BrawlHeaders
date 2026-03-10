@@ -26,7 +26,7 @@ public:
             bool m_isSituationAir : 1;
             bool m_isSituationGround : 1;
         };
-        u32 m_multiSituation;
+        soCollision::SituationMask m_multiSituation;
     };
     char _48[1];
     bool m_49;

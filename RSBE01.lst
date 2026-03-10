@@ -433,7 +433,7 @@ CC008000:WGPIPE
 8009dd40:cmRemoveQuake__Fi
 
 // Vec2f
-8003dc64:rot__5Vec2fFdP5Vec2fP5Vec2f
+8003dc64:rot__5Vec2fFP5Vec2ff
 
 // Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
@@ -1218,6 +1218,29 @@ CC008000:WGPIPE
 27,1,00111358:setTeam__7ftOwnerFi
 27,1,00111370:setPointTeam__7ftOwnerFi
 27,1,00112d18:getCoinDropRate__7ftOwnerFv
+
+// ftLogDataAccesser
+27,1,001D53C8:addFloat__17ftLogDataAccesserFfUlUl
+27,1,001D5414:addInt__17ftLogDataAccesserFiUlUl
+27,1,001D53A0:getFloat__17ftLogDataAccesserFUlUl
+27,1,001D53E4:getInt__17ftLogDataAccesserFUlUl
+27,1,001D5434:isFlag__17ftLogDataAccesserFUlUl
+27,1,001D5474:offFlag__17ftLogDataAccesserFUlUl
+27,1,001D545C:onFlag__17ftLogDataAccesserFUlUl
+27,1,001D5448:setFlag__17ftLogDataAccesserFbUlUl
+27,1,001D53B4:setFloat__17ftLogDataAccesserFfUlUl
+27,1,001D53FC:setInt__17ftLogDataAccesserFiUlUl
+27,1,001D4B80:setup__17ftLogDataAccesserFP9ftLogData
+27,1,001D512C:reset__17ftLogDataAccesserFv
+
+// ftLogAttackInfoModule
+27,1,001D727C:addAttackInfo__21ftLogAttackInfoModuleFRC15soLogAttackInfo
+27,1,001D72F4:getAttackInfo__21ftLogAttackInfoModuleFUl
+
+// ftLogPatternModule
+27,1,001D556C:addAttackPattern__18ftLogPatternModuleFRC15soLogAttackInfo
+27,1,001D57D0:clearPattern__18ftLogPatternModuleFv
+27,1,001D5658:getPowerMul__18ftLogPatternModuleFRC15soLogAttackInfo
 
 // ftOutsideEventPresenter
 27,1,0015B0C8:notifyOutsideEventKnockout__23ftOutsideEventPresenterFv
