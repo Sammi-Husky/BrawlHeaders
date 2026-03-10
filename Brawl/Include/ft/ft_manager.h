@@ -72,6 +72,8 @@ class ftManagerAbstract : public soNull, public gfTask, public ftOutsideEventObs
     // Note: Done so that vtable placement is proper
 };
 
+class ftManager;
+extern ftManager* g_ftManager;
 class ftManager : public ftManagerAbstract {
 
 public:
@@ -83,10 +85,10 @@ public:
     bool m_isTeamAttack : 1;
     bool : 1;
     bool : 1;
+    bool m_noOnePatternOffsett : 1; // no staling
+    bool : 1;
+    bool m_noDeadUp : 1;
     bool m_isHomerun : 1;
-    bool : 1;
-    bool : 1;
-    bool : 1;
     char _111[1];
     int m_finalStatus;
     int m_finalEntryId;
@@ -168,7 +170,8 @@ public:
         return getOwner(entryId)->getHitPointMax() != 0;
     };
 
+    inline static ftManager* getInstance() { return g_ftManager; }
 };
+
 static_assert(sizeof(ftManager) == 0x160, "Class is wrong size!");
 
-extern ftManager* g_ftManager;

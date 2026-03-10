@@ -44,7 +44,7 @@ public:
     virtual void setCorrect(soGroundShapeImpl::CorrectKind correct, u32 index);
     virtual u8 getCorrect(u32 index);
     virtual void setCalcLineMove(bool calcLineMove, u32 index);
-    virtual void setTargetLineCategory(u8 targetLineCategory, u32 index);
+    virtual void setTargetLineCategory(grCollisionLine::CategoryMask targetLineCategory, u32 index);
     virtual void setExclusiveLineAttr(short exclusiveLineAttr, u32 index);
     virtual void setPassableCheck(bool passableCheck, u32 index);
     virtual bool isPassableCheck(u32 index);
@@ -215,7 +215,7 @@ public:
     virtual void setCorrect(soGroundShapeImpl::CorrectKind correct, u32 index);
     virtual u8 getCorrect(u32 index);
     virtual void setCalcLineMove(bool calcLineMove, u32 index);
-    virtual void setTargetLineCategory(u8 targetLineCategory, u32 index);
+    virtual void setTargetLineCategory(grCollisionLine::CategoryMask targetLineCategory, u32 index);
     virtual void setExclusiveLineAttr(short exclusiveLineAttr, u32 index);
     virtual void setPassableCheck(bool passableCheck, u32 index);
     virtual bool isPassableCheck(u32 index);

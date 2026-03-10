@@ -5,10 +5,11 @@
 #include <mt/mt_vector.h>
 #include <types.h>
 
-#define FRAMES_REQUIRED_START_BOMB_DROP 1200.0
 
 class stOperatorDropItem : public stOperator {
 public:
+    static const u32 FRAMES_REQUIRED_START_BOMB_DROP = 1200;
+
     enum Frequency {
         Frequency_Low = 0x0,
         Frequency_Medium = 0x1,

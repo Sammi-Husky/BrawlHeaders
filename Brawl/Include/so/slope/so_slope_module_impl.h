@@ -6,18 +6,19 @@
 #include <so/status/so_status_event_presenter.h>
 #include <so/so_array.h>
 
-#define SLOPE_STATUS_MASK_PART 0x8
-#define SLOPE_STATUS_MASK_R 0x4
-#define SLOPE_STATUS_MASK_L 0x2
-#define SLOPE_STATUS_MASK_TOP 0x1
-#define SLOPE_STATUS_MASK_NONE 0x0
-#define SLOPE_STATUS_MASK_LR 0x6
-#define SLOPE_STATUS_MASK_TPART 0x9
-
 class soModuleAccesser;
 
 class soSlopeStatusParam {
 public:
+    typedef u32 StatusMask;
+    static const StatusMask STATUS_MASK_NONE = 0;
+    static const StatusMask STATUS_MASK_TOP = 1 << 0;
+    static const StatusMask STATUS_MASK_L = 1 << 1;
+    static const StatusMask STATUS_MASK_R = 1 << 2;
+    static const StatusMask STATUS_MASK_PART = 1 << 3;
+    static const StatusMask STATUS_MASK_LR = STATUS_MASK_L | STATUS_MASK_R;
+    static const StatusMask STATUS_MASK_TPART = STATUS_MASK_TOP | STATUS_MASK_PART;
+
     union Status {
         u32 m_mask;
         struct {
@@ -28,7 +29,7 @@ public:
             bool m_top : 1;
         };
         inline Status() {}
-        inline Status(u32 mask) : m_mask(mask) {}
+        inline Status(StatusMask mask) : m_mask(mask) {}
     } m_status;
     int m_0x4;
     bool m_0x8;

@@ -4,7 +4,6 @@
 #include <types.h>
 
 struct grCollisionLine {
-
     enum MaterialType {
         Material_None = 0x0,
         Material_Rock = 0x1,
@@ -48,29 +47,72 @@ struct grCollisionLine {
         Material_Water_Earth = 0x1E,
     };
 
+    typedef u32 CategoryMask;
+    static const CategoryMask CATEGORY_MASK_NONE = 0;
+    static const CategoryMask CATEGORY_MASK_FIGHTER = 1 << 0;
+    static const CategoryMask CATEGORY_MASK_ENEMY = CATEGORY_MASK_FIGHTER;
+    static const CategoryMask CATEGORY_MASK_DEFAULT = CATEGORY_MASK_FIGHTER;
+    static const CategoryMask CATEGORY_MASK_ITEM = 1 << 1;  // Note: Item instances set a mask of CATEGORY_MASK_FIGHTER | CATEGORY_MASK_ITEM (see BaseItem::reset)
+    static const CategoryMask CATEGORY_MASK_OTHER = 1 << 2;
+    static const CategoryMask CATEGORY_MASK_POKETRAINER = CATEGORY_MASK_OTHER; // Note: PokeTrainer only on some stages (see ftPokeTrainerWanderingModule::start)
+    static const CategoryMask CATEGORY_MASK_ALL = CATEGORY_MASK_FIGHTER | CATEGORY_MASK_ITEM | CATEGORY_MASK_OTHER;
+
     // 0
     short m_point0Index;
     // 2
     short m_point1Index;
     // 4
-    char _spacer[10];
-    // 14
-    bool : 1;
-    bool : 1;
-    bool : 1;
-    bool : 1;
-    bool : 1;
-    bool : 1;
-    bool m_isEdit : 1;
-    bool m_isCrush : 1;
-    bool m_isDive : 1; // for Bucculus
-    bool m_isTargetOther : 1;
-    bool m_isTargetItem : 1;
-    bool m_isTargetAll : 1;
-    bool m_isRight : 1;
-    bool m_isLeft: 1;
-    bool m_isUpper : 1;
-    bool m_isUnder : 1;
+    char _spacer[8];
+
+    union
+    {
+        struct
+        {
+            // 12
+            u8 : 1;
+            u8 : 1;
+
+            // 14
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool m_isEdit : 1;
+            bool m_isCrush : 1;
+            bool m_isDive : 1; // for Bucculus
+            bool m_isTargetOther : 1;
+            bool m_isTargetItem : 1;
+            bool m_isTargetFighter : 1;
+            bool m_isRight : 1;
+            bool m_isLeft: 1;
+            bool m_isUpper : 1;
+            bool m_isUnder : 1;
+        };
+        struct
+        {
+            // 12
+            u8 : 1;
+            u8 : 1;
+
+            // 14
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1; // for Bucculus
+            CategoryMask m_targetCategory : 3;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+        };
+    };
 
     // 16
     bool m_noAttach : 1;
@@ -84,6 +126,7 @@ struct grCollisionLine {
 
     // 17
     MaterialType m_materialType : 8;
+
     // 18
     char _pad[2];
 };

@@ -4,6 +4,7 @@
 #include <snd/snd_id.h>
 #include <types.h>
 #include <nw4r/ut/ut_LinkList.h>
+#include <nw4r/snd/snd_sound_archive.h>
 
 class FrameHeap
 {
@@ -49,7 +50,8 @@ static_assert(sizeof(sndHeapSys) == 0x504, "Class is wrong size!");
 
 class sndSystem {
 public:
-    char _0[0x2D0];
+    nw4r::snd::DvdSoundArchive m_dvdSoundArchive;
+    char _144[0x144];
     sndHeapSys* m_sndHeapSys;
     char _2D4[0x8FC];
 

@@ -47,8 +47,8 @@ public:
     virtual void setAttackGimmickDetails(soCollisionAttackData* attackData, float size, float tripRate,
                                          float hitstopMultiplier, float sdiMultiplier, int power, Vec3f* offsetPos,
                                          int vector, int reactionEffect, int reactionFix, int reactionAdd,
-                                         u32 nodeIndex, u32 collisionCategoryMask, u32 collisionSituationMask,
-                                         bool unk1, u32 collisionPartMask, soCollisionAttackData::Attribute attribute,
+                                         u32 nodeIndex, soCollision::CategoryMask collisionCategoryMask, soCollision::SituationMask collisionSituationMask,
+                                         bool unk1, soCollision::PartMask collisionPartMask, soCollisionAttackData::Attribute attribute,
                                          soCollisionAttackData::SoundLevel soundLevel, soCollisionAttackData::SoundAttribute soundAttr,
                                          bool isClankable, bool unk2, bool unk3, bool isShieldable, bool isReflectable,
                                          bool isAbsorbable, u32 addedShieldDamage, u32 detectionRate, bool unk5, bool ignoreInvincibility,
@@ -64,7 +64,7 @@ public:
     bool isSubFighter(int* unk1);
     void setAreaShape(int unk1, float* unk2, float* unk3);
     void setAttackSize(int index, int unk2, float size);
-    void setAttackTargetCategory(int index, u32 categoryMask);
+    void setAttackTargetCategory(int index, soCollision::CategoryMask categoryMask);
     void setSleepAttack(bool isSleep);
     void setSleepHit(bool isSleep);
     void setSituationODD();

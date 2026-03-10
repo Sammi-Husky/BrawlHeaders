@@ -73,7 +73,7 @@ public:
         return disp.length();
     }
 
-    static void rot(double unk1, Vec2f *unk2, Vec2f *unk3);
+    void rot(Vec2f *out, float rot);
 
     static void copy(Vec2f& dest, const Vec2f& src) {
 #ifdef MATCHING

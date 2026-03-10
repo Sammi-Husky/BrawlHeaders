@@ -40,7 +40,7 @@ public:
     virtual void setVector(u32 index, int vector);
     virtual float getSize(u32 index);
     virtual void setSize(u32 index, float size);
-    virtual void setTargetCategory(u32 index, u32 categoryMask);
+    virtual void setTargetCategory(u32 index, soCollision::CategoryMask categoryMask);
     virtual bool setOffset(u32 index, Vec3f* offsetPos);
     virtual bool setOffsetFromNode(u32 index, int node);
     virtual void setNode(u32 index, int node);
@@ -140,7 +140,7 @@ public:
     virtual void setVector(u32 index, int vector);
     virtual float getSize(u32 index);
     virtual void setSize(u32 index, float size);
-    virtual void setTargetCategory(u32 index, u32 categoryMask);
+    virtual void setTargetCategory(u32 index, soCollision::CategoryMask categoryMask);
     virtual bool setOffset(u32 index, Vec3f* offsetPos);
     virtual bool setOffsetFromNode(u32 index, int node);
     virtual void setNode(u32 index, int node);

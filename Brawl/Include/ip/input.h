@@ -3,25 +3,26 @@
 #include <mt/mt_vector.h>
 #include <StaticAssert.h>
 #include <types.h>
-
-#define INPUT_PAD_BUTTON_MASK_ATTACK 0x1
-#define INPUT_PAD_BUTTON_MASK_SPECIAL 0x2
-#define INPUT_PAD_BUTTON_MASK_JUMP 0x4
-#define INPUT_PAD_BUTTON_MASK_GUARD 0x8
-#define INPUT_PAD_BUTTON_MASK_STOCK_SHARE 0x10
-#define INPUT_PAD_BUTTON_MASK_SMASH 0x20
-#define INPUT_PAD_BUTTON_MASK_DIR_L 0x40
-#define INPUT_PAD_BUTTON_MASK_DIR_Hi 0x80
-#define INPUT_PAD_BUTTON_MASK_DIR_R 0xC0
-#define INPUT_PAD_BUTTON_MASK_CSTICK 0x100
-#define INPUT_PAD_BUTTON_MASK_APPEAL_HI 0x400
-#define INPUT_PAD_BUTTON_MASK_APPEAL_S 0x800
-#define INPUT_PAD_BUTTON_MASK_APPEAL_LW 0x1000
-#define INPUT_PAD_BUTTON_MASK_APPEAL_S_L 0x2000
-#define INPUT_PAD_BUTTON_MASK_APPEAL_S_R 0x4000
-#define INPUT_PAD_BUTTON_MASK_FLICK_JUMP 0x8000
-
+\
 struct ipPadButton {
+
+    typedef u32 Mask;
+    static const Mask MASK_ATTACK = 1 << 0;
+    static const Mask MASK_SPECIAL = 1 << 1;
+    static const Mask MASK_JUMP = 1 << 2;
+    static const Mask MASK_GUARD = 1 << 3;
+    static const Mask MASK_STOCK_SHARE = 1 << 4;
+    static const Mask MASK_SMASH = 1 << 5;
+    static const Mask MASK_DIR_L = 1 << 6;
+    static const Mask MASK_DIR_Hi = 1 << 7;
+    static const Mask MASK_DIR_R = MASK_DIR_L | MASK_DIR_Hi;
+    static const Mask MASK_CSTICK = 1 << 8;
+    static const Mask MASK_APPEAL_HI = 1 << 10;
+    static const Mask MASK_APPEAL_S = 1 << 11;
+    static const Mask MASK_APPEAL_LW = 1 << 12;
+    static const Mask MASK_APPEAL_S_L = 1 << 13;
+    static const Mask MASK_APPEAL_S_R = 1 << 14;
+    static const Mask MASK_FLICK_JUMP = 1 << 15;
 
     enum Dir {
         Dir_Lw = 0x0,
@@ -32,7 +33,7 @@ struct ipPadButton {
 
     union {
         struct {
-            unsigned int m_mask;
+            Mask m_mask;
         };
         struct {
             unsigned short : 16;
@@ -55,7 +56,7 @@ struct ipPadButton {
     };
 
     inline ipPadButton() { };
-    inline ipPadButton(u32 mask) : m_mask(mask) {};
+    inline ipPadButton(Mask mask) : m_mask(mask) {};
 };
 static_assert(sizeof(ipPadButton) == 4, "Class is wrong size!");
 

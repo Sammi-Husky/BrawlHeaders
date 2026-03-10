@@ -22,8 +22,9 @@ public:
     u32 setEffect(EfID effectID, const Vec3f* pos, const Vec3f* rot, const Vec3f* scale);
     void endEffect(u32);
     void killEffect(u32, u32, u32);
-    void setParent(u32 unk, nw4r::g3d::ScnMdl*, const char*, int);
-    void setParent2(u32 unk, nw4r::g3d::ScnMdl*, const char*, int); // FIXME: overload
+    void setParent(u32 handleId, nw4r::g3d::ScnMdl*, const char*, bool);
+    void setParent(u32 handleId, nw4r::g3d::ScnMdl*, u32, bool);
+    void setParent(u32 handleId1, u32 handleId2, const char*, bool);
     void preSetAnmIdx(int chrIndex, int visIndex, int patIndex, int srtIndex, int clrIndex, int shpIndex);
     void setGroundAttach(u32, soGroundModule* groundModule);
     void setGroundAttach(u32, grCollisionLineWork* lineWork);

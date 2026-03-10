@@ -244,7 +244,7 @@ public:
 
     struct AttackDetails {
         union {
-            u32 m_targetCategory;
+            soCollision::CategoryMask m_targetCategory;
             struct {
                 unsigned int _pad : 22;
                 bool m_targetCategoryFloor : 1;

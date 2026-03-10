@@ -3,9 +3,17 @@
 #include <StaticAssert.h>
 #include <types.h>
 #include <ft/fighter.h>
+#include <so/article/so_article.h>
+#include <ft/ft_log.h>
+
+struct ftOwnerData {
+    char _[0x838];
+    ftLog m_log;
+};
+static_assert(sizeof(ftOwnerData) == 0xd44, "Class is wrong size!");
 
 class ftOwner {
-    void* m_data;
+    ftOwnerData* m_data;
     void* m_input;
     short _8;
     u8 _10;
@@ -29,9 +37,9 @@ public:
     virtual void setLogFlag(bool, u32 index1, u32 index2);
     virtual void onLogFlag(u32 index1, u32 index2);
     virtual void offLogFlag(u32 index1, u32 index2);
-    virtual void setLogActionInfo(void*);
-    virtual void addAttackInfo(void*);
-    virtual void addAttackPattern(void*);
+    virtual void setLogActionInfo(ftLogActionInfo);
+    virtual void addAttackInfo(const soLogAttackInfo&);
+    virtual void addAttackPattern(const soLogAttackInfo&);
 
     void setTeam(int team);
     void setPointTeam(int pointTeam);
@@ -54,5 +62,7 @@ public:
     void setHitPointMax(float);
     void setSlipMul(float);
     void setSlipInterval(bool);
+
+    inline ftLog& getLog() const { return m_data->m_log; };
 };
 static_assert(sizeof(ftOwner) == 16, "Class is wrong size!");
