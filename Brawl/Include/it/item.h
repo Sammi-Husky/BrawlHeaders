@@ -376,6 +376,9 @@ public:
     void warp(Vec3f* pos);
     void setVanishMode(bool);
     bool sendTouchMessage(int taskId, Vec3f* pos, float);
+
+    
+    static bool setTeamOwnerTaskId(BaseItem* item, int taskId);
 };
 static_assert(sizeof(BaseItem) == 0x3d60, "Class is wrong size!");
 
