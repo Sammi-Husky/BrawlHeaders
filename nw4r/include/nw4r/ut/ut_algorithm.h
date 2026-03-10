@@ -31,9 +31,9 @@ template <typename T> inline T Abs(T x) {
 template <> f32 inline Abs(register f32 x) {
     register f32 ax;
 
-    ASM (
+    asm {
         fabs ax, x
-    )
+    }
 
     return ax;
 }

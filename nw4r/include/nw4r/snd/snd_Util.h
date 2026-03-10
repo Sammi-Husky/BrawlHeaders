@@ -15,9 +15,9 @@ public:
     static const int MICROTONE_MAX = 256;
 
     static const int VOLUME_MIN =
-        static_cast<int>(10 * VOLUME_MIN_DB); // -90.4db
+        static_cast<int>(10.0f * VOLUME_MIN_DB); // -90.4db
     static const int VOLUME_MAX =
-        static_cast<int>(10 * VOLUME_MAX_DB); // +6.0db
+        static_cast<int>(10.0f * VOLUME_MAX_DB); // +6.0db
 
 public:
     /******************************************************************************
