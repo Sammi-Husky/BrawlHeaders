@@ -1,6 +1,6 @@
 #pragma once
 
-#include <nw4r/ut/Font.h>
+#include <nw4r/ut/ut_Font.h>
 
 struct FontData {
     enum FONT_RESOURCE {
