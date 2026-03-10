@@ -2,7 +2,7 @@
 #define NW4R_UT_RES_FONT_BASE_H
 #include <nw4r/types_nw4r.h>
 
-#include <nw4r/ut/Font.h>
+#include <nw4r/ut/ut_Font.h>
 
 namespace nw4r {
 namespace ut {
