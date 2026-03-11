@@ -262,6 +262,9 @@ public:
         };
     };
 
+    typedef itParam::BoundFlag BoundFlag;
+    typedef itParam::BoundMask BoundMask;
+
     int m_instanceId;
     union {
         struct {
@@ -371,14 +374,12 @@ public:
     float getParamFloat(u32 param);
     bool isHaved();
     int getTeamOwnerTaskId();
+    void setTeamOwnerTaskId(int taskId);
 
     void setSafePos(Vec2f* pos);
     void warp(Vec3f* pos);
     void setVanishMode(bool);
     bool sendTouchMessage(int taskId, Vec3f* pos, float);
-
-    
-    static bool setTeamOwnerTaskId(BaseItem* item, int taskId);
 };
 static_assert(sizeof(BaseItem) == 0x3d60, "Class is wrong size!");
 
@@ -417,7 +418,7 @@ public:
     virtual bool onPreDamageCheck(BaseItem* item, int damageStatusKind, soDamageLog*);
     virtual bool onDamage(BaseItem* item, int damageStatusKind, soDamageLog*);
     virtual bool onReflect(BaseItem* item);
-    virtual void onPreBound(BaseItem* item, Vec2f*, itParam::BoundFlag);
+    virtual void onPreBound(BaseItem* item, Vec2f*, BaseItem::BoundMask);
     virtual bool onRemoveModelConstraint(BaseItem* item, int);
     virtual bool onEnumFighter(BaseItem* item, Fighter* fighter);
     virtual int onGetLayerType(BaseItem* item);

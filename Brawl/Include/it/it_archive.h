@@ -49,6 +49,34 @@ struct itParam {
         inline KineticFlag(KineticMask bits) : m_mask(bits) {}
     };
 
+    typedef u32 TraitMask;
+    static const TraitMask TRAIT_MASK_NONE = 0x0;
+    static const TraitMask TRAIT_MASK_ENEMY_ATTACK = 1 << 25;
+    static const TraitMask TRAIT_MASK_NO_INHALED = 1 << 24;
+    static const TraitMask TRAIT_MASK_NO_BOUND_REMOVE = 1 << 23;
+    static const TraitMask TRAIT_MASK_NO_THROW = 1 << 22;
+    static const TraitMask TRAIT_MASK_NO_COUNT = 1 << 21;
+    static const TraitMask TRAIT_MASK_HAMMER = 1 << 20;
+    static const TraitMask TRAIT_MASK_NO_EAT = 1 << 19;
+    static const TraitMask TRAIT_MASK_EQUIP2 = 1 << 18;
+    static const TraitMask TRAIT_MASK_STAGE = 1 << 17;
+    static const TraitMask TRAIT_MASK_ENEMY = 1 << 16;
+    static const TraitMask TRAIT_MASK_BOMB = 1 << 15;
+    static const TraitMask TRAIT_MASK_WEAPON = 1 << 14;
+    static const TraitMask TRAIT_MASK_FOOD = 1 << 13;
+    static const TraitMask TRAIT_MASK_FIGHTER = 1 << 12;
+    static const TraitMask TRAIT_MASK_POKEMON = 1 << 11;
+    static const TraitMask TRAIT_MASK_ASSIST = 1 << 10;
+    static const TraitMask TRAIT_MASK_SPECIAL  = 1 << 9;
+    static const TraitMask TRAIT_MASK_BALL  = 1 << 8;
+    static const TraitMask TRAIT_MASK_RECOVER  = 1 << 7;
+    static const TraitMask TRAIT_MASK_EQUIP = 1 << 6;
+    static const TraitMask TRAIT_MASK_QUICK = 1 << 5;
+    static const TraitMask TRAIT_MASK_TOUCH = 1 << 4;
+    static const TraitMask TRAIT_MASK_THROW = 1 << 3;
+    static const TraitMask TRAIT_MASK_SWING = 1 << 2;
+    static const TraitMask TRAIT_MASK_SHOOT = 1 << 1;
+    static const TraitMask TRAIT_MASK_CARRIER = 1 << 0;
     struct TraitFlag {
         union {
             struct {
@@ -85,14 +113,20 @@ struct itParam {
                 bool m_shoot : 1;
                 bool m_carrier : 1;
             };
-            u32 m_mask;
+            TraitMask m_mask;
         };
         inline TraitFlag() {}
-        inline TraitFlag(u32 bits) : m_mask(bits) {}
+        inline TraitFlag(TraitMask bits) : m_mask(bits) {}
     };
 
+    typedef u32 BoundMask;
+    static const BoundMask BOUND_MASK_NONE = 0x0;
+    static const BoundMask BOUND_MASK_THROW = 1 << 4;
+    static const BoundMask BOUND_MASK_CEILING = 1 << 3;
+    static const BoundMask BOUND_MASK_WALL = 1 << 2;
+    static const BoundMask BOUND_MASK_DUMMY = 1 << 1;
+    static const BoundMask BOUND_MASK_FLOOR = 1 << 0;
     struct BoundFlag {
-
         union {
             struct {
                 bool : 1;
@@ -128,10 +162,10 @@ struct itParam {
                 bool m_dummy : 1;
                 bool m_floor : 1;
             };
-            u32 m_mask;
+            BoundMask m_mask;
         };
         inline BoundFlag() {}
-        inline BoundFlag(u32 bits) : m_mask(bits) {}
+        inline BoundFlag(BoundMask bits) : m_mask(bits) {}
     };
 
     enum AttachGroup {

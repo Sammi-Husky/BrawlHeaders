@@ -259,7 +259,7 @@ class itSandbagCustomizer : public itCustomizer<itSandbagCustomizer> {
     virtual void onNotifyEventLink(BaseItem* item, void* unk1, soModuleAccesser* moduleAccesser, StageObject*, int unk4);
     virtual bool onNotifyEventCaptureStatus(BaseItem* item); // TODO
     virtual bool onDamage(BaseItem* item, int, soDamageLog*);
-    virtual void onPreBound(BaseItem* item, float*, u32);
+    virtual void onPreBound(BaseItem* item, float*, BaseItem::BoundMask);
     virtual bool isUseTurnDamage(BaseItem* item);
     virtual bool isUseSpeedDamage(BaseItem* item);
     virtual itParam::KineticFlag getKineticFlags(BaseItem* item);

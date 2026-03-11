@@ -21,9 +21,9 @@ class Ground : public gfTask {
 public:
     enum CollCategory
     {
-        Coll_Category_Fighter = 0x1,
-        Coll_Category_Enemy = 0x2,
-        Coll_Category_Item = 0x3,
+        Coll_Category_Fighter = 0x0,
+        Coll_Category_Enemy = 0x1,
+        Coll_Category_Item = 0x2,
     };
     typedef u32 CollCategoryMask;
     static const CollCategoryMask COLL_CATEGORY_MASK_FIGHTER = 1 << Coll_Category_Fighter;
@@ -163,7 +163,7 @@ public:
 
     bool getNodeIndex(u32* nodeIndex, u32 sceneModelIndex, const char* nodeName);
     void addSceneRoot(nw4r::g3d::ScnMdl* sceneModel, int unk2);
-    bool isCollisionStatusOwnerTask(grCollStatus* collStatus, CollCategoryFlag* unk2);
+    bool isCollisionStatusOwnerTask(grCollStatus* collStatus, CollCategoryFlag*);
     bool searchNode(const char* unk1, const char* nodeName, int* unk3, u32* nodeIndex);
     void setBlendColorDisable();
     void setBlendColorEnable();

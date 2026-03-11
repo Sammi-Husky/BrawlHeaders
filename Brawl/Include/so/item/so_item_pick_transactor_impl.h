@@ -24,7 +24,7 @@ class soItemPickTransactor : public soNull, public soNullable {
 public:
     virtual ~soItemPickTransactor();
     virtual bool check(soItemSearch*, soItemInfo*, soModuleAccesser*);
-    virtual bool haveItem(soItemSearch*, soModuleAccesser*, u8, itParam::TraitFlag, u32, u32 index);
+    virtual bool pickup(soItemSearch*, soModuleAccesser*, u8, itParam::TraitMask, u32, u32 index);
 };
 static_assert(sizeof(soItemPickTransactor) == 12, "Class is wrong size!");
 
@@ -32,6 +32,6 @@ class soItemPickTransactorImpl : public soItemPickTransactor {
 public:
     virtual ~soItemPickTransactorImpl();
     virtual bool check(soItemSearch*, soItemInfo*, soModuleAccesser*);
-    virtual bool haveItem(soItemSearch*, soModuleAccesser*, u8, itParam::TraitFlag, u32, u32 index);
+    virtual bool pickup(soItemSearch*, soModuleAccesser*, u8, itParam::TraitMask, u32, u32 index);
 };
 static_assert(sizeof(soItemPickTransactorImpl) == 12, "Class is wrong size!");
