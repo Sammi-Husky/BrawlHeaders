@@ -55,7 +55,7 @@ public:
 private:
     bool LoadFileHeader();
 
-private:
+public:
     detail::SoundArchiveFileReader mFileReader; // at 0x108
     DVDFileInfo mFileInfo;                      // at 0x14C
     bool mOpen;                                 // at 0x188
