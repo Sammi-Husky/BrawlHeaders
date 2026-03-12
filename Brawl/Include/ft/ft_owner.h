@@ -50,6 +50,7 @@ public:
     float getCoinDropRate();
     void addCoin(int numCoinsToAdd);
     int getBeatCount(int playerIndex);
+    int getSuicideCount();
     int getStockCount();
     float getHitPointMax();
     void setMetal(bool);

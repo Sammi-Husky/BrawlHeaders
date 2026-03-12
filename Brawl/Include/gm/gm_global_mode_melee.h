@@ -283,7 +283,7 @@ public:
     bool m_0x3_4 : 1;
     bool m_allowPause : 1;
     bool m_0x3_2 : 1;
-    bool m_showDamageGauge : 1;
+    bool m_hideDamageGauge : 1;
     bool m_0x3_0 : 1;
     bool m_scoreDisplay : 1; // 0x04
     bool m_0x4_6 : 1;
