@@ -285,6 +285,9 @@ CC008000:WGPIPE
 80079794:stopSE__14snd3DGeneratorFll
 80079758:prepareSE__14snd3DGeneratorF5SndIDl
 
+// snd::detail
+801D3698:GetDataRefAddressImpl__Q44nw4r3snd6detail4UtilFQ54nw4r3snd6detail4Util7RefTypeUlPCv
+
 // gfTask
 8002d8b8:__ct__6gfTaskFPCciiii
 8002ddc8:processDefault__6gfTaskFv
