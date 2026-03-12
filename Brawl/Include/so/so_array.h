@@ -60,16 +60,14 @@ public:
     virtual ~soArrayContractibleTable() { }
 
     soArrayContractibleTable& operator=(const soArrayContractibleTable& other) {
-        if (this == &other) {
+        if (this == &other)
             return *this;
-        }
-
-        this->m_link = other.m_link;
+        soConnectable<soArrayContractibleTable<T> >::operator=(other);
+        const bool noElements = (other.m_elements == nullptr);
         m_elements = other.m_elements;
         m_size = other.m_size;
-        if (other.m_elements == nullptr) {
+        if (noElements)
             m_size = 0;
-        }
         return *this;
     }
 
