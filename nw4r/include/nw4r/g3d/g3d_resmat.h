@@ -4,10 +4,14 @@
 #include <GX.h>
 #include <mt/mt_vector.h>
 #include <nw4r/g3d/g3d_rescommon.h>
+#include <nw4r/g3d/g3d_restex.h>
 #include <types.h>
 
 namespace nw4r {
     namespace g3d {
+    
+// Forward declarations
+class ResFile;
 
         struct ResTexSrtData {
             union {
@@ -125,6 +129,9 @@ namespace nw4r {
             inline ResMat() : ResCommon() {}
             inline ResMat(void* data) : ResCommon(data) {}
 
+            void Bind(const nw4r::g3d::ResFile file);
+            void Release();
+            void ForceBindTex(ResTex,const char*);
             void DCStore(bool sync);
         };
     } // namespace g3d

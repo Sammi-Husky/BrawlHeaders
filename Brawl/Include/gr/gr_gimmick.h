@@ -390,7 +390,7 @@ public:
     virtual void updateCallback(u32 index);
     virtual void fixedPosition(float unk1);
     virtual void setTgtNode(const char* unk1);
-    virtual u32 getTgtNode();
+    virtual char* getTgtNode();
     virtual void setGimmickData(void* gimmickData) { m_gimmickData = gimmickData; }
     virtual void* getGimmickData() { return m_gimmickData; }
     virtual void changeNodeAnim(u32 chrIndex, u32 modelAnimIndex);
