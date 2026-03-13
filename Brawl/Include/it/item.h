@@ -209,6 +209,7 @@ public:
                 Flag_Vanish = 0x12000006,
                 Flag_Target_Found = 0x12000007,
                 Flag_Disable_Jostle = 0x12000008,
+                Flag_unk = 0x12000009,
                 Flag_Auto_Play_Lost_Effect = 0x1200000A,
                 Flag_Ground_Lost = 0x1200000c,
                 Flag_Water = 0x1200000d,
