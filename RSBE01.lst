@@ -288,6 +288,11 @@ CC008000:WGPIPE
 // snd::detail
 801D3698:GetDataRefAddressImpl__Q44nw4r3snd6detail4UtilFQ54nw4r3snd6detail4Util7RefTypeUlPCv
 
+// SoundArchiveLoader
+801C8104:__ct__Q44nw4r3snd6detail18SoundArchiveLoaderFRCQ34nw4r3snd12SoundArchive
+801C8140:__dt__Q44nw4r3snd6detail18SoundArchiveLoaderFv
+801C8180:LoadGroup__Q44nw4r3snd6detail18SoundArchiveLoaderFUlPQ34nw4r3snd22SoundMemoryAllocatablePPvUl
+
 // SoundArchive
 801C6B14:__ct__Q34nw4r3snd12SoundArchiveFv
 801C6B38:__dt__Q34nw4r3snd12SoundArchiveFv
