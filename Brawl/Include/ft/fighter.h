@@ -1341,9 +1341,9 @@ public:
             Reason_Outside_Right = 0x3,
             Reason_Ground_Crush = 0x4,
             Reason_KnockOut = 0x5,
-            Reason_KnockOut_SelfDestruct = 0x5,
             Reason_Knockout_Explode = 0x6,
-            Reason_Instant_Death = 0x6
+            Reason_Instant_Death = 0x6,
+            Reason_KnockOut_SelfDestruct = 0x7,
         };
 
         enum Mode {
