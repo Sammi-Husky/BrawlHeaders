@@ -10,17 +10,15 @@ protected:
 public:
     soConnectable() : m_link(nullptr) { }
     soConnectable& operator=(const soConnectable& other) {
-        if (this != &other) {
+        if (this != &other)
             m_link = other.m_link;
-        }
         return *this;
     }
 
     void connect(T* node) {
-        if (m_link) {
+        if (m_link)
             m_link->connect(node);
-        } else {
+        else
             m_link = node;
-        }
     }
 };
