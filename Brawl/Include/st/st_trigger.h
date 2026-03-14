@@ -30,6 +30,9 @@ public:
 
     void setAreaSleep(bool);
     void setWindParam(grGimmickWindData2nd* wnd, s32 p2);
+    void setBeltConveyorParam(grGimmickBeltConveyorData* belt);
+    //void setBeltConveyorParam(grGimmickTriBeltConveyorData* belt);
+    void setWaterParam(grGimmickWaterData* water);
 
 
 };
