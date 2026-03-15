@@ -11,7 +11,10 @@ class sndHeapSys
 public:
     char _0[0x258];
     nw4r::snd::SoundHeap m_heapArr[0xC];
-    char _468[0x9C];
+    char _468[0xC];
+    nw4r::snd::SoundHeap* m_heapAddresses[0xC];
+    u32 m_heapMaxSizeArr[0xC];
+    u32 m_heapCurrSizeArr[0xC];
 };
 static_assert(sizeof(sndHeapSys) == 0x504, "Class is wrong size!");
 
