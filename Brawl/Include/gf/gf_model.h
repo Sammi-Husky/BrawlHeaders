@@ -64,7 +64,7 @@ static_assert(sizeof(gfModelAnimation) == 32, "Class is wrong size!");
 inline void setVisibilityAnim(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
 //    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries())
         int instanceSize;
-        nw4r::g3d::ResAnmVis anim = modelAnim->m_resFile.GetResAnmVis(animId);
+        nw4r::g3d::ResAnmVis anim = modelAnim->m_resFile.GetResAnmVis((u32)animId);
 
         MEMAllocator* allocator = gfHeapManager::getMEMAllocator(heap);
         if (anim.IsValid())
@@ -96,7 +96,7 @@ inline void setVisibilityAnim2(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimati
 inline void setChrAnim(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
 //    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries())
         int instanceSize;
-        nw4r::g3d::ResAnmChr anim = modelAnim->m_resFile.GetResAnmChr(animId);
+        nw4r::g3d::ResAnmChr anim = modelAnim->m_resFile.GetResAnmChr((u32)animId);
 
         MEMAllocator* allocator = gfHeapManager::getMEMAllocator(heap);
         if (anim.IsValid())
@@ -128,7 +128,7 @@ inline void setChrAnim2(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* mod
 inline void setTexPatAnim(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
 //    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries())
         int instanceSize;
-        nw4r::g3d::ResAnmTexPat anim = modelAnim->m_resFile.GetResAnmTexPat(animId);
+        nw4r::g3d::ResAnmTexPat anim = modelAnim->m_resFile.GetResAnmTexPat((u32)animId);
 
         if (anim.IsValid())
         {
@@ -160,7 +160,7 @@ inline void setTexPatAnim2(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* 
 inline void setTexSortAnim(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
 //    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries())
         int instanceSize;
-        nw4r::g3d::ResAnmTexSrt anim = modelAnim->m_resFile.GetResAnmTexSrt(animId);
+        nw4r::g3d::ResAnmTexSrt anim = modelAnim->m_resFile.GetResAnmTexSrt((u32)animId);
 
         if (anim.IsValid())
         {
@@ -192,7 +192,7 @@ inline void setTexSortAnim2(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation*
 inline void setColorAnim(u8 animId,nw4r::g3d::ResMdl model, gfModelAnimation* modelAnim, Heaps::HeapType heap) {
 //    if (animId < modelAnim->m_resFile.GetResAnmClrNumEntries())
         int instanceSize;
-        nw4r::g3d::ResAnmClr anim = modelAnim->m_resFile.GetResAnmClr(animId);
+        nw4r::g3d::ResAnmClr anim = modelAnim->m_resFile.GetResAnmClr((u32)animId);
 
         //MEMAllocator* allocator = gfHeapManager::getMEMAllocator(Heaps::StageInstance);
         if (anim.IsValid())

@@ -125,7 +125,7 @@ public:
 
     grMadein(const char* taskName);
     virtual void setTgtNode(const char* unk1);
-    virtual u32 getTgtNode();
+    virtual char* getTgtNode();
     virtual void onDamage(int index, soDamage* damage, soDamageAttackerInfo* attackerInfo);
     virtual void onInflictEach(soCollisionLog* collisionLog, float power);
     virtual void receiveCollMsg_Landing(grCollStatus* collStatus, grCollisionJoint* collisionJoint, bool isFirstContact);
