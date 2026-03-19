@@ -3,48 +3,18 @@
 #include <StaticAssert.h>
 #include <snd/snd_id.h>
 #include <types.h>
-#include <nw4r/ut/ut_LinkList.h>
-#include <nw4r/snd/snd_sound_archive.h>
-
-class FrameHeap
-{
-public:
-    u32* m_heapPtr;
-    u32* m_currLevel;
-    u8* _unk08;
-    u8* _unk0C;
-    
-    void Clear();
-    nw4r::ut::LinkListNode* Alloc(u32 size, void* disposeFuncPtr, int);
-    int SaveState();
-    void LoadState(int clearToLevel);
-    int GetFreeSize();
-    int GetCurrentLevel();
-};
-static_assert(sizeof(FrameHeap) == 0x10, "Class is wrong size!");
-
-class SoundHeap
-{
-public:
-    virtual ~SoundHeap();
-    virtual u32 Alloc(u32 size);
-
-    u32 m_mutex;
-    u8 _unk08[0x14];
-    FrameHeap m_frameHeap;
-
-    void Clear();
-    int SaveState();
-    void LoadState(int clearToLevel);
-};
-static_assert(sizeof(SoundHeap) == 0x2C, "Class is wrong size!");
+#include <nw4r/snd/snd_SoundHeap.h>
+#include <nw4r/snd/snd_DvdSoundArchive.h>
 
 class sndHeapSys
 {
 public:
     char _0[0x258];
-    SoundHeap m_heapArr[0xC];
-    char _468[0x9C];
+    nw4r::snd::SoundHeap m_heapArr[0xC];
+    char _468[0xC];
+    nw4r::snd::SoundHeap* m_heapAddresses[0xC];
+    u32 m_heapMaxSizeArr[0xC];
+    u32 m_heapCurrSizeArr[0xC];
 };
 static_assert(sizeof(sndHeapSys) == 0x504, "Class is wrong size!");
 
