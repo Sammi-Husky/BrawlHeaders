@@ -4,7 +4,10 @@
 #include <snd/snd_id.h>
 #include <types.h>
 #include <nw4r/snd/snd_SoundHeap.h>
+#include <nw4r/snd/snd_Sound3DManager.h>
+#include <nw4r/snd/snd_Sound3DListener.h>
 #include <nw4r/snd/snd_DvdSoundArchive.h>
+#include <nw4r/snd/snd_SoundArchivePlayer.h>
 
 class sndHeapSys
 {
@@ -21,7 +24,9 @@ static_assert(sizeof(sndHeapSys) == 0x504, "Class is wrong size!");
 class sndSystem {
 public:
     nw4r::snd::DvdSoundArchive m_dvdSoundArchive;
-    char _144[0x144];
+    nw4r::snd::SoundArchivePlayer m_archivePlayer;
+    nw4r::snd::Sound3DManager m_3DManager;
+    nw4r::snd::Sound3DListener m_3DListener;
     sndHeapSys* m_sndHeapSys;
     char _2D4[0x8FC];
 
