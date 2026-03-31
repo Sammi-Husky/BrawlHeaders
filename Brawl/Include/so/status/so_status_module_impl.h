@@ -76,8 +76,11 @@ class soStatusModuleImpl : public soStatusModule, public soEventPresenter<soStat
 
 public:
     soTransitionModule* m_transitionModule;
+    soArray<soStatusUniqProcess>* m_statusUniqProcessArr;
+    int m_statusKind;
+    int m_nextStatusKind;
 private:
-    char _spacer[0x74];
+    char _spacer[0x68];
 public:
     virtual void activate(soModuleAccesser* moduleAccesser);
     virtual void deactivate(soModuleAccesser* moduleAccesser);
