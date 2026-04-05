@@ -143,6 +143,7 @@ public:
     int m_slotIndex;
     char _0x1c[10];
     u8 m_finalSmashAmount; // custom
+    char _0x1e[1];
     ftOwner* m_owner;
     ftInput* m_input;
     Instance m_instances[4];
