@@ -9,6 +9,35 @@ class soModuleAccesser;
 
 class soCollisionAttackEventObserver : public soEventObserver<soCollisionAttackEventObserver> {
 public:
+    typedef u16 AttributeMask;
+    static const AttributeMask ATTRIBUTE_MASK_NONE = 0;
+    struct AttributeFlag {
+        union {
+            struct {
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+            };
+            AttributeMask m_mask;
+        };
+        inline AttributeFlag() : m_mask(ATTRIBUTE_MASK_NONE) {}
+        inline AttributeFlag(AttributeMask bits) : m_mask(bits) {}
+        inline ~AttributeFlag() {}
+    };
+
     soCollisionAttackEventObserver(short unitID) : soEventObserver<soCollisionAttackEventObserver>(unitID) {};
 
     virtual void addObserver(short param1, s8 param2);

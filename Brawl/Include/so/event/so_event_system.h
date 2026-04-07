@@ -90,8 +90,7 @@ public:
     virtual ~soEventUnitImpl() { }
 
     virtual s16 addObserverSub(T* obsvr, s8 p2) {
-        soInstanceAttributeExt2<T> attr(obsvr);
-        return m_observerListPtr->add(attr.unk0, -1, attr.unk4, p2);
+        return m_observerListPtr->add(obsvr, -1, typename std::remove_pointer<T>::type::AttributeFlag(), p2);
     }
 
     virtual soInstanceManagerFullProperty<T*>* getObserverListSub() {

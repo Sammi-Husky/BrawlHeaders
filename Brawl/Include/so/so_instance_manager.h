@@ -70,8 +70,8 @@ public:
 template <class T>
 class soInstanceManagerAttributePolicy {
 public:
-    virtual void getAttributeArray(const soInstanceAttribute& attr, soArray<T*>& arr) = 0;
-    virtual soInstanceAttributeExt<T> getAttribute(s32) const = 0;
+    virtual void getAttributeArray(typename std::remove_pointer<T>::type::AttributeFlag mask, soArray<T*>& arr) = 0;
+    virtual typename std::remove_pointer<T>::type::AttributeFlag getAttribute(s32) const = 0;
 };
 
 template <class T>
@@ -82,14 +82,14 @@ public:
     // UBFIX: There should have been a virtual dtor in the base class
     ~soInstanceManagerFullProperty() { }
     virtual s32 add(T& p1, s32 p2) {
-        return add(p1, p2, soInstanceAttribute(), -1);
+        return add(p1, p2, typename std::remove_pointer<T>::type::AttributeFlag(), -1);
     }
 
-    virtual s32 add(T&, s32, const soInstanceAttribute&, s16);
-    virtual u32 capacity();
+    virtual s32 add(T&, s32, typename std::remove_pointer<T>::type::AttributeFlag, s16) = 0;
+    virtual u32 capacity() = 0;
     virtual T& atIndexFast(s32 index) { return this->at(index); }
-    virtual soInstanceUnit<T>& atUnitIndexFast(s32 index);
-    virtual s32 getIndex(s32 index) const;
+    virtual soInstanceUnit<T>& atUnitIndexFast(s32 index) = 0;
+    virtual s32 getIndex(s32 index) const = 0;
 };
 
 template <class T, u32 C>
@@ -105,13 +105,13 @@ public:
     virtual void clear();
     virtual void set(const T&, s32 index);
 
-    virtual s32 add(T&, s32, const soInstanceAttribute&, s16);
+    virtual s32 add(T&, s32, typename std::remove_pointer<T>::type::AttributeFlag, s16);
     virtual u32 capacity();
     virtual soInstanceUnit<T>& atUnitIndexFast(s32 index);
     virtual s32 getIndex(s32 index) const;
 
-    virtual void getAttributeArray(const soInstanceAttribute& attr, soArray<T*>& arr);
-    virtual soInstanceAttributeExt<T> getAttribute(s32) const;
+    virtual void getAttributeArray(typename std::remove_pointer<T>::type::AttributeFlag mask, soArray<T*>& arr);
+    virtual typename std::remove_pointer<T>::type::AttributeFlag getAttribute(s32) const;
     virtual void getPriorityArray(soArray<T*>& arr);
 
 };
@@ -187,7 +187,7 @@ public:
         ref = elm;
     }
 
-    virtual s32 add(T& elm, s32 id, const soInstanceAttribute& attr, s16 p4) {
+    virtual s32 add(T& elm, s32 id, typename std::remove_pointer<T>::type::AttributeFlag attr, s16 p4) {
         if (m_arrayVector.isFull() == true)
             return -1;
         if ((!m_unk1 || id > -1) && isContain(id) == true)
@@ -219,21 +219,20 @@ public:
 
     virtual s32 getIndex(s32 id) const { return searchIndex(id); }
 
-    virtual void getAttributeArray(const soInstanceAttribute& attr, soArray<T*>& arr) {
+    virtual void getAttributeArray(typename std::remove_pointer<T>::type::AttributeFlag targetAttr, soArray<T*>& arr) {
         s32 sz = m_arrayVector.size();
         for (s32 i = 0; i < sz; i++) {
-            soInstanceAttributeExt<T> stack8 = m_arrayVector.at(i).getAttribute();
-            if (stack8.unk0 & attr.unk0) {
-                stack8.unk4 = &m_arrayVector.at(i).m_element;
-                arr.push(stack8.unk4);
+            typename std::remove_pointer<T>::type::AttributeFlag attrFlag = m_arrayVector.at(i).getAttribute();
+            if (attrFlag.m_mask & targetAttr.m_mask) {
+                arr.push(&m_arrayVector.at(i).m_element);
             }
         }
     }
 
-    virtual soInstanceAttributeExt<T> getAttribute(s32 id) const {
+    virtual typename std::remove_pointer<T>::type::AttributeFlag getAttribute(s32 id) const {
         s32 idx = searchIndex(id);
         if (idx < 0)
-            return soInstanceAttributeExt<T>();
+            return typename std::remove_pointer<T>::type::AttributeFlag();
         return m_arrayVector.at(idx).getAttribute();
     }
 
@@ -274,6 +273,6 @@ public:
     soArray<soInstanceUnitFullProperty<T> >* m_array;
 
     virtual void getPriorityArray(soArray<T*>& arr);
-    virtual void getAttributeArray(const soInstanceAttribute& attr, soArray<T*>& arr);
-    virtual soInstanceAttributeExt<T> getAttribute(s32) const;
+    virtual void getAttributeArray(typename std::remove_pointer<T>::type::AttributeFlag mask, soArray<T*>& arr);
+    virtual typename std::remove_pointer<T>::type::AttributeFlag getAttribute(s32) const;
 };

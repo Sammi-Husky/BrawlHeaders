@@ -5,11 +5,55 @@
 #include <so/so_enable.h>
 #include <so/so_suspend.h>
 #include <mt/mt_vector.h>
+#include <climits>
 
 class soModuleAccesser;
 
 class soKineticEnergy : public soNullable, public soEnable, public soSuspendable {
 public:
+    enum Attribute {
+        Attribute_Main = 0x0,
+        Attribute_Damage = 0x1,
+        Attribute_Extern = 0x2,
+        Attribute_Ground = 0x3,
+        Attribute_Extern2 = 0x4,
+    };
+    typedef u16 AttributeMask;
+    static const AttributeMask ATTRIBUTE_MASK_NONE = 0;
+    static const AttributeMask ATTRIBUTE_MASK_MAIN = 1 << Attribute_Main;
+    static const AttributeMask ATTRIBUTE_MASK_DAMAGE = 1 << Attribute_Damage;
+    static const AttributeMask ATTRIBUTE_MASK_EXTERN = 1 << Attribute_Extern;
+    static const AttributeMask ATTRIBUTE_MASK_GROUND = 1 << Attribute_Ground;
+    static const AttributeMask ATTRIBUTE_MASK_EXTERN2 = 1 << Attribute_Extern2;
+    static const AttributeMask ATTRIBUTE_MASK_ALL = USHRT_MAX;
+    struct AttributeFlag {
+        union {
+            struct {
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool m_extern2 : 1;
+                bool m_ground : 1;
+                bool m_extern : 1;
+                bool m_damage: 1;
+                bool m_main : 1;
+            };
+            AttributeMask m_mask;
+        };
+        inline AttributeFlag() : m_mask(ATTRIBUTE_MASK_NONE) {}
+        inline AttributeFlag(AttributeMask bits) : m_mask(bits) {}
+        inline ~AttributeFlag() {}
+    };
+
+
     virtual void updateEnergy(soModuleAccesser* moduleAccesser);
     virtual Vec2f getSpeed();
     virtual Vec3f getSpeed3f();
