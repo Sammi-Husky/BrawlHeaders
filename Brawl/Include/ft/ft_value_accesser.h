@@ -510,6 +510,7 @@ public:
         Common_Param_Int_Bury_Down_Frame = 23104,
         Common_Param_Int_Bury_Physics_Invalid_Frame = 23105,
         Common_Param_Int_Ice_Jump_Stiff_Frame = 23106,
+        Common_Param_Int_Ground_Damage_Disable_Frame = 23107,
 
         Common_Param_Int_Swim_Jump_Charge_Frame = 23109,
         Common_Param_Int_Swim_Jump_Speed_Y_Dec_Count = 23110,

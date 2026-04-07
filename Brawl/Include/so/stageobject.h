@@ -48,24 +48,6 @@ public:
         };
     };
 
-    struct Kinetic {
-        struct Energy {
-            enum ReserveAttribute {
-                Reserve_Main = 0x0,
-                Reserve_Damage = 0x1,
-                Reserve_Extern = 0x2,
-                Reserve_Ground = 0x3,
-            };
-            typedef u32 ReserveAttributeMask;
-            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_NONE = 0;
-            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_MAIN = 1 << Reserve_Main;
-            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_DAMAGE = 1 << Reserve_Damage;
-            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_EXTERN = 1 << Reserve_Extern;
-            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_GROUND = 1 << Reserve_Ground;
-            static const ReserveAttributeMask RESERVE_ATTRIBUTE_MASK_ALL = RESERVE_ATTRIBUTE_MASK_MAIN | RESERVE_ATTRIBUTE_MASK_DAMAGE | RESERVE_ATTRIBUTE_MASK_EXTERN | RESERVE_ATTRIBUTE_MASK_GROUND;
-        };
-    };
-
     soModuleAccesser* m_moduleAccesser;
     StageObject(const char* name, int unk1, int unk2, int unk3, int unk4, soModuleAccesser* moduleAccesser);
     virtual void processAnim();

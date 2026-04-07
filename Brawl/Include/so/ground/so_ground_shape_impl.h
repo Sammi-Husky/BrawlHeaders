@@ -15,6 +15,25 @@ public:
         Shape_Rhombus_Follow_Node = 0x2,
     };
 
+    enum ShapeFlagId {
+        Shape_Flag_Ground = 0x0,
+        Shape_Flag_Ignore_Scale = 0x1,
+
+        Shape_Rhombus_Flag_Min_L = 0x3,
+        Shape_Rhombus_Flag_Min_R = 0x4,
+        Shape_Rhombus_Flag_Min_U = 0x5,
+        Shape_Rhombus_Flag_Min_D = 0x6,
+
+        Shape_Rhombus_Modify_Flag_Fix = 0x3,
+        Shape_Rhombus_Modify_Flag_No_OFS = 0x4,
+        Shape_Rhombus_Modify_Flag_Min_U = 0x5,
+        Shape_Rhombus_Modify_Flag_Min_LR = 0x6,
+        Shape_Rhombus_Modify_Flag_No_Modify = 0x7,
+        Shape_Rhombus_Modify_Flag_Free_Y = 0x8,
+        Shape_Rhombus_Modify_Flag_Front_Fix = 0x9,
+        Shape_Rhombus_Modify_Flag_Up_Fix = 0xa,
+    };
+
     enum CorrectKind {
         Correct_None = 0x0,
         Correct_Ground = 0x1,
@@ -47,7 +66,66 @@ public:
     int m_rhombusFollowNode;
     float m_downFriction;
     grCollisionLine::MaterialType m_collMaterialType : 8;
-    char _53[3];
+    char _53;
+    union {
+        struct {
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool m_ignoreScale : 1;
+            bool m_ground : 1;
+        };
+        union {
+            struct {
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool m_upFix : 1;
+                bool m_frontFix : 1;
+                bool m_freeY : 1;
+                bool m_noModify : 1;
+                bool m_minLR : 1;
+                bool m_minU : 1;
+                bool m_noOFS : 1;
+                bool m_fix : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+            } m_rhombus;
+            struct {
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+                bool m_minD : 1;
+                bool m_minU : 1;
+                bool m_minR : 1;
+                bool m_minL : 1;
+                bool : 1;
+                bool : 1;
+                bool : 1;
+            } m_rhombusModify;
+        };
+    } m_flag;
+
     CorrectKind m_correctKind : 8;
     CliffCheckKind m_cliffCheck : 8;
     ShapeKind m_shapeKind : 4;

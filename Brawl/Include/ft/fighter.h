@@ -551,6 +551,20 @@ public:
             };
         };
 
+        struct Swim {
+            struct Work {
+                enum Int {
+                    Int_Water_Task_Id = 0x20000002,
+                };
+                enum Float {
+
+                };
+                enum Flag {
+                    Flag_Damage = 0x22000010
+                };
+            };
+        };
+
         struct Dead {
             struct Work {
                 enum Int {
@@ -1149,6 +1163,15 @@ public:
                 Id_Ground_Movement = 0x6,
                 Id_Jostle = 0x7,
             };
+
+            enum OutsideType {
+                Outside_None = -1,
+                Outside_Movement_Ground = 0x0,
+                Outside_Movement_Water = 0x1,
+                Outside_Movement_Attack = 0x2,
+                Outside_Damage_Reserved = 0x3
+            };
+
         };
     };
 

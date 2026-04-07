@@ -8,6 +8,7 @@
 
 class grCollStatus {
 public:
+
     enum TracerType {
 
     };
@@ -18,6 +19,28 @@ public:
         Setting_Air = 0x2,
         Setting_Cliff = 0x3,
     };
+
+    enum TouchId {
+        Touch_Up = 0x0,
+        Touch_Left = 0x1,
+        Touch_Right = 0x2,
+        Touch_Down = 0x3,
+        Touch_Up_Left = 0x4,
+        Touch_Up_Right = 0x5,
+        Touch_Down_Left = 0x6,
+        Touch_Down_Right = 0x7,
+    };
+    typedef u8 TouchMask;
+    static const TouchMask TOUCH_MASK_NONE = 0x0;
+    static const TouchMask TOUCH_MASK_UP = 1 << Touch_Up;
+    static const TouchMask TOUCH_MASK_LEFT = 1 << Touch_Left;
+    static const TouchMask TOUCH_MASK_RIGHT = 1 << Touch_Right;
+    static const TouchMask TOUCH_MASK_DOWN = 1 << Touch_Down;
+    static const TouchMask TOUCH_MASK_UP_LEFT = 1 << Touch_Up_Left;
+    static const TouchMask TOUCH_MASK_UP_RIGHT = 1 << Touch_Up_Right;
+    static const TouchMask TOUCH_MASK_DOWN_LEFT = 1 << Touch_Down_Left;
+    static const TouchMask TOUCH_MASK_DOWN_RIGHT = 1 << Touch_Down_Right;
+    static const TouchMask TOUCH_MASK_ALL = TOUCH_MASK_UP | TOUCH_MASK_LEFT | TOUCH_MASK_RIGHT | TOUCH_MASK_DOWN | TOUCH_MASK_UP_LEFT | TOUCH_MASK_UP_RIGHT | TOUCH_MASK_DOWN_LEFT | TOUCH_MASK_DOWN_RIGHT;
 
     // 0
     grCollStatus* m_next;
@@ -86,19 +109,16 @@ public:
     char _116[1];
 
     // 117
-    union {
-        struct {
-            bool m_touchFlag7 : 1;
-            bool m_touchFlag6 : 1;
-            bool m_touchFlag5 : 1;
-            bool m_touchFlag4 : 1;
-            bool m_touchFlag3 : 1;
-            bool m_touchFlag2 : 1;
-            bool m_touchFlag1 : 1;
-            bool m_touchFlag0 : 1;
-        };
-        u8 m_touchFlags;
-    };
+
+    bool m_touchDown : 1;
+    bool m_touchUp : 1;
+    bool m_touchLeft : 1;
+    bool m_touchRight : 1;
+    bool m_touchUpRight : 1;
+    bool m_touchUpLeft : 1;
+    bool m_touchDownRight : 1;
+    bool m_touchDownLeft : 1;
+
     // 118
     char _spacer6[10];
     // 128
