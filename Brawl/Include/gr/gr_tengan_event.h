@@ -1,5 +1,6 @@
 #pragma once
 
+#include <mt/mt_spline.h>
 #include <StaticAssert.h>
 #include <types.h>
 
@@ -15,8 +16,10 @@ public:
     float m_minFrames;          // +0x4
     float m_maxFrames;          // +0x8
     float m_framesLeft;         // +0xC
-    float m_manualFramesLeft;
-    u8 unk14[0x90];
+    float m_manualFramesLeft;   // +0x10
+    Vec3f m_posSpline[4];       // +0x14
+    Vec3f m_rotSpline[4];       // +0x44
+    Vec3f m_scaleSpline[4];     // custom
     State m_state;              // +0xA4
     s32 m_phase;                // +0xA8
 
