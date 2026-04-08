@@ -57,10 +57,15 @@ namespace nw4r {
             u32 GetResAnmScnNumEntries();
 
             ResAnmChr GetResAnmChr(int index);
+            ResAnmChr GetResAnmChr(u32 index);
             ResAnmClr GetResAnmClr(int index);
+            ResAnmClr GetResAnmClr(u32 index);
             ResAnmVis GetResAnmVis(int index);
+            ResAnmVis GetResAnmVis(u32 index);
             ResAnmTexPat GetResAnmTexPat(int index);
+            ResAnmTexPat GetResAnmTexPat(u32 index);
             ResAnmTexSrt GetResAnmTexSrt(int index);
+            ResAnmTexSrt GetResAnmTexSrt(u32 index);
             ResAnmShp GetResAnmShp(int index);
             ResAnmScn GetResAnmScn(int index);
 

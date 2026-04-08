@@ -335,7 +335,9 @@ public:
     char _0x4c[0x2C];           // 0x4C
     short m_globalOffenseRatio; // 0x78
     short m_globalDefenseRatio; // 0x7A
-    char _0x7c[0x14];           // 0x7C
+    char _0x7c[0x05];           // 0x7C
+    u8 m_0x81;                // 0x81
+    char _0x82[0x0E];           // 0x82
 };
 static_assert(sizeof(gmMeleeInitData) == 0x90, "Class is wrong size!");
 
