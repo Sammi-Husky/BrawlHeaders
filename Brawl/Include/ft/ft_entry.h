@@ -141,7 +141,9 @@ public:
     u8 _0x11;
     char _0x12[6];
     int m_slotIndex;
-    char _0x1c[12];
+    char _0x1c[10];
+    u8 m_finalSmashAmount; // custom - how full the FS meter is in REX's FS meter special mode
+    char _0x1e[1];
     ftOwner* m_owner;
     ftInput* m_input;
     Instance m_instances[4];
