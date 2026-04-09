@@ -19,7 +19,7 @@ public:
     float m_manualFramesLeft;   // +0x10
     Vec3f m_posSpline[4];       // +0x14
     Vec3f m_rotSpline[4];       // +0x44
-    Vec3f m_scaleSpline[4];     // custom
+    Vec3f m_scaleSpline[4];     // unused
     State m_state;              // +0xA4
     s32 m_phase;                // +0xA8
 
