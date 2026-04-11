@@ -124,6 +124,7 @@ CC008000:WGPIPE
 803fa280:strcpy
 803f89fc:sprintf
 803f8924:snprintf
+803f88a4:vsprintf
 803fa384:strcat__FPcPc
 803fa3b0:strncat__FPcPc
 803fa3b0:strncat
