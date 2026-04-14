@@ -39,6 +39,7 @@ public:
     float getGameFrame() const;
 
     static int getLanguage();
+    static GameGlobal* getInstance();
 };
 static_assert(sizeof(GameGlobal) == 0x50, "Class is wrong size!");
 

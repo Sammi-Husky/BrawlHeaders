@@ -14,11 +14,14 @@ struct ftCreate {
     HeapType m_nwMotionInstanceHeapType;
 };
 
+class ftInstanceManager;
+extern ftInstanceManager g_ftInstanceManager;
 class ftInstanceManager {
     char _0x0[0x18c];
 public:
     Fighter* create(ftCreate* create);
+
+    inline static ftInstanceManager* getInstance() { return &g_ftInstanceManager; }
 };
 static_assert(sizeof(ftInstanceManager) == 0x18c, "Class is wrong size!");
 
-extern ftInstanceManager g_ftInstanceManager;

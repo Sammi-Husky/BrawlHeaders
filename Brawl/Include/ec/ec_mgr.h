@@ -8,6 +8,8 @@
 #include <ef/ef_id.h>
 #include <types.h>
 
+class ecMgr;
+extern ecMgr* g_ecMgr;
 class ecMgr : public gfTask {
 public:
     u8 unk40[0x50];
@@ -40,7 +42,9 @@ public:
     void setSlowRate(u32 effectHandleID, u32 slowMagnitude);
     u32 searchResourceID(char* resourceName);
     virtual ~ecMgr();
+
+    inline static ecMgr* getInstance() { return g_ecMgr; }
+
 };
 static_assert(sizeof(ecMgr) == 0xa8, "Class is wrong size!");
 
-extern ecMgr* g_ecMgr;

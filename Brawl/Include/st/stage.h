@@ -109,6 +109,8 @@ struct stDestroyBossParamCommon {
 };
 static_assert(sizeof(stDestroyBossParamCommon) == 0x18, "Class is wrong size!");
 
+class Stage;
+extern Stage* g_Stage;
 class Stage : public gfTask {
 public:
     // 0
@@ -340,9 +342,10 @@ public:
     virtual grGimmickWindData2nd* getWind2ndOnlyData(); // TODO
     virtual void updateWind2ndOnly();
     virtual void setVision(u8);
+
+    inline static Stage* getInstance() { return g_Stage; }
 };
 
-extern Stage* g_Stage;
 
 ENUM_U32(ArchiveOverrideSetting,
     Archive_Override_None = 0x0,
