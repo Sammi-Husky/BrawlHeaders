@@ -38,7 +38,7 @@ struct soAreaData {
         Category_Weapon = 0x4,
     };
 
-    gfArea::ShapeType m_shapeType : 8;
+    soAreaInstance::ShapeType m_shapeType : 8;
     gfArea::Group m_group : 8;
 
     union ShapeFlag {
@@ -72,9 +72,9 @@ struct soAreaData {
     Vec2f m_range;
 
     inline soAreaData() {}
-    inline soAreaData(gfArea::ShapeType shapeType, gfArea::Group group, ShapeMask mask, int unk1, int unk2, int nodeIndex, Vec2f offsetPos, Vec2f range) : m_shapeType(shapeType), m_group(group), m_shapeFlag(mask), m_0x4(unk1), m_0x8(unk2), m_nodeIndex(nodeIndex), m_offsetPos(offsetPos), m_range(range) {}
+    inline soAreaData(soAreaInstance::ShapeType shapeType, gfArea::Group group, ShapeMask mask, int unk1, int unk2, int nodeIndex, Vec2f offsetPos, Vec2f range) : m_shapeType(shapeType), m_group(group), m_shapeFlag(mask), m_0x4(unk1), m_0x8(unk2), m_nodeIndex(nodeIndex), m_offsetPos(offsetPos), m_range(range) {}
 
-    void set(gfArea::ShapeType shapeType, gfArea::Group group, ShapeMask mask, int unk1, int unk2, int nodeIndex, Vec2f offsetPos, Vec2f range) {
+    void set(soAreaInstance::ShapeType shapeType, gfArea::Group group, ShapeMask mask, int unk1, int unk2, int nodeIndex, Vec2f offsetPos, Vec2f range) {
         m_shapeType = shapeType;
         m_group = group;
         m_shapeFlag.m_mask = mask;
@@ -117,7 +117,7 @@ public:
     virtual void setAreaTargetLocalGroupMask(u32 index, u32 mask);
     virtual void setAreaShape(u32 index, Vec2f*, Vec2f*);
     virtual void setAreaShape(u32 index, Vec2f*, float);
-    virtual void setAreaShapeType(u32 index, gfArea::ShapeType);
+    virtual void setAreaShapeType(u32 index, soAreaInstance::ShapeType);
     virtual void setCenterX0(u32 index, bool);
     virtual void setAreaDbgColor(u32 index, GXColor);
     virtual int getAreaId(u32 index);
@@ -164,7 +164,7 @@ public:
     virtual void setAreaTargetLocalGroupMask(u32 index, u32 mask);
     virtual void setAreaShape(u32 index, Vec2f*, Vec2f*);
     virtual void setAreaShape(u32 index, Vec2f*, float);
-    virtual void setAreaShapeType(u32 index, gfArea::ShapeType);
+    virtual void setAreaShapeType(u32 index, soAreaInstance::ShapeType);
     virtual void setCenterX0(u32 index, bool);
     virtual void setAreaDbgColor(u32 index, GXColor);
     virtual int getAreaId(u32 index);
