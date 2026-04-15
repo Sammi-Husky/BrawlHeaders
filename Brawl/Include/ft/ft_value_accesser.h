@@ -90,7 +90,7 @@ public:
         Customize_Param_Float_Wall_Jump_Enable_Speed_X = 3085,
         Customize_Param_Float_Ladder_Speed_U_Max = 3086,
         Customize_Param_Float_Ladder_Speed_D_Max = 3087,
-        Customize_Param_Float_Swim_Dive_Speed_Mul = 3088,
+        Customize_Param_Float_Wind_Resistance = 3088,
         Customize_Param_Float_Swim_Rise_Accel_Y = 3089,
         Customize_Param_Float_Swim_Rise_Stable_Speed_Y = 3090,
         Customize_Param_Float_Swim_Accel_Mul = 3091,
@@ -310,7 +310,8 @@ public:
         Common_Param_Float_Ladder_Cancel_Frame = 3351,
         Common_Param_Float_Ladder_Jump_Y_Mul = 3352,
 
-        Common_Param_Float_Swim_Dive_Speed_X_Mul = 3355,
+        Common_Param_Float_Wind_Air_Brake = 3354,
+        Common_Param_Float_Swim_Dive_Speed_Mul = 3355,
         Common_Param_Float_Swim_Jump_Charge_Accel_Y = 3356,
         Common_Param_Float_Swim_Jump_Speed_Y_Mul = 3357,
         Common_Param_Float_Swim_Drown_Frame_Dec_Damage_Rate = 3358,
