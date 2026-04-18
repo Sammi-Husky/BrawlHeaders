@@ -120,6 +120,7 @@ public:
     // 520
     char _spacer9[116];
     // TOTAL SIZE == 636
+    void getPos(Vec2f*);
 };
 static_assert(sizeof(grCollStatus) == 636, "Class is wrong size!");
 
