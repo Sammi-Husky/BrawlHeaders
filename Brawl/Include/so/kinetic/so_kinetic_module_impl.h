@@ -32,7 +32,7 @@ public:
     virtual void changeKinetic(int kineticType, soModuleAccesser* moduleAccesser);
     virtual int getKineticType();
     virtual void addSpeed(Vec3f* speed, soModuleAccesser* moduleAccesser);
-    virtual void addSpeedOutside(int, Vec3f* speed);
+    virtual void addSpeedOutside(soKineticEnergy::OutsideType, Vec3f* speed);
 };
 static_assert(sizeof(soKineticModule) == 8, "Class is wrong size!");
 

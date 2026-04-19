@@ -7,6 +7,8 @@
 struct itParam {
     typedef u32 KineticMask;
     static const KineticMask KINETIC_MASK_SANDBAG = 1 << 1;
+    static const KineticMask KINETIC_MASK_NO_WIND = 1 << 3;
+    static const KineticMask KINETIC_MASK_NO_OUTSIDE_ATTACK = 1 << 4;
     struct KineticFlag {
         union {
             struct {
@@ -37,8 +39,8 @@ struct itParam {
                 bool : 1;
                 bool : 1;
                 bool : 1;
-                bool : 1;
-                bool : 1;
+                bool m_noOutsideAttack : 1;
+                bool m_noWind : 1;
                 bool : 1;
                 bool m_sandbag : 1;
                 bool : 1;

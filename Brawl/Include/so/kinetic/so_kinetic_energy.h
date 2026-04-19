@@ -53,6 +53,13 @@ public:
         inline ~AttributeFlag() {}
     };
 
+    enum OutsideType {
+        Outside_None = -1,
+        Outside_Movement_Ground = 0x0,
+        Outside_Wind = 0x1,
+        Outside_Attack = 0x2,
+        Outside_Damage_Reserved = 0x3
+    };
 
     virtual void updateEnergy(soModuleAccesser* moduleAccesser);
     virtual Vec2f getSpeed();

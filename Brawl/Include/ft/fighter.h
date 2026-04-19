@@ -555,6 +555,8 @@ public:
             struct Work {
                 enum Int {
                     Int_Water_Task_Id = 0x20000002,
+                    Int_Eff_Counter = 0x20000003,
+                    Int_No_Water_Frame = 0x20000004,
                 };
                 enum Float {
 
@@ -1163,15 +1165,6 @@ public:
                 Id_Ground_Movement = 0x6,
                 Id_Jostle = 0x7,
             };
-
-            enum OutsideType {
-                Outside_None = -1,
-                Outside_Movement_Ground = 0x0,
-                Outside_Movement_Water = 0x1,
-                Outside_Movement_Attack = 0x2,
-                Outside_Damage_Reserved = 0x3
-            };
-
         };
     };
 

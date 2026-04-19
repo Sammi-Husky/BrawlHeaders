@@ -21,7 +21,7 @@ public:
     virtual void mulSpeed(Vec3f* speed, soKineticEnergy::AttributeFlag);
     virtual void changeKinetic(int kineticType, soModuleAccesser* moduleAccesser);
     virtual void addSpeed(soKineticEnergy::AttributeFlag attr, soModuleAccesser* moduleAccesser);
-    virtual void addSpeedOutside(int, Vec3f* speed);
+    virtual void addSpeedOutside(soKineticEnergy::OutsideType, Vec3f* speed);
 
     virtual bool notifyEventAnimCmd(acAnimCmd* acmd, soModuleAccesser* moduleAccesser, int unk3);
     virtual bool isObserv(char unk1);
