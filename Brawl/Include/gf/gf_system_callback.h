@@ -1,6 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <types.h>
 
 class gfReturnStatusCallback {
 public:
@@ -12,6 +13,7 @@ static_assert(sizeof(gfReturnStatusCallback) == 0x8, "Class is the wrong size!")
 class gfReturnStatusCallbackList {
     gfReturnStatusCallback* m_head;
 public:
+    gfReturnStatusCallbackList() : m_head(nullptr) { }
     void add(gfReturnStatusCallback* node);
     bool remove(gfReturnStatusCallback* node);
     bool process() const;

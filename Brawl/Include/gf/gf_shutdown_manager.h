@@ -1,0 +1,35 @@
+#pragma once
+
+#include <gf/gf_callback.h>
+#include <gf/gf_system_callback.h>
+#include <types.h>
+
+// TODO: possible relationship to gfErrorManager?
+class gfShutdownManager {
+    bool unk0_b7 : 1;
+    bool m_reset : 1;
+    bool m_powerOff : 1;
+    bool m_returnToWiiMenu : 1;
+    bool unk0_b3 : 1;
+    s32 unk0 : 8;
+
+    gfCallBackList unk4;
+    gfReturnStatusCallbackList unk8;
+    bool unkC;
+    bool unkD;
+
+public:
+    // BUG(?): this ctor doesn't initialize unk0_b3
+    gfShutdownManager() : unk0_b7(true), m_reset(false), m_powerOff(false),
+                          m_returnToWiiMenu(false), unk0(0),
+                          unk4(), unk8(), unkC(false), unkD(true) { }
+    void initilize();
+    static void ResetCallback();
+    static void PowerOffCallback();
+    void enterRestartProcess();
+    void enterReturnToWiiMenuProcess();
+    void update();
+};
+// TODO: size assertion
+
+extern gfShutdownManager g_gfShutdownManager;

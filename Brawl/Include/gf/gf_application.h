@@ -29,6 +29,8 @@ public:
     gfApplication();
     ~gfApplication();
     void init();
+    void reset();
+    void restart();
     void mainLoop();
     void exit();
 
