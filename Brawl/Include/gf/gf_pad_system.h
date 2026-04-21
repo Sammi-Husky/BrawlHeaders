@@ -1,5 +1,6 @@
 #pragma once
 
+#include <gf/gf_pad_queue.h>
 #include <gf/gf_pad_status.h>
 #include <gf/gf_rumble.h>
 #include <revolution/OS/OSAlarm.h>
@@ -7,7 +8,6 @@
 
 #define GF_PAD_SYSTEM_GET_ALL_PADS 0xF0
 
-class gfPadStatusQueue;
 class gfPadSystem {
 public:
     gfPadSystem();

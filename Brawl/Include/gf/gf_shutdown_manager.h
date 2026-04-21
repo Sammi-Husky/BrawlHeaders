@@ -1,5 +1,6 @@
 #pragma once
 
+#include <StaticAssert.h>
 #include <gf/gf_callback.h>
 #include <gf/gf_system_callback.h>
 #include <types.h>
@@ -30,6 +31,6 @@ public:
     void enterReturnToWiiMenuProcess();
     void update();
 };
-// TODO: size assertion
+static_assert(sizeof(gfShutdownManager) == 0x10, "Class is the wrong size!");
 
 extern gfShutdownManager g_gfShutdownManager;
