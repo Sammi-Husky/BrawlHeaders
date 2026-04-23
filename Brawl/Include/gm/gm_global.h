@@ -11,6 +11,7 @@
 #include <gm/gm_tournament_data.h>
 #include <gm/gm_stage_data.h>
 #include <gm/gm_stage_edit_data.h>
+#include <types.h>
 
 class GameGlobal {
 public:
@@ -37,6 +38,9 @@ public:
 
     gmGlobalRecord::MenuData* getGlobalRecordMenuDatap();
     float getGameFrame() const;
+    void updateGameFrame();
+    u32 getSlowRate() const;
+    void setSlowRate(u8 rate);
 
     static int getLanguage();
     static GameGlobal* getInstance();
