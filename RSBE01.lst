@@ -955,6 +955,9 @@ CC008000:WGPIPE
 // grCollisionJoint
 80112ea0:getLine__16grCollisionJointFUs
 
+// grCollStatus
+801342c8::getPos__12grCollStatusFP5Vec2f
+
 // stCollision
 27,1,00239F50:initialize__15stCollisionWorkFv
 
