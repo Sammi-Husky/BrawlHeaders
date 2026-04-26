@@ -602,9 +602,13 @@ CC008000:WGPIPE
 8009dd40:cmRemoveQuake__Fi
 
 // Vec2f
+8003dba8:normalize__5Vec2fFP5Vec2f
+8003dc00:normalize__5Vec2fFP5Vec2fP5Vec2f
 8003dc64:rot__5Vec2fFP5Vec2ff
 
 // Vec3f
+8003de70:normalize__5Vec3fFP5Vec3f
+8003dee0:normalize__5Vec3fFP5Vec3fP5Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
 27,1,00000EF8:__pl__5Vec3fFRC5Vec3f
 27,1,00000F1C:__ml__5Vec3fFf
