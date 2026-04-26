@@ -72,6 +72,9 @@ public:
         Vec2f disp = *this - *v;
         return disp.length();
     }
+    
+    void normalize();
+    void normalize(Vec2f* input);
 
     void rot(Vec2f *out, float rot);
 
@@ -171,6 +174,8 @@ public:
         Vec3f disp = *this - *v;
         return disp.length();
     }
+    void normalize();
+    void normalize(Vec3f* input);
 };
 static_assert(sizeof(Vec3f) == 12, "Class is wrong size!");
 
