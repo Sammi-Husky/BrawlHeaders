@@ -652,6 +652,8 @@ CC008000:WGPIPE
 8009be74:getInstance__16CameraControllerFv
 8009cf60:setRangeOffset__16CameraControllerFP5Vec2f
 8009ca00:getCameraController__16CameraControllerFQ216CameraController4Kind
+8009cea8:setCameraRange__16CameraControllerF16CameraControllerP6Rect2D
+
 
 // cmAnimationController
 800a624c:setScnAnmRes__21cmAnimationControllerFQ34nw4r3g3d9ResAnmScnUl
@@ -896,6 +898,7 @@ CC008000:WGPIPE
 27,1,002227E8:removeGround__5StageFP6Ground
 27,1,00223A08:setStageAttackData__5StageFP20grGimmickDamageFloorUl
 27,1,00222794:setStageData__6GroundFPv
+27,1,002249E0:isPokemonTrainer__5StageFP5Stage
 
 // stCommonGimmick
 27,1,002380b0:releaseArchive__15stCommonGimmickFv

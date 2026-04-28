@@ -203,6 +203,7 @@ public:
     void initPosPokeTrainer(int unk1, int unk2);
     void setStageAttackData(grGimmickDamageFloor* attackData, u32 index);
     void removeGround(Ground*);
+    bool isPokemonTrainer();
 
     Stage(const char* name, srStageKind stageKind);
     virtual void processBegin();
