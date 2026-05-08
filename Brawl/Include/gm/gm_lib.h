@@ -244,6 +244,7 @@ namespace Stages {
 namespace Fighters {
     enum ftFighterKind {
         // TODO: Add enumerators for each fighter REL
+        Count = 55
     };
 } // namespace Fighters
 
