@@ -15,9 +15,9 @@ class emCymalParamAccesser : public emExtendParamAccesser {
 public:
     emCymalParamAccesser();
     virtual ~emCymalParamAccesser();
-    virtual float getParamFloat(soModuleAccesser* moduleAccesser, s32 p2);
-    virtual s32 getParamInt(soModuleAccesser* moduleAccesser, s32 p2);
-    virtual void* getParamIndefinite(soModuleAccesser* moduleAccesser, s32 p2);
+    virtual float getParamFloat(soModuleAccesser* moduleAccesser, s32 p2, s32 p3);
+    virtual s32 getParamInt(soModuleAccesser* moduleAccesser, s32 p2, s32 p3);
+    virtual void* getParamIndefinite(soModuleAccesser* moduleAccesser, s32 p2, s32 p3);
 };
 static_assert(sizeof(emCymalParamAccesser) == 0xC, "Class is the wrong size!");
 

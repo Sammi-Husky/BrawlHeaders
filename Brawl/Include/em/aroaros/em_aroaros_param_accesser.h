@@ -15,9 +15,9 @@ class emAroarosParamAccesser : public emExtendParamAccesser {
 public:
     emAroarosParamAccesser();
     virtual ~emAroarosParamAccesser();
-    virtual float getParamFloat(soModuleAccesser* moduleAccesser, s32 p2);
-    virtual s32 getParamInt(soModuleAccesser* moduleAccesser, s32 p2);
-    virtual void* getParamIndefinite(soModuleAccesser* moduleAccesser, s32 p2);
+    virtual float getParamFloat(soModuleAccesser* moduleAccesser, s32 p2, s32 p3);
+    virtual s32 getParamInt(soModuleAccesser* moduleAccesser, s32 p2, s32 p3);
+    virtual void* getParamIndefinite(soModuleAccesser* moduleAccesser, s32 p2, s32 p3);
 };
 static_assert(sizeof(emAroarosParamAccesser) == 0xC, "Class is the wrong size!");
 
