@@ -1,7 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <gm/gm_lib.h>
+#include <ft/ft_entry.h>
 #include <so/so_null.h>
 #include <types.h>
 
@@ -12,8 +12,8 @@ public:
     virtual ~ftClassInfo();
     virtual ftClassInfo* create() const = 0;
 
-    void setClassInfo(Fighters::ftFighterKind kind, ftClassInfo* info);
-    static ftClassInfo* getClassInfo(Fighters::ftFighterKind kind);
+    void setClassInfo(ftKind kind, ftClassInfo* info);
+    static ftClassInfo* getClassInfo(ftKind kind);
 };
 static_assert(sizeof(ftClassInfo) == 0xC, "Class is the wrong size!");
 

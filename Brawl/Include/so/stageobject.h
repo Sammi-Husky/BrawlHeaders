@@ -17,7 +17,7 @@ class soActivatable {
     char _5[3];
 };
 
-class StageObject : public gfTask, public soActivatable, public soAnimCmdEventObserver, public soLinkEventObserver {
+class StageObject : public gfTask, private soActivatable, public soAnimCmdEventObserver, public soLinkEventObserver {
 public:
 
     struct Link {

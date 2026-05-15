@@ -88,6 +88,7 @@ enum ftKind {
     Fighter_Alloy_Green = 0x35,
     Fighter_Zako_Ball = 0x35,
     Fighter_MarioD = 0x36,
+    Fighter_Count = 0x37,
 };
 typedef ftKind FighterKind;
 

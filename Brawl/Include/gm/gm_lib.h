@@ -241,14 +241,4 @@ namespace Stages {
     };
 }; // namespace Stages
 
-namespace Fighters {
-    enum ftFighterKind {
-        // TODO: Add enumerators for each fighter REL
-        Mario = 0x0, ftMario = 0x0,
-        Marth = 0x11, ftMarth = 0x11,
-        Jigglypuff = 0x25, ftPurin = 0x25,
-        Count = 55
-    };
-} // namespace Fighters
-
 typedef Stages::srStageKind srStageKind;

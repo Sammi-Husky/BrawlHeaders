@@ -1,5 +1,6 @@
 #pragma once
 
+#include <so/so_module_accesser.h>
 #include <StaticAssert.h>
 #include <ft/ft_entry.h>
 #include <ft/ft_outside_event_presenter.h>
@@ -1373,6 +1374,8 @@ public:
     char _272[44];
     ftOutsideEventPresenter m_outsideEventPresenter;
     char _332[72];
+
+    Fighter(s32 entryId, ftKind kind, s32 p3, soModuleAccesser* acc);
 
     virtual void processUpdate();
     virtual void processFixPosition();
