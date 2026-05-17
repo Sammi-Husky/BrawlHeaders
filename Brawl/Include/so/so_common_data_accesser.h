@@ -5,12 +5,41 @@
 #include <nw4r/g3d/g3d_resfile.h>
 #include <types.h>
 
-// TODO: Define and move to other headers
-class ftShakeData { };
-class ftJostleData { };
-class ftEffectCommonData { };
-class ftEffectScreenData { };
-class ftIkData { };
+// TODO: Define these classes and decide which headers they should belong to
+
+struct soMotionData { };
+struct ftMotionData : public soMotionData { };
+struct wnMotionData : public soMotionData { };
+
+struct soShakeData { };
+struct ftShakeData : public soShakeData { };
+struct wnShakeData : public soShakeData { };
+
+struct soJostleData { };
+struct ftJostleData : public soJostleData { };
+struct wnJostleData : public soJostleData { };
+
+struct soIkData { };
+struct ftIkData : public soIkData { };
+struct wnIkData : public soIkData { };
+
+struct soVisibilityData { };
+struct ftVisibilityData : public soVisibilityData { };
+struct wnVisibilityData : public soVisibilityData { };
+
+struct soStatusData { };
+struct ftStatusData : public soStatusData { };
+struct wnStatusData : public soStatusData { };
+
+struct soPreCheckAnimCmdData { };
+struct ftPreCheckAnimCmdData : public soPreCheckAnimCmdData { };
+
+struct soEffectCommonData { };
+struct ftEffectCommonData : public soEffectCommonData { };
+struct wnEffectCommonData : public soEffectCommonData { };
+
+struct soEffectScreenData { };
+struct ftEffectScreenData : public soEffectScreenData { };
 
 struct soCommonParamFloat {
     float m_0[0x28];
@@ -85,19 +114,19 @@ struct soCommonParam {
     s32 m_B8;
 };
 
-class ftCommonParamFloat {
+struct ftCommonParamFloat {
     float m_0[0x17E];
 };
 
-class ftCommonParamIndefinite {
+struct ftCommonParamIndefinite {
     s32* m_0[0x5];
 };
 
-class ftCommonParamInt {
+struct ftCommonParamInt {
     s32 m_0[0x8D];
 };
 
-class ftCommonParam {
+struct ftCommonParam {
     s32 m_0;
     float m_4;
     float m_8;
@@ -651,22 +680,6 @@ class ftCommonParam {
     float m_898;
 };
 
-class ftDataCommon {
-    soCommonParam* soCommonParams[2];
-    ftCommonParam* ftCommonParams[2];
-    void* commonActionEntryScripts;
-    void* commonActionExitScripts;
-    void* flashOverlayScripts;
-    ftShakeData* shakeData;
-    u8 unk20[0x8];
-    ftJostleData* jostleData;
-    u8 unk2C[0x1C];
-    GXColor subColors;
-    ftEffectCommonData* effectCommonData;
-    ftEffectScreenData* effectScreenData;
-    ftIkData* ikData;
-};
-
 class soCommonDataAccesser {
     nw4r::g3d::ResFileData* resFileTex;
     nw4r::g3d::ResFileData* resFileAnim;
@@ -683,4 +696,4 @@ public:
     s32* getParamCommonIndefinite(u32 p1, u32 p2);
 };
 
-soCommonDataAccesser g_soCommonDataAccesser;
+extern soCommonDataAccesser g_soCommonDataAccesser;

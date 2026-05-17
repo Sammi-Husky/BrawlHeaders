@@ -3,11 +3,10 @@
 #include <StaticAssert.h>
 #include <types.h>
 #include <so/event/so_event_presenter.h>
+#include <so/so_common_data_accesser.h>
 
 class soModuleAccesser;
 
-struct soStatusData {
-};
 class soStatusEventObserver : public soEventObserver<soStatusEventObserver> {
 public:
     soStatusEventObserver() : soEventObserver<soStatusEventObserver>(0x4) {};

@@ -14,12 +14,23 @@
 class soModuleAccesser;
 
 class soSoundIdExchanger : public soNullable {
+public:
     virtual ~soSoundIdExchanger();
     virtual SndID getId(SndID sndID, soModuleAccesser* moduleAccesser);
     virtual int getStepId(int);    // TODO: Verify
     virtual int getLandingId(int); // TODO: Verify
 };
 static_assert(sizeof(soSoundIdExchanger) == 8, "Class is wrong size!");
+
+class soSoundIdExchangerNull : public soSoundIdExchanger {
+public:
+    virtual ~soSoundIdExchangerNull();
+    virtual SndID getId(SndID sndID, soModuleAccesser* moduleAccesser);
+    virtual int getStepId(int);
+    virtual int getLandingId(int);
+};
+
+extern soSoundIdExchangerNull g_soSoundIdExchangerNull;
 
 class soSoundModule {
 public:

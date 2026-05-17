@@ -69,7 +69,7 @@ public:
     soStatusModule* m_statusModule;
     void* m_generalTermDecideModule;
     void* m_switchDecideModule;
-    soKineticModule* m_kineticModule;
+    soKineticModule* m_kineticModule; // +0x7C
     soEventManageModule* m_eventManageModule;
     void* m_generateArticleManageModule;
     soEffectModule* m_effectModule;

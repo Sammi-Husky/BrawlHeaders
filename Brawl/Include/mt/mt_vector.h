@@ -54,7 +54,9 @@ public:
     }
 
     float lengthSq() {
-        return this->m_x*this->m_x + this->m_y*this->m_y;
+        float xSq = m_x * m_x;
+        float ySq = m_y * m_y;
+        return xSq + ySq;
     }
 
     float length() {

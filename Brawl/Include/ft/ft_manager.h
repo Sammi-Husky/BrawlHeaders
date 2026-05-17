@@ -132,6 +132,7 @@ public:
     int getEntryIdFromTaskId(int taskId, int* outInstanceIndex);
     int getScoreEntryId(int entryId);
     int getPlayerNo(int entryId);
+    s32 getSlotNo(s32 entryId);
     bool isFighterActivate(int entryId, int);
     Fighter* getFighter(int entryId, int instanceIndex);
     Fighter* getSubFighter(int entryId);
