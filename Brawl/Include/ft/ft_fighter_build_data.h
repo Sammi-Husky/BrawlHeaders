@@ -28,7 +28,7 @@ public:
     ftFighterBuildData(s32 entryId, ftKind kind, Heaps::HeapType instHeap,
                        Heaps::HeapType nwModelInstHeap,
                        Heaps::HeapType nwMotionInstHeap,
-                       s8 resGroupNo, soModuleAccesser* acc,
+                       u8 resGroupNo, soModuleAccesser* acc,
                        s32 team, void* cameraRangeSet,
                        void* cameraClipSphereSet);
 

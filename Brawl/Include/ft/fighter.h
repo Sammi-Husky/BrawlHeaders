@@ -7,6 +7,7 @@
 #include <ft/ft_value_accesser.h>
 #include <mt/mt_vector.h>
 #include <so/stageobject.h>
+#include <sr/sr_common.h>
 #include <types.h>
 
 class itCustomizerInterface;
@@ -1375,7 +1376,7 @@ public:
     ftOutsideEventPresenter m_outsideEventPresenter;
     char _332[72];
 
-    Fighter(s32 entryId, ftKind kind, s32 p3, soModuleAccesser* acc);
+    Fighter(s32 entryId, ftKind kind, Heaps::HeapType instHeap, soModuleAccesser* acc);
 
     virtual void processUpdate();
     virtual void processFixPosition();

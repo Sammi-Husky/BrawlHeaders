@@ -256,10 +256,10 @@ public:
     virtual ~soArrayListEnumerator() { }
 };
 
-// A dynamic array of soArrayListUnits, but with a fixed maximum capcity.
+// A dynamic array of soArrayListUnits, but with a fixed maximum capacity.
 // Each unit has a logical "position" corresponding to an actual "index"
 // in the internal array. This distinction is implemented via an intrusive
-// doubly-linked list connecting the units; so getArrayIndex for details.
+// doubly-linked list connecting the units; see getArrayIndex for details.
 template <typename T, s32 C>
 class soArrayList : public soArray<T> {
     // The index of the next available free unit in the list

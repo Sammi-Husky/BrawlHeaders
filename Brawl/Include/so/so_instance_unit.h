@@ -4,6 +4,35 @@
 #include <types.h>
 #include <type_traits>
 
+typedef s16 soAttributeMask;
+static const soAttributeMask ATTRIBUTE_MASK_NONE = 0;
+struct soAttributeFlag {
+    union {
+        struct {
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+            bool : 1;
+        };
+        soAttributeMask m_mask;
+    };
+    soAttributeFlag() : m_mask(ATTRIBUTE_MASK_NONE) { }
+    soAttributeFlag(soAttributeMask bits) : m_mask(bits) { }
+    ~soAttributeFlag() { }
+};
+
 template <class T>
 class soInstanceUnit {
 public:
@@ -17,15 +46,15 @@ public:
 template <typename T>
 class soInstanceUnitFullProperty : public soInstanceUnit<T> {
 public:
-    typename std::remove_pointer<T>::type::AttributeFlag m_attribute;
+    soAttributeFlag m_attribute;
     s16 m_10;
 
     soInstanceUnitFullProperty() : m_attribute(0), m_10(-1) { }
-    soInstanceUnitFullProperty(T& elm, s32 id, typename std::remove_pointer<T>::type::AttributeFlag attr, s16 p4) :
+    soInstanceUnitFullProperty(T& elm, s32 id, soAttributeFlag attr, s16 p4) :
         soInstanceUnit<T>(elm, id), m_attribute(attr), m_10(p4) { }
     ~soInstanceUnitFullProperty() { }
 
-    typename std::remove_pointer<T>::type::AttributeFlag getAttribute() const {
+    soAttributeFlag getAttribute() const {
         return m_attribute;
     }
 };
@@ -34,11 +63,11 @@ public:
 template <typename T>
 class soInstanceUnitFullPropertyWrapper {
 public:
-    typename std::remove_pointer<T>::type::AttributeFlag m_attr;
+    soAttributeFlag m_attr;
     soInstanceUnitFullProperty<T> m_prop;
 
     soInstanceUnitFullPropertyWrapper() { }
-    soInstanceUnitFullPropertyWrapper(typename std::remove_pointer<T>::type::AttributeFlag attr, T& elm, s32 id, s16 p4) :
+    soInstanceUnitFullPropertyWrapper(soAttributeFlag attr, T& elm, s32 id, s16 p4) :
         m_attr(attr), m_prop(elm, id, m_attr, p4) { }
     ~soInstanceUnitFullPropertyWrapper() { }
 };

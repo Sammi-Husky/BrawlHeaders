@@ -1,9 +1,10 @@
 #pragma once
 
 #include <StaticAssert.h>
-#include <types.h>
 #include <so/event/so_event_presenter.h>
 #include <so/collision/so_collision_log.h>
+#include <so/so_instance_unit.h>
+#include <types.h>
 
 class soModuleAccesser;
 
@@ -36,6 +37,9 @@ public:
         inline AttributeFlag() : m_mask(ATTRIBUTE_MASK_NONE) {}
         inline AttributeFlag(AttributeMask bits) : m_mask(bits) {}
         inline ~AttributeFlag() {}
+
+        AttributeFlag(soAttributeFlag f) : m_mask(f.m_mask) { }
+        operator soAttributeFlag() { return soAttributeFlag(m_mask); }
     };
 
     soCollisionAttackEventObserver(short unitID) : soEventObserver<soCollisionAttackEventObserver>(unitID) {};
