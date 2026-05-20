@@ -5,7 +5,6 @@
 #include <ac/ac_anim_cmd_impl.h>
 
 struct soModuleAccesser;
-struct acCmdArgConv;
 struct soAnimCmdArgList {
     soArrayContractibleTable<const acCmdArgConv> m_argList;
     // Is not populated by default, must be supplied before using functions for getting arguments.
@@ -15,8 +14,8 @@ struct soAnimCmdArgList {
     // Doesn't appear to be used deliberately, though is sometimes zeroed by functions which zero m_errorOnValueFetch by stw'ing to it.
     u8 _unk15[0x3];
 
-    soAnimCmdArgList() : m_argList() { }
-    soAnimCmdArgList(const acCmdArgConv* p1, s32 p2) : m_argList(p1, p2) { }
+    soAnimCmdArgList(soModuleAccesser* moduleAccesserIn, const soArrayContractibleTable<const acCmdArgConv>& argListIn) 
+        : m_argList(argListIn), m_moduleAccesser(moduleAccesserIn) { }
 
     ~soAnimCmdArgList() { }
 
@@ -28,7 +27,5 @@ struct soAnimCmdArgList {
     double getFloat(u32 index);
     // Returns the boolean value of the specified argument. If the specified argument isn't Boolean typed, m_errorOnValueFetch is set to 1!
     bool getBool(u32 index);
-
-    bool isEmpty() const { return m_argList.isEmpty(); }
 };
 static_assert(sizeof(soAnimCmdArgList) == 0x18, "Class is the wrong size!");
