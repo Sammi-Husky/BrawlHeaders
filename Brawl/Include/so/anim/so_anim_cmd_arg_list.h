@@ -14,7 +14,7 @@ struct soAnimCmdArgList {
     // Doesn't appear to be used deliberately, though is sometimes zeroed by functions which zero m_errorOnValueFetch by stw'ing to it.
     u8 _unk15[0x3];
 
-    soAnimCmdArgList(soModuleAccesser* moduleAccesserIn, const soArrayContractibleTable<const acCmdArgConv>& argListIn) 
+    soAnimCmdArgList(soModuleAccesser* moduleAccesserIn, const soArrayContractibleTable<const acCmdArgConv>& argListIn)
         : m_argList(argListIn), m_moduleAccesser(moduleAccesserIn) { }
 
     ~soAnimCmdArgList() { }

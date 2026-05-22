@@ -32,12 +32,124 @@
 #include <so/item/so_item_manage_module_impl.h>
 #include <so/turn/so_turn_module_impl.h>
 #include <so/stop/so_stop_module_impl.h>
+#include <so/so_activate.h>
 #include <types.h>
 
 class StageObject;
 
 class soModuleEnumeration {
 public:
+    soModuleEnumeration(
+        soResourceModule* resourceModule,
+        soModelModule* modelModule,
+        soMotionModule* motionModule,
+        soPostureModule* postureModule,
+        soGroundModule* groundModule,
+        soSituationModule* situationModule,
+        void* teamModule,
+        soCollisionAttackModule* collisionAttackModule,
+        soCollisionHitModule* collisionHitModule,
+        soCollisionShieldModule* collisionShieldModule,
+        soCollisionShieldModule* collisionReflectorModule,
+        soCollisionShieldModule* collisionAbsorberModule,
+        void* collisionCatchModule,
+        soCollisionSearchModule* collisionSearchModule,
+        soDamageModule* damageModule,
+        void* catchModule,
+        void* captureModule,
+        soStopModule* stopModule,
+        void* turnModule,
+        void* shakeModule,
+        soSoundModule* soundModule,
+        soLinkModule* linkModule,
+        soVisibilityModule* visibilityModule,
+        soControllerModule* controllerModule,
+        soCameraModule* cameraModule,
+        soWorkManageModule* workManageModule,
+        void* debugModule,
+        soAnimCmdModule* animCmdModule,
+        soStatusModule* statusModule,
+        void* generalTermDecideModule,
+        void* switchDecideModule,
+        soKineticModule* kineticModule,
+        soEventManageModule* eventManageModule,
+        void* generateArticleManageModule,
+        soEffectModule* effectModule,
+        void* comboModule,
+        soAreaModule* areaModule,
+        void* territoryModule,
+        void* targetSearchModule,
+        void* physicsModule,
+        void* slopeModule,
+        soShadowModule* shadowModule,
+        soItemManageModule* itemManageModule,
+        soColorBlendModule* colorBlendModule,
+        void* jostleModule,
+        void* abnormalModule,
+        soSlowModule* slowModule,
+        void* reflectModule,
+        void* heapModule,
+        soParamCustomizeModule* paramCustomizeModule,
+        void* glowModule,
+        void* unusedParam = nullptr
+    );
+
+    static const soModuleEnumeration NullObject;
+
+    soModuleEnumeration() {
+        m_resourceModule = NullObject.m_resourceModule,
+        m_modelModule = NullObject.m_modelModule,
+        m_motionModule = NullObject.m_motionModule,
+        m_postureModule = NullObject.m_postureModule,
+        m_groundModule = NullObject.m_groundModule,
+        m_situationModule = NullObject.m_situationModule,
+        m_teamModule = NullObject.m_teamModule,
+        m_collisionAttackModule = NullObject.m_collisionAttackModule,
+        m_collisionHitModule = NullObject.m_collisionHitModule,
+        m_collisionShieldModule = NullObject.m_collisionShieldModule,
+        m_collisionReflectorModule = NullObject.m_collisionReflectorModule,
+        m_collisionAbsorberModule = NullObject.m_collisionAbsorberModule,
+        m_collisionCatchModule = NullObject.m_collisionCatchModule,
+        m_collisionSearchModule = NullObject.m_collisionSearchModule,
+        m_damageModule = NullObject.m_damageModule,
+        m_catchModule = NullObject.m_catchModule,
+        m_captureModule = NullObject.m_captureModule,
+        m_stopModule = NullObject.m_stopModule,
+        m_turnModule = NullObject.m_turnModule,
+        m_shakeModule = NullObject.m_shakeModule,
+        m_soundModule = NullObject.m_soundModule,
+        m_linkModule = NullObject.m_linkModule,
+        m_visibilityModule = NullObject.m_visibilityModule,
+        m_controllerModule = NullObject.m_controllerModule,
+        m_cameraModule = NullObject.m_cameraModule,
+        m_workManageModule = NullObject.m_workManageModule,
+        m_debugModule = NullObject.m_debugModule,
+        m_animCmdModule = NullObject.m_animCmdModule,
+        m_statusModule = NullObject.m_statusModule,
+        m_generalTermDecideModule = NullObject.m_generalTermDecideModule,
+        m_switchDecideModule = NullObject.m_switchDecideModule,
+        m_kineticModule = NullObject.m_kineticModule,
+        m_eventManageModule = NullObject.m_eventManageModule,
+        m_generateArticleManageModule = NullObject.m_generateArticleManageModule,
+        m_effectModule = NullObject.m_effectModule,
+        m_comboModule = NullObject.m_comboModule,
+        m_areaModule = NullObject.m_areaModule,
+        m_territoryModule = NullObject.m_territoryModule,
+        m_targetSearchModule = NullObject.m_targetSearchModule,
+        m_physicsModule = NullObject.m_physicsModule,
+        m_slopeModule = NullObject.m_slopeModule,
+        m_shadowModule = NullObject.m_shadowModule,
+        m_itemManageModule = NullObject.m_itemManageModule,
+        m_colorBlendModule = NullObject.m_colorBlendModule,
+        m_jostleModule = NullObject.m_jostleModule,
+        m_abnormalModule = NullObject.m_abnormalModule,
+        m_slowModule = NullObject.m_slowModule,
+        m_reflectModule = NullObject.m_reflectModule,
+        m_heapModule = NullObject.m_heapModule,
+        m_paramCustomizeModule = NullObject.m_paramCustomizeModule,
+        m_glowModule = NullObject.m_glowModule;
+    }
+
     soResourceModule* m_resourceModule;
     soModelModule* m_modelModule;
     soMotionModule* m_motionModule;
@@ -92,14 +204,71 @@ public:
 };
 static_assert(sizeof(soModuleEnumeration) == 204, "Class is wrong size!");
 
-class soModuleAccesser {
+class soModuleAccesser : private soNull, private soActivatable {
 public:
-    void* vtable2;
-    char _4[4];
     StageObject* m_stageObject;
     soModuleEnumeration m_moduleEnumeration;
-    soModuleEnumeration* m_enumerationStart; // +0xD8
-    void* vtable1;
+    const soModuleEnumeration* m_enumerationStart; // +0xD8
+
+    soModuleAccesser();
+    soModuleAccesser(
+        StageObject* stageObject,
+        soResourceModule* resourceModule,
+        soModelModule* modelModule,
+        soMotionModule* motionModule,
+        soPostureModule* postureModule,
+        soGroundModule* groundModule,
+        soSituationModule* situationModule,
+        void* teamModule,
+        soCollisionAttackModule* collisionAttackModule,
+        soCollisionHitModule* collisionHitModule,
+        soCollisionShieldModule* collisionShieldModule,
+        soCollisionShieldModule* collisionReflectorModule,
+        soCollisionShieldModule* collisionAbsorberModule,
+        void* collisionCatchModule,
+        soCollisionSearchModule* collisionSearchModule,
+        soDamageModule* damageModule,
+        void* catchModule,
+        void* captureModule,
+        soStopModule* stopModule,
+        void* turnModule,
+        void* shakeModule,
+        soSoundModule* soundModule,
+        soLinkModule* linkModule,
+        soVisibilityModule* visibilityModule,
+        soControllerModule* controllerModule,
+        soCameraModule* cameraModule,
+        soWorkManageModule* workManageModule,
+        void* debugModule,
+        soAnimCmdModule* animCmdModule,
+        soStatusModule* statusModule,
+        void* generalTermDecideModule,
+        void* switchDecideModule,
+        soKineticModule* kineticModule,
+        soEventManageModule* eventManageModule,
+        void* generateArticleManageModule,
+        soEffectModule* effectModule,
+        void* comboModule,
+        soAreaModule* areaModule,
+        void* territoryModule,
+        void* targetSearchModule,
+        void* physicsModule,
+        void* slopeModule,
+        soShadowModule* shadowModule,
+        soItemManageModule* itemManageModule,
+        soColorBlendModule* colorBlendModule,
+        void* jostleModule,
+        void* abnormalModule,
+        soSlowModule* slowModule,
+        void* reflectModule,
+        void* heapModule,
+        soParamCustomizeModule* paramCustomizeModule,
+        void* glowModule
+    );
+    virtual ~soModuleAccesser();
+
+    void activate();
+    void deactivate();
 
     StageObject& getStageObject() const {
         return *m_stageObject;

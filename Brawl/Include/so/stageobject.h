@@ -3,6 +3,7 @@
 #include <StaticAssert.h>
 #include <gf/gf_task.h>
 #include <memory.h>
+#include <so/so_activate.h>
 #include <so/so_array.h>
 #include <so/so_kind.h>
 #include <so/so_module_accesser.h>
@@ -10,12 +11,6 @@
 #include <so/link/so_link_event_presenter.h>
 #include <so/so_null.h>
 #include <types.h>
-
-class soActivatable {
-    virtual ~soActivatable();
-    bool m_isActive;
-    char _5[3];
-};
 
 class StageObject : public gfTask, private soActivatable, public soAnimCmdEventObserver, public soLinkEventObserver {
 public:
