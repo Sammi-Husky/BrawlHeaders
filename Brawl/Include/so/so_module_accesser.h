@@ -429,7 +429,7 @@ class soModuleAccesserNull : public soModuleAccesser {
 
 extern soModuleAccesserNull g_soModuleAccesserNull;
 
-template <class T>
+template <class BC>
 class soModuleAccesserBuilder {
-    T t;
+    BC t;
 };

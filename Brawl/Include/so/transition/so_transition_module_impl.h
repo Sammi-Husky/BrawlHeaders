@@ -3,8 +3,9 @@
 #include <StaticAssert.h>
 #include <ac/ac_anim_cmd_impl.h>
 #include <so/so_instance_manager.h>
-#include <so/so_module_accesser.h>
 #include <types.h>
+
+class soModuleAccesser;
 
 class soGeneralTerm {
 public:

@@ -13,21 +13,34 @@ class soModuleAccesser;
 
 class soStatusUniqProcess {
 public:
-    virtual ~soStatusUniqProcess();
-    virtual void initStatus(soModuleAccesser* moduleAccesser);
-    virtual void exitStatus(soModuleAccesser* moduleAccesser, int);
-    virtual void execStatus(soModuleAccesser* moduleAccesser);
-    virtual void execStop(soModuleAccesser* moduleAccesser);
-    virtual void execMapCorrection(soModuleAccesser* moduleAccesser);
-    virtual void execFixPosCounter(soModuleAccesser* moduleAccesser);
-    virtual void execFixPos(soModuleAccesser* moduleAccesser);
-    virtual void execFixCamera(soModuleAccesser* moduleAccesser);
-    virtual bool checkDamage(soModuleAccesser* moduleAccesser, void*);
-    virtual void checkAttack(soModuleAccesser* moduleAccesser, void*, float);
-    virtual bool onChangeLr(soModuleAccesser* moduleAccesser, float, float);
-    virtual void leaveStop(soModuleAccesser* moduleAccesser, int, bool);
-    virtual bool checkTransitionPrecede(soModuleAccesser* moduleAccesser, int*);
+    virtual ~soStatusUniqProcess() { }
+    virtual void initStatus(soModuleAccesser* moduleAccesser) { }
+    virtual void exitStatus(soModuleAccesser* moduleAccesser, int) { }
+    virtual void execStatus(soModuleAccesser* moduleAccesser) { }
+    virtual void execStop(soModuleAccesser* moduleAccesser) { }
+    virtual void execMapCorrection(soModuleAccesser* moduleAccesser) { }
+    virtual void execFixPosCounter(soModuleAccesser* moduleAccesser) { }
+    virtual void execFixPos(soModuleAccesser* moduleAccesser) { }
+    virtual void execFixCamera(soModuleAccesser* moduleAccesser) { }
+    virtual bool checkDamage(soModuleAccesser* moduleAccesser, void*) {
+        return false;
+    }
+    virtual void checkAttack(soModuleAccesser* moduleAccesser, void*, float) { }
+    virtual bool onChangeLr(soModuleAccesser* moduleAccesser, float, float) {
+        return false;
+    }
+    virtual void leaveStop(soModuleAccesser* moduleAccesser, int, bool) { }
+    virtual bool checkTransitionPrecede(soModuleAccesser* moduleAccesser, int*) {
+        return true;
+    }
 };
+static_assert(sizeof(soStatusUniqProcess) == 4, "Class is the wrong size!");
+
+class soStatusUniqProcessNull : public soStatusUniqProcess {
+public:
+    virtual ~soStatusUniqProcessNull() { }
+};
+static_assert(sizeof(soStatusUniqProcessNull) == 4, "Class is the wrong size!");
 
 class soStatusModule : public soNullable {
 public:
@@ -127,3 +140,5 @@ public:
     virtual void notifyEventCollisionAttack(float power, soCollisionLog* collisionLog, soModuleAccesser* moduleAccesser);;
 };
 static_assert(sizeof(soStatusModuleImpl) == 0xA4, "Class is wrong size!");
+
+extern soStatusUniqProcessNull g_soStatusUniqProcessNull;
