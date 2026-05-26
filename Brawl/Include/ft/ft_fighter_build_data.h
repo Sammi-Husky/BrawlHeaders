@@ -32,38 +32,38 @@ public:
                        s32 team, void* cameraRangeSet,
                        void* cameraClipSphereSet);
 
-    virtual u32 getMdlResId();
-    virtual u32 getAnimResId();
-    virtual u8 getResGroupNo();
-    virtual ftMotionData* getMotionData();
-    virtual ftShakeData* getShakeData();
-    virtual ftVisibilityData* getVisibilityData();
-    virtual ftStatusData* getStatusData();
-    virtual soGroundConditionChecker* getGroundConditionChecker();
-    virtual void* getEffectNodeData();
-    virtual void* getEffectEmitData();
-    virtual ftEffectCommonData* getEffectCommonData();
-    virtual ftEffectScreenData* getEffectScreenData();
-    virtual ftIkData* getIkData();
-    virtual float getModelScale();
-    virtual soParamAccesser* getParamAccesser();
-    virtual s32 getAreaCategory();
-    virtual void* getCameraRangeSet();
-    virtual void* getCameraClipSphereSet();
-    virtual void* getItemNodeData();
-    virtual void* getModelExtendNodeTable();
-    virtual ftJostleData* getJostleData();
-    virtual ftPreCheckAnimCmdData* getPreCheckAnimCmdData();
+    virtual u32 getMdlResId() const;
+    virtual u32 getAnimResId() const;
+    virtual u8 getResGroupNo() const;
+    virtual ftMotionData* getMotionData() const;
+    virtual ftShakeData* getShakeData() const;
+    virtual ftVisibilityData* getVisibilityData() const;
+    virtual ftStatusData* getStatusData() const;
+    virtual soGroundConditionChecker* getGroundConditionChecker() const;
+    virtual void* getEffectNodeData() const;
+    virtual void* getEffectEmitData() const;
+    virtual ftEffectCommonData* getEffectCommonData() const;
+    virtual ftEffectScreenData* getEffectScreenData() const;
+    virtual ftIkData* getIkData() const;
+    virtual float getModelScale() const;
+    virtual soParamAccesser* getParamAccesser() const;
+    virtual s32 getAreaCategory() const;
+    virtual void* getCameraRangeSet() const;
+    virtual void* getCameraClipSphereSet() const;
+    virtual void* getItemNodeData() const;
+    virtual void* getModelExtendNodeTable() const;
+    virtual ftJostleData* getJostleData() const;
+    virtual ftPreCheckAnimCmdData* getPreCheckAnimCmdData() const;
     virtual ~ftFighterBuildData() { }
-    virtual s32 getTeam() { return m_team; }
-    virtual Heaps::HeapType getInstanceHeap() { return m_instHeap; }
-    virtual Heaps::HeapType getNWModelInstanceHeap() { return m_nwModelInstHeap; }
-    virtual Heaps::HeapType getNWMotionInstanceHeap() { return m_nwMotionInstHeap; }
-    virtual s32 getHeapSlotNo();
-    virtual ftSoundIdExchangerImpl* getSoundIdExchanger();
-    virtual float getSlopeAngleLimit();
-    virtual void* getAnimCmdData(u32 eventThread, s32 p2);
+    virtual s32 getTeam() const { return m_team; }
+    virtual Heaps::HeapType getInstanceHeap() const { return m_instHeap; }
+    virtual Heaps::HeapType getNWModelInstanceHeap() const { return m_nwModelInstHeap; }
+    virtual Heaps::HeapType getNWMotionInstanceHeap() const { return m_nwMotionInstHeap; }
+    virtual s32 getHeapSlotNo() const;
+    virtual ftSoundIdExchangerImpl* getSoundIdExchanger() const;
+    virtual float getSlopeAngleLimit() const;
+    virtual void* getAnimCmdData(u32 eventThread, s32 p2) const;
 
-    soAnimCmdDisguiseList* getAnimCmdDisguiseList(bool p1, s32 actionType);
+    soAnimCmdDisguiseList* getAnimCmdDisguiseList(bool p1, s32 actionType) const;
 };
 static_assert(sizeof(ftFighterBuildData) == 0x30, "Class is the wrong size!");

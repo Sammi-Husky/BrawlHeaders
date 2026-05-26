@@ -429,7 +429,10 @@ class soModuleAccesserNull : public soModuleAccesser {
 
 extern soModuleAccesserNull g_soModuleAccesserNull;
 
+// TODO: Move this to a new header once its full definition is decomped
+#ifndef MATCHING
 template <class BC>
 class soModuleAccesserBuilder {
     BC t;
 };
+#endif

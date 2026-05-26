@@ -6,6 +6,7 @@
 
 class ftVirtualNodeMatrixPool : public soNullable {
 public:
+    ftVirtualNodeMatrixPool(bool isNull) : soNullable(isNull) { }
     virtual ~ftVirtualNodeMatrixPool() = 0;
     virtual void* getHitMatrix() = 0;
     virtual void* getCommonMatrix() = 0;
@@ -19,7 +20,7 @@ class ftVirtualNodeMatrixPoolImpl : public ftVirtualNodeMatrixPool {
     u8 m_commonMatrix[0x90];
     u8 m_extendMatrix[0x60];
 public:
-    // TODO inlined constructor
+    ftVirtualNodeMatrixPoolImpl() : ftVirtualNodeMatrixPool(false) { }
     virtual ~ftVirtualNodeMatrixPoolImpl() { }
     virtual void* getHitMatrix() { return &m_hitMatrix; }
     virtual void* getCommonMatrix() { return &m_commonMatrix; }
@@ -29,7 +30,7 @@ static_assert(sizeof(ftVirtualNodeMatrixPoolImpl) == 0x4B8, "Class is the wrong 
 
 class ftVirtualNodeMatrixPoolNull : public ftVirtualNodeMatrixPool {
 public:
-    // TODO inlined constructor
+    ftVirtualNodeMatrixPoolNull() : ftVirtualNodeMatrixPool(true) { }
     virtual ~ftVirtualNodeMatrixPoolNull() { }
     virtual void* getHitMatrix() { return nullptr; }
     virtual void* getCommonMatrix() { return nullptr; }

@@ -19,27 +19,27 @@ public:
                        s32 team, void* cameraRangeSet,
                        void* cameraClipSphereSet);
 
-    virtual u32 getMdlResId();
-    virtual u32 getAnimResId();
-    virtual u8 getResGroupNo();
-    virtual s32 getTeam();
-    virtual wnMotionData* getMotionData();
-    virtual wnShakeData* getShakeData();
-    virtual wnVisibilityData* getVisibilityData();
-    virtual wnStatusData* getStatusData();
-    virtual soGroundConditionChecker* getGroundConditionChecker();
-    virtual void* getEffectEmitData();
-    virtual wnEffectCommonData* getEffectCommonData();
-    virtual soParamAccesser* getParamAccesser();
-    virtual s32 getAreaCategory();
-    virtual void* getCameraRangeSet();
-    virtual void* getCameraClipSphereSet();
-    virtual void* getItemNodeData();
-    virtual wnJostleData* getJostleData();
-    virtual Heaps::HeapType getInstanceHeap();
-    virtual Heaps::HeapType getNWMotionInstanceHeap();
-    virtual Heaps::HeapType getNWModelInstanceHeap();
+    virtual u32 getMdlResId() const;
+    virtual u32 getAnimResId() const;
+    virtual u8 getResGroupNo() const;
+    virtual s32 getTeam() const;
+    virtual wnMotionData* getMotionData() const;
+    virtual wnShakeData* getShakeData() const;
+    virtual wnVisibilityData* getVisibilityData() const;
+    virtual wnStatusData* getStatusData() const;
+    virtual soGroundConditionChecker* getGroundConditionChecker() const;
+    virtual void* getEffectEmitData() const;
+    virtual wnEffectCommonData* getEffectCommonData() const;
+    virtual soParamAccesser* getParamAccesser() const;
+    virtual s32 getAreaCategory() const;
+    virtual void* getCameraRangeSet() const;
+    virtual void* getCameraClipSphereSet() const;
+    virtual void* getItemNodeData() const;
+    virtual wnJostleData* getJostleData() const;
+    virtual Heaps::HeapType getInstanceHeap() const;
+    virtual Heaps::HeapType getNWMotionInstanceHeap() const;
+    virtual Heaps::HeapType getNWModelInstanceHeap() const;
     virtual ~wnModuleAccesserBuildData();
-    virtual void* getAnimCmdData(u32 eventThread, s32 p2);
+    virtual void* getAnimCmdData(u32 eventThread, s32 p2) const;
 };
 // TODO: size

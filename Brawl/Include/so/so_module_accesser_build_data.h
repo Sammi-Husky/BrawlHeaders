@@ -9,48 +9,48 @@
 
 class soModuleAccesserBuildData {
 public:
-    virtual u32 getMdlResId() = 0;
-    virtual u32 getAnimResId() = 0;
-    virtual u8 getResGroupNo() = 0;
-    virtual s32 getTeam() = 0;
-    virtual soMotionData* getMotionData() = 0;
-    virtual soShakeData* getShakeData() = 0;
-    virtual soVisibilityData* getVisibilityData() = 0;
-    virtual soStatusData* getStatusData() = 0;
-    virtual soGroundConditionChecker* getGroundConditionChecker() = 0;
-    virtual void* getEffectNodeData() { return nullptr; }
-    virtual void* getEffectEmitData() = 0;
-    virtual soEffectCommonData* getEffectCommonData() = 0;
-    virtual soEffectScreenData* getEffectScreenData() { return nullptr; };
-    virtual void* getTerritoryParam() { return nullptr; }
+    virtual u32 getMdlResId() const = 0;
+    virtual u32 getAnimResId() const = 0;
+    virtual u8 getResGroupNo() const = 0;
+    virtual s32 getTeam() const = 0;
+    virtual soMotionData* getMotionData() const = 0;
+    virtual soShakeData* getShakeData() const = 0;
+    virtual soVisibilityData* getVisibilityData() const = 0;
+    virtual soStatusData* getStatusData() const = 0;
+    virtual soGroundConditionChecker* getGroundConditionChecker() const = 0;
+    virtual void* getEffectNodeData() const { return nullptr; }
+    virtual void* getEffectEmitData() const = 0;
+    virtual soEffectCommonData* getEffectCommonData() const = 0;
+    virtual soEffectScreenData* getEffectScreenData() const { return nullptr; };
+    virtual void* getTerritoryParam() const { return nullptr; }
 
     // UBFIX this function has a bug; don't dereference the pointer it
     // returns! TODO flag callers of this function, if any
-    virtual s32* getTerritoryRect() {
+    virtual s32* getTerritoryRect() const {
         s32 rect[4] = { 0, 0, 0, 0 };
         return rect;
     }
-    virtual void* getTargetSearchParam() { return nullptr; }
-    virtual soIkData* getIkData() { return nullptr; }
-    virtual s32 getModelLayerType() { return 2; }
-    virtual float getModelScale() { return 1.0f; }
-    virtual soParamAccesser* getParamAccesser() = 0;
-    virtual s32 getAreaCategory() = 0;
-    virtual void* getCameraRangeSet() = 0;
-    virtual void* getCameraClipSphereSet() = 0;
-    virtual void* getItemNodeData() = 0;
-    virtual void* getModelExtendNodeTable() { return nullptr; }
-    virtual soJostleData* getJostleData() = 0;
-    virtual soPreCheckAnimCmdData* getPreCheckAnimCmdData() { return nullptr; }
-    virtual Heaps::HeapType getInstanceHeap() = 0;
-    virtual Heaps::HeapType getNWModelInstanceHeap() = 0;
-    virtual Heaps::HeapType getNWMotionInstanceHeap() = 0;
-    virtual s32 getHeapSlotNo() { return 0; }
-    virtual soSoundIdExchanger* getSoundIdExchanger() {
+    virtual void* getTargetSearchParam() const { return nullptr; }
+    virtual soIkData* getIkData() const { return nullptr; }
+    virtual s32 getModelLayerType() const { return 2; }
+    virtual float getModelScale() const { return 1.0f; }
+    virtual soParamAccesser* getParamAccesser() const = 0;
+    virtual s32 getAreaCategory() const = 0;
+    virtual void* getCameraRangeSet() const = 0;
+    virtual void* getCameraClipSphereSet() const = 0;
+    virtual void* getItemNodeData() const = 0;
+    virtual void* getModelExtendNodeTable() const { return nullptr; }
+    virtual soJostleData* getJostleData() const = 0;
+    virtual soPreCheckAnimCmdData* getPreCheckAnimCmdData() const { return nullptr; }
+    virtual Heaps::HeapType getInstanceHeap() const = 0;
+    virtual Heaps::HeapType getNWModelInstanceHeap() const = 0;
+    virtual Heaps::HeapType getNWMotionInstanceHeap() const = 0;
+    virtual s32 getHeapSlotNo() const { return 0; }
+    virtual soSoundIdExchanger* getSoundIdExchanger() const {
         return &g_soSoundIdExchangerNull;
     }
-    virtual float getSlopeAngleLimit() { return 20.0f; }
+    virtual float getSlopeAngleLimit() const { return 20.0f; }
     virtual ~soModuleAccesserBuildData() { }
-    virtual void* getAnimCmdData(u32 eventThread, s32 p2) = 0;
+    virtual void* getAnimCmdData(u32 eventThread, s32 p2) const = 0;
 };
 static_assert(sizeof(soModuleAccesserBuildData) == 0x4, "Class is the wrong size!");

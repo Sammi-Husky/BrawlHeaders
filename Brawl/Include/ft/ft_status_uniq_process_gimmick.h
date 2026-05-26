@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <so/event/so_gimmick_event_presenter.h>
+#include <so/so_null.h>
 #include <so/status/so_status_module_impl.h>
 #include <types.h>
 
@@ -24,6 +25,7 @@ static_assert(sizeof(ftStatusUniqProcessGimmick) == 0x14, "Class is the wrong si
 
 class ftStatusUniqProcessGimmickEaten : public ftStatusUniqProcessGimmick {
 public:
+    ftStatusUniqProcessGimmickEaten(soModuleAccesser* acc) : ftStatusUniqProcessGimmick(acc) { }
     virtual ~ftStatusUniqProcessGimmickEaten() { }
     virtual void initStatus(soModuleAccesser* moduleAccesser);
     virtual void exitStatus(soModuleAccesser* moduleAccesser, int);
@@ -36,6 +38,7 @@ public:
 
 class ftStatusUniqProcessGimmickTruck : public ftStatusUniqProcessGimmick {
 public:
+    ftStatusUniqProcessGimmickTruck(soModuleAccesser* acc) : ftStatusUniqProcessGimmick(acc) { }
     virtual ~ftStatusUniqProcessGimmickTruck() { }
     virtual void initStatus(soModuleAccesser* moduleAccesser);
     virtual void exitStatus(soModuleAccesser* moduleAccesser, int);
@@ -47,6 +50,7 @@ static_assert(sizeof(ftStatusUniqProcessGimmickTruck) == 0x14, "Class is the wro
 
 class ftStatusUniqProcessGimmickSpring : public ftStatusUniqProcessGimmick {
 public:
+    ftStatusUniqProcessGimmickSpring(soModuleAccesser* acc) : ftStatusUniqProcessGimmick(acc) { }
     virtual ~ftStatusUniqProcessGimmickSpring() { }
     virtual void initStatus(soModuleAccesser* moduleAccesser);
     virtual void exitStatus(soModuleAccesser* moduleAccesser, int);
@@ -58,6 +62,7 @@ static_assert(sizeof(ftStatusUniqProcessGimmickSpring) == 0x14, "Class is the wr
 
 class ftStatusUniqProcessGimmickLadder : public ftStatusUniqProcessGimmick {
 public:
+    ftStatusUniqProcessGimmickLadder(soModuleAccesser* acc) : ftStatusUniqProcessGimmick(acc) { }
     virtual ~ftStatusUniqProcessGimmickLadder() { }
     virtual void initStatus(soModuleAccesser* moduleAccesser);
     virtual void exitStatus(soModuleAccesser* moduleAccesser, int);
@@ -70,6 +75,7 @@ static_assert(sizeof(ftStatusUniqProcessGimmickLadder) == 0x14, "Class is the wr
 
 class ftStatusUniqProcessGimmickCatapult : public ftStatusUniqProcessGimmick {
 public:
+    ftStatusUniqProcessGimmickCatapult(soModuleAccesser* acc) : ftStatusUniqProcessGimmick(acc) { }
     virtual ~ftStatusUniqProcessGimmickCatapult() { }
     virtual void initStatus(soModuleAccesser* moduleAccesser);
     virtual void exitStatus(soModuleAccesser* moduleAccesser, int);
@@ -81,6 +87,7 @@ static_assert(sizeof(ftStatusUniqProcessGimmickCatapult) == 0x14, "Class is the 
 
 class ftStatusUniqProcessGimmickDoor : public ftStatusUniqProcessGimmick {
 public:
+    ftStatusUniqProcessGimmickDoor(soModuleAccesser* acc) : ftStatusUniqProcessGimmick(acc) { }
     virtual ~ftStatusUniqProcessGimmickDoor() { }
     virtual void initStatus(soModuleAccesser* moduleAccesser);
     virtual void execStatus(soModuleAccesser* moduleAccesser);
@@ -92,6 +99,7 @@ static_assert(sizeof(ftStatusUniqProcessGimmickDoor) == 0x14, "Class is the wron
 class ftStatusUniqProcessGimmickBarrel : public ftStatusUniqProcessGimmick {
     u8 unk14[0x4];
 public:
+    ftStatusUniqProcessGimmickBarrel(soModuleAccesser* acc) : ftStatusUniqProcessGimmick(acc) { }
     virtual ~ftStatusUniqProcessGimmickBarrel() { }
     virtual void initStatus(soModuleAccesser* moduleAccesser);
     virtual void exitStatus(soModuleAccesser* moduleAccesser, int);
@@ -105,6 +113,7 @@ static_assert(sizeof(ftStatusUniqProcessGimmickBarrel) == 0x18, "Class is the wr
 
 class ftStatusGimmickUniqProcessPool : public soNullable {
 public:
+    ftStatusGimmickUniqProcessPool(bool isNull) : soNullable(isNull) { }
     virtual ~ftStatusGimmickUniqProcessPool() { }
     virtual soStatusUniqProcess* getUniqProcessBarrel() = 0;
     virtual soStatusUniqProcess* getUniqProcessDoor() = 0;
@@ -125,6 +134,16 @@ class ftStatusGimmickUniqProcessPoolImpl : public ftStatusGimmickUniqProcessPool
     ftStatusUniqProcessGimmickTruck m_truckProc;
     ftStatusUniqProcessGimmickEaten m_eatenProc;
 public:
+    ftStatusGimmickUniqProcessPoolImpl(soModuleAccesser* acc) :
+        ftStatusGimmickUniqProcessPool(false),
+        m_barrelProc(acc),
+        m_doorProc(acc),
+        m_catapultProc(acc),
+        m_ladderProc(acc),
+        m_springProc(acc),
+        m_truckProc(acc),
+        m_eatenProc(acc) { }
+
     virtual ~ftStatusGimmickUniqProcessPoolImpl() { }
 
     virtual soStatusUniqProcess* getUniqProcessBarrel() {

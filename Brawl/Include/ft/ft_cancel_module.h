@@ -12,7 +12,7 @@ class soModuleAccesser;
 
 class ftCancelModule : public soNullable {
 public:
-    // TODO inlined constructor
+    ftCancelModule(bool isNull) : soNullable(isNull) { }
     virtual void postInitialize(soModuleAccesser* moduleAccesser) = 0;
     virtual bool isEnableCancel() const = 0;
     virtual void processFixPosition() = 0;
@@ -44,7 +44,7 @@ public:
 
 class ftCancelModuleNull : public ftCancelModule {
 public:
-    // TODO inlined constructor
+    ftCancelModuleNull() : ftCancelModule(true) { }
     virtual void postInitialize(soModuleAccesser* moduleAccesser) { }
     virtual bool isEnableCancel() const { return false; }
     virtual void processFixPosition() { }
