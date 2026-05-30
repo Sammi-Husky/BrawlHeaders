@@ -20,7 +20,7 @@ public:
                        void* cameraClipSphereSet);
 
     virtual u32 getMdlResId() const;
-    virtual u32 getAnimResId() const;
+    virtual u32 getAnmResId() const;
     virtual u8 getResGroupNo() const;
     virtual s32 getTeam() const;
     virtual wnMotionData* getMotionData() const;

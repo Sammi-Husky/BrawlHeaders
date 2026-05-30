@@ -10,7 +10,7 @@
 class soModuleAccesserBuildData {
 public:
     virtual u32 getMdlResId() const = 0;
-    virtual u32 getAnimResId() const = 0;
+    virtual u32 getAnmResId() const = 0;
     virtual u8 getResGroupNo() const = 0;
     virtual s32 getTeam() const = 0;
     virtual soMotionData* getMotionData() const = 0;
