@@ -52,7 +52,7 @@ public:
     virtual Vec3f getNodeGlobalPosition(u32 correctNodeId, const Vec3f* p2, bool, bool );
     virtual Vec3f getNodeLocalPosition(u32 correctNodeId, bool );
     virtual void getNodeLocalMtxFromNode(u32 node1, u32 node2, Matrix* outMtx, bool );
-    virtual void getNodeGlobalMtx(u32 index, Matrix* outMtx, bool );
+    virtual void getNodeGlobalMtx(u32 index, Matrix* outMtx, bool ) const;
     virtual void setNodeGlobalMtx(u32 index, Matrix* , bool );
     virtual Vec3f getNodeGlobalRotation(u32 nodeIndex, bool );
     virtual bool isNode(u32 id);
@@ -109,13 +109,13 @@ public:
     virtual void setNodeTranslate(u32 , Vec3f* xlate);
     virtual int getNodeId(const char *nodeName);
     virtual int getCorrectNodeId(u32);
-    virtual int getRealNodeId(u32);
+    virtual int getRealNodeId(u32) const;
     virtual const char* getNodeName(u32 p1);
     virtual Vec3f getNodeGlobalPosition(u32 correctNodeId, bool );
     virtual Vec3f getNodeGlobalPosition(u32 correctNodeId, const Vec3f* p2, bool, bool );
     virtual Vec3f getNodeLocalPosition(u32 correctNodeId, bool );
     virtual void getNodeLocalMtxFromNode(u32 node1, u32 node2, Matrix* outMtx, bool );
-    virtual void getNodeGlobalMtx(u32 index, Matrix* outMtx, bool );
+    virtual void getNodeGlobalMtx(u32 index, Matrix* outMtx, bool ) const;
     virtual void setNodeGlobalMtx(u32 index, Matrix* , bool );
     virtual Vec3f getNodeGlobalRotation(u32 nodeIndex, bool );
     virtual bool isNode(u32 id);
