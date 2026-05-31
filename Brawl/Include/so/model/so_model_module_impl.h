@@ -5,6 +5,7 @@
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>
 #include <so/model/so_model_module_simple.h>
+#include <so/model/so_model_virtual_node.h>
 #include <so/event/so_event_presenter.h>
 #include <so/model/so_model_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
@@ -16,8 +17,12 @@ class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObser
     char _spacer1[156];
     soModuleAccesser* m_moduleAccesser; // +0xC8
 public:
-    // TODO: types for p2 and p5
-    soModelModuleImpl(soModuleAccesser* p1, void* p2, u32 p3, u32 p4, void* p5, float f1);
+    soModelModuleImpl(soModuleAccesser* acc,
+                      soArray<soModelNodeSetUp>* nodeSetUps,
+                      void* extendNodeTbl,
+                      soArray<soModelVirtualNode>* virtualNodes,
+                      soEventObserverRegistrationDesc* regDesc,
+                      float f1);
     // TODO: Verify Params
     virtual void setUpMtx(u32 nodeId);
     virtual void setUpMtx(u32* nodeIds, s32 numNodeIds);
@@ -93,8 +98,12 @@ static_assert(sizeof(soModelModuleImpl) == 204, "Class is wrong size!");
 class soModelModuleImplVariable : public soModelModuleImpl {
     u32** unkCC;
 public:
-    // TODO: types for p2 and p5
-    soModelModuleImplVariable(soModuleAccesser* p1, void* p2, u32 p3, u32 p4, void* p5, float f1);
+    soModelModuleImplVariable(soModuleAccesser* acc,
+                              soArray<soModelNodeSetUp>* nodeSetUps,
+                              void* extendNodeTbl,
+                              soArray<soModelVirtualNode>* virtualNodes,
+                              soEventObserverRegistrationDesc* regDesc,
+                              float f1);
     virtual void setUpMtx(u32* nodeIds, s32 numNodeIds);
     virtual void clearNodeSRT(u32 p1);
     virtual void setNodeSRT(u32 , Vec3f* scale, Vec3f* rot, Vec3f* xlate);

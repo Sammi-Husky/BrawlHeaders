@@ -150,6 +150,7 @@ static_assert(sizeof(soEventObserver<void>) == 0xC, "Class is wrong size!");
 
 template <class T>
 class soEventPresenter {
+public:
     virtual ~soEventPresenter();
 
     // TODO: Verify
@@ -157,6 +158,8 @@ class soEventPresenter {
 };
 
 class soEventObserverRegistrationDesc : public soNullable {
+public:
+    soEventObserverRegistrationDesc(bool isNull) : soNullable(isNull) { }
     virtual ~soEventObserverRegistrationDesc();
     virtual bool checkCollisionHit();
     virtual bool checkCollisionAttack();
@@ -177,5 +180,31 @@ class soEventObserverRegistrationDesc : public soNullable {
     virtual bool checkCollisionAbsorber();
     virtual bool checkCollisionSearch();
     virtual bool checkTurn();
-
 };
+
+class soEventObserverRegistrationDescNull : public soEventObserverRegistrationDesc {
+public:
+    soEventObserverRegistrationDescNull() : soEventObserverRegistrationDesc(true) { }
+    virtual ~soEventObserverRegistrationDescNull() { }
+    virtual bool checkCollisionHit() { return true; }
+    virtual bool checkCollisionAttack() { return true; }
+    virtual bool checkCollisionCatch() { return true; }
+    virtual bool checkGimmick() { return true; }
+    virtual bool checkStatus() { return true; }
+    virtual bool checkAnimCmd(){ return true; }
+    virtual bool checkDamage(){ return true; }
+    virtual bool checkLink() { return true; }
+    virtual bool checkSituation() { return true; }
+    virtual bool checkModel() { return true; }
+    virtual bool checkMotion() { return true; }
+    virtual bool checkArticle() { return true; }
+    virtual bool checkItemManage() { return true; }
+    virtual bool checkCapture() { return true; }
+    virtual bool checkCollisionShield() { return true; }
+    virtual bool checkCollisionReflector() { return true; }
+    virtual bool checkCollisionAbsorber() { return true; }
+    virtual bool checkCollisionSearch() { return true; }
+    virtual bool checkTurn() { return true; }
+};
+
+extern soEventObserverRegistrationDescNull g_soEventObserverRegistrationDescNull;

@@ -188,7 +188,7 @@ public:
     virtual void set(s32 startingIndex, const T& element, s32 numIndicesToSet) { }
 
     soArrayNull() { }
-    soArrayNull(s32 size, s32) { }
+    soArrayNull(s32 size, s32 = 0) { }
     soArrayNull(s32 size, const T& element, s32) { }
 };
 
@@ -670,7 +670,7 @@ public:
 
     soArrayVector() : m_topIndex(0), m_lastIndex(0), m_size(0), m_isFull(false) { }
 
-    soArrayVector(s32 size, s32) {
+    soArrayVector(s32 size, s32 = 0) {
         m_topIndex = 0;
         m_lastIndex = 0;
         m_isFull = false;
@@ -702,6 +702,12 @@ public:
     inline soArrayVector(s32 size, s32 unk) : soArrayNull<T>(size, unk) { }
     inline soArrayVector(s32 size, const T& element, s32 unk) : soArrayNull<T>(size, element, unk) { }
 };
+
+template<typename T>
+soArray<T>& getNullArray() {
+    static soArrayNull<T> NullObj;
+    return NullObj;
+}
 
 extern soArrayNull<s32> g_s32ArrayNull;
 extern soArrayNull<float> g_floatArrayNull;

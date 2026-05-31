@@ -6,6 +6,12 @@
 #include <so/model/so_model_module_simple.h>
 #include <types.h>
 
+class soModelNodeSetUp {
+    // TODO data and functions
+    u8 unk0[0x34];
+};
+static_assert(sizeof(soModelNodeSetUp) == 0x34, "Class is the wrong size!");
+
 // TODO: name
 struct UnkVirtualNodeInfo {
     u32 m_parentNodeId;
