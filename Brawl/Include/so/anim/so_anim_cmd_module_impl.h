@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <so/anim/so_anim_cmd.h>
+#include <so/so_array.h>
 #include <so/event/so_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
 #include <so/status/so_status_event_presenter.h>
@@ -35,17 +36,76 @@ public:
 };
 static_assert(sizeof(soAnimCmdInterpreter) == 0x28, "Class is the wrong size!");
 
-// This class is very much unfinished.
-class soAnimCmdAddressPackArraySeparate: public soNullableInterface  {
-public:
-    virtual ~soAnimCmdAddressPackArraySeparate();
-
-    char _unk1[0x4]; // unknown
-    soAnimCmd* m_startCmd;
-    char _unk2[0x14];
-    void* m_returnStack;
+// The unit of soAnimCmdAddressPackArraySeparate: a triple of acAnimCmdConv*s
+struct soAnimCmdAddressPackConv {
+    const acAnimCmdConv* addr1;
+    const acAnimCmdConv* addr2;
+    const acAnimCmdConv* addr3;
 };
-static_assert(sizeof(soAnimCmdAddressPackArraySeparate) == 0x24, "Class is the wrong size!");
+
+// This class zips together three fixed-size arrays of acAnimCmdConv pointers,
+// presenting the resulting aggregate as a fixed-size array of
+// soAnimCmdAddressPackConv.
+// The constituent arrays do not need to be identical in size; nullptrs are
+// filled in to pad out any shorter arrays.
+class soAnimCmdAddressPackArraySeparate : public soArrayFixed<soAnimCmdAddressPackConv>  {
+    soAnimCmdAddressPackConv m_pack;
+    soArrayFixed<const acAnimCmdConv*>* m_addrArr1;
+    soArrayFixed<const acAnimCmdConv*>* m_addrArr2;
+    soArrayFixed<const acAnimCmdConv*>* m_addrArr3;
+public:
+    soAnimCmdAddressPackConv atSub(s32 index) const {
+        if (index < 0) {
+            soAnimCmdAddressPackConv pack = { nullptr, nullptr, nullptr };
+            return pack;
+        }
+
+        const acAnimCmdConv* addr1 = nullptr;
+        if (index < m_addrArr3->size())
+            addr1 = m_addrArr3->at(index);
+
+        const acAnimCmdConv* addr2 = nullptr;
+        if (index < m_addrArr1->size())
+            addr2 = m_addrArr1->at(index);
+
+        const acAnimCmdConv* addr3 = nullptr;
+        if (index < m_addrArr2->size())
+            addr3 = m_addrArr2->at(index);
+
+        soAnimCmdAddressPackConv pack = { addr1, addr2, addr3 };
+        return pack;
+    }
+
+    virtual soAnimCmdAddressPackConv& at(s32 index) {
+        m_pack = atSub(index);
+        return m_pack;
+    }
+
+    // UBFIX this function has a bug; don't use the reference it
+    // returns! TODO flag callers of this function, if any
+    virtual const soAnimCmdAddressPackConv& at(s32 index) const {
+        return atSub(index);
+    }
+
+    virtual s32 size() const {
+        s32 max = m_addrArr3->size();
+        if (max < m_addrArr1->size())
+            max = m_addrArr1->size();
+        if (max < m_addrArr2->size())
+            max = m_addrArr2->size();
+        return max;
+    }
+
+    virtual bool isNull() const { return false; }
+
+    soAnimCmdAddressPackArraySeparate(soArrayFixed<const acAnimCmdConv*>* addrs1,
+                                      soArrayFixed<const acAnimCmdConv*>* addrs2,
+                                      soArrayFixed<const acAnimCmdConv*>* addrs3) :
+        m_addrArr1(addrs1), m_addrArr2(addrs2), m_addrArr3(addrs3) { }
+
+    virtual ~soAnimCmdAddressPackArraySeparate() { }
+};
+static_assert(sizeof(soAnimCmdAddressPackArraySeparate) == 0x1C, "Class is the wrong size!");
 
 class soAnimCmdControlUnit {
 public:
