@@ -39,7 +39,7 @@ public:
     T m_element;
     int m_id;
 
-    soInstanceUnit() : m_id(-1) { }
+    soInstanceUnit() : m_element(), m_id(-1) { }
     soInstanceUnit(T& elm, s32 id) : m_element(elm), m_id(id) { }
 };
 

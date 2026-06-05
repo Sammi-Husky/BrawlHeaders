@@ -150,11 +150,67 @@ static_assert(sizeof(soEventObserver<void>) == 0xC, "Class is wrong size!");
 
 template <class T>
 class soEventPresenter {
-public:
-    virtual ~soEventPresenter();
+    static soInstanceManagerFullPropertyNull<T*> g_nullObserverList;
 
-    // TODO: Verify
-    char _spacer1[8];
+    bool getObserverListHelper2() {
+        soEventManager* mgr;
+        s16 uid = m_unitID;
+        mgr = soEventSystem::getInstance()->getManager(m_manageID);
+
+        if (mgr->getObserverCapacity(uid) == 0)
+            return false;
+        soEventUnitWrapper<T>* evtUnitWrapper =
+            dynamic_cast<soEventUnitWrapper<T>* >(mgr->getEventUnit(uid));
+        if (!evtUnitWrapper)
+            return false;
+        m_obsrvrList = evtUnitWrapper->getObserverListSub();
+        return m_obsrvrList;
+    }
+
+    bool checkManageId() const {
+        const s16 mId = m_manageID;
+        return soEventSystem::getInstance()->getInstanceManager().isContain(mId);
+    }
+
+    bool getObserverListHelper() {
+        if (m_manageID <= -1 || !checkManageId())
+            return false;
+        if (soEventSystem::getInstance()->getManager(m_manageID)->getObserverCapacity(m_unitID) == 0) {
+            m_obsrvrList = nullptr;
+            return false;
+        }
+        return getObserverListHelper2();
+    }
+
+public:
+    virtual ~soEventPresenter() { }
+
+    s16 m_manageID;
+    s16 m_unitID;
+    soInstanceManagerFullProperty<T*>* m_obsrvrList;
+
+    void setManageId(s16 id) {
+        if (m_manageID != id) {
+            m_manageID = id;
+            if (id > -1)
+                m_obsrvrList = nullptr;
+        }
+    }
+
+    // NONMATCHING regswap
+    soInstanceManagerFullProperty<T*>* getObserverList() {
+        if (m_manageID <= -1)
+            return &g_nullObserverList;
+        if (!(m_obsrvrList || getObserverListHelper()))
+            return &g_nullObserverList;
+        if (soEventSystem::getInstance()->
+                           getManager(m_manageID)->
+                           getObserverCapacity(m_unitID) == 0) {
+            m_obsrvrList = nullptr;
+            return &g_nullObserverList;
+        }
+        return m_obsrvrList;
+    }
 };
 
 class soEventObserverRegistrationDesc : public soNullable {

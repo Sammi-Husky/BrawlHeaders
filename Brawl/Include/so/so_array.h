@@ -35,6 +35,22 @@ public:
     virtual ~soArrayFixed() { };
 };
 
+template<typename T>
+class soArrayFixedNull : soArrayFixed<T> {
+public:
+    virtual bool isNull() const { return true; }
+    virtual T& at(s32 index) {
+        static T m_nullElement;
+        return m_nullElement;
+    };
+    virtual const T& at(s32 index) const {
+        static T m_nullElement;
+        return m_nullElement;
+    };
+    virtual s32 size() const { return 0; }
+    virtual ~soArrayFixedNull() { }
+};
+
 template <class T>
 class soArrayContractible : public soArrayFixed<T> {
 public:

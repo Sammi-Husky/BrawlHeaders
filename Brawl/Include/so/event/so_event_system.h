@@ -9,10 +9,10 @@
 
 class soEventUnit : public soNullableInterface {
 public:
-    virtual void eraseObserver(s16 id, s16 sendID);
-    virtual s16 getEventId();
-    virtual u32 getObserverCapacity(u32 index);
-    virtual u32 getObserverSize(u32 index);
+    virtual void eraseObserver(s16 id, s16 sendID) = 0;
+    virtual s16 getEventId() = 0;
+    virtual u32 getObserverCapacity(u32 index) = 0;
+    virtual u32 getObserverSize(u32 index) = 0;
     virtual ~soEventUnit() { }
 };
 
@@ -48,7 +48,8 @@ public:
         if (isValid())
             soEventSystem::getInstance()->getManager(m_managerID)->eraseUnit(m_eventID);
     }
-    virtual s16 addObserverSub(T*, s8);
+    virtual s16 addObserverSub(T*, s8) = 0;
+    virtual soInstanceManagerFullProperty<T*>* getObserverListSub() = 0;
 
     soEventUnitWrapper(s16 mgrId, s16 p2) : m_managerID(mgrId), m_eventID(p2) {
         if (mgrId != -1) {
