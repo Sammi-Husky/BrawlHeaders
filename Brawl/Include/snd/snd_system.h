@@ -49,6 +49,10 @@ public:
     bool isPlaySEID(SndID sndID);
     bool playBGM(int bgmId, u32 fade, bool);
     int getBGMId();
+
+    static SndID constructInterceptSndID(int wavID, SndID infoSndID) { // custom
+        return static_cast<SndID>(0xF0000000 + ((wavID & 0xFFF) << 16) + infoSndID);
+    }
 };
 static_assert(sizeof(sndSystem) == 0xbd0, "Class is wrong size!");
 
