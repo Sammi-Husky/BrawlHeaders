@@ -28,7 +28,8 @@ public:
     VtxData* m_vtxDatas;
     LineData* m_lineDatas;
     JointData* m_jointDatas;
+    u8 unk14[0x14];
 
     const char* getJointNodeName(u32 nodeIndex);
 };
-static_assert(sizeof(grCollData) == 20, "Class is wrong size!");
+static_assert(sizeof(grCollData) == 0x28, "Class is wrong size!");

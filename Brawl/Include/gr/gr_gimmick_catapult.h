@@ -78,6 +78,6 @@ public:
 
     void presentFighterPosEvent();
 
-    static grGimmickCatapult* create(int mdlIndex, const char* taskName);
+    static grGimmickCatapult* create(s16 mdlIndex, const char* taskName);
 };
 static_assert(sizeof(grGimmickCatapult) == 420, "Class is wrong size!");

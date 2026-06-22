@@ -114,7 +114,7 @@ extern Stage* g_Stage;
 class Stage : public gfTask {
 public:
     // 0
-    char _spacer[0x04];
+    u32 unk40;
     // 4
     srStageKind m_stageKind;
     // 8
@@ -184,10 +184,14 @@ public:
     // 150
     float m_frameRuleTime;
     // 154
-    char _spacer7[0xC];
+    u32 unk194;
+    // 158
+    char _spacer7[0x8];
     // TOTAL_SIZE == 0x160
 
     void testStageParamInit(gfArchive* archive, int fileIndex);
+    void testCollDataInit(gfArchive* archive, grCollData* collData, u32 index);
+    void setCollision(grCollision* coll);
     void stageParamChange();
     void testStageDataInit(gfArchive* archive, int fileIndex, int unk2);
     void initSoundParameters();

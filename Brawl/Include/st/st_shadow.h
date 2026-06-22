@@ -9,4 +9,6 @@ class stShadow : public gfTask {
 public:
     virtual void renderPre();
     virtual ~stShadow();
+
+    void clearShadowObject();
 };

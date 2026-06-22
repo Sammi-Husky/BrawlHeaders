@@ -808,7 +808,7 @@ CC008000:WGPIPE
 27,1,001ED054:getAIRange__5StageFv
 27,1,0008C01C:getDefaultLightSetIndex__5StageFv
 27,1,002227E0:getZoneLightSetIndex__5StageFv
-27,1,00225778:getScrollDir__5StageFi
+27,1,00225778:getScrollDir__5StageFP5Vec3f
 27,1,00222B54:clearCameraParam__5StageFv
 27,1,00222B98:initCameraParam__5StageFv
 27,1,00222590:startLoadLocalData__5StageFv
@@ -837,8 +837,8 @@ CC008000:WGPIPE
 27,1,0022575C:getNowStepBgmID__5StageFv
 27,1,00225754:getBgmOptionID__5StageFv
 27,1,0022574C:isBgmChange__5StageFv
-27,1,00225738:getBgmChangeID__5StageFii
-27,1,00225728:setBgmChange__5StageFfii
+27,1,00225738:getBgmChangeID__5StageFPUlPf
+27,1,00225728:setBgmChange__5StageFfbUl
 27,1,0022571C:getBgmVolume__5StageFv
 27,1,00225710:getBgmPlayOffsetFrame__5StageFv
 27,1,00225708:isNextStepBgmEqualNowStepBgmFromFlag__5StageFv
@@ -912,7 +912,7 @@ CC008000:WGPIPE
 
 // stCommonGimmick
 27,1,002380b0:releaseArchive__15stCommonGimmickFv
-27,1,00238018:createGimmickCollision__15stCommonGimmickFiP6GroundP9gfArchive
+27,1,00238018:createGimmickCollision__15stCommonGimmickFUlP6GroundP9gfArchive
 27,1,00237E18:createGimmickBeltConveyor2__15stCommonGimmickFP25grGimmickBeltConveyorData
 27,1,00237D20:createGimmickLadder__15stCommonGimmickFP19grGimmickLadderDataP9gfArchive
 27,1,00237E60:createGimmickWaterArea__15stCommonGimmickFP18grGimmickWaterData

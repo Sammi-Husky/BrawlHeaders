@@ -27,6 +27,8 @@ public:
     void setParent(u32 handleId, nw4r::g3d::ScnMdl*, const char*, bool);
     void setParent(u32 handleId, nw4r::g3d::ScnMdl*, u32, bool);
     void setParent(u32 handleId1, u32 handleId2, const char*, bool);
+    void pushsetCurrentGroup(u32 p1);
+    void popCurrentGroup();
     void preSetAnmIdx(int chrIndex, int visIndex, int patIndex, int srtIndex, int clrIndex, int shpIndex);
     void setGroundAttach(u32, soGroundModule* groundModule);
     void setGroundAttach(u32, grCollisionLineWork* lineWork);
