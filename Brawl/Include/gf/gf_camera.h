@@ -45,7 +45,8 @@ public:
     Vec3f m_centerPos;
     char _0x78[24];
     Vec3f m_0x90;
-    char _0x9C[36];
+    Vec3f m_0x9C;
+    char _0xA8[24];
     Vec3f m_rot;
     float unkCC;
     float unkD0;
