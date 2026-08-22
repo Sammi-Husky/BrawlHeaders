@@ -49,6 +49,8 @@ public:
     bool isPlaySEID(SndID sndID);
     bool playBGM(int bgmId, u32 fade, bool);
     int getBGMId();
+    void specialPause();
+    void specialResume();
 
     static SndID constructInterceptSndID(int wavID, SndID infoSndID) { // custom
         return static_cast<SndID>(0xF0000000 + ((wavID & 0xFFF) << 16) + infoSndID);

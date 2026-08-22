@@ -38,7 +38,7 @@ public:
     // Same as above with a mask of 0xFFFF.
     static void merge(gfPadStatus* src, int numPads, gfPadStatus* dest);
 
-    static void pauseNotify();
+    void pauseNotify();
 
     // Runs 0x35 & 0x7F and passes all parameters to WPADReadGameData
     u32 readGameDataRequest(int, int, int, int);

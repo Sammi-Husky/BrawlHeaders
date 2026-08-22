@@ -13,13 +13,21 @@ namespace CompressionAlgo {
 }
 
 class gfDecomp {
+public:
     bool m_ready;
     CompressionAlgo::Enum m_algo;
-    void* unk8;
-    u32 m_uncompSize;
-    void* m_heapAddr;
+    void* m_decompData;
+    u32 m_decompSize;
+    void* m_heapAddr; // +0x10
     CXUncompContext m_ctx;
-public:
-    void decomp(const CXStream* src, void* dest);
+
+    u8 unk18[0x1F0];
+
+    gfDecomp(void* heapAddr) :
+        m_ready(false),
+        m_decompData(nullptr),
+        m_decompSize(0),
+        m_heapAddr(heapAddr) { }
+    void decomp(const CXStream* src, u32 streamLen);
 };
 // TODO size
