@@ -31,15 +31,19 @@ public:
     void notifyError(u32 errorCode, u32 reasonCode);
     void notifyErrorRecovery(bool skip);
 
+    // Error codes relating to the disc being ejected are recoverable
     bool isRecoverable(u32 code) const {
         return (code == 1 || code == 2 || code == 3);
     }
 
     void notifyErrorHelper(bool& res, u32 errCode) {
+        res = false;
         if (m_isSuspended) {
             if (m_isFatal)
                 return;
-            res = !isRecoverable(errCode) ? 1 : res;
+            bool isFatal = !isRecoverable(errCode);
+            if (isFatal)
+                res = true;
         } else {
             if (mvMoviePlayer::getInstance()) {
                 m_isMoviePaused = mvMoviePlayer::getInstance()->isPause();
