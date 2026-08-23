@@ -6,8 +6,8 @@
 #include <ms/ms_message.h>
 #include <mv/mv_movie_player.h>
 #include <nw4r/ut/ut_Color.h>
-#include <types.h>
 #include <snd/snd_system.h>
+#include <types.h>
 
 class gfErrorManager {
 public:
@@ -36,14 +36,14 @@ public:
         return (code == 1 || code == 2 || code == 3);
     }
 
-    void notifyErrorHelper(bool& res, u32 errCode) {
-        res = false;
+    void suspendGame(bool& statusChanged, u32 errCode) {
+        statusChanged = false;
         if (m_isSuspended) {
             if (m_isFatal)
                 return;
             bool isFatal = !isRecoverable(errCode);
             if (isFatal)
-                res = true;
+                statusChanged = true;
         } else {
             if (mvMoviePlayer::getInstance()) {
                 m_isMoviePaused = mvMoviePlayer::getInstance()->isPause();
@@ -54,7 +54,7 @@ public:
                 g_sndSystem->specialPause();
             if (g_gfHomeMenu)
                 g_gfHomeMenu->kill();
-            res = true;
+            statusChanged = true;
             m_isSuspended = true;
             g_gfPadSystem->pauseNotify();
         }

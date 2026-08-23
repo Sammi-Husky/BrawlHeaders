@@ -5,7 +5,6 @@
 #include <gf/gf_system_callback.h>
 #include <types.h>
 
-// TODO: possible relationship to gfErrorManager?
 class gfShutdownManager {
 public:
     bool unk0_b7 : 1;
