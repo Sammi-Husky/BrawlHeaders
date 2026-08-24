@@ -33,7 +33,8 @@ public:
     // 4
     gfArchive* m_nextArchive;
     // 8
-    char _spacer[0x2];
+    char _spacer[0x1];
+    bool unk9 : 1;
     s16 m_refCount; // 0xA
     u8 unkC[0x8];
     // 20
@@ -60,6 +61,7 @@ public:
     void* getData(ARCNodeType nodeType, int fileIndex, int* nodeSize, u16 archiveId);
     void* getData(int groupID, ARCNodeType nodeType, int fileIndex, int* nodeSize, u16 archiveId);
     void setFileImage(void* data, int nodeSize, HeapType heapType);
+    void update();
     ~gfArchive();
 
     // 124
