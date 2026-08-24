@@ -46,7 +46,8 @@ public:
 
     char _0[1];
     GameRule m_gameRule : 8;
-    char _3[0xd];
+    bool m_isTeams;
+    char _4[0xc];
     u8 m_numWinners;
     char _16[15];
     s8 m_winningPlayer;

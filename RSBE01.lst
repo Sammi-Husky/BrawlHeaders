@@ -197,6 +197,14 @@ CC008000:WGPIPE
 8018e270:GetResAnmScn__Q34nw4r3g3d7ResFileFi
 8018d3f0:GetResTex__Q34nw4r3g3d7ResFileFPCc
 8018d4d0:GetResTex__Q34nw4r3g3d7ResFileFi
+8018e374:HasResTex__Q34nw4r3g3d7ResFileFv
+8018e3c0:HasResAnmChr__Q34nw4r3g3d7ResFileFv
+8018e40c:HasResAnmVis__Q34nw4r3g3d7ResFileFv
+8018e458:HasResAnmClr__Q34nw4r3g3d7ResFileFv
+8018e4a4:HasResAnmTexPat__Q34nw4r3g3d7ResFileFv
+8018e4f0:HasResAnmTexSrt__Q34nw4r3g3d7ResFileFv
+8018e53c:HasResAnmShp__Q34nw4r3g3d7ResFileFv
+8018e588:HasResAnmScn__Q34nw4r3g3d7ResFileFv
 
 // NW4R
 8018ee4c:GetResNodeNumEntries__Q34nw4r3g3d6ResMdlFv
@@ -1408,6 +1416,8 @@ CC008000:WGPIPE
 27,1,00111358:setTeam__7ftOwnerFi
 27,1,00111370:setPointTeam__7ftOwnerFi
 27,1,00112d18:getCoinDropRate__7ftOwnerFv
+27,1,00112c04:setResultWinRotY__7ftOwnerFf
+27,1,00112bf8:getResultWinRotY__7ftOwnerFv
 
 // ftLogDataAccesser
 27,1,001D53C8:addFloat__17ftLogDataAccesserFfUlUl
