@@ -26,7 +26,7 @@ public:
     nteDWC();
     virtual void processDefault();
     virtual ~nteDWC();
-    virtual void notifyDoneSOProc(s32, s32);
+    virtual void notifyDoneSOProc(nteSODone::NotifType nType, s32 code);
 
     bool startupDWC();
     bool finishDWC();
@@ -36,8 +36,7 @@ public:
     s64 getTime() const;
 
     static void* AllocEx(int heap, size_t size, int align);
-    static void FreeEx(int heap, void*);
-    static void showError(s32 code);
+    static void FreeEx(int heap, void*, int unused = 0);
     static void callbackLogin(s32 p1, s32 p2, void* p3);
 };
 static_assert(sizeof(nteDWC) == 0x3C8, "Class is wrong size!");

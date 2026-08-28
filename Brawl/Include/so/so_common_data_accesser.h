@@ -42,15 +42,15 @@ struct soEffectScreenData { };
 struct ftEffectScreenData : public soEffectScreenData { };
 
 struct soCommonParamFloat {
-    float m_0[0x28];
+    float data[40];
 };
 
 struct soCommonParamInt {
-    s32 m_0[0x5];
+    s32 data[5];
 };
 
 struct soCommonParamIndefinite {
-    s32* m_0;
+    s32* data[1];
 };
 
 struct soCommonParam {
