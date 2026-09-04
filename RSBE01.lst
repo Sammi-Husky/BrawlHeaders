@@ -114,6 +114,7 @@ CC008000:WGPIPE
 801e1a80:OSSleepTicks__FUlUl
 801e1b34:OSGetTime
 801e1b4c:OSGetTick
+801ddeac:OSUnlink
 
 // string
 803fa3fc:strcmp__FPCcPCc
