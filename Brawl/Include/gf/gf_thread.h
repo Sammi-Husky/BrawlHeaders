@@ -24,6 +24,9 @@ protected:
     u16 m_flags;                // 0x338
     gfRunnable* m_startRoutine; // 0x33C
 public:
+    gfThread() {
+        createThread(this, 0x1F, 0x1000, Heaps::Thread);
+    }
     virtual void run() { }
     ~gfThread();
     void createThread(gfRunnable* startRoutine, u32 priority, u32 stackSize, Heaps::HeapType heap);

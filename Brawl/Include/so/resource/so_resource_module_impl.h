@@ -9,6 +9,7 @@
 
 class soResourceModule : private soNull, public soNullable {
 public:
+    soResourceModule(bool isNull) : soNullable(isNull) { }
     virtual ~soResourceModule() { }
     virtual soResourceIdAccesser* getResourceIdAccesser() = 0;
     virtual u32 getGroupNo(int unk1) = 0;
@@ -19,12 +20,13 @@ public:
     virtual nw4r::g3d::ResFile getBinFile(u32 binResId, u16 fileIndex, s32 archiveId) = 0;
     virtual void* getFile(u32 resId, ARCNodeType nodeType, u16 fileIndex) = 0;
 };
+static_assert(sizeof(soResourceModule) == 0xC, "Class is the wrong size!");
 
 class soResourceModuleImpl : public soResourceModule {
     // 0xC
     int m_managerID;
     // 0x10
-    soResourceIdAccesserImpl* m_resourceIdAccesser;
+    soResourceIdAccesser* m_resourceIdAccesser;
     // 0x14
     char m_archiveType1;
     // 0x15
@@ -34,7 +36,7 @@ class soResourceModuleImpl : public soResourceModule {
     // 0x17
     char m_archiveType4;
 public:
-    soResourceModuleImpl(u32 p1, soResourceIdAccesserImpl* rsrcIdAcc, u32 p3);
+    soResourceModuleImpl(u32 mId, soResourceIdAccesser* rsrcIdAcc, u8 arcGrp);
 
     virtual ~soResourceModuleImpl();
     virtual soResourceIdAccesser* getResourceIdAccesser() { return m_resourceIdAccesser; }
@@ -50,4 +52,38 @@ public:
     virtual nw4r::g3d::ResFile getBinFile(u32 binResId, u16 fileIndex, s32 archiveId);
     virtual void* getFile(u32 resId, ARCNodeType nodeType, u16 fileIndex);
 };
-static_assert(sizeof(soResourceModuleImpl) == 24, "Class is wrong size!");
+static_assert(sizeof(soResourceModuleImpl) == 0x18, "Class is the wrong size!");
+
+class soResourceModuleNull : public soResourceModule {
+public:
+    soResourceModuleNull(bool isNull) : soResourceModule(true) { }
+    virtual ~soResourceModuleNull() { }
+    virtual soResourceIdAccesser* getResourceIdAccesser() {
+        return &g_soResourceIdAccesserNull;
+    }
+    virtual u32 getGroupNo(int unk1) { return 0; }
+    virtual void setGroupNo(u8 unk1, u16 index) { }
+
+    virtual nw4r::g3d::ResFile getTexFile(u16 fileIndex, u32 texResId) {
+        return nw4r::g3d::ResFile();
+    }
+
+    virtual nw4r::g3d::ResFile getMdlFile(u16 fileIndex, u32 mdlResId) {
+        return nw4r::g3d::ResFile();
+    }
+
+    virtual nw4r::g3d::ResFile getAnmFile(u16 fileIndex, u32 anmResId, u32 p3) {
+        return nw4r::g3d::ResFile();
+    }
+
+    virtual nw4r::g3d::ResFile getBinFile(u32 binResId, u16 fileIndex, s32 archiveId) {
+        return nw4r::g3d::ResFile();
+    }
+
+    virtual void* getFile(u32 resId, ARCNodeType nodeType, u16 fileIndex) {
+        return nullptr;
+    }
+};
+static_assert(sizeof(soResourceModuleNull) == 0xC, "Class is the wrong size!");
+
+extern soResourceModuleNull g_soResourceModuleNull;

@@ -13,7 +13,7 @@ public:
     virtual u32 getObserverCapacity(u32 index);
     virtual u32 getObserverSize(u32 index);
     virtual bool isExist(short);
-    virtual int getManageId();
+    virtual s16 getManageId();
     virtual soEventUnit* getEventUnit(short);
 };
 static_assert(sizeof(soEventManageModule) == 12, "Class is wrong size!");
@@ -31,9 +31,12 @@ public:
     virtual u32 getObserverCapacity(u32 index);
     virtual u32 getObserverSize(u32 index);
     virtual bool isExist(short);
-    virtual int getManageId();
+    virtual s16 getManageId();
     virtual soEventUnit* getEventUnit(short);
 
+    soEventManageModuleImpl(void* p1); // TODO p1 type
 
+    // UBFIX this should have been virtual
+    ~soEventManageModuleImpl();
 };
 static_assert(sizeof(soEventManageModuleImpl) == 20, "Class is wrong size!");

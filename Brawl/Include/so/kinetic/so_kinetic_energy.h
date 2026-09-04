@@ -1,6 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <so/so_instance_unit.h>
 #include <so/so_null.h>
 #include <so/so_enable.h>
 #include <so/so_suspend.h>
@@ -51,14 +52,24 @@ public:
         inline AttributeFlag() : m_mask(ATTRIBUTE_MASK_NONE) {}
         inline AttributeFlag(AttributeMask bits) : m_mask(bits) {}
         inline ~AttributeFlag() {}
+
+        AttributeFlag(soAttributeFlag f) : m_mask(f.m_mask) { }
+        operator soAttributeFlag() { return soAttributeFlag(m_mask); }
     };
 
+    enum OutsideType {
+        Outside_None = -1,
+        Outside_Movement_Ground = 0x0,
+        Outside_Wind = 0x1,
+        Outside_Attack = 0x2,
+        Outside_Damage_Reserved = 0x3
+    };
 
     virtual void updateEnergy(soModuleAccesser* moduleAccesser);
     virtual Vec2f getSpeed();
     virtual Vec3f getSpeed3f();
     virtual Vec3f getRotation();
-    virtual void resetEnergy(u32, Vec2f*, Vec3f*, soModuleAccesser* moduleAccesser);
+    virtual void resetEnergy(int, Vec2f*, Vec3f*, soModuleAccesser* moduleAccesser);
     virtual void clearSpeed();
     virtual void clearRotSpeed();
     virtual void mulSpeed(Vec3f* speed);

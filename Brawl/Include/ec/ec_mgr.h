@@ -8,6 +8,8 @@
 #include <ef/ef_id.h>
 #include <types.h>
 
+class ecMgr;
+extern ecMgr* g_ecMgr;
 class ecMgr : public gfTask {
 public:
     u8 unk40[0x50];
@@ -25,6 +27,8 @@ public:
     void setParent(u32 handleId, nw4r::g3d::ScnMdl*, const char*, bool);
     void setParent(u32 handleId, nw4r::g3d::ScnMdl*, u32, bool);
     void setParent(u32 handleId1, u32 handleId2, const char*, bool);
+    void pushsetCurrentGroup(u32 p1);
+    void popCurrentGroup();
     void preSetAnmIdx(int chrIndex, int visIndex, int patIndex, int srtIndex, int clrIndex, int shpIndex);
     void setGroundAttach(u32, soGroundModule* groundModule);
     void setGroundAttach(u32, grCollisionLineWork* lineWork);
@@ -40,7 +44,9 @@ public:
     void setSlowRate(u32 effectHandleID, u32 slowMagnitude);
     u32 searchResourceID(char* resourceName);
     virtual ~ecMgr();
+
+    inline static ecMgr* getInstance() { return g_ecMgr; }
+
 };
 static_assert(sizeof(ecMgr) == 0xa8, "Class is wrong size!");
 
-extern ecMgr* g_ecMgr;

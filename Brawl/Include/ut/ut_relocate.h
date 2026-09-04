@@ -57,6 +57,16 @@ class utRelocate {
     const DATImport* m_importStart;
     const char* m_strtabStart;
 
+    // Resolve all internal relocations
+    void relocate(u8* fileBuf) {
+        if (!m_hdr.isAbsolute) {
+            for (u32 i = 0; i < m_hdr.nRels; i++) {
+                u32 base = reinterpret_cast<u32>(m_dataStart);
+                *reinterpret_cast<u32*>(&m_dataStart[m_relStart[i]]) += base;
+            }
+            reinterpret_cast<DATHeader*>(fileBuf)->isAbsolute = true;
+        }
+    }
 public:
     const char* getImportName(s32 i, u32 nImports) const {
         if (i < 0 || nImports <= i)

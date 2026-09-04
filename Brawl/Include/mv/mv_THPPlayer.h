@@ -9,7 +9,7 @@ struct UnkTHPClass {
         u32 length;
         s8 buf[0x10];
     };
-    DVDFileInfo unk0;
+    DVDFileInfo m_fInfo;
     char unk3C[4];
     u32 unk40;
     u32 unk44;
@@ -25,10 +25,12 @@ struct UnkTHPClass {
     UnkClass unk6C;
     u8 unk80[0x26];
     u8 unkA6;
-    u8 unkA7[0xD];
+    u8 unkA7[0x1];
+    s32 unkA8; // read error indicator
+    u8 unkAC[0x8];
     u32* unkB4;
-    u8 unkB8;
-    u32 unkBC;
+    u32 unkB8; // initial read offset
+    u32 unkBC; // initial read size
     u32 unkC0;
     u8 unkC4[0x18];
     u32 unkDC;

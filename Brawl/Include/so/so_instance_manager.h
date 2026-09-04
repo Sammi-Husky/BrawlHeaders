@@ -50,6 +50,8 @@ public:
     virtual bool isContain(s32) const;
 
     V* m_array;
+
+    soInstanceManagerFixedSimple(V* arrPtr) : m_array(arrPtr) { }
 };
 
 
@@ -57,8 +59,10 @@ template <class T, class U>
 class soInstanceManagerSimpleEntity : public soInstanceManagerSimple<T>{
 public:
     soInstanceManagerFixedSimple<T, soInstanceUnit<T>, soArray<soInstanceUnit<T> > > m_fixedSimple;
-
     U m_arrayVector;
+
+    soInstanceManagerSimpleEntity() : m_fixedSimple(&m_arrayVector) { }
+    ~soInstanceManagerSimpleEntity();
 };
 
 template <class T>
@@ -70,8 +74,8 @@ public:
 template <class T>
 class soInstanceManagerAttributePolicy {
 public:
-    virtual void getAttributeArray(typename std::remove_pointer<T>::type::AttributeFlag mask, soArray<T*>& arr) = 0;
-    virtual typename std::remove_pointer<T>::type::AttributeFlag getAttribute(s32) const = 0;
+    virtual void getAttributeArray(soAttributeFlag mask, soArray<T*>& arr) = 0;
+    virtual soAttributeFlag getAttribute(s32) const = 0;
 };
 
 template <class T>
@@ -82,14 +86,47 @@ public:
     // UBFIX: There should have been a virtual dtor in the base class
     ~soInstanceManagerFullProperty() { }
     virtual s32 add(T& p1, s32 p2) {
-        return add(p1, p2, typename std::remove_pointer<T>::type::AttributeFlag(), -1);
+        return add(p1, p2, soAttributeFlag(), -1);
     }
 
-    virtual s32 add(T&, s32, typename std::remove_pointer<T>::type::AttributeFlag, s16) = 0;
+    virtual s32 add(T&, s32, soAttributeFlag, s16) = 0;
     virtual u32 capacity() = 0;
     virtual T& atIndexFast(s32 index) { return this->at(index); }
-    virtual soInstanceUnit<T>& atUnitIndexFast(s32 index) = 0;
+    virtual soInstanceUnitFullProperty<T>& atUnitIndexFast(s32 index) = 0;
     virtual s32 getIndex(s32 index) const = 0;
+};
+
+template <typename T>
+class soInstanceManagerFullPropertyNull : public soInstanceManagerFullProperty<T> {
+public:
+
+    virtual s32 getIndex(s32 index) const { return -1; }
+    virtual soInstanceUnitFullProperty<T>& atUnitIndexFast(s32 index) {
+        static soInstanceUnitFullProperty<T> NullElement;
+        return NullElement;
+    }
+    virtual u32 capacity() { return 0; }
+    virtual s32 getId(s32 index) { return -1; }
+    virtual soAttributeFlag getAttribute(s32) const { return soAttributeFlag(); }
+    virtual void getAttributeArray(soAttributeFlag mask, soArray<T*>& arr) { }
+    virtual void getPriorityArray(soArray<T*>& arr) { }
+    virtual bool isContain(s32) const { return false; }
+    virtual u32 size() const { return 0; }
+    virtual void set(const T&, s32 index) { }
+    virtual T& atIndex(s32 index) {
+        static T NullElement;
+        return NullElement;
+    }
+    virtual T& at(s32 index) {
+        static T NullElement;
+        return NullElement;
+    }
+    virtual void clear() { }
+    virtual void erase(s32) { }
+    virtual s32 add(T&, s32, soAttributeFlag, s16) { return -1; }
+
+    // UBFIX: There should have been a virtual dtor in the base class
+    ~soInstanceManagerFullPropertyNull() { }
 };
 
 template <class T, u32 C>
@@ -105,13 +142,13 @@ public:
     virtual void clear();
     virtual void set(const T&, s32 index);
 
-    virtual s32 add(T&, s32, typename std::remove_pointer<T>::type::AttributeFlag, s16);
+    virtual s32 add(T&, s32, soAttributeFlag, s16);
     virtual u32 capacity();
-    virtual soInstanceUnit<T>& atUnitIndexFast(s32 index);
+    virtual soInstanceUnitFullProperty<T>& atUnitIndexFast(s32 index);
     virtual s32 getIndex(s32 index) const;
 
-    virtual void getAttributeArray(typename std::remove_pointer<T>::type::AttributeFlag mask, soArray<T*>& arr);
-    virtual typename std::remove_pointer<T>::type::AttributeFlag getAttribute(s32) const;
+    virtual void getAttributeArray(soAttributeFlag mask, soArray<T*>& arr);
+    virtual soAttributeFlag getAttribute(s32) const;
     virtual void getPriorityArray(soArray<T*>& arr);
 
 };
@@ -187,7 +224,7 @@ public:
         ref = elm;
     }
 
-    virtual s32 add(T& elm, s32 id, typename std::remove_pointer<T>::type::AttributeFlag attr, s16 p4) {
+    virtual s32 add(T& elm, s32 id, soAttributeFlag attr, s16 p4) {
         if (m_arrayVector.isFull() == true)
             return -1;
         if ((!m_unk1 || id > -1) && isContain(id) == true)
@@ -213,26 +250,26 @@ public:
         return m_arrayVector.atFast(idx).m_element;
     }
 
-    virtual soInstanceUnit<T>& atUnitIndexFast(s32 idx) {
+    virtual soInstanceUnitFullProperty<T>& atUnitIndexFast(s32 idx) {
         return m_arrayVector.atFast(idx);
     }
 
     virtual s32 getIndex(s32 id) const { return searchIndex(id); }
 
-    virtual void getAttributeArray(typename std::remove_pointer<T>::type::AttributeFlag targetAttr, soArray<T*>& arr) {
+    virtual void getAttributeArray(soAttributeFlag targetAttr, soArray<T*>& arr) {
         s32 sz = m_arrayVector.size();
         for (s32 i = 0; i < sz; i++) {
-            typename std::remove_pointer<T>::type::AttributeFlag attrFlag = m_arrayVector.at(i).getAttribute();
+            soAttributeFlag attrFlag = m_arrayVector.at(i).getAttribute();
             if (attrFlag.m_mask & targetAttr.m_mask) {
                 arr.push(&m_arrayVector.at(i).m_element);
             }
         }
     }
 
-    virtual typename std::remove_pointer<T>::type::AttributeFlag getAttribute(s32 id) const {
+    virtual soAttributeFlag getAttribute(s32 id) const {
         s32 idx = searchIndex(id);
         if (idx < 0)
-            return typename std::remove_pointer<T>::type::AttributeFlag();
+            return soAttributeFlag();
         return m_arrayVector.at(idx).getAttribute();
     }
 
@@ -273,6 +310,6 @@ public:
     soArray<soInstanceUnitFullProperty<T> >* m_array;
 
     virtual void getPriorityArray(soArray<T*>& arr);
-    virtual void getAttributeArray(typename std::remove_pointer<T>::type::AttributeFlag mask, soArray<T*>& arr);
-    virtual typename std::remove_pointer<T>::type::AttributeFlag getAttribute(s32) const;
+    virtual void getAttributeArray(soAttributeFlag mask, soArray<T*>& arr);
+    virtual soAttributeFlag getAttribute(s32) const;
 };

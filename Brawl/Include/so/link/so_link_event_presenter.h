@@ -45,6 +45,9 @@ public:
         inline AttributeFlag() : m_mask(ATTRIBUTE_MASK_NONE) {}
         inline AttributeFlag(AttributeMask bits) : m_mask(bits) {}
         inline ~AttributeFlag() {}
+
+        AttributeFlag(soAttributeFlag f) : m_mask(f.m_mask) { }
+        operator soAttributeFlag() { return soAttributeFlag(m_mask); }
     };
 
     soLinkEventObserver(short unitID) : soEventObserver<soLinkEventObserver>(unitID) {};

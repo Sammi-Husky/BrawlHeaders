@@ -71,6 +71,15 @@ namespace nw4r {
 
             ResTex GetResTex(int index);
             ResTex GetResTex(const char* name);
+            
+            bool HasResTex();
+            bool HasResAnmChr();
+            bool HasResAnmClr();
+            bool HasResAnmVis();
+            bool HasResAnmTexPat();
+            bool HasResAnmTexSrt();
+            bool HasResAnmShp();
+            bool HasResAnmScn();
         };
     } // namespace g3d
 } // namespace nw4r

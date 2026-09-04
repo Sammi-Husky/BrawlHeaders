@@ -5,6 +5,7 @@
 #include <mt/mt_matrix.h>
 #include <mt/mt_vector.h>
 #include <so/model/so_model_module_simple.h>
+#include <so/model/so_model_virtual_node.h>
 #include <so/event/so_event_presenter.h>
 #include <so/model/so_model_event_presenter.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
@@ -16,8 +17,12 @@ class soModelModuleImpl : public soModelModuleSimple, public soAnimCmdEventObser
     char _spacer1[156];
     soModuleAccesser* m_moduleAccesser; // +0xC8
 public:
-    // TODO: types for p2 and p5
-    soModelModuleImpl(soModuleAccesser* p1, void* p2, u32 p3, u32 p4, void* p5, float f1);
+    soModelModuleImpl(soModuleAccesser* acc,
+                      soArray<soModelNodeSetUp>* nodeSetUps,
+                      void* extendNodeTbl,
+                      soArray<soModelVirtualNode>* virtualNodes,
+                      soEventObserverRegistrationDesc* regDesc,
+                      float f1);
     // TODO: Verify Params
     virtual void setUpMtx(u32 nodeId);
     virtual void setUpMtx(u32* nodeIds, s32 numNodeIds);
@@ -52,7 +57,7 @@ public:
     virtual Vec3f getNodeGlobalPosition(u32 correctNodeId, const Vec3f* p2, bool, bool );
     virtual Vec3f getNodeLocalPosition(u32 correctNodeId, bool );
     virtual void getNodeLocalMtxFromNode(u32 node1, u32 node2, Matrix* outMtx, bool );
-    virtual void getNodeGlobalMtx(u32 index, Matrix* outMtx, bool );
+    virtual void getNodeGlobalMtx(u32 index, Matrix* outMtx, bool ) const;
     virtual void setNodeGlobalMtx(u32 index, Matrix* , bool );
     virtual Vec3f getNodeGlobalRotation(u32 nodeIndex, bool );
     virtual bool isNode(u32 id);
@@ -93,8 +98,12 @@ static_assert(sizeof(soModelModuleImpl) == 204, "Class is wrong size!");
 class soModelModuleImplVariable : public soModelModuleImpl {
     u32** unkCC;
 public:
-    // TODO: types for p2 and p5
-    soModelModuleImplVariable(soModuleAccesser* p1, void* p2, u32 p3, u32 p4, void* p5, float f1);
+    soModelModuleImplVariable(soModuleAccesser* acc,
+                              soArray<soModelNodeSetUp>* nodeSetUps,
+                              void* extendNodeTbl,
+                              soArray<soModelVirtualNode>* virtualNodes,
+                              soEventObserverRegistrationDesc* regDesc,
+                              float f1);
     virtual void setUpMtx(u32* nodeIds, s32 numNodeIds);
     virtual void clearNodeSRT(u32 p1);
     virtual void setNodeSRT(u32 , Vec3f* scale, Vec3f* rot, Vec3f* xlate);
@@ -109,13 +118,13 @@ public:
     virtual void setNodeTranslate(u32 , Vec3f* xlate);
     virtual int getNodeId(const char *nodeName);
     virtual int getCorrectNodeId(u32);
-    virtual int getRealNodeId(u32);
+    virtual int getRealNodeId(u32) const;
     virtual const char* getNodeName(u32 p1);
     virtual Vec3f getNodeGlobalPosition(u32 correctNodeId, bool );
     virtual Vec3f getNodeGlobalPosition(u32 correctNodeId, const Vec3f* p2, bool, bool );
     virtual Vec3f getNodeLocalPosition(u32 correctNodeId, bool );
     virtual void getNodeLocalMtxFromNode(u32 node1, u32 node2, Matrix* outMtx, bool );
-    virtual void getNodeGlobalMtx(u32 index, Matrix* outMtx, bool );
+    virtual void getNodeGlobalMtx(u32 index, Matrix* outMtx, bool ) const;
     virtual void setNodeGlobalMtx(u32 index, Matrix* , bool );
     virtual Vec3f getNodeGlobalRotation(u32 nodeIndex, bool );
     virtual bool isNode(u32 id);

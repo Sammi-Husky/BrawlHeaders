@@ -223,6 +223,14 @@ struct grGimmickHitPointEffectData {
 };
 static_assert(sizeof(grGimmickHitPointEffectData) == 48, "Class is wrong size!");
 
+struct grGimmickFrameTriggerData {
+    Vec3f unk0;
+    stTriggerData unkC;
+    stTriggerData unk10;
+    u8 unk14[0x8];
+};
+static_assert(sizeof(grGimmickFrameTriggerData) == 0x1C, "Class is the wrong size!");
+
 class stObsTriggerCB : public gfCallBack {
 
     char _spacer[8];

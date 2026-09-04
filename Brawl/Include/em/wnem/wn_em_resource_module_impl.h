@@ -7,7 +7,7 @@
 
 class wnemResourceModuleImpl : public soResourceModuleImpl {
 public:
-    wnemResourceModuleImpl(u32 p1, soResourceIdAccesserImpl* rsrcIdAcc, u32 p3);
+    wnemResourceModuleImpl(u32 p1, soResourceIdAccesser* rsrcIdAcc, u8 p3);
     ~wnemResourceModuleImpl();
 };
 static_assert(sizeof(wnemResourceModuleImpl) == 0x18, "Class is wrong size!");

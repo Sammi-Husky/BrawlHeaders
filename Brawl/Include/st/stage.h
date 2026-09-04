@@ -109,10 +109,12 @@ struct stDestroyBossParamCommon {
 };
 static_assert(sizeof(stDestroyBossParamCommon) == 0x18, "Class is wrong size!");
 
+class Stage;
+extern Stage* g_Stage;
 class Stage : public gfTask {
 public:
     // 0
-    char _spacer[0x04];
+    u32 unk40;
     // 4
     srStageKind m_stageKind;
     // 8
@@ -182,10 +184,14 @@ public:
     // 150
     float m_frameRuleTime;
     // 154
-    char _spacer7[0xC];
+    u32 unk194;
+    // 158
+    char _spacer7[0x8];
     // TOTAL_SIZE == 0x160
 
     void testStageParamInit(gfArchive* archive, int fileIndex);
+    void testCollDataInit(gfArchive* archive, grCollData* collData, u32 index);
+    void setCollision(grCollision* coll);
     void stageParamChange();
     void testStageDataInit(gfArchive* archive, int fileIndex, int unk2);
     void initSoundParameters();
@@ -201,6 +207,7 @@ public:
     void initPosPokeTrainer(int unk1, int unk2);
     void setStageAttackData(grGimmickDamageFloor* attackData, u32 index);
     void removeGround(Ground*);
+    bool isPokemonTrainer();
 
     Stage(const char* name, srStageKind stageKind);
     virtual void processBegin();
@@ -340,9 +347,10 @@ public:
     virtual grGimmickWindData2nd* getWind2ndOnlyData(); // TODO
     virtual void updateWind2ndOnly();
     virtual void setVision(u8);
+
+    inline static Stage* getInstance() { return g_Stage; }
 };
 
-extern Stage* g_Stage;
 
 ENUM_U32(ArchiveOverrideSetting,
     Archive_Override_None = 0x0,

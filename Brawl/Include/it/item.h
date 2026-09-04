@@ -95,13 +95,6 @@ public:
                 Id_Control = 0x4,
                 Id_Control_Rot = 0x5,
             };
-
-            enum OutsideType {
-                Outside_None = -1,
-                Outside_Movement_Ground = 0x0,
-                Outside_Movement_Wind = 0x1,
-                Outside_Damage_Reserved = 0x2
-            };
         };
     };
 

@@ -35,6 +35,22 @@ public:
     virtual ~soArrayFixed() { };
 };
 
+template<typename T>
+class soArrayFixedNull : soArrayFixed<T> {
+public:
+    virtual bool isNull() const { return true; }
+    virtual T& at(s32 index) {
+        static T m_nullElement;
+        return m_nullElement;
+    };
+    virtual const T& at(s32 index) const {
+        static T m_nullElement;
+        return m_nullElement;
+    };
+    virtual s32 size() const { return 0; }
+    virtual ~soArrayFixedNull() { }
+};
+
 template <class T>
 class soArrayContractible : public soArrayFixed<T> {
 public:
@@ -188,7 +204,7 @@ public:
     virtual void set(s32 startingIndex, const T& element, s32 numIndicesToSet) { }
 
     soArrayNull() { }
-    soArrayNull(s32 size, s32) { }
+    soArrayNull(s32 size, s32 = 0) { }
     soArrayNull(s32 size, const T& element, s32) { }
 };
 
@@ -256,10 +272,10 @@ public:
     virtual ~soArrayListEnumerator() { }
 };
 
-// A dynamic array of soArrayListUnits, but with a fixed maximum capcity.
+// A dynamic array of soArrayListUnits, but with a fixed maximum capacity.
 // Each unit has a logical "position" corresponding to an actual "index"
 // in the internal array. This distinction is implemented via an intrusive
-// doubly-linked list connecting the units; so getArrayIndex for details.
+// doubly-linked list connecting the units; see getArrayIndex for details.
 template <typename T, s32 C>
 class soArrayList : public soArray<T> {
     // The index of the next available free unit in the list
@@ -670,7 +686,7 @@ public:
 
     soArrayVector() : m_topIndex(0), m_lastIndex(0), m_size(0), m_isFull(false) { }
 
-    soArrayVector(s32 size, s32) {
+    soArrayVector(s32 size, s32 = 0) {
         m_topIndex = 0;
         m_lastIndex = 0;
         m_isFull = false;
@@ -702,6 +718,12 @@ public:
     inline soArrayVector(s32 size, s32 unk) : soArrayNull<T>(size, unk) { }
     inline soArrayVector(s32 size, const T& element, s32 unk) : soArrayNull<T>(size, element, unk) { }
 };
+
+template<typename T>
+soArray<T>& getNullArray() {
+    static soArrayNull<T> NullObj;
+    return NullObj;
+}
 
 extern soArrayNull<s32> g_s32ArrayNull;
 extern soArrayNull<float> g_floatArrayNull;

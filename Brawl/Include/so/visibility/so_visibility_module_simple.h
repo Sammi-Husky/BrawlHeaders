@@ -2,13 +2,10 @@
 
 #include <StaticAssert.h>
 #include <so/anim/so_anim_cmd_event_presenter.h>
+#include <so/so_common_data_accesser.h>
 #include <types.h>
 
 class soModuleAccesser;
-
-class soVisibilityData {
-
-};
 
 class soVisibilityModule {
 public:

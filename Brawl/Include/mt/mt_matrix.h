@@ -15,6 +15,7 @@ public:
     }
 
     void setIdentity();
+    void setSRT(const Vec3f& p1, const Vec3f& p2, const Vec3f& p3);
     void rotY(float angle);
     inline void rotY(float angle, Matrix* outMatrix) {
         *outMatrix = *this;

@@ -4,20 +4,35 @@
 #include <gf/gf_thread.h>
 #include <types.h>
 
-// TODO rename
 class nteSODone {
 public:
-    virtual void notifyDoneSOProc(s32, s32);
+    enum NotifType {
+        Startup,
+        Finish
+    };
+
+    virtual void notifyDoneSOProc(NotifType notifType, s32 errCode);
 };
 
 class nteSO : public gfThread {
-    u32 unk340;
-    u8 unk344;
-    u32 unk348;
+    enum Action {
+        NoAction,
+        DoStartup,
+        DoFinish
+    };
+
+    Action m_action;
+    bool m_isAlive;
+    nteSODone* m_actionDoneNotifier;
+    u32 m_startupParam;
 public:
     nteSO();
     ~nteSO();
-    bool startup(nteSODone* p1, u32 p2);
-    bool finish(nteSODone* p1);
+    virtual void run();
+    bool startup(nteSODone* doneNotifier, u32 startupParam);
+    bool finish(nteSODone* doneNotifier);
+    static void* SOAlloc(int _unused, u32 size);
+    static void SOFree(int _unused, void* ptr);
+    static void showError(s32 code);
 };
 static_assert(sizeof(nteSO) == 0x350, "Class is the wrong size!");

@@ -16,4 +16,5 @@ struct FontData {
     };
 
     static nw4r::ut::Font* getFontResource(int id);
+    static void loadAlertFont(void* p1);
 };

@@ -11,6 +11,8 @@ struct vcBootParam {
 };
 // TODO size assertion
 
+class gfApplication;
+extern gfApplication* g_gfApplication;
 class gfApplication {
 public:
     u8 unk0[0xD0];
@@ -27,9 +29,12 @@ public:
     gfApplication();
     ~gfApplication();
     void init();
+    void reset();
+    void restart();
     void mainLoop();
     void exit();
+
+    inline static gfApplication* getInstance() { return g_gfApplication; }
 };
 static_assert(sizeof(gfApplication) == 0x170, "Class is wrong size!");
 
-extern gfApplication* g_gfApplication;

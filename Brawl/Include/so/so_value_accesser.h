@@ -8,10 +8,20 @@
 class soParamAccesser : private soNull, public soNullable {
 public:
     virtual ~soParamAccesser() { }
-    virtual float getParamFloat(soModuleAccesser* moduleAccesser, s32 p2) = 0;
-    virtual s32 getParamInt(soModuleAccesser* moduleAccesser, s32 p2) = 0;
-    virtual void* getParamIndefinite(soModuleAccesser* moduleAccesser, s32 p2) = 0;
+    virtual float getParamFloat(soModuleAccesser* moduleAccesser, s32 p2, s32 p3 = 0) = 0;
+    virtual s32 getParamInt(soModuleAccesser* moduleAccesser, s32 p2, s32 p3 = 0) = 0;
+    virtual void* getParamIndefinite(soModuleAccesser* moduleAccesser, s32 p2, s32 p3 = 0) = 0;
 };
+
+class soParamAccesserNull : public soParamAccesser {
+public:
+    virtual ~soParamAccesserNull();
+    virtual float getParamFloat(soModuleAccesser* moduleAccesser, s32 p2, s32 p3 = 0);
+    virtual s32 getParamInt(soModuleAccesser* moduleAccesser, s32 p2, s32 p3 = 0);
+    virtual void* getParamIndefinite(soModuleAccesser* moduleAccesser, s32 p2, s32 p3 = 0);
+};
+
+extern soParamAccesserNull g_soParamAccesserNull;
 
 class soValueAccesser {
 public:
@@ -165,4 +175,6 @@ public:
 
     static float getValueFloat(soModuleAccesser* moduleAccesser, u32, u32);
     static int getValueInt(soModuleAccesser* moduleAccesser, u32, u32);
+
+    static int getValueVariation();
 };

@@ -186,13 +186,26 @@ CC008000:WGPIPE
 8018db80:GetResAnmClrNumEntries__Q34nw4r3g3d7ResFileFv
 8018e198:GetResAnmShpNumEntries__Q34nw4r3g3d7ResFileFv
 8018d640:GetResAnmChr__Q34nw4r3g3d7ResFileFi
+8018d6d8:GetResAnmChr__Q34nw4r3g3d7ResFileFi
 8018d848:GetResAnmVis__Q34nw4r3g3d7ResFileFi
+8018d8e0:GetResAnmVis__Q34nw4r3g3d7ResFileFUl
 8018dc58:GetResAnmTexPat__Q34nw4r3g3d7ResFileFi
+8018dcf0:GetResAnmTexPat__Q34nw4r3g3d7ResFileFUl
 8018de60:GetResAnmTexSrt__Q34nw4r3g3d7ResFileFi
+8018def8:GetResAnmTexSrt__Q34nw4r3g3d7ResFileFUl
 8018da50:GetResAnmClr__Q34nw4r3g3d7ResFileFi
+8018dae8:GetResAnmClr__Q34nw4r3g3d7ResFileFUl
 8018e270:GetResAnmScn__Q34nw4r3g3d7ResFileFi
 8018d3f0:GetResTex__Q34nw4r3g3d7ResFileFPCc
 8018d4d0:GetResTex__Q34nw4r3g3d7ResFileFi
+8018e374:HasResTex__Q34nw4r3g3d7ResFileFv
+8018e3c0:HasResAnmChr__Q34nw4r3g3d7ResFileFv
+8018e40c:HasResAnmVis__Q34nw4r3g3d7ResFileFv
+8018e458:HasResAnmClr__Q34nw4r3g3d7ResFileFv
+8018e4a4:HasResAnmTexPat__Q34nw4r3g3d7ResFileFv
+8018e4f0:HasResAnmTexSrt__Q34nw4r3g3d7ResFileFv
+8018e53c:HasResAnmShp__Q34nw4r3g3d7ResFileFv
+8018e588:HasResAnmScn__Q34nw4r3g3d7ResFileFv
 
 // NW4R
 8018ee4c:GetResNodeNumEntries__Q34nw4r3g3d6ResMdlFv
@@ -603,9 +616,13 @@ CC008000:WGPIPE
 8009dd40:cmRemoveQuake__Fi
 
 // Vec2f
+8003dba8:normalize__5Vec2fFP5Vec2f
+8003dc00:normalize__5Vec2fFP5Vec2fP5Vec2f
 8003dc64:rot__5Vec2fFP5Vec2ff
 
 // Vec3f
+8003de70:normalize__5Vec3fFP5Vec3f
+8003dee0:normalize__5Vec3fFP5Vec3fP5Vec3f
 27,1,00000E30:__mi__5Vec3fFRC5Vec3f
 27,1,00000EF8:__pl__5Vec3fFRC5Vec3f
 27,1,00000F1C:__ml__5Vec3fFf
@@ -649,6 +666,8 @@ CC008000:WGPIPE
 8009be74:getInstance__16CameraControllerFv
 8009cf60:setRangeOffset__16CameraControllerFP5Vec2f
 8009ca00:getCameraController__16CameraControllerFQ216CameraController4Kind
+8009cea8:setCameraRange__16CameraControllerF16CameraControllerP6Rect2D
+
 
 // cmAnimationController
 800a624c:setScnAnmRes__21cmAnimationControllerFQ34nw4r3g3d9ResAnmScnUl
@@ -685,6 +704,11 @@ CC008000:WGPIPE
 27,1,0025ee5c:isFull__18soArrayList<Ul,32>CFv
 27,1,0025ee6c:set__18soArrayList<Ul,32>FlRCUll
 27,1,0025ef44:isNull__18soArrayList<Ul,32>CFv
+
+27,1,000735C8:getInt__16soAnimCmdArgListFUl
+27,1,000736B8:getFloat__16soAnimCmdArgListFUl
+27,1,000737DC:getBool__16soAnimCmdArgListFUl
+27,1,0007388C:getValueIndex__16soAnimCmdArgListFUl
 
 // soEventSystem
 27,1,0008F064:getInstance__13soEventSystemFv
@@ -793,7 +817,7 @@ CC008000:WGPIPE
 27,1,001ED054:getAIRange__5StageFv
 27,1,0008C01C:getDefaultLightSetIndex__5StageFv
 27,1,002227E0:getZoneLightSetIndex__5StageFv
-27,1,00225778:getScrollDir__5StageFi
+27,1,00225778:getScrollDir__5StageFP5Vec3f
 27,1,00222B54:clearCameraParam__5StageFv
 27,1,00222B98:initCameraParam__5StageFv
 27,1,00222590:startLoadLocalData__5StageFv
@@ -822,8 +846,8 @@ CC008000:WGPIPE
 27,1,0022575C:getNowStepBgmID__5StageFv
 27,1,00225754:getBgmOptionID__5StageFv
 27,1,0022574C:isBgmChange__5StageFv
-27,1,00225738:getBgmChangeID__5StageFii
-27,1,00225728:setBgmChange__5StageFfii
+27,1,00225738:getBgmChangeID__5StageFPUlPf
+27,1,00225728:setBgmChange__5StageFfbUl
 27,1,0022571C:getBgmVolume__5StageFv
 27,1,00225710:getBgmPlayOffsetFrame__5StageFv
 27,1,00225708:isNextStepBgmEqualNowStepBgmFromFlag__5StageFv
@@ -893,10 +917,11 @@ CC008000:WGPIPE
 27,1,002227E8:removeGround__5StageFP6Ground
 27,1,00223A08:setStageAttackData__5StageFP20grGimmickDamageFloorUl
 27,1,00222794:setStageData__6GroundFPv
+27,1,002249E0:isPokemonTrainer__5StageFP5Stage
 
 // stCommonGimmick
 27,1,002380b0:releaseArchive__15stCommonGimmickFv
-27,1,00238018:createGimmickCollision__15stCommonGimmickFiP6GroundP9gfArchive
+27,1,00238018:createGimmickCollision__15stCommonGimmickFUlP6GroundP9gfArchive
 27,1,00237E18:createGimmickBeltConveyor2__15stCommonGimmickFP25grGimmickBeltConveyorData
 27,1,00237D20:createGimmickLadder__15stCommonGimmickFP19grGimmickLadderDataP9gfArchive
 27,1,00237E60:createGimmickWaterArea__15stCommonGimmickFP18grGimmickWaterData
@@ -951,6 +976,9 @@ CC008000:WGPIPE
 
 // grCollisionJoint
 80112ea0:getLine__16grCollisionJointFUs
+
+// grCollStatus
+801342c8:getPos__12grCollStatusFP5Vec2f
 
 // stCollision
 27,1,00239F50:initialize__15stCollisionWorkFv
@@ -1389,6 +1417,8 @@ CC008000:WGPIPE
 27,1,00111358:setTeam__7ftOwnerFi
 27,1,00111370:setPointTeam__7ftOwnerFi
 27,1,00112d18:getCoinDropRate__7ftOwnerFv
+27,1,00112c04:setResultWinRotY__7ftOwnerFf
+27,1,00112bf8:getResultWinRotY__7ftOwnerFv
 
 // ftLogDataAccesser
 27,1,001D53C8:addFloat__17ftLogDataAccesserFfUlUl

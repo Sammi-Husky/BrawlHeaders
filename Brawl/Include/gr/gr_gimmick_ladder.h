@@ -59,5 +59,7 @@ public:
     virtual ~grGimmickLadder();
     virtual void getUpperNode(Vec3f* pos);
     virtual void getUnderNode(Vec3f* pos);
+
+    static grGimmickLadder* create(s16 mdlIndex, const char* taskName);
 };
 static_assert(sizeof(grGimmickLadder) == 416, "Class is wrong size!");

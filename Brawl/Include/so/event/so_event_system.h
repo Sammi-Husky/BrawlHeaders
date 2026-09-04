@@ -9,10 +9,10 @@
 
 class soEventUnit : public soNullableInterface {
 public:
-    virtual void eraseObserver(s16 id, s16 sendID);
-    virtual s16 getEventId();
-    virtual u32 getObserverCapacity(u32 index);
-    virtual u32 getObserverSize(u32 index);
+    virtual void eraseObserver(s16 id, s16 sendID) = 0;
+    virtual s16 getEventId() = 0;
+    virtual u32 getObserverCapacity(u32 index) = 0;
+    virtual u32 getObserverSize(u32 index) = 0;
     virtual ~soEventUnit() { }
 };
 
@@ -25,7 +25,7 @@ public:
     virtual u32 getObserverCapacity(u32 index);
     virtual u32 getObserverSize(u32 index);
     virtual bool isExist(short);
-    virtual int getManageId();
+    virtual s16 getManageId();
     virtual soEventUnit* getEventUnit(short);
 };
 
@@ -48,10 +48,11 @@ public:
         if (isValid())
             soEventSystem::getInstance()->getManager(m_managerID)->eraseUnit(m_eventID);
     }
-    virtual s16 addObserverSub(T*, s8);
+    virtual s16 addObserverSub(T*, s8) = 0;
+    virtual soInstanceManagerFullProperty<T*>* getObserverListSub() = 0;
 
-    soEventUnitWrapper(s32 p1, s16 p2) : m_managerID(p1), m_eventID(p2) {
-        if (p1 != -1) {
+    soEventUnitWrapper(s16 mgrId, s16 p2) : m_managerID(mgrId), m_eventID(p2) {
+        if (mgrId != -1) {
             s16 eid = soEventSystem::getInstance()->getManager(m_managerID)->addUnit(this);
             if (eid > -1)
                 m_eventID = eid;
@@ -62,6 +63,16 @@ public:
 
     s16 m_managerID;
     s16 m_eventID;
+};
+
+template <typename T>
+class soEventUnitNull : public soEventUnitWrapper<T> {
+public:
+    virtual bool isNull() const {
+        return true;
+    }
+
+    soEventUnitNull(s16 mgrId, s16 p2) : soEventUnitWrapper<T>(mgrId, p2) { }
 };
 
 template <typename T>
@@ -90,7 +101,7 @@ public:
     virtual ~soEventUnitImpl() { }
 
     virtual s16 addObserverSub(T* obsvr, s8 p2) {
-        return m_observerListPtr->add(obsvr, -1, typename std::remove_pointer<T>::type::AttributeFlag(), p2);
+        return m_observerListPtr->add(obsvr, -1, soAttributeFlag(), p2);
     }
 
     virtual soInstanceManagerFullProperty<T*>* getObserverListSub() {
@@ -99,7 +110,7 @@ public:
 
     virtual u32 getObserverNum() const = 0;
 
-    soEventUnitImpl(s32 p1, s16 p2) : soEventUnitWrapper<T>(p1, p2) {
+    soEventUnitImpl(s16 mgrId, s16 p2) : soEventUnitWrapper<T>(mgrId, p2) {
         m_observerListPtr = reinterpret_cast<soInstanceManagerFullProperty<T*>*>(
                             reinterpret_cast<u8*>(this) +
                             sizeof(soEventUnitImpl<T>));
@@ -110,8 +121,8 @@ template <typename T, s32 C>
 class soEventUnitWithWorkArea : public soEventUnitImpl<T> {
     soInstanceManagerFullPropertyVector<T*, C> m_observerList; // 0xC
 public:
-    soEventUnitWithWorkArea(s32 p1, s16 p2) :
-        soEventUnitImpl<T>(p1, p2) { }
+    soEventUnitWithWorkArea(s16 mgrId, s16 p2) :
+        soEventUnitImpl<T>(mgrId, p2) { }
 
     virtual ~soEventUnitWithWorkArea() { }
     virtual u32 getObserverNum() const {

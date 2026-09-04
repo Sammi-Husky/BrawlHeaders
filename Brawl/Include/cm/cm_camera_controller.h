@@ -64,6 +64,7 @@ public:
 
     void changeInput(Kind cameraControllerKind);
     void setRangeOffset(Vec2f* offset);
+    void setCameraRange(Rect2D*);
     gfCameraController* getCameraController(Kind kind);
     static CameraController* getInstance();
 };

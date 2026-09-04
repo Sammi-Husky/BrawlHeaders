@@ -1,5 +1,6 @@
 #pragma once
 
+#include <gf/gf_pad_queue.h>
 #include <gf/gf_pad_status.h>
 #include <gf/gf_rumble.h>
 #include <revolution/OS/OSAlarm.h>
@@ -7,7 +8,6 @@
 
 #define GF_PAD_SYSTEM_GET_ALL_PADS 0xF0
 
-class gfPadStatusQueue;
 class gfPadSystem {
 public:
     gfPadSystem();
@@ -38,7 +38,7 @@ public:
     // Same as above with a mask of 0xFFFF.
     static void merge(gfPadStatus* src, int numPads, gfPadStatus* dest);
 
-    static void pauseNotify();
+    void pauseNotify();
 
     // Runs 0x35 & 0x7F and passes all parameters to WPADReadGameData
     u32 readGameDataRequest(int, int, int, int);

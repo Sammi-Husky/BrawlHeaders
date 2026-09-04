@@ -1,6 +1,7 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <gf/gf_callback.h>
 #include <gf/gf_task.h>
 #include <st/st_trigger_observe.h>
 #include <types.h>
@@ -23,6 +24,7 @@ public:
     virtual ~stTrigger();
 
     void setObserveYakumono(Yakumono* yakumono);
+    void setValidCallback(gfCallBack* cb);
     stObsTriggerSquareBeltConveyorCB* setBeltConveyorTrigger(grGimmickBeltConveyorData* gimmickAreaData);
     stObsTriggerSquareHitPointEffectCB* setHitPointEffectTrigger(grGimmickHitPointEffectData* gimmickAreaData);
     stObsTriggerSquareWaterCB* setWaterTrigger(grGimmickWaterData* gimmickAreaData);
@@ -37,6 +39,28 @@ public:
 
 };
 static_assert(sizeof(stTrigger) == 52, "Class is wrong size!");
+
+class stTriggerCB : public gfCallBack {
+public:
+    virtual ~stTriggerCB() {
+        if (dynamic_cast<stTriggerCB*>(m_next)) {
+            stTriggerCB* next = dynamic_cast<stTriggerCB*>(m_next);
+            delete next;
+        }
+    }
+
+    void updateBegin() { }
+    void updateFixPosition() { }
+    void updateEnd() { }
+};
+
+class stActTriggerFrameExcelCB : public stTriggerCB {
+    u8 unk8[0x14];
+public:
+    stActTriggerFrameExcelCB(grGimmickFrameTriggerData* data);
+    virtual void userProc();
+};
+static_assert(sizeof(stActTriggerFrameExcelCB) == 0x1C, "Class is the wrong size!");
 
 class stTriggerMng : public gfTask {
     utList m_triggerList;

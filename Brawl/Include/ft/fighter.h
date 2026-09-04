@@ -1,11 +1,13 @@
 #pragma once
 
+#include <so/so_module_accesser.h>
 #include <StaticAssert.h>
 #include <ft/ft_entry.h>
 #include <ft/ft_outside_event_presenter.h>
 #include <ft/ft_value_accesser.h>
 #include <mt/mt_vector.h>
 #include <so/stageobject.h>
+#include <sr/sr_common.h>
 #include <types.h>
 
 class itCustomizerInterface;
@@ -555,6 +557,8 @@ public:
             struct Work {
                 enum Int {
                     Int_Water_Task_Id = 0x20000002,
+                    Int_Eff_Counter = 0x20000003,
+                    Int_No_Water_Frame = 0x20000004,
                 };
                 enum Float {
 
@@ -1163,15 +1167,6 @@ public:
                 Id_Ground_Movement = 0x6,
                 Id_Jostle = 0x7,
             };
-
-            enum OutsideType {
-                Outside_None = -1,
-                Outside_Movement_Ground = 0x0,
-                Outside_Movement_Water = 0x1,
-                Outside_Movement_Attack = 0x2,
-                Outside_Damage_Reserved = 0x3
-            };
-
         };
     };
 
@@ -1380,6 +1375,8 @@ public:
     char _272[44];
     ftOutsideEventPresenter m_outsideEventPresenter;
     char _332[72];
+
+    Fighter(s32 entryId, ftKind kind, Heaps::HeapType instHeap, soModuleAccesser* acc);
 
     virtual void processUpdate();
     virtual void processFixPosition();

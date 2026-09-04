@@ -2,6 +2,7 @@
 
 #include <StaticAssert.h>
 #include <nw4r/ut/ut_Color.h>
+#include <nw4r/ut/ut_ResFont.h>
 #include <types.h>
 
 namespace ms {
@@ -59,6 +60,7 @@ namespace ms {
         ~CharWriter();
 
         /* Setters */
+        void SetFont(const nw4r::ut::ResFont& font);
         void SetCursor(float x, float y); //
         void SetCursor(float x, float y, float z);
         void SetCursorX(float x);

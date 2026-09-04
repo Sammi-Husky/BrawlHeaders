@@ -63,6 +63,7 @@ public:
     void setHitPointMax(float);
     void setSlipMul(float);
     void setSlipInterval(bool);
+    void setResultWinRotY(float);
 
     inline ftLog& getLog() const { return m_data->m_log; };
 };

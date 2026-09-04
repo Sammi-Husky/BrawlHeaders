@@ -18,8 +18,9 @@ class soModuleAccesser;
 class StageObject;
 
 class soGroundConditionChecker {
-    virtual ~soGroundConditionChecker();
-    virtual bool isConditionNoCliffStop(soModuleAccesser* moduleAccesser);
+public:
+    virtual ~soGroundConditionChecker() { }
+    virtual bool isConditionNoCliffStop(soModuleAccesser* moduleAccesser) = 0;
 };
 
 class soGroundModule : public soNull, public soNullable {
