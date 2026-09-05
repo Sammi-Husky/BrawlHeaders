@@ -14,8 +14,9 @@ public:
 
 class gfModule {
 public:
-    gfModuleHeader* header;
-    char unk[0x27];
+    gfModuleHeader* m_header;
+    void* m_bssAddr;
+    char m_flags;
 
     static gfModule* create(void* heap, void* buffer, size_t size);
 };
