@@ -21,22 +21,22 @@ public:
     union TransformFlag {
         u16 m_mask;
         struct {
-            bool m_flag15 : 1;      // 0x8000
-            bool m_flag14 : 1;      // 0x4000
-            bool m_flag13 : 1;      // 0x2000
-            bool m_flag12 : 1;      // 0x1000
-            bool m_flag11 : 1;      // 0x800
-            bool m_flag10 : 1;      // 0x400
-            bool m_flag9 : 1;       // 0x200
-            bool m_flag8 : 1;       // 0x100
-            bool m_flag7 : 1;       // 0x80
-            bool m_rotate : 1;       // 0x40
-            bool m_flag5 : 1;       // 0x20
-            bool m_flag4 : 1;       // 0x10
-            bool m_flag3 : 1;       // 0x8
-            bool m_flag2 : 1;       // 0x4
-            bool m_flag1 : 1;       // 0x2
-            bool m_flag0 : 1;       // 0x1
+            u16 m_flag15 : 1;      // 0x8000
+            u16 m_flag14 : 1;      // 0x4000
+            u16 m_flag13 : 1;      // 0x2000
+            u16 m_flag12 : 1;      // 0x1000
+            u16 m_flag11 : 1;      // 0x800
+            u16 m_flag10 : 1;      // 0x400
+            u16 m_flag9 : 1;       // 0x200
+            u16 m_flag8 : 1;       // 0x100
+            u16 m_flag7 : 1;       // 0x80
+            u16 m_rotate : 1;       // 0x40
+            u16 m_flag5 : 1;       // 0x20
+            u16 m_flag4 : 1;       // 0x10
+            u16 m_flag3 : 1;       // 0x8
+            u16 m_flag2 : 1;       // 0x4
+            u16 m_flag1 : 1;       // 0x2
+            u16 m_flag0 : 1;       // 0x1
         };
     };
 
