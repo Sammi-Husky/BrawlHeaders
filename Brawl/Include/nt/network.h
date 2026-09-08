@@ -9,7 +9,7 @@
 
 class NtShared {
 public:
-    typedef void (*ntConsumedDataCallback_t)(const u16*);
+    typedef void (*ntConsumedDataCallback_t)(const void*);
     static void ntSetConsumedDataCallback(ntConsumedDataCallback_t cb) {
         NtConsumedDataCallback = cb;
     }

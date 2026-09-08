@@ -26,12 +26,12 @@ public:
     // 3. networkInCallback inlines ntSetConsumedDataCallback
     ipNetworkProducer() {
         void (*f)(NtShared::ntConsumedDataCallback_t) = NtShared::ntSetConsumedDataCallback;
-        f(networkInCallback);
+        f(reinterpret_cast<NtShared::ntConsumedDataCallback_t>(networkInCallback));
         clear();
     }
 
     ipNetworkProducer(bool hack) {
-        NtShared::ntSetConsumedDataCallback(networkInCallback);
+        NtShared::ntSetConsumedDataCallback(reinterpret_cast<NtShared::ntConsumedDataCallback_t>(networkInCallback));
         clear();
     }
 
