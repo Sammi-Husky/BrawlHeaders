@@ -121,6 +121,10 @@ private:
 private:
     void* mResource;            // at 0x10
     FontInformation* mFontInfo; // at 0x14
+    // Undocumented tail the base Font ctor also writes; omitting it leaves
+    // sizeof() 4 bytes short and that ctor overflows past the object.
+    u16 _24; // at 0x18
+    u16 _26; // at 0x1A, likely a cached alternate-char glyph index
 };
 
 } // namespace detail
