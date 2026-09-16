@@ -35,7 +35,11 @@ public:
     int getPreloadArchiveCountFromKind(EnemyKind enemyKind);
     int getPreloadArchiveCreateIdFromKind(EnemyKind enemyKind);
     emArchive* getPreloadArchivePtrFromKind(EnemyKind enemyKind);
+#ifdef MATCHING
     int preloadArchive(gfArchive* param, gfArchive* brres, gfArchive* enmCommon, gfArchive* primFaceBrres, EnemyKind enemyKind, bool isSoundRequest);
+#else
+    int preloadArchive(gfArchive* param, gfArchive* brres, gfArchive* enmCommon, gfArchive* primFaceBrres, EnemyKind enemyKind, bool isSoundRequest, HeapType heapType = Heaps::StageResource); // Custom optional parameters for specifying what heap to load enemy resources into
+#endif
     int createEnemy(emCreate* create);
     void removeEnemy(int id);
     bool isEnemyExist(int id);
