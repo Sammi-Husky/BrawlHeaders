@@ -5,5 +5,7 @@
 class MenuRoot : public gfTask {
 public:
     char spacer[0x08];
-    ScnGroup* scene;
+    nw4r::g3d::ScnGroup* scene;
+
+    static MenuRoot* create(const char* name, int, const char* cameraPath);
 };

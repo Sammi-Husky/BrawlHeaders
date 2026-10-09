@@ -46,6 +46,7 @@ namespace nw4r {
             inline ResFile(void* data) : ResCommon(data) {}
 
             static void Init(void* arg);
+            void Release();
 
             u32 GetResMdlNumEntries() const;
             u32 GetResAnmChrNumEntries();
