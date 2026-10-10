@@ -6,7 +6,7 @@
 
 class soModuleAccesser;
 
-class ftParamCustomizeModuleImpl : soParamCustomizeModuleImpl {
+class ftParamCustomizeModuleImpl : public soParamCustomizeModuleImpl {
     u8 unk10[0x4];
     soModuleAccesser* m_moduleAccsr;
     u8 unk18[0x520];
