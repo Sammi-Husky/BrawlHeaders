@@ -1,6 +1,8 @@
 #pragma once
 
 #include <StaticAssert.h>
+#include <MEM/mem_allocator.h>
+#include <OS/OSMutex.h>
 #include <types.h>
 
 class gfMemoryPool;
@@ -15,9 +17,22 @@ extern HeapInfo g_HeapInfos[0x47];
 
 class gfMemoryPool {
 public:
+    const char* m_name;
+    u8* m_start;
+    u8* m_end;
+    char _0xC[0x14 - 0xC];
+    u16 m_numBlocks;
+    char _0x16[0x24 - 0x16];
+    bool m_useMutex;
+    OSMutex m_mutex;
+    MEMAllocator m_allocator;
+
     u32 getMaxFreeBlockSize();
+    void dump();
+    void initAllocator(u32 heapParam1, u32 heapParam2);
 
     static void* alloc(void* heapAddr, size_t size, int align);
+    static void* allocClear(void* heapAddr, size_t size, int align);
     static gfMemoryPool* create(void* heapAddr, size_t size, const char* heapName);
 
     /**
@@ -39,3 +54,4 @@ public:
         return pool;
     }
 }; // class gfMemoryPool
+static_assert(sizeof(gfMemoryPool) == 0x50, "Class is wrong size!");
