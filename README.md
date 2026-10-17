@@ -1,8 +1,8 @@
-# PROJECT UPDATE
 > [!WARNING]
-> This repository is no longer taking direct contributions. Instead, open a PR to [The decomp repo](https://github.com/doldecomp/brawl/pull/148)
+> This repository is no longer taking direct contributions. Instead, open a PR to [The decomp repo](https://github.com/doldecomp/brawl)
 
-To facilitate easier collaboration with [the decomp project](https://github.com/doldecomp/brawl/pull/148), this repository's contents will be merged directly into that repository. 
+# PROJECT UPDATE
+To facilitate easier collaboration with [the decomp project](https://github.com/doldecomp/brawl), this repository's contents will be merged directly into that repository. 
 
 #### *This repository will not be closing.*
 
